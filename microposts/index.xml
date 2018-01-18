@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microposts on htr3n</title>
+    <link>/microposts/</link>
+    <description>Recent content in Microposts on htr3n</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 18 Jan 2018 16:07:46 +0700</lastBuildDate>
+    
+	<atom:link href="/microposts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quick Thought 2</title>
+      <link>/microposts/quick-thought-2/</link>
+      <pubDate>Thu, 18 Jan 2018 16:07:46 +0700</pubDate>
+      
+      <guid>/microposts/quick-thought-2/</guid>
+      <description>Another quick thought.</description>
+    </item>
+    
+    <item>
+      <title>Quick Thought</title>
+      <link>/microposts/quick-thought/</link>
+      <pubDate>Thu, 18 Jan 2018 15:52:55 +0700</pubDate>
+      
+      <guid>/microposts/quick-thought/</guid>
+      <description>This is a quick thought on something.</description>
+    </item>
+    
+  </channel>
+</rss>
