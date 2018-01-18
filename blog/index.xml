@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on htr3n</title>
-    <link>/blog/</link>
+    <link>https://htr3n.github.io/blog/</link>
     <description>Recent content in Blogs on htr3n</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://htr3n.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setting up Apache httpd 2.4 and PHP 7 in macOS</title>
-      <link>/blog/mac-httpd-php/</link>
+      <link>https://htr3n.github.io/blog/mac-httpd-php/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/mac-httpd-php/</guid>
+      <guid>https://htr3n.github.io/blog/mac-httpd-php/</guid>
       <description>Introduction Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development. Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles *AMP (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered bloated or a bit of overkill for the beginners like me ;).</description>
     </item>
     
     <item>
       <title>Cách xưng hô họ hàng (st)</title>
-      <link>/blog/xung-ho/</link>
+      <link>https://htr3n.github.io/blog/xung-ho/</link>
       <pubDate>Sun, 07 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/xung-ho/</guid>
+      <guid>https://htr3n.github.io/blog/xung-ho/</guid>
       <description>Bài sưu tầm về cách xưng hô với họ hàng nội ngoại.
 Với họ nội (tức là họ hàng bên cha)  Các anh của ba và vợ của họ = bác Các em trai của ba = chú. Vợ của em trai của ba = thím. Các em gái, chị gái của = cô. Chồng của em gái, chị gái của ba = dượng.  Với họ ngoại (tức họ hàng bên mẹ)  Các anh, em trai của mẹ = cậu.</description>
     </item>
     
     <item>
       <title>Khen con (st)</title>
-      <link>/blog/khen-ngoi-con-cai/</link>
+      <link>https://htr3n.github.io/blog/khen-ngoi-con-cai/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>/blog/khen-ngoi-con-cai/</guid>
+      <guid>https://htr3n.github.io/blog/khen-ngoi-con-cai/</guid>
       <description>(Bài viết khá hay sưu tầm đâu đó trên mạng)
 Thói Quen Khen Ngợi Con Giỏi Hay Khả Năng Sẵn Có Của Con Mình để thấy không chỉ cha mẹ Việt mà cả cha mẹ người nước ngoài nữa thường hay con &amp;ldquo;giỏi quá&amp;rdquo; &amp;ldquo;thông minh quá&amp;rdquo; &amp;ldquo;sao con làm nhanh vậy&amp;rdquo;. Mới hôm qua thôi, mình để ý có một bà mẹ đố đứa con hơn 2 tuổi của mình &amp;ldquo;con chó kêu như thế nào&amp;rdquo;, đứa bé trả lời &amp;ldquo;gâu,gâu&amp;rdquo;, thế là bà mẹ khen luôn &amp;ldquo;giỏi quá&amp;rdquo;.</description>
     </item>

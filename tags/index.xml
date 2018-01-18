@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on htr3n</title>
-    <link>/tags/</link>
+    <link>https://htr3n.github.io/tags/</link>
     <description>Recent content in Tags on htr3n</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://htr3n.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dnsmasq</title>
-      <link>/tags/dnsmasq/</link>
+      <link>https://htr3n.github.io/tags/dnsmasq/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/dnsmasq/</guid>
+      <guid>https://htr3n.github.io/tags/dnsmasq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Httpd</title>
-      <link>/tags/httpd/</link>
+      <link>https://htr3n.github.io/tags/httpd/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/httpd/</guid>
+      <guid>https://htr3n.github.io/tags/httpd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Macos</title>
-      <link>/tags/macos/</link>
+      <link>https://htr3n.github.io/tags/macos/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/macos/</guid>
+      <guid>https://htr3n.github.io/tags/macos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Php</title>
-      <link>/tags/php/</link>
+      <link>https://htr3n.github.io/tags/php/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/php/</guid>
+      <guid>https://htr3n.github.io/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Server</title>
-      <link>/tags/server/</link>
+      <link>https://htr3n.github.io/tags/server/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/server/</guid>
+      <guid>https://htr3n.github.io/tags/server/</guid>
       <description></description>
     </item>
     
