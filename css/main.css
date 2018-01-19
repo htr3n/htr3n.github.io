@@ -58,6 +58,10 @@ html
 {
     color: #966 !important;
 }
+.tag
+{
+    color: #333 !important;
+}
 .container
 {
     overflow: auto;

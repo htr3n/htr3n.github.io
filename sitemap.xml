@@ -28,7 +28,7 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/blog/khen-ngoi-con-cai/</loc>
+    <loc>https://htr3n.github.io/blog/khen-con/</loc>
     <lastmod>2015-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -166,6 +166,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/d%E1%BA%A1y-con/</loc>
+    <lastmod>2015-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/hp/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
@@ -220,6 +226,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/national-id/</loc>
+    <lastmod>2017-01-19T10:28:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/news-reader/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
     <priority>0</priority>
@@ -232,8 +244,20 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/parenting/</loc>
+    <lastmod>2015-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/php/</loc>
     <lastmod>2017-01-19T09:20:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/politics/</loc>
+    <lastmod>2017-01-19T10:28:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
