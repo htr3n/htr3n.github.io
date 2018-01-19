@@ -53,6 +53,11 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/blog/quyen-im-lang/</loc>
+    <lastmod>2017-01-19T10:28:00+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/blog/critical-thinking/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
   </url>
@@ -68,7 +73,17 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/blog/bach_khoa_toan_san/</loc>
+    <loc>https://htr3n.github.io/blog/bach-khoa-toan-san/</loc>
+    <lastmod>2017-01-19T11:18:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/iphone/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/laptop/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
   </url>
   
@@ -79,15 +94,9 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/blog/quyenimlang/</loc>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/blog/iphone/</loc>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/blog/laptop/</loc>
+    <loc>https://htr3n.github.io/tags/apple/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -139,6 +148,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/dell/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
     <lastmod>2017-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
@@ -151,6 +166,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/hp/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/httpd/</loc>
     <lastmod>2017-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
@@ -159,6 +180,30 @@
   <url>
     <loc>https://htr3n.github.io/tags/hyperref/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/ibm/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/iphone/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/laptop/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/macbook/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -199,6 +244,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/quy%E1%BB%81n-im-l%E1%BA%B7ng/</loc>
+    <lastmod>2017-01-19T10:28:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/rants/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
@@ -223,6 +274,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/sony/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/s%E1%BB%95-h%E1%BB%99-kh%E1%BA%A9u/</loc>
     <lastmod>2017-01-19T10:28:00+07:00</lastmod>
     <priority>0</priority>
@@ -230,7 +287,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/</loc>
-    <lastmod>2017-01-19T10:18:00+07:00</lastmod>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   

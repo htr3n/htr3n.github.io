@@ -96,7 +96,7 @@
 
 <h2 id="phần-1-windows">Phần 1: Windows</h2>
 
-<h3 id="1-cài-đặt-latex">1 Cài đặt LaTeX</h3>
+<h3 id="1-cài-đặt-latex">1. Cài đặt LaTeX</h3>
 
 <p>Tải gói MikTeX [3] rồi cài đặt với những tính năng mặc định, giả sử cài MikTeX vào thư mục tạm gọi bằng bí danh là <strong>MIKTEKROOT</strong>. Sau đó, thiết lập biến môi trường PATH trỏ đến thư mục MIKTEKROOT\mixtek\bin để bạn có thể dùng lệnh <strong>latex</strong> hoặc <strong>pdflatex</strong> tại bất kỳ cửa sổ lệnh (command prompt) nào. Sau bước này, chúng ta giả thiết là bạn đã có môi trường (La)TeX trên Windows.</p>
 
@@ -104,7 +104,7 @@
 
 <h4 id="2-1-cài-đặt-gói-vntex-vntex">2.1 Cài đặt gói vnTeX (vntex)</h4>
 
-<p>_S_ử dụng trình Package Manager (menu Start/MikTeX/Browse Package), sau đó chọn gói vnTeX để trình Package Manager tự tải về cài đặt.</p>
+<p>Sử dụng trình Package Manager (menu <code>Start/MikTeX/Browse Package</code>), sau đó chọn gói vnTeX để trình Package Manager tự tải về cài đặt.</p>
 
 <h4 id="2-2-cài-đặt-gói-unicode-ucs-hỗ-trợ-utf-8">2.2 Cài đặt gói Unicode (ucs) hỗ trợ UTF-8</h4>
 
@@ -120,13 +120,16 @@
 
 <h3 id="3-soạn-thảo-tiếng-việt-unicode">3. Soạn thảo tiếng Việt Unicode</h3>
 
-<p>Bạn có thể soạn thảo LaTeX bằng một trong những trình soạn thảo hỗ trợ Unicode sau:
-- Notepad
-- Notepad2 (<a href="http://www.flos-freeware.ch/notepad2.html">http://www.flos-freeware.ch/notepad2.html</a>)
-- Notepad++ (<a href="http://notepad-plus.sourceforge.net">http://notepad-plus.sourceforge.net</a>)
-- UniRed (<a href="http://unired.sourceforge.net">http://unired.sourceforge.net</a>)
-- EmEditor Text Editor (free edition) (<a href="http://www.emeditor.com">http://www.emeditor.com</a>)
-- LaTeXEditor (<a href="http://www.ntu.edu.sg/home5/PG03053527/latexeditor">http://www.ntu.edu.sg/home5/PG03053527/latexeditor</a>) vừa hỗ trợ soạn (hightlight) và biên dịch LaTeX, vừa hỗ trợ tốt Unicode.</p>
+<p>Bạn có thể soạn thảo LaTeX bằng một trong những trình soạn thảo hỗ trợ Unicode sau:</p>
+
+<ul>
+<li>Notepad</li>
+<li>Notepad2 (<a href="http://www.flos-freeware.ch/notepad2.html">http://www.flos-freeware.ch/notepad2.html</a>)</li>
+<li>Notepad++ (<a href="http://notepad-plus.sourceforge.net">http://notepad-plus.sourceforge.net</a>)</li>
+<li>UniRed (<a href="http://unired.sourceforge.net">http://unired.sourceforge.net</a>)</li>
+<li>EmEditor Text Editor (free edition) (<a href="http://www.emeditor.com">http://www.emeditor.com</a>)</li>
+<li>LaTeXEditor (<a href="http://www.ntu.edu.sg/home5/PG03053527/latexeditor">http://www.ntu.edu.sg/home5/PG03053527/latexeditor</a>) vừa hỗ trợ soạn (hightlight) và biên dịch LaTeX, vừa hỗ trợ tốt Unicode.</li>
+</ul>
 
 <p>Ngoài ra, nếu bạn sử dụng môi trường Eclipse [6] thì có thể soạn LaTeX bằng gói plugin TeXclipse [7] khá mạnh và thuận tiện, không phụ thuộc hệ điều hành, chỉ cần có JRE (Java Runtime Environment). Bạn chỉ định encoding cho file .tex là UTF-8 trong Eclipse thì có thể soạn thảo tiếng Việt với Texclipse. Đây là một giải pháp tốt vì Texclipse hỗ trợ soạn thảo TeX với nhiều tính năng hay như hightlight, auto completion, completion aid, soạn thảo và tích hợp .bib, etc.</p>
 
@@ -138,69 +141,78 @@
 
 <p>Dùng bất kì một trình soạn thảo nào ở trên, soạn một file tv.tex</p>
 
-<p>`\documentclass{article}
+<pre><code class="language-tex">\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[vietnam,english]{babel}
-\title{Dùng tiếng Việt (UTF-8) trong LaTeX}</p>
+\title{Dùng tiếng Việt (UTF-8) trong LaTeX}
 
-<p>\begin{document} \selectlanguage{vietnam}
-\maketitle \section{Tiêu đề}</p>
+\begin{document} \selectlanguage{vietnam}
+\maketitle \section{Tiêu đề}
 
-<p>\subsection{Tiểu tiêu đề}
+\subsection{Tiểu tiêu đề}
 Một vài đoạn văn bản
-\end{document}</p>
+\end{document}
+</code></pre>
 
-<p>`Nội dung này có thể xem như là khung sườn cho các tài liệu LaTeX tiếng Việt của bạn, chú ý những phần sau:</p>
+<p>Nội dung này có thể xem như là khung sườn cho các tài liệu LaTeX tiếng Việt của bạn, chú ý những phần sau:</p>
 
-<p><code>\usepackage[utf8]{inputenc} \usepackage[vietnam,english]{babel}</code></p>
+<pre><code class="language-tex">\usepackage[utf8]{inputenc} 
+\usepackage[vietnam,english]{babel}
+</code></pre>
 
-<p>và
-<code>
-\selectlanguage{vietnam}</code></p>
+<p>và</p>
+
+<pre><code class="language-tex">\selectlanguage{vietnam}
+</code></pre>
 
 <p>Như vậy, một tài liệu LaTeX tiếng Việt có sườn (template) đơn giản như sau:</p>
 
-<p>`\documentclass{&hellip;}
+<pre><code class="language-tex">\documentclass{...}
 \usepackage[utf8]{inputenc}
 \usepackage[vietnam,english]{babel}
-\title{&hellip;}</p>
+\title{...}
 
-<p>\begin{document}
+\begin{document}
 \selectlanguage{vietnam}
-\maketitle</p>
+\maketitle
 
-<p>&hellip;</p>
+...
 
-<p>\end{document}`</p>
+\end{document}
+</code></pre>
 
 <h4 id="4-2-biên-dịch-và-tạo-tài-liệu-ps-hoặc-pdf">4.2 Biên dịch và tạo tài liệu PS hoặc PDF</h4>
 
 <p>Dùng các trình biên dịch như latex hoặc pdflatex để biên dịch tài liệu tv.tex</p>
 
-<p><strong><code>latex tv.tex
+<pre><code class="language-sh">latex tv.tex
 dvips tv.dvi
-ps2pdf tv.ps</code></strong></p>
+ps2pdf tv.ps
+</code></pre>
 
 <p>hoặc</p>
 
-<p><strong><code>pdflatex tv.tex</code></strong></p>
+<pre><code class="language-sh">pdflatex tv.tex
+</code></pre>
 
-<p>Kết quả tài liệu tiếng Việt:</p>
+<p>Kết quả tài liệu tiếng Việt sau khi biên dịch.</p>
 
-<p><img src="latex_unicode.jpg" alt="" /></p>
+<p><img src="latex-tv.jpg" alt="Kết quả văn bản tiếng Việt" /></p>
 
 <h3 id="nguồn-tham-khảo">Nguồn tham khảo</h3>
 
-<p>1. The Comprehensive TeX Archive Network - CTAN (<a href="http://www.ctan.org">http://www.ctan.org</a>)
-2. LaTeX project (<a href="http://www.latex-project.org">http://www.latex-project.org</a>)
-3. MikTeX project (<a href="http://www.miktex.org">http://www.miktex.org</a>)
-4. vnTeX (<a href="http://vntex.sourceforge.net">http://vntex.sourceforge.net</a>)
-5. The TeX Users Group (<a href="http://www.tug.org">http://www.tug.org</a>)
-6. Eclipse (<a href="http://www.eclipse.org">http://www.eclipse.org</a>)
-7.TeXlipse (<a href="http://texlipse.sourceforge.net">http://texlipse.sourceforge.net</a>)
-8. Hướng dẫn cài các gói CJK, UNICODE, vntex (<a href="http://www.fedu.uec.ac.jp/~vuhung/linux/viet-jp-cjk">http://www.fedu.uec.ac.jp/~vuhung/linux/viet-jp-cjk</a>)</span>
-<span style="font-family:Arial, Helvetica, sans-serif;font-size:11pt">9. Omega project (<a href="http://omega.enstb.org">http://omega.enstb.org</a>)
-10. Unikey (<a href="http://unikey.sf.net">http://unikey.sf.net</a>)</p>
+<ol>
+<li><a href="http://www.ctan.org">http://www.ctan.org</a></li>
+<li><a href="http://www.latex-project.org">http://www.latex-project.org</a></li>
+<li><a href="http://www.miktex.org">http://www.miktex.org</a></li>
+<li><a href="http://vntex.sourceforge.net">http://vntex.sourceforge.net</a></li>
+<li><a href="http://www.tug.org">http://www.tug.org</a></li>
+<li><a href="http://www.eclipse.org">http://www.eclipse.org</a></li>
+<li><a href="http://texlipse.sourceforge.net">http://texlipse.sourceforge.net</a></li>
+<li><a href="http://www.fedu.uec.ac.jp/~vuhung/linux/viet-jp-cjk">http://www.fedu.uec.ac.jp/~vuhung/linux/viet-jp-cjk</a></li>
+<li><a href="http://omega.enstb.org">http://omega.enstb.org</a></li>
+<li><a href="http://unikey.sf.net">http://unikey.sf.net</a></li>
+</ol>
 
   </div>
 </section>
@@ -208,14 +220,33 @@ ps2pdf tv.ps</code></strong></p>
 
 
 
-
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "htr3n" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 
 <section id="menu-pane" class="row menu text-center">
   
   
-  <span><a class="menu-item" href="https://htr3n.github.io/blog/bach_khoa_toan_san/">&lt; prev | </a></span>
+  <span><a class="menu-item" href="https://htr3n.github.io/blog/bach-khoa-toan-san/">&lt; prev | </a></span>
   
   
   <span><a class="menu-item" href="/blog">blog</a></span>
