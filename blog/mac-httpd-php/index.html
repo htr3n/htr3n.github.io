@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:400,400i">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://htr3n.github.io/css/main.css">
@@ -47,7 +47,7 @@
 </header>
 <section id="category-pane" class="row meta">
   
-  <div class="col-md-12">
+  <div class="col-md-6">
     <h6 class="text-left meta">
         PUBLISHED ON SEP 25, 2017 
       
@@ -63,6 +63,30 @@
     </h6>
   </div>
   
+  
+  <div class="col-md-6">
+    <h6 class="text-right meta">
+      
+      
+      
+      TAGS:
+      
+      
+      <a class="meta" href="/tags/dnsmasq">DNSMASQ</a>, 
+      
+      <a class="meta" href="/tags/httpd">HTTPD</a>, 
+      
+      <a class="meta" href="/tags/macos">MACOS</a>, 
+      
+      <a class="meta" href="/tags/php">PHP</a>, 
+      
+      <a class="meta" href="/tags/server">SERVER</a>
+      
+      
+      
+    </h6>
+  </div>
+    
 </section>
 <section id="content-pane" class="row">
   <div class="col-md-12 text-justify content">
@@ -72,7 +96,7 @@
 
 <p>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development.  Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles <strong>*AMP</strong> (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered bloated or a bit of overkill for the beginners like me ;).</p>
 
-<p>After few years of Java development, I turned myself in Web development, and in particular, PHP programming. As usual, I would start with pure PHP aspects that really help me to understand the fundamental concepts and techniques instead of being drown with everyone-known frameworks and their complexity and hard-to-understand magics.</p>
+<p>After few years of Java development, I turned myself into Web development, and in particular, PHP programming. As usual, I would start with pure PHP aspects that really help me to understand the fundamental concepts and techniques instead of being drown with everyone-known frameworks and their complexity and hard-to-understand magics.</p>
 
 <p>As a result, I first looked for a simple setup of Apache and PHP that best suits the beginning of my initial learning path. In this note, I am writing down what I learn from the Internet and tweak them to my needs.</p>
 
@@ -86,32 +110,31 @@
 
 <h3 id="strategy">Strategy</h3>
 
-<blockquote>
 <p>A typical and well-documented approach is to load PHP as a module under Apache using the directive <code>LoadModule</code>. It is so-called <a href="http://www.php.net/manual/en/install.unix.apache2.php"><code>mod_php</code></a>. However, this approach is now gradually out of favor of Web developers and hosting providers because the tight combination of PHP and Apache makes things difficult for monitoring, debugging, and scaling. One of the recent favorite strategies is to set up PHP as Fast-CGI using <a href="http://php.net/manual/en/install.fpm.php">PHP-FPM</a> (FastCGI Process Manager). This way also brings several advantages including good support for nginx integration and <a href="https://wiki.apache.org/httpd/PHP-FPM">performance</a>.</p>
-</blockquote>
 
-<h3 id="actitivies">Actitivies</h3>
+<h3 id="how-to-proceed">How To Proceed</h3>
 
-<blockquote>
-<p>Based on the aforementioned analysis of strategies, I consider the following installation activities to fulfill my goal.
-0. Installing <strong>Homebrew</strong> (package manager for macOS)
-1. Installing <strong>Apache HTTP Server 2.4</strong>
-2. Installing <strong>PHP 7</strong> and <strong>PHP-FPM</strong>
-3. Putting <strong>Apache Server</strong> and <strong>PHP-FPM</strong> Together
-4. (Optional) Installing <strong>DNSMasq</strong></p>
-</blockquote>
+<p>Based on the aforementioned analysis of strategies, I consider the following installation activities to fulfill my goal.</p>
+
+<ol>
+<li>Installing <a href="https://brew.sh"><code>homebrew</code></a> (a sane package manager for macOS)</li>
+<li>Installing <a href="https://httpd.apache.org">Apache HTTP Server 2.4</a></li>
+<li>Installing <a href="https://php.net">PHP 7</a> along with <strong><em>PHP-FPM</em></strong></li>
+<li>Putting All Together</li>
+<li>(Optional) Installing <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a></li>
+</ol>
 
 <h2 id="installation">Installation</h2>
 
 <h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
 
-<p><strong>Homebrew</strong> is currently a prominent and well-supported package managing solution for macOS. Installing <code>homebrew</code> is rather straightforward. Nevertheless, you must be familiar with using the command line in order to easily get thing done. All you need is to launch the Terminal app (<code>/Applications/Utilities/Terminal.app</code>) or even better the <a href="https://www.iterm2.com">iTerm2</a> and start executing terminal commands</p>
+<p><code>homebrew</code> is currently a prominent and well-supported package managing solution for macOS. Installing <code>homebrew</code> is rather straightforward. Nevertheless, you must be familiar with using the command line in order to easily get thing done. All you need is to launch the Terminal app (<code>/Applications/Utilities/Terminal.app</code>) or even better the <a href="https://www.iterm2.com">iTerm2</a> and start executing terminal commands.</p>
 
 <blockquote>
 <p>From now on, the sign <code>$</code> will denote the user&rsquo;s command line prompt where you will execute the terminal commands, except that you must not type <code>$</code>.</p>
 </blockquote>
 
-<p><strong>Homebrew</strong> requires Xcode&rsquo;s command line tooling so we must install it first.</p>
+<p><code>homebrew</code> requires Xcode&rsquo;s command line tooling so we must install it first.</p>
 
 <pre><code class="language-sh"># Install Xcode command line tooling
 $ xcode-select --install
@@ -130,7 +153,7 @@ Homebrew 1.3.8
 Homebrew/homebrew-core (git revision 22ac3; last commit 2017-12-02)
 </code></pre>
 
-<p>The command <code>brew config</code>can show more information about the installed <code>homebrew</code>.</p>
+<p>The command <code>brew config</code> shows more information about the installed <code>homebrew</code>.</p>
 
 <pre><code class="language-sh">$ brew config
 </code></pre>
@@ -484,7 +507,7 @@ Password: (enter your password here)
 
 <p>Let&rsquo;s create a file <code>index.php</code> in <code>/Users/huytran/working/dev/dev-web/php</code></p>
 
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
   echo 'PHP Development Project';
 </code></pre>
 
@@ -493,7 +516,7 @@ Password: (enter your password here)
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;body&gt;
-	&lt;h1&gt;HTML and Javascript Project&lt;/h1&gt;	
+	&lt;h1&gt;HTML and Javascript Project&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -514,7 +537,7 @@ $ brew services restart php72
 
 <h4 id="installing-dnsmasq">Installing DNSMasq</h4>
 
-<pre><code class="language-sh"># update homebrew and install dnsmasq 
+<pre><code class="language-sh"># update homebrew and install dnsmasq
 $ brew update &amp;&amp; brew install dnsmasq
 # Copy the dnsmasq daemon configuration file to be loaded at system startup time
 $ sudo cp $(brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$) /Library/LaunchDaemons/
@@ -662,32 +685,6 @@ $ brew services restart php72
 </code></pre>
 
   </div>
-</section>
-<section id="tag-pane" class="row meta">
-  
-  <div class="col-md-12">
-    <h6 class="text-right meta">
-      
-      
-      
-      TAGS:
-      
-      
-      <a class="meta" href="/tags/dnsmasq">DNSMASQ</a>, 
-      
-      <a class="meta" href="/tags/httpd">HTTPD</a>, 
-      
-      <a class="meta" href="/tags/macos">MACOS</a>, 
-      
-      <a class="meta" href="/tags/php">PHP</a>, 
-      
-      <a class="meta" href="/tags/server">SERVER</a>
-      
-      
-      
-    </h6>
-  </div>
-  
 </section>
 
 

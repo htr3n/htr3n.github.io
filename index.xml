@@ -13,19 +13,19 @@
     
     <item>
       <title>Quick Thought 2</title>
-      <link>https://htr3n.github.io/microposts/quick-thought-2/</link>
+      <link>https://htr3n.github.io/notes/quick-thought-2/</link>
       <pubDate>Thu, 18 Jan 2018 16:07:46 +0700</pubDate>
       
-      <guid>https://htr3n.github.io/microposts/quick-thought-2/</guid>
+      <guid>https://htr3n.github.io/notes/quick-thought-2/</guid>
       <description>Another quick thought.</description>
     </item>
     
     <item>
       <title>Quick Thought</title>
-      <link>https://htr3n.github.io/microposts/quick-thought/</link>
+      <link>https://htr3n.github.io/notes/quick-thought/</link>
       <pubDate>Thu, 18 Jan 2018 15:52:55 +0700</pubDate>
       
-      <guid>https://htr3n.github.io/microposts/quick-thought/</guid>
+      <guid>https://htr3n.github.io/notes/quick-thought/</guid>
       <description>This is a quick thought on something.</description>
     </item>
     
@@ -44,8 +44,8 @@
       <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/about/</guid>
-      <description>Huy Tran (aka htr3n) has been a senior postdoc at both University of Vienna (UNIVIE) and Vienna University of Technology (TU Wien) in Austria. Before that, he was a lecturer at HCM City University of Technology, Vietnam.
-Huy had worked in several European and national R&amp;amp;D projects such as WWTF CONTAINER, EU FP7 INDENICA, EU FP7 COMPAS, and SemBiz. His current research interests are including software architecture and design, distributed systems, service-oriented architectures, event-driven architectures, model-driven engineering, and application of formal methods for software verification.</description>
+      <description>Huy Tran (aka htr3n) was PhD candidate then postdoc at Vienna University of Technology (2005-2009, 2009-2011) and a senior postdoc at both University of Vienna (2011-2017) in Austria. Before that, he was a lecturer at HCM City University of Technology, Vietnam (2002-2005).
+Huy had worked in several European and national R&amp;amp;D projects such as WWTF CONTAINER, EU FP7 INDENICA, EU FP7 COMPAS, and SemBiz. His current research interests are including software architecture, distributed systems, SOAs, event-driven architectures, model-driven engineering, and application of formal methods.</description>
     </item>
     
     <item>
@@ -66,6 +66,111 @@ Với họ nội (tức là họ hàng bên cha)  Các anh của ba và vợ c�
       <guid>https://htr3n.github.io/blog/khen-ngoi-con-cai/</guid>
       <description>(Bài viết khá hay sưu tầm đâu đó trên mạng)
 Thói Quen Khen Ngợi Con Giỏi Hay Khả Năng Sẵn Có Của Con Mình để thấy không chỉ cha mẹ Việt mà cả cha mẹ người nước ngoài nữa thường hay con &amp;ldquo;giỏi quá&amp;rdquo; &amp;ldquo;thông minh quá&amp;rdquo; &amp;ldquo;sao con làm nhanh vậy&amp;rdquo;. Mới hôm qua thôi, mình để ý có một bà mẹ đố đứa con hơn 2 tuổi của mình &amp;ldquo;con chó kêu như thế nào&amp;rdquo;, đứa bé trả lời &amp;ldquo;gâu,gâu&amp;rdquo;, thế là bà mẹ khen luôn &amp;ldquo;giỏi quá&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Sắp xếp trích dẫn (citations) theo thứ tự và thu gọn</title>
+      <link>https://htr3n.github.io/blog/tex-citations/</link>
+      <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/tex-citations/</guid>
+      <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng.
+\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.  will produce
+LaTeX [1] is a document preparation system for the TeX [2] typesetting program.  Trong ví dụ trên, [1] và [2] là các trích dẫn. Tài liệu tham khảo tương ứng sẽ được để trong phần \bibliography{}.</description>
+    </item>
+    
+    <item>
+      <title>Tính chất hai mặt của một vấn đề</title>
+      <link>https://htr3n.github.io/blog/tinh-chat-hai-mat/</link>
+      <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/tinh-chat-hai-mat/</guid>
+      <description>Người ta thường dùng câu nói &amp;ldquo;cái huân chương luôn có mặt trái của nó&amp;rdquo; để ám chỉ sự việc nào cũng có những mặt đối lập nhau. Do đó, đứng trước một sự kiện (fact) hoặc một luận điểm (argument), việc lật tới lật lui hầu phát hiện các ngóc ngách (các mặt đối lập) nhiều khi mang đến những ý rất thú vị. Hôm trước, nhân đọc mấy bài báo về cái bắt tay giữa VN và Microsoft, cùng với những nhận định của mấy nhân vật chóp bu Microsoft như S.</description>
+    </item>
+    
+    <item>
+      <title>Du học sinh - chuyện nên vui hay buồn</title>
+      <link>https://htr3n.github.io/blog/duhocsinh/</link>
+      <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/duhocsinh/</guid>
+      <description>Hôm nay qua mailling list nhận được link về bài báo này, đề ngày 09/12/06, nhưng tôi nhớ là có một bài báo tương tự trên báo Thanh niên mùa Noel năm ngoái. Bài báo trên báo Thanh niên đã biến mất (có lẽ vì vấp phải sự phản đối từ các du học sinh và cả đọc giả trong nước), giờ lại xuất hiện ở Vietnamnet, với chú thích là &amp;ldquo;Theo Thông tin thương mại&amp;rdquo;, tức là từ một nguồn khác nữa.</description>
+    </item>
+    
+    <item>
+      <title>Qui luật tiến hóa của tự nhiên</title>
+      <link>https://htr3n.github.io/blog/luat-cu-tru/</link>
+      <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/luat-cu-tru/</guid>
+      <description>Tôi trở thành nhà sinh vật học từ lúc nào nhỉ? Không đâu. Tự nhiên tôi thấy nhớ Darwin và qui luật tiến hóa của tự nhiên mà ông ta phát biểu. Tất cả là vì như thế này: Thời gian rồi chúi múi vào công việc nên lơ đễnh zụ cập nhật tin tức VN (chủ yếu cập nhật bằng &amp;ldquo;kênh&amp;rdquo; đặc biệt ;). Hôm nay lò dò lên Tuổi trẻ để refresh thì bắt gặp ngay cái tin nóng hổi &amp;ldquo;Quốc hội thảo luận dự án Luật cư trú: Sổ hộ khẩu hay thẻ cư trú?</description>
+    </item>
+    
+    <item>
+      <title>Từ niềm tin tuyệt đối đến critical thinking</title>
+      <link>https://htr3n.github.io/blog/critical-thinking/</link>
+      <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/critical-thinking/</guid>
+      <description>Trên Tuổi trẻ Online, tôi đọc bài báo này của một du học sinh, trong đó cung cấp cho ta góc nhìn về giáo dục đại học ở Mỹ. Ý kiến mà tôi đồng cảm là:
+ Khác biệt lớn nhất là sinh viên được quyền chất vấn giáo sư. Sinh viên không bị bắt buộc phải theo ý kiến của bất cứ ai, có thể có luận điểm của riêng mình chừng nào anh bảo vệ được luận điểm ấy</description>
+    </item>
+    
+    <item>
+      <title>Một cách &#34;đào mỏ&#34;</title>
+      <link>https://htr3n.github.io/blog/mot-cach-dao-mo/</link>
+      <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/mot-cach-dao-mo/</guid>
+      <description>(This post has been migrated from Yahoo360 to WP and then Hugo)
+ Đa số chúng ta đều biết rằng Internet cung cấp một kho thông tin khổng lồ quí giá, tốc độ chuyển thông tin nhanh, v.v&amp;hellip; Điều quan trọng là cách thức khai thác thông tin từ đó.
+Từ xưa, kênh thông tin quan trọng trên net có lẽ là từ các newsgroup và mailing list. Ngoài ra, các kênh instant messaging như IRC, IM cũng đóng vai trò quan trọng hình thành các cộng đồng ảo cũng như các kênh thông tin giá trị.</description>
+    </item>
+    
+    <item>
+      <title>Soạn tài liệu TeX tiếng Việt (UTF-8)</title>
+      <link>https://htr3n.github.io/blog/latex-tv/</link>
+      <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/latex-tv/</guid>
+      <description>LaTeX được yêu thích không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng NIX và Mac (non-MS). Những tính năng của (La)TeX có thể tham khảo ở [2]. Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án VnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ [4], dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX [9].</description>
+    </item>
+    
+    <item>
+      <title>Bách khoa toàn ... sạn </title>
+      <link>https://htr3n.github.io/blog/bach_khoa_toan_san/</link>
+      <pubDate>Fri, 27 Jul 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/bach_khoa_toan_san/</guid>
+      <description>Tình cờ đọc một bài trên báo Lao động giới thiệu về bách khoa toàn thư online. Thằng tui hí hửng quá trời vì nhiều khi cũng cần tra cứu vài thứ mà hổng biết tìm ở đâu. Với tâm trạng đó, thằng tui sẵn sàng phớt lờ hạt sạn thứ nhất &amp;ndash; bài viết của báo LĐ (không hiểu anh chàng phóng viên này học cái gì mà viết nguiên văn vầy nè bà con: &amp;ldquo;&amp;hellip;Độ chính xác của những thông tin trên từ điển online đảm bảo độ chính xác vì đó là cuốn từ điển tri thức lớn nhất hiện nay.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://htr3n.github.io/blog/quyenimlang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/quyenimlang/</guid>
+      <description>QUYỀN &amp;amp; NGHĨA VỤ IM LẶNG Đặt gạch lâu rồi, mà bị deadline của mấy bài báo &amp;ldquo;dí&amp;rdquo;&amp;rdquo; cháy mông nên giờ mới viết được mấy dòng chia sẻ vài suy nghĩ cá nhân về sự kiện &amp;ldquo;quyền im lặng&amp;rdquo; (sau đây là QIM ;) đang gây tranh luận trong và ngoài cái &amp;ldquo;phòng ngủ lớn nhất VN&amp;rdquo; (có khả năng &amp;ldquo;lớn nhất thế giới&amp;rdquo;, sau đây gọi tăt là QH).</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://htr3n.github.io/blog/iphone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/iphone/</guid>
+      <description>iPhone Tại Macworld Expo 2007, từ 14-18 tháng 1 ở San Francisco, Apple CEO Steve Jobs đã vén bức màn bí mật về thiết bị điện thoại &amp;ldquo;siêu thông minh&amp;rdquo; Apple iPhone.
+Với phong cách trình diễn hấp dẫn người nghe vốn có, Steve minh họa điểm sáng tạo độc đáo mà không điện thoại nào hiện tại có được. Đó là sử dụng touch-screen và điều khiển hoàn toàn bằng ngón tay giống như iPod, không có bàn phím thật (physical).</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://htr3n.github.io/blog/laptop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/laptop/</guid>
+      <description>Laptop Mình có một vài kinh nghiệm mua/dùng laptop, xin chia sẻ cùng bà con. Tới lúc này thì mình đã may mắn được dùng qua một số model laptop sau: Compaq Presario 2100, IBM Thinkpad T41, Sony VAIO V505B, IBM Thinkpad X31, HP 6310 (của người bạn nhờ cài đặt), Dell Latitude D620 (ngắm nghía định mua, nhưng sau lại thôi, chuyển sang MacBook). Kể ra không phải để khoe là mình giàu hoặc có nhiều laptop (vì thực chất là mình không giàu mà chỉ thích vọc các loại máy, và hơn nữa là hiện tại trong tay hổng có cái nào hết :D) mà những model đó mình có dịp biết qua nên chia sẻ một số kinh nghiệm liên quan:</description>
     </item>
     
   </channel>

@@ -3,18 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://htr3n.github.io/microposts/quick-thought-2/</loc>
+    <loc>https://htr3n.github.io/notes/quick-thought-2/</loc>
     <lastmod>2018-01-18T16:07:46+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/microposts/quick-thought/</loc>
+    <loc>https://htr3n.github.io/notes/quick-thought/</loc>
     <lastmod>2018-01-18T15:52:55+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/blog/mac-httpd-php/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T09:20:00+07:00</lastmod>
   </url>
   
   <url>
@@ -33,14 +33,78 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/blog/tex-citations/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/tinh-chat-hai-mat/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/duhocsinh/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/luat-cu-tru/</loc>
+    <lastmod>2017-01-19T10:28:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/critical-thinking/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/mot-cach-dao-mo/</loc>
+    <lastmod>2017-01-19T10:18:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/latex-tv/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/bach_khoa_toan_san/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/categories/</loc>
     <lastmod>2016-08-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/quyenimlang/</loc>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/iphone/</loc>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/blog/laptop/</loc>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/atom/</loc>
+    <lastmod>2017-01-19T10:18:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/bibliography/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/blog/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -51,50 +115,152 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/ch%C3%ADnh-tr%E1%BB%8B/</loc>
+    <lastmod>2017-01-19T10:28:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/citation/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/cite/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/critical-thinking/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/tags/dnsmasq/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/tags/httpd/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T09:20:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/hyperref/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/tags/macos/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/microposts/</loc>
+    <loc>https://htr3n.github.io/tags/natbib/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/news-reader/</loc>
+    <lastmod>2017-01-19T10:18:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/notes/</loc>
     <lastmod>2018-01-18T16:07:46+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/tags/php/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T09:20:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/categories/politics/</loc>
+    <lastmod>2017-01-19T10:28:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/rants/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/rss/</loc>
+    <lastmod>2017-01-19T10:18:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/tags/server/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T09:20:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/sinh-vi%C3%AAn/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/s%E1%BB%95-h%E1%BB%99-kh%E1%BA%A9u/</loc>
+    <lastmod>2017-01-19T10:28:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/tags/</loc>
-    <lastmod>2017-01-15T11:38:00+00:00</lastmod>
+    <lastmod>2017-01-19T10:18:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/tex/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/tinh-th%E1%BA%A7n-ph%E1%BA%A3n-bi%E1%BB%87n/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/unicode/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/utf-8/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/vietnamese/</loc>
+    <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   

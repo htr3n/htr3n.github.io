@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unicode on htr3n</title>
+    <link>https://htr3n.github.io/tags/unicode/</link>
+    <description>Recent content in Unicode on htr3n</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 25 Dec 2008 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://htr3n.github.io/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Soạn tài liệu TeX tiếng Việt (UTF-8)</title>
+      <link>https://htr3n.github.io/blog/latex-tv/</link>
+      <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/latex-tv/</guid>
+      <description>LaTeX được yêu thích không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng NIX và Mac (non-MS). Những tính năng của (La)TeX có thể tham khảo ở [2]. Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án VnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ [4], dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX [9].</description>
+    </item>
+    
+  </channel>
+</rss>

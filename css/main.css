@@ -22,7 +22,7 @@ a:link
 body
 {
     font-family: 'Roboto Slab', 'Roboto', 'Lato', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
 
     width: auto;
@@ -61,8 +61,7 @@ html
 .container
 {
     overflow: auto;
-
-    max-width: 680px;
+    max-width: 800px;
     padding: 0 15px;
 }
 .content
@@ -75,7 +74,6 @@ div.content
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 300;
-
     color: #777;
 }
 .copyright
@@ -93,19 +91,16 @@ div.content
 .error
 {
     font-family: 'Roboto', sans-serif;
-
     margin-top: 100px;
 }
 .error h1
 {
     font-size: 80px;
-
     color: #bbb;
 }
 .error p
 {
     margin-top: 150px;
-
     color: #777;
 }
 .excerpt
@@ -125,13 +120,13 @@ div.content
 }
 .header
 {
-    margin-top: 60px;
+    margin-top: 100px;
     margin-bottom: 20px;
 }
 .headshot
 {
-    width: 200px;
-    height: 200px;
+    width: 115px;
+    height: 115px;
 }
 .info
 {
@@ -212,7 +207,7 @@ h6.meta
     color: #bbb;
 }
 section.meta {
-    margin-top: 
+    margin-top: 10px;
 }
 .powered
 {
@@ -254,4 +249,9 @@ header.title
 
         margin-top: 30px;
     }
+}
+
+code {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 0.8em;
 }

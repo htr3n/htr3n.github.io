@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="htr3n&#39;s blog -- thoughts and rants about everything">
+<meta name="keywords" content="blog,java,php,python,javascript,shell,thoughts,rants">
+
+<base href="https://htr3n.github.io/">
+
+<title>htr3n</title>
+
+<meta name="generator" content="Hugo 0.34-DEV" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:400,400i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://htr3n.github.io/css/main.css">
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="en-US">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">Sắp xếp trích dẫn (citations) theo thứ tự và thu gọn</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-6">
+    <h6 class="text-left meta">
+        PUBLISHED ON JAN 15, 2009 
+      
+      
+      
+      —
+      
+      
+      <a class="meta" href="/categories/">🇻🇳</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+  
+  <div class="col-md-6">
+    <h6 class="text-right meta">
+      
+      
+      
+      TAGS:
+      
+      
+      <a class="meta" href="/tags/bibliography">BIBLIOGRAPHY</a>, 
+      
+      <a class="meta" href="/tags/citation">CITATION</a>, 
+      
+      <a class="meta" href="/tags/cite">CITE</a>, 
+      
+      <a class="meta" href="/tags/hyperref">HYPERREF</a>, 
+      
+      <a class="meta" href="/tags/natbib">NATBIB</a>, 
+      
+      <a class="meta" href="/tags/tex">TEX</a>
+      
+      
+      
+    </h6>
+  </div>
+    
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    <p>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng.</p>
+
+<pre><code class="language-latex">\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.
+</code></pre>
+
+<p>will produce</p>
+
+<pre><code>LaTeX [1] is a document preparation system for the TeX [2] typesetting program.
+</code></pre>
+
+<p>Trong ví dụ trên, <code>[1]</code> và <code>[2]</code> là các trích dẫn. Tài liệu tham khảo tương ứng sẽ được để trong phần <code>\bibliography{}</code>. Nhiều trích dẫn liên kế có thể được gom lại và liệt kê chung trong một cặp dấu ngoặc vuông như sau <code>[6, 4, 5, 22, 27, 29]</code>.</p>
+
+<p>Mặc định trong trường hợp nhiều trích dẫn, LaTeX không xếp thứ tự và không thu gọn cho dễ nhìn. Nếu muốn thu gọn, ví dụ như <code>[4–6, 22, 27, 29]</code> thì có thể dùng <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/natbib.html">natbib</a> hoặc <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/cite">cite</a>.</p>
+
+<p>Hãy đặt những dòng sau ở phần đầu file <code>.tex</code>, trước <code>\begin{document}</code>.</p>
+
+<pre><code class="language-latex">\usepackage{cite}
+</code></pre>
+
+<p>hoặc</p>
+
+<pre><code class="language-latex">\usepackage[sort&amp;compress]{natbib}
+</code></pre>
+
+<p>Sau đó, chạy latex/pdflatex và bibtex như bình thường. Dạng trích dẫn trong bài sẽ được sắp xếp và nhóm lại hợp lý và dễ nhìn hơn. Gói <code>natbib</code> có một đặc điểm là tương thích tốt với gói <code>hyperref</code> (dùng để tạo các liên kết trong tài liệu pdf). Do đó, nếu cần dùng <a href="http://tug.ctan.org/pkg/hyperref">hyperref</a> thì bạn nên sử dụng <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/natbib.html">natbib</a>.</p>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="https://htr3n.github.io/blog/tinh-chat-hai-mat/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="/blog">blog</a></span>
+  
+  
+  <span><a class="menu-item" href="https://htr3n.github.io/blog/khen-ngoi-con-cai/"> | next &gt;</a></span>
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="https://htr3n.github.io/">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2018. Huy Tran. <a href="http://creativecommons.org/licenses/by/3.0/">Some Rights Reserved</a>.</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
