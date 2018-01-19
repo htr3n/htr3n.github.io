@@ -108,8 +108,11 @@ iPhone sẽ chạy hệ điều hành Mac OS X và sẽ có sự liên thông t�
     
     if (window.location.hostname == "localhost")
         return;
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'https-htr3n-github-io.disqus.com';
+    var dsq = document.createElement('script'); 
+    dsq.type = 'text/javascript'; 
+    dsq.async = true;
+    
+    var disqus_shortname = 'https-htr3n-github-io';
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
