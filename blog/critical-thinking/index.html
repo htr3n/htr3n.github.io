@@ -92,7 +92,7 @@
 <p><strong><em>Khác biệt lớn nhất là sinh viên được quyền chất vấn giáo sư. Sinh viên không bị bắt buộc phải theo ý kiến của bất cứ ai, có thể có luận điểm của riêng mình chừng nào anh bảo vệ được luận điểm ấy</em></strong></p>
 </blockquote>
 
-<p>Đúng là phải như thế. Ở cấp đại học, một sinh viên nên tập luyện cho mình thói quen đừng quá tin tưởng tuyệt đối vào sách vở hoặc lời thầy giáo. Điều đó có nghĩa là với một luận điểm nào đó cũng nên tiếp tục đặt những câu hỏi để xem xét mọi khía cạnh, e.g.: liệu luận điểm này có còn đúng khi thay đổi chỗ này chỗ kia, v.v. Những câu hỏi này có thể tự biện giải bằng hiểu biết của mình hoặc thảo luận với bạn bè, giáo sư. Việc bất đồng quan điểm là chuyện bình thường và mỗi người có thể đặt luận điểm riêng vào các cuộc tranh luận.</p>
+<p>Đúng là phải như thế. Ở cấp đại học, một sinh viên nên tập luyện cho mình thói quen đừng quá tin tưởng tuyệt đối vào sách vở hoặc lời thầy giáo. Điều đó có nghĩa là với một luận điểm nào đó cũng nên tiếp tục đặt những câu hỏi để xem xét mọi khía cạnh, e.g.: liệu luận điểm này có còn đúng khi thay đổi ngữ cảnh, v.v. Những câu hỏi này có thể tự biện giải bằng hiểu biết của mình hoặc thảo luận với bạn bè, giáo sư. Việc bất đồng quan điểm là chuyện bình thường và mỗi người có thể đặt luận điểm riêng vào các cuộc tranh luận.</p>
 
 <p>Thế giới thay đổi hằng ngày, một luận điểm hôm nay đúng nhưng ngày mai có thể không còn phù hợp. Để bắt kịp với những thay đổi đó thì cách giảng dạy như trên thật không tệ.</p>
 
@@ -102,27 +102,26 @@
 
 
 
-
 <div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
+<script>
+    var disqus_config = function () {
     
     
-    if (window.location.hostname == "localhost")
-        return;
-    var dsq = document.createElement('script'); 
-    dsq.type = 'text/javascript'; 
-    dsq.async = true;
     
-    var disqus_shortname = 'https-htr3n-github-io';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-htr3n-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 

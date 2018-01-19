@@ -99,10 +99,10 @@ LaTeX [1] is a document preparation system for the TeX [2] typesetting program. 
     
     <item>
       <title>Qui luật tiến hóa của tự nhiên</title>
-      <link>https://htr3n.github.io/blog/luat-cu-tru/</link>
+      <link>https://htr3n.github.io/blog/qui-luat-tien-hoa/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/luat-cu-tru/</guid>
+      <guid>https://htr3n.github.io/blog/qui-luat-tien-hoa/</guid>
       <description>Tôi trở thành nhà sinh vật học từ lúc nào nhỉ? Không đâu. Tự nhiên tôi thấy nhớ Darwin và qui luật tiến hóa của tự nhiên mà ông ta phát biểu. Tất cả là vì như thế này: Thời gian rồi chúi múi vào công việc nên lơ đễnh zụ cập nhật tin tức VN (chủ yếu cập nhật bằng &amp;ldquo;kênh&amp;rdquo; đặc biệt ;). Hôm nay lò dò lên Tuổi trẻ để refresh thì bắt gặp ngay cái tin nóng hổi &amp;ldquo;Quốc hội thảo luận dự án Luật cư trú: Sổ hộ khẩu hay thẻ cư trú?</description>
     </item>
     
@@ -142,7 +142,7 @@ Từ xưa, kênh thông tin quan trọng trên net có lẽ là từ các newsgr
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/blog/latex-tv/</guid>
-      <description>LaTeX được yêu thích không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng NIX và Mac (non-MS). Những tính năng của (La)TeX có thể tham khảo ở [2]. Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án VnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ [4], dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX [9].</description>
+      <description>LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án VnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX.</description>
     </item>
     
     <item>
@@ -160,7 +160,7 @@ Từ xưa, kênh thông tin quan trọng trên net có lẽ là từ các newsgr
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/blog/iphone/</guid>
-      <description>Tại Macworld Expo 2007, từ 14-18 tháng 1 ở San Francisco, Apple CEO Steve Jobs đã vén bức màn bí mật về thiết bị điện thoại &amp;ldquo;siêu thông minh&amp;rdquo; Apple iPhone.
+      <description>Tại Macworld Expo 2007 (14-18 tháng 1, 2007) ở San Francisco, CA, Steve Jobs đã vén bức màn bí mật về thiết bị điện thoại &amp;ldquo;siêu thông minh&amp;rdquo; Apple iPhone.
 Với phong cách trình diễn hấp dẫn người nghe vốn có, Steve minh họa điểm sáng tạo độc đáo mà không điện thoại nào hiện tại có được. Đó là sử dụng touch-screen và điều khiển hoàn toàn bằng ngón tay giống như iPod, không có bàn phím thật (physical).</description>
     </item>
     
