@@ -47,16 +47,16 @@
 </header>
 <section id="category-pane" class="row meta">
   
-  <div class="col-md-6">
+  <div class="col-sm-12 col-md-12">
     <h6 class="text-left meta">
         PUBLISHED ON DEC 25, 2008 
       
       
       
-      —
+      in
       
       
-      <a class="meta" href="/categories/">🇻🇳</a>
+      <a class="meta" href="/categories/vn">VN</a>
       
       
       
@@ -64,21 +64,18 @@
   </div>
   
   
-  <div class="col-md-6">
-    <h6 class="text-right meta">
+  <div class="col-sm-12 col-md-12">
+    <h6 class="text-left meta">
       
       
       
-      TAGS:
       
       
-      <a class="meta" href="/tags/tex">TEX</a>, 
+      <a class="meta" href="/tags/tex">#TEX</a> 
       
-      <a class="meta" href="/tags/unicode">UNICODE</a>, 
+      <a class="meta" href="/tags/unicode">#UNICODE</a> 
       
-      <a class="meta" href="/tags/utf-8">UTF-8</a>, 
-      
-      <a class="meta" href="/tags/vietnamese">VIETNAMESE</a>
+      <a class="meta" href="/tags/vietnamese">#VIETNAMESE</a>
       
       
       
@@ -90,9 +87,9 @@
   <div class="col-md-12 text-justify content">
     
 
-<p><a href="http://www.ctan.org">LaTeX</a> được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án <a href="http://vntex.sourceforge.net">VnTeX</a> hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án <a href="http://omega.enstb.org">Omega</a> định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX.</p>
+<p><a href="http://www.ctan.org">LaTeX</a> được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án <a href="http://vntex.sourceforge.net">vnTeX</a> hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án <a href="http://omega.enstb.org">Omega</a> định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX.</p>
 
-<p>Mặc dù có nhiều cách tạo tài liệu LaTeX tiếng Việt, nhưng hiện tại việc sử dụng mã Unicode là xu hướng trội hơn bởi các lý do là đa số các hệ thống máy tính hiện tại đều có font Unicode nhưng chưa chắc có các font như VNI, TCVN, BKHCM, v.v&hellip; Sử dụng mã Unicode không những hỗ trợ soạn tài liệu tiếng Việt mà còn các tài liệu đa ngữ. Trong phạm vi bài viết này, tác giả sẽ trình bày các bước để soạn một tài liệu (La)TeX tiếng Việt Unicode dựa theo gói vnTeX (có đóng gói trong các bản phân phối (La)TeX phổ biến như <a href="http://www.miktex.org">MikTeX</a>, <a href="https://www.tug.org/texlive">TeXLive</a>). Những bước này dựa vào <a href="http://www.fedu.uec.ac.jp/~vuhung/linux/viet-jp-cjk">bài này</a> và bổ sung thêm các phần về cài đặt LaTeX, bộ gõ và trình soạn thảo tiếng Việt Unicode.</p>
+<p>Mặc dù có nhiều cách tạo tài liệu LaTeX tiếng Việt, nhưng hiện tại việc sử dụng mã Unicode là xu hướng trội hơn bởi các lý do là đa số các hệ thống máy tính hiện tại đều có font Unicode nhưng chưa chắc có các font như vnI, TCvn, BKHCM, v.v&hellip; Sử dụng mã Unicode không những hỗ trợ soạn tài liệu tiếng Việt mà còn các tài liệu đa ngữ. Trong phạm vi bài viết này, tác giả sẽ trình bày các bước để soạn một tài liệu (La)TeX tiếng Việt Unicode dựa theo gói vnTeX (có đóng gói trong các bản phân phối (La)TeX phổ biến như <a href="http://www.miktex.org">MikTeX</a>, <a href="https://www.tug.org/texlive">TeXLive</a>). Những bước này dựa vào <a href="http://www.fedu.uec.ac.jp/~vuhung/linux/viet-jp-cjk">bài này</a> và bổ sung thêm các phần về cài đặt LaTeX, bộ gõ và trình soạn thảo tiếng Việt Unicode.</p>
 
 <h2 id="phần-1-windows">Phần 1: Windows</h2>
 
@@ -133,7 +130,7 @@
 
 <p>Ngoài ra, nếu bạn sử dụng môi trường Eclipse thì có thể soạn LaTeX bằng gói plugin <a href="http://texlipse.sourceforge.net">TeXclipse</a> khá mạnh và thuận tiện, không phụ thuộc hệ điều hành, chỉ cần có JRE (Java Runtime Environment). Khi soạn thảo, bạn nhớ chỉ định encoding cho file <code>.tex</code> là <code>UTF-8</code> trong Eclipse thì có thể soạn thảo tiếng Việt với Texclipse.</p>
 
-<p>Để gõ được tiếng Việt trên Windows thì bạn cần thêm trình bộ gõ, chẳng hạn <a href="http://unikey.sf.net">Unikey</a>, hoàn toàn miễn phí, gọn nhẹ và chạy ổn định. Unikey hỗ trợ khá nhiều bảng mã như TCVN, VNI, BKHCM, Unicode,etc. và hỗ trợ các kiểu gõ quen thuộc Telex, VNI, hoặc tốc ký.</p>
+<p>Để gõ được tiếng Việt trên Windows thì bạn cần thêm trình bộ gõ, chẳng hạn <a href="http://unikey.sf.net">Unikey</a>, hoàn toàn miễn phí, gọn nhẹ và chạy ổn định. Unikey hỗ trợ khá nhiều bảng mã như TCvn, vnI, BKHCM, Unicode,etc. và hỗ trợ các kiểu gõ quen thuộc Telex, vnI, hoặc tốc ký.</p>
 
 <h3 id="4-tạo-tài-liệu-latex-tiếng-việt">4. Tạo tài liệu LaTeX tiếng Việt</h3>
 

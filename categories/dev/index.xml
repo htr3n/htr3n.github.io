@@ -6,10 +6,19 @@
     <description>Recent content in Dev on htr3n</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jan 2018 17:39:00 +0700</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LaraMod - Modularised Laravel 5.5</title>
+      <link>https://htr3n.github.io/blog/laramod/</link>
+      <pubDate>Fri, 19 Jan 2018 17:39:00 +0700</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/laramod/</guid>
+      <description>Introduction Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel, 5.5.x, imposes a conventional project structure that is well documented here. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&amp;rsquo;s.</description>
+    </item>
     
     <item>
       <title>Setting up Apache httpd 2.4 and PHP 7 in macOS</title>

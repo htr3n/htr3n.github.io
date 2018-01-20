@@ -256,6 +256,6 @@ header.title
 }
 
 code {
-	font-family: 'Roboto Mono', monospace;
+	font-family: 'Operator Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono',monospace;
 	font-size: 0.8em;
 }

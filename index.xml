@@ -6,10 +6,19 @@
     <description>Recent content on htr3n</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 18 Jan 2018 16:07:46 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jan 2018 17:39:00 +0700</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LaraMod - Modularised Laravel 5.5</title>
+      <link>https://htr3n.github.io/blog/laramod/</link>
+      <pubDate>Fri, 19 Jan 2018 17:39:00 +0700</pubDate>
+      
+      <guid>https://htr3n.github.io/blog/laramod/</guid>
+      <description>Introduction Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel, 5.5.x, imposes a conventional project structure that is well documented here. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&amp;rsquo;s.</description>
+    </item>
     
     <item>
       <title>Quick Thought 2</title>
@@ -85,7 +94,7 @@ LaTeX [1] is a document preparation system for the TeX [2] typesetting program. 
       
       <guid>https://htr3n.github.io/blog/tinh-chat-hai-mat/</guid>
       <description>Người ta thường dùng câu nói &amp;ldquo;mọi cái huân chương luôn có hai mặt&amp;ldquo; để ám chỉ rằng sự việc nào cũng có những mặt đối lập nhau. Do đó, đứng trước một sự kiện (fact) hoặc một luận điểm (argument), việc lật tới lật lui hầu phát hiện các ngóc ngách (các mặt đối lập) nhiều khi mang đến những ý rất thú vị.
-Hôm trước, nhân đọc mấy bài báo về cái bắt tay giữa VN và Microsoft, cùng với những nhận định của mấy nhân vật chóp bu Microsoft như S.</description>
+Hôm trước, nhân đọc mấy bài báo về cái bắt tay giữa vn và Microsoft, cùng với những nhận định của mấy nhân vật chóp bu Microsoft như S.</description>
     </item>
     
     <item>
@@ -103,7 +112,7 @@ Hôm trước, nhân đọc mấy bài báo về cái bắt tay giữa VN và Mi
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/blog/qui-luat-tien-hoa/</guid>
-      <description>Tôi trở thành nhà sinh vật học từ lúc nào nhỉ? Không đâu. Tự nhiên tôi thấy nhớ Darwin và qui luật tiến hóa của tự nhiên mà ông ta phát biểu. Tất cả là vì như thế này: Thời gian rồi chúi múi vào công việc nên lơ đễnh zụ cập nhật tin tức VN (chủ yếu cập nhật bằng &amp;ldquo;kênh&amp;rdquo; đặc biệt ;). Hôm nay lò dò lên Tuổi trẻ để refresh thì bắt gặp ngay cái tin nóng hổi &amp;ldquo;Quốc hội thảo luận dự án Luật cư trú: Sổ hộ khẩu hay thẻ cư trú?</description>
+      <description>Tôi trở thành nhà sinh vật học từ lúc nào nhỉ? Không đâu. Tự nhiên tôi thấy nhớ Darwin và qui luật tiến hóa của tự nhiên mà ông ta phát biểu. Tất cả là vì như thế này: Thời gian rồi chúi múi vào công việc nên lơ đễnh zụ cập nhật tin tức vn (chủ yếu cập nhật bằng &amp;ldquo;kênh&amp;rdquo; đặc biệt ;). Hôm nay lò dò lên Tuổi trẻ để refresh thì bắt gặp ngay cái tin nóng hổi &amp;ldquo;Quốc hội thảo luận dự án Luật cư trú: Sổ hộ khẩu hay thẻ cư trú?</description>
     </item>
     
     <item>
@@ -112,7 +121,7 @@ Hôm trước, nhân đọc mấy bài báo về cái bắt tay giữa VN và Mi
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/blog/quyen-im-lang/</guid>
-      <description>Đặt gạch lâu rồi, mà bị deadline của mấy bài báo &amp;ldquo;dí&amp;rdquo;&amp;rdquo; cháy mông nên giờ mới viết được mấy dòng chia sẻ vài suy nghĩ cá nhân về sự kiện &amp;ldquo;quyền im lặng&amp;rdquo; (sau đây là QIM ;) đang gây tranh luận trong và ngoài cái &amp;ldquo;phòng ngủ lớn nhất VN&amp;rdquo; (có khả năng &amp;ldquo;lớn nhất thế giới&amp;rdquo;, sau đây gọi tăt là QH). Có rất nhiều điểm đáng bàn về sự kiện đó, trong đó mình thấy một tín hiệu rất đáng mừng là mối quan tâm đến chính trị đang lớn dần và rõ ràng hơn.</description>
+      <description>Đặt gạch lâu rồi, mà bị deadline của mấy bài báo &amp;ldquo;dí&amp;rdquo;&amp;rdquo; cháy mông nên giờ mới viết được mấy dòng chia sẻ vài suy nghĩ cá nhân về sự kiện &amp;ldquo;quyền im lặng&amp;rdquo; (sau đây là QIM ;) đang gây tranh luận trong và ngoài cái &amp;ldquo;phòng ngủ lớn nhất vn&amp;rdquo; (có khả năng &amp;ldquo;lớn nhất thế giới&amp;rdquo;, sau đây gọi tăt là QH). Có rất nhiều điểm đáng bàn về sự kiện đó, trong đó mình thấy một tín hiệu rất đáng mừng là mối quan tâm đến chính trị đang lớn dần và rõ ràng hơn.</description>
     </item>
     
     <item>
@@ -142,11 +151,11 @@ Từ xưa, kênh thông tin quan trọng trên net có lẽ là từ các newsgr
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/blog/latex-tv/</guid>
-      <description>LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án VnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX.</description>
+      <description>LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án vnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX.</description>
     </item>
     
     <item>
-      <title>Bách khoa toàn ... sạn </title>
+      <title>Bách khoa toàn ... sạn</title>
       <link>https://htr3n.github.io/blog/bach-khoa-toan-san/</link>
       <pubDate>Fri, 27 Jul 2007 00:00:00 +0000</pubDate>
       
@@ -155,7 +164,7 @@ Từ xưa, kênh thông tin quan trọng trên net có lẽ là từ các newsgr
     </item>
     
     <item>
-      <title>iPhone</title>
+      <title>iPhone &amp; Apple</title>
       <link>https://htr3n.github.io/blog/iphone/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
