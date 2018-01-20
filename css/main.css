@@ -16,7 +16,6 @@ a:visited,
 a:link
 {
     text-decoration: none;
-
     color: #526d7a;
 }
 body
@@ -57,15 +56,21 @@ html
 .category
 {
     color: #966 !important;
+    font-weight: 500;
 }
 .tag
+{
+    color: #888 !important;
+    font-weight: 500;
+}
+.readingtime
 {
     color: #333 !important;
 }
 .container
 {
     overflow: auto;
-    max-width: 800px;
+    max-width: 860px;
     padding: 0 15px;
 }
 .content
@@ -140,7 +145,7 @@ div.content
 .intro
 {
     font-family: 'Roboto Slab', serif;
-    font-weight: 200;
+    font-weight: 300;
     color: #777;
 }
 h3.intro
@@ -194,7 +199,7 @@ h3.intro
 {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
-    font-weight: 200;
+    font-weight: 300;
 
     color: #bbb;
 }
@@ -206,7 +211,7 @@ h6.meta
 {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
-    font-weight: 200;
+    font-weight: 300;
 
     color: #bbb;
 }
@@ -256,6 +261,6 @@ header.title
 }
 
 code {
-	font-family: 'Operator Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono',monospace;
-	font-size: 0.8em;
+	font-family: 'Operator Mono', 'Fira Code', 'Source Code Pro', Consolas, 'Andale Mono',monospace !important;
+	font-size: 0.9em;
 }
