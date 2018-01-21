@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vn on htr3n</title>
+    <title>Vn on htr3n&#39;s blog</title>
     <link>https://htr3n.github.io/categories/vn/</link>
-    <description>Recent content in Vn on htr3n</description>
+    <description>Recent content in Vn on htr3n&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en</language>
     <lastBuildDate>Sun, 07 Aug 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/categories/vn/index.xml" rel="self" type="application/rss+xml" />
@@ -13,29 +13,29 @@
     
     <item>
       <title>Cách xưng hô họ hàng (st)</title>
-      <link>https://htr3n.github.io/blog/2016-08-07-xung-ho/</link>
+      <link>https://htr3n.github.io/posts/2016-08-07-xung-ho/</link>
       <pubDate>Sun, 07 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/2016-08-07-xung-ho/</guid>
+      <guid>https://htr3n.github.io/posts/2016-08-07-xung-ho/</guid>
       <description>Bài sưu tầm về cách xưng hô với họ hàng nội ngoại.
 Với họ nội (tức là họ hàng bên cha)  Các anh của ba và vợ của họ = bác Các em trai của ba = chú. Vợ của em trai của ba = thím. Các em gái, chị gái của = cô. Chồng của em gái, chị gái của ba = dượng.  Với họ ngoại (tức họ hàng bên mẹ)  Các anh, em trai của mẹ = cậu.</description>
     </item>
     
     <item>
       <title>Khen con (st)</title>
-      <link>https://htr3n.github.io/blog/khen-con/</link>
+      <link>https://htr3n.github.io/posts/2015-07-01-khen-con/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/khen-con/</guid>
+      <guid>https://htr3n.github.io/posts/2015-07-01-khen-con/</guid>
       <description>Thói Quen Khen Ngợi Con Giỏi Hay Khả Năng Sẵn Có Của Con Mình để thấy không chỉ cha mẹ Việt mà cả cha mẹ người nước ngoài nữa thường hay con &amp;ldquo;giỏi quá&amp;rdquo; &amp;ldquo;thông minh quá&amp;rdquo; &amp;ldquo;sao con làm nhanh vậy&amp;rdquo;. Mới hôm qua thôi, mình để ý có một bà mẹ đố đứa con hơn 2 tuổi của mình &amp;ldquo;con chó kêu như thế nào&amp;rdquo;, đứa bé trả lời &amp;ldquo;gâu,gâu&amp;rdquo;, thế là bà mẹ khen luôn &amp;ldquo;giỏi quá&amp;rdquo;.</description>
     </item>
     
     <item>
-      <title>Sắp xếp trích dẫn (citations) theo thứ tự và thu gọn</title>
-      <link>https://htr3n.github.io/blog/tex-citations/</link>
+      <title>Sắp xếp trích dẫn (citations)</title>
+      <link>https://htr3n.github.io/posts/2009-01-15-tex-citations/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/tex-citations/</guid>
+      <guid>https://htr3n.github.io/posts/2009-01-15-tex-citations/</guid>
       <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng.
 \LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.  will produce
 LaTeX [1] is a document preparation system for the TeX [2] typesetting program.  Trong ví dụ trên, [1] và [2] là các trích dẫn. Tài liệu tham khảo tương ứng sẽ được để trong phần \bibliography{}.</description>
@@ -43,57 +43,57 @@ LaTeX [1] is a document preparation system for the TeX [2] typesetting program. 
     
     <item>
       <title>Tính chất hai mặt của một vấn đề</title>
-      <link>https://htr3n.github.io/blog/2009-01-15-tinh-chat-hai-mat/</link>
+      <link>https://htr3n.github.io/posts/2009-01-15-tinh-chat-hai-mat/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/2009-01-15-tinh-chat-hai-mat/</guid>
+      <guid>https://htr3n.github.io/posts/2009-01-15-tinh-chat-hai-mat/</guid>
       <description>Người ta thường dùng câu nói &amp;ldquo;mọi cái huân chương luôn có hai mặt&amp;ldquo; để ám chỉ rằng sự việc nào cũng có những mặt đối lập nhau. Do đó, đứng trước một sự kiện (fact) hoặc một luận điểm (argument), việc lật tới lật lui hầu phát hiện các ngóc ngách (các mặt đối lập) nhiều khi mang đến những ý rất thú vị.
 Hôm trước, nhân đọc mấy bài báo về cái bắt tay giữa vn và Microsoft, cùng với những nhận định của mấy nhân vật chóp bu Microsoft như S.</description>
     </item>
     
     <item>
       <title>Du học sinh - chuyện nên vui hay buồn</title>
-      <link>https://htr3n.github.io/blog/duhocsinh/</link>
+      <link>https://htr3n.github.io/posts/2008-12-27-duhocsinh/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/duhocsinh/</guid>
+      <guid>https://htr3n.github.io/posts/2008-12-27-duhocsinh/</guid>
       <description>Hôm nay qua mailling list nhận được link về bài báo này, đề ngày 09/12/06, nhưng tôi nhớ là có một bài báo tương tự trên báo Thanh niên mùa Noel năm ngoái. Bài báo trên báo Thanh niên đã biến mất (có lẽ vì vấp phải sự phản đối từ các du học sinh và cả đọc giả trong nước), giờ lại xuất hiện ở Vietnamnet, với chú thích là &amp;ldquo;Theo Thông tin thương mại&amp;rdquo;, tức là từ một nguồn khác nữa.</description>
     </item>
     
     <item>
       <title>Qui luật tiến hóa của tự nhiên</title>
-      <link>https://htr3n.github.io/blog/qui-luat-tien-hoa/</link>
+      <link>https://htr3n.github.io/posts/2008-12-27-qui-luat-tien-hoa/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/qui-luat-tien-hoa/</guid>
+      <guid>https://htr3n.github.io/posts/2008-12-27-qui-luat-tien-hoa/</guid>
       <description>Tôi trở thành nhà sinh vật học từ lúc nào nhỉ? Không đâu. Tự nhiên tôi thấy nhớ Darwin và qui luật tiến hóa của tự nhiên mà ông ta phát biểu. Tất cả là vì như thế này: Thời gian rồi chúi múi vào công việc nên lơ đễnh zụ cập nhật tin tức vn (chủ yếu cập nhật bằng &amp;ldquo;kênh&amp;rdquo; đặc biệt ;). Hôm nay lò dò lên Tuổi trẻ để refresh thì bắt gặp ngay cái tin nóng hổi &amp;ldquo;Quốc hội thảo luận dự án Luật cư trú: Sổ hộ khẩu hay thẻ cư trú?</description>
     </item>
     
     <item>
       <title>Quyền và nghĩa vụ im lặng</title>
-      <link>https://htr3n.github.io/blog/quyen-im-lang/</link>
+      <link>https://htr3n.github.io/posts/2008-12-27-quyen-im-lang/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/quyen-im-lang/</guid>
+      <guid>https://htr3n.github.io/posts/2008-12-27-quyen-im-lang/</guid>
       <description>Đặt gạch lâu rồi, mà bị deadline của mấy bài báo &amp;ldquo;dí&amp;rdquo;&amp;rdquo; cháy mông nên giờ mới viết được mấy dòng chia sẻ vài suy nghĩ cá nhân về sự kiện &amp;ldquo;quyền im lặng&amp;rdquo; (sau đây là QIM ;) đang gây tranh luận trong và ngoài cái &amp;ldquo;phòng ngủ lớn nhất vn&amp;rdquo; (có khả năng &amp;ldquo;lớn nhất thế giới&amp;rdquo;, sau đây gọi tăt là QH). Có rất nhiều điểm đáng bàn về sự kiện đó, trong đó mình thấy một tín hiệu rất đáng mừng là mối quan tâm đến chính trị đang lớn dần và rõ ràng hơn.</description>
     </item>
     
     <item>
       <title>Từ niềm tin tuyệt đối đến critical thinking</title>
-      <link>https://htr3n.github.io/blog/critical-thinking/</link>
+      <link>https://htr3n.github.io/posts/2008-12-27-critical-thinking/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/critical-thinking/</guid>
+      <guid>https://htr3n.github.io/posts/2008-12-27-critical-thinking/</guid>
       <description>Trên Tuổi trẻ Online, tôi đọc bài báo này của một du học sinh, trong đó cung cấp cho ta góc nhìn về giáo dục đại học ở Mỹ. Ý kiến mà tôi rất đồng ý là:
  Khác biệt lớn nhất là sinh viên được quyền chất vấn giáo sư. Sinh viên không bị bắt buộc phải theo ý kiến của bất cứ ai, có thể có luận điểm của riêng mình chừng nào anh bảo vệ được luận điểm ấy</description>
     </item>
     
     <item>
       <title>Một cách &#34;đào mỏ&#34;</title>
-      <link>https://htr3n.github.io/blog/mot-cach-dao-mo/</link>
+      <link>https://htr3n.github.io/posts/2008-12-25-mot-cach-dao-mo/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/mot-cach-dao-mo/</guid>
+      <guid>https://htr3n.github.io/posts/2008-12-25-mot-cach-dao-mo/</guid>
       <description>(This post has been migrated from Yahoo360 to WP and then Hugo)
  Đa số chúng ta đều biết rằng Internet cung cấp một kho thông tin khổng lồ quí giá, tốc độ chuyển thông tin nhanh, v.v&amp;hellip; Điều quan trọng là cách thức khai thác thông tin từ đó.
 Từ xưa, kênh thông tin quan trọng trên net có lẽ là từ các newsgroup và mailing list. Ngoài ra, các kênh instant messaging như IRC, IM cũng đóng vai trò quan trọng hình thành các cộng đồng ảo cũng như các kênh thông tin giá trị.</description>
@@ -101,38 +101,38 @@ Từ xưa, kênh thông tin quan trọng trên net có lẽ là từ các newsgr
     
     <item>
       <title>Soạn tài liệu TeX tiếng Việt (UTF-8)</title>
-      <link>https://htr3n.github.io/blog/latex-tv/</link>
+      <link>https://htr3n.github.io/posts/2008-12-25-latex-tv/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/latex-tv/</guid>
+      <guid>https://htr3n.github.io/posts/2008-12-25-latex-tv/</guid>
       <description>LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án vnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX.</description>
     </item>
     
     <item>
       <title>Bách khoa toàn ... sạn</title>
-      <link>https://htr3n.github.io/blog/bach-khoa-toan-san/</link>
+      <link>https://htr3n.github.io/posts/2007-07-27-bach-khoa-toan-san/</link>
       <pubDate>Fri, 27 Jul 2007 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/bach-khoa-toan-san/</guid>
+      <guid>https://htr3n.github.io/posts/2007-07-27-bach-khoa-toan-san/</guid>
       <description>Tình cờ đọc bài báo trên báo Lao động giới thiệu về bách khoa toàn thư online. Thằng tui hí hửng quá trời vì nhiều khi cũng cần tra cứu vài thứ mà hổng biết tìm ở đâu. Với tâm trạng đó, thằng tui sẵn sàng phớt lờ hạt sạn thứ nhất &amp;ndash; bài viết của báo LĐ (không hiểu anh chàng phóng viên này học cái gì mà viết nguiên văn vầy nè bà con: &amp;ldquo;&amp;hellip;Độ chính xác của những thông tin trên từ điển online đảm bảo độ chính xác vì đó là cuốn từ điển tri thức lớn nhất hiện nay.</description>
     </item>
     
     <item>
       <title>iPhone &amp; Apple</title>
-      <link>https://htr3n.github.io/blog/iphone/</link>
+      <link>https://htr3n.github.io/posts/2007-06-01-iphone/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/iphone/</guid>
+      <guid>https://htr3n.github.io/posts/2007-06-01-iphone/</guid>
       <description>Tại Macworld Expo 2007 (14-18 tháng 1, 2007) ở San Francisco, CA, Steve Jobs đã vén bức màn bí mật về thiết bị điện thoại &amp;ldquo;siêu thông minh&amp;rdquo; Apple iPhone.
 Với phong cách trình diễn hấp dẫn người nghe vốn có, Steve minh họa điểm sáng tạo độc đáo mà không điện thoại nào hiện tại có được. Đó là sử dụng touch-screen và điều khiển hoàn toàn bằng ngón tay giống như iPod, không có bàn phím thật (physical).</description>
     </item>
     
     <item>
       <title>Kinh nghiệm với các dòng laptops</title>
-      <link>https://htr3n.github.io/blog/laptop/</link>
+      <link>https://htr3n.github.io/posts/2006-01-01-laptop/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/laptop/</guid>
+      <guid>https://htr3n.github.io/posts/2006-01-01-laptop/</guid>
       <description>Laptop Mình có một vài kinh nghiệm mua/dùng laptop, xin chia sẻ cùng bà con. Tới lúc này thì mình đã may mắn được dùng qua một số model laptop sau: Compaq Presario 2100, IBM Thinkpad T41, Sony VAIO V505B, IBM Thinkpad X31, HP 6310 (của người bạn nhờ cài đặt), Dell Latitude D620 (ngắm nghía định mua, nhưng sau lại thôi, chuyển sang MacBook). Kể ra không phải để khoe là mình giàu hoặc có nhiều laptop (vì thực chất là mình không giàu mà chỉ thích vọc các loại máy, và hơn nữa là hiện tại trong tay hổng có cái nào hết :D) mà những model đó mình có dịp biết qua nên chia sẻ một số kinh nghiệm liên quan:</description>
     </item>
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dev on htr3n</title>
+    <title>Dev on htr3n&#39;s blog</title>
     <link>https://htr3n.github.io/categories/dev/</link>
-    <description>Recent content in Dev on htr3n</description>
+    <description>Recent content in Dev on htr3n&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en</language>
     <lastBuildDate>Fri, 19 Jan 2018 17:39:00 +0700</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
@@ -13,19 +13,19 @@
     
     <item>
       <title>LaraMod - Modularised Laravel 5.5</title>
-      <link>https://htr3n.github.io/blog/laramod/</link>
+      <link>https://htr3n.github.io/posts/2018-01-19-laramod/</link>
       <pubDate>Fri, 19 Jan 2018 17:39:00 +0700</pubDate>
       
-      <guid>https://htr3n.github.io/blog/laramod/</guid>
+      <guid>https://htr3n.github.io/posts/2018-01-19-laramod/</guid>
       <description>Introduction Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel, 5.5.x, imposes a conventional project structure that is well documented here. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&amp;rsquo;s.</description>
     </item>
     
     <item>
-      <title>Setting up Apache httpd 2.4 and PHP 7 in macOS</title>
-      <link>https://htr3n.github.io/blog/mac-httpd-php/</link>
+      <title>Apache httpd 2.4 and PHP 7 in macOS</title>
+      <link>https://htr3n.github.io/posts/2017-09-25-mac-httpd-php/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/mac-httpd-php/</guid>
+      <guid>https://htr3n.github.io/posts/2017-09-25-mac-httpd-php/</guid>
       <description>Introduction Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development. Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles *AMP (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered bloated or a bit of overkill for the beginners like me ;).</description>
     </item>
     

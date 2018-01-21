@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Newsreader on htr3n</title>
+    <title>Newsreader on htr3n&#39;s blog</title>
     <link>https://htr3n.github.io/tags/newsreader/</link>
-    <description>Recent content in Newsreader on htr3n</description>
+    <description>Recent content in Newsreader on htr3n&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en</language>
     <lastBuildDate>Thu, 25 Dec 2008 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/tags/newsreader/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +13,10 @@
     
     <item>
       <title>Một cách &#34;đào mỏ&#34;</title>
-      <link>https://htr3n.github.io/blog/mot-cach-dao-mo/</link>
+      <link>https://htr3n.github.io/posts/2008-12-25-mot-cach-dao-mo/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/blog/mot-cach-dao-mo/</guid>
+      <guid>https://htr3n.github.io/posts/2008-12-25-mot-cach-dao-mo/</guid>
       <description>(This post has been migrated from Yahoo360 to WP and then Hugo)
  Đa số chúng ta đều biết rằng Internet cung cấp một kho thông tin khổng lồ quí giá, tốc độ chuyển thông tin nhanh, v.v&amp;hellip; Điều quan trọng là cách thức khai thác thông tin từ đó.
 Từ xưa, kênh thông tin quan trọng trên net có lẽ là từ các newsgroup và mailing list. Ngoài ra, các kênh instant messaging như IRC, IM cũng đóng vai trò quan trọng hình thành các cộng đồng ảo cũng như các kênh thông tin giá trị.</description>
