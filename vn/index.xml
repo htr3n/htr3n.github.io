@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vns on htr3n&#39;s blog</title>
+    <title>Posts in Vietnamese on htr3n&#39;s blog</title>
     <link>https://htr3n.github.io/vn/</link>
-    <description>Recent content in Vns on htr3n&#39;s blog</description>
+    <description>Recent content in Posts in Vietnamese on htr3n&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 07 Aug 2016 00:00:00 +0000</lastBuildDate>
@@ -37,7 +37,7 @@ Với họ nội (tức là họ hàng bên cha)  Các anh của ba và vợ c�
       
       <guid>https://htr3n.github.io/vn/2009-01-15-tex-citations/</guid>
       <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng.
-\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.  will produce
+\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program. will produce
 LaTeX [1] is a document preparation system for the TeX [2] typesetting program.  Trong ví dụ trên, [1] và [2] là các trích dẫn. Tài liệu tham khảo tương ứng sẽ được để trong phần \bibliography{}.</description>
     </item>
     

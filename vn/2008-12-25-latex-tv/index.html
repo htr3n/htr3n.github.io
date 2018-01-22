@@ -13,14 +13,11 @@
   
   <link rel="stylesheet" href="https://htr3n.github.io/css/print.css" media="print">
   <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
-  <link rel="stylesheet" href="https://htr3n.github.io/css/syntax.css">
   <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500">
   <link rel="stylesheet" href="https://htr3n.github.io/css/custom.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   
   
@@ -43,7 +40,7 @@
     </div>
     <div>
     <ul class="sidebar-nav">
-      <li><a href="/posts/"> POSTS </a></li><li><a href="https://github.com/htr3n"> CODE </a></li><li><a href="/about/"> ABOUT </a></li>
+      <li><a href="/posts/"> Posts </a></li><li><a href="https://github.com/htr3n"> Code </a></li><li><a href="/about/"> About </a></li>
     </ul>
     </div>
     <section class="row text-center">
@@ -170,69 +167,66 @@
 <h4 id="4-1-soạn-tài-liệu">4.1 Soạn tài liệu</h4>
 
 <p>Dùng bất kì một trình soạn thảo nào ở trên, soạn một file <code>tv.tex</code> như sau.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\documentclass</span>{article}
+<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc}
+<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}
+<span style="color:#66d9ef">\title</span>{Dùng tiếng Việt (UTF-8) trong LaTeX}
 
-<pre><code class="language-tex">\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[vietnam,english]{babel}
-\title{Dùng tiếng Việt (UTF-8) trong LaTeX}
+<span style="color:#66d9ef">\begin</span>{document} <span style="color:#66d9ef">\selectlanguage</span>{vietnam}
+<span style="color:#66d9ef">\maketitle</span> <span style="color:#66d9ef">\section</span>{Tiêu đề}
 
-\begin{document} \selectlanguage{vietnam}
-\maketitle \section{Tiêu đề}
-
-\subsection{Tiểu tiêu đề}
+<span style="color:#66d9ef">\subsection</span>{Tiểu tiêu đề}
 Một vài đoạn văn bản
-\end{document}
-</code></pre>
-
+<span style="color:#66d9ef">\end</span>{document}</code></pre></div>
 <p>Nội dung này có thể xem như là khung sườn cho các tài liệu LaTeX tiếng Việt của bạn, chú ý những phần sau:</p>
-
-<pre><code class="language-tex">\usepackage[utf8]{inputenc} 
-\usepackage[vietnam,english]{babel}
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc} 
+<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}</code></pre></div>
 <p>và</p>
-
-<pre><code class="language-tex">\selectlanguage{vietnam}
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\selectlanguage</span>{vietnam}</code></pre></div>
 <p>Như vậy, một tài liệu LaTeX tiếng Việt có sườn (template) đơn giản như sau:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\documentclass</span>{...}
+<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc}
+<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}
+<span style="color:#66d9ef">\title</span>{...}
 
-<pre><code class="language-tex">\documentclass{...}
-\usepackage[utf8]{inputenc}
-\usepackage[vietnam,english]{babel}
-\title{...}
-
-\begin{document}
-\selectlanguage{vietnam}
-\maketitle
+<span style="color:#66d9ef">\begin</span>{document}
+<span style="color:#66d9ef">\selectlanguage</span>{vietnam}
+<span style="color:#66d9ef">\maketitle</span>
 
 ...
 
-\end{document}
-</code></pre>
-
+<span style="color:#66d9ef">\end</span>{document}</code></pre></div>
 <h4 id="4-2-biên-dịch-và-tạo-tài-liệu-ps-hoặc-pdf">4.2 Biên dịch và tạo tài liệu PS hoặc PDF</h4>
 
 <p>Dùng các trình biên dịch như <code>latex</code> hoặc <code>pdflatex</code> để biên dịch tài liệu <code>tv.tex</code>.</p>
-
-<pre><code class="language-sh">latex tv.tex
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">latex tv.tex
 dvips tv.dvi
-ps2pdf tv.ps
-</code></pre>
-
+ps2pdf tv.ps</code></pre></div>
 <p>hoặc</p>
-
-<pre><code class="language-sh">pdflatex tv.tex
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pdflatex tv.tex</code></pre></div>
 <p>Kết quả tài liệu tiếng Việt sau khi biên dịch.</p>
 
 <p><img src="/img/latex-tv.jpg" alt="Kết quả văn bản tiếng Việt" /></p>
 
 </div>
+    </div>
+    <div class="footer">
+    
+  
+  
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-112764962-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
-<h2>Comments</h2>
-<div id="disqus_thread"></div>
+  
+  
+  
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
     
@@ -252,15 +246,7 @@ ps2pdf tv.ps
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-    
-    
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-112764962-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
+  
+  </div>
   </body>
 </html>

@@ -18,7 +18,7 @@
       
       <guid>https://htr3n.github.io/vn/2009-01-15-tex-citations/</guid>
       <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng.
-\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.  will produce
+\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program. will produce
 LaTeX [1] is a document preparation system for the TeX [2] typesetting program.  Trong ví dụ trên, [1] và [2] là các trích dẫn. Tài liệu tham khảo tương ứng sẽ được để trong phần \bibliography{}.</description>
     </item>
     

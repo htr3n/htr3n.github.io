@@ -101,6 +101,11 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/posts/</loc>
+    <lastmod>2018-01-20T10:02:00+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/categories/</loc>
     <priority>0</priority>
   </url>
@@ -262,9 +267,8 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-01-20T10:02:00+07:00</lastmod>
-    <priority>0</priority>
+    <loc>https://htr3n.github.io/vn/</loc>
+    <lastmod>2017-01-19T17:24:00+07:00</lastmod>
   </url>
   
   <url>
@@ -347,12 +351,6 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/vn/</loc>
-    <lastmod>2017-01-19T17:24:00+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/vn/</loc>
     <lastmod>2017-01-19T17:24:00+07:00</lastmod>
     <priority>0</priority>
   </url>
