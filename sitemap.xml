@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://htr3n.github.io/posts/hugo/</loc>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/posts/2018-01-19-laramod/</loc>
     <lastmod>2018-01-20T10:02:00+07:00</lastmod>
   </url>
@@ -101,8 +106,14 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/blog/</loc>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-01-20T10:02:00+07:00</lastmod>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -142,7 +153,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2018-01-20T10:02:00+07:00</lastmod>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -171,6 +182,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/golang/</loc>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/hp/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
@@ -179,6 +196,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/httpd/</loc>
     <lastmod>2018-01-19T09:20:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/hugo/</loc>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -197,6 +220,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/iphone/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/jekyll/</loc>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -290,6 +319,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/ruby/</loc>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/server/</loc>
     <lastmod>2018-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
@@ -304,6 +339,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/sony/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/static-site-generators/</loc>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -357,7 +398,7 @@
   
   <url>
     <loc>https://htr3n.github.io/</loc>
-    <lastmod>2018-01-20T10:02:00+07:00</lastmod>
+    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

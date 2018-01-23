@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>htr3n&#39;s blog</title>
+    <title>htr3n&#39;s</title>
     <link>https://htr3n.github.io/</link>
-    <description>Recent content on htr3n&#39;s blog</description>
+    <description>Recent content on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Jan 2018 17:39:00 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>First Experience with Hugo</title>
+      <link>https://htr3n.github.io/posts/hugo/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/posts/hugo/</guid>
+      <description>To commence my journey in software development, I have looked for a Web framework to build my personal blog. As I have started writing blog posts mainly using Markdown and plan to migrate other posts to Markdown too, it&amp;rsquo;s naturally obvious to go with built-in or first-class support for Markdown to minimize the migration effort.
+Thus far I do not foresee any great use of extensive backend storage and computation. Thus I narrow down my search to static site generators with two prominent candidates Jekyll and Hugo popping up, for instance, here, here, and here.</description>
+    </item>
     
     <item>
       <title>LaraMod - Modularised Laravel 5.5</title>
@@ -65,7 +75,7 @@ Với họ nội (tức là họ hàng bên cha)  Các anh của ba và vợ c�
       
       <guid>https://htr3n.github.io/vn/2009-01-15-tex-citations/</guid>
       <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng.
-\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program. will produce
+\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.  will produce
 LaTeX [1] is a document preparation system for the TeX [2] typesetting program.  Trong ví dụ trên, [1] và [2] là các trích dẫn. Tài liệu tham khảo tương ứng sẽ được để trong phần \bibliography{}.</description>
     </item>
     
