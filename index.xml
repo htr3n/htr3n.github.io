@@ -17,8 +17,8 @@
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/posts/2018-01-23-hugo/</guid>
-      <description>To commence my journey in software development, I have looked for a Web framework to build my personal blog. As I have started writing blog posts mainly using Markdown and plan to migrate other posts to Markdown too, it&amp;rsquo;s naturally obvious to go with built-in or first-class support for Markdown to minimize the migration effort.
-Thus far I did not foresee any great use of extensive backend storage and computation. Thus I narrowed down my search to static site generators with two prominent candidates Jekyll and Hugo popping up, for instance, here, here, and here.</description>
+      <description>To commence my journey in software development, I have looked for a Web framework to build this blog. I have started writing blog posts mainly using Markdown and plan to migrate other posts to Markdown too. Hence, it&amp;rsquo;s rather obvious to go with built-in or first-class support for Markdown to minimise the migration effort.
+Thus far I have not foreseen any great use of extensive backend storage and computation. So I narrowed down my search to static site generators with two prominent candidates Jekyll and Hugo popping up, for instance, here, here, and here.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ Thus far I did not foresee any great use of extensive backend storage and comput
       <pubDate>Fri, 19 Jan 2018 17:39:00 +0700</pubDate>
       
       <guid>https://htr3n.github.io/posts/2018-01-19-laramod/</guid>
-      <description>Introduction Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel, 5.5.x, imposes a conventional project structure that is well documented here. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&amp;rsquo;s.</description>
+      <description>Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel, 5.5.x, imposes a conventional project structure that is well documented here. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&amp;rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously.</description>
     </item>
     
     <item>
@@ -45,17 +45,7 @@ Thus far I did not foresee any great use of extensive backend storage and comput
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/posts/2017-09-25-mac-httpd-php/</guid>
-      <description>Introduction Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development. Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles *AMP (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered bloated or a bit of overkill for the beginners like me ;).</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://htr3n.github.io/about/</link>
-      <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/about/</guid>
-      <description>Huy Tran (aka htr3n) was PhD candidate then postdoc at Vienna University of Technology (2005-2009, 2009-2011) and a senior postdoc at both University of Vienna (2011-2017) in Austria. Before that, he was a lecturer at HCM City University of Technology, Vietnam (2002-2005).
-Since 2005, he had taken part in several European and national R&amp;amp;D projects such as WWTF CONTAINER, EU FP7 INDENICA, EU FP7 COMPAS, and SemBiz. His research interests are including software architecture, distributed systems, SOAs, event-driven architectures, model-driven engineering, and application of formal methods.</description>
+      <description>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development. Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles *AMP (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered bloated or a bit of overkill for the beginners like me ;).</description>
     </item>
     
     <item>
@@ -181,6 +171,16 @@ Với phong cách trình diễn hấp dẫn người nghe vốn có, Steve minh 
       
       <guid>https://htr3n.github.io/vn/2006-01-01-laptop/</guid>
       <description>Laptop Mình có một vài kinh nghiệm mua/dùng laptop, xin chia sẻ cùng bà con. Tới lúc này thì mình đã may mắn được dùng qua một số model laptop sau: Compaq Presario 2100, IBM Thinkpad T41, Sony VAIO V505B, IBM Thinkpad X31, HP 6310 (của người bạn nhờ cài đặt), Dell Latitude D620 (ngắm nghía định mua, nhưng sau lại thôi, chuyển sang MacBook). Kể ra không phải để khoe là mình giàu hoặc có nhiều laptop (vì thực chất là mình không giàu mà chỉ thích vọc các loại máy, và hơn nữa là hiện tại trong tay hổng có cái nào hết :D) mà những model đó mình có dịp biết qua nên chia sẻ một số kinh nghiệm liên quan:</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://htr3n.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/about/</guid>
+      <description>Huy Tran (aka htr3n) was PhD candidate then postdoc at Vienna University of Technology (2005-2009, 2009-2011) and a senior postdoc at both University of Vienna (2011-2017) in Austria. Before that, he was a lecturer at HCM City University of Technology, Vietnam (2002-2005).
+Since 2005, he had taken part in several European and national R&amp;amp;D projects such as WWTF CONTAINER, EU FP7 INDENICA, EU FP7 COMPAS, and SemBiz. His research interests are including software architecture, distributed systems, SOAs, event-driven architectures, model-driven engineering, and application of formal methods.</description>
     </item>
     
   </channel>
