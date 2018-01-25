@@ -13,19 +13,19 @@
     
     <item>
       <title>LaraMod - Modularised Laravel 5.5</title>
-      <link>https://htr3n.github.io/posts/2018-01-19-laramod/</link>
+      <link>https://htr3n.github.io/2018/01/laramod/</link>
       <pubDate>Fri, 19 Jan 2018 17:39:00 +0700</pubDate>
       
-      <guid>https://htr3n.github.io/posts/2018-01-19-laramod/</guid>
+      <guid>https://htr3n.github.io/2018/01/laramod/</guid>
       <description>Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel, 5.5.x, imposes a conventional project structure that is well documented here. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&amp;rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously.</description>
     </item>
     
     <item>
       <title>Apache httpd 2.4 and PHP 7 in macOS</title>
-      <link>https://htr3n.github.io/posts/2017-09-25-mac-httpd-php/</link>
+      <link>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/posts/2017-09-25-mac-httpd-php/</guid>
+      <guid>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</guid>
       <description>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development. Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles *AMP (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered bloated or a bit of overkill for the beginners like me ;).</description>
     </item>
     

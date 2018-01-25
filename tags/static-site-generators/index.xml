@@ -13,10 +13,10 @@
     
     <item>
       <title>First Experience with Hugo</title>
-      <link>https://htr3n.github.io/posts/2018-01-23-hugo/</link>
+      <link>https://htr3n.github.io/2018/01/first-experience-with-hugo/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/posts/2018-01-23-hugo/</guid>
+      <guid>https://htr3n.github.io/2018/01/first-experience-with-hugo/</guid>
       <description>To commence my journey in software development, I have looked for a Web framework to build this blog. I have started writing blog posts mainly using Markdown and plan to migrate other posts to Markdown too. Hence, it&amp;rsquo;s rather obvious to go with built-in or first-class support for Markdown to minimise the migration effort.
 Thus far I have not foreseen any great use of extensive backend storage and computation. So I narrowed down my search to static site generators with two prominent candidates Jekyll and Hugo popping up, for instance, here, here, and here.</description>
     </item>

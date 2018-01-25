@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+        <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="htr3n&#39;s blog :: technology, opinions, and rants about everything">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,rants,vietnamese">	
+<meta name="generator" content="Hugo 0.35-DEV" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Soạn tài liệu TeX tiếng Việt (Unicode) &middot; htr3n&#39;s</title>
+
+<link rel="stylesheet" href="https://htr3n.github.io/css/print.css" media="print">
+<link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
+<link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://htr3n.github.io/css/custom.css">
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.png">
+
+<link href="" rel="alternate" type="application/rss+xml" title="htr3n&#39;s" />
+
+	</head>
+    <body class=" ">
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="https://htr3n.github.io/"><h1 class="brand">htr3n&#39;s</h1></a>
+			 <img src="/img/avatar.png" alt="Author Image" class="img-circle headshot center"> 
+			<p class="lead">
+				 technology, thoughts, opinions, rants 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="https://github.com/htr3n/"> <span>Code</span></a>
+				</li>
+				<li>
+					<a href="/about/"> <span>About</span></a>
+				</li>
+				<li>
+					<a href="/vn/"> <span>🇻🇳 Tiếng Việt</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	<a href="https://twitter.com/htr3n"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/htr3n"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://bitbucket.org/hoanghuytran"><i class="fa fa-bitbucket fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fa fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p>&copy; 2018 htr3n. <br/>
+        <a href="http://creativecommons.org/licenses/by/3.0">Some Rights Reserved</a>. 
+        <br/>
+		<span class="poweredby">Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</span>
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Soạn tài liệu TeX tiếng Việt (Unicode)</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       Dec 12, 2008 
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="/categories/vn">VN</a>
+                
+            
+        
+      
+      
+      
+        
+        
+            <br/>
+                    
+            
+            <a class="meta" href="/tags/tex">#tex</a> 
+        
+            <a class="meta" href="/tags/unicode">#unicode</a> 
+        
+            <a class="meta" href="/tags/vietnamese">#vietnamese</a>
+        
+      
+      
+      </span>  
+  </div>    
+  
+  
+
+<p><a href="http://www.ctan.org">LaTeX</a> được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án <a href="http://vntex.sourceforge.net">vnTeX</a> hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án <a href="http://omega.enstb.org">Omega</a> định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX.</p>
+
+<p>Mặc dù có nhiều cách tạo tài liệu LaTeX tiếng Việt, nhưng hiện tại việc sử dụng mã Unicode là xu hướng trội hơn bởi các lý do là đa số các hệ thống máy tính hiện tại đều có font Unicode nhưng chưa chắc có các font như vnI, TCvn, BKHCM, v.v&hellip; Sử dụng mã Unicode không những hỗ trợ soạn tài liệu tiếng Việt mà còn các tài liệu đa ngữ. Trong phạm vi bài viết này, tác giả sẽ trình bày các bước để soạn một tài liệu (La)TeX tiếng Việt Unicode dựa theo gói vnTeX (có đóng gói trong các bản phân phối (La)TeX phổ biến như <a href="http://www.miktex.org">MikTeX</a>, <a href="https://www.tug.org/texlive">TeXLive</a>). Những bước này dựa vào <a href="http://www.fedu.uec.ac.jp/~vuhung/linux/viet-jp-cjk">bài này</a> và bổ sung thêm các phần về cài đặt LaTeX, bộ gõ và trình soạn thảo tiếng Việt Unicode.</p>
+
+<h2 id="phần-1-windows">Phần 1: Windows</h2>
+
+<h3 id="1-cài-đặt-latex">1. Cài đặt LaTeX</h3>
+
+<p>Tải gói MikTeX rồi cài đặt với những tính năng mặc định, giả sử cài MikTeX vào thư mục tạm gọi là <code>MIKTEKROOT</code>. Sau đó, thiết lập biến môi trường PATH trỏ đến thư mục <code>MIKTEKROOT\mixtek\bin</code> để bạn có thể dùng lệnh <code>latex</code> hoặc <code>pdflatex</code> tại bất kỳ cửa sổ lệnh (command prompt) nào. Sau bước này, chúng ta giả thiết là bạn đã có môi trường (La)TeX trên Windows.</p>
+
+<h3 id="2-chuẩn-bị-các-gói-hỗ-trợ-tiếng-việt-unicode">2. Chuẩn bị các gói hỗ trợ tiếng Việt Unicode</h3>
+
+<h4 id="2-1-cài-đặt-gói-vntex-vntex">2.1 Cài đặt gói vnTeX (vntex)</h4>
+
+<p>Sử dụng trình Package Manager (menu <code>Start/MikTeX/Browse Package</code>), sau đó chọn gói <code>vnTeX</code> để trình <strong>Package Manager</strong> tự tải về cài đặt.</p>
+
+<h4 id="2-2-cài-đặt-gói-unicode-ucs-hỗ-trợ-utf-8">2.2 Cài đặt gói Unicode (ucs) hỗ trợ UTF-8</h4>
+
+<ul>
+<li>Tải gói Unicode (ucs) ở địa chỉ: <a href="http://www.unruh.de/DniQ/latex/unicode">http://www.unruh.de/DniQ/latex/unicode</a></li>
+<li>Giải nén gói <code>unicode.zip</code></li>
+<li>Copy thư mục <code>usc</code> vừa giải nén vào <code>MIKTEXROOT\tex\latex</code></li>
+</ul>
+
+<h4 id="2-3-cập-nhật-các-gói-vừa-cài-đặt-cho-tex">2.3 Cập nhật các gói vừa cài đặt cho TeX</h4>
+
+<p>Cập nhật các gói trên bằng cách thực thi lệnh <code>mktexlsr</code> (hoặc <code>texhash</code>) ở dấu nhắc lệnh</p>
+
+<h3 id="3-soạn-thảo-tiếng-việt-unicode">3. Soạn thảo tiếng Việt Unicode</h3>
+
+<p>Bạn có thể soạn thảo LaTeX bằng một trong những trình soạn thảo hỗ trợ Unicode sau:</p>
+
+<ul>
+<li>Notepad</li>
+<li><a href="http://www.flos-freeware.ch/notepad2.html">Notepad2</a></li>
+<li><a href="http://notepad-plus.sourceforge.net">Notepad++</a></li>
+<li><a href="http://unired.sourceforge.net">UniRed</a></li>
+<li><a href="http://www.emeditor.com">EmEditor Text Editor (free edition)</a></li>
+<li><a href="http://www.ntu.edu.sg/home5/PG03053527/latexeditor">LaTeXEditor</a></li>
+</ul>
+
+<p>Ngoài ra, nếu bạn sử dụng môi trường Eclipse thì có thể soạn LaTeX bằng gói plugin <a href="http://texlipse.sourceforge.net">TeXclipse</a> khá mạnh và thuận tiện, không phụ thuộc hệ điều hành, chỉ cần có JRE (Java Runtime Environment). Khi soạn thảo, bạn nhớ chỉ định encoding cho file <code>.tex</code> là <code>UTF-8</code> trong Eclipse thì có thể soạn thảo tiếng Việt với Texclipse.</p>
+
+<p>Để gõ được tiếng Việt trên Windows thì bạn cần thêm trình bộ gõ, chẳng hạn <a href="http://unikey.sf.net">Unikey</a>, hoàn toàn miễn phí, gọn nhẹ và chạy ổn định. Unikey hỗ trợ khá nhiều bảng mã như TCvn, vnI, BKHCM, Unicode,etc. và hỗ trợ các kiểu gõ quen thuộc Telex, vnI, hoặc tốc ký.</p>
+
+<h3 id="4-tạo-tài-liệu-latex-tiếng-việt">4. Tạo tài liệu LaTeX tiếng Việt</h3>
+
+<h4 id="4-1-soạn-tài-liệu">4.1 Soạn tài liệu</h4>
+
+<p>Dùng bất kì một trình soạn thảo nào ở trên, soạn một file <code>tv.tex</code> như sau.</p>
+
+<pre><code class="language-tex">\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnam,english]{babel}
+\title{Dùng tiếng Việt (UTF-8) trong LaTeX}
+
+\begin{document} \selectlanguage{vietnam}
+\maketitle \section{Tiêu đề}
+
+\subsection{Tiểu tiêu đề}
+Một vài đoạn văn bản
+\end{document}
+</code></pre>
+
+<p>Nội dung này có thể xem như là khung sườn cho các tài liệu LaTeX tiếng Việt của bạn, chú ý những phần sau:</p>
+
+<pre><code class="language-tex">\usepackage[utf8]{inputenc} 
+\usepackage[vietnam,english]{babel}
+</code></pre>
+
+<p>và</p>
+
+<pre><code class="language-tex">\selectlanguage{vietnam}
+</code></pre>
+
+<p>Như vậy, một tài liệu LaTeX tiếng Việt có sườn (template) đơn giản như sau:</p>
+
+<pre><code class="language-tex">\documentclass{...}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnam,english]{babel}
+\title{...}
+
+\begin{document}
+\selectlanguage{vietnam}
+\maketitle
+
+...
+
+\end{document}
+</code></pre>
+
+<h4 id="4-2-biên-dịch-và-tạo-tài-liệu-ps-hoặc-pdf">4.2 Biên dịch và tạo tài liệu PS hoặc PDF</h4>
+
+<p>Dùng các trình biên dịch như <code>latex</code> hoặc <code>pdflatex</code> để biên dịch tài liệu <code>tv.tex</code>.</p>
+
+<pre><code class="language-sh">latex tv.tex
+dvips tv.dvi
+ps2pdf tv.ps
+</code></pre>
+
+<p>hoặc</p>
+
+<pre><code class="language-sh">pdflatex tv.tex
+</code></pre>
+
+<p>Kết quả tài liệu tiếng Việt sau khi biên dịch.</p>
+
+<p><img src="/img/latex-tv.jpg" alt="Kết quả văn bản tiếng Việt" /></p>
+
+</div>
+            <div class="footer">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'https-htr3n-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+            </div>
+        </div>
+        
+        
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-112764962-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+        
+    </body>
+</html>

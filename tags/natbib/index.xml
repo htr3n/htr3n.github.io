@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Sắp xếp trích dẫn (citations)</title>
-      <link>https://htr3n.github.io/vn/2009-01-15-tex-citations/</link>
+      <title>Sắp xếp trích dẫn (citations) trong (La)TeX</title>
+      <link>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/vn/2009-01-15-tex-citations/</guid>
+      <guid>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</guid>
       <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng.
 \LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.  will produce
 LaTeX [1] is a document preparation system for the TeX [2] typesetting program.  Trong ví dụ trên, [1] và [2] là các trích dẫn. Tài liệu tham khảo tương ứng sẽ được để trong phần \bibliography{}.</description>
