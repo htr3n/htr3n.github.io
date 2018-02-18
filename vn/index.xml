@@ -27,8 +27,9 @@
       <pubDate>Sun, 07 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2016/08/cach-xung-ho/</guid>
-      <description>Bài sưu tầm về cách xưng hô với họ hàng nội ngoại.
-Với họ nội (tức là họ hàng bên cha)  Các anh của ba và vợ của họ = bác Các em trai của ba = chú. Vợ của em trai của ba = thím. Các em gái, chị gái của = cô. Chồng của em gái, chị gái của ba = dượng.  Với họ ngoại (tức họ hàng bên mẹ)  Các anh, em trai của mẹ = cậu.</description>
+      <description>&lt;p&gt;Bài sưu tầm về cách xưng hô với họ hàng nội ngoại lưu lại đây thể tham khảo về sau.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,10 +47,9 @@ Với họ nội (tức là họ hàng bên cha)  Các anh của ba và vợ c�
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2013/08/transitional-words-st/</guid>
-      <description>Một số transitional words rất hữu dụng trong việc nối hoặc liên kết câu hoặc đoạn văn trong tiếng Anh. Để tránh sự lặp lại gây nhàm chán, các transitional words tương đương nên được dùng xen kẽ.
-Addition also, besides, furthermore, in addition, moreover, again
-Consequence accordingly, as a result, consequently, hence, otherwise, so then, therefore, thus, there upon
-Summarizing after all, all in all, all things considered, briefly, by and large, in any case, in any event, in brief, in conclusion, on the whole, in short, in summary, in the final analysis, in the long run, on balance, to sum up, to summarize, finally</description>
+      <description>&lt;p&gt;Một số transitional words rất hữu dụng trong việc nối hoặc liên kết câu hoặc đoạn văn trong tiếng Anh. Để tránh sự lặp lại gây nhàm chán, các transitional words tương đương nên được dùng xen kẽ.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,9 +58,9 @@ Summarizing after all, all in all, all things considered, briefly, by and large,
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</guid>
-      <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng.
-\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.  will produce
-LaTeX [1] is a document preparation system for the TeX [2] typesetting program.  Trong ví dụ trên, [1] và [2] là các trích dẫn. Tài liệu tham khảo tương ứng sẽ được để trong phần \bibliography{}.</description>
+      <description>&lt;p&gt;LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như &lt;code&gt;[1, 2]&lt;/code&gt; hoặc dạng chữ &lt;code&gt;[Lamport1994], [Einstein1905]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -69,8 +69,9 @@ LaTeX [1] is a document preparation system for the TeX [2] typesetting program. 
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2009/01/hai-mat-cua-mot-van-de/</guid>
-      <description>Người ta thường dùng câu nói &amp;ldquo;mọi cái huân chương luôn có hai mặt&amp;ldquo; để ám chỉ rằng sự việc nào cũng có những mặt đối lập nhau. Do đó, đứng trước một sự kiện (fact) hoặc một luận điểm (argument), việc lật tới lật lui hầu phát hiện các ngóc ngách (các mặt đối lập) nhiều khi mang đến những ý rất thú vị.
-Hôm trước, nhân đọc mấy bài báo về cái bắt tay giữa vn và Microsoft, cùng với những nhận định của mấy nhân vật chóp bu Microsoft như S.</description>
+      <description>&lt;p&gt;Người ta thường dùng câu nói &lt;a href=&#34;http://proverbhunter.com/proverb/every-medal-has-two-sides&#34;&gt;&amp;ldquo;&lt;em&gt;mọi cái huân chương luôn có hai mặt&lt;/em&gt;&amp;ldquo;&lt;/a&gt; để ám chỉ rằng sự việc nào cũng có những mặt đối lập nhau. Do đó, đứng trước một sự kiện (fact) hoặc một luận điểm (argument), việc lật tới lật lui hầu phát hiện các ngóc ngách (các mặt đối lập) nhiều khi mang đến những ý rất thú vị.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -163,7 +164,7 @@ Với phong cách trình diễn hấp dẫn người nghe vốn có, Steve minh 
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2006/01/kinh-nghiem-laptop/</guid>
-      <description>Laptop Mình có một vài kinh nghiệm mua/dùng laptop, xin chia sẻ cùng bà con. Tới lúc này thì mình đã may mắn được dùng qua một số model laptop sau: Compaq Presario 2100, IBM Thinkpad T41, Sony VAIO V505B, IBM Thinkpad X31, HP 6310 (của người bạn nhờ cài đặt), Dell Latitude D620 (ngắm nghía định mua, nhưng sau lại thôi, chuyển sang MacBook). Kể ra không phải để khoe là mình giàu hoặc có nhiều laptop (vì thực chất là mình không giàu mà chỉ thích vọc các loại máy, và hơn nữa là hiện tại trong tay hổng có cái nào hết :D) mà những model đó mình có dịp biết qua nên chia sẻ một số kinh nghiệm liên quan:</description>
+      <description>&lt;p&gt;Mình có một vài kinh nghiệm mua/dùng laptop, xin chia sẻ cùng bà con. Tới lúc này thì mình đã may mắn được dùng qua một số model laptop sau: Compaq Presario 2100, IBM Thinkpad T41, Sony VAIO V505B, IBM Thinkpad X31, HP 6310 (của người bạn nhờ cài đặt), Dell Latitude D620 (ngắm nghía định mua, nhưng sau lại thôi, chuyển sang MacBook). &lt;/p&gt;</description>
     </item>
     
   </channel>
