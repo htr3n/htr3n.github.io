@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://htr3n.github.io/2018/02/getting-started-with-webpack/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/2018/01/first-experience-with-hugo/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
   </url>
@@ -30,6 +35,11 @@
   <url>
     <loc>https://htr3n.github.io/2015/07/khen-con-st/</loc>
     <lastmod>2015-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/2013/08/transitional-words-st/</loc>
+    <lastmod>2013-08-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -122,7 +132,13 @@
   
   <url>
     <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/bundler/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -168,7 +184,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -187,6 +203,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/d%E1%BA%A1y-con/</loc>
     <lastmod>2015-07-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/english/</loc>
+    <lastmod>2013-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -251,6 +273,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/javascript/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/jekyll/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -295,6 +323,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/modularisation/</loc>
     <lastmod>2018-01-20T10:02:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/module/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -442,6 +476,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/transitional-words/</loc>
+    <lastmod>2013-08-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/tr%E1%BA%BB-em/</loc>
     <lastmod>2018-02-02T21:07:00+07:00</lastmod>
     <priority>0</priority>
@@ -472,8 +512,20 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/webpack/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/writing/</loc>
+    <lastmod>2013-08-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/</loc>
-    <lastmod>2018-01-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

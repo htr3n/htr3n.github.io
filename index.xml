@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Getting Started with Webpack</title>
+      <link>https://htr3n.github.io/2018/02/getting-started-with-webpack/</link>
+      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/02/getting-started-with-webpack/</guid>
+      <description>Per definition here, Webpack is a static module bundler for Web applications. It analyses and processes the input application and generates output bundles. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&amp;rsquo;ve started learning it.
+Source: https://webpack.github.io
+Main Concepts Configuration Webpack&amp;rsquo;s configuration is defined using a file webpack.config.js. It is essentially a JavaScript source file.</description>
+    </item>
     
     <item>
       <title>First Experience with Hugo</title>
@@ -66,6 +77,18 @@ Với họ nội (tức là họ hàng bên cha)  Các anh của ba và vợ c�
       
       <guid>https://htr3n.github.io/2015/07/khen-con-st/</guid>
       <description>Thói quen khen ngợi con giỏi hay khả năng sẵn có của con Mình để thấy không chỉ cha mẹ Việt mà cả cha mẹ người nước ngoài nữa thường hay con &amp;ldquo;giỏi quá&amp;rdquo; &amp;ldquo;thông minh quá&amp;rdquo; &amp;ldquo;sao con làm nhanh vậy&amp;rdquo;. Mới hôm qua thôi, mình để ý có một bà mẹ đố đứa con hơn 2 tuổi của mình &amp;ldquo;con chó kêu như thế nào&amp;rdquo;, đứa bé trả lời &amp;ldquo;gâu,gâu&amp;rdquo;, thế là bà mẹ khen luôn &amp;ldquo;giỏi quá&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Transitional Words (st)</title>
+      <link>https://htr3n.github.io/2013/08/transitional-words-st/</link>
+      <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2013/08/transitional-words-st/</guid>
+      <description>Một số transitional words rất hữu dụng trong việc nối hoặc liên kết câu hoặc đoạn văn trong tiếng Anh. Để tránh sự lặp lại gây nhàm chán, các transitional words tương đương nên được dùng xen kẽ.
+Addition also, besides, furthermore, in addition, moreover, again
+Consequence accordingly, as a result, consequently, hence, otherwise, so then, therefore, thus, there upon
+Summarizing after all, all in all, all things considered, briefly, by and large, in any case, in any event, in brief, in conclusion, on the whole, in short, in summary, in the final analysis, in the long run, on balance, to sum up, to summarize, finally</description>
     </item>
     
     <item>
@@ -188,8 +211,8 @@ Với phong cách trình diễn hấp dẫn người nghe vốn có, Steve minh 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/about/</guid>
-      <description>Huy Tran (aka htr3n) earned his doctorate degree (2005-2009) and started working as software design researcher at at Vienna University of Technology (2009-2011), then University of Vienna (2011-2017) in Austria. Before that, Huy was a lecturer at HCM City University of Technology, Vietnam (2002-2005).
-Since starting his research, he had taken part in several European and national R&amp;amp;D projects such as WWTF CONTAINER, EU FP7 INDENICA, EU FP7 COMPAS, and SemBiz.</description>
+      <description>Huy Tran (aka htr3n) earned his bachelor degree in 2002 and became a lecturer at HCM City University of Technology, Vietnam until October 2005. He got a scholarship from Austrian Federal Ministry of Education, Science, and Research and earned his Ph.D. in December 2009. Huy started working as software researcher at Vienna University of Technology (2009-2011) and University of Vienna (2011-2017) in Austria.
+Since starting his research in 2005, he had taken part in several European and national R&amp;amp;D projects such as WWTF CONTAINER, EU FP7 INDENICA, EU FP7 COMPAS, and SemBiz.</description>
     </item>
     
   </channel>
