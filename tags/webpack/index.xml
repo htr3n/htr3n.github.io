@@ -18,8 +18,8 @@
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/02/getting-started-with-webpack/</guid>
-      <description>&lt;p&gt;Per definition &lt;a href=&#34;https://webpack.js.org/concepts&#34;&gt;here&lt;/a&gt;, Webpack is a &lt;em&gt;static module bundler&lt;/em&gt; for Web applications. It analyses and processes the &lt;em&gt;input application&lt;/em&gt; and generates output &lt;em&gt;bundles&lt;/em&gt;. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&amp;rsquo;ve started learning it.
-&lt;/p&gt;</description>
+      <description>Per definition here, Webpack is a static module bundler for Web applications. It analyses and processes the input application and generates output bundles. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&amp;rsquo;ve started learning it.
+Main Concepts Configuration Webpack&amp;rsquo;s configuration is conventionally defined using a file webpack.config.js. It is a JavaScript/Node.js source file. A comprehensive example of webpack.</description>
     </item>
     
   </channel>

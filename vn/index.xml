@@ -18,7 +18,9 @@
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/01/nguy-bien-fallacies/</guid>
-      <description>Nhóm 1. Thay đổi chủ đề  Công kích cá nhân (ad hominem). Đây là một loại ngụy biện phổ biến nhất, nguy hiểm nhất, và có “công hiệu” nhất, vì nó tấn công vào cá nhân của người tranh luận, và tìm cách trốn tránh luận điểm của cá nhân đó. Hình thức ngụy biện này thường xuất hiện dưới dạng: Ông A phát biểu về một vấn đề; ông B tấn công vào cá nhân ông A, và làm cho người ta nghi ngờ luận điểm của ông A.</description>
+      <description>&lt;p&gt;Bài viết sưu tầm trên Internet về các hình thức ngụy biện khác nhau.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,7 +60,7 @@
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</guid>
-      <description>&lt;p&gt;LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như &lt;code&gt;[1, 2]&lt;/code&gt; hoặc dạng chữ &lt;code&gt;[Lamport1994], [Einstein1905]&lt;/code&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như &lt;code&gt;[1, 2]&lt;/code&gt; hoặc dạng chữ như &lt;code&gt;[Lamport94]&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

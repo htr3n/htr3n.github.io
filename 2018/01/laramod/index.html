@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="htr3n&#39;s blog :: technology, opinions, and rants about everything">
     <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,rants,vietnamese,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking, tư duy phản biện, luật, hiến pháp">	
-    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="generator" content="Hugo 0.37-DEV" />
     
     <title>LaraMod - Modularised Laravel 5.5 &middot; htr3n&#39;s</title>
     <meta content="LaraMod - Modularised Laravel 5.5 - htr3n&#39;s" property="og:title">
@@ -18,9 +18,10 @@
     <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <!-- highlight.js--> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
     <!-- Customised CSS -->
     <link rel="stylesheet" href="https://htr3n.github.io/css/custom.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -32,6 +33,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png">
     
+
 	</head>
     <body>
         <div class="sidebar">
@@ -67,34 +69,32 @@
         <p>
 		<section class="row text-center">
 	
-	<a href="https://twitter.com/htr3n"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
-	&nbsp;<a href="https://github.com/htr3n"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
 	
 	
-	&nbsp;<a href="https://bitbucket.org/hoanghuytran"><i class="fa fa-bitbucket fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fa fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="https://bitbucket.org/hoanghuytran"><i class="fab fa-bitbucket fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
 	
-	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
 </section>
 
         </p>
-		<p class="copyright">&copy; 2018 htr3n. <br/>
-        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>. 
-        <br/>
-		<p class="poweredby">Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</p>
+		<p class="copyright">&copy; 2018 htr3n.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
         </p>
 	</div>
 	<div>
@@ -147,7 +147,7 @@
 
 <p>From my struggle to organise a Laravel-based project such that I can divide and work on individual submodules such as <code>UserManagement</code>, <code>Authentication</code>, <code>Dashboard</code>, etc. whilst keeping the Laravel code base intact as much as possible (this could be convenient for upgrading Laravel) and keeping my code base separate from Laravel&rsquo;s. There are a number decent attempts on modalurasing Laravel projects for example <a href="https://nicolaswidart.com/blog/writing-modular-applications-with-laravel-modules">here</a>, <a href="https://github.com/caffeinated/modules">here</a> or <a href="http://kamranahmed.info/blog/2015/12/03/creating-a-modular-application-in-laravel">here</a>. Being inspired and learning from these articles, I decided to start a simple project on my own, namely, <a href="https://github.com/htr3n/laramod"><code>LaraMod</code></a>, for many reasons, but the biggest one is to dig deeper into Laravel 5.5 and PHP.</p>
 
-<p>Here I only emphasize some major aspects of <code>LaraMod</code>. The rest, including code and extra improvements can be found at <code>LaraMod</code>&rsquo;s <a href="https://github.com/htr3n/LaraMod">repository</a>.</p>
+<p>Here I only emphasize some major aspects of LaraMod. The rest, including code and extra improvements can be found at LaraMod&rsquo;s <a href="https://github.com/htr3n/LaraMod">repository</a>.</p>
 
 <h2 id="modularising-laravel-5-5-x">Modularising Laravel 5.5.x</h2>
 
@@ -164,7 +164,7 @@
 └──routes.php
 </code></pre>
 
-<p>Such a structure can be very useful for different teams/people working independently. In <code>LaraMod</code>, there is an <code>artisan</code> command <code>gen:module</code> provided in <a href="https://github.com/htr3n/laramod/blob/master/app/Console/Commands/GenModuleCommand.php"><code>App\Console\Commands\GenModuleCommand</code></a> that can quickly create a submodule following that structure.</p>
+<p>Such a structure can be very useful for different teams/people working independently. In LaraMod, there is an <code>artisan</code> command <code>gen:module</code> provided in <a href="https://github.com/htr3n/laramod/blob/master/app/Console/Commands/GenModuleCommand.php"><code>App\Console\Commands\GenModuleCommand</code></a> that can quickly create a submodule following that structure.</p>
 
 <pre><code class="language-sh">$ php artisan gen:module Authentication
 </code></pre>
@@ -179,7 +179,7 @@
 }
 </code></pre>
 
-<p>A <code>ServiceProvider</code> contains two important methods <code>register()</code> and <code>boot()</code>. In this case, <code>LaraMod</code> mainly uses the method <code>boot()</code> to load the corresponding submodule. <code>LaraMod</code> also follows a simple, conventional method for defining a submodule. That is, all submodules will be subfolders of the folder <code>/modules</code> and each module adopts the conventional structure as mentioned above.</p>
+<p>A <code>ServiceProvider</code> contains two important methods <code>register()</code> and <code>boot()</code>. In this case, LaraMod mainly uses the method <code>boot()</code> to load the corresponding submodule. LaraMod also adopts a simple, conventional method for defining a submodule. That is, all submodules will be subfolders of the folder <code>/modules</code> and each module follows the conventional structure as mentioned above.</p>
 
 <h4 id="automatically-loading-submodules">Automatically Loading Submodules</h4>
 
@@ -216,7 +216,7 @@
 
 <h5 id="detecting-and-loading-submodules">Detecting and Loading Submodules</h5>
 
-<p>Then we can walk through the folder <code>/module</code> and load each submodule using the method <code>loadModule()</code>.</p>
+<p>Then we can walk through the folder <code>module</code> and load all submodules using the method <code>loadModule()</code>.</p>
 
 <pre><code class="language-php">protected function findAndLoadModules()
 {
@@ -277,7 +277,7 @@ class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider {
 
 <p>Apart from resources like views, i18n, database migration loaded in the previous steps, a submodule can also contain other PHP classes such as database ORM models and controllers.</p>
 
-<p>One natural approach is to leverage the <a href="http://www.php-fig.org/psr/psr-4">PSR-4 autoloader</a> autoloading supported by Laravel 5.5. This approach also nicely fits when we want to define separate namespaces for each submodule and especially submodule&rsquo;s components.</p>
+<p>One natural approach would be to leverage the <a href="http://www.php-fig.org/psr/psr-4">PSR-4 autoloader</a> autoloading supported by Laravel 5.5. This approach also nicely fits when we want to define separate namespaces for each submodule and especially submodule&rsquo;s components.</p>
 
 <p>For this, we can define the submodule&rsquo;s namespace and manually specify the submodule&rsquo;s classpaths to be loaded in <code>composer.json</code> as following.</p>
 
@@ -301,7 +301,7 @@ $loader-&gt;setPsr4(&quot;Login\\&quot;, __DIR__ . &quot;./Login/&quot;);
 $loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
 </code></pre>
 
-<p>One problem, though, is that <code>LaraMod</code> must be able to detect or guess the namespace classpaths. To do this, we can either use the configuration file <code>config/module.php</code> or, even nicer and smarter, scan the submodule&rsquo;s folders to extract the necessary information. However, loading time then will be really significant when the project grows because Laravel loaders willl do the scanning and loading whenever any classes are referenced.</p>
+<p>One problem, though, is that LaraMod must be able to detect or guess the namespace classpaths. To do this, we can either use the configuration file <code>config/module.php</code> or, even nicer and smarter, scan the submodule&rsquo;s folders to extract the necessary information. However, loading time then will be really significant when the project grows because Laravel loaders willl do the scanning and loading whenever any classes are referenced.</p>
 
 <h3 id="accessing-submodule-resources">Accessing Submodule Resources</h3>
 
@@ -309,13 +309,13 @@ $loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
 
 <h2 id="finale">Finale</h2>
 
-<p>The outcome, <code>LaraMod</code>, would be a reasonable skeleton for modularising software projects based on Laravel 5.5. That is, you can just easily create a new submodule with the predefined conventional structure and add the PSR-4 namespaces and classpaths, then good you go. Each submodule should then be developed independently. Sure there are some areas that need improvement. For example, all testing stuffs are still under <code>/tests</code> and database seeders are still in <code>database/seeds</code>. The first one requires intervention with PHPUnit/<code>phpunit.xml</code> whilst the later asks for further changes in built-in Laravel <code>artisan</code> commands.</p>
+<p>The outcome of my very first PHP project, LaraMod, would be a reasonable skeleton for modularising software projects based on Laravel 5.5. That is, you can just easily create a new submodule with the predefined conventional structure and add the PSR-4 namespaces and classpaths, then good you go. Each submodule should then be developed independently. Sure there are some areas that need improvement. For example, all testing stuffs are still under <code>/tests</code> and database seeders are still in <code>database/seeds</code>. The first one requires intervention with PHPUnit/<code>phpunit.xml</code> whilst the later asks for further changes in built-in Laravel <code>artisan</code> commands.</p>
 
-<p>For me &ndash; a new bie, it was not quite an all-pleasant journey to experience several Laravel&rsquo;s aspects. Nevertheless, developing and customising LaraMod are extremely valuable as I could learn a lot about not only Laravel in particular but also PHP in general. Achieving reasonable modularisation for a complex software development project requires a lot of thoughtful design and hard work and even sometimes trade-offs and compromises. In sharing this, I hope <code>LaraMod</code> might become a good and helpful start so that your journeys with Laravel can be more pleasant and joyful. I look forward to hearing and learning from you, too.</p>
+<p>For me &ndash; a new bie, it was not quite an all-pleasant journey to experience several Laravel&rsquo;s aspects. Nevertheless, developing and customising LaraMod are extremely valuable as I could learn a lot about not only Laravel in particular but also PHP in general. Achieving reasonable modularisation for a complex software development project requires a lot of thoughtful design and hard work and even sometimes trade-offs and compromises. In sharing this, I hope LaraMod might become handy and helpful start so that your journeys with Laravel can be more pleasant and joyful. I look forward to hearing and learning from your experience, too.</p>
 
 </div>
             <div class="footer">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.initHighlightingOnLoad();

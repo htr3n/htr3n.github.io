@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="htr3n&#39;s blog :: technology, opinions, and rants about everything">
     <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,rants,vietnamese,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking, tư duy phản biện, luật, hiến pháp">	
-    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="generator" content="Hugo 0.37-DEV" />
     
     <title>Getting Started with Webpack &middot; htr3n&#39;s</title>
     <meta content="Getting Started with Webpack - htr3n&#39;s" property="og:title">
@@ -18,9 +18,10 @@
     <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <!-- highlight.js--> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
     <!-- Customised CSS -->
     <link rel="stylesheet" href="https://htr3n.github.io/css/custom.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -32,6 +33,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png">
     
+
 	</head>
     <body>
         <div class="sidebar">
@@ -67,34 +69,32 @@
         <p>
 		<section class="row text-center">
 	
-	<a href="https://twitter.com/htr3n"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
-	&nbsp;<a href="https://github.com/htr3n"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
 	
 	
-	&nbsp;<a href="https://bitbucket.org/hoanghuytran"><i class="fa fa-bitbucket fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fa fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="https://bitbucket.org/hoanghuytran"><i class="fab fa-bitbucket fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
 	
-	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
 </section>
 
         </p>
-		<p class="copyright">&copy; 2018 htr3n. <br/>
-        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>. 
-        <br/>
-		<p class="poweredby">Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</p>
+		<p class="copyright">&copy; 2018 htr3n.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
         </p>
 	</div>
 	<div>
@@ -141,33 +141,26 @@
       </span>  
   </div>    
   
-  <p>Per definition <a href="https://webpack.js.org/concepts">here</a>, Webpack is a <em>static module bundler</em> for Web applications. It analyses and processes the <em>input application</em> and generates output <em>bundles</em>. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&rsquo;ve started learning it.
-</p>
+  
 
-<p><img src="https://webpack.github.io/assets/what-is-webpack.png" alt="Webpack Overview" style="width:90%">
-<cite>Source: <a href="https://webpack.github.io">https://webpack.github.io</a></cite></p>
+<p>Per definition <a href="https://webpack.js.org/concepts">here</a>, Webpack is a <em>static module bundler</em> for Web applications. It analyses and processes the <em>input application</em> and generates output <em>bundles</em>. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&rsquo;ve started learning it.</p>
+
+<p><img src="https://webpack.github.io/assets/what-is-webpack.png" alt="Webpack Overview"></p>
+
+<!-- more -->
 
 <h3 id="main-concepts">Main Concepts</h3>
 
 <h5 id="configuration-https-webpack-js-org-concepts-configuration"><a href="https://webpack.js.org/concepts/configuration">Configuration</a></h5>
 
-<p>Webpack&rsquo;s configuration is defined using a file <code>webpack.config.js</code>. It is essentially a JavaScript source file. An example of <code>webpack.config.js</code> can be found <a href="https://webpack.js.org/configuration/#options">here</a>. The four major parts of Webpack&rsquo;s configuration are <em>entry</em>, <em>output</em>, <em>loaders</em> and <em>plugins</em>.</p>
+<p>Webpack&rsquo;s configuration is conventionally defined using a file <code>webpack.config.js</code>. It is a JavaScript/Node.js source file. A comprehensive example of <code>webpack.config.js</code> can be found <a href="https://webpack.js.org/configuration/#options">here</a>. The four major parts of Webpack&rsquo;s configuration are <em>entry</em>, <em>output</em>, <em>loaders</em> and <em>plugins</em>.</p>
 
-<h5 id="entry-https-webpack-js-org-concepts-entry-points"><a href="https://webpack.js.org/concepts/entry-points">Entry</a></h5>
-
-<p>An entry denotes the starting point where Webpack  commences buidling the internal <em>dependency graph</em> by analysing all direct and indirect dependencies. There might be more than one entry.</p>
-
-<h5 id="output-https-webpack-js-org-concepts-output"><a href="https://webpack.js.org/concepts/output">Output</a></h5>
-
-<p>The output part defines the places where Webpack stores and how to name the outputs.</p>
-
-<h5 id="loaders-https-webpack-js-org-concepts-loaders"><a href="https://webpack.js.org/concepts/loaders">Loaders</a></h5>
-
-<p>Webpack uses loaders to handle files other than JavaScript by transform them into modules that can be processed by Webpack. Loaders are configured using <code>module.rules</code> that specify the properties <code>test</code> (what/which files to be transformed) and <code>use</code> (which loaders to be used).</p>
-
-<h5 id="plugins-https-webpack-js-org-concepts-plugins"><a href="https://webpack.js.org/concepts/plugins">Plugins</a></h5>
-
-<p>Plugins are important part of Webpack that will carry out different kinds of tasks such as checking, combining files, optimised outputs, and so on. Webpack provides a <a href="https://webpack.js.org/api/plugins">clear interface</a> for creating and/or extending plugins.</p>
+<ul>
+<li><a href="https://webpack.js.org/concepts/entry-points">Entry</a>: An entry denotes the starting point where Webpack  commences buidling the internal <em>dependency graph</em> by analysing all direct and indirect dependencies. There might be more than one entry.</li>
+<li><a href="https://webpack.js.org/concepts/output">Output</a>: The output part defines the places where Webpack stores and how to name the outputs.</li>
+<li><a href="https://webpack.js.org/concepts/loaders">Loaders</a>: Webpack uses loaders to handle files other than JavaScript by transform them into modules that can be processed by Webpack. Loaders are configured using <code>module.rules</code> that specify the properties <code>test</code> (what/which files to be transformed) and <code>use</code> (which loaders to be used).</li>
+<li><a href="https://webpack.js.org/concepts/plugins">Plugins</a>: Plugins are important part of Webpack that will carry out different kinds of tasks such as checking, combining files, optimised outputs, and so on. Webpack provides a <a href="https://webpack.js.org/api/plugins">clear interface</a> for creating and/or extending plugins.</li>
+</ul>
 
 <h5 id="modules-https-webpack-js-org-concepts-modules"><a href="https://webpack.js.org/concepts/modules">Modules</a></h5>
 
@@ -251,7 +244,7 @@ bundle.js  2.52 kB       0  [emitted]  main
 
 <p>Several loaders have been developed for Webpack in order to handle various application resource types. An incompleted list of Webpack loaders can be found <a href="https://github.com/webpack-contrib/awesome-webpack#loaders">here</a>. We will exemplify <a href="https://github.com/webpack-contrib/eslint-loader"><code>eslint-loader</code></a> for analysing JavaScript sources and reporting errors, if any.</p>
 
-<p>Let&rsquo;s reuse the previous example <code>webpack.config.js</code> and add <code>eslint-loader</code>.</p>
+<p>Let&rsquo;s reuse the previous example <code>webpack.config.js</code> and add the <code>eslint-loader</code>.</p>
 
 <pre><code class="language-javascript">module.exports = {
     entry: './src/main.js',
@@ -271,12 +264,12 @@ bundle.js  2.52 kB       0  [emitted]  main
 };
 </code></pre>
 
-<p>We also needs, at least, the following packages: <code>eslint</code> and <code>eslint-loader</code>. They can be easily installed. In case you need further styles or rules, you can install more packages, for instance, <code>eslint-config-airbnb</code>, <code>eslint-config-google</code>, to name but a few.</p>
+<p>We also needs, at least, the following packages: <code>eslint</code> and <code>eslint-loader</code> which can be easily installed. In case you need further styles or rules, you can install more packages, for instance, <code>eslint-config-airbnb</code>, <code>eslint-config-google</code>, to name but a few.</p>
 
 <pre><code class="language-sh">$ yarn add --dev eslint eslint-loader
 </code></pre>
 
-<p>For starting, we can initialise a simple configuration for <code>eslint</code> using the option <code>--init</code> and answer the corresponding questions.  <code>eslint</code> will create a file <code>.eslintrc.xxx</code> where <code>xxx</code> is either <code>js</code>, <code>json</code>, or <code>yaml</code> depending on which file format you choose.</p>
+<p>For starting, we can initialise a simple configuration for <em>eslint</em> using the option <code>--init</code> and answer the corresponding questions.  <code>eslint</code> will create a file <code>.eslintrc.xxx</code> where &ldquo;xxx&rdquo; is either &ldquo;js&rdquo;, &ldquo;json&rdquo;, or &ldquo;yaml&rdquo; depending on which file format you had chosen.</p>
 
 <pre><code class="language-sh">$ eslint --init
 ...
@@ -336,9 +329,10 @@ ERROR in ./src/main.js
 <li><a href="https://github.com/htr3n/webpack-with-loaders">https://github.com/htr3n/webpack-with-loaders</a></li>
 <li><a href="https://github.com/htr3n/webpack-with-plugins">https://github.com/htr3n/webpack-with-plugins</a></li>
 </ul>
+
 </div>
             <div class="footer">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.initHighlightingOnLoad();

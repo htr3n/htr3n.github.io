@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="htr3n&#39;s blog :: technology, opinions, and rants about everything">
     <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,rants,vietnamese,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking, tư duy phản biện, luật, hiến pháp">	
-    <meta name="generator" content="Hugo 0.36.1" />
+    <meta name="generator" content="Hugo 0.37-DEV" />
     
     <title>Apache httpd 2.4 and PHP 7 in macOS &middot; htr3n&#39;s</title>
     <meta content="Apache httpd 2.4 and PHP 7 in macOS - htr3n&#39;s" property="og:title">
@@ -18,9 +18,10 @@
     <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <!-- highlight.js--> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
     <!-- Customised CSS -->
     <link rel="stylesheet" href="https://htr3n.github.io/css/custom.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -32,6 +33,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png">
     
+
 	</head>
     <body>
         <div class="sidebar">
@@ -67,34 +69,32 @@
         <p>
 		<section class="row text-center">
 	
-	<a href="https://twitter.com/htr3n"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
-	&nbsp;<a href="https://github.com/htr3n"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
 	
 	
-	&nbsp;<a href="https://bitbucket.org/hoanghuytran"><i class="fa fa-bitbucket fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fa fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="https://bitbucket.org/hoanghuytran"><i class="fab fa-bitbucket fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
 	
-	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
 </section>
 
         </p>
-		<p class="copyright">&copy; 2018 htr3n. <br/>
-        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>. 
-        <br/>
-		<p class="poweredby">Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</p>
+		<p class="copyright">&copy; 2018 htr3n.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
         </p>
 	</div>
 	<div>
@@ -149,7 +149,7 @@
 
 <p>After few years of Java development, I turned myself into Web development, and in particular, PHP programming. As usual, I would start with pure PHP aspects that really help me to understand the fundamental concepts and techniques instead of being drown with everyone-known frameworks and their complexity and hard-to-understand magics.</p>
 
-<p>As a result, I first looked for a simple setup of Apache and PHP that best suits the beginning of my initial learning path. In this note, I am writing down what I learn from the Internet and tweak them to my needs.</p>
+<p>As a result, I first looked for a simple setup of Apache and PHP that best suits the beginning of my initial learning path. In this note, I am writing down what I learn from many sources on the Internet tweaked to suit my needs.</p>
 
 <h2 id="goal-and-strategy">Goal and Strategy</h2>
 
@@ -168,54 +168,54 @@
 <p>Based on the aforementioned analysis of strategies, I consider the following installation activities to fulfill my goal.</p>
 
 <ol>
-<li>Installing <a href="https://brew.sh"><code>homebrew</code></a> (a sane package manager for macOS)</li>
+<li>Installing <a href="https://brew.sh">Homebrew</a> (a sane package manager for macOS)</li>
 <li>Installing <a href="https://httpd.apache.org">Apache HTTP Server 2.4</a></li>
 <li>Installing <a href="https://php.net">PHP 7</a> along with <strong><em>PHP-FPM</em></strong></li>
 <li>Putting All Together</li>
-<li>(Optional) Installing <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a></li>
+<li>Installing <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a> (optional)</li>
 </ol>
 
 <h2 id="installation">Installation</h2>
 
 <h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
 
-<p><code>homebrew</code> is currently a prominent and well-supported package managing solution for macOS. Installing <code>homebrew</code> is rather straightforward. Nevertheless, you must be familiar with using the command line in order to easily get thing done. All you need is to launch the Terminal app (<code>/Applications/Utilities/Terminal.app</code>) or even better the <a href="https://www.iterm2.com">iTerm2</a> and start executing terminal commands.</p>
+<p>Homebrew is currently a prominent and well-supported package managing solution for macOS. Installing Homebrew is rather straightforward. Nevertheless, you must be familiar with using the command line in order to easily get thing done. All you need is to launch the Terminal app (<code>/Applications/Utilities/Terminal.app</code>) or even better the <a href="https://www.iterm2.com">iTerm2</a> and start executing terminal commands.</p>
 
 <blockquote>
 <p>From now on, the sign <code>$</code> will denote the user&rsquo;s command line prompt where you will execute the terminal commands, except that you must not type <code>$</code>.</p>
 </blockquote>
 
-<p><code>homebrew</code> requires Xcode&rsquo;s command line tooling so we must install it first.</p>
+<p>Homebrew requires Xcode&rsquo;s command line tooling so we must install it first.</p>
 
 <pre><code class="language-sh"># Install Xcode command line tooling
 $ xcode-select --install
 </code></pre>
 
-<p>Next we start installing <code>homebrew</code> using a one-line command.</p>
+<p>Next we start installing Homebrew using a one-line command.</p>
 
 <pre><code class="language-sh">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre>
 
-<p>By default, <code>homebrew</code> will be installed in the folder <code>/usr/local/Cellar</code> and use <code>/usr/local</code> and its sub-folders for the installed binary and configuration files. For more advanced settings and manual configurations, please refer <a href="https://docs.brew.sh/Installation.html">here</a>. To ensure that <code>homebrew</code> is properly installed, we can simply check.</p>
+<p>By default, Homebrew will be installed into <code>/usr/local/Cellar</code> and use <code>/usr/local</code> and its sub-folders for the its installed binary and configuration files. For more advanced settings and manual configurations, please refer <a href="https://docs.brew.sh/Installation.html">here</a>. To ensure that Homebrew is properly installed, we can simply check.</p>
 
 <pre><code class="language-sh">$ brew --version
 Homebrew 1.3.8
 Homebrew/homebrew-core (git revision 22ac3; last commit 2017-12-02)
 </code></pre>
 
-<p>The command <code>brew config</code> shows more information about the installed <code>homebrew</code>.</p>
+<p>The command <code>brew config</code> shows more information about the installed Homebrew.</p>
 
 <pre><code class="language-sh">$ brew config
 </code></pre>
 
-<p>Now we should add some extra <strong><em>taps</em></strong> (i.e. package repositories in <code>homebrew</code>&rsquo;s world) that contain packages we need, for instance, Apache HTTP server, PHP, and MySQL along with tools for running them as macOS services.</p>
+<p>Now we should add some extra <strong><em>taps</em></strong> (i.e. package repositories in Homebrew&rsquo;s world) that contain packages we need, for instance, Apache HTTP server, PHP, and MySQL along with tools for running them as macOS services.</p>
 
 <pre><code class="language-sh">$ brew tap homebrew/apache
 $ brew tap homebrew/php
 $ brew tap homebrew/services
 </code></pre>
 
-<p>After all, make sure <code>homebrew</code> is up-to-date.</p>
+<p>Last but not least, always make sure Homebrew is up-to-date.</p>
 
 <pre><code class="language-sh">$ brew update
 $ brew doctor
@@ -225,18 +225,18 @@ $ brew doctor
 
 <h4 id="installing-apache-http-server-2-4">Installing Apache HTTP Server 2.4</h4>
 
-<p>We can also use the pre-installed Apache HTTP server (from now on, Apache <code>httpd</code>, Apache, <code>httpd</code> will be used interchangeably) shipped with macOS. Nevertheless, I want to play around with the newer version. Apart from the <code>homebrew</code>-based installation commands, the steps for setting up <code>httpd</code> are the same in either way.</p>
+<p>We can also use the pre-installed Apache HTTP server (from now on, Apache <code>httpd</code>, Apache, <code>httpd</code> will be used interchangeably) shipped with macOS. Nevertheless, I want to play around with the newer version. Apart from the Homebrew-based installation commands, the steps for setting up <code>httpd</code> are the same in either way.</p>
 
 <pre><code class="language-sh">$ brew install httpd
 </code></pre>
 
 <blockquote>
-<p><strong>NOTE 1</strong>: Since Sep 30th, 2017 the Apache HTTP server package in <code>homebrew</code> has been renamed from <code>httpd24</code> to <code>httpd</code> and the corresponding folders are also changed from <code>apache2</code> to <code>httpd</code>. This note has been updated with the newer version. Apart from the aforementioned updates, the configuration steps remain intact though.</p>
+<p><strong>NOTE 1</strong>: Since Sep 30th, 2017 the Apache HTTP server package in Homebrew has been renamed from <code>httpd24</code> to <code>httpd</code> and the corresponding folders are also changed from <code>apache2</code> to <code>httpd</code>. This note has been updated with the newer versions. Apart from the aforementioned updates, the configuration steps remain the same though.</p>
 
-<p><strong>NOTE 2</strong>: When we use <code>brew install &lt;package_name</code> without any further options, <code>homebrew</code>can accomplish the installation faster by downloading a <em>bottled version</em> (i.e. a <em>pre-compiled package</em>) from <a href="https://homebrew.bintray.com">homebrew.bintray.com</a>. If there are any options, it is often the case that <code>homebrew</code> will download the package source and compile from source. The compilation of a source package usually takes a a bit longer. For a simple and quick start, I mostly opt for the bottled versions of Apache server and PHP as the configured and compiled options are rather sufficient. After learning the fundamental aspects, I can turn to a more complex approach with lots of tweaking to suit my particular needs or experiments.</p>
+<p><strong>NOTE 2</strong>: When we use <code>brew install &lt;package_name</code> without any further options, Homebrew often accomplishes the installation faster by downloading a <em>bottled version</em> (i.e. a <em>pre-compiled package</em>) from <a href="https://homebrew.bintray.com">homebrew.bintray.com</a>. If there are any extra compling options, Homebrew can download the package&rsquo;s source code and compile the source. The compilation of a source package usually takes a a bit longer. For a simple and quick start, I mostly opt for the bottled versions of Apache <code>httpd</code> and PHP as the configured and compiled options are rather sufficient. After learning the fundamental aspects, I can turn to a more complex approach with lots of tweaks for further needs or experiments.</p>
 </blockquote>
 
-<p>By default, the <code>homebrew</code>-based Apache<code>httpd</code> will use the ports <code>8080</code> (<code>http</code>) and <code>8443</code> (<code>https</code>) that do not need system administrator privileges. In my setup, I will go with this option as I want to run Apache using my normal user account. Nonetheless, you can tell <code>homebrew</code> to install a version that use ports <code>80</code> and <code>443</code> using the option <code>--with-privileged-ports</code> as following. Other than that, we might just leave it for now and change it later in the configuration file at any time.</p>
+<p>By default, the Homebrew-based Apache<code>httpd</code> will use the ports <code>8080</code> (<code>http</code>) and <code>8443</code> (<code>https</code>) that do not need system administrator privileges. In my setup, I will go with this option as I want to run Apache using my normal user account. Nonetheless, you can tell Homebrew to install a version that use ports <code>80</code> and <code>443</code> using the option <code>--with-privileged-ports</code> as following. Other than that, we can just leave it as it is for now and adapt later in the configuration file.</p>
 
 <pre><code class="language-sh">$ brew install httpd --with-privileged-ports
 </code></pre>
@@ -246,7 +246,7 @@ $ brew doctor
 <pre><code class="language-sh">$ brew install httpd --HEAD --with-privileged-ports
 </code></pre>
 
-<p>Let&rsquo;s assume the bottled <code>httpd</code> is installed. The Apache server will be installed in the following folder <code>/usr/local/Cellar/httpd/2.4.29</code> (or it may be different in your computer depending on your version of <code>homebrew</code> and Apache <code>httpd</code>). You can check the <code>homebrew</code>&rsquo;s Cellar, i.e. where <code>homebrew</code> puts installed packages, with <code>brew --cellar</code>. The precise location of <code>httpd</code> in a bit complex nerdy form is <code>$(brew --cellar)/httpd/$(brew list --versions httpd | cut -d ' ' -f 2)</code>.</p>
+<p>Let&rsquo;s assume the bottled <code>httpd</code> is installed. The Apache server will be installed in the following folder <code>/usr/local/Cellar/httpd/2.4.29</code> (or it may be different in your computer depending on your version of Homebrew and Apache <code>httpd</code>). You can check the Homebrew&rsquo;s cellar, i.e. where Homebrew puts installed packages, with <code>brew --cellar</code>. The precise location of <code>httpd</code> in a bit complex nerdy form is <code>$(brew --cellar)/httpd/$(brew list --versions httpd | cut -d ' ' -f 2)</code>.</p>
 
 <pre><code class="language-sh">$ cd $(brew --cellar)/httpd/$(brew list --versions httpd | cut -d ' ' -f 2)
 </code></pre>
@@ -318,7 +318,7 @@ Syntax OK
 
 <h4 id="install-php-and-php-fpm">Install PHP and PHP-FPM</h4>
 
-<p>Similar to Apache HTTP server, we can use <code>homebrew</code> to install newer/older versions of PHP ranging from 5.x to 7.x. The configuration steps are the same. I will go for the stable release of PHP 7.</p>
+<p>Similar to Apache HTTP server, we can use Homebrew to install newer/older versions of PHP ranging from 5.x to 7.x. The configuration steps are the same. I will go for the stable release of PHP 7.</p>
 
 <pre><code class="language-sh">$ brew install php72
 </code></pre>
@@ -597,21 +597,21 @@ $ sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 
 <h4 id="configuring-dnsmasq">Configuring DNSMasq</h4>
 
-<p>After installing <code>dnsmasq</code>,  open the configuration file</p>
+<p>After installing DNSMasq, let&rsquo;s open the configuration file</p>
 
 <pre><code class="language-sh">$ open -e /usr/local/etc/dnsmasq.conf
 </code></pre>
 
-<p>add the following line at the end and save the file.</p>
+<p>and add the following line at the end.</p>
 
 <pre><code>address=/app/127.0.0.1
 </code></pre>
 
-<p>The above configuration line tells <code>dnsmasq</code> to resolve the TLD <code>dev</code> to the local IP address <code>127.0.0.1</code>. You can now use any hostnames like <code>this.is.a.development.project.test</code> in Apache virtual hosts.</p>
+<p>The above configuration line tells DNSMasq to resolve the TLD <code>dev</code> to the local IP address <code>127.0.0.1</code>. You can now use any hostnames like <code>this.is.a.development.project.test</code> in Apache virtual hosts.</p>
 
 <h4 id="configuring-macos-to-use-dnsmasq">Configuring macOS to use DNSMasq</h4>
 
-<p>We have to tell macOS that <code>dnsmasq</code> is now a nameserver running at the local host. The configuration file is <code>/etc/resolv.conf</code> specifies the nameservers for looking up hostnames. On the one hand, we should not mess up the system setting. Moreover, macOS might overwrite <code>/etc/resolv.conf</code> when there are changes in Network setting. An elegant solution is to create a file in the folder <code>/etc/resolver/</code>with the exact TLD managed by <code>dnsmasq</code>.</p>
+<p>We have to tell macOS that DNSMasq is now a nameserver running at the local host. The configuration file is <code>/etc/resolv.conf</code> specifies the nameservers for looking up hostnames. On the one hand, we should not mess up the system setting. Moreover, macOS might overwrite <code>/etc/resolv.conf</code> when there are changes in Network setting. An elegant solution is to create a file in the folder <code>/etc/resolver/</code>with the exact TLD managed by DNSMasq.</p>
 
 <pre><code class="language-sh">$ sudo mkdir -p /etc/resolver/
 $ sudo sh -c 'echo &quot;nameserver 127.0.0.1&quot; &gt; /etc/resolver/app'
@@ -736,7 +736,7 @@ $ brew services restart php72
 
 </div>
             <div class="footer">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.initHighlightingOnLoad();

@@ -18,7 +18,7 @@
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</guid>
-      <description>&lt;p&gt;LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như &lt;code&gt;[1, 2]&lt;/code&gt; hoặc dạng chữ &lt;code&gt;[Lamport1994], [Einstein1905]&lt;/code&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như &lt;code&gt;[1, 2]&lt;/code&gt; hoặc dạng chữ như &lt;code&gt;[Lamport94]&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

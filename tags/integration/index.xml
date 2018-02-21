@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integration on htr3n&#39;s</title>
+    <link>https://blog.test:8443/tags/integration/</link>
+    <description>Recent content in Integration on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 24 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.test:8443/tags/integration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Integration Laravel 5.5 and Gentelella Admin Theme</title>
+      <link>https://blog.test:8443/2018/01/integration-laravel-5.5-and-gentelella-admin-theme/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/01/integration-laravel-5.5-and-gentelella-admin-theme/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
