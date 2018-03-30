@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="htr3n&#39;s blog :: technology, opinions, and rants about everything">
     <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,rants,vietnamese,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking, tư duy phản biện, luật, hiến pháp">	
-    <meta name="generator" content="Hugo 0.37-DEV" />
+    <meta name="generator" content="Hugo 0.38-DEV" />
     
     <title>Getting Started with Webpack &middot; htr3n&#39;s</title>
     <meta content="Getting Started with Webpack - htr3n&#39;s" property="og:title">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500">
     
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <!-- highlight.js--> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
     <!-- Customised CSS -->
@@ -108,7 +108,8 @@
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> Feb 2, 2018 
+       
+        <i class="fas fa-calendar-alt"></i> Feb 16, 2018
       
       
         
@@ -126,7 +127,7 @@
         
         
             <br/>
-             <i class="fa fa-tags" aria-hidden="true"></i>
+             <i class="fas fa-tags"></i>
             
             <a class="meta" href="/tags/bundler">bundler</a> 
         
@@ -141,13 +142,11 @@
       </span>  
   </div>    
   
-  
+  <p>Per definition <a href="https://webpack.js.org/concepts">here</a>, Webpack is a <em>static module bundler</em> for Web applications. It analyses and processes the <em>input application</em> and generates output <em>bundles</em>. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&rsquo;ve started learning it.</p>
 
-<p>Per definition <a href="https://webpack.js.org/concepts">here</a>, Webpack is a <em>static module bundler</em> for Web applications. It analyses and processes the <em>input application</em> and generates output <em>bundles</em>. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&rsquo;ve started learning it.</p>
+<p><img src="https://webpack.github.io/assets/what-is-webpack.png" alt="Webpack Overview" /></p>
 
-<p><img src="https://webpack.github.io/assets/what-is-webpack.png" alt="Webpack Overview"></p>
-
-<!-- more -->
+<p></p>
 
 <h3 id="main-concepts">Main Concepts</h3>
 
@@ -329,7 +328,6 @@ ERROR in ./src/main.js
 <li><a href="https://github.com/htr3n/webpack-with-loaders">https://github.com/htr3n/webpack-with-loaders</a></li>
 <li><a href="https://github.com/htr3n/webpack-with-plugins">https://github.com/htr3n/webpack-with-plugins</a></li>
 </ul>
-
 </div>
             <div class="footer">
                 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
