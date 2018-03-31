@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 16 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Mar 2018 08:55:31 +1100</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Confusing Hugo issues: date/time formatting and &#39;isset&#39;/&#39;with&#39;</title>
+      <link>https://htr3n.github.io/2018/03/confusing-hugo-issues-date/time-formatting-and-isset/with/</link>
+      <pubDate>Sat, 31 Mar 2018 08:55:31 +1100</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/03/confusing-hugo-issues-date/time-formatting-and-isset/with/</guid>
+      <description>Yesterday I got notified from Github for two opening issues of the Hugo&amp;rsquo;s theme hyde-hyde I have ported and developed.
+The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up. The issue seems very strange and difficult to spot. It took me a while to research around and found some relevant reports by Paul Heinlein and Dana Woodman, that Hugo date/time formatting is internally based on Golang, and therefore, uses a smart but confusing convention.</description>
+    </item>
     
     <item>
       <title>Getting Started with Webpack</title>
