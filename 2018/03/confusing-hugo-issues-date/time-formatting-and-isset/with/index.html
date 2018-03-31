@@ -14,10 +14,10 @@
     <meta content="Confusing Hugo issues: date/time formatting and &#39;isset&#39;/&#39;with&#39; - htr3n&#39;s" property="og:title">
     <meta content="htr3n&#39;s blog :: technology, opinions, and rants about everything - " property="og:description">    
     <!-- CSS --> 
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://htr3n.github.io/css/print.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500">
     
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <!-- highlight.js--> 
@@ -170,7 +170,7 @@
 
 <p>After changing the format string, the aforementioned issue surely disappears. Even better, <code>hyde-hyde</code> date/time formatting can also now adopt a default option to prevent such potential issues.</p>
 
-<pre><code class="language-go">{{ .Date.Format (.Site.Params.dateformat | default &quot;Jan 02, 2006&quot;) }}
+<pre><code>{{ .Date.Format (.Site.Params.dateformat | default &quot;Jan 02, 2006&quot;) }}
 </code></pre>
 
 <p><a href="https://github.com/htr3n/hyde-hyde/issues/1">The other issue</a> reported by <a href="https://github.com/paskal">paskal</a> (Dmitry Verkhoturov) is an error Dmitry spotted when compiling and testing his blog against several Hugo themes including mine, <code>hyde-hyde</code>.</p>
@@ -179,37 +179,38 @@
 ERROR 2018/03/20 20:35:56 Error while rendering &quot;page&quot; in &quot;post/&quot;: template: /srv/hugo/themes/hyde-hyde/layouts/_default/single.html:6:7: executing &quot;content&quot; at &lt;partial &quot;post_conten...&gt;: error calling partial: template: theme/partials/post_content.html:22:21: executing &quot;theme/partials/post_content.html&quot; at &lt;len .Params.tags&gt;: error calling len: len of untyped nil
 </code></pre>
 
-<p>The problem related to accessing <a href="https://gohugo.io/variables/page/#page-level-params">the tags</a> of each post via <code>.Params.tags</code>. The function <code>len .Params.tags</code> receives an untyped <code>nil</code> value. Strangely, there is a conditional check using the function <a href="https://github.com/gohugoio/hugo/blob/1823c053c8900cb6ee53b8e5c02939c7398e34dd/tpl/collections/collections.go#L315"><code>isset</code></a> right before that.</p>
+<p>The problem related to accessing <a href="https://gohugo.io/variables/page/#page-level-params">the tags</a> of each post via <code>.Params.tags</code>. The function <code>len .Params.tags</code> receives an untyped <code>nil</code> value. Strangely, there is a conditional check using the function <a href="https://github.com/gohugoio/hugo/blob/1823c053c8900cb6ee53b8e5c02939c7398e34dd/tpl/collections/collections.go#L315">isset</a> right before that.</p>
 
-<pre><code class="language-go">{{ if isset .Params &quot;tags&quot; }}
+<pre><code>{{ if isset .Params &quot;tags&quot; }}
    {{ $total := len .Params.tags }}
    ...
 {{ end }}
 </code></pre>
 
-<p>The <a href="https://gohugo.io/functions/isset/">semantics</a> of <code>isset</code> is a bit vague:</p>
+<p>The <a href="https://gohugo.io/functions/isset">semantics</a> of <code>isset</code> is a bit vague:</p>
 
 <blockquote>
 <p>Returns true if the parameter is set.</p>
+</blockquote>
 
-<pre><code>&gt; isset COLLECTION INDEX
-&gt; isset COLLECTION KEY
-&gt; ```
+<pre><code>isset COLLECTION INDEX
+isset COLLECTION KEY
+</code></pre>
 
-It does not say anything when either `COLLECTION` or `INDEX/KEY` is `nil` or empty. As such, perhaps Dmitry's blog contains some posts with empty tags. Hence, the variable `.Params.tags` yields `&quot;&quot;` whilst `isset.Params &quot;tags&quot;` evaluates to `true`. 
+<p>It does not say anything when either <code>COLLECTION</code> or <code>INDEX/KEY</code> is <code>nil</code> or empty. As such, perhaps Dmitry&rsquo;s blog contains some posts with empty tags. Hence, the variable <code>.Params.tags</code> yields <code>&quot;&quot;</code> whilst <code>isset.Params &quot;tags&quot;</code> evaluates to <code>true</code>.</p>
 
-One of the temporary mitigation is to use [with](https://gohugo.io/functions/with) instead. The semantics of `with` is a bit clearer.
+<p>One of the temporary mitigation is to use <a href="https://gohugo.io/functions/with">with</a> instead. The semantics of <code>with</code> is a bit clearer.</p>
 
-&gt; Rebinds the context (`.`) within its scope and skips the block if the variable is absent.
+<blockquote>
+<p>Rebinds the context (<code>.</code>) within its scope and skips the block if the variable is absent.</p>
+</blockquote>
 
-Nevertheless, the error is dismissed when replacing the above code with the following. Hoooraaay!!! 
+<p>Nevertheless, the error is dismissed when replacing the above code with the following. Hoooraaay!!!</p>
 
-```go
-{{ with .Params.tags }}
+<pre><code>{{ with .Params.tags }}
 	{{ $total := len . }}
 {{ end }}
 </code></pre>
-</blockquote>
 
 <p>Hugo is quite tricky, eh?</p>
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue.js on htr3n&#39;s</title>
+    <link>https://blog.test:8443/tags/vue.js/</link>
+    <description>Recent content in Vue.js on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 22 Feb 2018 10:55:31 +1100</lastBuildDate>
+    
+	<atom:link href="https://blog.test:8443/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Web Application Development using Vue.js</title>
+      <link>https://blog.test:8443/2018/02/web-application-development-using-vue.js/</link>
+      <pubDate>Thu, 22 Feb 2018 10:55:31 +1100</pubDate>
+      
+      <guid>https://blog.test:8443/2018/02/web-application-development-using-vue.js/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

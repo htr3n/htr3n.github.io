@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="htr3n&#39;s blog :: technology, opinions, and rants about everything">
     <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,rants,vietnamese,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking, tư duy phản biện, luật, hiến pháp">	
-    <meta name="generator" content="Hugo 0.37-DEV" />
+    <meta name="generator" content="Hugo 0.38-DEV" />
     
     <title>Getting Your Hands Dirty with Gulp &middot; htr3n&#39;s</title>
     <meta content="Getting Your Hands Dirty with Gulp - htr3n&#39;s" property="og:title">
     <meta content="htr3n&#39;s blog :: technology, opinions, and rants about everything - " property="og:description">    
     <!-- CSS --> 
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://blog.test:8443/css/print.css" media="print">
     <link rel="stylesheet" href="https://blog.test:8443/css/poole.css">
     <link rel="stylesheet" href="https://blog.test:8443/css/hyde.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500">
     
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <!-- highlight.js--> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
     <!-- Customised CSS -->
@@ -108,7 +108,8 @@
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
             
-       <i class="fa fa-calendar" aria-hidden="true"></i> Feb 2, 2018 
+       
+        <i class="fas fa-calendar-alt"></i> Feb 21, 2018
       
       
         
@@ -126,7 +127,7 @@
         
         
             <br/>
-             <i class="fa fa-tags" aria-hidden="true"></i>
+             <i class="fas fa-tags"></i>
             
             <a class="meta" href="/tags/gulp">gulp</a> 
         
@@ -143,10 +144,24 @@
       </span>  
   </div>    
   
-  <p><a href="https://gulpjs.com">Gulp</a> (aka GulpJS) is a JavaScript toolkit often used for automating development tasks such as compiling, analysing, testing, compressing, cleaning, concatenating, transforming source code and application resources, to name but a few. Gulp is very popular in the JavaScript development community alongside <a href="http://gruntjs.com">Grunt</a>, and <a href="https://webpack.js.org">Webpack</a>. Among those, Gulp and Grunt are referred as <em>task runners</em> (defining based on tasks) whilst Webpack is <em>module bundler</em> (defining based on modules, inputs, outputs).</p>
+  
+
+<p><a href="https://gulpjs.com">Gulp</a> is a JavaScript toolkit often used for automating development tasks such as compiling, analysing, testing, compressing, cleaning, concatenating, transforming source code and application resources, to name but a few. Gulp is very popular in the JavaScript development community alongside <a href="http://gruntjs.com">Grunt</a>, and <a href="https://webpack.js.org">Webpack</a>. Among those, Gulp and Grunt are referred as <em>task runners</em> (defining based on tasks) whilst Webpack is <em>module bundler</em> (defining based on modules, inputs, outputs). Gulp leverages <a href="https://nodejs.org/api/stream.html">Node&rsquo;s streaming API</a> for establishing pipelines of input and output data. Whilst streaming can potentially reduce disk I/O cost for better performance, it requires Gulp plugins to implement compatible streaming interfaces.</p>
+
+<p>An example of <code>Gulpfile.js</code></p>
+
+<pre><code class="language-javascript">
+</code></pre>
+
+<h5 id="gulp-main-methods">Gulp main methods</h5>
 
 <ul>
-<li>​</li>
+<li><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulptaskname-fn">gulp.task(name, fn)</a>: used for defining tasks</li>
+<li><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpsrcglobs-options">gulp.src(globs [, options])</a>:  used to specify input resources</li>
+<li><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglobs-opts-fn">gulp.watch(globs [, options] [, fn])</a>: used to monitoring changes in application resources</li>
+<li><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpdestpath-options">gulp.dest(path [, options])</a>:  used to specify the output destination of the processed resources</li>
+<li>.pipe(function): used to chain plugins or applications together</li>
+<li><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpparalleltasks">gulp.parallel(&hellip;tasks)</a> and <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpseriestasks">gulp.series(&hellip;tasks)</a>: (since 4.0)</li>
 </ul>
 
 </div>

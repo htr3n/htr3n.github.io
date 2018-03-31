@@ -18,7 +18,7 @@
       <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.test:8443/2018/02/getting-your-hands-dirty-with-gulp/</guid>
-      <description>Gulp (aka GulpJS) is a JavaScript toolkit often used for automating development tasks such as compiling, analysing, testing, compressing, cleaning, concatenating, transforming source code and application resources, to name but a few. Gulp is very popular in the JavaScript development community alongside Grunt, and Webpack. Among those, Gulp and Grunt are referred as task runners (defining based on tasks) whilst Webpack is module bundler (defining based on modules, inputs, outputs).</description>
+      <description>Gulp is a JavaScript toolkit often used for automating development tasks such as compiling, analysing, testing, compressing, cleaning, concatenating, transforming source code and application resources, to name but a few. Gulp is very popular in the JavaScript development community alongside Grunt, and Webpack. Among those, Gulp and Grunt are referred as task runners (defining based on tasks) whilst Webpack is module bundler (defining based on modules, inputs, outputs). Gulp leverages Node&amp;rsquo;s streaming API for establishing pipelines of input and output data.</description>
     </item>
     
   </channel>
