@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Natbib on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/natbib/</link>
+    <link>https://blog.test:8443/tags/natbib/</link>
     <description>Recent content in Natbib on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Thu, 15 Jan 2009 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/natbib/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/natbib/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sắp xếp trích dẫn (citations) trong (La)TeX</title>
-      <link>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</link>
+      <link>https://blog.test:8443/2009/01/sap-xep-trich-dan-latex/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</guid>
+      <guid>https://blog.test:8443/2009/01/sap-xep-trich-dan-latex/</guid>
       <description>&lt;p&gt;LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như &lt;code&gt;[1, 2]&lt;/code&gt; hoặc dạng chữ như &lt;code&gt;[Lamport94]&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
