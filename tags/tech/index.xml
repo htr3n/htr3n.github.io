@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on htr3n&#39;s</title>
-    <link>https://blog.test:8443/tags/tech/</link>
+    <link>https://htr3n.github.io/tags/tech/</link>
     <description>Recent content in Tech on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Fri, 01 Jun 2007 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.test:8443/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://htr3n.github.io/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iPhone &amp; Apple</title>
-      <link>https://blog.test:8443/2007/06/iphone--apple/</link>
+      <link>https://htr3n.github.io/2007/06/iphone--apple/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2007/06/iphone--apple/</guid>
+      <guid>https://htr3n.github.io/2007/06/iphone--apple/</guid>
       <description>Tại Macworld Expo 2007 (14-18 tháng 1, 2007) ở San Francisco, CA, Steve Jobs đã vén bức màn bí mật về thiết bị điện thoại &amp;ldquo;siêu thông minh&amp;rdquo; Apple iPhone.
 Với phong cách trình diễn hấp dẫn người nghe vốn có, Steve minh họa điểm sáng tạo độc đáo mà không điện thoại nào hiện tại có được. Đó là sử dụng touch-screen và điều khiển hoàn toàn bằng ngón tay giống như iPod, không có bàn phím thật (physical).</description>
     </item>

@@ -3,666 +3,557 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.test:8443/2018/03/confusing-hugo-issues-date/time-formatting-and-isset/with/</loc>
+    <loc>https://htr3n.github.io/2018/03/confusing-hugo-issues-date/time-formatting-and-isset/with/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2018/02/how-to-react/</loc>
-    <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/2018/02/web-application-development-using-vue.js/</loc>
-    <lastmod>2018-02-22T10:55:31+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/2018/02/getting-your-hands-dirty-with-gulp/</loc>
-    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/2018/02/node.jss-package-managements/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/2018/02/getting-started-with-webpack/</loc>
+    <loc>https://htr3n.github.io/2018/02/getting-started-with-webpack/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2018/01/integration-laravel-5.5-and-gentelella-admin-theme/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/2018/01/first-experience-with-hugo/</loc>
+    <loc>https://htr3n.github.io/2018/01/first-experience-with-hugo/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2018/01/laramod/</loc>
+    <loc>https://htr3n.github.io/2018/01/laramod/</loc>
     <lastmod>2018-01-20T10:02:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2018/01/nguy-bien-fallacies/</loc>
+    <loc>https://htr3n.github.io/2018/01/nguy-bien-fallacies/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2017/09/apache-httpd-php-macos/</loc>
+    <loc>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</loc>
     <lastmod>2018-01-19T09:20:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2016/08/cach-xung-ho/</loc>
+    <loc>https://htr3n.github.io/2016/08/cach-xung-ho/</loc>
     <lastmod>2017-01-19T17:24:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2015/07/khen-con-st/</loc>
+    <loc>https://htr3n.github.io/2015/07/khen-con-st/</loc>
     <lastmod>2015-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2013/08/transitional-words-st/</loc>
+    <loc>https://htr3n.github.io/2013/08/transitional-words-st/</loc>
     <lastmod>2013-08-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2009/01/sap-xep-trich-dan-latex/</loc>
+    <loc>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2009/01/hai-mat-cua-mot-van-de/</loc>
+    <loc>https://htr3n.github.io/2009/01/hai-mat-cua-mot-van-de/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2008/12/nguoi-lon-hay-tu-te-hon/</loc>
+    <loc>https://htr3n.github.io/2008/12/nguoi-lon-hay-tu-te-hon/</loc>
     <lastmod>2018-02-02T21:07:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2008/12/du-hoc-sinh/</loc>
+    <loc>https://htr3n.github.io/2008/12/du-hoc-sinh/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2008/12/quy-luat-tien-hoa/</loc>
+    <loc>https://htr3n.github.io/2008/12/quy-luat-tien-hoa/</loc>
     <lastmod>2017-01-19T10:28:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2008/12/quyen-va-nghia-vu-im-lang/</loc>
+    <loc>https://htr3n.github.io/2008/12/quyen-va-nghia-vu-im-lang/</loc>
     <lastmod>2017-01-19T10:28:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2008/12/critical-thinking/</loc>
+    <loc>https://htr3n.github.io/2008/12/critical-thinking/</loc>
     <lastmod>2018-01-19T10:25:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2008/12/mot-cach-dao-mo/</loc>
+    <loc>https://htr3n.github.io/2008/12/mot-cach-dao-mo/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2008/12/latex-tieng-viet-unicode/</loc>
+    <loc>https://htr3n.github.io/2008/12/latex-tieng-viet-unicode/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2007/07/bach-khoa-toan-san/</loc>
+    <loc>https://htr3n.github.io/2007/07/bach-khoa-toan-san/</loc>
     <lastmod>2018-01-19T11:18:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2007/06/iphone--apple/</loc>
+    <loc>https://htr3n.github.io/2007/06/iphone--apple/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/2006/01/kinh-nghiem-laptop/</loc>
+    <loc>https://htr3n.github.io/2006/01/kinh-nghiem-laptop/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/about/</loc>
+    <loc>https://htr3n.github.io/about/</loc>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/admin/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/apple/</loc>
+    <loc>https://htr3n.github.io/tags/apple/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/atom/</loc>
+    <loc>https://htr3n.github.io/tags/atom/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/bibliography/</loc>
+    <loc>https://htr3n.github.io/tags/bibliography/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/posts/</loc>
+    <loc>https://htr3n.github.io/posts/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/bundler/</loc>
+    <loc>https://htr3n.github.io/tags/bundler/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/categories/</loc>
+    <loc>https://htr3n.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/children/</loc>
+    <loc>https://htr3n.github.io/tags/children/</loc>
     <lastmod>2018-02-02T21:07:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/ch%C3%ADnh-tr%E1%BB%8B/</loc>
+    <loc>https://htr3n.github.io/tags/ch%C3%ADnh-tr%E1%BB%8B/</loc>
     <lastmod>2018-02-02T21:07:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/citation/</loc>
+    <loc>https://htr3n.github.io/tags/citation/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/cite/</loc>
+    <loc>https://htr3n.github.io/tags/cite/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/critical-thinking/</loc>
+    <loc>https://htr3n.github.io/tags/critical-thinking/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/date/time/</loc>
+    <loc>https://htr3n.github.io/tags/date/time/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/dell/</loc>
+    <loc>https://htr3n.github.io/tags/dell/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/dev/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/categories/dev/</loc>
+    <loc>https://htr3n.github.io/categories/dev/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/dnsmasq/</loc>
+    <loc>https://htr3n.github.io/tags/dnsmasq/</loc>
     <lastmod>2018-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/du-h%E1%BB%8Dc/</loc>
+    <loc>https://htr3n.github.io/tags/du-h%E1%BB%8Dc/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/d%E1%BA%A1y-con/</loc>
+    <loc>https://htr3n.github.io/tags/d%E1%BA%A1y-con/</loc>
     <lastmod>2015-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/english/</loc>
+    <loc>https://htr3n.github.io/tags/english/</loc>
     <lastmod>2013-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/fallacy/</loc>
+    <loc>https://htr3n.github.io/tags/fallacy/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/family/</loc>
+    <loc>https://htr3n.github.io/tags/family/</loc>
     <lastmod>2015-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/formatting/</loc>
+    <loc>https://htr3n.github.io/tags/formatting/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/gentelella/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/gia-%C4%91%C3%ACnh/</loc>
+    <loc>https://htr3n.github.io/tags/gia-%C4%91%C3%ACnh/</loc>
     <lastmod>2018-02-02T21:07:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/golang/</loc>
+    <loc>https://htr3n.github.io/tags/golang/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/gulp/</loc>
-    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/hp/</loc>
+    <loc>https://htr3n.github.io/tags/hp/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/httpd/</loc>
+    <loc>https://htr3n.github.io/tags/httpd/</loc>
     <lastmod>2018-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/hugo/</loc>
+    <loc>https://htr3n.github.io/tags/hugo/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/hyperref/</loc>
+    <loc>https://htr3n.github.io/tags/hyperref/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/ibm/</loc>
+    <loc>https://htr3n.github.io/tags/ibm/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/if-else/</loc>
+    <loc>https://htr3n.github.io/tags/if-else/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/integration/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/iphone/</loc>
+    <loc>https://htr3n.github.io/tags/iphone/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/isset/</loc>
+    <loc>https://htr3n.github.io/tags/isset/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/javascript/</loc>
-    <lastmod>2018-02-28T00:00:00+00:00</lastmod>
+    <loc>https://htr3n.github.io/tags/javascript/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/jekyll/</loc>
+    <loc>https://htr3n.github.io/tags/jekyll/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/kinh-nghi%E1%BB%87m/</loc>
+    <loc>https://htr3n.github.io/tags/kinh-nghi%E1%BB%87m/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/laptop/</loc>
+    <loc>https://htr3n.github.io/tags/laptop/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/laramod/</loc>
+    <loc>https://htr3n.github.io/tags/laramod/</loc>
     <lastmod>2018-01-20T10:02:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/laravel/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+    <loc>https://htr3n.github.io/tags/laravel/</loc>
+    <lastmod>2018-01-20T10:02:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/macbook/</loc>
+    <loc>https://htr3n.github.io/tags/macbook/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/macos/</loc>
+    <loc>https://htr3n.github.io/tags/macos/</loc>
     <lastmod>2018-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/modularisation/</loc>
+    <loc>https://htr3n.github.io/tags/modularisation/</loc>
     <lastmod>2018-01-20T10:02:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/module/</loc>
+    <loc>https://htr3n.github.io/tags/module/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay/</loc>
+    <loc>https://htr3n.github.io/tags/m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/vn/</loc>
+    <loc>https://htr3n.github.io/vn/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/natbib/</loc>
+    <loc>https://htr3n.github.io/tags/natbib/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/newsreader/</loc>
+    <loc>https://htr3n.github.io/tags/newsreader/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/ng%E1%BB%A5y-bi%E1%BB%87n/</loc>
+    <loc>https://htr3n.github.io/tags/ng%E1%BB%A5y-bi%E1%BB%87n/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/ni%E1%BB%81m-tin/</loc>
+    <loc>https://htr3n.github.io/tags/ni%E1%BB%81m-tin/</loc>
     <lastmod>2018-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/node.js/</loc>
-    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/npm/</loc>
-    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/package-management/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/parenting/</loc>
+    <loc>https://htr3n.github.io/tags/parenting/</loc>
     <lastmod>2015-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/php/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+    <loc>https://htr3n.github.io/tags/php/</loc>
+    <lastmod>2018-01-20T10:02:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/politics/</loc>
+    <loc>https://htr3n.github.io/tags/politics/</loc>
     <lastmod>2017-01-19T10:28:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/quy%E1%BB%81n-im-l%E1%BA%B7ng/</loc>
+    <loc>https://htr3n.github.io/tags/quy%E1%BB%81n-im-l%E1%BA%B7ng/</loc>
     <lastmod>2017-01-19T10:28:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/rants/</loc>
+    <loc>https://htr3n.github.io/tags/rants/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/react/</loc>
-    <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/rss/</loc>
+    <loc>https://htr3n.github.io/tags/rss/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/server/</loc>
+    <loc>https://htr3n.github.io/tags/server/</loc>
     <lastmod>2018-01-19T09:20:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/sinh-vi%C3%AAn/</loc>
+    <loc>https://htr3n.github.io/tags/sinh-vi%C3%AAn/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/sony/</loc>
+    <loc>https://htr3n.github.io/tags/sony/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/state-management/</loc>
-    <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/static-site-generators/</loc>
+    <loc>https://htr3n.github.io/tags/static-site-generators/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/s%E1%BB%95-h%E1%BB%99-kh%E1%BA%A9u/</loc>
+    <loc>https://htr3n.github.io/tags/s%E1%BB%95-h%E1%BB%99-kh%E1%BA%A9u/</loc>
     <lastmod>2017-01-19T10:28:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/tech/</loc>
+    <loc>https://htr3n.github.io/tags/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/tex/</loc>
+    <loc>https://htr3n.github.io/tags/tech/</loc>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/tex/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/theme/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/th%C3%B4ng-tin/</loc>
+    <loc>https://htr3n.github.io/tags/th%C3%B4ng-tin/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/tinh-th%E1%BA%A7n-ph%E1%BA%A3n-bi%E1%BB%87n/</loc>
+    <loc>https://htr3n.github.io/tags/tinh-th%E1%BA%A7n-ph%E1%BA%A3n-bi%E1%BB%87n/</loc>
     <lastmod>2018-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/tranh-lu%E1%BA%ADn/</loc>
+    <loc>https://htr3n.github.io/tags/tranh-lu%E1%BA%ADn/</loc>
     <lastmod>2018-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/transitional-words/</loc>
+    <loc>https://htr3n.github.io/tags/transitional-words/</loc>
     <lastmod>2013-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/tr%E1%BA%BB-em/</loc>
+    <loc>https://htr3n.github.io/tags/tr%E1%BA%BB-em/</loc>
     <lastmod>2018-02-02T21:07:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/t%C3%A1o/</loc>
+    <loc>https://htr3n.github.io/tags/t%C3%A1o/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/unicode/</loc>
+    <loc>https://htr3n.github.io/tags/unicode/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/vietnamese/</loc>
+    <loc>https://htr3n.github.io/tags/vietnamese/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/categories/vn/</loc>
+    <loc>https://htr3n.github.io/categories/vn/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/vue.js/</loc>
-    <lastmod>2018-02-22T10:55:31+11:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/web/</loc>
-    <lastmod>2018-02-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/tags/webpack/</loc>
+    <loc>https://htr3n.github.io/tags/webpack/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/with/</loc>
+    <loc>https://htr3n.github.io/tags/with/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/writing/</loc>
+    <loc>https://htr3n.github.io/tags/writing/</loc>
     <lastmod>2013-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/yarn/</loc>
-    <lastmod>2018-02-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.test:8443/</loc>
+    <loc>https://htr3n.github.io/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.test:8443/tags/%C4%91i%E1%BB%87n-tho%E1%BA%A1i/</loc>
+    <loc>https://htr3n.github.io/tags/%C4%91i%E1%BB%87n-tho%E1%BA%A1i/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
