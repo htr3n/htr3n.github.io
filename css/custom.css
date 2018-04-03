@@ -50,24 +50,20 @@ pre
     overflow-x: auto; /* no line wrapping */
 }
 
-pre,
-code
+pre code, li code, td code, code
 {
-    font-family: 'Roboto Mono', monospace;
     border-radius: 4px;
-    width: 100%;
-    font-size: .9em;
+    white-space: pre-wrap;
+    padding:1px 4px;
+	background: #eee;
+	/* color: #444; */
+	border: 1px solid #d9d9d9;
 }
 
 code {
-	padding:.20em .2em .10em;
-	background: #272932!important;
-	color: #ececec!important;
-	box-sizing: border-box;
-	margin: 0 .25em;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 90%;
 }
-
-
 .copyright, 
 .poweredby
 {
