@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://htr3n.github.io/2018/03/confusing-hugo-issues-date/time-formatting-and-isset/with/</loc>
+    <loc>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
   </url>
   
@@ -230,12 +230,6 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/tags/formatting/</loc>
-    <lastmod>2018-03-31T08:55:31+11:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://htr3n.github.io/tags/gia-%C4%91%C3%ACnh/</loc>
     <lastmod>2018-02-02T21:07:00+07:00</lastmod>
     <priority>0</priority>
@@ -274,12 +268,6 @@
   <url>
     <loc>https://htr3n.github.io/tags/ibm/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/tags/if-else/</loc>
-    <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
   </url>
   
