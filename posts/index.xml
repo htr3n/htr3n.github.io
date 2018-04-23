@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 31 Mar 2018 08:55:31 +1100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Node.js package managers: NPM and Yarn</title>
+      <link>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</guid>
+      <description>A quick introduction Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources. Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, several package managers have been developed, notably, npm, anymod (formerly component), volo, ringojs, bower, yarn, pnpm, to name but a few.</description>
+    </item>
     
     <item>
       <title>Confusing Hugo issues: datetime and &#39;isset&#39;</title>
@@ -20,15 +29,6 @@
       <guid>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</guid>
       <description>Yesterday I got notified from Github for two opening issues of the Hugo&amp;rsquo;s theme hyde-hyde I have ported and developed.
 The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up. The issue seems very strange and difficult to spot. It took me a while to research around and found some relevant reports by Paul Heinlein and Dana Woodman, that Hugo date/time formatting is internally based on Golang, and therefore, uses a smart but confusing convention.</description>
-    </item>
-    
-    <item>
-      <title>Node.js package managers: NPM and Yarn</title>
-      <link>https://htr3n.github.io/2018/02/node.js-package-managers-npm-and-yarn/</link>
-      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/2018/02/node.js-package-managers-npm-and-yarn/</guid>
-      <description>A quick introduction Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources. Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, several package managers have been developed, notably, npm, anymod (formerly component), volo, ringojs, bower, yarn, pnpm, to name but a few.</description>
     </item>
     
     <item>

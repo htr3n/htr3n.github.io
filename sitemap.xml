@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</loc>
-    <lastmod>2018-03-31T08:55:31+11:00</lastmod>
+    <loc>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</loc>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/2018/02/node.js-package-managers-npm-and-yarn/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <loc>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</loc>
+    <lastmod>2018-03-31T08:55:31+11:00</lastmod>
   </url>
   
   <url>
@@ -136,7 +136,7 @@
   
   <url>
     <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-03-31T08:55:31+11:00</lastmod>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -194,7 +194,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2018-03-31T08:55:31+11:00</lastmod>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -290,7 +290,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/javascript/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -385,19 +385,19 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/node.js/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/tags/npm/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/tags/package-management/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -559,13 +559,13 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/yarn/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://htr3n.github.io/</loc>
-    <lastmod>2018-03-31T08:55:31+11:00</lastmod>
+    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
