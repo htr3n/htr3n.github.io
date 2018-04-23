@@ -23,14 +23,21 @@ The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up
     </item>
     
     <item>
+      <title>Node.js package managers: NPM and Yarn</title>
+      <link>https://htr3n.github.io/2018/02/node.js-package-managers-npm-and-yarn/</link>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/02/node.js-package-managers-npm-and-yarn/</guid>
+      <description>A quick introduction Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources. Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, several package managers have been developed, notably, npm, anymod (formerly component), volo, ringojs, bower, yarn, pnpm, to name but a few.</description>
+    </item>
+    
+    <item>
       <title>Getting Started with Webpack</title>
       <link>https://htr3n.github.io/2018/02/getting-started-with-webpack/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/02/getting-started-with-webpack/</guid>
       <description>&lt;p&gt;Per definition &lt;a href=&#34;https://webpack.js.org/concepts&#34;&gt;here&lt;/a&gt;, Webpack is a &lt;em&gt;static module bundler&lt;/em&gt; for Web applications. It analyses and processes the &lt;em&gt;input application&lt;/em&gt; and generates output &lt;em&gt;bundles&lt;/em&gt;. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&amp;rsquo;ve started learning it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://webpack.github.io/assets/what-is-webpack.png&#34; alt=&#34;Webpack Overview&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

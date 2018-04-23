@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/2018/02/node.js-package-managers-npm-and-yarn/</loc>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/2018/02/getting-started-with-webpack/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
   </url>
@@ -285,7 +290,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/javascript/</loc>
-    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -375,6 +380,24 @@
   <url>
     <loc>https://htr3n.github.io/tags/ni%E1%BB%81m-tin/</loc>
     <lastmod>2018-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/node.js/</loc>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/npm/</loc>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/package-management/</loc>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -531,6 +554,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/writing/</loc>
     <lastmod>2013-08-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/yarn/</loc>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
