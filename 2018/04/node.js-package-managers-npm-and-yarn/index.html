@@ -269,7 +269,7 @@ yarn add git@github.com:eslint/eslint.git
 
 <pre><code class="language-sh"># check outdated packages
 npm outdated
-# upgrade all (since 2.6.1 default to top level packages)
+# upgrade all to the latest versions w.r.t version ranges in 'package.json' (since 2.6.1 default to top level packages)
 npm update
 # upgrade a specific package
 npm update eslint
@@ -280,7 +280,9 @@ npm update eslint
 <pre><code class="language-sh"># check outdated packages
 yarn outdated
 # upgrade all
-yarn upgrade 
+yarn upgrade
+# upgrade all and ignore version ranges in 'package.json'
+yarn upgrade --latest
 # upgrade a specific package
 yarn upgrade eslint
 # upgrade packages match a pattern

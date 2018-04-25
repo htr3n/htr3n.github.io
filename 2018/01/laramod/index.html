@@ -144,15 +144,17 @@
       </span>  
   </div>    
   
-  <p><a href="https://laravel.com">Laravel</a> is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel, 5.5.x, imposes a conventional project structure that is well documented <a href="https://laravel.com/docs/5.5/structure">here</a>. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously. Thus, the need for complex submodule organisation is quite obvious.</p>
+  <p><a href="https://laravel.com">Laravel</a> is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented <a href="https://laravel.com/docs/5.5/structure">here</a>. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously. Thus, the need for complex submodule organisation is quite obvious.</p>
 
 <p></p>
 
-<p>From my struggle to organise a Laravel-based project such that I can divide and work on individual submodules such as <code>UserManagement</code>, <code>Authentication</code>, <code>Dashboard</code>, etc. whilst keeping the Laravel code base intact as much as possible (this could be convenient for upgrading Laravel) and keeping my code base separate from Laravel&rsquo;s. There are a number decent attempts on modalurasing Laravel projects for example <a href="https://nicolaswidart.com/blog/writing-modular-applications-with-laravel-modules">here</a>, <a href="https://github.com/caffeinated/modules">here</a> or <a href="http://kamranahmed.info/blog/2015/12/03/creating-a-modular-application-in-laravel">here</a>. Being inspired and learning from these articles, I decided to start a simple project on my own, namely, <a href="https://github.com/htr3n/laramod"><code>LaraMod</code></a>, for many reasons, but the biggest one is to dig deeper into Laravel 5.5 and PHP.</p>
+<p>From my struggle to organise a Laravel-based project such that I can divide and work on individual submodules such as <code>UserManagement</code>, <code>Authentication</code>, <code>Dashboard</code>, etc. whilst keeping the Laravel code base intact as much as possible (this could be convenient for upgrading Laravel) and keeping my code base separate from Laravel&rsquo;s. There are a number decent attempts on modalurasing Laravel projects for example <a href="https://nicolaswidart.com/blog/writing-modular-applications-with-laravel-modules">here</a>, <a href="https://github.com/caffeinated/modules">here</a> or <a href="http://kamranahmed.info/blog/2015/12/03/creating-a-modular-application-in-laravel">here</a>. Being inspired and learning from these articles, I decided to start a simple project on my own, namely, <a href="https://github.com/htr3n/laramod"><code>LaraMod</code></a>, for many reasons, but the biggest one is to dig deeper into Laravel 5 and PHP.</p>
 
 <p>Here I only emphasize some major aspects of LaraMod. The rest, including code and extra improvements can be found at LaraMod&rsquo;s <a href="https://github.com/htr3n/LaraMod">repository</a>.</p>
 
-<h2 id="modularising-laravel-5-5-x">Modularising Laravel 5.5.x</h2>
+<p><strong>Update 1 on 2018-04-25</strong>: LaraMod has been revised and updated to work with the most recent version of Laravel framework, 5.6.17. Instead of a standalone git repos, LaraMod is now a fork of <a href="https://github.com/laravel/laravel">Laravel repos</a> and updated with modularisation.</p>
+
+<h2 id="modularising-laravel-5">Modularising Laravel 5</h2>
 
 <h3 id="a-simple-submodule-structure">A Simple Submodule Structure</h3>
 
@@ -295,7 +297,7 @@ class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider {
 }
 </code></pre>
 
-<p>Another technique for autoloading classes in Laravel 5.5 is to dynamically add PSR4 classpaths in <code>ModulesServiceProvider.php</code>.</p>
+<p>Another technique for autoloading classes in Laravel 5 is to dynamically add PSR4 classpaths in <code>ModulesServiceProvider.php</code>.</p>
 
 <pre><code class="language-php">$loader = require base_path() . '/vendor/autoload.php';
 $loader-&gt;setPsr4(&quot;Core\\&quot;, __DIR__ . &quot;./Core/&quot;);
@@ -312,7 +314,7 @@ $loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
 
 <h2 id="finale">Finale</h2>
 
-<p>The outcome of my very first PHP project, LaraMod, would be a reasonable skeleton for modularising software projects based on Laravel 5.5. That is, you can just easily create a new submodule with the predefined conventional structure and add the PSR-4 namespaces and classpaths, then good you go. Each submodule should then be developed independently. Sure there are some areas that need improvement. For example, all testing stuffs are still under <code>/tests</code> and database seeders are still in <code>database/seeds</code>. The first one requires intervention with PHPUnit/<code>phpunit.xml</code> whilst the later asks for further changes in built-in Laravel <code>artisan</code> commands.</p>
+<p>The outcome of my very first PHP project, LaraMod, would be a reasonable skeleton for modularising software projects based on Laravel 5. That is, you can just easily create a new submodule with the predefined conventional structure and add the PSR-4 namespaces and classpaths, then good you go. Each submodule should then be developed independently. Sure there are some areas that need improvement. For example, all testing stuffs are still under <code>/tests</code> and database seeders are still in <code>database/seeds</code>. The first one requires intervention with PHPUnit/<code>phpunit.xml</code> whilst the later asks for further changes in built-in Laravel <code>artisan</code> commands.</p>
 
 <p>For me &ndash; a new bie, it was not quite an all-pleasant journey to experience several Laravel&rsquo;s aspects. Nevertheless, developing and customising LaraMod are extremely valuable as I could learn a lot about not only Laravel in particular but also PHP in general. Achieving reasonable modularisation for a complex software development project requires a lot of thoughtful design and hard work and even sometimes trade-offs and compromises. In sharing this, I hope LaraMod might become handy and helpful start so that your journeys with Laravel can be more pleasant and joyful. I look forward to hearing and learning from your experience, too.</p>
 </div>
