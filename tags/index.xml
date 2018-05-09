@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 01 Jun 2007 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Admin</title>
+      <link>https://htr3n.github.io/tags/admin/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/admin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Apple</title>
@@ -112,6 +121,15 @@
     </item>
     
     <item>
+      <title>Dev</title>
+      <link>https://htr3n.github.io/tags/dev/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/dev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Dnsmasq</title>
       <link>https://htr3n.github.io/tags/dnsmasq/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
@@ -162,6 +180,15 @@
       <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/family/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gentelella</title>
+      <link>https://htr3n.github.io/tags/gentelella/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/gentelella/</guid>
       <description></description>
     </item>
     
@@ -225,6 +252,15 @@
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/ibm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Integration</title>
+      <link>https://htr3n.github.io/tags/integration/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/integration/</guid>
       <description></description>
     </item>
     
@@ -294,7 +330,7 @@
     <item>
       <title>Laravel</title>
       <link>https://htr3n.github.io/tags/laravel/</link>
-      <pubDate>Fri, 19 Jan 2018 17:39:00 +0700</pubDate>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/laravel/</guid>
       <description></description>
@@ -420,7 +456,7 @@
     <item>
       <title>Php</title>
       <link>https://htr3n.github.io/tags/php/</link>
-      <pubDate>Fri, 19 Jan 2018 17:39:00 +0700</pubDate>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/php/</guid>
       <description></description>
@@ -522,6 +558,15 @@
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/tex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Theme</title>
+      <link>https://htr3n.github.io/tags/theme/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/theme/</guid>
       <description></description>
     </item>
     

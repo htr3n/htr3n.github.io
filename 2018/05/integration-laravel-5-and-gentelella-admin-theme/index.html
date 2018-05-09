@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="wf-firasans-n4-active wf-active">
+	<head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="htr3n&#39;s blog :: technology, opinions, and rants about everything">
+    <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,rants,vietnamese,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking, tư duy phản biện, luật, hiến pháp">
+    <meta name="generator" content="Hugo 0.39-DEV" />
+    
+    <title>Integration Laravel 5 and Gentelella Admin Theme &middot; htr3n&#39;s</title>
+    <meta content="Integration Laravel 5 and Gentelella Admin Theme - htr3n&#39;s" property="og:title">
+    <meta content="htr3n&#39;s blog :: technology, opinions, and rants about everything - " property="og:description">
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/print.css" media="print">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
+    <!-- Font-Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!-- highlight.js-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+    <!-- Customised CSS -->
+    <link rel="stylesheet" href="https://htr3n.github.io/css/custom.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+	</head>
+    <body>
+        <div class="sidebar">
+	<div class="container text-center sidebar-sticky">
+		<div class="sidebar-about text-center">
+			<a href="https://htr3n.github.io/"><h1 class="brand">htr3n&#39;s</h1></a>
+			 <img src="/img/avatar.png" alt="Author Image" class="img-circle headshot center"> 
+			<p class="lead">
+				 technology, thoughts, opinions, rants 
+			</p>
+		</div>
+		
+<div>
+	<ul class="sidebar-nav">
+		
+		
+				<li>
+					<a href="/posts/"> <span>Posts</span></a>
+				</li>
+				<li>
+					<a href="https://github.com/htr3n/"> <span>Code</span></a>
+				</li>
+				<li>
+					<a href="/about/"> <span>About</span></a>
+				</li>
+				<li>
+					<a href="/vn/"> <span>Tiếng Việt</span></a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+        <p>
+		<section class="row text-center">
+	
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://bitbucket.org/hoanghuytran"><i class="fab fa-bitbucket fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+        </p>
+		<p class="copyright">&copy; 2018 htr3n.
+        <a href="https://creativecommons.org/licenses/by/4.0">Some Rights Reserved</a>.<br/>Built with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+        </p>
+	</div>
+	<div>
+	</div>
+</div>
+
+        <div class="content container">
+            <div class="post">
+  <h1>Integration Laravel 5 and Gentelella Admin Theme</h1>
+  
+  <div class="col-sm-12 col-md-12">
+    <span class="text-left post-date meta">
+            
+       
+        <i class="fas fa-calendar-alt"></i> May 9, 2018
+      
+      
+        
+        
+            in
+            
+            
+                <a class="meta" href="/categories/dev">DEV</a>
+                
+            
+        
+      
+      
+      
+        
+        
+            <br/>
+             <i class="fas fa-tags"></i>
+            
+            <a class="meta" href="/tags/admin">admin</a> 
+        
+            <a class="meta" href="/tags/dev">dev</a> 
+        
+            <a class="meta" href="/tags/gentelella">gentelella</a> 
+        
+            <a class="meta" href="/tags/integration">integration</a> 
+        
+            <a class="meta" href="/tags/laravel">laravel</a> 
+        
+            <a class="meta" href="/tags/php">php</a> 
+        
+            <a class="meta" href="/tags/theme">theme</a>
+        
+      
+      
+      <br/>
+      <i class="fas fa-clock"></i> 3 min read 
+      </span>  
+  </div>    
+  
+  
+
+<p><a href="https://github.com/puikinsh/gentelella">Gentelella</a> is a very nice and gentle <a href="https://getbootstrap.com">Bootstrap</a> based admin theme developed by Aigars Silkalns (<a href="https://github.com/puikinsh">puikinsh</a> in Github), who founded <a href="https://colorlib.com">colorlib.com</a>. It can be integrated into several Web application frameworks. In this post, I noted down my simple development exercise in which Gentelella is used to decorated a <a href="https://github.com/laravel/laravel">Laravel</a> 5 based Web application. This task is part of my framework <a href="https://github.com/htr3n/LaraMod">LaraMod</a>.</p>
+
+<p>Laravel can act as backend for any Web application. At the moment, it incorporates <a href="https://laravel.com/docs/frontend">good supports</a> for popular front-ends such as Bootstrap, <a href="https://vuejs.org">Vue.js</a>, and <a href="https://reactjs.org">React</a>. The included tool <a href="https://github.com/JeffreyWay/laravel-mix">Laravel Mix</a>, which runs on top of  <a href="https://webpack.js.org/">Webpack</a> can significantly lessen development effort on compiling and mixing Web resources. Thus, I have just leveraged Laravel Mix for this integration task. Further details on Laravel Mix can be found <a href="https://laravel.com/docs/mix">here</a>.</p>
+
+<h5 id="installation">Installation</h5>
+
+<p>Laravel provides built-in support for some front-end frameworks but they might cause some conflicts and incompability with Gentelella&rsquo;s own libraries. Therefore, I have decided to start from scratch, i.e. using basic Laravel without any front-end scaffolding</p>
+
+<pre><code class="language-sh"># remove all scaffolding
+php artisan preset none
+</code></pre>
+
+<p>This command will remove all relevant scaffolding components including Bootstrap, Vue or React. Note that Laravel configuration for Bootstrap and Vue might still exist. For instance, check <code>resource/assets/js/app.js</code>  for the following line and make sure it is commented out.</p>
+
+<pre><code class="language-js">// require('./bootstrap');
+</code></pre>
+
+<p>Now we must add Gentelella dependency.</p>
+
+<pre><code class="language-sh"># adding Gentelella
+yarn add --save gentelella 		# or npm install gentelella --save
+# update dependencies
+yarn install					# or  npm install
+</code></pre>
+
+<p>After this step, Gentelella should be available in the local <code>node_modules</code> folder.</p>
+
+<h5 id="compiling-and-mixing-resources">Compiling and Mixing Resources</h5>
+
+<p>The main configuration file of Laravel Mix is <code>webpack.mix.js</code>. The fundamental tasks defined are:</p>
+
+<pre><code class="language-js">let mix = require('laravel-mix');
+...
+mix.js('resources/assets/js/app.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css');
+</code></pre>
+
+<p>That is, Mix will compile JavaScript and SASS resources in <code>resources/assets/js/app.js</code> and <code>resources/assets/sass/app.scss</code> to <code>public/js</code> and <code>public/css</code>, respectively.</p>
+
+<p>We shall use the same way to compile necessary Gentelella resources. The full configuration can be found in the LaraMod project <a href="https://github.com/htr3n/laramod/blob/master/webpack.mix.js"><code>webpack.mix.js</code></a>.</p>
+
+<p>Some common variables are defined to reduce duplicates.</p>
+
+<pre><code class="language-js">// general resources
+let public_js = 'public/js/';
+let public_css = 'public/css/';
+let resource_sass = 'resources/assets/sass/';
+// Gentelella resources
+let gentelella_home = 'node_modules/gentelella/';
+let gentelella_vendor = gentelella_home + '/vendors/';
+</code></pre>
+
+<p>As using separate styles for different pages, e.g. Login, Dashboard, etc., I configure Mix to compile them accordingly.</p>
+
+<pre><code class="language-js">mix.js('resources/assets/js/app.js', public_js).
+    sass(resource_sass + 'app.scss', public_css).
+    sass(resource_sass + 'home.scss', public_css).
+    options({processCssUrls: false}).
+    sass(resource_sass + 'login.scss', public_css).
+    options({processCssUrls: false}).
+    sass(resource_sass + 'dashboard.scss', public_css).
+    options({processCssUrls: false});
+</code></pre>
+
+<p>For each component of Gentelella that we need for our project, we can copy them into Laravel public folders.</p>
+
+<pre><code class="language-js">/*
+ *  Copy dependent JavaScripts and CSSs
+ */
+mix.
+    // gentelella
+    copy(gentelella_home + 'build/css/custom.css',
+        public_css + 'gentelella-custom.css').
+    copy(gentelella_home + 'build/js/custom.js',
+        public_js + 'gentelella-custom.js').
+...
+</code></pre>
+
+<p>We can definitely use Mix/Webpack tools for optimising/minimising/transforming Gentelella resources. I will leave it as extra deployment exercises. For now, I will mainly concentrate on development aspects.</p>
+
+<p>When I need to use a Gentelella&rsquo;s component for a certain page, I will include the following directives in the corresponding Laravel Blade templates for that page.</p>
+
+<pre><code class="language-php+HTML">&lt;!-- Styles --&gt;
+&lt;link href=&quot;{{ asset('css/font-awesome.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;{{ asset('css/bootstrap.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;{{ asset('css/gentelella-custom.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
+...
+&lt;!-- Scripts --&gt;
+&lt;script src=&quot;{{ asset('js/jquery.min.js') }}&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;{{ asset('js/bootstrap.js') }}&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;{{ asset('js/gentelella-custom.js') }}&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;{{ asset('js/app.js') }}&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Note that the specific Laravel Blade directive <code>{{ }}</code> and <code>asset(...)</code> are used to refer to the resources inside Laravel <code>public/</code> folder accordingly.</p>
+
+<h5 id="conclusion">Conclusion</h5>
+
+<p>Integration Laravel 5 and Gentelella is a simple but interesting exercise showing many nice features of Laravel for supporting common front-ends. Laravel Mix provides a good wrapper on top of Webpack that really reduces the complexity of Webpack and lessens considerable amount of development effort.</p>
+
+</div>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+
+<div id="graphcomment"></div>
+<script type="text/javascript">
+  window.graphcomment_id = 'htr3n-github-io';
+   
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.src = 'https://graphcomment.com/js/integration.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+</script>
+            </div>
+        </div>
+        
+        
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-112764962-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+        
+    </body>
+</html>

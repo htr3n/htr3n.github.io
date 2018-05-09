@@ -235,13 +235,15 @@ yarn list
 <pre><code class="language-sh">yarn why eslint
 </code></pre>
 
-<h5 id="3-adding-packages">3. Adding Packages</h5>
+<h5 id="3-installing-dependencies">3. Installing Dependencies</h5>
 
 <p>Both <code>npm</code> and <code>yarn</code> provide several options to add dependencies ranging from registered packages, tarballs, to git repositories. Please note that, <code>npm</code> and <code>yarn</code> also support manipulating global package repositories, i.e. installed packages that are available to the whole working system instead of local projects. In most of the case, we can use the option <code>-g</code> for <code>npm</code> and the command <code>global</code> for <code>yarn</code>. Thus, in the following steps, we mainly concentrate on local repositories.</p>
 
 <h6 id="npm-3">NPM</h6>
 
-<pre><code class="language-sh"># add a registered package and record it in 'dependencies' 
+<pre><code class="language-sh"># install all dependencies defined in package.json
+npm install
+# add a registered package and record it in 'dependencies' 
 npm install eslint
 # add an exact version
 npm install eslint@3.0.0
@@ -253,7 +255,9 @@ npm install git@github.com:eslint/eslint.git
 
 <h6 id="yarn-3">Yarn</h6>
 
-<pre><code class="language-sh"># add a registered package
+<pre><code class="language-sh"># install all dependencies defined in package.json
+yarn install
+# add a registered package
 yarn add eslint
 # add an exact version
 yarn add eslint@3.0.0

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Admin on htr3n&#39;s</title>
+    <link>https://htr3n.github.io/tags/admin/</link>
+    <description>Recent content in Admin on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 09 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://htr3n.github.io/tags/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Integration Laravel 5 and Gentelella Admin Theme</title>
+      <link>https://htr3n.github.io/2018/05/integration-laravel-5-and-gentelella-admin-theme/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/05/integration-laravel-5-and-gentelella-admin-theme/</guid>
+      <description>Gentelella is a very nice and gentle Bootstrap based admin theme developed by Aigars Silkalns (puikinsh in Github), who founded colorlib.com. It can be integrated into several Web application frameworks. In this post, I noted down my simple development exercise in which Gentelella is used to decorated a Laravel 5 based Web application. This task is part of my framework LaraMod.
+Laravel can act as backend for any Web application.</description>
+    </item>
+    
+  </channel>
+</rss>
