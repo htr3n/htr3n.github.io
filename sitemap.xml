@@ -122,12 +122,6 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/tags/admin/</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://htr3n.github.io/tags/apple/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
@@ -188,6 +182,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/critical-thinking/</loc>
     <lastmod>2017-01-19T10:40:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/css/</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -300,12 +300,6 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/tags/integration/</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://htr3n.github.io/tags/iphone/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
@@ -319,7 +313,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/javascript/</loc>
-    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -498,7 +492,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -576,7 +570,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/webpack/</loc>
-    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
