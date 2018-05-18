@@ -154,9 +154,15 @@
   
   
 
+<<<<<<< HEAD
 <p><a href="https://github.com/puikinsh/gentelella">Gentelella</a> is a very nice and gently-looking <a href="https://getbootstrap.com">Bootstrap</a> based admin theme developed by Aigars Silkalns (known as <a href="https://github.com/puikinsh">puikinsh</a> in Github), who founded <a href="https://colorlib.com">colorlib.com</a>. It can be integrated into several Web application frameworks. In this post, I noted down my simple development exercise in which Gentelella is used to decorated a <a href="https://github.com/laravel/laravel">Laravel</a> 5 based Web application. This task is part of building my PHP based framework <a href="https://github.com/htr3n/LaraMod">LaraMod</a>.</p>
 
 <p>Laravel can act as backend for any Web application. At the moment, it includes several <a href="https://laravel.com/docs/frontend">good supports</a> for popular front-ends such as Bootstrap, <a href="https://vuejs.org">Vue.js</a>, and <a href="https://reactjs.org">React</a>. The included tool <a href="https://github.com/JeffreyWay/laravel-mix">Laravel Mix</a>, which runs on top of  <a href="https://webpack.js.org/">Webpack</a> can significantly lessen development effort on compiling and mixing Web resources. Thus, I have just leveraged Laravel Mix for this integration task. Further details on Laravel Mix can be found <a href="https://laravel.com/docs/mix">here</a>.</p>
+=======
+<p><a href="https://github.com/puikinsh/gentelella">Gentelella</a> is a very nice and gentle <a href="https://getbootstrap.com">Bootstrap</a> based admin theme developed by Aigars Silkalns (<a href="https://github.com/puikinsh">puikinsh</a> in Github), who founded <a href="https://colorlib.com">colorlib.com</a>. It can be integrated into several Web application frameworks. In this post, I noted down my simple development exercise in which Gentelella is used to decorated a <a href="https://github.com/laravel/laravel">Laravel</a> 5 based Web application. This task is part of my framework <a href="https://github.com/htr3n/LaraMod">LaraMod</a>.</p>
+
+<p>Laravel can act as backend for any Web application. At the moment, it incorporates <a href="https://laravel.com/docs/frontend">good supports</a> for popular front-ends such as Bootstrap, <a href="https://vuejs.org">Vue.js</a>, and <a href="https://reactjs.org">React</a>. The included tool <a href="https://github.com/JeffreyWay/laravel-mix">Laravel Mix</a>, which runs on top of  <a href="https://webpack.js.org/">Webpack</a> can significantly lessen development effort on compiling and mixing Web resources. Thus, I have just leveraged Laravel Mix for this integration task. Further details on Laravel Mix can be found <a href="https://laravel.com/docs/mix">here</a>.</p>
+>>>>>>> 8cdfc9bc70b90e1b13946f9f325002123621f68b
 
 <h5 id="installation">Installation</h5>
 
@@ -171,7 +177,11 @@ php artisan preset none
 <pre><code class="language-js">// require('./bootstrap');
 </code></pre>
 
+<<<<<<< HEAD
 <p>Now we just add Gentelella&rsquo;s dependencies.</p>
+=======
+<p>Now we must add Gentelella dependency.</p>
+>>>>>>> 8cdfc9bc70b90e1b13946f9f325002123621f68b
 
 <pre><code class="language-sh"># adding Gentelella
 yarn add --save gentelella 		# or npm install gentelella --save
@@ -183,7 +193,11 @@ yarn install					# or  npm install
 
 <h5 id="compiling-and-mixing-resources">Compiling and Mixing Resources</h5>
 
+<<<<<<< HEAD
 <p>The main configuration file of Laravel Mix is <code>webpack.mix.js</code>. The fundamental tasks are defined as following.</p>
+=======
+<p>The main configuration file of Laravel Mix is <code>webpack.mix.js</code>. The fundamental tasks defined are:</p>
+>>>>>>> 8cdfc9bc70b90e1b13946f9f325002123621f68b
 
 <pre><code class="language-js">let mix = require('laravel-mix');
 ...
@@ -218,7 +232,11 @@ let gentelella_vendor = gentelella_home + '/vendors/';
     options({processCssUrls: false});
 </code></pre>
 
+<<<<<<< HEAD
 <p>For each component of Gentelella that we need for our project or certain pages, we can copy them into Laravel public folders.</p>
+=======
+<p>For each component of Gentelella that we need for our project, we can copy them into Laravel public folders.</p>
+>>>>>>> 8cdfc9bc70b90e1b13946f9f325002123621f68b
 
 <pre><code class="language-js">/*
  *  Copy dependent JavaScripts and CSSs
