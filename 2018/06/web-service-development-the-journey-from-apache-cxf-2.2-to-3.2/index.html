@@ -150,8 +150,6 @@
   
   
 
-<h3 id="web-service-development-with-apache-cxf">Web Service Development with Apache CXF</h3>
-
 <p>I have used <a href="https://cxf.apache.org">Apache CXF</a> 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either <a href="http://axis.apache.org/axis2/java/core">Apache Axis/Axis2</a> or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (+) and many standards, especially JAX-WS and JAX-RS that I really loved. Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop a front-end).</p>
 
 <p>Everything went well for the development of Web services based on JAX-WS for both directions: WSDL-first and Java-first. In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any overwriting. CXF services are so easy to configure with Spring Framework 3.0. I just configured to load the Java implementation of a service as Spring managed bean. Then I define a CXF based <code>&lt;jaxws:endpoint&gt;</code> wherein the <code>implementor</code> attribute refers to the corresponding bean.</p>
