@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 01 Jun 2007 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jun 2018 10:19:31 +1000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apache Cxf</title>
+      <link>https://htr3n.github.io/tags/apache-cxf/</link>
+      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/apache-cxf/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Apple</title>
@@ -283,6 +292,24 @@
     </item>
     
     <item>
+      <title>Jaxrs</title>
+      <link>https://htr3n.github.io/tags/jaxrs/</link>
+      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/jaxrs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jaxws</title>
+      <link>https://htr3n.github.io/tags/jaxws/</link>
+      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/jaxws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Jekyll</title>
       <link>https://htr3n.github.io/tags/jekyll/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
@@ -342,6 +369,15 @@
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Migration</title>
+      <link>https://htr3n.github.io/tags/migration/</link>
+      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/migration/</guid>
       <description></description>
     </item>
     
@@ -630,6 +666,15 @@
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/vietnamese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Service</title>
+      <link>https://htr3n.github.io/tags/web-service/</link>
+      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/web-service/</guid>
       <description></description>
     </item>
     

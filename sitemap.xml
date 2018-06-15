@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://htr3n.github.io/2018/06/web-service-development-the-journey-from-apache-cxf-2.2-to-3.2/</loc>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/2018/05/integration-laravel-5-and-gentelella-admin-theme/</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -122,6 +127,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/apache-cxf/</loc>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/apple/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
@@ -141,7 +152,7 @@
   
   <url>
     <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
   </url>
   
   <url>
@@ -211,7 +222,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -318,6 +329,18 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/jaxrs/</loc>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/jaxws/</loc>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/jekyll/</loc>
     <lastmod>2018-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -356,6 +379,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/macos/</loc>
     <lastmod>2018-01-19T09:20:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/migration/</loc>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -492,7 +521,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/</loc>
-    <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -569,6 +598,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/web-service/</loc>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/webpack/</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -594,7 +629,7 @@
   
   <url>
     <loc>https://htr3n.github.io/</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-15T10:19:31+10:00</lastmod>
     <priority>0</priority>
   </url>
   
