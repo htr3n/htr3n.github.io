@@ -10,18 +10,18 @@
     <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,rants,vietnamese,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking, tư duy phản biện, luật, hiến pháp">
     <meta name="generator" content="Hugo 0.39-DEV" />
     
-    <title>Web Service Development: The Journey from Apache CXF 2.2 to 3.2 &middot; htr3n&#39;s</title>
-    <meta content="Web Service Development: The Journey from Apache CXF 2.2 to 3.2 - htr3n&#39;s" property="og:title">
+    <title>Developing Web Services with JAX-WS: The Journey from Apache CXF 2.2 to 3.2 &middot; htr3n&#39;s</title>
+    <meta content="Developing Web Services with JAX-WS: The Journey from Apache CXF 2.2 to 3.2 - htr3n&#39;s" property="og:title">
     <meta content="htr3n&#39;s blog :: technology, opinions, and rants about everything - " property="og:description">
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i|Source+Code+Pro:300,300i,400,400i" rel="stylesheet">
     <link rel="stylesheet" href="https://htr3n.github.io/css/print.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.css">
     <!-- Font-Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
     <!-- highlight.js-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
     <!-- Customised CSS -->
     <link rel="stylesheet" href="https://htr3n.github.io/css/custom.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -105,7 +105,7 @@
 
         <div class="content container">
             <div class="post">
-  <h1>Web Service Development: The Journey from Apache CXF 2.2 to 3.2</h1>
+  <h1>Developing Web Services with JAX-WS: The Journey from Apache CXF 2.2 to 3.2</h1>
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
@@ -133,13 +133,17 @@
             
             <a class="meta" href="/tags/apache-cxf">apache-cxf</a> 
         
-            <a class="meta" href="/tags/jaxrs">jaxrs</a> 
-        
             <a class="meta" href="/tags/jaxws">jaxws</a> 
         
             <a class="meta" href="/tags/migration">migration</a> 
         
-            <a class="meta" href="/tags/web-service">web-service</a>
+            <a class="meta" href="/tags/spring-framework">spring-framework</a> 
+        
+            <a class="meta" href="/tags/web-service">web-service</a> 
+        
+            <a class="meta" href="/tags/wsdl">wsdl</a> 
+        
+            <a class="meta" href="/tags/wsdl2java">wsdl2java</a>
         
       
       
@@ -152,7 +156,7 @@
 
 <p>I have used <a href="https://cxf.apache.org">Apache CXF</a> 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either <a href="http://axis.apache.org/axis2/java/core">Apache Axis/Axis2</a> or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (+) and many standards, especially JAX-WS and JAX-RS that I really loved. Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop a front-end).</p>
 
-<p>Everything went well for the development of Web services based on JAX-WS for both directions: WSDL-first and Java-first. In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any overwriting. CXF services are so easy to configure with Spring Framework 3.0. I just configured to load the Java implementation of a service as Spring managed bean. Then I define a CXF based <code>&lt;jaxws:endpoint&gt;</code> wherein the <code>implementor</code> attribute refers to the corresponding bean.</p>
+<p>Everything went well for the development of Web services based on JAX-WS for both directions: WSDL-first and Java-first. In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any code overwriting. CXF services are so easy to configure with Spring Framework 3.0. The implementations of the services were loaded as Spring managed beans. The expose of a service is done via a CXF directive <code>&lt;jaxws:endpoint&gt;</code> of which the <code>implementor</code> attribute refers to the corresponding bean.</p>
 
 <pre><code class="language-xml">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
        xmlns:jaxws=&quot;http://cxf.apache.org/jaxws&quot;&gt;
@@ -172,12 +176,12 @@
 &lt;/beans&gt;
 </code></pre>
 
-<p>Then in the Web app configuration <code>web.xml</code>, I just loaded the CXF Servlet.</p>
+<p>In the Web app configuration <code>web.xml</code>, CXF Servlet must be loaded by the container.</p>
 
 <pre><code class="language-xml">&lt;servlet&gt;
     &lt;servlet-name&gt;cxf&lt;/servlet-name&gt;
     &lt;servlet-class&gt;org.apache.cxf.transport.servlet.CXFServlet&lt;/servlet-class&gt;
-    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;load-on-startup&gt;2&lt;/load-on-startup&gt;
 &lt;/servlet&gt;
 &lt;servlet-mapping&gt;
     &lt;servlet-name&gt;cxf&lt;/servlet-name&gt;
@@ -191,7 +195,7 @@
 
 <p>The upgrading was not as easy and smooth as just changing the version numbers. A lot of conflicts or refactoring happened. I have to read thoroughly the <a href="http://cxf.apache.org/docs/migration-guides.html">documentation on CXF site for migration</a> and decide to go gradually over each major version of Apache CXF.</p>
 
-<h4 id="from-cxf-2-2-to-2-7">from CXF 2.2 to 2.7 &hellip;</h4>
+<h3 id="from-cxf-2-2-to-2-7">&hellip; from CXF 2.2 to 2.7 &hellip;</h3>
 
 <p>Since Apache CXF 2.2 to 2.6, not much of the changes are relevant for the project as I mainly used <code>cxf-rt-frontend-jaxws</code>.</p>
 
@@ -271,16 +275,36 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 </script>
 
     
-<div id="graphcomment"></div>
+
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
 <script type="text/javascript">
-  window.graphcomment_id = 'htr3n-github-io';
-   
-  (function() {
-    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
-    gc.src = 'https://graphcomment.com/js/integration.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
-  })();
+      (function () {
+            
+            
+            
+            if (location.hostname === "localhost" || 
+            	location.hostname === "127.0.0.1" || 
+            	location.hostname === "") {
+                return;
+			}
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'https-htr3n-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
+                  dsq);
+      })();
 </script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+
             </div>
         </div>
         

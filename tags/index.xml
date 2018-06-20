@@ -292,15 +292,6 @@
     </item>
     
     <item>
-      <title>Jaxrs</title>
-      <link>https://htr3n.github.io/tags/jaxrs/</link>
-      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
-      
-      <guid>https://htr3n.github.io/tags/jaxrs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Jaxws</title>
       <link>https://htr3n.github.io/tags/jaxws/</link>
       <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
@@ -553,6 +544,15 @@
     </item>
     
     <item>
+      <title>Spring Framework</title>
+      <link>https://htr3n.github.io/tags/spring-framework/</link>
+      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/spring-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Static Site Generators</title>
       <link>https://htr3n.github.io/tags/static-site-generators/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
@@ -702,6 +702,24 @@
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wsdl</title>
+      <link>https://htr3n.github.io/tags/wsdl/</link>
+      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/wsdl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wsdl2java</title>
+      <link>https://htr3n.github.io/tags/wsdl2java/</link>
+      <pubDate>Fri, 15 Jun 2018 10:19:31 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/wsdl2java/</guid>
       <description></description>
     </item>
     
