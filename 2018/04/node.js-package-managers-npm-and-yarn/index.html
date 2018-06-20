@@ -150,8 +150,6 @@
   
   
 
-<h2 id="a-quick-introduction">A quick introduction</h2>
-
 <p>Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources. Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, <a href="https://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack">several package managers</a> have been developed, notably, <a href="https://www.npmjs.org/">npm</a>, <a href="https://anymod.com">anymod</a> (formerly <code>component</code>), <a href="http://volojs.org">volo</a>, <a href="http://packages.ringojs.org">ringojs</a>, <a href="https://bower.io">bower</a>, <a href="https://yarnpkg.com">yarn</a>, <a href="https://pnpm.js.org"><code>pnpm</code></a>, to name but a few.</p>
 
 <p>In this post, we shall walk through the two tools that have been seemingly living up to the high expectation of a majority of JavaScript developers and communities, <code>npm</code> and <code>yarn</code>. <code>pnpm</code> is an improvement that <a href="https://github.com/pnpm/node-package-manager-benchmark">performs sometimes better</a> than <code>npm</code> and <code>yarn</code>. The great advantage of using <code>pnpm</code> is that we just replace the command <code>npm</code> by <code>pnpm</code> and keep the rest intact.  Bower is a powerful tool that supports not only JS but also various types of Web resources including HTML, CSS, fonts, images. Nevertheless, the core Bower developers and maintainers <a href="https://bower.io/blog/2017/how-to-migrate-away-from-bower">had recently recommended the users to switch to <code>yarn</code></a>.</p>
@@ -165,9 +163,9 @@
 
 <p>In this part, we will go through a typical development workflow that each tool provides with basic steps and some commonly used options.</p>
 
-<h4 id="0-installing-and-upgrading">0. Installing and Upgrading</h4>
+<h3 id="0-installing-and-upgrading">0. Installing and Upgrading</h3>
 
-<h6 id="npm">NPM</h6>
+<h5 id="npm">NPM</h5>
 
 <p>As mentioned above, <code>npm</code> is available wherever Node.js is installed. So, the only thing to do is to upgrade <code>npm</code></p>
 
@@ -176,7 +174,7 @@
 npm i npm@latest -g
 </code></pre>
 
-<h6 id="yarn">Yarn</h6>
+<h5 id="yarn">Yarn</h5>
 
 <p>Yarn can be installed via <code>npm</code> but this method is <a href="https://yarnpkg.com/en/docs/install#install-via-npm">not recommended due to security reason</a>.</p>
 
@@ -193,25 +191,25 @@ brew upgrade yarn
 
 <p>There are also <a href="https://yarnpkg.com/en/docs/install">concrete instructions</a> for Linux and Windows users, too.</p>
 
-<h5 id="1-starting-new-projects">1. Starting New Projects</h5>
+<h3 id="1-starting-new-projects">1. Starting New Projects</h3>
 
-<h6 id="npm-1">NPM</h6>
+<h5 id="npm-1">NPM</h5>
 
 <pre><code class="language-sh">npm init [-f|--force] [-y|--yes]
 </code></pre>
 
 <p><code>npm init</code> will ask you a number of questions and create an initial configuration file <code>package.json</code>. In case you do not want to answer the questions one by one, you can use any option <code>-f</code>, <code>--force</code>,  <code>-y</code> or <code>--yes</code> to skip all questions and get a default <code>package.json</code> in the current directory.</p>
 
-<h6 id="yarn-1">Yarn</h6>
+<h5 id="yarn-1">Yarn</h5>
 
 <pre><code class="language-sh">yarn init [-y | --yes] [-p | --private]
 </code></pre>
 
 <p>This command is totally similar to <code>npm init</code> and the outcome will be <code>package.json</code>. The only difference is <code>-p</code> or <code>--private</code> to set <code>&quot;private&quot;: true</code>.</p>
 
-<h5 id="2-getting-information">2. Getting Information</h5>
+<h3 id="2-getting-information">2. Getting Information</h3>
 
-<h6 id="npm-2">NPM</h6>
+<h5 id="npm-2">NPM</h5>
 
 <pre><code class="language-sh"># display a particular package's information
 npm view eslint
@@ -222,7 +220,7 @@ npm search eslint
 npm ls
 </code></pre>
 
-<h6 id="yarn-2">Yarn</h6>
+<h5 id="yarn-2">Yarn</h5>
 
 <p>Yarn developers deliberately do not add support for searching packages like <code>npm</code> as <a href="https://github.com/yarnpkg/yarn/issues/778#issuecomment-253146299">explained here</a>.</p>
 
@@ -237,11 +235,11 @@ yarn list
 <pre><code class="language-sh">yarn why eslint
 </code></pre>
 
-<h5 id="3-installing-dependencies">3. Installing Dependencies</h5>
+<h3 id="3-installing-dependencies">3. Installing Dependencies</h3>
 
 <p>Both <code>npm</code> and <code>yarn</code> provide several options to add dependencies ranging from registered packages, tarballs, to git repositories. Please note that, <code>npm</code> and <code>yarn</code> also support manipulating global package repositories, i.e. installed packages that are available to the whole working system instead of local projects. In most of the case, we can use the option <code>-g</code> for <code>npm</code> and the command <code>global</code> for <code>yarn</code>. Thus, in the following steps, we mainly concentrate on local repositories.</p>
 
-<h6 id="npm-3">NPM</h6>
+<h5 id="npm-3">NPM</h5>
 
 <pre><code class="language-sh"># install all dependencies defined in package.json
 npm install
@@ -255,7 +253,7 @@ npm install --save-dev eslint
 npm install git@github.com:eslint/eslint.git
 </code></pre>
 
-<h6 id="yarn-3">Yarn</h6>
+<h5 id="yarn-3">Yarn</h5>
 
 <pre><code class="language-sh"># install all dependencies defined in package.json
 yarn install
@@ -269,9 +267,9 @@ yarn add --dev eslint
 yarn add git@github.com:eslint/eslint.git
 </code></pre>
 
-<h5 id="3-upgrading-packages">3. Upgrading Packages</h5>
+<h3 id="3-upgrading-packages">3. Upgrading Packages</h3>
 
-<h6 id="npm-4">NPM</h6>
+<h5 id="npm-4">NPM</h5>
 
 <pre><code class="language-sh"># check outdated packages
 npm outdated
@@ -281,7 +279,7 @@ npm update
 npm update eslint
 </code></pre>
 
-<h6 id="yarn-4">Yarn</h6>
+<h5 id="yarn-4">Yarn</h5>
 
 <pre><code class="language-sh"># check outdated packages
 yarn outdated
@@ -295,21 +293,21 @@ yarn upgrade eslint
 yarn upgrade --pattern eslint
 </code></pre>
 
-<h5 id="4-removing-packages">4. Removing Packages</h5>
+<h3 id="4-removing-packages">4. Removing Packages</h3>
 
-<h6 id="npm-5">NPM</h6>
+<h5 id="npm-5">NPM</h5>
 
 <pre><code class="language-sh">npm uninstall eslint
 </code></pre>
 
-<h6 id="yarn-5">Yarn</h6>
+<h5 id="yarn-5">Yarn</h5>
 
 <pre><code class="language-sh">yarn remove eslint
 </code></pre>
 
-<h5 id="5-running-commands">5. Running Commands</h5>
+<h3 id="5-running-commands">5. Running Commands</h3>
 
-<h6 id="npm-6">NPM</h6>
+<h5 id="npm-6">NPM</h5>
 
 <p><code>npm</code> allows users to define executable scripts in <code>package.json</code> under the section</p>
 
@@ -326,7 +324,7 @@ yarn upgrade --pattern eslint
 <pre><code>npm test
 </code></pre>
 
-<h6 id="yarn-6">Yarn</h6>
+<h5 id="yarn-6">Yarn</h5>
 
 <p>Similar to <code>npm</code>, <code>yarn</code> users can execute scripts with <code>yarn run script-name</code> and <code>yarn test</code> for testing.</p>
 
