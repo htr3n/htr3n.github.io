@@ -160,7 +160,7 @@
 
 <p>Laravel can act as backend for any Web application. At the moment, it includes several <a href="https://laravel.com/docs/frontend">good supports</a> for popular front-ends such as Bootstrap, <a href="https://vuejs.org">Vue.js</a>, and <a href="https://reactjs.org">React</a>. The included tool <a href="https://github.com/JeffreyWay/laravel-mix">Laravel Mix</a>, which runs on top of  <a href="https://webpack.js.org/">Webpack</a> can significantly lessen development effort on compiling and mixing Web resources. Thus, I have just leveraged Laravel Mix for this integration task. Further details on Laravel Mix can be found <a href="https://laravel.com/docs/mix">here</a>.</p>
 
-<h5 id="installation">Installation</h5>
+<h2 id="installation">Installation</h2>
 
 <p>Laravel provides built-in support for some front-end frameworks but they might cause some conflicts and incompability with Gentelella&rsquo;s own libraries. Therefore, I have decided to start from scratch, i.e. using basic Laravel without any front-end scaffolding</p>
 
@@ -183,7 +183,7 @@ yarn install					# or  npm install
 
 <p>After this step, Gentelella should be available in the local <code>node_modules</code> folder.</p>
 
-<h5 id="compiling-and-mixing-resources">Compiling and Mixing Resources</h5>
+<h2 id="compiling-and-mixing-resources">Compiling and Mixing Resources</h2>
 
 <p>The main configuration file of Laravel Mix is <code>webpack.mix.js</code>. The fundamental tasks are defined as following.</p>
 
@@ -234,9 +234,7 @@ mix.
 ...
 </code></pre>
 
-<p>We can definitely use Mix/Webpack tools for optimising/minimising/transforming Gentelella resources. I will leave it as extra deployment exercises. For now, I will mainly concentrate on development aspects.</p>
-
-<p>When I need to use a Gentelella&rsquo;s component for a certain page, I will include the following directives in the corresponding Laravel Blade templates for that page.</p>
+<p>We can definitely use Mix/Webpack tools for optimising/minimising/transforming Gentelella resources. I will leave it as extra deployment exercises. For now, I will mainly concentrate on development aspects. When I need to use a Gentelella&rsquo;s component for a certain page, I will include the following directives in the corresponding Laravel Blade templates for that page.</p>
 
 <pre><code class="language-php+HTML">&lt;!-- Styles --&gt;
 &lt;link href=&quot;{{ asset('css/font-awesome.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
@@ -256,7 +254,7 @@ mix.
 
 <p><img src="https://raw.githubusercontent.com/htr3n/laramod/master/dashboard.png" alt="Dashboard" /></p>
 
-<h5 id="conclusion">Conclusion</h5>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>Integration Laravel 5 and Gentelella is a simple but interesting exercise showing many nice features of Laravel for supporting common front-ends. Laravel Mix provides a good wrapper on top of Webpack that really reduces the complexity of Webpack and lessens considerable amount of development effort.</p>
 
