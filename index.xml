@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Setting a new Mac for software development</title>
+      <link>https://htr3n.github.io/memo/setup-new-macos/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/memo/setup-new-macos/</guid>
+      <description>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to the MacMini 2010 and MacBook Pro 13&amp;rdquo; and 15&amp;rdquo; lately. Time Machine has helped me a lot to transfer data from the old to the new machine. Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the defaults due to many reasons (e.g. against security advice, etc.</description>
+    </item>
+    
+    <item>
       <title>Integration Laravel 5 and Gentelella Admin Theme</title>
       <link>https://htr3n.github.io/2018/05/integration-laravel-5-and-gentelella-admin-theme/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>

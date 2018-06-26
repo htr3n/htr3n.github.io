@@ -7,6 +7,11 @@ body
     line-height: 1.66em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
 .img-circle
 {
     border-radius: 50%;
