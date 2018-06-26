@@ -148,7 +148,7 @@
       
       
       <br/>
-      <i class="fas fa-clock"></i> 5 min read 
+      <i class="fas fa-clock"></i> 6 min read 
       </span>  
   </div>    
   
@@ -259,11 +259,66 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java failed: org.xml.sax.SAXNotRecognizedException: Property 'http://javax.xml.XMLConstants/property/accessExternalSchema' is not recognized.
 </code></pre>
 
-<p>We can see that the error is due to schema validation. Before, I wanted to make sure that the WSDLs were valid before generating Java code. Thus, I chose to enable validation by <code>&lt;validateWsdl&gt;true&lt;/validateWsdl&gt;</code>. This option is actually the root cause the aforementioned exception during validation. The problem seems to stem from <a href="http://docs.oracle.com/javase/tutorial/jaxp/properties/properties.html">new XML security properties in JAXB 1.5</a> introduced in Java 8.</p>
-
-<p>When I disable that option, the plugin works fine again (voila!). But that means I must live in a maybe-not-error-free world (D&rsquo;oh!). But we are all, aren&rsquo;t we?</p>
+<p>We can see that the error is due to schema validation. Before, I wanted to make sure that the WSDLs were valid before generating Java code. Thus, I chose to enable validation by <code>&lt;validateWsdl&gt;true&lt;/validateWsdl&gt;</code>. This option is actually the root cause the aforementioned exception during validation. The problem seems to stem from <a href="http://docs.oracle.com/javase/tutorial/jaxp/properties/properties.html">new XML security properties in JAXB 1.5</a> introduced in Java 8. When I disable that option, the plugin works fine again (voila!). But that means I must live in a maybe-not-error-free world (D&rsquo;oh!). But we are all, aren&rsquo;t we?</p>
 
 <p>After all of the above, I can get my project to work with Apache CXF 3.2.4 while keeping the business logic of services intact.</p>
+
+<h3 id="update-2018-06-25-xml-less-spring-configuration">Update 2018-06-25: XML-less Spring Configuration</h3>
+
+<p>As deciding to switch to XML-less Spring configuration to learn more about Spring Java annotations, I also tried to migrate CXF settings, too. Here are some last updates.</p>
+
+<h4 id="loading-cxfservlet">Loading CXFServlet</h4>
+
+<pre><code class="language-java">public class MyWebApplicationInitializer implements org.springframework.web.WebApplicationInitializer {
+    @Override
+    public void onStartup(ServletContext container) throws ServletException {
+        AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
+        rootContext.register(ServiceConfiguration.class);
+        rootContext.refresh();      
+        // Register and map the CXF servlet
+        CXFServlet cxfServlet = new CXFServlet();
+        ServletRegistration.Dynamic registration = container.addServlet(&quot;cxf&quot;, cxfServlet);
+        registration.setLoadOnStartup(1);
+        registration.addMapping(&quot;/services/*&quot;);      
+    }
+}
+</code></pre>
+
+<h4 id="publishing-services">Publishing Services</h4>
+
+<p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing CXF&rsquo;s <code>.xml</code> resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<strong>cxf</strong>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
+
+<pre><code class="language-java">import com.example.HelloWorldImpl;
+
+import org.apache.cxf.Bus;
+import org.apache.cxf.bus.spring.SpringBus;
+import org.apache.cxf.jaxws.EndpointImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import javax.xml.ws.Endpoint;
+
+@Configuration
+public class ServiceConfiguration {
+
+    @Bean(name=Bus.DEFAULT_BUS_ID)
+    public SpringBus cxf() {
+        return new SpringBus();
+    }
+
+    @Bean
+    public Endpoint helloWorld() {
+        HelloWorldImpl implementor = new HelloWorldImpl();
+        EndpointImpl endpoint = new EndpointImpl(cxf(), implementor);
+        endpoint.publish(&quot;/HelloWorld&quot;);
+        return endpoint;
+    }
+}
+</code></pre>
+
+<blockquote>
+<p>IMPORTANT: <code>Endpoint.publish()</code> must be called to expose the service instead of <code>Endpoint.setAddress()</code> as above.</p>
+</blockquote>
 
 </div>
             <div class="footer">
