@@ -220,14 +220,14 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/tags/dev/</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+    <loc>https://htr3n.github.io/categories/dev/</loc>
+    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
+    <loc>https://htr3n.github.io/tags/dev/</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -377,18 +377,12 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/macos/</loc>
-    <lastmod>2018-01-19T09:20:00+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/categories/macos/</loc>
     <lastmod>2018-06-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/tags/memo/</loc>
+    <loc>https://htr3n.github.io/categories/memo/</loc>
     <lastmod>2018-06-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
