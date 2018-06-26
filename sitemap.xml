@@ -8,7 +8,7 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/memo/setup-new-macos/</loc>
+    <loc>https://htr3n.github.io/2018/06/setting-a-new-mac-for-software-development/</loc>
     <lastmod>2018-06-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -268,6 +268,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/gatekeeper/</loc>
+    <lastmod>2018-06-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/gentelella/</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -282,6 +288,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/golang/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/homebrew/</loc>
+    <lastmod>2018-06-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -379,17 +391,6 @@
     <loc>https://htr3n.github.io/tags/macos/</loc>
     <lastmod>2018-06-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/categories/memo/</loc>
-    <lastmod>2018-06-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/memo/</loc>
-    <lastmod>2018-06-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -508,6 +509,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/sinh-vi%C3%AAn/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/sip/</loc>
+    <lastmod>2018-06-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
