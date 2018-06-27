@@ -1,14 +1,14 @@
 html,
 body
 {
-    font-family: 'Noto Serif', serif;
-    font-size: 18px;
-    font-weight: 300;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
     line-height: 1.66em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 
