@@ -261,11 +261,11 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 
 <p>After all of the above, I can get my project to work with Apache CXF 3.2.4 while keeping the business logic of services intact.</p>
 
-<h3 id="update-2018-06-25-xml-less-spring-configuration">Update 2018-06-25: XML-less Spring Configuration</h3>
+<h2 id="update-2018-06-25-xml-less-spring-configuration">Update 2018-06-25: XML-less Spring Configuration</h2>
 
 <p>As deciding to switch to XML-less Spring configuration to learn more about Spring Java annotations, I also tried to migrate CXF settings, too. Here are some last updates.</p>
 
-<h4 id="loading-cxfservlet">Loading CXFServlet</h4>
+<h3 id="loading-cxfservlet">Loading CXFServlet</h3>
 
 <pre><code class="language-java">public class MyWebApplicationInitializer implements org.springframework.web.WebApplicationInitializer {
     @Override
@@ -282,7 +282,7 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 }
 </code></pre>
 
-<h4 id="publishing-services">Publishing Services</h4>
+<h3 id="publishing-services">Publishing Services</h3>
 
 <p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing CXF&rsquo;s <code>.xml</code> resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<strong>cxf</strong>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
 
