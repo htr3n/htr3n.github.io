@@ -113,7 +113,7 @@
     <span class="text-left post-date meta">
             
        
-        <i class="fas fa-calendar-alt"></i> Jun 6, 2018
+        <i class="fas fa-calendar-alt"></i> Jun 27, 2018
       
       
         
@@ -137,14 +137,20 @@
         
             <a class="meta" href="/tags/homebrew">homebrew</a> 
         
+            <a class="meta" href="/tags/iterm">iterm</a> 
+        
             <a class="meta" href="/tags/macos">macos</a> 
         
-            <a class="meta" href="/tags/sip">sip</a>
+            <a class="meta" href="/tags/sip">sip</a> 
+        
+            <a class="meta" href="/tags/visual-studio-code">visual-studio-code</a> 
+        
+            <a class="meta" href="/tags/zsh">zsh</a>
         
       
       
       <br/>
-      <i class="fas fa-clock"></i> 3 min read 
+      <i class="fas fa-clock"></i> 7 min read 
       </span>  
   </div>    
   
@@ -178,7 +184,7 @@ System Integrity Protection status: disabled.
 
 <h3 id="disable-gatekeeper">Disable Gatekeeper</h3>
 
-<p><strong>Gatekeeper</strong> was first introduced in OS X Mountain Lion. It is a security feature that prevents the users from launching potentially harmful apps. From macOS Sierra and later, however, Apple has made changes to Gatekeeper to even limit furthermore. Users only can see two choices in <em>System Preferences</em> &ndash;&gt; <em>Security &amp; Privacy</em>, which are &lsquo;<em>Allow apps downloaded from App Store or App Store and identified developers</em>&rsquo;. That means only signed apps are allowed to launch, i.e. breaking a lot of useful unsigned apps whose developers cannot afford to pay 99 US$ per membership year for <em>Apple Developer Program</em>.</p>
+<p><em>Gatekeeper</em> was first introduced in OS X Mountain Lion. It is a security feature that prevents the users from launching potentially harmful apps. From macOS Sierra and later, however, Apple has made changes to Gatekeeper to even limit furthermore. Users only can see two choices in <em>System Preferences</em> &ndash;&gt; <em>Security &amp; Privacy</em>, which are &lsquo;<em>Allow apps downloaded from App Store or App Store and identified developers</em>&rsquo;. That means only signed apps are allowed to launch, i.e. breaking a lot of useful unsigned apps whose developers cannot afford to pay 99 US$ per membership year for <em>Apple Developer Program</em>.</p>
 
 <p><img src="enabled-gatekeeper.png" alt="Enabled Gatekeeper" width="600" align="center"></p>
 
@@ -194,18 +200,43 @@ System Integrity Protection status: disabled.
 <pre><code class="language-sh">sudo spctl --master-enable
 </code></pre>
 
+<h3 id="revealing-library">Revealing &lsquo;~/Library&rsquo;</h3>
+
+<p>In macOS, the folder &lsquo;<em>~/Library</em>&rsquo; within users home folder is hidden (since 10.7?) seemingly to prevent any unintentional changes. It&rsquo;s not so difficult to navigate to this folder (and any other folders) using command line. In case you want to use Finder to navigate and explore &lsquo;<em>~/Library</em>&rsquo;, you can simply use the following command.</p>
+
+<pre><code class="language-sh">$ chflags nohidden ~/Library
+</code></pre>
+
 <h2 id="development-tools">Development Tools</h2>
 
 <h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
 
-<p>Homebrew provides a rich collection of tools I need but Apple does not. Installing Homebrew is super easy.</p>
+<p>Homebrew provides a rich collection of tools I need, mostly open sources, but Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we must install the compiler tools that needed by Homebrew to build tools.</p>
 
-<pre><code class="language-sh">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+<pre><code class="language-sh"># install Xcode command line developer tools
+$ xcode-select --install
+
+# now install Homebrew
+$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre>
 
-<p>After that, I can install a lot of useful development tools like <code>ack</code>, <code>docker</code>, <code>automake</code>, <code>gcc</code>, <code>git</code>, <code>go</code>, <code>maven</code>, <code>mysql</code>, <code>php</code>, <code>python</code>, <code>r</code>, <code>ssh-copy-id</code>, <code>zsh</code>, to name but a few.</p>
+<p>Then we need to add <code>/usr/local/bin</code> and <code>/usr/local/sbin</code>, where Homebrew links the executable files, to the PATH environment variable with respect to the Shell you are using. For instance, for bash shell it is _~/.bash<em>profile</em>, for zsh shell it is _~/.zsh<em>profile</em>.</p>
 
-<p>There is also a very nice tool, namely, <a href="https://github.com/Homebrew/homebrew-bundle">homebrew-bundle</a>, that helps to save time on backing up the current Homebrew&rsquo;s installation and restoring later. We can do that through Homebrew itself.</p>
+<pre><code class="language-shell">export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+</code></pre>
+
+<p>In case you want the Homebrew tools have higher priority than the existing ones, just put <em>$PATH</em> at the end instead. After that, we can use <code>brew</code> command to install a bunch of development tools.</p>
+
+<pre><code class="language-sh">$ brew install ack docker gcc git go maven mysql node python3 php72 r ruby rbenv zsh
+</code></pre>
+
+<p>Homebrew can also help handling macOS start-up services which are useful for managing servers like Apache httpd, nginx, php72 daemon, MySQL, etc.</p>
+
+<pre><code class="language-sh">$ brew services start httpd
+$ brew services stop httpd
+</code></pre>
+
+<p>For quick re-installing or recovering Homebrew, we can use <a href="https://github.com/Homebrew/homebrew-bundle">homebrew-bundle</a> for backing up the current Homebrew&rsquo;s installation and restoring later.</p>
 
 <pre><code class="language-sh"># tap the bundle
 $ brew tap Homebrew/bundle
@@ -215,6 +246,149 @@ $ brew bundle dump --force
 $ brew bundle list
 # restore/install all packages from the Brewfile 
 $ brew bundle
+</code></pre>
+
+<p>Homebrew also incorporates <a href="https://github.com/Homebrew/homebrew-cask">Homebrew-Cask</a> (formerly an independent plugin for Homebrew) that can help to install many apps as you might see in the subsequent parts.</p>
+
+<h3 id="terminals-and-shells">Terminals and Shells</h3>
+
+<p>Since working with Linux a lot and then macOS, I&rsquo;m rather familiar with the command line. There are many cases using terminals would be more convenient than graphical editors. Thus, I need a good terminal app. The built-in Terminal app in macOS is not bad but I usually opt for <a href="https://www.iterm2.com">iTerm2</a>.</p>
+
+<pre><code class="language-sh">$ brew cask install iterm2
+</code></pre>
+
+<p>Some of my favorite settings for iTerms are including light dark themes such as <a href="https://draculatheme.com/iterm">Dracula</a>, <a href="https://gist.github.com/meqif/1238378">IR_Black</a>, <a href="https://github.com/junegunn/seoul256-iTerm2">seoul_256</a> along with any of these fixed width fonts <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>, <a href="https://fonts.google.com/specimen/Cousine">Cousine</a>, <a href="https://fonts.google.com/specimen/Roboto+Mono">Roboto Mono</a>, <a href="https://github.com/tonsky/FiraCode">Fira Code</a> or <a href="https://www.typography.com/fonts/operator/overview/">Operator Mono</a> (nice ligatures), <a href="https://fonts.google.com/specimen/Inconsolata">Inconsolata</a> or its variants (Inconsolata-dz, Inconsolata-g), <a href="https://github.com/source-foundry/Hack">Hack</a>, <a href="https://typekit.com/fonts/input-mono">Input Mono</a>. Few of these fonts can be installed via Homebrew Cask.</p>
+
+<p>Along with iTerms 2, I also love <a href="http://www.zsh.org">Z shell</a> (zsh) which is an extended version of Bash shell a lot with many nice features like directory alias, command completion, and path expansion. You might also find Zsh configuration frameworks like <a href="https://ohmyz.sh">oh-my-zsh</a> or <a href="https://github.com/sorin-ionescu/prezto">Prezto</a> awesome. I tried both of them and found oh-my-zsh a bit sluggish and Prezto a bit difficult to add more extensions or customize. Moreover, I realized that I only use a small piece from either of them and found myself quickly forgetting the customised parts taken from the others. Hence, I decided to develop a set of my own dotfiles (and plan to use Github to keep them in sync). Moreover, I often keep a habit of writting Shell scripts in standard bash as much as possible and keep zsh-specific separately for better portability and compatibility.</p>
+
+<h3 id="text-code-editors">Text/Code Editors</h3>
+
+<p>There are quite a number of good editors in macOS for developers ranging from Sublime Text, TextMate, TextWrangler, the nerdy Vim/MacVim, Emacs, and recently Atom, Visual Studio Code, Brackets, to name but a few. Sublime Text is an amazing editor but it is quite costly.</p>
+
+<p>I tend to love <a href="https://atom.io">Atom</a> which is developed by Github as an effort to build a modern editor for developers. Atom has a plethora of extensions to become a promising choice. Nevertheless, I was skeptical with its sluggishness in early days and therefore leaned to <a href="https://code.visualstudio.com">Visual Studio Code</a>, my current Swiss-army-knife-editor-of-choice instead. You can also install other editos using Cask.</p>
+
+<pre><code class="language-sh">$ brew cask install visual-studio-code
+</code></pre>
+
+<p>In the terminal/console, I mainly use vim for quick editing.</p>
+
+<pre><code class="language-sh">$ brew install vim
+</code></pre>
+
+<p>For Markdown editors (e.g. Github infamous README.md), I often used regularly <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes a second choice for now.</p>
+
+<pre><code class="language-sh">$ brew cask install typora
+</code></pre>
+
+<h2 id="other-nice-tools-to-have">Other Nice Tools To Have</h2>
+
+<h3 id="ack-https-beyondgrep-com"><a href="https://beyondgrep.com">Ack</a></h3>
+
+<ul>
+<li>faster than grep and easy to use</li>
+</ul>
+
+<pre><code class="language-sh">$ brew install ack
+</code></pre>
+
+<h3 id="dropbox-https-www-dropbox-com"><a href="https://www.dropbox.com">Dropbox</a></h3>
+
+<ul>
+<li>Many of our friends are sharing files using Dropbox ;). Note that it must be installed in &lsquo;<em>/Applications</em>&lsquo;</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install --appdir=&quot;/Applications&quot; dropbox
+</code></pre>
+
+<h3 id="docker-ce-https-www-docker-com-community-edition-and-command-line"><a href="https://www.docker.com/community-edition">Docker CE</a> and command line</h3>
+
+<ul>
+<li>Every serious developer is talking about it ;)</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install docker
+$ brew install docker
+</code></pre>
+
+<h3 id="spectacle-https-www-spectacleapp-com"><a href="https://www.spectacleapp.com">Spectacle</a></h3>
+
+<ul>
+<li>an amazing free app for resizing windows using shortcuts.</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install spectacle
+</code></pre>
+
+<h3 id="alfred-https-www-alfredapp-com-powerpack-paid"><a href="https://www.alfredapp.com">Alfred</a> + Powerpack (paid)</h3>
+
+<ul>
+<li>a must-have for most of macOS users. The free version is useful enough but the paid (for Powerpack) is excellent.</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install alfred
+</code></pre>
+
+<h3 id="1password-https-1password-com"><a href="https://1password.com">1Password</a></h3>
+
+<ul>
+<li>store all of your private information and authentications in a place of your choice (e.g. iCloud or Dropbox) and use in macOS or iOS.</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install 1password
+</code></pre>
+
+<h3 id="f-lux-https-justgetflux-com"><a href="https://justgetflux.com/">F.lux</a></h3>
+
+<ul>
+<li>Saving your eyes of many hours staring at your computer&rsquo;s monitors (macOS also has Night Shift mode but my eyes still find F.lux more pleasant)</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install flux
+</code></pre>
+
+<h3 id="web-browers">Web Browers</h3>
+
+<ul>
+<li>For testing and debugging</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install google-chrome firefox
+</code></pre>
+
+<h3 id="remote-access">Remote Access</h3>
+
+<ul>
+<li>SSH</li>
+</ul>
+
+<pre><code class="language-sh">$ brew install ssh-copy-id
+# generate key pair
+$ ssh-keygen -t rsa -b 4096 -C &quot;MacBookPro email@example.com&quot;
+# copy the public key to the host for passwordless authentication
+$ ssh-copy-id user@host
+</code></pre>
+
+<ul>
+<li>Networking Tools</li>
+</ul>
+
+<pre><code class="language-sh">$ brew install netcat curl wget nmap
+</code></pre>
+
+<h3 id="communication">Communication</h3>
+
+<ul>
+<li><a href="https://www.skype.com">Skype</a></li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install skype
+</code></pre>
+
+<ul>
+<li><a href="https://www.slack.com">Slack</a></li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install slack
 </code></pre>
 
 </div>
