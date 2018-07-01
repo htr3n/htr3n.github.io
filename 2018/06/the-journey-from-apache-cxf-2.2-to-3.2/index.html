@@ -197,7 +197,7 @@
 
 <p>The upgrading was not as easy and smooth as just changing the dependencies&rsquo; versions. A lot of conflicts or major refactoring happened. I had to read thoroughly the <a href="http://cxf.apache.org/docs/migration-guides.html">documentation on CXF site for migration</a> and decided to go gradually over each major version of Apache CXF.</p>
 
-<h2 id="from-cxf-2-2-to-2-7">&hellip; from CXF 2.2 to 2.7 &hellip;</h2>
+<h2 id="from-version-2-2-to-2-7">&hellip; from version 2.2 to 2.7 &hellip;</h2>
 
 <p>From Apache CXF 2.2 to 2.6, not so many changes are relevant for the project as I mainly used <code>cxf-rt-frontend-jaxws</code>.  Another <a href="http://cxf.apache.org/docs/embedding-cxf-inside-spring.html">significant change since 2.4</a> causes errors for Spring / Jetty server regarding importing CXF&rsquo;s XML resources. Recall the aforementioned Spring bean configuration where CXF service implementations were loaded and published? There are a number of <code>&lt;import&gt;</code> directives. These directives advise Spring to load the corresponding CXF resources. Now we only need &ldquo;<em>one to rule them all</em>&rdquo;.</p>
 
@@ -206,7 +206,7 @@
 
 <p>To upgrade to version 2.6, I have to revise the project with respect to the merging of <code>cxf-common-utilites</code> into <code>cxf-api</code>, the removal of <code>cxf-rt-binding-http</code>, and the refactoring that impact <code>cxf-rt-core</code>.  Most of the other changes from 2.2 to 2.7 are for JAX-RS, which were used very little or none in my project.</p>
 
-<h2 id="and-to-cxf-3-0">&hellip; and to CXF 3.0+</h2>
+<h2 id="and-to-version-3-0">&hellip; and to version 3.0+</h2>
 
 <p>Apache CXF 3.0 requires a rather disruptive change, from Spring Framework 3.0 to 3.2+. Again, I used standard Spring bean configurations which are still valid for Spring 3.2. Hence, the project works well with Spring 3.2.18-RELEASE. I only need to remove all version numbers in the Spring XML schemas. The major change I must deal with is to remove the dependency of <code>cxf-api</code> as it was merged with <code>cxf-core</code>.</p>
 
@@ -270,21 +270,22 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 <pre><code class="language-java">public class MyWebApplicationInitializer implements org.springframework.web.WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext container) throws ServletException {
-        AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-        rootContext.register(ServiceConfiguration.class);
-        rootContext.refresh();      
+        AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
+        root.register(ServiceConfiguration.class);
+        root.refresh();
+      
         // Register and map the CXF servlet
-        CXFServlet cxfServlet = new CXFServlet();
-        ServletRegistration.Dynamic registration = container.addServlet(&quot;cxf&quot;, cxfServlet);
-        registration.setLoadOnStartup(1);
-        registration.addMapping(&quot;/services/*&quot;);      
+        CXFServlet cxfServlet = new CXFServlet();      
+        ServletRegistration.Dynamic reg = container.addServlet(&quot;cxf&quot;, cxfServlet);     
+        reg.setLoadOnStartup(1);
+        reg.addMapping(&quot;/services/*&quot;);      
     }
 }
 </code></pre>
 
 <h3 id="publishing-services">Publishing Services</h3>
 
-<p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing CXF&rsquo;s <code>.xml</code> resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<strong>cxf</strong>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
+<p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing existing CXF&rsquo;s XML resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<strong>cxf</strong>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
 
 <pre><code class="language-java">import com.example.HelloWorldImpl;
 
