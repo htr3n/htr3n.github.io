@@ -144,6 +144,11 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/posts/</loc>
+    <lastmod>2018-06-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/atom/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
     <priority>0</priority>
@@ -156,14 +161,14 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://htr3n.github.io/tags/bundler/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/vn/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -421,11 +426,6 @@
     <loc>https://htr3n.github.io/tags/m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/vn/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
