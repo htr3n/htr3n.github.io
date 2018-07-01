@@ -220,12 +220,12 @@ $ xcode-select --install
 $ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre>
 
-<p>Then we need to add <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> (where Homebrew links the executable files) to the environment variable <code>PATH</code>. This can be done by altering the shell startup scripts. For instance, for bash shell it is _~/.bash<em>profile</em>, for zsh shell it is _~/.zsh<em>profile</em>.</p>
+<p>Then we need to add <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> (where Homebrew links the executable files) to the environment variable <code>PATH</code>. This can be done by altering the shell startup scripts. For instance, for bash shell it is <em>~/.bash_profile</em>, for zsh shell it is <em>~/.zsh_profile</em>.</p>
 
 <pre><code class="language-shell">export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 </code></pre>
 
-<p>Should you want the Homebrew tools have higher priority than the others, just put <em>$PATH</em> at the end instead. We now can start using <code>brew</code> to install some necessary tools.</p>
+<p>Should you want the Homebrew tools have higher priority than the others, just switch <code>$PATH</code> to the end instead. We now can start using <code>brew</code> to install some necessary tools.</p>
 
 <pre><code class="language-sh">$ brew install ack ant curl dnsmasq docker gcc git go gradle maven mysql node openssl openssh python3 postgresql php72 composer r ruby rbenv sassc yarn tmux zsh 
 </code></pre>
