@@ -8,7 +8,7 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/2018/06/the-journey-from-apache-cxf-2.2-to-3.2/</loc>
+    <loc>https://htr3n.github.io/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -30,6 +30,11 @@
   <url>
     <loc>https://htr3n.github.io/2018/02/getting-started-with-webpack/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/portfolio/hyde-hyde/</loc>
+    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -125,6 +130,26 @@
   <url>
     <loc>https://htr3n.github.io/2006/01/kinh-nghiem-laptop/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/portfolio/p4/</loc>
+    <lastmod>2004-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/portfolio/p3/</loc>
+    <lastmod>2003-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/portfolio/p2/</loc>
+    <lastmod>2002-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/portfolio/p1/</loc>
+    <lastmod>2001-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -486,6 +511,11 @@
     <loc>https://htr3n.github.io/tags/politics/</loc>
     <lastmod>2017-01-19T10:28:00+07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/portfolio/</loc>
+    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
