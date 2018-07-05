@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>DERA</title>
+      <link>https://htr3n.github.io/portfolio/dera/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/portfolio/dera/</guid>
+      <description>This is an implementation of DERA system using Java (core) and Groovy (examples). Dynamic Event-driven Actors (DERA) is an approach aiming at providing adequate means for modeling and developing (distributed) event-based systems. DERA leverages the intrinsic loose coupling of event-driven communication styles to support various kinds of run-time evolution and adaptation (i.e., enabling run-time flexibility) while minimizing the non-deterministic nature of traditional event-based applications (for supporting formal analysis).</description>
+    </item>
+    
+    <item>
       <title>A journey from Apache CXF 2.2 to 3.2</title>
       <link>https://htr3n.github.io/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
@@ -98,6 +107,15 @@ Thus far I have not foreseen any great use of extensive backend storage and comp
       <description>&lt;p&gt;&lt;a href=&#34;https://laravel.com&#34;&gt;Laravel&lt;/a&gt; is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented &lt;a href=&#34;https://laravel.com/docs/5.5/structure&#34;&gt;here&lt;/a&gt;. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&amp;rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously. Thus, the need for complex submodule organisation is quite obvious.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LaraMod</title>
+      <link>https://htr3n.github.io/portfolio/laramod/</link>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/portfolio/laramod/</guid>
+      <description>LaraMod is another modularisation effort to organising a Laravel based project. The idea stems from my struggle to organise a Laravel-based project such that I can work effectively and focus better on individual modules whilst keeping Laravel codebase intact as much as possible (this would be convenient for upgrading Laravel) and also keeping my codebase separate from the original Laravel. Besides, LaraMod embraces Twitter&amp;rsquo;s Bootstrap 3 and the beautiful Gentelella Admin.</description>
     </item>
     
     <item>
@@ -264,42 +282,6 @@ Với phong cách trình diễn hấp dẫn người nghe vốn có, Steve minh 
       
       <guid>https://htr3n.github.io/2006/01/kinh-nghiem-laptop/</guid>
       <description>&lt;p&gt;Mình có một vài kinh nghiệm mua/dùng laptop, xin chia sẻ cùng bà con. Tới lúc này thì mình đã may mắn được dùng qua một số model laptop sau: Compaq Presario 2100, IBM Thinkpad T41, Sony VAIO V505B, IBM Thinkpad X31, HP 6310 (của người bạn nhờ cài đặt), Dell Latitude D620 (ngắm nghía định mua, nhưng sau lại thôi, chuyển sang MacBook). &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Delta - Designed for Mobile Apps</title>
-      <link>https://htr3n.github.io/portfolio/p4/</link>
-      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/portfolio/p4/</guid>
-      <description>Natoque consequat eget vulputate aliquam mattis neque id curae nostra condimentum egestas, vehicula scelerisque eros nam accumsan cras quisque aliquet fames facilisi vitae efficitur, dui sollicitudin sagittis conubia ullamcorper vel lobortis platea arcu ipsum. Vulputate proin mattis libero commodo ridiculus morbi ornare quisque integer, vehicula hac himenaeos placerat rutrum id cras duis elit, eu iaculis pellentesque ac consequat ultrices rhoncus hendrerit. Ut aliquet leo nisi sapien hendrerit vulputate, in facilisi consectetur commodo erat massa varius, pretium pulvinar platea potenti mattis.</description>
-    </item>
-    
-    <item>
-      <title>368&#43;</title>
-      <link>https://htr3n.github.io/portfolio/p3/</link>
-      <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/portfolio/p3/</guid>
-      <description>Feugiat nam mauris odio platea potenti mattis at metus, tempus tellus et euismod praesent ultricies arcu finibus, pretium ornare imperdiet rhoncus elit maximus mi. Condimentum mus primis magna nascetur feugiat, quisque suspendisse nisl dolor a, sit penatibus malesuada enim. Faucibus a himenaeos nunc nibh maecenas facilisis auctor interdum ut consectetur, maximus ultrices ullamcorper parturient semper lacus tempor dignissim tincidunt imperdiet et, fames id neque lectus suspendisse congue nullam risus mi.</description>
-    </item>
-    
-    <item>
-      <title>DevStudio - Designed for Web Development Agencies</title>
-      <link>https://htr3n.github.io/portfolio/p2/</link>
-      <pubDate>Mon, 21 Jan 2002 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/portfolio/p2/</guid>
-      <description>Diam pretium hendrerit tellus torquent eleifend eros tempor adipiscing, fermentum praesent ex nisl himenaeos porttitor natoque phasellus lectus, metus augue placerat sem pellentesque scelerisque per. Donec eros condimentum aptent nostra hac fusce orci, parturient purus non dapibus et finibus vehicula, penatibus dui taciti nullam iaculis metus. Maximus congue lobortis primis et venenatis taciti libero lorem, habitant ut rutrum dis ipsum facilisi tempus hac aliquet, pharetra justo placerat enim mus ornare volutpat.</description>
-    </item>
-    
-    <item>
-      <title>Atom - Designed for Mobile Apps</title>
-      <link>https://htr3n.github.io/portfolio/p1/</link>
-      <pubDate>Sat, 27 Jan 2001 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/portfolio/p1/</guid>
-      <description>Orci tristique turpis penatibus dapibus sapien diam litora congue felis nostra, posuere ornare suscipit parturient duis nibh integer tempus. Aptent parturient metus pharetra facilisis imperdiet diam platea tempus per tempor dictumst condimentum, molestie orci nostra mi purus magna sem hendrerit taciti dictum pulvinar. Consequat fermentum aliquet volutpat condimentum taciti elementum, metus ultrices sodales maximus varius dolor ultricies, et dapibus lectus hac commodo. Habitasse arcu sagittis duis sodales imperdiet nisl dui convallis, magna pulvinar mattis condimentum massa congue.</description>
     </item>
     
     <item>
