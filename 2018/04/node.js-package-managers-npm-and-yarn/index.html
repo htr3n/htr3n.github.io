@@ -16,9 +16,9 @@
     <!-- CSS -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i|IBM+Plex+Sans+Condensed:400,500,600,700|Source+Code+Pro:400,400i" rel="stylesheet">
-    <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
-    <link rel="stylesheet" href="https://htr3n.github.io//css/poole.min.css">
-    <link rel="stylesheet" href="https://htr3n.github.io//css/hyde.min.css">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/poole.min.css">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.min.css">
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
@@ -41,7 +41,7 @@
         <div class="sidebar">
   <div class="container text-center ">
     <div class="sidebar-about text-center">
-      <a href="https://htr3n.github.io/"><h1 class="brand">htr3n&#39;s</h1></a>
+      <a href="https://htr3n.github.io"><h1 class="brand">htr3n&#39;s</h1></a>
        <img src="/img/avatar.png" alt="Author Image" class="img-circle headshot center"> 
       <p class="lead">
          technology, thoughts, opinions, rants 
@@ -107,9 +107,10 @@
   </div>
 </div>
 
-        <div class="content container">
-            <div class="post">
+        <main class="content container">
+            <header>
   <h1>Node.js package managers: NPM and Yarn</h1>
+    
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
@@ -152,6 +153,9 @@
       </span>  
   </div>    
   
+</header>
+
+<div class="post">
   
 
 <p>Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources. Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, <a href="https://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack">several package managers</a> have been developed, notably, <a href="https://www.npmjs.org/">npm</a>, <a href="https://anymod.com">anymod</a> (formerly <code>component</code>), <a href="http://volojs.org">volo</a>, <a href="http://packages.ringojs.org">ringojs</a>, <a href="https://bower.io">bower</a>, <a href="https://yarnpkg.com">yarn</a>, <a href="https://pnpm.js.org"><code>pnpm</code></a>, to name but a few.</p>
@@ -357,8 +361,9 @@ yarn test
   </ul>
   
 </div>
-            <div class="footer">
-                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        </main>
+        <footer class="footer content">
+            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.configure({languages: []});
@@ -397,9 +402,8 @@ yarn test
 
       
 
-            </div>
-        </div>
-        
+        </footer>
+    
         
 <script>
 var doNotTrack = false;

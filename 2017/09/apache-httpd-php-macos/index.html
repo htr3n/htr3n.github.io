@@ -16,9 +16,9 @@
     <!-- CSS -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i|IBM+Plex+Sans+Condensed:400,500,600,700|Source+Code+Pro:400,400i" rel="stylesheet">
-    <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
-    <link rel="stylesheet" href="https://htr3n.github.io//css/poole.min.css">
-    <link rel="stylesheet" href="https://htr3n.github.io//css/hyde.min.css">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/poole.min.css">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/hyde.min.css">
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
@@ -41,7 +41,7 @@
         <div class="sidebar">
   <div class="container text-center ">
     <div class="sidebar-about text-center">
-      <a href="https://htr3n.github.io/"><h1 class="brand">htr3n&#39;s</h1></a>
+      <a href="https://htr3n.github.io"><h1 class="brand">htr3n&#39;s</h1></a>
        <img src="/img/avatar.png" alt="Author Image" class="img-circle headshot center"> 
       <p class="lead">
          technology, thoughts, opinions, rants 
@@ -107,9 +107,10 @@
   </div>
 </div>
 
-        <div class="content container">
-            <div class="post">
+        <main class="content container">
+            <header>
   <h1>Apache httpd 2.4 and PHP 7 in macOS</h1>
+    
   
   <div class="col-sm-12 col-md-12">
     <span class="text-left post-date meta">
@@ -154,6 +155,9 @@
       </span>  
   </div>    
   
+</header>
+
+<div class="post">
   
 
 <p>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development.  Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles <strong>*AMP</strong> (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered bloated or a bit of overkill for the beginners like me ;).</p>
@@ -167,21 +171,21 @@
 <h3 id="goal">Goal</h3>
 
 <blockquote>
-<p>Let&rsquo;s assume that I want to set up an exemplary  Web development environment including Apache HTTP 2.4 server and PHP 7.</p>
+<p>Let&rsquo;s assume that we want to set up an exemplary  Web development environment including Apache HTTP 2.4 server and PHP 7.</p>
 </blockquote>
 
 <h3 id="strategy">Strategy</h3>
 
-<p>A typical and well-documented approach is to load PHP as a module under Apache using the directive <code>LoadModule</code>. It is so-called <a href="http://www.php.net/manual/en/install.unix.apache2.php"><code>mod_php</code></a>. However, this approach is now gradually out of favor of Web developers and hosting providers because the tight combination of PHP and Apache makes things difficult for monitoring, debugging, and scaling. One of the recent favorite strategies is to set up PHP as Fast-CGI using <a href="http://php.net/manual/en/install.fpm.php">PHP-FPM</a> (FastCGI Process Manager). This way also brings several advantages including good support for nginx integration and <a href="https://wiki.apache.org/httpd/PHP-FPM">performance</a>.</p>
+<p>A typical and well-documented approach is to load PHP processor as a module under Apache httpd using the directive <code>LoadModule</code>. It is so-called <a href="http://www.php.net/manual/en/install.unix.apache2.php"><code>mod_php</code></a> approach. However, this is now gradually out of favor of Web developers and hosting providers because the tight combination of PHP and Apache makes things difficult for monitoring, debugging, and scaling. One of the recent favorite strategies is to set up PHP as Fast-CGI using <a href="http://php.net/manual/en/install.fpm.php">PHP-FPM</a> (FastCGI Process Manager). This method also brings several advantages including good support for nginx integration and <a href="https://wiki.apache.org/httpd/PHP-FPM">performance</a>.</p>
 
 <h3 id="how-to-proceed">How To Proceed</h3>
 
-<p>Based on the aforementioned analysis of strategies, I consider the following installation activities to fulfill my goal.</p>
+<p>Based on the aforementioned analysis of strategies, I consider the following installation activities to fulfill that goal.</p>
 
 <ol>
 <li>Installing <a href="https://brew.sh">Homebrew</a> (a sane package manager for macOS)</li>
 <li>Installing <a href="https://httpd.apache.org">Apache HTTP Server 2.4</a></li>
-<li>Installing <a href="https://php.net">PHP 7</a> along with <strong><em>PHP-FPM</em></strong></li>
+<li>Installing <a href="https://php.net">PHP 7</a> along with <em>PHP-FPM</em></li>
 <li>Putting All Together</li>
 <li>Installing <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a> (optional)</li>
 </ol>
@@ -262,9 +266,7 @@ $ brew doctor
 <pre><code class="language-sh">$ cd $(brew --cellar)/httpd/$(brew list --versions httpd | cut -d ' ' -f 2)
 </code></pre>
 
-<h4 id="configuring-apache-httpd">Configuring Apache <code>httpd</code></h4>
-
-<h5 id="configuration-files">Configuration Files</h5>
+<h4 id="configuring-apache-server">Configuring Apache Server</h4>
 
 <p>The main configuration file <code>httpd.conf</code> of <code>httpd</code> can be located at <code>/usr/local/etc/httpd</code>. There are some directives and options that you may want to notice or change ( <code>#</code>  starts a comment).</p>
 
@@ -279,8 +281,6 @@ $ brew doctor
 # LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 ...
 </code></pre>
-
-<h5 id="starting-apache-server">Starting Apache server</h5>
 
 <p>Apache <code>httpd</code> can be started by using either <code>apachectl start</code> or <code>brew services start httpd</code>. Note that the latter also installs a snippet to run Apache <code>httpd</code> as a macOs service so that <code>httpd</code> will start automatically when the computer starts or the user logs in.</p>
 
@@ -562,11 +562,7 @@ Password: (enter your password here)
 
 <h4 id="testing-apache-and-php">Testing Apache and PHP</h4>
 
-<p>Apart from the aforementioned tests, we can also check whether the integration of Apache <code>httpd</code> and <code>php-fpm</code> is successful.</p>
-
-<h5 id="creating-testing-files">Creating Testing Files</h5>
-
-<p>Let&rsquo;s create a file <code>index.php</code> in <code>/Users/huytran/working/dev/dev-web/php</code></p>
+<p>Apart from the aforementioned tests, we need to check whether the integration of Apache <code>httpd</code> and <code>php-fpm</code> is working. Let&rsquo;s create a file <code>index.php</code> in <code>/Users/huytran/working/dev/dev-web/php</code></p>
 
 <pre><code class="language-php">&lt;?php
   echo 'PHP Development Project';
@@ -582,15 +578,13 @@ Password: (enter your password here)
 &lt;/html&gt;
 </code></pre>
 
-<h5 id="restart-servers">Restart Servers</h5>
-
-<p>After changing any configuration of Apache and PHP, we must restart <code>httpd</code> and <code>php-fpm</code> to embrace these changes.</p>
+<p>After changing any configuration of Apache and PHP, we must restart <code>httpd</code> and <code>php-fpm</code> to apply these changes.</p>
 
 <pre><code class="language-sh">$ brew services restart httpd
 $ brew services restart php72
 </code></pre>
 
-<p>Given no problems so far, the servers will be successully restarted. Then use your Web browser to open the following URLs <a href="http://php7.test:8080"><code>http://php7.test:8080</code></a> and <a href="http://htmljs.dev:8080"><code>http://htmljs.test:8080</code></a>. You should see the contents created above should everything is correctly configured.</p>
+<p>Given no problems so far, the servers should be restarted smoothly. Then open your Web browser to the following URLs <a href="http://php7.test:8080"><code>http://php7.test:8080</code></a> and <a href="http://htmljs.dev:8080"><code>http://htmljs.test:8080</code></a>. You should see the contents created above should everything is correctly configured.</p>
 
 <h3 id="dnsmasq-http-www-thekelleys-org-uk-dnsmasq-doc-html"><a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a></h3>
 
@@ -749,8 +743,9 @@ $ brew services restart php72
   
   
 </div>
-            <div class="footer">
-                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        </main>
+        <footer class="footer content">
+            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.configure({languages: []});
@@ -789,9 +784,8 @@ $ brew services restart php72
 
       
 
-            </div>
-        </div>
-        
+        </footer>
+    
         
 <script>
 var doNotTrack = false;

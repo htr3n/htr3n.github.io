@@ -45,7 +45,6 @@
   }
 }
 
-/* Must override poole.css and hyde.css */
 .portfolio-container {
   margin-left:  auto;
   margin-right: auto;
@@ -74,7 +73,6 @@
     max-width: 44rem;
   }
 }
-
 
 /* ======= Base ======= */
 h1,
@@ -220,16 +218,17 @@ h3 {
   -moz-transform: rotate(45deg) translate3d(0, 0, 0);
   -ms-transform: rotate(45deg) translate3d(0, 0, 0);
   -o-transform: rotate(45deg) translate3d(0, 0, 0);
+  transform: rotate(45deg) translate3d(0, 0, 0);
 }
 
 .featured-image .ribbon .text:before,
 .featured-image .ribbon .text:after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  border-top: 5px solid #276582;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
+  border-top: 5px solid #276582;
+  bottom: -5px;
+  content: '';
+  position: absolute;
 }
 
 .featured-image .ribbon .text:before {
