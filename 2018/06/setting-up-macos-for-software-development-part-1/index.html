@@ -107,7 +107,7 @@
   </div>
 </div>
 
-        <main class="content container">
+        <div class="content container">
             <header>
   <h1>Setting up macOS for software development: Part 1</h1>
   
@@ -243,14 +243,14 @@ $ defaults write -g KeyRepeat -int 2
 
 <h3 id="changing-hostnames">Changing Hostnames</h3>
 
-<p>Most of the time, the default hostname is not satisfied and you might want to have a cool hostname for your dev box. Then you are surely not alone. Here and there, you might find some cool combo like <code>harry@hogwart</code> , <code>yoda@dagobah</code>, <code>jack@blackpearl</code>, <code>alice@wonderland</code>,  and so on. You can quickly do this via command line.</p>
+<p>Most of the time, the default host name is not satisfied and you might want to have a cool name for your dev box. Then you are surely not alone. Here and there, you might find some cool combo like <code>harry@hogwart</code> , <code>alice@wonderland</code>,  <code>yoda@dagobah</code>,  <code>joker@gotham</code>, <code>neo@matrix</code>, <code>frodo@mordor</code> you name it. You can quickly do this via command line.</p>
 
-<pre><code class="language-sh"># change the primary hostname
-$ sudo scutil --set HostName dagobah
-# ... do the same for Bonjour's 
-$ sudo scutil --set LocalHostName dagobah
-# and finally, keep the computer's name in Finder in sync
-$ sudo scutil --set ComputerName dagobah
+<pre><code class="language-sh"># change the primary host name
+$ sudo scutil --set HostName gotham
+# ... do the same for local (Bonjour) host name 
+$ sudo scutil --set LocalHostName gotham
+# and finally, keep the user-friendly computer's name in Finder in sync
+$ sudo scutil --set ComputerName gotham
 </code></pre>
 
     
@@ -272,9 +272,8 @@ $ sudo scutil --set ComputerName dagobah
   </ul>
   
 </div>
-        </main>
-        <footer class="footer content">
-            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+            <div class="footer">
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.configure({languages: []});
@@ -313,8 +312,9 @@ $ sudo scutil --set ComputerName dagobah
 
       
 
-        </footer>
-    
+            </div>
+        </div>
+        
         
 <script>
 var doNotTrack = false;
