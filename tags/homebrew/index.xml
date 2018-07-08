@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 06 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,11 +15,12 @@
     <item>
       <title>Setting up macOS for software development: Part 2</title>
       <link>https://htr3n.github.io/2018/07/setting-up-macos-for-software-development-part-2/</link>
-      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/07/setting-up-macos-for-software-development-part-2/</guid>
-      <description>Development Tools Homebrew Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to to install the Xcode command line tools that Homebrew needs to build its tools.
-# install Xcode command line developer tools $ xcode-select --install # now install Homebrew $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Then we need to add /usr/local/bin and /usr/local/sbin (where Homebrew links the executable files) to the environment variable PATH.</description>
+      <description>Following part 1 on tweaking macOS, this part will focus more on some handy tools and configuration for software development.
+Homebrew Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to to install the Xcode command line tools that Homebrew needs to build its tools.
+# install Xcode command line developer tools $ xcode-select --install # now install Homebrew $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.</description>
     </item>
     
     <item>

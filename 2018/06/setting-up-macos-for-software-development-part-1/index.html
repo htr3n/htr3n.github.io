@@ -155,7 +155,7 @@
       
       
       <br/>
-      <i class="fas fa-clock"></i> 4 min read 
+      <i class="fas fa-clock"></i> 5 min read 
       </span>  
   </div>    
   
@@ -242,6 +242,16 @@ $ defaults write -g KeyRepeat -int 2
 </code></pre>
 
 <h3 id="changing-hostnames">Changing Hostnames</h3>
+
+<p>Most of the time, the default hostname is not satisfied and you might want to have a cool hostname for your dev box. Then you are surely not alone. Here and there, you might find some cool combo like <code>harry@hogwart</code> , <code>yoda@dagobah</code>, <code>jack@blackpearl</code>, <code>alice@wonderland</code>,  and so on. You can quickly do this via command line.</p>
+
+<pre><code class="language-sh"># change the primary hostname
+$ sudo scutil --set HostName dagobah
+# ... do the same for Bonjour's 
+$ sudo scutil --set LocalHostName dagobah
+# and finally, keep the computer's name in Finder in sync
+$ sudo scutil --set ComputerName dagobah
+</code></pre>
 
     
   
