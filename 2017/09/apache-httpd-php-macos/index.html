@@ -129,17 +129,17 @@
             <br/>
              <i class="fas fa-tags"></i>
             
-            <a class="tag" href="/tags/dnsmasq">dnsmasq</a> 
+            <a class="tag" href="/tags/dnsmasq">#dnsmasq</a> 
         
-            <a class="tag" href="/tags/homebrew">homebrew</a> 
+            <a class="tag" href="/tags/homebrew">#homebrew</a> 
         
-            <a class="tag" href="/tags/httpd">httpd</a> 
+            <a class="tag" href="/tags/httpd">#httpd</a> 
         
-            <a class="tag" href="/tags/macos">macos</a> 
+            <a class="tag" href="/tags/macos">#macos</a> 
         
-            <a class="tag" href="/tags/php">php</a> 
+            <a class="tag" href="/tags/php">#php</a> 
         
-            <a class="tag" href="/tags/server">server</a>
+            <a class="tag" href="/tags/server">#server</a>
         
       
       
@@ -153,11 +153,11 @@
 <div class="post">
   
 
-<p>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development.  Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles <strong>*AMP</strong> (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered bloated or a bit of overkill for the beginners like me ;).</p>
+<p>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development.  Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles <em>*AMP</em> (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered a tad bloate or overkill for the beginners like me ;).</p>
 
 <p>After few years of Java development, I turned myself into Web development, and in particular, PHP programming. As usual, I would start with pure PHP aspects that really help me to understand the fundamental concepts and techniques instead of being drown with everyone-known frameworks and their complexity and hard-to-understand magics.</p>
 
-<p>As a result, I first looked for a simple setup of Apache and PHP that best suits the beginning of my initial learning path. In this note, I am writing down what I learn from many sources on the Internet tweaked to suit my needs.</p>
+<p>As a result, I first looked for a simple setup of Apache and PHP that best suits the beginning of my initial learning path. In this note, I write down what I learn from many sources on the Internet tweaked to suit my needs.</p>
 
 <h2 id="goal-and-strategy">Goal and Strategy</h2>
 
@@ -179,7 +179,7 @@
 <li>Installing <a href="https://brew.sh">Homebrew</a> (a sane package manager for macOS)</li>
 <li>Installing <a href="https://httpd.apache.org">Apache HTTP Server 2.4</a></li>
 <li>Installing <a href="https://php.net">PHP 7</a> along with <em>PHP-FPM</em></li>
-<li>Putting All Together</li>
+<li>Putting all together</li>
 <li>Installing <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a> (optional)</li>
 </ol>
 
@@ -187,10 +187,10 @@
 
 <h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
 
-<p>Homebrew is currently a prominent and well-supported package managing solution for macOS. Installing Homebrew is rather straightforward. Nevertheless, you must be familiar with using the command line in order to easily get thing done. All you need is to launch the Terminal app (<code>/Applications/Utilities/Terminal.app</code>) or even better the <a href="https://www.iterm2.com">iTerm2</a> and start executing terminal commands.</p>
+<p>Homebrew is currently a prominent and well-supported package managing solution for macOS. Installing Homebrew is rather straightforward. Nevertheless, you should be familiar with using the command line in order to easily get thing done. All you need is to launch the Terminal app (<code>/Applications/Utilities/Terminal.app</code>) or even the better <a href="https://www.iterm2.com">iTerm 2</a> and start executing terminal commands.</p>
 
 <blockquote>
-<p>From now on, the sign <code>$</code> will denote the user&rsquo;s command line prompt where you will execute the terminal commands, except that you must not type <code>$</code>.</p>
+<p>Note: From now on, the sign <code>$</code> will denote the user&rsquo;s command line prompt where you will execute the terminal commands, except that you must not type <code>$</code>.</p>
 </blockquote>
 
 <p>Homebrew requires Xcode&rsquo;s command line tooling so we must install it first.</p>
@@ -244,7 +244,7 @@ $ brew doctor
 <p><strong>NOTE 2</strong>: When we use <code>brew install &lt;package_name</code> without any further options, Homebrew often accomplishes the installation faster by downloading a <em>bottled version</em> (i.e. a <em>pre-compiled package</em>) from <a href="https://homebrew.bintray.com">homebrew.bintray.com</a>. If there are any extra compling options, Homebrew can download the package&rsquo;s source code and compile the source. The compilation of a source package usually takes a a bit longer. For a simple and quick start, I mostly opt for the bottled versions of Apache <code>httpd</code> and PHP as the configured and compiled options are rather sufficient. After learning the fundamental aspects, I can turn to a more complex approach with lots of tweaks for further needs or experiments.</p>
 </blockquote>
 
-<p>By default, the Homebrew-based Apache<code>httpd</code> will use the ports <code>8080</code> (<code>http</code>) and <code>8443</code> (<code>https</code>) that do not need system administrator privileges. In my setup, I will go with this option as I want to run Apache using my normal user account. Nonetheless, you can tell Homebrew to install a version that use ports <code>80</code> and <code>443</code> using the option <code>--with-privileged-ports</code> as following. Other than that, we can just leave it as it is for now and adapt later in the configuration file.</p>
+<p>By default, the Homebrew-based Apache<code>httpd</code> will use the ports <code>http/8080</code> and <code>https/8443</code> that do not need system administrator privileges. In my setup, I will go with this option as I simply want to run Apache with my user account. Nonetheless, you can tell Homebrew to install a version that use ports <code>80</code> and <code>443</code> by the option <code>--with-privileged-ports</code>.</p>
 
 <pre><code class="language-sh">$ brew install httpd --with-privileged-ports
 </code></pre>
@@ -254,7 +254,7 @@ $ brew doctor
 <pre><code class="language-sh">$ brew install httpd --HEAD --with-privileged-ports
 </code></pre>
 
-<p>Let&rsquo;s assume the bottled <code>httpd</code> is installed. The Apache server will be installed in the following folder <code>/usr/local/Cellar/httpd/2.4.29</code> (or it may be different in your computer depending on your version of Homebrew and Apache <code>httpd</code>). You can check the Homebrew&rsquo;s cellar, i.e. where Homebrew puts installed packages, with <code>brew --cellar</code>. The precise location of <code>httpd</code> in a bit complex nerdy form is <code>$(brew --cellar)/httpd/$(brew list --versions httpd | cut -d ' ' -f 2)</code>.</p>
+<p>Let&rsquo;s assume the bottled <code>httpd</code> is installed. The Apache server will be installed in the following folder <code>/usr/local/Cellar/httpd/2.4.29</code>  (which might be different in your computer). You can check the Homebrew&rsquo;s <em>Cellar</em>, i.e. where Homebrew puts installed packages, with <code>brew --cellar</code>. The precise location of <code>httpd</code> in a bit complex nerdy form is <code>$(brew --cellar)/httpd/$(brew list --versions httpd | cut -d ' ' -f 2)</code>.</p>
 
 <pre><code class="language-sh">$ cd $(brew --cellar)/httpd/$(brew list --versions httpd | cut -d ' ' -f 2)
 </code></pre>
@@ -418,7 +418,7 @@ php-fpm   53187 huytran    0u  IPv4 0xd51255ae2d4097b7      0t0  TCP 127.0.0.1:9
 php-fpm   53188 huytran    0u  IPv4 0xd51255ae2d4097b7      0t0  TCP 127.0.0.1:9072 (LISTEN)
 </code></pre>
 
-<h4 id="configuring-apache-to-handle-php-via-php-fpm">Configuring Apache to Handle PHP via PHP-FPM</h4>
+<h4 id="let-apache-delegate-to-php-fpm">Let Apache delegate to PHP-FPM</h4>
 
 <p>Apache <code>httpd</code> allows to define virtual hosts that suit my needs for separating different development projects. Instead of creating one large file <code>httpd.conf</code>, I will create a separate virtual host configuration. Again, I will start with the exemplary virtual host configuration provided in <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code>.</p>
 
