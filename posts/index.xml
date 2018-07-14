@@ -13,22 +13,22 @@
     
     
     <item>
-      <title>Setting up macOS for software development: Part 2</title>
-      <link>https://htr3n.github.io/2018/07/setting-up-macos-for-software-development-part-2/</link>
+      <title>Bootstrapping my Mac for software development - Part 2</title>
+      <link>https://htr3n.github.io/2018/07/bootstrapping-my-mac-for-software-development---part-2/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/07/setting-up-macos-for-software-development-part-2/</guid>
+      <guid>https://htr3n.github.io/2018/07/bootstrapping-my-mac-for-software-development---part-2/</guid>
       <description>Following part 1 on tweaking macOS, this part will focus more on some handy tools and configuration for software development.
 Homebrew Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to to install the Xcode command line tools that Homebrew needs to build its tools.
 # install Xcode command line developer tools $ xcode-select --install # now install Homebrew $ /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.</description>
     </item>
     
     <item>
-      <title>Setting up macOS for software development: Part 1</title>
-      <link>https://htr3n.github.io/2018/06/setting-up-macos-for-software-development-part-1/</link>
+      <title>Bootstrapping my Mac for software development - Part 1</title>
+      <link>https://htr3n.github.io/2018/06/bootstrapping-my-mac-for-software-development---part-1/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/06/setting-up-macos-for-software-development-part-1/</guid>
+      <guid>https://htr3n.github.io/2018/06/bootstrapping-my-mac-for-software-development---part-1/</guid>
       <description>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to the MacMini 2010 and MacBook Pro 13&amp;rdquo; and 15&amp;rdquo; lately. Time Machine has helped me a lot to transfer data from the old to the new machine. Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the defaults due to many reasons (e.g. against security advice, etc.</description>
     </item>
     
@@ -94,7 +94,7 @@ Thus far I have not foreseen any great use of extensive backend storage and comp
     <item>
       <title>LaraMod - Modularised Laravel 5</title>
       <link>https://htr3n.github.io/2018/01/laramod/</link>
-      <pubDate>Fri, 19 Jan 2018 17:39:00 +0700</pubDate>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/01/laramod/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://laravel.com&#34;&gt;Laravel&lt;/a&gt; is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented &lt;a href=&#34;https://laravel.com/docs/5.5/structure&#34;&gt;here&lt;/a&gt;. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&amp;rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously. Thus, the need for complex submodule organisation is quite obvious.&lt;/p&gt;
