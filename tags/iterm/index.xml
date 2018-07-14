@@ -13,22 +13,22 @@
     
     
     <item>
-      <title>Bootstrapping my Mac for software development - Part 2</title>
-      <link>https://htr3n.github.io/2018/07/bootstrapping-my-mac-for-software-development---part-2/</link>
+      <title>Bootstrapping my macOS workspace - Part 2</title>
+      <link>https://htr3n.github.io/2018/07/bootstrapping-my-macos-workspace---part-2/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/07/bootstrapping-my-mac-for-software-development---part-2/</guid>
+      <guid>https://htr3n.github.io/2018/07/bootstrapping-my-macos-workspace---part-2/</guid>
       <description>&lt;p&gt;Following &lt;a href=&#34;setting-up-macos-for-software-development-part-1&#34;&gt;part 1&lt;/a&gt; on tweaking macOS, this part will focus more on some handy tools and configuration for software development.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Bootstrapping my Mac for software development - Part 1</title>
-      <link>https://htr3n.github.io/2018/06/bootstrapping-my-mac-for-software-development---part-1/</link>
+      <title>Bootstrapping my macOS workspace - Part 1</title>
+      <link>https://htr3n.github.io/2018/06/bootstrapping-my-macos-workspace---part-1/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/06/bootstrapping-my-mac-for-software-development---part-1/</guid>
+      <guid>https://htr3n.github.io/2018/06/bootstrapping-my-macos-workspace---part-1/</guid>
       <description>&lt;p&gt;I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to the MacMini 2010 and MacBook Pro 13&amp;rdquo; and 15&amp;rdquo; lately. Time Machine has helped me a lot to transfer data from the old to the new machine. Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the defaults due to many reasons (e.g. against security advice, etc.).  And I often find myself searching around everytime for some desirable settings. Thus, this post is kind of a note to self on few useful tweaks for my development box so that I can easily reach out later.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
