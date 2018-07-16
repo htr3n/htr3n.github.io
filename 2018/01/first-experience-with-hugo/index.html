@@ -3,40 +3,38 @@
     <head>
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Cache-Control" content="public" />
-    <!-- Enable responsiveness on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
-    <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
-    <meta name="generator" content="Hugo 0.44-DEV" />
-    
-    <title>First experience with Hugo &middot; htr3n&#39;s</title>
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="htr3n">
-    <meta name="twitter:title" content="First experience with Hugo- htr3n&#39;s">
-    <meta name="twitter:description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants- ">
-    <meta name="twitter:creator" content="htr3n">
-    <!-- OpenGraph Protocol -->
-    <meta property="og:locale" content="en">
-    <meta property="og:site_name" content="htr3n&#39;s">
-    <meta property="og:url" content="https://htr3n.github.io/2018/01/first-experience-with-hugo/">
-    <meta property="og:title" content="First experience with Hugo - htr3n&#39;s">
-    <meta property="og:description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants - ">
-    <meta property="og:type" content="article">
-    <!-- Google fonts -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.44-DEV" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="First experience with Hugo"/>
+<meta name="twitter:description" content="To commence my journey in software development, I have looked for a Web framework to build this blog. I have started writing blog posts mainly using (Multi)Markdown and plan to migrate other posts to Markdown too. Thus, it&rsquo;s rather natural to go with built-in or first-class support for Markdown to minimise the migration effort.
+Thus far I have not foreseen any great use of extensive backend storage and computation. So I narrowed down my search to static site generators with two prominent candidates Jekyll and Hugo popping up, for instance, here, here, and here."/>
+
+<meta property="og:title" content="First experience with Hugo" />
+<meta property="og:description" content="To commence my journey in software development, I have looked for a Web framework to build this blog. I have started writing blog posts mainly using (Multi)Markdown and plan to migrate other posts to Markdown too. Thus, it&rsquo;s rather natural to go with built-in or first-class support for Markdown to minimise the migration effort.
+Thus far I have not foreseen any great use of extensive backend storage and computation. So I narrowed down my search to static site generators with two prominent candidates Jekyll and Hugo popping up, for instance, here, here, and here." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://htr3n.github.io/2018/01/first-experience-with-hugo/" />
+<meta property="article:published_time" content="2018-01-23T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2018-01-23T00:00:00&#43;00:00"/>
+
+
+
+
+
+    <!-- Web fonts -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
-    <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
-    <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
+
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-    <!-- highlight.js-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <!-- hyde-hyde styles -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <!-- highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,40 +43,50 @@
     <![endif]-->
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    
-</head>
+    <link rel="shortcut icon" href="/favicon.png"></head>
     <body>
-        <!-- Sidebar -->
-<div class="sidebar">
-  <div class="container text-center ">
-    <div class="sidebar-about text-center">
-      <a href="https://htr3n.github.io">
-        <h1 class="brand">htr3n&#39;s</h1>
-      </a>
+        
+<div class="sidebar text-center">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://htr3n.github.io">htr3n&#39;s</a>
+      </span>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img-circle headshot center"> 
-      <p class="lead">
+      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
     </div>
     <div>
 	<ul class="sidebar-nav">
-		<li>
-					<a href="/posts/"> <span>Articles</span></a>
-				</li><li>
-					<a href="/portfolio/"> <span>Portfolio</span></a>
-				</li><li>
-					<a href="/vn/"> <span>Tiếng Việt</span></a>
-				</li><li>
-					<a href="/about/"> <span>About</span></a>
+		
+				<li>
+					<a href="/posts/">
+						<span>Articles</span>
+					</a>
+				</li>
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
 				</li>
 		</li>
 	</ul>
 </div>
 
     <p>
-      <section class="row text-center">
+      <section class="social text-center">
 	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	
 	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
@@ -97,7 +105,7 @@
     <p class="copyright">&copy; 2018 htr3n.
       <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
       <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> &#10084;️
+      <a href="https://gohugo.io">Hugo</a> ❤️
       <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
     </p>
   </div>
@@ -105,79 +113,83 @@
   </div>
 </div>
 <div class="content container">
-            <header>
-  <h1>First experience with Hugo</h1>
+            <article>
+  <header>
+    <h1>First experience with Hugo</h1>
+     
     
-  
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
-            
-       
-        <i class="fas fa-calendar-alt"></i> Jan 23, 2018
+<div class="meta">
+    
+    <i class="fas fa-calendar-alt"></i> Jan 23, 2018
+    in
+              <a class="category" href="/categories/dev">DEV</a>
+              
+    
       
       
-        
-        
-            in
-            
-            
-                <a class="meta" href="/categories/dev">DEV</a>
-                
-            
-        
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="tag" href="/tags/golang">#golang</a>
+           
       
+          <a class="tag" href="/tags/hugo">#hugo</a>
+           
       
+          <a class="tag" href="/tags/jekyll">#jekyll</a>
+           
       
-        
-        
-            <br/>
-             <i class="fas fa-tags"></i>
-            
-            <a class="tag" href="/tags/golang">golang</a> 
-        
-            <a class="tag" href="/tags/hugo">hugo</a> 
-        
-            <a class="tag" href="/tags/jekyll">jekyll</a> 
-        
-            <a class="tag" href="/tags/static-site-generators">static site generators</a>
-        
+          <a class="tag" href="/tags/static-site-generators">#static site generators</a>
+          
       
-      
-      <br/>
-      <i class="fas fa-clock"></i> 3 min read 
-      </span>  
-  </div>    
-  
-</header>
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
 
-<div class="post">
-  <p>To commence my journey in software development, I have looked for a Web framework to build this blog. I have started writing blog posts mainly using (Multi)Markdown and plan to migrate other posts to Markdown too. Thus, it&rsquo;s rather natural to go with built-in or first-class support for Markdown to minimise the migration effort.</p>
+  </header>
+  <div class="post">
+    <p>To commence my journey in software development, I have looked for a Web framework to build this blog. I have started writing blog posts mainly using (Multi)Markdown and plan to migrate other posts to Markdown too. Thus, it&rsquo;s rather natural to go with built-in or first-class support for Markdown to minimise the migration effort.</p>
 
 <p>Thus far I have not foreseen any great use of extensive backend storage and computation. So I narrowed down my search to static site generators with two prominent candidates <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://gohugo.io">Hugo</a> popping up, for instance, <a href="https://www.staticgen.com">here</a>, <a href="https://www.smashingmagazine.com/2015/11/static-website-generators-jekyll-middleman-roots-hugo-review">here</a>, and <a href="https://www.netlify.com/blog/2017/05/25/top-ten-static-site-generators-of-2017">here</a>. Both offer all essential features to bootstrap a new site or migrate existing sites. Nothing can go wrong when you pick either one.</p>
 
 <p>After a week trying both Jekyll and Hugo, I ended up deciding to go with Hugo. It&rsquo;s not to say I hate Jekyll but quite the opposite. Jekyll is a rather well-engineered piece of software (by the guys behind <a href="https://github.com">Github</a>).  I love its design, strong community, rich ecosystem, a lot of beautiful themes and good integration with Github.</p>
 
-<p>There is just one thing I do not feel comfortable working with Jekyll is the way to apply a theme. As far as I know, most of Jekyll&rsquo;s themes ask for copying and pasting theme resources (e.g. CSS, templates) into an existing Jekyll site (please corret me if I am wrong). This is quite strange regarding the conventional approach of Ruby &ndash; the backend of Jekyll. As predicted, I had way too many problems changing themes that cross various Jekyll versions. It should be the other way around. That is, a theme would remain in tact inside predefined folders and be plugged into the Jekyll site via the configuration file. I think this approach, in terms of software design, would be less intrusive and much lower <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">coupling</a>.</p>
+<p>There is just one thing I do not feel comfortable working with Jekyll is the way to apply a theme. As far as I know, most of Jekyll&rsquo;s themes ask for copying and pasting theme resources (e.g. CSS, templates) into an existing Jekyll site (please correct me if I am wrong).</p>
+
+<p>This is quite strange regarding the conventional approach of Ruby &ndash; the backend of Jekyll. As predicted, I had way too many problems changing themes that cross various Jekyll versions. It should be the other way around. That is, a theme would remain in tact inside predefined folders and be plugged into the Jekyll site via the configuration file. I think this approach, in terms of software design, would be less intrusive and much lower <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">coupling</a>.</p>
 
 <p>Hugo gets this design decision quite right. That&rsquo;s why I prefer Hugo, apart from its amazing performance. You can easily find numerous compliments for Hugo around the Internet. I just fall in love with the way Hugo allows me to apply and adapt any themes (of course with some extra effort as each theme might often introduce some additional customizable features or variables). Besides, as I desire to learn more about <a href="https://golang.org">Golang</a>, Hugo would be definitely a nice start.</p>
 
-<p>The longer I play around with Hugo, the more I become passionate about Hugo in particular and Golang in general. The first week working with Hugo has yielded a Hugo&rsquo;s theme for my personal use that you might find useful,  namely, <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a> (based on spf13&rsquo;s <a href="https://github.com/spf13/hyde">Hyde</a>). My journey with Hugo and Golang has just started but, thus far, it looks quite bright and promising.</p>
+<p>The longer I play around with Hugo, the more I become passionate about Hugo in particular and Golang in general. The first week working with Hugo has yielded a Hugo&rsquo;s theme for my personal use that you might find useful,  namely, <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a> (based on spf13&rsquo;s <a href="https://github.com/spf13/hyde">Hyde</a>). My journey with Hugo and Golang has just started but it looks quite bright and promising thus far.</p>
 
 <p>I ❤️ Hugo.</p>
 
-    
-  
-  
+  </div>
+  <div class="page__nav">
+    <hr>
+    <div class="pull-right">
+    <span><a href="/2018/02/getting-started-with-webpack/">Getting started with Webpack</a></span> ▶
+    </div>
+    <div>
+        ◀ <span><a href="/2018/01/laramod/">LaraMod - Modularised Laravel 5</a></span>
+    </div>
 </div>
+  <div class="post__related">
+    
+    
+    
+</div>
+</article>
         </div>
-        <div class="footer content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.configure({languages: []});
     hljs.initHighlightingOnLoad();
 </script>
-<hr>
-        <h2>Comments</h2><div id="disqus_thread"></div>
+<div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {
             
@@ -204,8 +216,8 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
-        <!-- Google Analytics -->
-            
+    <!-- Google Analytics -->
+
 <script>
 var doNotTrack = false;
 if (!doNotTrack) {

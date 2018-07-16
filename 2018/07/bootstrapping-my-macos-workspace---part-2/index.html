@@ -3,40 +3,40 @@
     <head>
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Cache-Control" content="public" />
-    <!-- Enable responsiveness on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
-    <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
-    <meta name="generator" content="Hugo 0.44-DEV" />
-    
-    <title>Bootstrapping my macOS workspace - Part 2 &middot; htr3n&#39;s</title>
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="htr3n">
-    <meta name="twitter:title" content="Bootstrapping my macOS workspace - Part 2- htr3n&#39;s">
-    <meta name="twitter:description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants- ">
-    <meta name="twitter:creator" content="htr3n">
-    <!-- OpenGraph Protocol -->
-    <meta property="og:locale" content="en">
-    <meta property="og:site_name" content="htr3n&#39;s">
-    <meta property="og:url" content="https://htr3n.github.io/2018/07/bootstrapping-my-macos-workspace---part-2/">
-    <meta property="og:title" content="Bootstrapping my macOS workspace - Part 2 - htr3n&#39;s">
-    <meta property="og:description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants - ">
-    <meta property="og:type" content="article">
-    <!-- Google fonts -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.44-DEV" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bootstrapping my macOS workspace - Part 2"/>
+<meta name="twitter:description" content="Following part 1 on tweaking macOS to prepare for a workspace, this part will focus more on some handy tools and configurations that I often used for software development.
+
+"/>
+
+<meta property="og:title" content="Bootstrapping my macOS workspace - Part 2" />
+<meta property="og:description" content="Following part 1 on tweaking macOS to prepare for a workspace, this part will focus more on some handy tools and configurations that I often used for software development.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://htr3n.github.io/2018/07/bootstrapping-my-macos-workspace---part-2/" />
+<meta property="article:published_time" content="2018-07-08T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2018-07-08T00:00:00&#43;00:00"/>
+
+
+
+
+
+    <!-- Web fonts -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
-    <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
-    <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
+
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-    <!-- highlight.js-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <!-- hyde-hyde styles -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <!-- highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,40 +45,50 @@
     <![endif]-->
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    
-</head>
+    <link rel="shortcut icon" href="/favicon.png"></head>
     <body>
-        <!-- Sidebar -->
-<div class="sidebar">
-  <div class="container text-center ">
-    <div class="sidebar-about text-center">
-      <a href="https://htr3n.github.io">
-        <h1 class="brand">htr3n&#39;s</h1>
-      </a>
+        
+<div class="sidebar text-center">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://htr3n.github.io">htr3n&#39;s</a>
+      </span>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img-circle headshot center"> 
-      <p class="lead">
+      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
     </div>
     <div>
 	<ul class="sidebar-nav">
-		<li>
-					<a href="/posts/"> <span>Articles</span></a>
-				</li><li>
-					<a href="/portfolio/"> <span>Portfolio</span></a>
-				</li><li>
-					<a href="/vn/"> <span>Tiếng Việt</span></a>
-				</li><li>
-					<a href="/about/"> <span>About</span></a>
+		
+				<li>
+					<a href="/posts/">
+						<span>Articles</span>
+					</a>
+				</li>
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
 				</li>
 		</li>
 	</ul>
 </div>
 
     <p>
-      <section class="row text-center">
+      <section class="social text-center">
 	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	
 	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
@@ -97,7 +107,7 @@
     <p class="copyright">&copy; 2018 htr3n.
       <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
       <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> &#10084;️
+      <a href="https://gohugo.io">Hugo</a> ❤️
       <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
     </p>
   </div>
@@ -105,65 +115,57 @@
   </div>
 </div>
 <div class="content container">
-            <header>
-  <h1>Bootstrapping my macOS workspace - Part 2</h1>
-  
-    <span class="subtitle">
+            <article>
+  <header>
+    <h1>Bootstrapping my macOS workspace - Part 2</h1>
+    
+    <span class="post__subtitle">
       Development tools and configurations
     </span>
+     
     
-  
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
-            
-       
-        <i class="fas fa-calendar-alt"></i> Jul 8, 2018
+<div class="meta">
+    
+    <i class="fas fa-calendar-alt"></i> Jul 8, 2018
+    in
+              <a class="category" href="/categories/dev">DEV</a>
+              
+    
       
       
-        
-        
-            in
-            
-            
-                <a class="meta" href="/categories/dev">DEV</a>
-                
-            
-        
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="tag" href="/tags/homebrew">#homebrew</a>
+           
       
+          <a class="tag" href="/tags/iterm">#iterm</a>
+           
       
+          <a class="tag" href="/tags/macos">#macos</a>
+           
       
-        
-        
-            <br/>
-             <i class="fas fa-tags"></i>
-            
-            <a class="tag" href="/tags/homebrew">homebrew</a> 
-        
-            <a class="tag" href="/tags/iterm">iterm</a> 
-        
-            <a class="tag" href="/tags/macos">macos</a> 
-        
-            <a class="tag" href="/tags/visual-studio-code">visual-studio-code</a> 
-        
-            <a class="tag" href="/tags/zsh">zsh</a>
-        
+          <a class="tag" href="/tags/visual-studio-code">#visual-studio-code</a>
+           
       
+          <a class="tag" href="/tags/zsh">#zsh</a>
+          
       
-      <br/>
-      <i class="fas fa-clock"></i> 5 min read 
-      </span>  
-  </div>    
-  
-</header>
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min read
+</div>
 
-<div class="post">
-  <p>Following <a href="setting-up-macos-for-software-development-part-1">part 1</a> on tweaking macOS, this part will focus more on some handy tools and configuration for software development.</p>
+  </header>
+  <div class="post">
+    <p>Following <a href="https://htr3n.github.io/2018/06/bootstrapping-my-macos-workspace---part-1/">part 1</a> on tweaking macOS to prepare for a workspace, this part will focus more on some handy tools and configurations that I often used for software development.</p>
 
 <p></p>
 
 <h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
 
-<p>Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to to install the Xcode command line tools that Homebrew needs to build its tools.</p>
+<p>Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to install the Xcode command line tools that Homebrew needs to build its tools.</p>
 
 <pre><code class="language-sh"># install Xcode command line developer tools
 $ xcode-select --install
@@ -215,19 +217,19 @@ $ brew bundle
 
 <h3 id="text-code-editors">Text/Code Editors</h3>
 
-<p>There are quite a number of good editors in macOS for developers ranging from Sublime Text, TextMate, TextWrangler, the nerdy Vim/MacVim, Emacs, and recently Atom, Visual Studio Code, Brackets, to name but a few. In macOS Sublime Text is often an amazing editor for many but it is quite costly.</p>
+<p>There are quite a number of editors in macOS for developers ranging from, er, the built-in Text Editor, <em>Sublime Text</em>, <em>TextMate</em>, <em>TextWrangler</em>, the nerdy <em>Vim</em>, <em>Emacs</em>, and recently <em>Atom</em>, <em>Visual Studio Code</em>, <em>Brackets</em>, to name but a few. You might install these editos using Cask.</p>
 
-<p>I tend to love <a href="https://atom.io">Atom</a> which is developed by Github as an effort to build a modern editor for developers. Atom has a plethora of extensions to become a promising choice. Nevertheless, I was skeptical with its sluggishness in early days and therefore leaned to <a href="https://code.visualstudio.com">Visual Studio Code</a>, my current Swiss-army-knife-editor-of-choice instead.</p>
+<p>In macOS, Sublime Text is often a powerful editor for many of us but it is quite costly. I tend to love <a href="https://atom.io">Atom</a> which is developed by Github as an effort to build a modern editor for developers. Atom enables a plethora of extensions to become a very promising choice. Nevertheless, I was skeptical with its sluggishness in early days and therefore leaned to <a href="https://code.visualstudio.com">Visual Studio Code</a>, my current Swiss-army-knife editor-of-choice instead.</p>
 
 <pre><code class="language-sh">$ brew cask install visual-studio-code
 </code></pre>
 
-<p>You can also install other editos using Cask. In the terminal/console, I mainly use vim for quick editing and also <a href="https://github.com/htr3n/vim-config">customised it</a> for personal use.</p>
+<p>Frequently using terminal/console, I just grasp vim for quick editing tasks and <a href="https://github.com/htr3n/vim-config">customised it</a> a little bit.</p>
 
 <pre><code class="language-sh">$ brew install vim
 </code></pre>
 
-<p>For Markdown editors (e.g. Github infamous README.md), I often used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes a second choice for now (at least until Typora&rsquo;s developers announce their paid version).</p>
+<p>For Markdown editors, e.g. Github infamous <em>README.md</em> or my blog articles, I used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes a second choice for now (at least until Typora&rsquo;s developers announce their paid plans). With Typora, I can directly write Markdown articles just like Microsoft Word.  I can do <code>Cmd + /</code> to instantly switch back and forth between <em>Visual Editing</em> and <em>Source</em> modes. Even better, I can adapt the Markdown render in Typora to be nearly indentical to my blog and therefore, experience <em>WYSIWYG</em> Markdown editing.</p>
 
 <pre><code class="language-sh">$ brew cask install typora
 </code></pre>
@@ -237,7 +239,7 @@ $ brew bundle
 <h3 id="ack-https-beyondgrep-com"><a href="https://beyondgrep.com">Ack</a></h3>
 
 <ul>
-<li>faster than grep and easy to use</li>
+<li>Ack is faster and easier to use than grep</li>
 </ul>
 
 <pre><code class="language-sh">$ brew install ack
@@ -246,7 +248,7 @@ $ brew bundle
 <h3 id="dropbox-https-www-dropbox-com"><a href="https://www.dropbox.com">Dropbox</a></h3>
 
 <ul>
-<li>Many of our friends are sharing files using Dropbox ;). Note that it must be installed in &lsquo;<em>/Applications</em>&lsquo;</li>
+<li>Many of our customers and friends are sharing files using Dropbox, so are we ;). Note that it must be installed in &lsquo;<em>/Applications</em>&rsquo; to work properly.</li>
 </ul>
 
 <pre><code class="language-sh">$ brew cask install --appdir=&quot;/Applications&quot; dropbox
@@ -271,16 +273,16 @@ $ brew install docker
 <pre><code class="language-sh">$ brew cask install spectacle
 </code></pre>
 
-<h3 id="alfred-https-www-alfredapp-com-powerpack-paid"><a href="https://www.alfredapp.com">Alfred</a> + Powerpack (paid)</h3>
+<h3 id="alfred-https-www-alfredapp-com-powerpack"><a href="https://www.alfredapp.com">Alfred</a> + Powerpack ($)</h3>
 
 <ul>
-<li>a must-have for most of macOS users. The free version is useful enough but the paid (for Powerpack) is excellent.</li>
+<li>Alfred is a must-have for most of macOS users. The free version is useful enough but the paid (for Powerpack) just blows me away.</li>
 </ul>
 
 <pre><code class="language-sh">$ brew cask install alfred
 </code></pre>
 
-<h3 id="1password-https-1password-com"><a href="https://1password.com">1Password</a></h3>
+<h3 id="1password-https-1password-com"><a href="https://1password.com">1Password</a> ($)</h3>
 
 <ul>
 <li>Help storing all of your private information and authentications in a place of your choice (e.g. iCloud or Dropbox) and using them in macOS or iOS.</li>
@@ -292,7 +294,7 @@ $ brew install docker
 <h3 id="f-lux-https-justgetflux-com"><a href="https://justgetflux.com/">F.lux</a></h3>
 
 <ul>
-<li>Saving your eyes when staring at your computer&rsquo;s monitors (macOS also has Night Shift mode but my eyes still find F.lux more pleasant)</li>
+<li>Saving your eyes when staring at your computer&rsquo;s monitors (macOS also has Night Shift mode but my eyes still find F.lux more pleasant at night)</li>
 </ul>
 
 <pre><code class="language-sh">$ brew cask install flux
@@ -301,7 +303,7 @@ $ brew install docker
 <h3 id="web-browers">Web Browers</h3>
 
 <ul>
-<li>I install Firefox and Google Chrome mainly for Web development, testing and debugging because I find Safari is sufficient (not perfect though) for daily use and sharing bookmarks and history links between macOS and iPhone is nice.</li>
+<li>Installing Firefox and Google Chrome mainly for Web development, testing and debugging as I find Safari is, not perfect though, sufficient for daily use and conveniently sharing bookmarks and history links between macOS and my iPad and iPhone.</li>
 </ul>
 
 <pre><code class="language-sh">$ brew cask install google-chrome firefox
@@ -323,9 +325,7 @@ $ ssh-keygen -t rsa -b 4096 -C &quot;MacBookPro email@example.com&quot;
 $ ssh-copy-id user@host
 </code></pre>
 
-<ul>
-<li>Networking Tools</li>
-</ul>
+<h3 id="networking-tools">Networking Tools</h3>
 
 <pre><code class="language-sh">$ brew install netcat curl wget nmap
 </code></pre>
@@ -350,43 +350,53 @@ $ ssh-copy-id user@host
 
 <pre><code class="language-sh">$ brew install coreutils autoconf automake findutils gawk gcc gnu-sed grep
 </code></pre>
+  </div>
+  <div class="page__nav">
+    <hr>
+    <div class="pull-right">
     
-  
-  
-  <hr>  
-  <h2>Related Articles</h2>
-  <ul class="related-posts">
-	    
-      <li>
-        <span>
-            <a href="/2018/06/bootstrapping-my-macos-workspace---part-1/">Bootstrapping my macOS workspace - Part 1</a>
-            
-            <time class="pull-right post-list">Jun 27, 2018</time>    
-            
-        </span>
-      </li>
-	    
-      <li>
-        <span>
-            <a href="/2017/09/apache-httpd-php-macos/">Apache httpd 2.4 and PHP 7 in macOS</a>
-            
-            <time class="pull-right post-list">Sep 25, 2017</time>    
-            
-        </span>
-      </li>
-	    
-  </ul>
-  
+    </div>
+    <div>
+        ◀ <span><a href="/2018/06/bootstrapping-my-macos-workspace---part-1/">Bootstrapping my macOS workspace - Part 1</a></span>
+    </div>
 </div>
+  <div class="post__related">
+    
+    
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/2018/06/bootstrapping-my-macos-workspace---part-1/">Bootstrapping my macOS workspace - Part 1</a>
+      
+      <time class="pull-right hidden-tablet">Jun 27 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2017/09/apache-httpd-php-macos/">Apache httpd 2.4 and PHP 7 in macOS</a>
+      
+      <time class="pull-right hidden-tablet">Sep 25 &#39;17</time>
+      
+  </span>
+</li>
+
+    </ul>
+    
+</div>
+</article>
         </div>
-        <div class="footer content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.configure({languages: []});
     hljs.initHighlightingOnLoad();
 </script>
-<hr>
-        <h2>Comments</h2><div id="disqus_thread"></div>
+<div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {
             
@@ -413,8 +423,8 @@ $ ssh-copy-id user@host
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
-        <!-- Google Analytics -->
-            
+    <!-- Google Analytics -->
+
 <script>
 var doNotTrack = false;
 if (!doNotTrack) {

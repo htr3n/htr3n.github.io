@@ -3,40 +3,36 @@
     <head>
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Cache-Control" content="public" />
-    <!-- Enable responsiveness on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
-    <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
-    <meta name="generator" content="Hugo 0.44-DEV" />
-    
-    <title>Soạn tài liệu TeX tiếng Việt (Unicode) &middot; htr3n&#39;s</title>
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="htr3n">
-    <meta name="twitter:title" content="Soạn tài liệu TeX tiếng Việt (Unicode)- htr3n&#39;s">
-    <meta name="twitter:description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants- ">
-    <meta name="twitter:creator" content="htr3n">
-    <!-- OpenGraph Protocol -->
-    <meta property="og:locale" content="en">
-    <meta property="og:site_name" content="htr3n&#39;s">
-    <meta property="og:url" content="https://htr3n.github.io/2008/12/latex-tieng-viet-unicode/">
-    <meta property="og:title" content="Soạn tài liệu TeX tiếng Việt (Unicode) - htr3n&#39;s">
-    <meta property="og:description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants - ">
-    <meta property="og:type" content="article">
-    <!-- Google fonts -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.44-DEV" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Soạn tài liệu TeX tiếng Việt (Unicode)"/>
+<meta name="twitter:description" content="LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án vnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX."/>
+
+<meta property="og:title" content="Soạn tài liệu TeX tiếng Việt (Unicode)" />
+<meta property="og:description" content="LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án vnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://htr3n.github.io/2008/12/latex-tieng-viet-unicode/" />
+<meta property="article:published_time" content="2008-12-25T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2017-01-19T10:40:00&#43;07:00"/>
+
+
+
+
+
+    <!-- Web fonts -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
-    <link rel="stylesheet" href="https://htr3n.github.io/css/poole.css">
-    <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
+
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-    <!-- highlight.js-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <!-- hyde-hyde styles -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <!-- highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,40 +41,50 @@
     <![endif]-->
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    
-</head>
+    <link rel="shortcut icon" href="/favicon.png"></head>
     <body>
-        <!-- Sidebar -->
-<div class="sidebar">
-  <div class="container text-center ">
-    <div class="sidebar-about text-center">
-      <a href="https://htr3n.github.io">
-        <h1 class="brand">htr3n&#39;s</h1>
-      </a>
+        
+<div class="sidebar text-center">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://htr3n.github.io">htr3n&#39;s</a>
+      </span>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img-circle headshot center"> 
-      <p class="lead">
+      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
     </div>
     <div>
 	<ul class="sidebar-nav">
-		<li>
-					<a href="/posts/"> <span>Articles</span></a>
-				</li><li>
-					<a href="/portfolio/"> <span>Portfolio</span></a>
-				</li><li>
-					<a href="/vn/"> <span>Tiếng Việt</span></a>
-				</li><li>
-					<a href="/about/"> <span>About</span></a>
+		
+				<li>
+					<a href="/posts/">
+						<span>Articles</span>
+					</a>
+				</li>
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
 				</li>
 		</li>
 	</ul>
 </div>
 
     <p>
-      <section class="row text-center">
+      <section class="social text-center">
 	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	
 	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
@@ -97,7 +103,7 @@
     <p class="copyright">&copy; 2018 htr3n.
       <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
       <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> &#10084;️
+      <a href="https://gohugo.io">Hugo</a> ❤️
       <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
     </p>
   </div>
@@ -105,51 +111,41 @@
   </div>
 </div>
 <div class="content container">
-            <header>
-  <h1>Soạn tài liệu TeX tiếng Việt (Unicode)</h1>
+            <article>
+  <header>
+    <h1>Soạn tài liệu TeX tiếng Việt (Unicode)</h1>
+     
     
-  
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
-            
-       
-        <i class="fas fa-calendar-alt"></i> Dec 25, 2008
+<div class="meta">
+    
+    <i class="fas fa-calendar-alt"></i> Dec 25, 2008
+    in
+              <a class="category" href="/categories/vn">VN</a>
+              
+    
       
       
-        
-        
-            in
-            
-            
-                <a class="meta" href="/categories/vn">VN</a>
-                
-            
-        
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="tag" href="/tags/tex">#tex</a>
+           
       
+          <a class="tag" href="/tags/unicode">#unicode</a>
+           
       
+          <a class="tag" href="/tags/vietnamese">#vietnamese</a>
+          
       
-        
-        
-            <br/>
-             <i class="fas fa-tags"></i>
-            
-            <a class="tag" href="/tags/tex">tex</a> 
-        
-            <a class="tag" href="/tags/unicode">unicode</a> 
-        
-            <a class="tag" href="/tags/vietnamese">vietnamese</a>
-        
-      
-      
-      <br/>
-      <i class="fas fa-clock"></i> 4 min read 
-      </span>  
-  </div>    
-  
-</header>
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
 
-<div class="post">
-  
+  </header>
+  <div class="post">
+    
 
 <p><a href="http://www.ctan.org">LaTeX</a> được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án <a href="http://vntex.sourceforge.net">vnTeX</a> hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án <a href="http://omega.enstb.org">Omega</a> định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX.</p>
 
@@ -260,19 +256,30 @@ ps2pdf tv.ps
 
 <p><img src="latex-tv.jpg" alt="Kết quả văn bản tiếng Việt" /></p>
 
-    
-  
-  
+  </div>
+  <div class="page__nav">
+    <hr>
+    <div class="pull-right">
+    <span><a href="/2008/12/mot-cach-dao-mo/">Một cách &#34;đào mỏ&#34;</a></span> ▶
+    </div>
+    <div>
+        ◀ <span><a href="/2007/07/bach-khoa-toan-san/">Bách khoa toàn ... sạn</a></span>
+    </div>
 </div>
+  <div class="post__related">
+    
+    
+    
+</div>
+</article>
         </div>
-        <div class="footer content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script type="text/javascript">
     hljs.configure({languages: []});
     hljs.initHighlightingOnLoad();
 </script>
-<hr>
-        <h2>Comments</h2><div id="disqus_thread"></div>
+<div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {
             
@@ -299,8 +306,8 @@ ps2pdf tv.ps
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 </div>
-        <!-- Google Analytics -->
-            
+    <!-- Google Analytics -->
+
 <script>
 var doNotTrack = false;
 if (!doNotTrack) {

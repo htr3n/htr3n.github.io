@@ -18,8 +18,7 @@
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/05/integration-laravel-5-and-gentelella-admin-theme/</guid>
-      <description>Gentelella is a very nice and gently-looking Bootstrap based admin theme developed by Aigars Silkalns (known as puikinsh in Github), who founded colorlib.com. It can be integrated into several Web application frameworks. In this post, I noted down my simple development exercise in which Gentelella is used to decorated a Laravel 5 based Web application. This task is part of building my PHP based framework LaraMod.
-Laravel can act as backend for any Web application.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/puikinsh/gentelella&#34;&gt;Gentelella&lt;/a&gt; is a very nice and gently-looking &lt;a href=&#34;https://getbootstrap.com&#34;&gt;Bootstrap&lt;/a&gt; based admin theme developed by Aigars Silkalns (known as &lt;a href=&#34;https://github.com/puikinsh&#34;&gt;puikinsh&lt;/a&gt; in Github), who founded &lt;a href=&#34;https://colorlib.com&#34;&gt;colorlib.com&lt;/a&gt;. It can be integrated into several Web application frameworks. In this post, I noted down my simple development exercise in which Gentelella is used to decorated a &lt;a href=&#34;https://github.com/laravel/laravel&#34;&gt;Laravel&lt;/a&gt; 5 based Web application. This task is part of building my PHP based framework &lt;a href=&#34;https://github.com/htr3n/laramod&#34;&gt;LaraMod&lt;/a&gt;. &lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,7 +27,9 @@ Laravel can act as backend for any Web application.</description>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</guid>
-      <description>Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources. Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, several package managers have been developed, notably, npm, anymod (formerly component), volo, ringojs, bower, yarn, pnpm, to name but a few.</description>
+      <description>&lt;p&gt;Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

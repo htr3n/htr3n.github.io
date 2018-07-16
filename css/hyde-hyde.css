@@ -1,400 +1,433 @@
-/*
- * Based on 'hyde' designed, built, and released under MIT license by @mdo
- * https://github.com/poole/hyde
- *
- */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
-/*
- * Contents
- *
- * Global resets
- * Sidebar
- * Container
- * Reverse layout
- * Themes
- */
-
-/*
- * Global resets
- *
- * Update the foundational and global aspects of the page.
- */
+html,
+body {
+  margin: 0;
+  padding: 0; }
 
 html {
-  font-family: "IBM Plex Sans", 'Helvetica Neue', Arial, sans-serif;
-}
+  font-family: "IBM Plex Sans", -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5; }
+  @media (min-width: 38em) {
+    html {
+      font-size: 20px; } }
+
+body {
+  color: #515151;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+a {
+  color: #268bd2;
+  text-decoration: none; }
+  a:hover, a:focus {
+    text-decoration: underline; }
+  a strong {
+    color: inherit; }
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  -webkit-border-radius: 5px;
+          border-radius: 5px; }
+
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 85%;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse; }
+
+td,
+th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5; }
+
+th {
+  text-align: left; }
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9; }
+
+.container {
+  max-width: 38rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+footer {
+  margin-bottom: 2rem; }
+
+.page,
+.post {
+  margin-bottom: 4em; }
+  .page li + li,
+  .post li + li {
+    margin-top: .25rem; }
+
+.page-title,
+.post-title,
+.post-title a {
+  color: #303030; }
+
+.page-title,
+.post-title {
+  margin-top: 0; }
+
+.post-date {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  color: #9a9a9a; }
+
+.related {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; }
+
+.related-posts {
+  padding-left: 0;
+  list-style: none; }
+  .related-posts h3 {
+    margin-top: 0; }
+  .related-posts li small {
+    font-size: 75%;
+    color: #999; }
+  .related-posts li a:hover {
+    color: #268bd2;
+    text-decoration: none; }
+    .related-posts li a:hover small {
+      color: inherit; }
+
+.theme-base-08 .sidebar {
+  background-color: #ac4142; }
+
+.theme-base-08 .content a {
+  color: #ac4142; }
+
+.theme-base-08 .related-posts li a:hover {
+  color: #ac4142; }
+
+.theme-base-09 .sidebar {
+  background-color: #d28445; }
+
+.theme-base-09 .content a {
+  color: #d28445; }
+
+.theme-base-09 .related-posts li a:hover {
+  color: #d28445; }
+
+.theme-base-0a .sidebar {
+  background-color: #f4bf75; }
+
+.theme-base-0a .content a {
+  color: #f4bf75; }
+
+.theme-base-0a .related-posts li a:hover {
+  color: #f4bf75; }
+
+.theme-base-0b .sidebar {
+  background-color: #90a959; }
+
+.theme-base-0b .content a {
+  color: #90a959; }
+
+.theme-base-0b .related-posts li a:hover {
+  color: #90a959; }
+
+.theme-base-0c .sidebar {
+  background-color: #75b5aa; }
+
+.theme-base-0c .content a {
+  color: #75b5aa; }
+
+.theme-base-0c .related-posts li a:hover {
+  color: #75b5aa; }
+
+.theme-base-0d .sidebar {
+  background-color: #6a9fb5; }
+
+.theme-base-0d .content a {
+  color: #6a9fb5; }
+
+.theme-base-0d .related-posts li a:hover {
+  color: #6a9fb5; }
+
+.theme-base-0e .sidebar {
+  background-color: #aa759f; }
+
+.theme-base-0e .content a {
+  color: #aa759f; }
+
+.theme-base-0e .related-posts li a:hover {
+  color: #aa759f; }
+
+.theme-base-0f .sidebar {
+  background-color: #8f5536; }
+
+.theme-base-0f .content a {
+  color: #8f5536; }
+
+.theme-base-0f .related-posts li a:hover {
+  color: #8f5536; }
 
 @media (min-width: 48em) {
   html {
-    font-size: 16px;
-    font-weight: 300;
-  }
-}
+    font-size: 16px; }
+  .sidebar {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    text-align: left;
+    top: 0;
+    width: 18rem; }
+  .sidebar-sticky {
+    left: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem; }
+  .content {
+    margin-left: 20rem;
+    margin-right: 2rem;
+    max-width: 38rem; }
+  .layout-reverse .sidebar {
+    left: auto;
+    right: 0; }
+  .layout-reverse .content {
+    margin-left: 2rem;
+    margin-right: 20rem; } }
 
 @media (min-width: 58em) {
   html {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
-  }
-}
-
-/*
-   * Sidebar
-   *
-   * Flexible banner for housing site name, intro, and "footer" content. Starts
-   * out above content in mobile and later moves to the side with wider viewports.
-   */
+    line-height: 1.611em; } }
 
 .sidebar {
   background-color: #300030;
-  color: rgb(255, 255, 255); /* fallback of rgba() */
-  color: rgba(255, 255, 255, .5); /* CSS3 */
+  color: white;
+  color: rgba(255, 255, 255, 0.5);
   padding: 2rem 1rem;
-  text-align: center;
-}
-
-@media (min-width: 48em) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 18rem;
-    text-align: left;
-  }
-}
-
-/* Sidebar links */
-
-.sidebar a {
-  color: #fff;
-}
-
-/* About section */
-
-.sidebar-about h1 {
-  color: #fff;
-  margin-top: 0;
-  font-size: 3.25rem;
-}
-
-/* Sidebar nav */
+  text-align: center; }
+  .sidebar a {
+    color: #ffffff; }
 
 .sidebar-nav {
-  list-style: none;    
+  list-style: none;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  padding-left: 0;
-}
+  padding-left: 0; }
 
 .sidebar-nav-item {
   display: block;
-  line-height: 1.75;
-}
+  line-height: 1.75; }
+  .sidebar-nav-item .active {
+    font-weight: bold; }
 
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
-  text-decoration: underline;
-}
-
-.sidebar-nav-item.active {
-  font-weight: bold;
-}
-
-/* Sticky sidebar
-   *
-   * Add the `sidebar-sticky` class to the sidebar's container to affix it the
-   * contents to the bottom of the sidebar in tablets and up.
-   */
-
-@media (min-width: 48em) {
-  .sidebar-sticky {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    left: 1rem;
-  }
-}
-
-/* Container
-   *
-   * Align the contents of the site above the proper threshold with some margin-fu
-   * with a 25%-wide `.sidebar`.
-   */
+a {
+  border-width: 2px;
+  text-decoration: none;
+  word-wrap: break-word; }
+  a.sidebar-nav-item:hover {
+    text-decoration: underline; }
+  a.sidebar-nav-item:focus {
+    text-decoration: underline; }
+  a:focus {
+    border-bottom-style: solid;
+    border-width: 2px;
+    text-decoration: none;
+    background: transparent;
+    background-color: transparent;
+    word-wrap: break-word; }
+    a:focus.tag {
+      border-bottom-style: none;
+      text-decoration: none; }
+  a:hover {
+    border-bottom-style: solid;
+    border-width: 2px;
+    text-decoration: none;
+    background: transparent;
+    background-color: transparent;
+    word-wrap: break-word; }
+    a:hover.tag {
+      border-bottom-style: none;
+      text-decoration: none; }
+  a.tag {
+    border-bottom-style: none;
+    text-decoration: none; }
 
 .content {
   padding-bottom: 2rem;
-  padding-top: 2rem;
-}
-
-@media (min-width: 48em) {
-  .content {
-    margin-left: 20rem;
-    margin-right: 2rem;
-    max-width: 38rem;
-  }
-}
+  padding-top: 2rem; }
 
 @media (min-width: 64em) {
   .content {
     margin-left: 20rem;
     margin-right: 2rem;
-    max-width: 44rem;    
-  }
-}
-
-/*
-   * Reverse layout
-   *
-   * Flip the orientation of the page by placing the `.sidebar` on the right.
-   */
-
-@media (min-width: 48em) {
-  .layout-reverse .sidebar {
-    left: auto;
-    right: 0;
-  }
-  .layout-reverse .content {
-    margin-left: 2rem;
-    margin-right: 20rem;
-  }
-}
-
-@media (min-width: 64em) {
+    max-width: 46.056rem; }
   .layout-reverse .content {
     margin-left: 4rem;
-    margin-right: 22rem;
-  }
-}
+    margin-right: 22rem; } }
 
-/*
-   * Themes
-   *
-   * As of v1.1, Hyde includes optional themes to color the sidebar and links
-   * within blog posts. To use, add the class of your choosing to the `body`.
-   */
+h1, h2, h3, h4 {
+  font-weight: 400; }
 
-/* Base16 (http://chriskempson.github.io/base16/#default) */
-
-/* Red */
-
-.theme-base-08 .sidebar {
-  background-color: #ac4142;
-}
-
-.theme-base-08 .content a,
-.theme-base-08 .related-posts li a:hover {
-  color: #ac4142;
-}
-
-/* Orange */
-
-.theme-base-09 .sidebar {
-  background-color: #d28445;
-}
-
-.theme-base-09 .content a,
-.theme-base-09 .related-posts li a:hover {
-  color: #d28445;
-}
-
-/* Yellow */
-
-.theme-base-0a .sidebar {
-  background-color: #f4bf75;
-}
-
-.theme-base-0a .content a,
-.theme-base-0a .related-posts li a:hover {
-  color: #f4bf75;
-}
-
-/* Green */
-
-.theme-base-0b .sidebar {
-  background-color: #90a959;
-}
-
-.theme-base-0b .content a,
-.theme-base-0b .related-posts li a:hover {
-  color: #90a959;
-}
-
-/* Cyan */
-
-.theme-base-0c .sidebar {
-  background-color: #75b5aa;
-}
-
-.theme-base-0c .content a,
-.theme-base-0c .related-posts li a:hover {
-  color: #75b5aa;
-}
-
-/* Blue */
-
-.theme-base-0d .sidebar {
-  background-color: #6a9fb5;
-}
-
-.theme-base-0d .content a,
-.theme-base-0d .related-posts li a:hover {
-  color: #6a9fb5;
-}
-
-/* Magenta */
-
-.theme-base-0e .sidebar {
-  background-color: #aa759f;
-}
-
-.theme-base-0e .content a,
-.theme-base-0e .related-posts li a:hover {
-  color: #aa759f;
-}
-
-/* Brown */
-
-.theme-base-0f .sidebar {
-  background-color: #8f5536;
-}
-
-.theme-base-0f .content a,
-.theme-base-0f .related-posts li a:hover {
-  color: #8f5536;
-}
-
-/******************************************************************************
- Extra styling parts
- ******************************************************************************/
 h1 {
-  font-size: 2.3rem;
-}
+  font-size: 2.15rem;
+  line-height: 1.25; }
 
 h2 {
-  font-size: 1.9rem;
-}
+  font-size: 1.85rem; }
 
 h3 {
-  font-size: 1.6rem;
-}
+  font-size: 1.5rem; }
 
 h4 {
-  font-size: 1.3rem;
-}
+  font-size: 1.3rem; }
 
-.img-circle {
-  border-radius: 50%;
-}
+.img--circle {
+  -webkit-border-radius: 50%;
+          border-radius: 50%; }
 
-.headshot {
+.img--headshot {
   height: 115px;
-  width: 115px;
-}
+  width: 115px; }
 
-.brand {
-  font-size: 2.6em;
-  margin-bottom: 0;
-}
+.site__title {
+  font-size: 3rem;
+  margin-bottom: 0; }
+  .site__title a:hover {
+    text-decoration: none;
+    border: none; }
+  .site__title a:focus {
+    text-decoration: none;
+    border: none; }
+
+.site__description {
+  font-size: 1.285rem;
+  font-weight: 300; }
+
+.social a {
+  border: none;
+  text-decoration: none; }
 
 .text-center {
-  text-align: center;
-}
-
-.meta {
-  font-size: .8rem;
-  font-weight: 300;
-}
+  text-align: center; }
 
 pre {
-  padding: 1px;
-  tab-size: 2;
   border: 1px solid #eee;
-  border-radius: 4px;
-}
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  padding: 1px;
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2; }
+  pre code {
+    background-color: #f9f2f4;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    padding: 2px 4px;
+    white-space: pre-wrap; }
 
 .hljs {
   overflow-x: auto;
-  white-space: pre;
-}
+  white-space: pre; }
 
-pre code,
-li code,
-td code,
 code {
   background-color: #f9f2f4;
-  border-radius: 4px;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
   padding: 2px 4px;
   white-space: pre-wrap;
-}
+  font-size: 84%; }
 
-code {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 84%;
-}
+li code {
+  background-color: #f9f2f4;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  padding: 2px 4px;
+  white-space: pre-wrap; }
+
+td code {
+  background-color: #f9f2f4;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  padding: 2px 4px;
+  white-space: pre-wrap; }
 
 .copyright,
 .poweredby {
-  font-size: .8rem;
-}
+  font-size: .75rem; }
 
-.center {
+.element--center {
   display: block;
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
 
-/* In Font-Awesome 5, '.pull-right' was removed */
-.pull-right {
-  float: right;
-}
+.meta {
+  font-size: .8rem;
+  font-weight: 300; }
 
-_a:focus,
-_a:hover {
-  border-width: 2px;
-  border-style: none none solid;
-  padding-bottom: 0;
-  text-decoration: none;
-  background-color: transparent;
-  background: transparent;
-  cursor: pointer;
-  word-wrap: break-word;
-}
-
-_a:hover .tag {
-  border-style: none;
-}
+.category {
+  font-weight: bold; }
 
 .tag {
   background: #d6d9e0;
-  border-radius: 4px;
-  display: inline-block;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
   color: #606570;
-  font-size: .8rem;
-  line-height: 1rem;
-  padding: .1rem .6rem;
-}
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px; }
 
-.subtitle {
+.page__title {
+  font-size: 2.15rem; }
+
+.post__subtitle {
   display: block;
   font-size: 1.5rem;
   font-style: italic;
-  padding: 0 0 1rem 0;
-}
+  padding: 0 0 1rem 0; }
 
-.list-title {
-  font-size: 1.875rem;
-  line-height: 1.25;
-}
+.post-list__item {
+  margin-bottom: 3em; }
 
-.list-title a {
-  color: #303030;
-}
+.item__title--big {
+  display: block;
+  font-size: 1.785rem;
+  line-height: 1.25; }
 
-/* Small devices (tablets, 768px and up) */
+.item__title--small {
+  font-size: 1rem; }
+
+.item__date {
+  color: #9a9a9a;
+  display: block;
+  margin-bottom: .2rem;
+  margin-top: .2rem; }
+
+.page__nav {
+  margin-top: 0;
+  font-size: .9rem; }
+
+.comment--heading {
+  font-size: 1.5rem;
+  text-transform: uppercase; }
 
 @media (max-width: 768px) {
-  .pull-right {
-    display: none;
-  }
-}
+  .hidden-tablet {
+    display: none; } }
+
+.pull-right {
+  float: right; }
+
+/*# sourceMappingURL=hyde-hyde.css.map */

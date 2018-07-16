@@ -18,7 +18,9 @@
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</guid>
-      <description>Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources. Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, several package managers have been developed, notably, npm, anymod (formerly component), volo, ringojs, bower, yarn, pnpm, to name but a few.</description>
+      <description>&lt;p&gt;Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
