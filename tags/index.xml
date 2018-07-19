@@ -105,7 +105,7 @@
     <item>
       <title>Css</title>
       <link>https://htr3n.github.io/tags/css/</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/css/</guid>
       <description></description>
@@ -229,6 +229,15 @@
     </item>
     
     <item>
+      <title>Gulp</title>
+      <link>https://htr3n.github.io/tags/gulp/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/gulp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Homebrew</title>
       <link>https://htr3n.github.io/tags/homebrew/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
@@ -258,7 +267,7 @@
     <item>
       <title>Hugo</title>
       <link>https://htr3n.github.io/tags/hugo/</link>
-      <pubDate>Sat, 31 Mar 2018 08:55:31 +1100</pubDate>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/hugo/</guid>
       <description></description>
@@ -391,11 +400,29 @@
     </item>
     
     <item>
+      <title>Markdown</title>
+      <link>https://htr3n.github.io/tags/markdown/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Migration</title>
       <link>https://htr3n.github.io/tags/migration/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minification</title>
+      <link>https://htr3n.github.io/tags/minification/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/minification/</guid>
       <description></description>
     </item>
     
@@ -474,7 +501,7 @@
     <item>
       <title>Npm</title>
       <link>https://htr3n.github.io/tags/npm/</link>
-      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/npm/</guid>
       <description></description>
@@ -540,6 +567,15 @@
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/rss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sass</title>
+      <link>https://htr3n.github.io/tags/sass/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/sass/</guid>
       <description></description>
     </item>
     

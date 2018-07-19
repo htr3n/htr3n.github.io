@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/2018/07/bootstrapping-my-macos-workspace---part-2/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
   </url>
@@ -165,7 +170,7 @@
   
   <url>
     <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -228,7 +233,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/css/</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -252,7 +257,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -317,6 +322,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/gulp/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/homebrew/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -336,7 +347,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/hugo/</loc>
-    <lastmod>2018-03-31T08:55:31+11:00</lastmod>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -425,8 +436,20 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/markdown/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/migration/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/minification/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -480,7 +503,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/npm/</loc>
-    <lastmod>2018-04-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -528,6 +551,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/rss/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/sass/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -707,7 +736,7 @@
   
   <url>
     <loc>https://htr3n.github.io/</loc>
-    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
