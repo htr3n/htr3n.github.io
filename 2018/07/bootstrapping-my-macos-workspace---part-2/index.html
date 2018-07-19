@@ -7,7 +7,12 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.44-DEV" />
+<meta name="generator" content="Hugo 0.44" />
+    
+    
+    <title>Bootstrapping my macOS workspace - Part 2 • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bootstrapping my macOS workspace - Part 2"/>
 <meta name="twitter:description" content="Following part 1 on tweaking macOS to prepare for a workspace, this part will focus more on some handy tools and configurations that I often used for software development.
@@ -37,6 +42,7 @@
     <!-- highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
     <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
+    
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -163,7 +169,7 @@
 
 <p></p>
 
-<h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
+<h2 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h2>
 
 <p>Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to install the Xcode command line tools that Homebrew needs to build its tools.</p>
 
@@ -204,7 +210,7 @@ $ brew bundle
 
 <p>Homebrew also incorporates <a href="https://github.com/Homebrew/homebrew-cask">Homebrew-Cask</a> (formerly an independent plugin for Homebrew) that can help to install many macOS apps as you might see in the subsequent parts.</p>
 
-<h3 id="terminals-and-shells">Terminals and Shells</h3>
+<h2 id="terminals-and-shells">Terminals and Shells</h2>
 
 <p>Since working with Linux a lot and then macOS, I&rsquo;m rather familiar with the command line. There are many cases using terminals would be more convenient than graphical editors. Thus, I need a good terminal app. The built-in Terminal app in macOS is not bad but I usually opt for <a href="https://www.iterm2.com">iTerm2</a>.</p>
 
@@ -215,7 +221,7 @@ $ brew bundle
 
 <p>Along with iTerms 2, I also love <a href="http://www.zsh.org">Z shell</a> (zsh) which is an extended version of Bash shell a lot with many nice features like directory alias, command completion, path expansion, etc. You might also find some Zsh configuration frameworks like <a href="https://ohmyz.sh">oh-my-zsh</a> or <a href="https://github.com/sorin-ionescu/prezto">Prezto</a> amazing to start with. I&rsquo;ve tried both of them and found oh-my-zsh a bit sluggish and Prezto a bit difficult to add more extensions or customize. I have actually used a small piece from either of them and found myself quickly forgetting the customised parts taken from the others. Hence, I decided to develop a set of my own <a href="https://github.com/htr3n/zsh-config">ZSH configurations</a>. Moreover, I often keep a habit of writting Shell scripts in standard sh/bash as much as possible and keep zsh-specific separately for better portability and compatibility.</p>
 
-<h3 id="text-code-editors">Text/Code Editors</h3>
+<h2 id="text-code-editors">Text/Code Editors</h2>
 
 <p>There are quite a number of editors in macOS for developers ranging from, er, the built-in Text Editor, <em>Sublime Text</em>, <em>TextMate</em>, <em>TextWrangler</em>, the nerdy <em>Vim</em>, <em>Emacs</em>, and recently <em>Atom</em>, <em>Visual Studio Code</em>, <em>Brackets</em>, to name but a few. You might install these editos using Cask.</p>
 
