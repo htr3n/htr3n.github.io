@@ -220,9 +220,9 @@
 
 <p>Note that Hugo will look for <code>scss/hyde-hyde.scss</code> in the project&rsquo;s root and then the theme&rsquo;s root, in that order.</p>
 
-<p>Hugo retrieves the resource <code>hyde-hyde.scss</code>  using <code>Resources.Get</code>, then <a href="https://gohugo.io/hugo-pipes/scss-sass">transforms it</a> into <code>hyde-hyde.css</code> and passes it to <a href="https://gohugo.io/hugo-pipes/postcss">PostCSS</a> for <a href="https://github.com/postcss/autoprefixer">autoprefixing</a>. After that, it <a href="https://gohugo.io/hugo-pipes/minification/">minifies</a> the CSS and generates a <em>fingerprinted version</em>.  The second line simply links the resulting <code>hyde-hyde.css</code> with HTML via the variable <code>$style</code>. The result in the generated HTML will be like this.</p>
+<p>Hugo retrieves the resource <code>hyde-hyde.scss</code>  using <code>Resources.Get</code>, then <a href="https://gohugo.io/hugo-pipes/scss-sass">transforms it</a> into <code>hyde-hyde.css</code> and passes it to <a href="https://gohugo.io/hugo-pipes/postcss">PostCSS</a> for <a href="https://github.com/postcss/autoprefixer">autoprefixing</a>. After that, it <a href="https://gohugo.io/hugo-pipes/minification/">minifies</a> the CSS and generates a <em>fingerprinted version</em>.  The second line simply links the resulting <code>hyde-hyde.css</code> with HTML via the variable <code>$style</code>. The result in the generated HTML will be like this (note that the code can be different to yours).</p>
 
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;http://blog.test:1313/scss/hyde-hyde.4ff234ab46aa5302c7e0d2f35b9c76a8bba9fe42a9e8a6c7c47df7f85b8de122.css&quot; integrity=&quot;sha256-T/I0q0aqUwLH4NLzW5x2qLup/kKp6KbHxH33&amp;#43;FuN4SI=&quot;&gt;
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;http://localhost:1313/scss/hyde-hyde.4ff234ab46aa5302c7e0d2f35b9c76a8bba9fe42a9e8a6c7c47df7f85b8de122.css&quot; integrity=&quot;sha256-T/I0q0aqUwLH4NLzW5x2qLup/kKp6KbHxH33&amp;#43;FuN4SI=&quot;&gt;
 </code></pre>
 
 <p>The fingerprint code is for <em>cache busting</em> and only changed when the source file is altered.</p>
