@@ -52,11 +52,14 @@
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -121,7 +124,7 @@
     <h1>hyde-hyde</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Jan 27, 2018
     
@@ -135,15 +138,25 @@
     <p><a href="https://github.com/htr3n/hyde-hyde"><em>hyde-hyde</em></a> is a responsive <a href="https://gohugo.io">Hugo</a>&rsquo;s theme derived from @spf13&rsquo;s <a href="https://github.com/spf13/hyde.git">Hyde</a>. It was heavily restructured with modularised page layouts for easier maitenance and modification. The color tone is inspired by the cool <a href="https://npf.io">Nate Finch&rsquo;s blog</a>. <em>hyde-hyde</em> incorporate some extra features such as code highlighting (using <a href="https://highlightjs.org">highlight.js</a>), nice sidebar icons (using <a href="https://fontawesome.com">Font-Awesome 5</a>), with <a href="https://fonts.google.com/specimen/Fira+Sans">Fira-Sans</a> as main font and <a href="https://fonts.google.com/specimen/Roboto+Mono">Roboto Mono</a> as fixed width font, and another choice for commenting with <a href="https://graphcomment.com">GraphComment</a> besides the built-in <a href="https://disqus.com">Disqus</a>.</p>
 
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/portfolio/dera/">DERA</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/portfolio/laramod/">LaraMod</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/portfolio/dera/">                
+                <span class="next__heading">NEXT</span>
+                <span>DERA</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/portfolio/laramod/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">LaraMod</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     

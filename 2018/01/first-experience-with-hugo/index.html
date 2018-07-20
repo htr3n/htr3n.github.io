@@ -54,11 +54,14 @@ Thus far I have not foreseen any great use of extensive backend storage and comp
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -123,11 +126,11 @@ Thus far I have not foreseen any great use of extensive backend storage and comp
     <h1>First experience with Hugo</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Jan 23, 2018
     in
-              <a class="category" href="/categories/dev">DEV</a>
+              <a class="post__category" href="/categories/dev">DEV</a>
               
     
       
@@ -135,16 +138,16 @@ Thus far I have not foreseen any great use of extensive backend storage and comp
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/hugo">#hugo</a>
+          <a class="post__tag" href="/tags/hugo">#hugo</a>
            
       
-          <a class="tag" href="/tags/jekyll">#jekyll</a>
+          <a class="post__tag" href="/tags/jekyll">#jekyll</a>
            
       
-          <a class="tag" href="/tags/golang">#golang</a>
+          <a class="post__tag" href="/tags/golang">#golang</a>
            
       
-          <a class="tag" href="/tags/static-site-generators">#static site generators</a>
+          <a class="post__tag" href="/tags/static-site-generators">#static site generators</a>
           
       
     
@@ -172,15 +175,25 @@ Thus far I have not foreseen any great use of extensive backend storage and comp
 <p>I ❤️ Hugo.</p>
 
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/2018/02/getting-started-with-webpack/">Getting started with Webpack</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/2018/01/laramod/">LaraMod - Modularised Laravel 5</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/2018/02/getting-started-with-webpack/">                
+                <span class="next__heading">NEXT</span>
+                <span>Getting started with Webpack</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2018/01/laramod/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">LaraMod - Modularised Laravel 5</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     

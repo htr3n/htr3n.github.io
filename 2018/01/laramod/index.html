@@ -52,11 +52,14 @@
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -121,11 +124,11 @@
     <h1>LaraMod - Modularised Laravel 5</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Jan 19, 2018
     in
-              <a class="category" href="/categories/dev">DEV</a>
+              <a class="post__category" href="/categories/dev">DEV</a>
               
     
       
@@ -133,16 +136,16 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/php">#php</a>
+          <a class="post__tag" href="/tags/php">#php</a>
            
       
-          <a class="tag" href="/tags/laravel">#laravel</a>
+          <a class="post__tag" href="/tags/laravel">#laravel</a>
            
       
-          <a class="tag" href="/tags/modularisation">#modularisation</a>
+          <a class="post__tag" href="/tags/modularisation">#modularisation</a>
            
       
-          <a class="tag" href="/tags/laramod">#laramod</a>
+          <a class="post__tag" href="/tags/laramod">#laramod</a>
           
       
     
@@ -328,15 +331,25 @@ $loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
 <p>For me &ndash; a new bie, it was not quite an all-pleasant journey to experience several Laravel&rsquo;s aspects. Nevertheless, developing and customising LaraMod are extremely valuable as I could learn a lot about not only Laravel in particular but also PHP in general. Achieving reasonable modularisation for a complex software development project requires a lot of thoughtful design and hard work and even sometimes trade-offs and compromises. In sharing this, I hope LaraMod might become handy and helpful start so that your journeys with Laravel can be more pleasant and joyful. I look forward to hearing and learning from your experience, too.</p>
 
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/2018/01/first-experience-with-hugo/">First experience with Hugo</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/2017/09/apache-httpd-php-macos/">Apache httpd 2.4 and PHP 7 in macOS</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/2018/01/first-experience-with-hugo/">                
+                <span class="next__heading">NEXT</span>
+                <span>First experience with Hugo</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2017/09/apache-httpd-php-macos/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">Apache httpd 2.4 and PHP 7 in macOS</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     

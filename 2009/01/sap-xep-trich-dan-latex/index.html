@@ -56,11 +56,14 @@
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -125,11 +128,11 @@
     <h1>Sắp xếp trích dẫn (citations) trong (La)TeX</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Jan 15, 2009
     in
-              <a class="category" href="/categories/vn">VN</a>
+              <a class="post__category" href="/categories/vn">VN</a>
               
     
       
@@ -137,22 +140,22 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/tex">#tex</a>
+          <a class="post__tag" href="/tags/tex">#tex</a>
            
       
-          <a class="tag" href="/tags/citation">#citation</a>
+          <a class="post__tag" href="/tags/citation">#citation</a>
            
       
-          <a class="tag" href="/tags/natbib">#natbib</a>
+          <a class="post__tag" href="/tags/natbib">#natbib</a>
            
       
-          <a class="tag" href="/tags/bibliography">#bibliography</a>
+          <a class="post__tag" href="/tags/bibliography">#bibliography</a>
            
       
-          <a class="tag" href="/tags/cite">#cite</a>
+          <a class="post__tag" href="/tags/cite">#cite</a>
            
       
-          <a class="tag" href="/tags/hyperref">#hyperref</a>
+          <a class="post__tag" href="/tags/hyperref">#hyperref</a>
           
       
     
@@ -191,15 +194,25 @@
 
 <p>Sau đó, chạy latex/pdflatex và bibtex như bình thường. Dạng trích dẫn trong bài sẽ được sắp xếp và nhóm lại hợp lý và dễ nhìn hơn. Gói <code>natbib</code> có một đặc điểm là tương thích tốt với gói <code>hyperref</code> (dùng để tạo các liên kết trong tài liệu pdf). Do đó, nếu cần dùng <a href="http://tug.ctan.org/pkg/hyperref">hyperref</a> thì bạn nên sử dụng <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/natbib.html">natbib</a>.</p>
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/2013/08/transitional-words-st/">Transitional words (st)</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/2009/01/hai-mat-cua-mot-van-de/">Tính chất hai mặt của một vấn đề</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/2013/08/transitional-words-st/">                
+                <span class="next__heading">NEXT</span>
+                <span>Transitional words (st)</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2009/01/hai-mat-cua-mot-van-de/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">Tính chất hai mặt của một vấn đề</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     

@@ -56,11 +56,14 @@
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -125,11 +128,11 @@
     <h1>Node.js package managers: NPM and Yarn</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Apr 23, 2018
     in
-              <a class="category" href="/categories/dev">DEV</a>
+              <a class="post__category" href="/categories/dev">DEV</a>
               
     
       
@@ -137,19 +140,19 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/javascript">#javascript</a>
+          <a class="post__tag" href="/tags/javascript">#javascript</a>
            
       
-          <a class="tag" href="/tags/node.js">#node.js</a>
+          <a class="post__tag" href="/tags/node.js">#node.js</a>
            
       
-          <a class="tag" href="/tags/package-management">#package management</a>
+          <a class="post__tag" href="/tags/package-management">#package management</a>
            
       
-          <a class="tag" href="/tags/npm">#npm</a>
+          <a class="post__tag" href="/tags/npm">#npm</a>
            
       
-          <a class="tag" href="/tags/yarn">#yarn</a>
+          <a class="post__tag" href="/tags/yarn">#yarn</a>
           
       
     
@@ -348,15 +351,25 @@ yarn test
 
 <p>So far, we have walked through some basic steps of a typical development workflow, ranging from initialisation to inquiring and manipulating packages. Apart from that, both <code>npm</code> and <code>yarn</code> also go extra length with many more different functionality. Backing by very strong and active communities, your development projects will surely in safe hands when choosing either of them.</p>
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/2018/05/integration-laravel-5-and-gentelella-admin-theme/">Integration Laravel 5 and Gentelella admin theme</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/2018/03/confusing-hugo-issues-datetime-and-isset/">Confusing Hugo issues: datetime and &#39;isset&#39;</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/2018/05/integration-laravel-gentelella/">                
+                <span class="next__heading">NEXT</span>
+                <span>Integration Laravel 5 and Gentelella admin theme</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2018/03/confusing-hugo-issues-datetime-and-isset/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">Confusing Hugo issues: datetime and &#39;isset&#39;</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     

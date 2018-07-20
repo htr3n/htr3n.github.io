@@ -15,12 +15,16 @@
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bootstrapping my macOS workspace - Part 1"/>
-<meta name="twitter:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to the MacMini 2010 and MacBook Pro 13&rdquo; and 15&rdquo; lately. Time Machine has helped me a lot to transfer data from the old to the new machine."/>
+<meta name="twitter:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to the MacMini 2010 and MacBook Pro 13&rdquo; and 15&rdquo; lately. Time Machine has helped me a lot to transfer data from the old to the new machine.
+
+"/>
 
 <meta property="og:title" content="Bootstrapping my macOS workspace - Part 1" />
-<meta property="og:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to the MacMini 2010 and MacBook Pro 13&rdquo; and 15&rdquo; lately. Time Machine has helped me a lot to transfer data from the old to the new machine." />
+<meta property="og:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to the MacMini 2010 and MacBook Pro 13&rdquo; and 15&rdquo; lately. Time Machine has helped me a lot to transfer data from the old to the new machine.
+
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://htr3n.github.io/2018/06/bootstrapping-my-macos-workspace---part-1/" />
+<meta property="og:url" content="https://htr3n.github.io/2018/06/bootstrapping-macos-2/" />
 <meta property="article:published_time" content="2018-06-27T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2018-06-27T00:00:00&#43;00:00"/>
 
 
@@ -52,11 +56,14 @@
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -125,11 +132,13 @@
     </span>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Jun 27, 2018
     in
-              <a class="category" href="/categories/dev">DEV</a>
+              <a class="post__category" href="/categories/dev">DEV</a>
+              ,
+              <a class="post__category" href="/categories/system">SYSTEM</a>
               
     
       
@@ -137,25 +146,19 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/macos">#macos</a>
+          <a class="post__tag" href="/tags/macos">#macos</a>
            
       
-          <a class="tag" href="/tags/homebrew">#homebrew</a>
+          <a class="post__tag" href="/tags/sip">#sip</a>
            
       
-          <a class="tag" href="/tags/sip">#sip</a>
+          <a class="post__tag" href="/tags/gatekeeper">#gatekeeper</a>
            
       
-          <a class="tag" href="/tags/gatekeeper">#gatekeeper</a>
+          <a class="post__tag" href="/tags/keyboard">#keyboard</a>
            
       
-          <a class="tag" href="/tags/iterm">#iterm</a>
-           
-      
-          <a class="tag" href="/tags/zsh">#zsh</a>
-           
-      
-          <a class="tag" href="/tags/visual-studio-code">#visual-studio-code</a>
+          <a class="post__tag" href="/tags/hostname">#hostname</a>
           
       
     
@@ -168,19 +171,24 @@
   <div class="post">
     <p>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to the MacMini 2010 and MacBook Pro 13&rdquo; and 15&rdquo; lately. Time Machine has helped me a lot to transfer data from the old to the new machine.</p>
 
-<p> Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the defaults due to many reasons (e.g. against security advice, etc.).  And I often find myself searching around everytime for some desirable settings. Thus, this post is kind of a note to self on few useful tweaks for my development box so that I can easily reach out later.</p>
+<p></p>
 
-<p><strong>Update</strong>: As it turned out that the tweaks and configurations were getting longer and became tedious to follow, I split them into two parts, this one for <em>system tweaks</em> and <a href="setting-up-macos-for-software-development-part-2">another</a> for <em>development tools and configurations</em>.</p>
+<p>Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the defaults due to many reasons (e.g. against security advice, etc.).  And I often find myself searching around everytime for some desirable settings. Thus, this post is kind of a note to self on few useful tweaks for my development box so that I can easily reach out later.</p>
+
+<p><strong>Update</strong>: As it turned out that the tweaks and configurations were getting longer and became tedious to follow, I split them into two parts, this one for <em>system tweaks</em> and <a href="setting-up-macos-for-software-development-part-2">part 2</a> for <em>development tools and configurations</em>.</p>
 
 <h3 id="disable-system-integrity-protection-sip">Disable System Integrity Protection (SIP)</h3>
 
-<p><a href="https://support.apple.com/en-us/ht204899">System Integration Protection</a> (SIP) is a security technology since OS X El Capitan 10.11 aiming at protecting certain system files and folders against malicious software. SIP even limits the access and actions of the root user account on protected parts of OS X. Unfortunately, the folder  <code>/usr</code> needed for installing many development tools and utilities is under protection as well. That makes a lot of tools like <a href="https://brew.sh">Homebrew</a> fail to install. We can easily check SIP&rsquo;s current status.</p>
+<p><a href="https://support.apple.com/en-us/ht204899">System Integration Protection</a> (SIP) is a security technology since OS X El Capitan 10.11 aiming at protecting certain system files and folders against malicious software. SIP even limits the access and actions of the root user account on protected parts of OS X. Unfortunately, the folder  <code>/usr/local</code> needed for installing many development tools and utilities is under protection as well. That makes a lot of tools like <a href="https://brew.sh">Homebrew</a> fail to install. We can easily check SIP&rsquo;s current status.</p>
 
 <pre><code class="language-sh">$ csrutil status
 System Integrity Protection status: enabled.
 </code></pre>
 
-<p>The tweak I always do right after installing or recovering a Mac is to disable SIP. Just (re)start macOS in <em>Recovery Mode</em> (restarting or turning on your Mac and immediately pressing <strong>Cmd</strong> + <strong>R</strong> &mdash; shortcut to remember &lsquo;<strong>R</strong>&rsquo; for &lsquo;<strong>R</strong>ecovery&rsquo;) until macOS boots into its recovery mode. Then open menu &lsquo;<em>Utility</em> &gt; <em>Terminal</em>&rsquo; and execute the following commands.</p>
+<p>The tweak I always do right after installing or recovering a Mac is to disable SIP. Just (re)start macOS in <em>Recovery Mode</em> (restarting or turning on your Mac and immediately pressing <kbd>⌘</kbd> 
+ + <kbd>R</kbd> 
+ &mdash; shortcut to remember <kbd>R</kbd> 
+ for &lsquo;<strong>R</strong>ecovery&rsquo;) until macOS boots into its recovery mode. Then open menu &lsquo;<em>Utility</em>&rsquo; &gt; &lsquo;<em>Terminal</em>&rsquo; and execute the following commands.</p>
 
 <pre><code class="language-sh">$ csrutil disable
 $ reboot
@@ -194,7 +202,7 @@ System Integrity Protection status: disabled.
 
 <h3 id="disable-gatekeeper">Disable Gatekeeper</h3>
 
-<p><em>Gatekeeper</em> was first introduced in OS X Mountain Lion. It is a security feature that prevents the users from launching potentially harmful apps. From macOS Sierra and later, however, Apple has made changes to Gatekeeper to even limit furthermore. Users only can see two choices in <em>System Preferences</em> &ndash;&gt; <em>Security &amp; Privacy</em>, which are &lsquo;<em>Allow apps downloaded from App Store or App Store and identified developers</em>&rsquo;. That means only signed apps are allowed to launch, i.e. breaking a lot of useful unsigned apps whose developers cannot afford to pay 99 US$ per membership year for <em>Apple Developer Program</em>.</p>
+<p><em>Gatekeeper</em> was first introduced in OS X Mountain Lion. It is a security feature that prevents the users from launching potentially harmful apps. From macOS Sierra and later, however, Apple has made changes to Gatekeeper to even limit furthermore. Users only can see two choices in <em>System Preferences</em> &ndash;&gt; <em>Security &amp; Privacy</em>, which are &lsquo;<em>Allow apps downloaded from App Store or App Store and identified developers</em>&rsquo;. That means only signed apps are allowed to launch, i.e. breaking a lot of useful unsigned apps whose developers cannot afford to pay US$99 per membership year for <em>Apple Developer Program</em>.</p>
 
 <p><img src="enabled-gatekeeper.png" alt="Enabled Gatekeeper" width="480" align="center"></p>
 
@@ -212,7 +220,7 @@ System Integrity Protection status: disabled.
 
 <h3 id="revealing-library">Revealing &lsquo;~/Library&rsquo;</h3>
 
-<p>In macOS, the folder &lsquo;<em>~/Library</em>&rsquo; within users home folder is hidden (since 10.7?) seemingly to prevent any unintentional changes. It&rsquo;s not so difficult to navigate to this folder (and any other folders) using command line. In case you want to use Finder to navigate and explore &lsquo;<em>~/Library</em>&rsquo;, we can simply use the following command.</p>
+<p>In macOS, the folder &lsquo;<em>~/Library</em>&rsquo; within users home folder is hidden (since 10.7!?) seemingly to prevent any unintentional changes. It&rsquo;s not so difficult to navigate to this folder (and any other folders) using command line. In case you want to use Finder to navigate and explore &lsquo;<em>~/Library</em>&rsquo;, we can simply use the following command.</p>
 
 <pre><code class="language-sh">$ chflags nohidden ~/Library
 </code></pre>
@@ -223,9 +231,14 @@ System Integrity Protection status: disabled.
 
 <p><img src="enabled-character-picker.png" alt="Character picker in action" width="640" align="center" title="Character picker in action"></p>
 
-<p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with &lsquo;<em>Shift + Left | Right | Up | Down</em>&rsquo;.</p>
+<p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with  <kbd>Shift</kbd> 
+ + <kbd>↓</kbd> 
+, <kbd>↑</kbd> 
+, <kbd>←</kbd> 
+, <kbd>→</kbd> 
+.</p>
 
-<p>For that reason, I always disable that feature in any macOS I work on. Unfortunately, this cannot be done with &lsquo;<em>System Preferences</em>&rsquo; but command line. After each command, you must re-start the editors to see the effect.</p>
+<p>For that reason, I always disable that feature in any macOS that I am working on. Unfortunately, this cannot be done with &lsquo;<em>System Preferences</em>&rsquo; but command line. After each command, you must re-start the editors to see the effect.</p>
 
 <pre><code class="language-sh"># disable 'Character Picker'
 $ defaults write -g ApplePressAndHoldEnabled -bool false
@@ -257,15 +270,25 @@ $ sudo scutil --set LocalHostName gotham
 $ sudo scutil --set ComputerName gotham
 </code></pre>
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/2018/07/bootstrapping-my-macos-workspace---part-2/">Bootstrapping my macOS workspace - Part 2</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/">A journey from Apache CXF 2.2 to 3.2</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/2018/07/bootstrapping-macos-2/">                
+                <span class="next__heading">NEXT</span>
+                <span>Bootstrapping my macOS workspace - Part 2</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">A journey from Apache CXF 2.2 to 3.2</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     

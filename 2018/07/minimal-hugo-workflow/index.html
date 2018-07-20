@@ -52,11 +52,14 @@
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -121,11 +124,11 @@
     <h1>A mininal Hugo blogging workflow</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Jul 14, 2018
     in
-              <a class="category" href="/categories/dev">DEV</a>
+              <a class="post__category" href="/categories/dev">DEV</a>
               
     
       
@@ -133,25 +136,25 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/hugo">#hugo</a>
+          <a class="post__tag" href="/tags/hugo">#hugo</a>
            
       
-          <a class="tag" href="/tags/markdown">#markdown</a>
+          <a class="post__tag" href="/tags/markdown">#markdown</a>
            
       
-          <a class="tag" href="/tags/css">#css</a>
+          <a class="post__tag" href="/tags/css">#css</a>
            
       
-          <a class="tag" href="/tags/sass">#sass</a>
+          <a class="post__tag" href="/tags/sass">#sass</a>
            
       
-          <a class="tag" href="/tags/minification">#minification</a>
+          <a class="post__tag" href="/tags/minification">#minification</a>
            
       
-          <a class="tag" href="/tags/gulp">#gulp</a>
+          <a class="post__tag" href="/tags/gulp">#gulp</a>
            
       
-          <a class="tag" href="/tags/npm">#npm</a>
+          <a class="post__tag" href="/tags/npm">#npm</a>
           
       
     
@@ -227,10 +230,6 @@
 
 <p>The fingerprint code is for <em>cache busting</em> and only changed when the source file is altered.</p>
 
-<blockquote>
-<p><strong>NOTE</strong>: As I checked out <a href="https://discourse.gohugo.io/t/how-to-use-source-maps-with-hugo-0-43/12826">this thread</a> and <a href="https://discourse.gohugo.io/t/how-to-use-source-maps-with-hugo-0-43/12826/9">tried on my project</a>, Hugo&rsquo;s extensions like <code>postCSS</code>, <code>minify</code>, and <code>fingerprint</code> could mess up CSS sourcemaps. If you need sourcemaps for developing and debugging, please ignore them and consider the <em>exogenous pipeline</em>.</p>
-</blockquote>
-
 <p>The biggest advantage of <em>in-line pipeline</em> is that Hugo already provides a certain level of built-in support. Hugo&rsquo;s <em>live reload</em>, i.e. serving the resulting sites live and automatically refreshing whenever there are changes of contents or themes, also works superbly for this case.</p>
 
 <p>For many scenarios, we can use this approach instead of configuring complex tools like Gulp, Grunt, or Webpack. To be precise, I do need to install extra tools, which are <code>postcss-cli</code> and <code>autoprefixer</code>, for the aforementioned example to work and Hugo 0.43 extended version <a href="https://github.com/Homebrew/homebrew-core/issues/29898">partially depends on Cgo/libc++</a>.</p>
@@ -239,6 +238,10 @@
 </code></pre>
 
 <p>Another downside to consider is that, in this way, external tools like <code>postcss</code> will slow down Hugo.</p>
+
+<blockquote >
+    <strong>Note</strong><br><p>As I checked out <a href="https://discourse.gohugo.io/t/how-to-use-source-maps-with-hugo-0-43/12826">this thread</a> and <a href="https://discourse.gohugo.io/t/how-to-use-source-maps-with-hugo-0-43/12826/9">tried on my project</a>, Hugo&rsquo;s extensions like <code>postCSS</code>, <code>minify</code>, and <code>fingerprint</code> could mess up CSS sourcemaps. If you need sourcemaps for developing and debugging, please ignore them and consider the <em>exogenous pipeline</em>.</p>
+</blockquote>
 
 <h3 id="exogenous-pipeline">Exogenous Pipeline</h3>
 
@@ -359,15 +362,21 @@ Press Ctrl+C to stop
 </ol>
 
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    
-    </div>
-    <div>
-        ◀ <span><a href="/2018/07/bootstrapping-my-macos-workspace---part-2/">Bootstrapping my macOS workspace - Part 2</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2018/07/bootstrapping-macos-2/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">Bootstrapping my macOS workspace - Part 2</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     
@@ -377,7 +386,7 @@ Press Ctrl+C to stop
         
 <li>
   <span class="list__title--small">
-    <a href="/2018/05/integration-laravel-5-and-gentelella-admin-theme/">Integration Laravel 5 and Gentelella admin theme</a>
+    <a href="/2018/05/integration-laravel-gentelella/">Integration Laravel 5 and Gentelella admin theme</a>
       
       <time class="pull-right hidden-tablet">May 09 &#39;18</time>
       

@@ -54,11 +54,14 @@ The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -123,11 +126,11 @@ The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up
     <h1>Confusing Hugo issues: datetime and &#39;isset&#39;</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Mar 31, 2018
     in
-              <a class="category" href="/categories/dev">DEV</a>
+              <a class="post__category" href="/categories/dev">DEV</a>
               
     
       
@@ -135,19 +138,19 @@ The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/hugo">#hugo</a>
+          <a class="post__tag" href="/tags/hugo">#hugo</a>
            
       
-          <a class="tag" href="/tags/golang">#golang</a>
+          <a class="post__tag" href="/tags/golang">#golang</a>
            
       
-          <a class="tag" href="/tags/isset">#isset</a>
+          <a class="post__tag" href="/tags/isset">#isset</a>
            
       
-          <a class="tag" href="/tags/date/time">#date/time</a>
+          <a class="post__tag" href="/tags/date/time">#date/time</a>
            
       
-          <a class="tag" href="/tags/with">#with</a>
+          <a class="post__tag" href="/tags/with">#with</a>
           
       
     
@@ -225,15 +228,25 @@ isset COLLECTION KEY
 <p>Hugo is quite tricky, eh?</p>
 
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/2018/04/node.js-package-managers-npm-and-yarn/">Node.js package managers: NPM and Yarn</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/2018/02/getting-started-with-webpack/">Getting started with Webpack</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/2018/04/node.js-package-managers-npm-and-yarn/">                
+                <span class="next__heading">NEXT</span>
+                <span>Node.js package managers: NPM and Yarn</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2018/02/getting-started-with-webpack/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">Getting started with Webpack</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     

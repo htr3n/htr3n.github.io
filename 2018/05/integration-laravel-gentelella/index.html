@@ -20,7 +20,7 @@
 <meta property="og:title" content="Integration Laravel 5 and Gentelella admin theme" />
 <meta property="og:description" content="Gentelella is a very nice and gently-looking Bootstrap based admin theme developed by Aigars Silkalns (known as puikinsh in Github), who founded colorlib.com. It can be integrated into several Web application frameworks. In this post, I noted down my simple development exercise in which Gentelella is used to decorated a Laravel 5 based Web application. This task is part of building my PHP based framework LaraMod. " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://htr3n.github.io/2018/05/integration-laravel-5-and-gentelella-admin-theme/" />
+<meta property="og:url" content="https://htr3n.github.io/2018/05/integration-laravel-gentelella/" />
 <meta property="article:published_time" content="2018-05-09T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2018-05-09T00:00:00&#43;00:00"/>
 
 
@@ -52,11 +52,14 @@
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -121,11 +124,11 @@
     <h1>Integration Laravel 5 and Gentelella admin theme</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> May 9, 2018
     in
-              <a class="category" href="/categories/dev">DEV</a>
+              <a class="post__category" href="/categories/dev">DEV</a>
               
     
       
@@ -133,28 +136,28 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/dev">#dev</a>
+          <a class="post__tag" href="/tags/dev">#dev</a>
            
       
-          <a class="tag" href="/tags/php">#php</a>
+          <a class="post__tag" href="/tags/php">#php</a>
            
       
-          <a class="tag" href="/tags/laravel">#laravel</a>
+          <a class="post__tag" href="/tags/laravel">#laravel</a>
            
       
-          <a class="tag" href="/tags/gentelella">#gentelella</a>
+          <a class="post__tag" href="/tags/gentelella">#gentelella</a>
            
       
-          <a class="tag" href="/tags/theme">#theme</a>
+          <a class="post__tag" href="/tags/theme">#theme</a>
            
       
-          <a class="tag" href="/tags/webpack">#webpack</a>
+          <a class="post__tag" href="/tags/webpack">#webpack</a>
            
       
-          <a class="tag" href="/tags/javascript">#javascript</a>
+          <a class="post__tag" href="/tags/javascript">#javascript</a>
            
       
-          <a class="tag" href="/tags/css">#css</a>
+          <a class="post__tag" href="/tags/css">#css</a>
           
       
     
@@ -267,15 +270,25 @@ mix.
 
 <p>Integration Laravel 5 and Gentelella is a simple but interesting exercise showing many nice features of Laravel for supporting common front-ends. Laravel Mix provides a good wrapper on top of Webpack that really reduces the complexity of Webpack and lessens considerable amount of development effort.</p>
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/">A journey from Apache CXF 2.2 to 3.2</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/2018/04/node.js-package-managers-npm-and-yarn/">Node.js package managers: NPM and Yarn</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/">                
+                <span class="next__heading">NEXT</span>
+                <span>A journey from Apache CXF 2.2 to 3.2</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2018/04/node.js-package-managers-npm-and-yarn/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">Node.js package managers: NPM and Yarn</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     

@@ -56,11 +56,14 @@
 <div class="sidebar text-center">
   <div class="container ">
     <div class="sidebar-about">
-      <span class="site__title">
+      <div class="site__title">
         <a href="https://htr3n.github.io">htr3n&#39;s</a>
-      </span>
+      </div>
       
-      <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      <p>
+        <img src="/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </p>
+      
       <p class="site__description">
          technology, thoughts, opinions, rants 
       </p>
@@ -125,11 +128,11 @@
     <h1>Getting started with Webpack</h1>
      
     
-<div class="meta">
+<div class="post__meta">
     
     <i class="fas fa-calendar-alt"></i> Feb 16, 2018
     in
-              <a class="category" href="/categories/dev">DEV</a>
+              <a class="post__category" href="/categories/dev">DEV</a>
               
     
       
@@ -137,16 +140,16 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/webpack">#webpack</a>
+          <a class="post__tag" href="/tags/webpack">#webpack</a>
            
       
-          <a class="tag" href="/tags/javascript">#javascript</a>
+          <a class="post__tag" href="/tags/javascript">#javascript</a>
            
       
-          <a class="tag" href="/tags/bundler">#bundler</a>
+          <a class="post__tag" href="/tags/bundler">#bundler</a>
            
       
-          <a class="tag" href="/tags/module">#module</a>
+          <a class="post__tag" href="/tags/module">#module</a>
           
       
     
@@ -360,15 +363,25 @@ ERROR in ./src/main.js
 <li><a href="https://github.com/htr3n/webpack-with-plugins">https://github.com/htr3n/webpack-with-plugins</a></li>
 </ul>
   </div>
-  <div class="page__nav">
-    <hr>
-    <div class="pull-right">
-    <span><a href="/2018/03/confusing-hugo-issues-datetime-and-isset/">Confusing Hugo issues: datetime and &#39;isset&#39;</a></span> ▶
-    </div>
-    <div>
-        ◀ <span><a href="/2018/01/first-experience-with-hugo/">First experience with Hugo</a></span>
-    </div>
+  <div>
+    <ul class="post__nav">
+        <li class="post__nav--next">
+            <a href="/2018/03/confusing-hugo-issues-datetime-and-isset/">                
+                <span class="next__heading">NEXT</span>
+                <span>Confusing Hugo issues: datetime and &#39;isset&#39;</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="post__nav--previous">
+            <a href="/2018/01/first-experience-with-hugo/">                
+                <span class="previous__heading">PREVIOUS</span>
+                <i class="fas fa-chevron-left"></i>
+                <span class="previous__title">First experience with Hugo</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
   <div class="post__related">
     
     
