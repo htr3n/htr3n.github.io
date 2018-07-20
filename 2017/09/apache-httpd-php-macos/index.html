@@ -177,7 +177,7 @@
 
 <h3 id="strategy">Strategy</h3>
 
-<p>A typical and well-documented approach is to load PHP processor as a module under Apache httpd using the directive <code>LoadModule</code>. It is so-called <a href="http://www.php.net/manual/en/install.unix.apache2.php"><code>mod_php</code></a> approach. However, this is now gradually out of favor of Web developers and hosting providers because the tight combination of PHP and Apache makes things difficult for monitoring, debugging, and scaling. One of the recent favorite strategies is to set up PHP as Fast-CGI using <a href="http://php.net/manual/en/install.fpm.php">PHP-FPM</a> (FastCGI Process Manager). This method also brings several advantages including good support for nginx integration and <a href="https://wiki.apache.org/httpd/PHP-FPM">performance</a>.</p>
+<p>A typical and well-documented approach is to load PHP processor as a module under Apache httpd using the directive <code>LoadModule</code>. It is so-called <a href="http://www.php.net/manual/en/install.unix.apache2.php"><em>mod_php</em></a> approach. However, this is now gradually out of favor of Web developers and hosting providers because the tight combination of PHP and Apache makes things difficult for monitoring, debugging, and scaling. One of the recent favorite strategies is to set up PHP as Fast-CGI using <a href="http://php.net/manual/en/install.fpm.php">PHP-FPM</a> (FastCGI Process Manager). This method also brings several advantages including good support for nginx integration and <a href="https://wiki.apache.org/httpd/PHP-FPM">performance</a>.</p>
 
 <h3 id="how-to-proceed">How To Proceed</h3>
 
@@ -191,7 +191,7 @@
 <li>Installing <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a> (optional)</li>
 </ol>
 
-<h2 id="installation">Installation</h2>
+<h2 id="installation-implementation">Installation / Implementation</h2>
 
 <h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
 
@@ -407,7 +407,7 @@ pm.min_spare_servers = 1
 pm.max_spare_servers = 3
 </code></pre>
 
-<p>The most important setting of each pool is the TCP socket (including <em>IP address</em> and <em>port</em>) or Unix domain socket (UDS) that PHP-FPM will be receiving FastCGI requests. This will be set using the directive <code>listten</code> . A typical setting of PHP-FPM is <code>listen = 127.0.0.1:9000</code>. As I might want to install multiple PHP versions for testing, I will change the port to <code>9072</code> that corresponds to the PHP version 7.2.</p>
+<p>The most important setting of each pool is the <em>TCP socket</em> (including <em>IP address</em> and <em>port</em>) or Unix domain socket (UDS) that PHP-FPM will be receiving FastCGI requests. This will be set using the directive <code>listen</code> . A typical setting of PHP-FPM is <code>listen = 127.0.0.1:9000</code>. As I might want to install multiple PHP versions for testing, I will change the port to <code>9072</code> that corresponds to the PHP version 7.2.</p>
 
 <blockquote>
 <p>Note that we can also configure PHP-FPM to serve at a <a href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix domain socket</a> (UDS) because PHP-FPM and <code>httpd</code> processes are running in the same host. To do that, the directive <code>listen</code> must be changed, for example, <code>listen = /usr/local/var/run/php72-fpm.sock</code>. This approach would need extra effort to configure Apache to use PHP-FPM via UDS that we will visit later near the end of this guide.</p>
@@ -475,7 +475,7 @@ LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 <li><p><em>&lt;VirtualHost&gt;</em></p>
 
 <ul>
-<li><a href="https://httpd.apache.org/docs/current/mod/core.html#virtualhost"><code>&lt;VirtualHost&gt;</code></a> is used to define a new virtual host with respect to a specific hostname or IP address.</li>
+<li><a href="https://httpd.apache.org/docs/current/mod/core.html#virtualhost"><VirtualHost></a> is used to define a new virtual host with respect to a specific hostname or IP address.</li>
 <li>Syntax: <code>&lt;VirtualHost addr[:port] [addr[:port]] ...&gt; ... &lt;/VirtualHost&gt;</code></li>
 <li>Here I use the wildcard <code>*:*</code> to match any IP addresses and ports. Note that the port specified in a <code>&lt;VirtualHost&gt;</code> does not affect the real port Apache     <code>httpd</code> is listening.</li>
 </ul></li>
@@ -483,20 +483,20 @@ LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 <li><p><em>ServerName</em></p>
 
 <ul>
-<li><a href="https://httpd.apache.org/docs/current/mod/core.html#servername"><code>ServerName</code></a> is recommended in each <code>&lt;VirtualHost&gt;</code> for resolution and matching. If absent, Apache will use the global <code>ServerName</code> stated in <code>httpd.conf</code>.</li>
+<li><a href="https://httpd.apache.org/docs/current/mod/core.html#servername">ServerName</a> is recommended in each <code>&lt;VirtualHost&gt;</code> for resolution and matching. If absent, Apache will use the global <code>ServerName</code> stated in <code>httpd.conf</code>.</li>
 <li>In my case, I assign different <code>ServerName</code>, <code>php7.test</code> and <code>htmljs.test</code>, respectively, for each project to distinguish them. As Apache mainly matches virtual hosts via IP addresses and it will resolve host names based on DNS servers, I will configure corresponding hostname resolution for <code>php7.test</code> and <code>htmljs.test</code> using <code>/etc/hosts</code> or <strong>DNSMasq</strong>.</li>
 </ul></li>
 
 <li><p><em>DocumentRoot</em></p>
 
 <ul>
-<li><a href="https://httpd.apache.org/docs/current/mod/core.html"><code>DocumentRoot</code></a> specifies the place where Apache <code>httpd</code> will look for files to serve relevant incoming request. In each case, <code>DocumentRoot</code> will be the absolute path of my development project.</li>
+<li><a href="https://httpd.apache.org/docs/current/mod/core.html">DocumentRoot</a> specifies the place where Apache <code>httpd</code> will look for files to serve relevant incoming request. In each case, <code>DocumentRoot</code> will be the absolute path of my development project.</li>
 </ul></li>
 
 <li><p><em>ProxyPassMatch</em></p>
 
 <ul>
-<li><a href="https://httpd.apache.org/docs/current/mod/mod_proxy.html#proxypassmatch"><code>ProxyPassMatch</code></a> is part of <code>mod_proxy</code> that can map remote servers into local URLs using regular expressions.</li>
+<li><a href="https://httpd.apache.org/docs/current/mod/mod_proxy.html#proxypassmatch">ProxyPassMatch</a> is part of <code>mod_proxy</code> that can map remote servers into local URLs using regular expressions.</li>
 <li>Syntax: <code>ProxyPassMatch [regex] !|url [key=value [key=value ...]]</code></li>
 <li>When Apache <code>httpd</code> receives a request for a certain PHP file (e.g. <code>test.php</code>) then it needs PHP to handle that request. The regular expression <code>^/(.*\.php(/.*)?)$</code> is used to check whether the incoming request is for a <code>.php</code> file.</li>
 <li><code>$1</code> is called back-reference, as it refers to the matched part of the regular expression corresponding to the outermost pair of parentheses. In case the expression matches the incoming request URI (i.e. the request corresponds to a file <code>.php</code>, for instance, <code>/test.php</code>) <code>$1</code> will represent the request URI. As a request is often treated as relative path from the <code>DocumentRoot</code>, we must add <code>DocumentRoot</code> path before <code>$1</code> to form an exact absolute path and hand it over to PHP-FPM by adding the prefix <code>fcgi://127.0.0.1:9072</code>. Note that PHP-FPM is serving at <a href="#configuring"><code>127.0.0.1:9072</code></a> and <code>fcgi://</code> denotes the scheme FastCGI provided by <code>mod_proxy_fcgi</code>.</li>
@@ -506,7 +506,7 @@ LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 <li><p><em>DirectoryIndex</em></p>
 
 <ul>
-<li><a href="https://httpd.apache.org/docs/current/mod/mod_dir.html#directoryindex"><code>DirectoryIndex</code></a> sets the list of resources for an indexing request. As I want to use PHP, I set <code>index.php</code> as index resource backed up by the default <code>index.html</code>. Note that <code>DirectoryIndex</code> can also be set globally in <code>httpd.conf</code> that affects the main server and can be inherited in all virtual hosts.</li>
+<li><a href="https://httpd.apache.org/docs/current/mod/mod_dir.html#directoryindex">DirectoryIndex</a> sets the list of resources for an indexing request. As I want to use PHP, I set <code>index.php</code> as index resource backed up by the default <code>index.html</code>. Note that <code>DirectoryIndex</code> can also be set globally in <code>httpd.conf</code> that affects the main server and can be inherited in all virtual hosts.</li>
 </ul>
 
 <pre><code class="language-apacheconf">&lt;IfModule dir_module&gt;
@@ -521,7 +521,7 @@ LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 <li><p><em>&lt;Directory&gt;</em></p>
 
 <ul>
-<li><a href="https://httpd.apache.org/docs/current/mod/core.html#directory"><code>&lt;Directory&gt;</code></a> encloses the settings for folders, subfolders, and their contents.</li>
+<li><a href="https://httpd.apache.org/docs/current/mod/core.html#directory"><Directory></a> encloses the settings for folders, subfolders, and their contents.</li>
 <li><a href="https://httpd.apache.org/docs/current/mod/mod_authz_core.html#require"><code>Require all granted</code></a> : access is allowed unconditionally (authorization <code>mod_authz_core</code>). We need this, otherwise Apache will return an error <code>403 Forbidden</code>.</li>
 </ul></li>
 </ul>
@@ -621,42 +621,36 @@ $ dig an.arbitrary.host.test @127.0.0.1
 
 <p>Instead of configuring <code>ProxyPassMatch</code> for each individual virtual host to handle <code>.php</code> files, we can also set up directives in Apache <code>httpd.conf</code> (global scope) or at the beginning of the virtual host configuration <code>localhost.conf</code> (virtual host scope) via handlers.</p>
 
-<ol>
-<li>First comment out or delete the line <code>ProxyPassMatch ...</code> in the virtual host configuration <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code>.</li>
-</ol>
+<p>1) First comment out or delete the line <code>ProxyPassMatch ...</code> in the virtual host configuration <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code>.</p>
 
-<pre><code class="language-apacheconf">   # ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9072/Users/huytran/working/dev/dev-web/php/$1
+<pre><code class="language-apacheconf"># ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9072/Users/huytran/working/dev/dev-web/php/$1
 </code></pre>
 
-<ol>
-<li>Then, add the following lines to either the end of  <code>/usr/local/etc/httpd/httpd.conf</code> or the beginning of <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code>.</li>
-</ol>
+<p>2) Then, add the following lines to either the end of  <code>/usr/local/etc/httpd/httpd.conf</code> or the beginning of <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code>.</p>
 
-<pre><code class="language-apacheconf">  &lt;Proxy &quot;fcgi://localhost:9072/&quot; enablereuse=on max=10&gt;
-  &lt;/Proxy&gt;
-  &lt;FilesMatch &quot;\.php$&quot;&gt;
-      &lt;If &quot;-f %{REQUEST_FILENAME}&quot;&gt;
-          SetHandler &quot;proxy:fcgi://127.0.0.1:9072/&quot;
-      &lt;/If&gt;
-  &lt;/FilesMatch&gt;
+<pre><code class="language-apacheconf">&lt;Proxy &quot;fcgi://localhost:9072/&quot; enablereuse=on max=10&gt;
+&lt;/Proxy&gt;
+&lt;FilesMatch &quot;\.php$&quot;&gt;
+    &lt;If &quot;-f %{REQUEST_FILENAME}&quot;&gt;
+        SetHandler &quot;proxy:fcgi://127.0.0.1:9072/&quot;
+    &lt;/If&gt;
+&lt;/FilesMatch&gt;
 </code></pre>
 
 <ul>
-<li><a href="https://httpd.apache.org/docs/current/mod/core.html#filesmatch"><code>&lt;FilesMatch&gt;</code></a> : defines the scope of the enclosed directives by filenames that match the regular expression.
+<li><a href="https://httpd.apache.org/docs/current/mod/core.html#filesmatch"><FilesMatch></a> : defines the scope of the enclosed directives by filenames that match the regular expression.
 
 <ul>
 <li><em>Syntax</em>: <code>&lt;FilesMatch regex&gt; ... &lt;/FilesMatch&gt;</code></li>
 </ul></li>
-<li><a href="https://httpd.apache.org/docs/current/mod/core.html#sethandler"><code>SetHandler</code></a>: forces matching files to be processed by a handler.
+<li><a href="https://httpd.apache.org/docs/current/mod/core.html#sethandler">SetHandler</a>: forces matching files to be processed by a handler.
 
 <ul>
 <li><em>Syntax</em>: <code>SetHandler handler-name|none|expression</code></li>
 </ul></li>
 </ul>
 
-<ol>
-<li>Restart <code>httpd</code></li>
-</ol>
+<p>3) Restart <code>httpd</code></p>
 
 <h3 id="handling-php-via-unix-domain-sockets">Handling PHP via Unix Domain Sockets</h3>
 
