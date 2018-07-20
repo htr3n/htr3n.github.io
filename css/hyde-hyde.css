@@ -429,9 +429,6 @@ td code {
   display: block;
   font-size: 1.785rem;
   line-height: 1.25; }
-  .item__title--big a {
-    border: none;
-    color: #268bd2; }
 
 .item__title--small {
   font-size: 1rem; }
