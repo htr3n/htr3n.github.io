@@ -1,4 +1,6 @@
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html,
@@ -21,7 +23,7 @@ body {
   -ms-text-size-adjust: 100%; }
 
 a {
-  color: #515151;
+  color: #268bd2;
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: underline; }
@@ -180,10 +182,7 @@ footer {
 
 @media (min-width: 48em) {
   html {
-    -webkit-text-size-adjust: none;
-       -moz-text-size-adjust: none;
-        -ms-text-size-adjust: none;
-            text-size-adjust: none;
+    text-size-adjust: none;
     font-size: 16px; }
   .sidebar {
     bottom: 0;
@@ -210,10 +209,7 @@ footer {
 
 @media (min-width: 58em) {
   html {
-    -webkit-text-size-adjust: none;
-       -moz-text-size-adjust: none;
-        -ms-text-size-adjust: none;
-            text-size-adjust: none;
+    text-size-adjust: none;
     font-size: 17px;
     font-weight: 400;
     line-height: 1.611em; } }
@@ -247,8 +243,7 @@ footer {
     font-weight: bold; }
 
 a {
-  border-bottom: 1px dotted #ccc;
-  color: #515151;
+  color: #268bd2;
   text-decoration: none;
   word-wrap: break-word; }
   a.sidebar-nav-item:hover {
@@ -256,7 +251,8 @@ a {
   a.sidebar-nav-item:focus {
     text-decoration: none; }
   a:focus {
-    color: #268bd2;
+    color: #515151;
+    border-bottom: 1px dotted #ccc;
     text-decoration: none;
     background: transparent;
     background-color: transparent;
@@ -265,7 +261,8 @@ a {
       border-bottom-style: none;
       text-decoration: none; }
   a:hover {
-    color: #268bd2;
+    color: #515151;
+    border-bottom: 1px dotted #ccc;
     text-decoration: none;
     background: transparent;
     background-color: transparent;
@@ -365,9 +362,7 @@ pre {
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 1px;
-  -moz-tab-size: 2;
-    -o-tab-size: 2;
-       tab-size: 2; }
+  tab-size: 2; }
   pre code {
     border-radius: 4px;
     padding: 2px 4px;
@@ -395,7 +390,7 @@ td code {
 
 .copyright,
 .poweredby {
-  font-size: 0.75rem; }
+  font-size: 0.7rem; }
 
 .element--center {
   display: block;
@@ -435,7 +430,8 @@ td code {
   font-size: 1.785rem;
   line-height: 1.25; }
   .item__title--big a {
-    border: none; }
+    border: none;
+    color: #268bd2; }
 
 .item__title--small {
   font-size: 1rem; }
@@ -496,9 +492,10 @@ ul.post__nav {
 kbd {
   padding: .1em .6em;
   border: 1px solid #eee;
-  font-size: 0.765em;
-  font-weight: bold;
-  background-color: #f7f7f7;
+  font-size: 0.8em;
+  line-height: 1.4;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "IBM Plex Sans", "Segoe UI", "Roboto", "Ubuntu", Helvetica, Arial, sans-serif;
+  background-color: #fafbfc;
   color: #313131;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   border-radius: 3px;
