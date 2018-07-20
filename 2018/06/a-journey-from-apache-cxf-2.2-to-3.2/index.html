@@ -36,9 +36,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
-    
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -137,22 +136,22 @@
           <a class="tag" href="/tags/apache-cxf">#apache-cxf</a>
            
       
-          <a class="tag" href="/tags/jaxws">#jaxws</a>
-           
-      
-          <a class="tag" href="/tags/migration">#migration</a>
-           
-      
-          <a class="tag" href="/tags/spring-framework">#spring-framework</a>
-           
-      
           <a class="tag" href="/tags/web-service">#web-service</a>
            
       
           <a class="tag" href="/tags/wsdl">#wsdl</a>
            
       
+          <a class="tag" href="/tags/jaxws">#jaxws</a>
+           
+      
           <a class="tag" href="/tags/wsdl2java">#wsdl2java</a>
+           
+      
+          <a class="tag" href="/tags/migration">#migration</a>
+           
+      
+          <a class="tag" href="/tags/spring-framework">#spring-framework</a>
           
       
     
@@ -169,36 +168,11 @@
 
 <p>Everything went well for the development of Web services based on JAX-WS for both directions: WSDL-first and Java-first. In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any code overwriting. CXF services are so easy to configure with Spring Framework 3.0. The implementations of the services were loaded as Spring managed beans. The expose of a service is done via a CXF directive <code>&lt;jaxws:endpoint&gt;</code> of which the <code>implementor</code> attribute refers to the corresponding bean.</p>
 
-<pre><code class="language-xml">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-       xmlns:jaxws=&quot;http://cxf.apache.org/jaxws&quot;&gt;
-	&lt;import resource=&quot;classpath:META-INF/cxf/cxf.xml&quot; /&gt;
-	&lt;import resource=&quot;classpath:META-INF/cxf/cxf-extension-soap.xml&quot; /&gt;
-	&lt;import resource=&quot;classpath:META-INF/cxf/cxf-extension-jaxws.xml&quot; /&gt;
-	&lt;import resource=&quot;classpath:META-INF/cxf/cxf-servlet.xml&quot; /&gt;    
-    &lt;bean
-          id=&quot;CreditWorthinessImpl&quot;
-          class=&quot;westbank.ws.impl.CreditWorthinessImpl&quot;
-          p:dataAccessObject-ref=&quot;dataAccessObject&quot;&gt;
-    &lt;/bean&gt;
-    &lt;jaxws:endpoint id=&quot;CreditWorthiness&quot;
-                    implementor=&quot;#CreditWorthinessImpl&quot; 
-                    address=&quot;/CreditWorthiness&quot;&gt;
-    &lt;/jaxws:endpoint&gt;
-&lt;/beans&gt;
-</code></pre>
+<script src="//gist.github.com/htr3n/a5d1c1d66c00c3be32a2de63dcb9af0f.js"></script>
 
 <p>In the Web app configuration <code>web.xml</code>, CXF Servlet must be loaded by the container.</p>
 
-<pre><code class="language-xml">&lt;servlet&gt;
-    &lt;servlet-name&gt;cxf&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;org.apache.cxf.transport.servlet.CXFServlet&lt;/servlet-class&gt;
-    &lt;load-on-startup&gt;2&lt;/load-on-startup&gt;
-&lt;/servlet&gt;
-&lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;cxf&lt;/servlet-name&gt;
-    &lt;url-pattern&gt;/services/*&lt;/url-pattern&gt;
-&lt;/servlet-mapping&gt;
-</code></pre>
+<script src="//gist.github.com/htr3n/d97b770538e8279f2fb1742c4c49b3ce.js"></script>
 
 <h2 id="upgrading-apache-cxf">Upgrading Apache CXF</h2>
 
@@ -227,36 +201,7 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 
 <p>What puzzles me is that I have tried the command tool <code>wsdl2java</code> of Apache CXF 3.0.16 with each WSDL and, strangely, found no errors at all. After some extra trial-and-error effort, I eventually figured out that an extra option for <code>cxf-codegen-plugin</code> causes the error. The old/original plugin configuration in <code>pom.xml</code> is as following.</p>
 
-<pre><code class="language-xml">&lt;plugin&gt;
-    &lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;
-    &lt;artifactId&gt;cxf-codegen-plugin&lt;/artifactId&gt;
-    &lt;version&gt;${cxf.version}&lt;/version&gt;
-    &lt;executions&gt;
-        &lt;execution&gt;
-            &lt;id&gt;generate-sources&lt;/id&gt;
-            &lt;phase&gt;generate-sources&lt;/phase&gt;
-            &lt;configuration&gt;
-                &lt;sourceRoot&gt;${basedir}/src/main/java&lt;/sourceRoot&gt;
-                &lt;wsdlRoot&gt;${basedir}/src/main/webapp/WEB-INF/wsdl/&lt;/wsdlRoot&gt;
-                &lt;defaultOptions&gt;
-                    &lt;validateWsdl&gt;true&lt;/validateWsdl&gt;
-                    &lt;wsdlList&gt;true&lt;/wsdlList&gt;
-                    &lt;defaultExcludesNamespace&gt;true&lt;/defaultExcludesNamespace&gt;
-                    &lt;extraargs&gt;
-                        &lt;extraarg&gt;-defaultValues&lt;/extraarg&gt;
-                        &lt;extraarg&gt;-quiet&lt;/extraarg&gt;
-                        &lt;extraarg&gt;-wsdlLocation&lt;/extraarg&gt;
-                        &lt;extraarg&gt;&lt;/extraarg&gt;
-                    &lt;/extraargs&gt;
-                &lt;/defaultOptions&gt;
-            &lt;/configuration&gt;
-            &lt;goals&gt;
-                &lt;goal&gt;wsdl2java&lt;/goal&gt;
-            &lt;/goals&gt;
-        &lt;/execution&gt;
-    &lt;/executions&gt;
-&lt;/plugin&gt;
-</code></pre>
+<script src="//gist.github.com/htr3n/b0634545a64e3b94dacee3982456ec4f.js"></script>
 
 <p>The option <code>&lt;wsdlList&gt;</code> is the culprit. It was declared <code>boolean</code> since CXF 2.2 to 2.7.0 as I found <a href="https://cxf.apache.org/javadoc/latest-2.7.x/org/apache/cxf/maven_plugin/wsdl2java/Option.html">here</a>. However, in <a href="http://cxf.apache.org/docs/wsdl-to-java.html">the most recent documentation</a> of CXF 3, <code>wsdlList</code> is still listed as an option for <code>wsdl2java</code> but no longer of type <code>boolean</code>  (<code>-wsdlList &lt;wsdlurl&gt;</code>). To make it worse, the option is totally hidden/undocumented. So all I have to do is to disable the line <code>&lt;wsdlList&gt;true&lt;/wsdlList&gt;</code> and  <code>cxf-codegen-plugin</code> works again in CXF 3.0+.</p>
 
@@ -276,53 +221,13 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 
 <h3 id="loading-cxfservlet">Loading CXFServlet</h3>
 
-<pre><code class="language-java">public class MyWebApplicationInitializer implements org.springframework.web.WebApplicationInitializer {
-    @Override
-    public void onStartup(ServletContext container) throws ServletException {
-        AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
-        root.register(ServiceConfiguration.class);
-        root.refresh();
-      
-        // Register and map the CXF servlet
-        CXFServlet cxfServlet = new CXFServlet();      
-        ServletRegistration.Dynamic reg = container.addServlet(&quot;cxf&quot;, cxfServlet);     
-        reg.setLoadOnStartup(1);
-        reg.addMapping(&quot;/services/*&quot;);      
-    }
-}
-</code></pre>
+<script src="//gist.github.com/htr3n/b2f57f33ea4940b3756ae74c8f0693aa.js"></script>
 
 <h3 id="publishing-services">Publishing Services</h3>
 
-<p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing existing CXF&rsquo;s XML resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<strong>cxf</strong>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
+<p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing existing CXF&rsquo;s XML resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<em>cxf</em>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
 
-<pre><code class="language-java">import com.example.HelloWorldImpl;
-
-import org.apache.cxf.Bus;
-import org.apache.cxf.bus.spring.SpringBus;
-import org.apache.cxf.jaxws.EndpointImpl;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import javax.xml.ws.Endpoint;
-
-@Configuration
-public class ServiceConfiguration {
-
-    @Bean(name=Bus.DEFAULT_BUS_ID)
-    public SpringBus cxf() {
-        return new SpringBus();
-    }
-
-    @Bean
-    public Endpoint helloWorld() {
-        HelloWorldImpl implementor = new HelloWorldImpl();
-        EndpointImpl endpoint = new EndpointImpl(cxf(), implementor);
-        endpoint.publish(&quot;/HelloWorld&quot;);
-        return endpoint;
-    }
-}
-</code></pre>
+<script src="//gist.github.com/htr3n/41add915f3238a517c5185d6a965ba65.js"></script>
 
 <blockquote>
 <p>IMPORTANT: <code>Endpoint.publish()</code> must be called to expose the service instead of <code>Endpoint.setAddress()</code> as above.</p>

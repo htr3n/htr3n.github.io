@@ -36,9 +36,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" href="https://htr3n.github.io/css/print.min.css" media="print">
-    
     <link rel="stylesheet" href="https://htr3n.github.io/css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -134,25 +133,25 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="tag" href="/tags/css">#css</a>
-           
-      
-          <a class="tag" href="/tags/gulp">#gulp</a>
-           
-      
           <a class="tag" href="/tags/hugo">#hugo</a>
            
       
           <a class="tag" href="/tags/markdown">#markdown</a>
            
       
-          <a class="tag" href="/tags/minification">#minification</a>
-           
-      
-          <a class="tag" href="/tags/npm">#npm</a>
+          <a class="tag" href="/tags/css">#css</a>
            
       
           <a class="tag" href="/tags/sass">#sass</a>
+           
+      
+          <a class="tag" href="/tags/minification">#minification</a>
+           
+      
+          <a class="tag" href="/tags/gulp">#gulp</a>
+           
+      
+          <a class="tag" href="/tags/npm">#npm</a>
           
       
     
@@ -256,23 +255,24 @@
 <li><em>Minification</em>: <a href="https://github.com/postcss/postcss">PostCSS</a> provides many plugins for CSS post-processing alongside <em>autoprefixer</em>.  I choose <a href="http://cssnano.co"><em>cssnano</em></a> to minify the CSSs.</li>
 </ul>
 
-<pre><code class="language-sh">$ npm i -D gulp gulp-sass gulp-postcss autoprefixer gulp-sourcemaps cssnano
+<pre><code class="language-sh">$ npm i -D gulp@next gulp-sass gulp-postcss autoprefixer gulp-sourcemaps cssnano
 </code></pre>
 
 <p>In the same way, you can add more components to the list. Here I rather keep it short and simple for illustrative purpose. Now I start configuring Gulp to use them in my project.</p>
 
-<script src="//gist.github.com/htr3n/6ebbd598e04a3a4555b4e5e110d7acf2.js"></script>
+<script src="//gist.github.com/htr3n/eb8dde0659b066367d438879d6650e54.js"></script>
 
-<p>I just simply invoke Gulp to trigger its chaining pipeline.</p>
+<p>Note that the syntax is Gulp v4.0.</p>
+
+<p>Now I just simply invoke Gulp to trigger its chaining pipeline.</p>
 
 <pre><code class="language-sh">$ gulp
-[19:28:57] Using gulpfile ~/working/dev/htr3n-blog/gulpfile.js
-[19:28:57] Starting 'scss'...
-[19:28:57] Finished 'scss' after 13 ms
-[19:28:57] Starting 'watch'...
-[19:28:57] Finished 'watch' after 26 ms
-[19:28:57] Starting 'default'...
-[19:28:57] Finished 'default' after 24 μs
+[10:23:40] Using gulpfile ~/working/dev/htr3n-blog/gulpfile.js
+[10:23:40] Starting 'default'...
+[10:23:40] Starting 'watch'...
+[10:23:40] Starting 'scss'...
+[10:23:40] Finished 'scss' after 58 ms
+[10:23:40] Starting '&lt;anonymous&gt;'...
 </code></pre>
 
 <p>Gulp will transform <code>hyde-hyde.scss</code> into <code>hyde-hyde.css</code>  which is autoprefixed and saved in <code>static/css</code> along with its sourcemaps. In the Hugo templates, I refer to <code>hyde-hyde.css</code> normally.</p>
@@ -303,17 +303,17 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 </code></pre>
 
-<p>Please note that, by default, Hugo will only keep watching the following folders  <code>{assets,content,data,layouts,static,themes}</code>. Hence, our SCSS files might not be in one of these folders but we must ensure the resources generated from Gulp are. As I illustrated <em>endogenous pipeline</em> above, my SCSSs are kept in <code>assets</code> such that Hugo <code>Resources.Get</code> can find them. If you opt for <em>exogenous pipeline</em>, you should put the preprocessing resources elsewhere.</p>
+<p>Please note that, by default, Hugo will only keep watching the following folders  <code>{assets, content, data, layouts, static, themes}</code>. Hence, our SCSS files might not be in one of these folders but we must ensure the resources generated from Gulp are. As I illustrated <em>endogenous pipeline</em> above, my SCSSs are kept in <code>assets</code> such that Hugo <code>Resources.Get</code> can find them. If you opt for <em>exogenous pipeline</em>, you should put the preprocessing resources elsewhere.</p>
 
 <p>After all, we can open the browser to <a href="http://localhost:1313">http://localhost:1313</a> and enjoy the experience of live editing side-by-side.</p>
 
 <p><img src="side-by-side.png" alt="Typora editing and generated pages" /></p>
 
-<p>At this point, we seem to miss <em>cache busting</em> which is provided in the <em>endogenous pipeline</em> with Hugo. This is the biggest advantage of using external tools as we need to magically establish the connections between Hugo generated resources and Gulp&rsquo;s manipulated resources.</p>
+<p>At this point, we seem to miss <em>cache busting</em> which is provided in the <em>endogenous pipeline</em> with Hugo. That is also the biggest advantage of using external tools as we need to establish the connections between Hugo generated resources and Gulp&rsquo;s manipulated resources on our own.</p>
 
-<p>This task is a tad complicated as you can find <a href="https://byteplumbing.net/2017/08/static-asset-cache-busting-for-hugo">here</a>, <a href="https://blog.carlmjohnson.net/post/2017/hugo-asset-pipeline/">here</a> and <a href="http://danbahrami.io/articles/building-a-production-website-with-hugo-and-gulp-js">here</a>. In summary, the idea is to generate <a href="https://en.wikipedia.org/wiki/Hash_function"><em>hash signatures</em></a> for your CSS, for instance, using <a href="https://en.wikipedia.org/wiki/MD5">MD5</a> or <a href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms">SHA</a>, store the relevant data as dictionary key-value pairs, e.g. <code>&quot;hyde-hyde.css&quot; : &quot;hyde-hyde.the-latest-hash-number.css&quot;</code>,  then use Hugo’s <a href="https://gohugo.io/templates/data-templates/">data templates</a> feature to refer to those pairs.</p>
+<p>It is a tad complicated as you can find <a href="https://byteplumbing.net/2017/08/static-asset-cache-busting-for-hugo">here</a>, <a href="https://blog.carlmjohnson.net/post/2017/hugo-asset-pipeline/">here</a> and <a href="http://danbahrami.io/articles/building-a-production-website-with-hugo-and-gulp-js">here</a>. In summary, the idea is to generate <a href="https://en.wikipedia.org/wiki/Hash_function"><em>hash signatures</em></a> for your CSSs, for instance, using <a href="https://en.wikipedia.org/wiki/MD5">MD5</a> or <a href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms">SHA</a>, store the relevant data as dictionary <a href="https://en.wikipedia.org/wiki/Key-value_database">key-value</a> pairs, e.g. <code>&quot;hyde-hyde.css&quot; : &quot;hyde-hyde.the-latest-hash-number.css&quot;</code>,  then use Hugo’s <a href="https://gohugo.io/templates/data-templates/">data templates</a> feature to refer to those pairs. This approach has actually been implemented in the aforementioned Hugo&rsquo;s extensions.</p>
 
-<p>Nevertheless, with Hugo v0.43 we can go around and utilise its features to complement Gulp on this matter (🐵). We just modify the Gulp configuration a bit so that the output folder is no longer <code>static</code> but <code>assets/css</code> as Hugo&rsquo;s <code>Resources.Get</code> rather strictly looks for resources in <code>assets</code>.</p>
+<p>In case you really need <em>cache busting</em>, we can utilise Hugo v0.43 extensions to complement Gulp on this matter (🐵). We just modify the Gulp configuration a bit so that the output folder is no longer <code>static</code> but <code>assets/css</code> as Hugo&rsquo;s <code>Resources.Get</code> rather strictly looks for resources in <code>assets</code>.</p>
 
 <pre><code class="language-javascript">var output_folder = 'assets/css';
 </code></pre>
@@ -324,7 +324,7 @@ Press Ctrl+C to stop
 &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ $styles.Permalink }}&quot; integrity=&quot;{{ $styles.Data.Integrity }}&quot;&gt;
 </code></pre>
 
-<p>It looks like Gulp becomes redundant in this case as Hugo can perform <code>toCSS</code>, <code>postCSS</code>, and <code>minify</code> just fine. Nonetheless, in case you need other functionalities that are not yet provided with Hugo, Gulp will be what you should ask for. Besides, as per <strong>NOTE</strong> above, there are still some issues with Hugo&rsquo;s extension regarding sourcemaps whilst Gulp&rsquo;s asset pipeline works flawlessly.</p>
+<p>It seems Gulp becomes redundant here as Hugo can perform <code>toCSS</code>, <code>postCSS</code>, and <code>minify</code> just fine. Nonetheless, in case you need other functionalities that are not yet provided by Hugo, Gulp will be what you should ask for. Besides, as per <strong>NOTE</strong> above, there are still some issues with Hugo&rsquo;s extension regarding sourcemaps whilst Gulp&rsquo;s asset pipeline above works flawlessly.</p>
 
 <h4 id="more-automation-please">More automation, please!!!</h4>
 
