@@ -1,6 +1,4 @@
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html,
@@ -182,7 +180,10 @@ footer {
 
 @media (min-width: 48em) {
   html {
-    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+       -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+            text-size-adjust: none;
     font-size: 16px; }
   .sidebar {
     bottom: 0;
@@ -209,7 +210,10 @@ footer {
 
 @media (min-width: 58em) {
   html {
-    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+       -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+            text-size-adjust: none;
     font-size: 17px;
     font-weight: 400;
     line-height: 1.611em; } }
@@ -361,7 +365,9 @@ pre {
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 1px;
-  tab-size: 2; }
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2; }
   pre code {
     border-radius: 4px;
     padding: 2px 4px;
@@ -490,17 +496,15 @@ ul.post__nav {
 kbd {
   padding: .1em .6em;
   border: 1px solid #eee;
-  font-size: 13px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.765em;
   font-weight: bold;
   background-color: #f7f7f7;
-  color: #333;
+  color: #313131;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   border-radius: 3px;
   display: inline-block;
   margin: 0 .1em;
   text-shadow: 0 1px 0 #fff;
-  line-height: 1.4;
   white-space: nowrap; }
 
 .hljs {
