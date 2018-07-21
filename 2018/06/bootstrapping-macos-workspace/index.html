@@ -25,22 +25,30 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/" />
-<meta property="article:published_time" content="2018-06-27T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2018-07-21T00:00:00&#43;00:00"/>
+
+
+
+<meta property="article:published_time" content="2018-06-27T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-21T00:00:00&#43;00:00"/>
 
 
 
 
 
-    <!-- Web fonts -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
+
+
+
+
+
+
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
     <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -51,6 +59,7 @@
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png"></head>
+
     <body>
         
 <div class="sidebar text-center">
@@ -186,14 +195,23 @@
 <h3 id="disable-system-integrity-protection-sip">Disable System Integrity Protection (SIP)</h3>
 
 <p><a href="https://support.apple.com/en-us/ht204899">System Integration Protection</a> (SIP) is a security technology since OS X El Capitan 10.11 aiming at protecting certain system files and folders against malicious software. SIP even limits the access and actions of the root user account on protected parts of OS X. Unfortunately, the folder  <code>/usr/local</code> needed for installing many development tools and utilities is under protection as well. That makes a lot of tools like <a href="https://brew.sh">Homebrew</a> fail to install. We can easily check SIP&rsquo;s current status.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ csrutil status
-System Integrity Protection status: enabled.</code></pre></div>
+
+<pre><code class="language-sh">$ csrutil status
+System Integrity Protection status: enabled.
+</code></pre>
+
 <p>The tweak I always do right after installing or recovering a Mac is to disable SIP. Just (re)start macOS in <em>Recovery Mode</em> (restarting or turning on your Mac and immediately pressing <kbd>⌘</kbd> + <kbd>R</kbd>&mdash;shortcut to remember <kbd>R</kbd> for &lsquo;<strong>R</strong>ecovery&rsquo;&mdash;and wait until macOS boots into its recovery mode. Then open menu &lsquo;<em>Utility</em>&rsquo; &gt; &lsquo;<em>Terminal</em>&rsquo; and execute the following commands.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ csrutil disable
-$ reboot</code></pre></div>
+
+<pre><code class="language-sh">$ csrutil disable
+$ reboot
+</code></pre>
+
 <p>Your Mac will reboot and get back to the normal working mode. You can verify SIP status again.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ csrutil status
-System Integrity Protection status: disabled.</code></pre></div>
+
+<pre><code class="language-sh">$ csrutil status
+System Integrity Protection status: disabled.
+</code></pre>
+
 <h3 id="disable-gatekeeper">Disable Gatekeeper</h3>
 
 <p><em>Gatekeeper</em> was first introduced in OS X Mountain Lion. It is a security feature that prevents the users from launching potentially harmful apps.</p>
@@ -241,7 +259,10 @@ System Integrity Protection status: disabled.</code></pre></div>
 <h3 id="revealing-library">Revealing &lsquo;~/Library&rsquo;</h3>
 
 <p>In macOS, the folder &lsquo;<em>~/Library</em>&rsquo; within users home folder is hidden (since 10.7!?) seemingly to prevent any unintentional changes. It&rsquo;s not so difficult to navigate to this folder (and any other folders) using command line. In case you want to use Finder to navigate and explore &lsquo;<em>~/Library</em>&rsquo;, we can simply use the following command.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ chflags nohidden ~/Library</code></pre></div>
+
+<pre><code class="language-sh">$ chflags nohidden ~/Library
+</code></pre>
+
 <h3 id="enabling-key-repeating">Enabling Key Repeating</h3>
 
 <p>The behaviour for keyboard long pressing in macOS is also of polarised personal taste. A typical behaviour that we often see is that the letter keeps popping out since one holds down a key until the key is released. Some years back this has been changed into &lsquo;<em>Character Picker</em>&rsquo;. It means when a key is pressed and held, the non-standard characters corresponding characters will pop up as the picture below.</p>
@@ -264,10 +285,13 @@ System Integrity Protection status: disabled.</code></pre></div>
 <p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with <kbd>Shift</kbd> + <kbd>↓,↑,←,→</kbd>.</p>
 
 <p>For that reason, I always disable that feature in any macOS that I am working on. Unfortunately, this cannot be done with &lsquo;<em>System Preferences</em>&rsquo; but command line. After each command, you must re-start the editors to see the effect.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># disable &#39;Character Picker&#39;
-</span><span style="color:#60a0b0;font-style:italic"></span>$ defaults write -g ApplePressAndHoldEnabled -bool <span style="color:#007020">false</span>
-<span style="color:#60a0b0;font-style:italic"># it can be enabled
-</span><span style="color:#60a0b0;font-style:italic"></span>$ defaults write -g ApplePressAndHoldEnabled -bool true</code></pre></div>
+
+<pre><code class="language-sh"># disable 'Character Picker'
+$ defaults write -g ApplePressAndHoldEnabled -bool false
+# it can be enabled
+$ defaults write -g ApplePressAndHoldEnabled -bool true
+</code></pre>
+
 <p>Another option relating to key repeating is tuning its speed/rate and delay. Luckily, we can do this via &lsquo;<em>System Preferences</em>&rsquo; -&gt; &lsquo;<em>Keyboard</em>&rsquo;. My favourite is &lsquo;<em>fastest</em>&rsquo; repeating and &lsquo;<em>shortest</em>&rsquo; delay as possible.</p>
 
 <figure >
@@ -286,19 +310,25 @@ System Integrity Protection status: disabled.</code></pre></div>
 
 
 <p>Like many other options, we can change it via command line or fine tuning tool such as <a href="https://pqrs.org/osx/karabiner">Karabiner</a>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># InitialKeyRepeat: 120, 94, 68, 35, 25, 15 (lower is faster, default is 25)
-</span><span style="color:#60a0b0;font-style:italic"></span>$ defaults write -g InitialKeyRepeat -int <span style="color:#40a070">15</span>
-<span style="color:#60a0b0;font-style:italic"># KeyRepeat: 120, 90, 60, 30, 12, 6, 2 (lower is faster, default is 6)
-</span><span style="color:#60a0b0;font-style:italic"></span>$ defaults write -g KeyRepeat -int <span style="color:#40a070">2</span>	</code></pre></div>
+
+<pre><code class="language-sh"># InitialKeyRepeat: 120, 94, 68, 35, 25, 15 (lower is faster, default is 25)
+$ defaults write -g InitialKeyRepeat -int 15
+# KeyRepeat: 120, 90, 60, 30, 12, 6, 2 (lower is faster, default is 6)
+$ defaults write -g KeyRepeat -int 2	
+</code></pre>
+
 <h3 id="changing-hostnames">Changing Hostnames</h3>
 
 <p>Most of the time, the default host name is not satisfied and you might want to have a cool name for your dev box. Then you are surely not alone. Here and there, you might find some cool combo like <code>harry@hogwart</code> , <code>alice@wonderland</code>,  <code>yoda@dagobah</code>,  <code>joker@gotham</code>, <code>neo@matrix</code>, <code>frodo@mordor</code> you name it. You can quickly do this via command line.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># change the primary host name
-</span><span style="color:#60a0b0;font-style:italic"></span>$ sudo scutil --set HostName gotham
-<span style="color:#60a0b0;font-style:italic"># ... do the same for local (Bonjour) host name 
-</span><span style="color:#60a0b0;font-style:italic"></span>$ sudo scutil --set LocalHostName gotham
-<span style="color:#60a0b0;font-style:italic"># and finally, keep the user-friendly computer&#39;s name in Finder in sync
-</span><span style="color:#60a0b0;font-style:italic"></span>$ sudo scutil --set ComputerName gotham</code></pre></div>
+
+<pre><code class="language-sh"># change the primary host name
+$ sudo scutil --set HostName gotham
+# ... do the same for local (Bonjour) host name 
+$ sudo scutil --set LocalHostName gotham
+# and finally, keep the user-friendly computer's name in Finder in sync
+$ sudo scutil --set ComputerName gotham
+</code></pre>
+
 <hr />
 
 <h2 id="part2">Part 2: Development tools and configurations</h2>
@@ -308,33 +338,51 @@ System Integrity Protection status: disabled.</code></pre></div>
 <h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
 
 <p>Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to install the Xcode command line tools that Homebrew needs to build its tools.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># install Xcode command line developer tools
-</span><span style="color:#60a0b0;font-style:italic"></span>$ xcode-select --install
 
-<span style="color:#60a0b0;font-style:italic"># now install Homebrew
-</span><span style="color:#60a0b0;font-style:italic"></span>$ /usr/bin/ruby -e <span style="color:#4070a0">&#34;</span><span style="color:#007020;font-weight:bold">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#007020;font-weight:bold">)</span><span style="color:#4070a0">&#34;</span></code></pre></div>
+<pre><code class="language-sh"># install Xcode command line developer tools
+$ xcode-select --install
+
+# now install Homebrew
+$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+
 <p>Then we need to add <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> (where Homebrew links the executable files) to the environment variable <code>PATH</code>. This can be done by altering the shell startup scripts. For instance, for bash shell it is <em>~/.bash_profile</em>, for zsh shell it is <em>~/.zsh_profile</em>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#007020">export</span> <span style="color:#bb60d5">PATH</span><span style="color:#666">=</span><span style="color:#bb60d5">$PATH</span>:/usr/local/bin:/usr/local/sbin</code></pre></div>
+
+<pre><code class="language-shell">export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+</code></pre>
+
 <p>Should you want the Homebrew tools have higher priority than the others, just switch <code>$PATH</code> to the end instead. We now can start using <code>brew</code> to install some necessary tools.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install ack ant curl dnsmasq docker gcc git go gradle maven mysql node openssl openssh python3 postgresql php72 composer r ruby rbenv sassc yarn tmux zsh </code></pre></div>
+
+<pre><code class="language-sh">$ brew install ack ant curl dnsmasq docker gcc git go gradle maven mysql node openssl openssh python3 postgresql php72 composer r ruby rbenv sassc yarn tmux zsh 
+</code></pre>
+
 <p>Homebrew can also help handling macOS start-up services which are useful for managing servers like Apache httpd, nginx, php-fpm, MySQL, PostgreSQL, etc.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew services start httpd
-$ brew services stop httpd</code></pre></div>
+
+<pre><code class="language-sh">$ brew services start httpd
+$ brew services stop httpd
+</code></pre>
+
 <p>For quick re-installing or recovering Homebrew, we can use <a href="https://github.com/Homebrew/homebrew-bundle">homebrew-bundle</a> for backing up the current Homebrew&rsquo;s installation and restoring later.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># tap the bundle
-</span><span style="color:#60a0b0;font-style:italic"></span>$ brew tap Homebrew/bundle
-<span style="color:#60a0b0;font-style:italic"># dump all existing Homebrew packages to Brewfile
-</span><span style="color:#60a0b0;font-style:italic"></span>$ brew bundle dump --force
-<span style="color:#60a0b0;font-style:italic"># check the list of entries
-</span><span style="color:#60a0b0;font-style:italic"></span>$ brew bundle list
-<span style="color:#60a0b0;font-style:italic"># restore/install all packages from the Brewfile 
-</span><span style="color:#60a0b0;font-style:italic"></span>$ brew bundle</code></pre></div>
+
+<pre><code class="language-sh"># tap the bundle
+$ brew tap Homebrew/bundle
+# dump all existing Homebrew packages to Brewfile
+$ brew bundle dump --force
+# check the list of entries
+$ brew bundle list
+# restore/install all packages from the Brewfile 
+$ brew bundle
+</code></pre>
+
 <p>Homebrew also incorporates <a href="https://github.com/Homebrew/homebrew-cask">Homebrew-Cask</a> (formerly an independent plugin for Homebrew) that can help to install many macOS apps as you might see in the subsequent parts.</p>
 
 <h3 id="terminals-and-shells">Terminals and Shells</h3>
 
 <p>Since working with Linux a lot and then macOS, I&rsquo;m rather familiar with the command line. There are many cases using terminals would be more convenient than graphical editors. Thus, I need a good terminal app. The built-in Terminal app in macOS is not bad but I usually opt for <a href="https://www.iterm2.com">iTerm2</a>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install iterm2</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install iterm2
+</code></pre>
+
 <p>Some of my favorite settings for iTerms are including light dark themes such as <a href="https://draculatheme.com/iterm">Dracula</a>, <a href="https://gist.github.com/meqif/1238378">IR_Black</a>, <a href="https://github.com/junegunn/seoul256-iTerm2">seoul_256</a> along with any of these fixed width fonts <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>, <a href="https://fonts.google.com/specimen/Cousine">Cousine</a>, <a href="https://fonts.google.com/specimen/Roboto+Mono">Roboto Mono</a>, <a href="https://github.com/tonsky/FiraCode">Fira Code</a> or <a href="https://www.typography.com/fonts/operator/overview/">Operator Mono</a> (nice ligatures), <a href="https://fonts.google.com/specimen/Inconsolata">Inconsolata</a> or its variants (Inconsolata-dz, Inconsolata-g), <a href="https://github.com/source-foundry/Hack">Hack</a>, <a href="https://typekit.com/fonts/input-mono">Input Mono</a>. Few of these fonts can be installed via Homebrew Cask.</p>
 
 <p>Along with iTerms 2, I also love <a href="http://www.zsh.org">Z shell</a> (zsh) which is an extended version of Bash shell a lot with many nice features like directory alias, command completion, path expansion, etc. You might also find some Zsh configuration frameworks like <a href="https://ohmyz.sh">oh-my-zsh</a> or <a href="https://github.com/sorin-ionescu/prezto">Prezto</a> amazing to start with. I&rsquo;ve tried both of them and found oh-my-zsh a bit sluggish and Prezto a bit difficult to add more extensions or customize. I have actually used a small piece from either of them and found myself quickly forgetting the customised parts taken from the others. Hence, I decided to develop a set of my own <a href="https://github.com/htr3n/zsh-config">ZSH configurations</a>. Moreover, I often keep a habit of writting Shell scripts in standard sh/bash as much as possible and keep zsh-specific separately for better portability and compatibility.</p>
@@ -344,11 +392,20 @@ $ brew services stop httpd</code></pre></div>
 <p>There are quite a number of editors in macOS for developers ranging from, er, the built-in Text Editor, <em>Sublime Text</em>, <em>TextMate</em>, <em>TextWrangler</em>, the nerdy <em>Vim</em>, <em>Emacs</em>, and recently <em>Atom</em>, <em>Visual Studio Code</em>, <em>Brackets</em>, to name but a few. You might install these editos using Cask.</p>
 
 <p>In macOS, Sublime Text is often a powerful editor for many of us but it is quite costly. I tend to love <a href="https://atom.io">Atom</a> which is developed by Github as an effort to build a modern editor for developers. Atom enables a plethora of extensions to become a very promising choice. Nevertheless, I was skeptical with its sluggishness in early days and therefore leaned to <a href="https://code.visualstudio.com">Visual Studio Code</a>, my current Swiss-army-knife editor-of-choice instead.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install visual-studio-code</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install visual-studio-code
+</code></pre>
+
 <p>Frequently using terminal/console, I just grasp vim for quick editing tasks and <a href="https://github.com/htr3n/vim-config">customised it</a> a little bit.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install vim</code></pre></div>
+
+<pre><code class="language-sh">$ brew install vim
+</code></pre>
+
 <p>For Markdown editors, e.g. Github infamous <em>README.md</em> or my blog articles, I used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes a second choice for now (at least until Typora&rsquo;s developers announce their paid plans). With Typora, I can directly write Markdown articles just like Microsoft Word.  I can do <code>Cmd + /</code> to instantly switch back and forth between <em>Visual Editing</em> and <em>Source</em> modes. Even better, I can adapt the Markdown render in Typora to be nearly indentical to my blog and therefore, experience <em>WYSIWYG</em> Markdown editing.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install typora</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install typora
+</code></pre>
+
 <h3 id="other-nice-to-have-tools">Other nice -to-have tools</h3>
 
 <h4 id="ack-https-beyondgrep-com"><a href="https://beyondgrep.com">Ack</a></h4>
@@ -356,71 +413,106 @@ $ brew services stop httpd</code></pre></div>
 <ul>
 <li>Ack is faster and easier to use than grep</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install ack</code></pre></div>
+
+<pre><code class="language-sh">$ brew install ack
+</code></pre>
+
 <h4 id="dropbox-https-www-dropbox-com"><a href="https://www.dropbox.com">Dropbox</a></h4>
 
 <ul>
 <li>Many of our customers and friends are sharing files using Dropbox, so are we ;). Note that it must be installed in &lsquo;<em>/Applications</em>&rsquo; to work properly.</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install --appdir<span style="color:#666">=</span><span style="color:#4070a0">&#34;/Applications&#34;</span> dropbox</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install --appdir=&quot;/Applications&quot; dropbox
+</code></pre>
+
 <h4 id="docker-ce-https-www-docker-com-community-edition-and-command-line"><a href="https://www.docker.com/community-edition">Docker CE</a> and command line</h4>
 
 <ul>
 <li>Every serious developer is talking about it ;)</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install docker
-$ brew install docker</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install docker
+$ brew install docker
+</code></pre>
+
 <h4 id="spectacle-https-www-spectacleapp-com"><a href="https://www.spectacleapp.com">Spectacle</a></h4>
 
 <ul>
 <li>This is an amazing free app for resizing windows using shortcuts. I use it a lot to quickly arrange the working windows.</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install spectacle</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install spectacle
+</code></pre>
+
 <h4 id="alfred-https-www-alfredapp-com-powerpack"><a href="https://www.alfredapp.com">Alfred</a> + Powerpack ($)</h4>
 
 <ul>
 <li>Alfred is a must-have for me and, maybe, many other macOS users. The free version is useful enough but the paid (for Powerpack) can blow anyone away. Alfred helps me much more when I prefer to use the keyboard as much as possible instead of reaching for the mice.</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install alfred</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install alfred
+</code></pre>
+
 <h4 id="1password-https-1password-com"><a href="https://1password.com">1Password</a> ($)</h4>
 
 <ul>
 <li>Help storing all of my private information and authentication in iCloud or Dropbox and using them in macOS or iOS.</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install 1password</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install 1password
+</code></pre>
+
 <h4 id="f-lux-https-justgetflux-com"><a href="https://justgetflux.com">F.lux</a></h4>
 
 <ul>
 <li>Saving my eyes staring daily at computer&rsquo;s monitors (macOS also has Night Shift mode but my eyes still find F.lux more pleasant at night)</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install flux</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install flux
+</code></pre>
+
 <h4 id="web-browers">Web Browers</h4>
 
 <ul>
 <li>Installing Firefox and Google Chrome mainly for Web development, testing and debugging as I find Safari is, not perfect though, sufficient for daily use and conveniently sharing bookmarks and history links between macOS and my iPad and iPhone.</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install google-chrome firefox</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install google-chrome firefox
+</code></pre>
+
 <h4 id="remote-access">Remote Access</h4>
 
 <ul>
 <li>SSH/SFTP</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># I prefer OpenSSH to the stock BSD SSH
-</span><span style="color:#60a0b0;font-style:italic"></span>$ brew install openssh
-<span style="color:#60a0b0;font-style:italic"># ... and I need to quickly copy my public key to the servers
-</span><span style="color:#60a0b0;font-style:italic"></span>$ brew install ssh-copy-id
-<span style="color:#60a0b0;font-style:italic"># generate key pair
-</span><span style="color:#60a0b0;font-style:italic"></span>$ ssh-keygen -t rsa -b <span style="color:#40a070">4096</span> -C <span style="color:#4070a0">&#34;MacBookPro email@example.com&#34;</span>
-<span style="color:#60a0b0;font-style:italic"># copy the public key to the host for passwordless authentication
-</span><span style="color:#60a0b0;font-style:italic"></span>$ ssh-copy-id user@host</code></pre></div>
+
+<pre><code class="language-sh"># I prefer OpenSSH to the stock BSD SSH
+$ brew install openssh
+# ... and I need to quickly copy my public key to the servers
+$ brew install ssh-copy-id
+# generate key pair
+$ ssh-keygen -t rsa -b 4096 -C &quot;MacBookPro email@example.com&quot;
+# copy the public key to the host for passwordless authentication
+$ ssh-copy-id user@host
+</code></pre>
+
 <h4 id="networking-tools">Networking Tools</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install netcat curl wget nmap</code></pre></div>
+
+<pre><code class="language-sh">$ brew install netcat curl wget nmap
+</code></pre>
+
 <h4 id="communication">Communication</h4>
 
 <p><a href="https://www.skype.com">Skype</a>, <a href="https://www.slack.com">Slack</a></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew cask install skype slack</code></pre></div>
+
+<pre><code class="language-sh">$ brew cask install skype slack
+</code></pre>
+
 <h3 id="gnu-tools">GNU Tools</h3>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install coreutils autoconf automake findutils gawk gcc gnu-sed grep</code></pre></div>
+
+<pre><code class="language-sh">$ brew install coreutils autoconf automake findutils gawk gcc gnu-sed grep
+</code></pre>
   </div>
   <div>
     <ul class="post__nav">
@@ -462,7 +554,12 @@ $ brew install docker</code></pre></div>
 </div>
 </article>
         </div>
-        <div class="container content">
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {

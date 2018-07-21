@@ -18,7 +18,7 @@
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/portfolio/dera/</guid>
-      <description>This is an implementation of DERA system using Java (core) and Groovy (examples). Dynamic Event-driven Actors (DERA) is an approach aiming at providing adequate means for modeling and developing (distributed) event-based systems. DERA leverages the intrinsic loose coupling of event-driven communication styles to support various kinds of run-time evolution and adaptation (i.e., enabling run-time flexibility) while minimizing the non-deterministic nature of traditional event-based applications (for supporting formal analysis).</description>
+      <description>This is a Java reference implementation of dynamic event-driven actors runtime aiming at providing adequate abstraction levels and mechanisms for modelling and developing (distributed) event-based systems. DERA leverages the intrinsic loose coupling of event-driven communication styles to support various kinds of run-time evolution and adaptation (i.e., enabling run-time flexibility) while minimizing the non-deterministic nature of traditional event-based applications (i.e., supporting formal analysis).</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/portfolio/hyde-hyde/</guid>
-      <description>hyde-hyde is a responsive Hugo&amp;rsquo;s theme derived from @spf13&amp;rsquo;s Hyde. It was heavily restructured with modularised page layouts for easier maitenance and modification. The color tone is inspired by the cool Nate Finch&amp;rsquo;s blog. hyde-hyde incorporate some extra features such as code highlighting (using highlight.js), nice sidebar icons (using Font-Awesome 5), with Fira-Sans as main font and Roboto Mono as fixed width font, and another choice for commenting with GraphComment besides the built-in Disqus.</description>
+      <description>Hyde-hyde is a responsive Hugo theme inspired by @spf13&amp;rsquo;s Hyde and its variant Nate Finch&amp;rsquo;s blog. It was heavily restructured with modularised page layouts for easier maintenance and modification. Hyde-hyde offers awesome features such as nice colour tone, code highlighting, Font-Awesome 5&amp;rsquo;s sidebar icons), a cool portfolio page, more choices for commenting (e.g. GraphComment, Disqus).</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/portfolio/laramod/</guid>
-      <description>LaraMod is another modularisation effort to organising a Laravel based project. The idea stems from my struggle to organise a Laravel-based project such that I can work effectively and focus better on individual modules whilst keeping Laravel codebase intact as much as possible (this would be convenient for upgrading Laravel) and also keeping my codebase separate from the original Laravel. Besides, LaraMod embraces Twitter&amp;rsquo;s Bootstrap 3 and the beautiful Gentelella Admin.</description>
+      <description>LaraMod is another modularisation effort to systematically organising a Laravel based project. The idea stems from my struggle to structure a Laravel-based project so that I can work effectively on individual modules whilst keeping Laravel codebase intact as much as possible and also keeping the project&amp;rsquo;s codebase separate from Laravel.</description>
     </item>
     
   </channel>

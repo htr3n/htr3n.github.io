@@ -25,22 +25,30 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/" />
-<meta property="article:published_time" content="2018-04-23T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2018-04-23T00:00:00&#43;00:00"/>
+
+
+
+<meta property="article:published_time" content="2018-04-23T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-04-23T00:00:00&#43;00:00"/>
 
 
 
 
 
-    <!-- Web fonts -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
+
+
+
+
+
+
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
     <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -51,6 +59,7 @@
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png"></head>
+
     <body>
         
 <div class="sidebar text-center">
@@ -188,109 +197,157 @@
 <h5 id="npm">NPM</h5>
 
 <p>As mentioned above, <code>npm</code> is available wherever Node.js is installed. So, the only thing to do is to upgrade <code>npm</code></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install npm@latest -g
-<span style="color:#60a0b0;font-style:italic"># you can also use the alias &#39;i&#39;
-</span><span style="color:#60a0b0;font-style:italic"></span>npm i npm@latest -g</code></pre></div>
+
+<pre><code class="language-sh">npm install npm@latest -g
+# you can also use the alias 'i'
+npm i npm@latest -g
+</code></pre>
+
 <h5 id="yarn">Yarn</h5>
 
 <p>Yarn can be installed via <code>npm</code> but this method is <a href="https://yarnpkg.com/en/docs/install#install-via-npm">not recommended due to security reason</a>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install --g yarn</code></pre></div>
+
+<pre><code class="language-sh">npm install --g yarn
+</code></pre>
+
 <p>macOS users can install Yarn using <a href="https://brew.sh">Homebrew</a>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># installing
-</span><span style="color:#60a0b0;font-style:italic"></span>brew update <span style="color:#666">&amp;&amp;</span> brew install yarn
-<span style="color:#60a0b0;font-style:italic"># upgrading
-</span><span style="color:#60a0b0;font-style:italic"></span>brew upgrade yarn</code></pre></div>
+
+<pre><code class="language-sh"># installing
+brew update &amp;&amp; brew install yarn
+# upgrading
+brew upgrade yarn
+</code></pre>
+
 <p>There are also <a href="https://yarnpkg.com/en/docs/install">concrete instructions</a> for Linux and Windows users, too.</p>
 
 <h3 id="1-starting-new-projects">1. Starting New Projects</h3>
 
 <h5 id="npm-1">NPM</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm init <span style="color:#666">[</span>-f|--force<span style="color:#666">]</span> <span style="color:#666">[</span>-y|--yes<span style="color:#666">]</span></code></pre></div>
+
+<pre><code class="language-sh">npm init [-f|--force] [-y|--yes]
+</code></pre>
+
 <p><code>npm init</code> will ask you a number of questions and create an initial configuration file <code>package.json</code>. In case you do not want to answer the questions one by one, you can use any option <code>-f</code>, <code>--force</code>,  <code>-y</code> or <code>--yes</code> to skip all questions and get a default <code>package.json</code> in the current directory.</p>
 
 <h5 id="yarn-1">Yarn</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yarn init <span style="color:#666">[</span>-y | --yes<span style="color:#666">]</span> <span style="color:#666">[</span>-p | --private<span style="color:#666">]</span></code></pre></div>
+
+<pre><code class="language-sh">yarn init [-y | --yes] [-p | --private]
+</code></pre>
+
 <p>This command is totally similar to <code>npm init</code> and the outcome will be <code>package.json</code>. The only difference is <code>-p</code> or <code>--private</code> to set <code>&quot;private&quot;: true</code>.</p>
 
 <h3 id="2-getting-information">2. Getting Information</h3>
 
 <h5 id="npm-2">NPM</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># display a particular package&#39;s information
-</span><span style="color:#60a0b0;font-style:italic"></span>npm view eslint
+
+<pre><code class="language-sh"># display a particular package's information
+npm view eslint
 npm info eslint
-<span style="color:#60a0b0;font-style:italic"># search for a package/name
-</span><span style="color:#60a0b0;font-style:italic"></span>npm search eslint
-<span style="color:#60a0b0;font-style:italic"># list installed packages
-</span><span style="color:#60a0b0;font-style:italic"></span>npm ls</code></pre></div>
+# search for a package/name
+npm search eslint
+# list installed packages
+npm ls
+</code></pre>
+
 <h5 id="yarn-2">Yarn</h5>
 
 <p>Yarn developers deliberately do not add support for searching packages like <code>npm</code> as <a href="https://github.com/yarnpkg/yarn/issues/778#issuecomment-253146299">explained here</a>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># display a particular package&#39;s information
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn info eslint
-<span style="color:#60a0b0;font-style:italic"># list installed packages
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn list</code></pre></div>
+
+<pre><code class="language-sh"># display a particular package's information
+yarn info eslint
+# list installed packages
+yarn list
+</code></pre>
+
 <p>Yarn provodes a nice command for showing why a certain package was installed.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yarn why eslint</code></pre></div>
+
+<pre><code class="language-sh">yarn why eslint
+</code></pre>
+
 <h3 id="3-installing-dependencies">3. Installing Dependencies</h3>
 
 <p>Both <code>npm</code> and <code>yarn</code> provide several options to add dependencies ranging from registered packages, tarballs, to git repositories. Please note that, <code>npm</code> and <code>yarn</code> also support manipulating global package repositories, i.e. installed packages that are available to the whole working system instead of local projects. In most of the case, we can use the option <code>-g</code> for <code>npm</code> and the command <code>global</code> for <code>yarn</code>. Thus, in the following steps, we mainly concentrate on local repositories.</p>
 
 <h5 id="npm-3">NPM</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># install all dependencies defined in package.json
-</span><span style="color:#60a0b0;font-style:italic"></span>npm install
-<span style="color:#60a0b0;font-style:italic"># add a registered package and record it in &#39;dependencies&#39; 
-</span><span style="color:#60a0b0;font-style:italic"></span>npm install eslint
-<span style="color:#60a0b0;font-style:italic"># add an exact version
-</span><span style="color:#60a0b0;font-style:italic"></span>npm install eslint@3.0.0
-<span style="color:#60a0b0;font-style:italic"># add and record in &#39;devDependencies&#39;
-</span><span style="color:#60a0b0;font-style:italic"></span>npm install --save-dev eslint
-<span style="color:#60a0b0;font-style:italic"># add a git repos
-</span><span style="color:#60a0b0;font-style:italic"></span>npm install git@github.com:eslint/eslint.git</code></pre></div>
+
+<pre><code class="language-sh"># install all dependencies defined in package.json
+npm install
+# add a registered package and record it in 'dependencies' 
+npm install eslint
+# add an exact version
+npm install eslint@3.0.0
+# add and record in 'devDependencies'
+npm install --save-dev eslint
+# add a git repos
+npm install git@github.com:eslint/eslint.git
+</code></pre>
+
 <h5 id="yarn-3">Yarn</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># install all dependencies defined in package.json
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn install
-<span style="color:#60a0b0;font-style:italic"># add a registered package
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn add eslint
-<span style="color:#60a0b0;font-style:italic"># add an exact version
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn add eslint@3.0.0
-<span style="color:#60a0b0;font-style:italic"># add to dev dependencies
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn add --dev eslint
-<span style="color:#60a0b0;font-style:italic"># add a git repos
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn add git@github.com:eslint/eslint.git</code></pre></div>
+
+<pre><code class="language-sh"># install all dependencies defined in package.json
+yarn install
+# add a registered package
+yarn add eslint
+# add an exact version
+yarn add eslint@3.0.0
+# add to dev dependencies
+yarn add --dev eslint
+# add a git repos
+yarn add git@github.com:eslint/eslint.git
+</code></pre>
+
 <h3 id="3-upgrading-packages">3. Upgrading Packages</h3>
 
 <h5 id="npm-4">NPM</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># check outdated packages
-</span><span style="color:#60a0b0;font-style:italic"></span>npm outdated
-<span style="color:#60a0b0;font-style:italic"># upgrade all to the latest versions w.r.t version ranges in &#39;package.json&#39; (since 2.6.1 default to top level packages)
-</span><span style="color:#60a0b0;font-style:italic"></span>npm update
-<span style="color:#60a0b0;font-style:italic"># upgrade a specific package
-</span><span style="color:#60a0b0;font-style:italic"></span>npm update eslint</code></pre></div>
+
+<pre><code class="language-sh"># check outdated packages
+npm outdated
+# upgrade all to the latest versions w.r.t version ranges in 'package.json' (since 2.6.1 default to top level packages)
+npm update
+# upgrade a specific package
+npm update eslint
+</code></pre>
+
 <h5 id="yarn-4">Yarn</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#60a0b0;font-style:italic"># check outdated packages
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn outdated
-<span style="color:#60a0b0;font-style:italic"># upgrade all
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn upgrade
-<span style="color:#60a0b0;font-style:italic"># upgrade all and ignore version ranges in &#39;package.json&#39;
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn upgrade --latest
-<span style="color:#60a0b0;font-style:italic"># upgrade a specific package
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn upgrade eslint
-<span style="color:#60a0b0;font-style:italic"># upgrade packages match a pattern
-</span><span style="color:#60a0b0;font-style:italic"></span>yarn upgrade --pattern eslint</code></pre></div>
+
+<pre><code class="language-sh"># check outdated packages
+yarn outdated
+# upgrade all
+yarn upgrade
+# upgrade all and ignore version ranges in 'package.json'
+yarn upgrade --latest
+# upgrade a specific package
+yarn upgrade eslint
+# upgrade packages match a pattern
+yarn upgrade --pattern eslint
+</code></pre>
+
 <h3 id="4-removing-packages">4. Removing Packages</h3>
 
 <h5 id="npm-5">NPM</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm uninstall eslint</code></pre></div>
+
+<pre><code class="language-sh">npm uninstall eslint
+</code></pre>
+
 <h5 id="yarn-5">Yarn</h5>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yarn remove eslint</code></pre></div>
+
+<pre><code class="language-sh">yarn remove eslint
+</code></pre>
+
 <h3 id="5-running-commands">5. Running Commands</h3>
 
 <h5 id="npm-6">NPM</h5>
 
 <p><code>npm</code> allows users to define executable scripts in <code>package.json</code> under the section</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#4070a0">&#34;scripts&#34;</span> <span style="">:</span> { <span style="color:#062873;font-weight:bold">&#34;test&#34;</span> : <span style="color:#4070a0">&#34;...&#34;</span> }</code></pre></div>
+
+<pre><code class="language-json">&quot;scripts&quot; : { &quot;test&quot; : &quot;...&quot; }
+</code></pre>
+
 <p>then use <code>npm run script-name</code> to execute the predefined scripts.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm run test</code></pre></div>
+
+<pre><code class="language-sh">npm run test
+</code></pre>
+
 <p>Nevertheless, <code>npm</code> provides a short form for executing testing scripts as well.</p>
 
 <pre><code>npm test
@@ -299,8 +356,11 @@ npm info eslint
 <h5 id="yarn-6">Yarn</h5>
 
 <p>Similar to <code>npm</code>, <code>yarn</code> users can execute scripts with <code>yarn run script-name</code> and <code>yarn test</code> for testing.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yarn run start
-yarn test</code></pre></div>
+
+<pre><code class="language-sh">yarn run start
+yarn test
+</code></pre>
+
 <p>So far, we have walked through some basic steps of a typical development workflow, ranging from initialisation to inquiring and manipulating packages. Apart from that, both <code>npm</code> and <code>yarn</code> also go extra length with many more different functionality. Backing by very strong and active communities, your development projects will surely in safe hands when choosing either of them.</p>
   </div>
   <div>
@@ -343,7 +403,12 @@ yarn test</code></pre></div>
 </div>
 </article>
         </div>
-        <div class="container content">
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {

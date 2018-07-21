@@ -21,22 +21,30 @@
 <meta property="og:description" content="I have used Apache CXF 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either Apache Axis/Axis2 or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (&#43;) and many standards, especially JAX-WS and JAX-RS. Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://htr3n.github.io/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/" />
-<meta property="article:published_time" content="2018-06-15T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2018-06-26T00:00:00&#43;00:00"/>
+
+
+
+<meta property="article:published_time" content="2018-06-15T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-06-26T00:00:00&#43;00:00"/>
 
 
 
 
 
-    <!-- Web fonts -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
+
+
+
+
+
+
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
     <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -47,6 +55,7 @@
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png"></head>
+
     <body>
         
 <div class="sidebar text-center">
@@ -189,7 +198,10 @@
 <h2 id="from-version-2-2-to-2-7">&hellip; from version 2.2 to 2.7 &hellip;</h2>
 
 <p>From Apache CXF 2.2 to 2.6, not so many changes are relevant for the project as I mainly used <code>cxf-rt-frontend-jaxws</code>.  Another <a href="http://cxf.apache.org/docs/embedding-cxf-inside-spring.html">significant change since 2.4</a> causes errors for Spring / Jetty server regarding importing CXF&rsquo;s XML resources. Recall the aforementioned Spring bean configuration where CXF service implementations were loaded and published? There are a number of <code>&lt;import&gt;</code> directives. These directives advise Spring to load the corresponding CXF resources. Now we only need &ldquo;<em>one to rule them all</em>&rdquo;.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#062873;font-weight:bold">&lt;import</span> <span style="color:#4070a0">resource=</span><span style="color:#4070a0">&#34;classpath:META-INF/cxf/cxf.xml&#34;</span> <span style="color:#062873;font-weight:bold">/&gt;</span></code></pre></div>
+
+<pre><code class="language-xml">&lt;import resource=&quot;classpath:META-INF/cxf/cxf.xml&quot; /&gt;
+</code></pre>
+
 <p>To upgrade to version 2.6, I have to revise the project with respect to the merging of <code>cxf-common-utilites</code> into <code>cxf-api</code>, the removal of <code>cxf-rt-binding-http</code>, and the refactoring that impact <code>cxf-rt-core</code>.  Most of the other changes from 2.2 to 2.7 are for JAX-RS, which were used very little or none in my project.</p>
 
 <h2 id="and-to-version-3-0">&hellip; and to version 3.0+</h2>
@@ -263,7 +275,12 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 </div>
 </article>
         </div>
-        <div class="container content">
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {

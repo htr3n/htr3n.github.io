@@ -25,22 +25,30 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/" />
-<meta property="article:published_time" content="2009-01-15T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2017-01-19T10:40:00&#43;07:00"/>
+
+
+
+<meta property="article:published_time" content="2009-01-15T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-01-19T10:40:00&#43;07:00"/>
 
 
 
 
 
-    <!-- Web fonts -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
+
+
+
+
+
+
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
     <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -51,6 +59,7 @@
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png"></head>
+
     <body>
         
 <div class="sidebar text-center">
@@ -172,7 +181,10 @@
     <p>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như <code>[1, 2]</code> hoặc dạng chữ như <code>[Lamport94]</code>.</p>
 
 <p></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#007020;font-weight:bold">\LaTeX</span><span style="color:#007020">{}</span> <span style="color:#007020;font-weight:bold">\cite</span><span style="color:#007020">{</span>latex<span style="color:#007020">}</span> is a document preparation system for the <span style="color:#007020;font-weight:bold">\TeX</span><span style="color:#007020">{}</span> <span style="color:#007020;font-weight:bold">\cite</span><span style="color:#007020">{</span>tex<span style="color:#007020">}</span> typesetting program.</code></pre></div>
+
+<pre><code class="language-latex">\LaTeX{} \cite{latex} is a document preparation system for the \TeX{} \cite{tex} typesetting program.
+</code></pre>
+
 <p>will produce</p>
 
 <pre><code>LaTeX [1] is a document preparation system for the TeX [2] typesetting program.
@@ -183,9 +195,15 @@
 <p>Mặc định trong trường hợp nhiều trích dẫn, LaTeX không xếp thứ tự và không thu gọn cho dễ nhìn. Nếu muốn thu gọn, ví dụ như <code>[4–6, 22, 27, 29]</code> thì có thể dùng <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/natbib.html">natbib</a> hoặc <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/cite">cite</a>.</p>
 
 <p>Hãy đặt những dòng sau ở phần đầu file <code>.tex</code>, trước <code>\begin{document}</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#007020;font-weight:bold">\usepackage</span><span style="color:#007020">{</span>cite<span style="color:#007020">}</span></code></pre></div>
+
+<pre><code class="language-latex">\usepackage{cite}
+</code></pre>
+
 <p>hoặc</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#007020;font-weight:bold">\usepackage</span><span style="color:#4070a0">[sort&amp;compress]</span><span style="color:#007020">{</span>natbib<span style="color:#007020">}</span></code></pre></div>
+
+<pre><code class="language-latex">\usepackage[sort&amp;compress]{natbib}
+</code></pre>
+
 <p>Sau đó, chạy latex/pdflatex và bibtex như bình thường. Dạng trích dẫn trong bài sẽ được sắp xếp và nhóm lại hợp lý và dễ nhìn hơn. Gói <code>natbib</code> có một đặc điểm là tương thích tốt với gói <code>hyperref</code> (dùng để tạo các liên kết trong tài liệu pdf). Do đó, nếu cần dùng <a href="http://tug.ctan.org/pkg/hyperref">hyperref</a> thì bạn nên sử dụng <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/natbib.html">natbib</a>.</p>
   </div>
   <div>
@@ -228,7 +246,12 @@
 </div>
 </article>
         </div>
-        <div class="container content">
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {

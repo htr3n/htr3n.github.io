@@ -9,7 +9,7 @@ body {
   padding: 0; }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "IBM Plex Sans", "Segoe UI", "Roboto", "Ubuntu", Helvetica, Arial, sans-serif;
+  font-family: system, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 17px;
   line-height: 1.5; }
   @media (min-width: 38em) {
@@ -180,9 +180,126 @@ footer {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536; }
 
+.portfolio__content section {
+  margin-bottom: 1.765rem; }
+
+.portfolio__featured-project {
+  margin: 0 0 1.765rem; }
+  .portfolio__featured-project img {
+    margin: 0 0 1rem;
+    box-shadow: 1px 1px #eee; }
+
+.project__title {
+  margin-top: 1.765rem;
+  font-size: 1.85rem; }
+
+.project__subtitle-big, .project__subtitle-small {
+  font-style: italic;
+  color: #778492;
+  display: block;
+  margin-top: 0.5rem;
+  margin: 0 0 1rem; }
+
+.project__subtitle-big {
+  font-size: 1.5rem; }
+
+.project__subtitle-small {
+  font-size: 1rem; }
+
+.project__featured-image {
+  position: relative; }
+  .project__featured-image .ribbon {
+    position: absolute;
+    top: -9px;
+    right: -8px;
+    width: 110px;
+    height: 110px;
+    overflow: hidden; }
+    .project__featured-image .ribbon .text {
+      position: relative;
+      left: -8px;
+      top: 18px;
+      width: 158px;
+      padding: 10px;
+      letter-spacing: 2px;
+      font-size: 1.133rem;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #479fc8;
+      transform: rotate(45deg) translate3d(0, 0, 0); }
+      .project__featured-image .ribbon .text:before {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #276582;
+        bottom: -5px;
+        content: "";
+        position: absolute;
+        left: 0; }
+      .project__featured-image .ribbon .text:after {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #276582;
+        bottom: -5px;
+        content: "";
+        position: absolute;
+        right: 0; }
+
+.project-image:hover {
+  opacity: 0.8; }
+
+@media (max-width: 767px) {
+  .project-image {
+    margin-bottom: 0.882rem; } }
+
+.project__summary {
+  margin-bottom: 1.765rem;
+  text-align: left; }
+
+.divider {
+  margin-bottom: 3.5rem; }
+
+.row-space {
+  margin-bottom: 1rem; }
+
+.col-xs-12, .col-sm-4, .col-md-4, .col-sm-8, .col-md-8 {
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative; }
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px; }
+
+.col-xs-12 {
+  width: 100%; }
+
+@media (min-width: 992px) {
+  .col-md-4 {
+    float: left;
+    width: 33.33333333%; }
+  .col-md-8 {
+    float: left;
+    width: 66.66666667%; }
+  .portfolio-container {
+    width: 1360px; } }
+
+@media (min-width: 768px) {
+  .col-sm-8 {
+    width: 66.66666667%; }
+  .project__title {
+    margin-top: .2rem; } }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
 @media (min-width: 48em) {
   html {
-    text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
     font-size: 16px; }
   .sidebar {
     bottom: 0;
@@ -372,7 +489,7 @@ pre {
     white-space: pre-wrap; }
 
 code {
-  font-family: "Source Code Pro", "Roboto Mono", Inconsolata, Cousine, "Ubuntu Mono", "Fira Code", Consolas, "Courier New", monospace;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Roboto Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
   border-radius: 3px;
   padding: 2px 4px;
   white-space: pre-wrap;
@@ -493,7 +610,7 @@ kbd {
   border: 1px solid #eee;
   font-size: 0.8em;
   line-height: 1.4;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "IBM Plex Sans", "Segoe UI", "Roboto", "Ubuntu", Helvetica, Arial, sans-serif;
+  font-family: system, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: #fafbfc;
   color: #313131;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;

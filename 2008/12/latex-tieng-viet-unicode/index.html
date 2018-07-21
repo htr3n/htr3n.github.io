@@ -21,22 +21,30 @@
 <meta property="og:description" content="LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS). Một khó khăn đối với cộng đồng người dùng LaTeX ở Việt Nam là sự hỗ trợ soạn tài liệu bằng tiếng Việt. Hiện tại đã có rất nhiều giải pháp, trong đó, đáng chú ý là tác giả Nguyễn Hữu Điển ở viện Toán (HN) với các gói hỗ trợ soạn LaTeX tiếng Việt với font ABC trên PcTeX, dự án vnTeX hỗ trợ tiếng Việt cho LaTeX và TeX thông qua các gói macro và phông chữ, dự án Omega định nghĩa chuẩn TeX Unicode dựa trên sự hỗ trợ chuẩn ISO-10646 trên (La)TeX." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://htr3n.github.io/2008/12/latex-tieng-viet-unicode/" />
-<meta property="article:published_time" content="2008-12-25T00:00:00&#43;00:00"/><meta property="article:modified_time" content="2017-01-19T10:40:00&#43;07:00"/>
+
+
+
+<meta property="article:published_time" content="2008-12-25T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-01-19T10:40:00&#43;07:00"/>
 
 
 
 
 
-    <!-- Web fonts -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700|Source+Code+Pro:400,400i" rel="stylesheet">
+
+
+
+
+
+
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
     <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -47,6 +55,7 @@
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png"></head>
+
     <body>
         
 <div class="sidebar text-center">
@@ -208,43 +217,61 @@
 <h4 id="4-1-soạn-tài-liệu">4.1 Soạn tài liệu</h4>
 
 <p>Dùng bất kì một trình soạn thảo nào ở trên, soạn một file <code>tv.tex</code> như sau.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#007020;font-weight:bold">\documentclass</span><span style="color:#007020">{</span>article<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\usepackage</span><span style="color:#4070a0">[utf8]</span><span style="color:#007020">{</span>inputenc<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\usepackage</span><span style="color:#4070a0">[vietnam,english]</span><span style="color:#007020">{</span>babel<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\title</span><span style="color:#007020">{</span>Dùng tiếng Việt (UTF-8) trong LaTeX<span style="color:#007020">}</span>
 
-<span style="color:#007020;font-weight:bold">\begin</span><span style="color:#007020">{</span>document<span style="color:#007020">}</span> <span style="color:#007020;font-weight:bold">\selectlanguage</span><span style="color:#007020">{</span>vietnam<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\maketitle</span> <span style="color:#007020;font-weight:bold">\section</span><span style="color:#007020">{</span>Tiêu đề<span style="color:#007020">}</span>
+<pre><code class="language-tex">\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnam,english]{babel}
+\title{Dùng tiếng Việt (UTF-8) trong LaTeX}
 
-<span style="color:#007020;font-weight:bold">\subsection</span><span style="color:#007020">{</span>Tiểu tiêu đề<span style="color:#007020">}</span>
+\begin{document} \selectlanguage{vietnam}
+\maketitle \section{Tiêu đề}
+
+\subsection{Tiểu tiêu đề}
 Một vài đoạn văn bản
-<span style="color:#007020;font-weight:bold">\end</span><span style="color:#007020">{</span>document<span style="color:#007020">}</span></code></pre></div>
-<p>Nội dung này có thể xem như là khung sườn cho các tài liệu LaTeX tiếng Việt của bạn, chú ý những phần sau:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#007020;font-weight:bold">\usepackage</span><span style="color:#4070a0">[utf8]</span><span style="color:#007020">{</span>inputenc<span style="color:#007020">}</span> 
-<span style="color:#007020;font-weight:bold">\usepackage</span><span style="color:#4070a0">[vietnam,english]</span><span style="color:#007020">{</span>babel<span style="color:#007020">}</span></code></pre></div>
-<p>và</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#007020;font-weight:bold">\selectlanguage</span><span style="color:#007020">{</span>vietnam<span style="color:#007020">}</span></code></pre></div>
-<p>Như vậy, một tài liệu LaTeX tiếng Việt có sườn (template) đơn giản như sau:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#007020;font-weight:bold">\documentclass</span><span style="color:#007020">{</span>...<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\usepackage</span><span style="color:#4070a0">[utf8]</span><span style="color:#007020">{</span>inputenc<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\usepackage</span><span style="color:#4070a0">[vietnam,english]</span><span style="color:#007020">{</span>babel<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\title</span><span style="color:#007020">{</span>...<span style="color:#007020">}</span>
+\end{document}
+</code></pre>
 
-<span style="color:#007020;font-weight:bold">\begin</span><span style="color:#007020">{</span>document<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\selectlanguage</span><span style="color:#007020">{</span>vietnam<span style="color:#007020">}</span>
-<span style="color:#007020;font-weight:bold">\maketitle</span>
+<p>Nội dung này có thể xem như là khung sườn cho các tài liệu LaTeX tiếng Việt của bạn, chú ý những phần sau:</p>
+
+<pre><code class="language-tex">\usepackage[utf8]{inputenc} 
+\usepackage[vietnam,english]{babel}
+</code></pre>
+
+<p>và</p>
+
+<pre><code class="language-tex">\selectlanguage{vietnam}
+</code></pre>
+
+<p>Như vậy, một tài liệu LaTeX tiếng Việt có sườn (template) đơn giản như sau:</p>
+
+<pre><code class="language-tex">\documentclass{...}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnam,english]{babel}
+\title{...}
+
+\begin{document}
+\selectlanguage{vietnam}
+\maketitle
 
 ...
 
-<span style="color:#007020;font-weight:bold">\end</span><span style="color:#007020">{</span>document<span style="color:#007020">}</span></code></pre></div>
+\end{document}
+</code></pre>
+
 <h4 id="4-2-biên-dịch-và-tạo-tài-liệu-ps-hoặc-pdf">4.2 Biên dịch và tạo tài liệu PS hoặc PDF</h4>
 
 <p>Dùng các trình biên dịch như <code>latex</code> hoặc <code>pdflatex</code> để biên dịch tài liệu <code>tv.tex</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">latex tv.tex
+
+<pre><code class="language-sh">latex tv.tex
 dvips tv.dvi
-ps2pdf tv.ps</code></pre></div>
+ps2pdf tv.ps
+</code></pre>
+
 <p>hoặc</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pdflatex tv.tex</code></pre></div>
+
+<pre><code class="language-sh">pdflatex tv.tex
+</code></pre>
+
 <p>Kết quả tài liệu tiếng Việt sau khi biên dịch.</p>
 
 <p><img src="latex-tv.jpg" alt="Kết quả văn bản tiếng Việt" /></p>
@@ -276,7 +303,12 @@ ps2pdf tv.ps</code></pre></div>
 </div>
 </article>
         </div>
-        <div class="container content">
+        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {
