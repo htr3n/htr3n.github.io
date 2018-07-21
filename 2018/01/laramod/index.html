@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
     <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -185,20 +185,14 @@
 </code></pre>
 
 <p>Such a structure can be very useful for different teams/people working independently. In LaraMod, there is an <code>artisan</code> command <code>gen:module</code> provided in <a href="https://github.com/htr3n/laramod/blob/master/app/Console/Commands/GenModuleCommand.php"><code>App\Console\Commands\GenModuleCommand</code></a> that can quickly create a submodule following that structure.</p>
-
-<pre><code class="language-sh">$ php artisan gen:module Authentication
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ php artisan gen:module Authentication</code></pre></div>
 <h3 id="how-to-proceed">How to Proceed</h3>
 
 <p>An easy approach is to rely on Laravel&rsquo;s <a href="https://laravel.com/docs/providers"><code>ServiceProvider</code></a> to load the submodules and register the necessary components of the submodules.</p>
-
-<pre><code class="language-php">class XYZServiceProvider extends \Illuminate\Support\ServiceProvider {
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">class XYZServiceProvider extends \Illuminate\Support\ServiceProvider {
   	public function boot() {}
 	public function register() {}
-}
-</code></pre>
-
+}</code></pre></div>
 <p>A <code>ServiceProvider</code> contains two important methods <code>register()</code> and <code>boot()</code>. In this case, LaraMod mainly uses the method <code>boot()</code> to load the corresponding submodule. LaraMod also adopts a simple, conventional method for defining a submodule. That is, all submodules will be subfolders of the folder <code>/modules</code> and each module follows the conventional structure as mentioned above.</p>
 
 <h4 id="automatically-loading-submodules">Automatically Loading Submodules</h4>
@@ -206,41 +200,37 @@
 <h5 id="loading-a-submodule">Loading a Submodule</h5>
 
 <p>First, we create a method <code>loadModule()</code> to load the resources such as views, i18n, database migration, and routes of a submodule using the provided methods <code>loadViewsFrom()</code>, <code>loadTranslationsFrom()</code>, <code>loadMigrationsFrom()</code>, <code>loadRoutesFrom()</code>, respectively. As models and controllers are essential PHP classes, they can be loaded using PSR-4 autoloaders as shown in the next parts.</p>
-
-<pre><code class="language-php">protected function loadModule($module)
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">protected function loadModule($module)
 {
     if ($module) {
 
-        // load the submodule's routes
-        if (file_exists(__DIR__ . '/' . $module . '/routes.php')) {
-            $this-&gt;loadRoutesFrom(__DIR__ . '/' . $module . '/routes.php');
+        // load the submodule&#39;s routes
+        if (file_exists(__DIR__ . &#39;/&#39; . $module . &#39;/routes.php&#39;)) {
+            $this-&gt;loadRoutesFrom(__DIR__ . &#39;/&#39; . $module . &#39;/routes.php&#39;);
         }
 
-        // load the submodule's views
-        if (is_dir(__DIR__ . '/' . $module . '/Views')) {
-            $this-&gt;loadViewsFrom(__DIR__ . '/' . $module . '/Views', $module);
+        // load the submodule&#39;s views
+        if (is_dir(__DIR__ . &#39;/&#39; . $module . &#39;/Views&#39;)) {
+            $this-&gt;loadViewsFrom(__DIR__ . &#39;/&#39; . $module . &#39;/Views&#39;, $module);
         }
 
-        // load the submodule's translation
-        if (is_dir(__DIR__ . '/' . $module . '/Lang')) {
-            $this-&gt;loadTranslationsFrom(__DIR__ . '/' . $module . '/Lang', $module);
+        // load the submodule&#39;s translation
+        if (is_dir(__DIR__ . &#39;/&#39; . $module . &#39;/Lang&#39;)) {
+            $this-&gt;loadTranslationsFrom(__DIR__ . &#39;/&#39; . $module . &#39;/Lang&#39;, $module);
         }
 
-        // load the submodule's database migrations
-        if (is_dir(__DIR__ . '/' . $module . '/Migrations')) {
-            $this-&gt;loadMigrationsFrom(__DIR__ . '/' . $module . '/Migrations', $module);
+        // load the submodule&#39;s database migrations
+        if (is_dir(__DIR__ . &#39;/&#39; . $module . &#39;/Migrations&#39;)) {
+            $this-&gt;loadMigrationsFrom(__DIR__ . &#39;/&#39; . $module . &#39;/Migrations&#39;, $module);
         }
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <h5 id="detecting-and-loading-submodules">Detecting and Loading Submodules</h5>
 
 <p>Then we can walk through the folder <code>module</code> and load all submodules using the method <code>loadModule()</code>.</p>
-
-<pre><code class="language-php">protected function findAndLoadModules()
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">protected function findAndLoadModules()
 {
-    $modules = config(&quot;module.modules&quot;);
+    $modules = config(&#34;module.modules&#34;);
 
     if (!$modules) {
         $modules = $this-&gt;getModuleNamesFromCurrentPath();
@@ -251,26 +241,21 @@
             $this-&gt;loadModule($module);
         });
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Note that in this conventional approach, <code>findAndLoadModules()</code> will look for submodule configurations either (1) explicitly in the file <code>/config/module.php</code> with the following syntax or (2) implicitly as subfolders of <code>/modules</code> (in case <code>/config/module.php</code> does not exist).</p>
-
-<pre><code class="language-php">&lt;?php
-return  [
-    'modules' =&gt; [
-        'Core',
-        'Login',
-        'Dashboard',
-        'Home',
-        'User',
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#007020">&lt;?php</span>
+<span style="color:#007020;font-weight:bold">return</span>  [
+    <span style="color:#4070a0">&#39;modules&#39;</span> <span style="color:#666">=&gt;</span> [
+        <span style="color:#4070a0">&#39;Core&#39;</span>,
+        <span style="color:#4070a0">&#39;Login&#39;</span>,
+        <span style="color:#4070a0">&#39;Dashboard&#39;</span>,
+        <span style="color:#4070a0">&#39;Home&#39;</span>,
+        <span style="color:#4070a0">&#39;User&#39;</span>,
     ]
 ];
-</code></pre>
-
+</code></pre></div>
 <p>Finally we invoke <code>findAndLoadModules()</code> within <code>boot()</code>.</p>
-
-<pre><code class="language-php">namespace Laramod;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">namespace Laramod;
 
 class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider {
   	public function boot() 
@@ -280,19 +265,14 @@ class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider {
 	public function register() 
 	{
 	}
-}
-</code></pre>
-
+}</code></pre></div>
 <h4 id="registering-the-service-provider">Registering the Service Provider</h4>
 
 <p>The <code>ModulesServiceProvider</code> must be registered in <code>/config/app.php</code> in order to be loaded by Laravel.</p>
-
-<pre><code class="language-php">'providers' =&gt; [
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&#39;providers&#39; =&gt; [
 	...
 	\Laramod\ModulesServiceProvider::class,
-]
-</code></pre>
-
+]</code></pre></div>
 <h4 id="autoloading-submodules-classes">Autoloading Submodules&rsquo; Classes</h4>
 
 <p>Apart from resources like views, i18n, database migration loaded in the previous steps, a submodule can also contain other PHP classes such as database ORM models and controllers.</p>
@@ -300,27 +280,21 @@ class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider {
 <p>One natural approach would be to leverage the <a href="http://www.php-fig.org/psr/psr-4">PSR-4 autoloader</a> autoloading supported by Laravel 5.5. This approach also nicely fits when we want to define separate namespaces for each submodule and especially submodule&rsquo;s components.</p>
 
 <p>For this, we can define the submodule&rsquo;s namespace and manually specify the submodule&rsquo;s classpaths to be loaded in <code>composer.json</code> as following.</p>
-
-<pre><code class="language-json">{
-	&quot;psr-4&quot;: {
-      &quot;App\\&quot;: &quot;app/&quot;,
-      &quot;Core\\&quot;: &quot;modules/Core/&quot;,
-      &quot;Dashboard\\&quot;: &quot;modules/Dashboard/&quot;,
-      &quot;Login\\&quot;: &quot;modules/Login/&quot;,
-      &quot;User\\&quot;: &quot;modules/User/&quot;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+	<span style="color:#062873;font-weight:bold">&#34;psr-4&#34;</span>: {
+      <span style="color:#062873;font-weight:bold">&#34;App\\&#34;</span>: <span style="color:#4070a0">&#34;app/&#34;</span>,
+      <span style="color:#062873;font-weight:bold">&#34;Core\\&#34;</span>: <span style="color:#4070a0">&#34;modules/Core/&#34;</span>,
+      <span style="color:#062873;font-weight:bold">&#34;Dashboard\\&#34;</span>: <span style="color:#4070a0">&#34;modules/Dashboard/&#34;</span>,
+      <span style="color:#062873;font-weight:bold">&#34;Login\\&#34;</span>: <span style="color:#4070a0">&#34;modules/Login/&#34;</span>,
+      <span style="color:#062873;font-weight:bold">&#34;User\\&#34;</span>: <span style="color:#4070a0">&#34;modules/User/&#34;</span>
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>Another technique for autoloading classes in Laravel 5 is to dynamically add PSR4 classpaths in <code>ModulesServiceProvider.php</code>.</p>
-
-<pre><code class="language-php">$loader = require base_path() . '/vendor/autoload.php';
-$loader-&gt;setPsr4(&quot;Core\\&quot;, __DIR__ . &quot;./Core/&quot;);
-$loader-&gt;setPsr4(&quot;Dashboard\\&quot;, __DIR__ . &quot;./Dashboard/&quot;);
-$loader-&gt;setPsr4(&quot;Login\\&quot;, __DIR__ . &quot;./Login/&quot;);
-$loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$loader = require base_path() . &#39;/vendor/autoload.php&#39;;
+$loader-&gt;setPsr4(&#34;Core\\&#34;, __DIR__ . &#34;./Core/&#34;);
+$loader-&gt;setPsr4(&#34;Dashboard\\&#34;, __DIR__ . &#34;./Dashboard/&#34;);
+$loader-&gt;setPsr4(&#34;Login\\&#34;, __DIR__ . &#34;./Login/&#34;);
+$loader-&gt;setPsr4(&#34;User\\&#34;, __DIR__ . &#34;./User/&#34;);</code></pre></div>
 <p>One problem, though, is that LaraMod must be able to detect or guess the namespace classpaths. To do this, we can either use the configuration file <code>config/module.php</code> or, even nicer and smarter, scan the submodule&rsquo;s folders to extract the necessary information. However, loading time then will be really significant when the project grows because Laravel loaders willl do the scanning and loading whenever any classes are referenced.</p>
 
 <h3 id="accessing-submodule-resources">Accessing Submodule Resources</h3>
@@ -340,13 +314,13 @@ $loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
             <a href="/2018/01/first-experience-with-hugo/">                
                 <span class="next__heading">NEXT</span>
                 <span>First experience with Hugo</span>
-                <i class="fas fa-chevron-right"></i>
             </a>
+            <i class="fas fa-chevron-right"></i>
         </li>
         <li class="post__nav--previous">
+            <i class="fas fa-chevron-left"></i>
             <a href="/2017/09/apache-httpd-php-macos/">                
                 <span class="previous__heading">PREVIOUS</span>
-                <i class="fas fa-chevron-left"></i>
                 <span class="previous__title">Apache httpd 2.4 and PHP 7 in macOS</span>
             </a>
         </li>
@@ -374,12 +348,7 @@ $loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
 </div>
 </article>
         </div>
-        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
+        <div class="container content">
 <div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {

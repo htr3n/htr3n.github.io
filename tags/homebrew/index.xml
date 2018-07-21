@@ -7,21 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Bootstrapping my macOS workspace - Part 2</title>
-      <link>https://htr3n.github.io/2018/07/bootstrapping-macos-2/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/2018/07/bootstrapping-macos-2/</guid>
-      <description>&lt;p&gt;Following &lt;a href=&#34;https://htr3n.github.io/2018/06/bootstrapping-macos-2/&#34;&gt;part 1&lt;/a&gt; on tweaking macOS to prepare for a workspace, this part will focus more on some handy tools and configurations that I often used for software development.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Apache httpd 2.4 and PHP 7 in macOS</title>

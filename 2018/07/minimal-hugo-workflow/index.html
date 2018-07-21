@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
     <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -219,27 +219,18 @@
 <p>This approach, also called <em>in-line pipeline</em>, only works since Hugo <a href="https://gohugo.io/news/0.43-relnotes">v0.43/extended</a> and later that supports processing SASS/CSS with consideration for <a href="https://en.wikipedia.org/wiki/Minification_%28programming%29">minification</a>, post-processing, and <a href="https://www.keycdn.com/support/what-is-cache-busting">cache busting</a>.</p>
 
 <p>In Hugo templates, I can refer to SCSS files via <a href="https://gohugo.io/content-management/page-resources"><em>page resources</em></a>.</p>
-
-<pre><code class="language-html">{{ $styles := resources.Get &quot;scss/hyde-hyde.scss&quot; | toCSS | postCSS (dict &quot;use&quot; &quot;autoprefixer&quot;) | minify | fingerprint }}
-&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ $styles.Permalink }}&quot; integrity=&quot;{{ $styles.Data.Integrity }}&quot;&gt;
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $styles := resources.Get &#34;scss/hyde-hyde.scss&#34; | toCSS | postCSS (dict &#34;use&#34; &#34;autoprefixer&#34;) | minify | fingerprint }}
+&lt;<span style="color:#062873;font-weight:bold">link</span> <span style="color:#4070a0">rel</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;stylesheet&#34;</span> <span style="color:#4070a0">href</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;{{ $styles.Permalink }}&#34;</span> <span style="color:#4070a0">integrity</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;{{ $styles.Data.Integrity }}&#34;</span>&gt;</code></pre></div>
 <p>Note that Hugo will look for <code>scss/hyde-hyde.scss</code> in the project&rsquo;s root and then the theme&rsquo;s root, in that order.</p>
 
 <p>Hugo retrieves the resource <code>hyde-hyde.scss</code>  using <code>Resources.Get</code>, then <a href="https://gohugo.io/hugo-pipes/scss-sass">transforms it</a> into <code>hyde-hyde.css</code> and passes it to <a href="https://gohugo.io/hugo-pipes/postcss">PostCSS</a> for <a href="https://github.com/postcss/autoprefixer">autoprefixing</a>. After that, it <a href="https://gohugo.io/hugo-pipes/minification/">minifies</a> the CSS and generates a <em>fingerprinted version</em>.  The second line simply links the resulting <code>hyde-hyde.css</code> with HTML via the variable <code>$style</code>. The result in the generated HTML will be like this (note that the code can be different to yours).</p>
-
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;http://localhost:1313/scss/hyde-hyde.4ff234ab46aa5302c7e0d2f35b9c76a8bba9fe42a9e8a6c7c47df7f85b8de122.css&quot; integrity=&quot;sha256-T/I0q0aqUwLH4NLzW5x2qLup/kKp6KbHxH33&amp;#43;FuN4SI=&quot;&gt;
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#062873;font-weight:bold">link</span> <span style="color:#4070a0">rel</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;stylesheet&#34;</span> <span style="color:#4070a0">href</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://localhost:1313/scss/hyde-hyde.4ff234ab46aa5302c7e0d2f35b9c76a8bba9fe42a9e8a6c7c47df7f85b8de122.css&#34;</span> <span style="color:#4070a0">integrity</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;sha256-T/I0q0aqUwLH4NLzW5x2qLup/kKp6KbHxH33&amp;#43;FuN4SI=&#34;</span>&gt;</code></pre></div>
 <p>The fingerprint code is for <em>cache busting</em> and only changed when the source file is altered.</p>
 
 <p>The biggest advantage of <em>in-line pipeline</em> is that Hugo already provides a certain level of built-in support. Hugo&rsquo;s <em>live reload</em>, i.e. serving the resulting sites live and automatically refreshing whenever there are changes of contents or themes, also works superbly for this case.</p>
 
 <p>For many scenarios, we can use this approach instead of configuring complex tools like Gulp, Grunt, or Webpack. To be precise, I do need to install extra tools, which are <code>postcss-cli</code> and <code>autoprefixer</code>, for the aforementioned example to work and Hugo 0.43 extended version <a href="https://github.com/Homebrew/homebrew-core/issues/29898">partially depends on Cgo/libc++</a>.</p>
-
-<pre><code class="language-sh">$ npm i -g postcss-cli autoprefixer
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -g postcss-cli autoprefixer</code></pre></div>
 <p>Another downside to consider is that, in this way, external tools like <code>postcss</code> will slow down Hugo.</p>
 
 <blockquote >
@@ -260,10 +251,7 @@
 <li><em>Autoprefixing</em>: it helps adding vendor-specific prefixes to CSS rules. We can use <a href="https://www.npmjs.com/package/gulp-autoprefixer"><em>gulp-autoprefixer</em></a> but be careful to combine with <em>gulp-sourcemaps</em> as it is <a href="https://github.com/gulp-sourcemaps/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support#css">currently broken</a>. I decide to use <a href="https://www.npmjs.org/package/gulp-postcss"><em>gulp-postcss</em></a> along with <a href="https://www.npmjs.com/package/autoprefixer"><em>postcss-autoprefixer</em></a> instead.</li>
 <li><em>Minification</em>: <a href="https://github.com/postcss/postcss">PostCSS</a> provides many plugins for CSS post-processing alongside <em>autoprefixer</em>.  I choose <a href="http://cssnano.co"><em>cssnano</em></a> to minify the CSSs.</li>
 </ul>
-
-<pre><code class="language-sh">$ npm i -D gulp@next gulp-sass gulp-postcss autoprefixer gulp-sourcemaps cssnano
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D gulp@next gulp-sass gulp-postcss autoprefixer gulp-sourcemaps cssnano</code></pre></div>
 <p>In the same way, you can add more components to the list. Here I rather keep it short and simple for illustrative purpose. Now I start configuring Gulp to use them in my project.</p>
 
 <script src="//gist.github.com/htr3n/eb8dde0659b066367d438879d6650e54.js"></script>
@@ -271,44 +259,35 @@
 <p>Note that the syntax is Gulp v4.0.</p>
 
 <p>Now I just simply invoke Gulp to trigger its chaining pipeline.</p>
-
-<pre><code class="language-sh">$ gulp
-[10:23:40] Using gulpfile ~/working/dev/htr3n-blog/gulpfile.js
-[10:23:40] Starting 'default'...
-[10:23:40] Starting 'watch'...
-[10:23:40] Starting 'scss'...
-[10:23:40] Finished 'scss' after 58 ms
-[10:23:40] Starting '&lt;anonymous&gt;'...
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gulp
+<span style="color:#666">[</span><span style="color:#40a070">10</span>:23:40<span style="color:#666">]</span> Using gulpfile ~/working/dev/htr3n-blog/gulpfile.js
+<span style="color:#666">[</span><span style="color:#40a070">10</span>:23:40<span style="color:#666">]</span> Starting <span style="color:#4070a0">&#39;default&#39;</span>...
+<span style="color:#666">[</span><span style="color:#40a070">10</span>:23:40<span style="color:#666">]</span> Starting <span style="color:#4070a0">&#39;watch&#39;</span>...
+<span style="color:#666">[</span><span style="color:#40a070">10</span>:23:40<span style="color:#666">]</span> Starting <span style="color:#4070a0">&#39;scss&#39;</span>...
+<span style="color:#666">[</span><span style="color:#40a070">10</span>:23:40<span style="color:#666">]</span> Finished <span style="color:#4070a0">&#39;scss&#39;</span> after <span style="color:#40a070">58</span> ms
+<span style="color:#666">[</span><span style="color:#40a070">10</span>:23:40<span style="color:#666">]</span> Starting <span style="color:#4070a0">&#39;&lt;anonymous&gt;&#39;</span>...</code></pre></div>
 <p>Gulp will transform <code>hyde-hyde.scss</code> into <code>hyde-hyde.css</code>  which is autoprefixed and saved in <code>static/css</code> along with its sourcemaps. In the Hugo templates, I refer to <code>hyde-hyde.css</code> normally.</p>
-
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ .Site.BaseURL }}/css/hyde-hyde.css&quot;&gt;
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#062873;font-weight:bold">link</span> <span style="color:#4070a0">rel</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;stylesheet&#34;</span> <span style="color:#4070a0">href</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;{{ .Site.BaseURL }}/css/hyde-hyde.css&#34;</span>&gt;</code></pre></div>
 <p>I can combine <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglobs-opts-fn">Gulp.watch()</a> with Hugo&rsquo;s <em>live reload</em> feature so that both will continuously monitors for changes and serve them instantly. This way, whenever I made any changes in a post in Typora, a SCSS/CSS file, or Go+HTML layout, I will instantly see the generated HTMLs.</p>
-
-<pre><code class="language-sh">$ hugo server -w --buildDrafts --cleanDestinationDir
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ hugo server -w --buildDrafts --cleanDestinationDir
                    | EN
 +------------------+-----+
-  Pages            | 320
-  Paginator pages  |   0
-  Non-page files   |  14
-  Static files     |  14
-  Processed images |   0
-  Aliases          |   0
-  Sitemaps         |   1
-  Cleaned          |   0
+  Pages            | <span style="color:#40a070">320</span>
+  Paginator pages  |   <span style="color:#40a070">0</span>
+  Non-page files   |  <span style="color:#40a070">14</span>
+  Static files     |  <span style="color:#40a070">14</span>
+  Processed images |   <span style="color:#40a070">0</span>
+  Aliases          |   <span style="color:#40a070">0</span>
+  Sitemaps         |   <span style="color:#40a070">1</span>
+  Cleaned          |   <span style="color:#40a070">0</span>
 
-Total in 193 ms
-Watching for changes in /Users/htr3n/working/dev/htr3n-blog/{assets,content,data,layouts,static,themes}
-Watching for config changes in /Users/htr3n/working/dev/htr3n-blog/config.toml
+Total in <span style="color:#40a070">193</span> ms
+Watching <span style="color:#007020;font-weight:bold">for</span> changes in /Users/htr3n/working/dev/htr3n-blog/<span style="color:#666">{</span>assets,content,data,layouts,static,themes<span style="color:#666">}</span>
+Watching <span style="color:#007020;font-weight:bold">for</span> config changes in /Users/htr3n/working/dev/htr3n-blog/config.toml
 Serving pages from memory
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
-</code></pre>
-
+Web Server is available at http://localhost:1313/ <span style="color:#666">(</span><span style="color:#007020">bind</span> address <span style="color:#40a070">127</span>.0.0.1<span style="color:#666">)</span>
+Press Ctrl+C to stop</code></pre></div>
 <p>Please note that, by default, Hugo will only keep watching the following folders  <code>{assets, content, data, layouts, static, themes}</code>. Hence, our SCSS files might not be in one of these folders but we must ensure the resources generated from Gulp are. As I illustrated <em>endogenous pipeline</em> above, my SCSSs are kept in <code>assets</code> such that Hugo <code>Resources.Get</code> can find them. If you opt for <em>exogenous pipeline</em>, you should put the preprocessing resources elsewhere.</p>
 
 <p>After all, we can open the browser to <a href="http://localhost:1313">http://localhost:1313</a> and enjoy the experience of live editing side-by-side.</p>
@@ -320,16 +299,11 @@ Press Ctrl+C to stop
 <p>It is a tad complicated as you can find <a href="https://byteplumbing.net/2017/08/static-asset-cache-busting-for-hugo">here</a>, <a href="https://blog.carlmjohnson.net/post/2017/hugo-asset-pipeline/">here</a> and <a href="http://danbahrami.io/articles/building-a-production-website-with-hugo-and-gulp-js">here</a>. In summary, the idea is to generate <a href="https://en.wikipedia.org/wiki/Hash_function"><em>hash signatures</em></a> for your CSSs, for instance, using <a href="https://en.wikipedia.org/wiki/MD5">MD5</a> or <a href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms">SHA</a>, store the relevant data as dictionary <a href="https://en.wikipedia.org/wiki/Key-value_database">key-value</a> pairs, e.g. <code>&quot;hyde-hyde.css&quot; : &quot;hyde-hyde.the-latest-hash-number.css&quot;</code>,  then use Hugo’s <a href="https://gohugo.io/templates/data-templates/">data templates</a> feature to refer to those pairs. This approach has actually been implemented in the aforementioned Hugo&rsquo;s extensions.</p>
 
 <p>In case you really need <em>cache busting</em>, we can utilise Hugo v0.43 extensions to complement Gulp on this matter (🐵). We just modify the Gulp configuration a bit so that the output folder is no longer <code>static</code> but <code>assets/css</code> as Hugo&rsquo;s <code>Resources.Get</code> rather strictly looks for resources in <code>assets</code>.</p>
-
-<pre><code class="language-javascript">var output_folder = 'assets/css';
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#007020;font-weight:bold">var</span> output_folder <span style="color:#666">=</span> <span style="color:#4070a0">&#39;assets/css&#39;</span>;
+</code></pre></div>
 <p>And in the HTML, we use similar templates without <code>toCSS</code> and <code>postCSS</code> that are done with Gulp.</p>
-
-<pre><code class="language-html">{{ $styles := resources.Get &quot;css/hyde-hyde.css&quot; | minify | fingerprint }}
-&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ $styles.Permalink }}&quot; integrity=&quot;{{ $styles.Data.Integrity }}&quot;&gt;
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $styles := resources.Get &#34;css/hyde-hyde.css&#34; | minify | fingerprint }}
+&lt;<span style="color:#062873;font-weight:bold">link</span> <span style="color:#4070a0">rel</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;stylesheet&#34;</span> <span style="color:#4070a0">href</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;{{ $styles.Permalink }}&#34;</span> <span style="color:#4070a0">integrity</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;{{ $styles.Data.Integrity }}&#34;</span>&gt;</code></pre></div>
 <p>It seems Gulp becomes redundant here as Hugo can perform <code>toCSS</code>, <code>postCSS</code>, and <code>minify</code> just fine. Nonetheless, in case you need other functionalities that are not yet provided by Hugo, Gulp will be what you should ask for. Besides, as per <strong>NOTE</strong> above, there are still some issues with Hugo&rsquo;s extension regarding sourcemaps whilst Gulp&rsquo;s asset pipeline above works flawlessly.</p>
 
 <h4 id="more-automation-please">More automation, please!!!</h4>
@@ -339,10 +313,7 @@ Press Ctrl+C to stop
 <p>There are a number of options for running tasks concurrently in NPM including <a href="https://www.npmjs.com/package/npm-run-all">npm-run-all</a>, <a href="https://www.npmjs.com/package/npm-run-parallel">npm-run-parallel</a>, <a href="https://www.npmjs.com/package/concurrently">concurrently</a>, or using <a href="https://en.wikipedia.org/wiki/Background_process">background process</a> if you are using Linux/macOS alike. Even Gulp also has some helper plugins like <a href="https://www.npmjs.com/package/gulp-exec">gulp-exec</a> to execute child processes, <a href="https://www.npmjs.com/package/gulp-nodemon">gulp-nodemon</a> to run in <a href="https://en.wikipedia.org/wiki/Daemon_%28computing%29">daemon mode</a>,  and Gulp 4.0+ has <a href="https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#gulpparalleltasks">Gulp.parallel()</a>.</p>
 
 <p>Let&rsquo;s consider a simple example with <a href="https://www.npmjs.com/package/npm-run-all">npm-run-all</a>. Other tools can be used similarly.</p>
-
-<pre><code class="language-sh">$ npm i -D npm-run-all
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D npm-run-all</code></pre></div>
 <p>Then define some simple scripts in <code>package.json</code> for executing Gulp and Hugo.</p>
 
 <script src="//gist.github.com/htr3n/cbfb959546392ef5e948c86c0c05af9d.js"></script>
@@ -371,10 +342,10 @@ Press Ctrl+C to stop
             
         </li>
         <li class="post__nav--previous">
-            <a href="/2018/07/bootstrapping-macos-2/">                
+            <i class="fas fa-chevron-left"></i>
+            <a href="/2018/06/bootstrapping-macos-workspace/">                
                 <span class="previous__heading">PREVIOUS</span>
-                <i class="fas fa-chevron-left"></i>
-                <span class="previous__title">Bootstrapping my macOS workspace - Part 2</span>
+                <span class="previous__title">Bootstrapping macOS workspace</span>
             </a>
         </li>
     </ul>
@@ -428,12 +399,7 @@ Press Ctrl+C to stop
 </div>
 </article>
         </div>
-        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
+        <div class="container content">
 <div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {

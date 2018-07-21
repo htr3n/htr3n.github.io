@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <!-- highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    
     <link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
     <link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -189,10 +189,7 @@
 <h2 id="from-version-2-2-to-2-7">&hellip; from version 2.2 to 2.7 &hellip;</h2>
 
 <p>From Apache CXF 2.2 to 2.6, not so many changes are relevant for the project as I mainly used <code>cxf-rt-frontend-jaxws</code>.  Another <a href="http://cxf.apache.org/docs/embedding-cxf-inside-spring.html">significant change since 2.4</a> causes errors for Spring / Jetty server regarding importing CXF&rsquo;s XML resources. Recall the aforementioned Spring bean configuration where CXF service implementations were loaded and published? There are a number of <code>&lt;import&gt;</code> directives. These directives advise Spring to load the corresponding CXF resources. Now we only need &ldquo;<em>one to rule them all</em>&rdquo;.</p>
-
-<pre><code class="language-xml">&lt;import resource=&quot;classpath:META-INF/cxf/cxf.xml&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#062873;font-weight:bold">&lt;import</span> <span style="color:#4070a0">resource=</span><span style="color:#4070a0">&#34;classpath:META-INF/cxf/cxf.xml&#34;</span> <span style="color:#062873;font-weight:bold">/&gt;</span></code></pre></div>
 <p>To upgrade to version 2.6, I have to revise the project with respect to the merging of <code>cxf-common-utilites</code> into <code>cxf-api</code>, the removal of <code>cxf-rt-binding-http</code>, and the refactoring that impact <code>cxf-rt-core</code>.  Most of the other changes from 2.2 to 2.7 are for JAX-RS, which were used very little or none in my project.</p>
 
 <h2 id="and-to-version-3-0">&hellip; and to version 3.0+</h2>
@@ -243,16 +240,16 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
   <div>
     <ul class="post__nav">
         <li class="post__nav--next">
-            <a href="/2018/06/bootstrapping-macos-2/">                
+            <a href="/2018/06/bootstrapping-macos-workspace/">                
                 <span class="next__heading">NEXT</span>
-                <span>Bootstrapping my macOS workspace - Part 1</span>
-                <i class="fas fa-chevron-right"></i>
+                <span>Bootstrapping macOS workspace</span>
             </a>
+            <i class="fas fa-chevron-right"></i>
         </li>
         <li class="post__nav--previous">
+            <i class="fas fa-chevron-left"></i>
             <a href="/2018/05/integration-laravel-gentelella/">                
                 <span class="previous__heading">PREVIOUS</span>
-                <i class="fas fa-chevron-left"></i>
                 <span class="previous__title">Integration Laravel 5 and Gentelella admin theme</span>
             </a>
         </li>
@@ -266,12 +263,7 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 </div>
 </article>
         </div>
-        <div class="container content"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-<script type="text/javascript">
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
+        <div class="container content">
 <div id="disqus_thread"></div>
 <script type="text/javascript">
       (function () {
