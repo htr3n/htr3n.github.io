@@ -26,7 +26,7 @@
 
 <meta property="article:published_time" content="2017-09-25T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-07-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-22T00:00:00&#43;00:00"/>
 
 
 
@@ -80,7 +80,7 @@
 		
 				<li>
 					<a href="/posts/">
-						<span>Articles</span>
+						<span>Posts</span>
 					</a>
 				</li>
 				<li>
@@ -201,7 +201,7 @@
 <ol>
 <li>Installing <a href="https://brew.sh">Homebrew</a> (a sane package manager for macOS)</li>
 <li>Installing <a href="https://httpd.apache.org">Apache HTTP server 2.4</a></li>
-<li>Installing <a href="https://php.net">PHP 7</a> along with <em>PHP-FPM</em></li>
+<li>Installing <a href="https://php.net">PHP 7</a> and <em>PHP-FPM</em></li>
 <li>Putting all together</li>
 <li>Installing <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a> (optional)</li>
 </ol>
@@ -354,7 +354,7 @@ Copyright (c) 1997-2017 The PHP Group
 Zend Engine v3.2.0, Copyright (c) 1998-2017 Zend Technologies
 </code></pre>
 
-<h4 id="php-configurations">PHP Configurations</h4>
+<h4 id="php-configurations">PHP configurations</h4>
 
 <p>The main configuration file of PHP is <code>php.ini</code> as shown below.</p>
 
@@ -499,7 +499,7 @@ LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 
 <ul>
 <li><a href="https://httpd.apache.org/docs/current/mod/core.html#servername">ServerName</a> is recommended in each <code>&lt;VirtualHost&gt;</code> for resolution and matching. If absent, Apache will use the global <code>ServerName</code> stated in <code>httpd.conf</code>.</li>
-<li>In my case, I assign different <code>ServerName</code>, <code>php7.test</code> and <code>htmljs.test</code>, respectively, for each project to distinguish them. As Apache mainly matches virtual hosts via IP addresses and it will resolve host names based on DNS servers, I will configure corresponding hostname resolution for <code>php7.test</code> and <code>htmljs.test</code> using <code>/etc/hosts</code> or <strong>DNSMasq</strong>.</li>
+<li>In my case, I assign different <code>ServerName</code>, <code>php7.test</code> and <code>htmljs.test</code>, respectively, for each project to distinguish them. As Apache mainly matches virtual hosts via IP addresses and it will resolve host names based on DNS servers, I will configure corresponding hostname resolution for <code>php7.test</code> and <code>htmljs.test</code> using <code>/etc/hosts</code> or <em>DNSMasq</em>.</li>
 </ul></li>
 
 <li><p><em>DocumentRoot</em></p>
@@ -653,7 +653,7 @@ $ dig an.arbitrary.host.test @127.0.0.1
 </code></pre>
 
 <ul>
-<li><a href="https://httpd.apache.org/docs/current/mod/core.html#filesmatch"><FilesMatch></a> : defines the scope of the enclosed directives by filenames that match the regular expression.
+<li><a href="https://httpd.apache.org/docs/current/mod/core.html#filesmatch">&lt;FilesMatch&gt;</a> : defines the scope of the enclosed directives by filenames that match the regular expression.
 
 <ul>
 <li><em>Syntax</em>: <code>&lt;FilesMatch regex&gt; ... &lt;/FilesMatch&gt;</code></li>
@@ -669,7 +669,7 @@ $ dig an.arbitrary.host.test @127.0.0.1
 
 <h3 id="handling-php-via-unix-domain-sockets">Handling PHP via Unix Domain Sockets</h3>
 
-<p>As mentioned before, PHP-FPM can serve on <em>Unix domain sockets (UDS)</em>, too. UDS is widely used in the Unix/Linux world for inter-process communication. To enable PHP-FPM listening on UDS, open file <code>/usr/local/etc/php/7.1/php-fpm.d/www.conf</code> and change the directive<code>listen</code> .</p>
+<p>As mentioned before, PHP-FPM can serve on <em>Unix domain sockets (UDS)</em>, too. UDS is widely used in the Unix/Linux world for inter-process communication. To enable PHP-FPM listening on UDS, open file <code>/usr/local/etc/php/7.1/php-fpm.d/www.conf</code> and change the directive  <code>listen</code> .</p>
 
 <pre><code class="language-ini">[www]
 ...
@@ -712,7 +712,7 @@ $ brew services restart php72
   <div>
     <ul class="post__nav">
         <li class="post__nav--next">
-            <a href="/2018/01/laramod/">                
+            <a href="/2018/01/laramod/">
                 <span class="next__heading">NEXT</span>
                 <span>LaraMod - Modularised Laravel 5</span>
             </a>

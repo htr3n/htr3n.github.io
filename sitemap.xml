@@ -69,7 +69,7 @@
   
   <url>
     <loc>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</loc>
-    <lastmod>2018-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -164,11 +164,6 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://htr3n.github.io/tags/atom/</loc>
     <lastmod>2017-01-19T10:18:00+07:00</lastmod>
     <priority>0</priority>
@@ -258,7 +253,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/dnsmasq/</loc>
-    <lastmod>2018-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -324,7 +319,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/homebrew/</loc>
-    <lastmod>2018-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -342,7 +337,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/httpd/</loc>
-    <lastmod>2018-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -533,6 +528,11 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/posts/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/portfolio/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
@@ -563,7 +563,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/server/</loc>
-    <lastmod>2018-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
