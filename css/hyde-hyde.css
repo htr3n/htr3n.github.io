@@ -1,6 +1,4 @@
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html,
@@ -413,7 +411,9 @@ a {
 pre {
   border: 1px solid #f9f9f9;
   border-radius: 2px;
-  tab-size: 2; }
+  -moz-tab-size: 2;
+    -o-tab-size: 2;
+       tab-size: 2; }
   pre code {
     white-space: pre-wrap; }
 
@@ -532,7 +532,8 @@ body .gist td {
       text-transform: uppercase;
       color: #fff;
       background-color: #479fc8;
-      transform: rotate(45deg) translate3d(0, 0, 0); }
+      -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+              transform: rotate(45deg) translate3d(0, 0, 0); }
       .project__featured-image .ribbon .text:before {
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
@@ -633,7 +634,10 @@ body .gist td {
 @media (min-width: 58em) {
   html,
   body {
-    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+       -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+            text-size-adjust: none;
     font-size: 17px;
     font-weight: 400;
     line-height: 1.611em; } }
