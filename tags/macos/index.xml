@@ -18,7 +18,7 @@
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</guid>
-      <description>&lt;p&gt;I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&amp;rdquo; and 15&amp;rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.  Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the default values. As a result, I often find myself searching around over and over for some desirable settings. Thus, this post is kind of a note-to-self on few useful tweaks for my development box so that I can easily reach out later.&lt;/p&gt;
+      <description>&lt;p&gt;I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&amp;rdquo; and 15&amp;rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -29,7 +29,9 @@
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</guid>
-      <description>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development. Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles *AMP (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered a tad bloated for the beginners like me ;).</description>
+      <description>&lt;p&gt;Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development.  Mac OS X (from 10.0 Cheetah to 10.11 El Capitan) and macOS (10.12 Sierra and above) are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS. The well-known bundles &lt;em&gt;*AMP&lt;/em&gt; (e.g. WAMP for Windows, LAMP for Linux, MAMP for Mac) are commonly used but also considered a tad bloated for the beginners like me ;).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

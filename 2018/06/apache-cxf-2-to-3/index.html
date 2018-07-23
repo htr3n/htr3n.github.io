@@ -15,10 +15,14 @@
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A journey from Apache CXF 2.2 to 3.2"/>
-<meta name="twitter:description" content="I have used Apache CXF 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either Apache Axis/Axis2 or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (&#43;) and many standards, especially JAX-WS and JAX-RS. Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end)."/>
+<meta name="twitter:description" content="I have used Apache CXF 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either Apache Axis/Axis2 or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (&#43;) and many standards, especially JAX-WS and JAX-RS.
+
+"/>
 
 <meta property="og:title" content="A journey from Apache CXF 2.2 to 3.2" />
-<meta property="og:description" content="I have used Apache CXF 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either Apache Axis/Axis2 or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (&#43;) and many standards, especially JAX-WS and JAX-RS. Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end)." />
+<meta property="og:description" content="I have used Apache CXF 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either Apache Axis/Axis2 or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (&#43;) and many standards, especially JAX-WS and JAX-RS.
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://htr3n.github.io/2018/06/apache-cxf-2-to-3/" />
 
@@ -176,11 +180,13 @@
 
   </header>
   <div class="post">
-    
+    <p>I have used <a href="https://cxf.apache.org">Apache CXF</a> 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either <a href="http://axis.apache.org/axis2/java/core">Apache Axis/Axis2</a> or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (+) and many standards, especially JAX-WS and JAX-RS.</p>
 
-<p>I have used <a href="https://cxf.apache.org">Apache CXF</a> 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, I considered either <a href="http://axis.apache.org/axis2/java/core">Apache Axis/Axis2</a> or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (+) and many standards, especially JAX-WS and JAX-RS. Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end).</p>
+<p></p>
 
-<p>Everything went well for the development of Web services based on JAX-WS for both directions: WSDL-first and Java-first. In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any code overwriting. CXF services are so easy to configure with Spring Framework 3.0. The implementations of the services were loaded as Spring managed beans. The expose of a service is done via a CXF directive <code>&lt;jaxws:endpoint&gt;</code> of which the <code>implementor</code> attribute refers to the corresponding bean.</p>
+<p>Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end). Everything went well for me on modelling and developing Web services based on JAX-WS for both directions: WSDL-first and Java-first.</p>
+
+<p>In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any code overwriting. CXF services are so easy to configure with Spring Framework 3.0. The implementations of the services were loaded as Spring managed beans. The expose of a service is done via a CXF directive <code>&lt;jaxws:endpoint&gt;</code> of which the <code>implementor</code> attribute refers to the corresponding bean.</p>
 
 <script src="//gist.github.com/htr3n/a5d1c1d66c00c3be32a2de63dcb9af0f.js"></script>
 
@@ -246,7 +252,6 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 <blockquote>
 <p>IMPORTANT: <code>Endpoint.publish()</code> must be called to expose the service instead of <code>Endpoint.setAddress()</code> as above.</p>
 </blockquote>
-
   </div>
   <div class="post--navigation post--navigation-single">
     <a href="/2018/05/integration-laravel-gentelella/" class="post--navigation-prev">

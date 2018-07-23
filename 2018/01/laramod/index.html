@@ -15,10 +15,14 @@
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LaraMod - Modularised Laravel 5"/>
-<meta name="twitter:description" content="Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented here. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously."/>
+<meta name="twitter:description" content="Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented here.
+
+"/>
 
 <meta property="og:title" content="LaraMod - Modularised Laravel 5" />
-<meta property="og:description" content="Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented here. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously." />
+<meta property="og:description" content="Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented here.
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://htr3n.github.io/2018/01/laramod/" />
 
@@ -170,9 +174,11 @@
 
   </header>
   <div class="post">
-    
+    <p><a href="https://laravel.com">Laravel</a> is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented <a href="https://laravel.com/docs/5.5/structure">here</a>.</p>
 
-<p><a href="https://laravel.com">Laravel</a> is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. The latest version of Laravel 5 imposes a conventional project structure that is well documented <a href="https://laravel.com/docs/5.5/structure">here</a>. For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously. Thus, the need for complex submodule organisation is quite obvious.</p>
+<p></p>
+
+<p>For a simple development project, the structure is totally fine. Nevertheless, unless some necesssary configurations you might not want to mix up your development codes and resources with Laravel&rsquo;s. And you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously. Thus, the need for complex submodule organisation is quite obvious.</p>
 
 <p>From my struggle to organise a Laravel-based project such that I can divide and work on individual submodules such as <code>UserManagement</code>, <code>Authentication</code>, <code>Dashboard</code>, etc. whilst keeping the Laravel code base intact as much as possible (this could be convenient for upgrading Laravel) and keeping my code base separate from Laravel&rsquo;s. There are a number decent attempts on modalurasing Laravel projects for example <a href="https://nicolaswidart.com/blog/writing-modular-applications-with-laravel-modules">here</a>, <a href="https://github.com/caffeinated/modules">here</a> or <a href="http://kamranahmed.info/blog/2015/12/03/creating-a-modular-application-in-laravel">here</a>. Being inspired and learning from these articles, I decided to start a simple project on my own, namely, <a href="https://github.com/htr3n/laramod"><code>LaraMod</code></a>, for many reasons, but the biggest one is to dig deeper into Laravel 5 and PHP.</p>
 
@@ -343,7 +349,6 @@ $loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
 <p>The outcome of my very first PHP project, LaraMod, would be a reasonable skeleton for modularising software projects based on Laravel 5. That is, you can just easily create a new submodule with the predefined conventional structure and add the PSR-4 namespaces and classpaths, then good you go. Each submodule should then be developed independently. Sure there are some areas that need improvement. For example, all testing stuffs are still under <code>/tests</code> and database seeders are still in <code>database/seeds</code>. The first one requires intervention with PHPUnit/<code>phpunit.xml</code> whilst the later asks for further changes in built-in Laravel <code>artisan</code> commands.</p>
 
 <p>For me &ndash; a new bie, it was not quite an all-pleasant journey to experience several Laravel&rsquo;s aspects. Nevertheless, developing and customising LaraMod are extremely valuable as I could learn a lot about not only Laravel in particular but also PHP in general. Achieving reasonable modularisation for a complex software development project requires a lot of thoughtful design and hard work and even sometimes trade-offs and compromises. In sharing this, I hope LaraMod might become handy and helpful start so that your journeys with Laravel can be more pleasant and joyful. I look forward to hearing and learning from your experience, too.</p>
-
   </div>
   <div class="post--navigation post--navigation-single">
     <a href="/2017/09/apache-httpd-php-macos/" class="post--navigation-prev">

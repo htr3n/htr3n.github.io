@@ -156,6 +156,7 @@ blockquote {
   border-left-color: #ae272f; }
 
 kbd {
+  font-family: system, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   padding: .1em .6em;
   border: 1px solid #eee;
   font-size: 0.8em;
@@ -366,7 +367,7 @@ a {
 
 .post--navigation {
   width: 800px;
-  max-width: calc(100% - 40px);
+  max-width: calc(100% - 0px);
   margin: 0 auto;
   margin-top: 60px; }
   .post--navigation a {
@@ -375,6 +376,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 15px;
+    color: #c2255c;
     border: 2px solid #c2255c;
     line-height: 1.25;
     text-transform: uppercase; }
@@ -415,32 +417,21 @@ pre {
   pre code {
     white-space: pre-wrap; }
 
--code, code {
+code {
   font-family: "SF-Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Roboto Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
   font-size: 0.9rem;
   line-height: 1.4; }
-
--code {
-  border-radius: 3px;
-  padding: 2px 4px;
-  color: #bf616a;
-  background-color: #f9f2f4; }
 
 code {
   padding: 2px 4px;
   border: 1px dashed #adb5db;
   background-color: #f9f9f9; }
 
--code {
-  white-space: pre-wrap; }
-
 .hljs {
   white-space: pre;
   border: none; }
 
 /*
-// https://codersblock.com/blog/customizing-github-gists
-//
 body .gist {
 	.gist-file {
 		margin-bottom: 0;
@@ -690,7 +681,7 @@ body .gist td {
   margin-bottom: .2rem;
   margin-top: .2rem; }
 
-#references ~ ol {
+#references li {
   font-size: .9rem; }
 
 /*# sourceMappingURL=hyde-hyde.css.map */

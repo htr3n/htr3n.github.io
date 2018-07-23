@@ -15,12 +15,12 @@
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bootstrapping macOS workspace"/>
-<meta name="twitter:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.  Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the default values. As a result, I often find myself searching around over and over for some desirable settings. Thus, this post is kind of a note-to-self on few useful tweaks for my development box so that I can easily reach out later.
+<meta name="twitter:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.
 
 "/>
 
 <meta property="og:title" content="Bootstrapping macOS workspace" />
-<meta property="og:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.  Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the default values. As a result, I often find myself searching around over and over for some desirable settings. Thus, this post is kind of a note-to-self on few useful tweaks for my development box so that I can easily reach out later.
+<meta property="og:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.
 
 " />
 <meta property="og:type" content="article" />
@@ -146,7 +146,7 @@
     <i class="fas fa-calendar-alt"></i> Jun 27, 2018
     in
               <a class="post__category" href="/categories/dev">DEV</a>
-              ,
+              •
               <a class="post__category" href="/categories/system">SYSTEM</a>
               
     
@@ -179,9 +179,13 @@
 
   </header>
   <div class="post">
-    <p>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.  Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the default values. As a result, I often find myself searching around over and over for some desirable settings. Thus, this post is kind of a note-to-self on few useful tweaks for my development box so that I can easily reach out later.</p>
+    <p>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.</p>
 
 <p></p>
+
+<p>Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the default values. As a result, I often find myself searching around over and over for some desirable settings. Thus, this post is kind of a note-to-self on few useful tweaks for my development box so that I can easily reach out later.</p>
+
+<!--more--> 
 
 <p><strong>Update</strong>: As it turned out that the tweaks and configurations were getting longer and became tedious to follow, I split them into two parts:</p>
 
@@ -284,7 +288,7 @@ System Integrity Protection status: disabled.
 </figure>
 
 
-<p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with <kbd>Shift</kbd> + <kbd>↓,↑,←,→</kbd>.</p>
+<p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with <kbd>Shift</kbd> + <kbd>↓ ↑ ← →</kbd>.</p>
 
 <p>For that reason, I always disable that feature in any macOS that I am working on. Unfortunately, this cannot be done with &lsquo;<em>System Preferences</em>&rsquo; but command line. After each command, you must re-start the editors to see the effect.</p>
 
@@ -385,7 +389,7 @@ $ brew bundle
 <pre><code class="language-sh">$ brew cask install iterm2
 </code></pre>
 
-<p>Some of my favorite settings for iTerms are including light dark themes such as <a href="https://draculatheme.com/iterm">Dracula</a>, <a href="https://gist.github.com/meqif/1238378">IR_Black</a>, <a href="https://github.com/junegunn/seoul256-iTerm2">seoul_256</a> along with any of these fixed width fonts <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>, <a href="https://fonts.google.com/specimen/Cousine">Cousine</a>, <a href="https://fonts.google.com/specimen/Roboto+Mono">Roboto Mono</a>, <a href="https://github.com/tonsky/FiraCode">Fira Code</a> or <a href="https://www.typography.com/fonts/operator/overview/">Operator Mono</a> (nice ligatures), <a href="https://fonts.google.com/specimen/Inconsolata">Inconsolata</a> or its variants (Inconsolata-dz, Inconsolata-g), <a href="https://github.com/source-foundry/Hack">Hack</a>, <a href="https://typekit.com/fonts/input-mono">Input Mono</a>. Few of these fonts can be installed via Homebrew Cask.</p>
+<p>Some of my favorite settings for iTerms are including dark themes such as <a href="https://draculatheme.com/iterm">Dracula</a>, <a href="https://gist.github.com/meqif/1238378">IR_Black</a>, <a href="https://github.com/junegunn/seoul256-iTerm2">seoul_256</a>, <a href="https://github.com/nathanbuchar/atom-one-dark-terminal">Atom One Dark</a> along with a fixed-width font like <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>, <a href="https://fonts.google.com/specimen/Cousine">Cousine</a>, <a href="https://fonts.google.com/specimen/Roboto+Mono">Roboto Mono</a>, <a href="https://github.com/tonsky/FiraCode">Fira Code</a> or <a href="https://www.typography.com/fonts/operator/overview/">Operator Mono</a> (very nice ligatures and italic mode), <a href="https://fonts.google.com/specimen/Inconsolata">Inconsolata</a> or its variants (Inconsolata-dz, Inconsolata-g), or <a href="https://github.com/source-foundry/Hack">Hack</a>. Some of these fonts can be installed via Homebrew Cask.</p>
 
 <p>Along with iTerms 2, I also love <a href="http://www.zsh.org">Z shell</a> (zsh) which is an extended version of Bash shell a lot with many nice features like directory alias, command completion, path expansion, etc. You might also find some Zsh configuration frameworks like <a href="https://ohmyz.sh">oh-my-zsh</a> or <a href="https://github.com/sorin-ionescu/prezto">Prezto</a> amazing to start with. I&rsquo;ve tried both of them and found oh-my-zsh a bit sluggish and Prezto a bit difficult to add more extensions or customize. I have actually used a small piece from either of them and found myself quickly forgetting the customised parts taken from the others. Hence, I decided to develop a set of my own <a href="https://github.com/htr3n/zsh-config">ZSH configurations</a>. Moreover, I often keep a habit of writting Shell scripts in standard sh/bash as much as possible and keep zsh-specific separately for better portability and compatibility.</p>
 
@@ -403,7 +407,7 @@ $ brew bundle
 <pre><code class="language-sh">$ brew install vim
 </code></pre>
 
-<p>For Markdown editors, e.g. Github infamous <em>README.md</em> or my blog articles, I used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes a second choice for now (at least until Typora&rsquo;s developers announce their paid plans). With Typora, I can directly write Markdown articles just like Microsoft Word.  I can do <code>Cmd + /</code> to instantly switch back and forth between <em>Visual Editing</em> and <em>Source</em> modes. Even better, I can adapt the Markdown render in Typora to be nearly indentical to my blog and therefore, experience <em>WYSIWYG</em> Markdown editing.</p>
+<p>For Markdown editors, e.g. Github infamous <em>README.md</em> or my blog articles, I used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes a second choice for now (at least until Typora&rsquo;s developers announce their paid plans). With Typora, I can directly write Markdown articles just like Microsoft Word.  I can do <kbd>⌘</kbd> + <kbd>/</kbd> to instantly switch back and forth between <em>Visual Editing</em> and <em>Source</em> modes. Even better, I can adapt the Markdown render in Typora to be nearly indentical to my blog and therefore, experience <em>WYSIWYG</em> Markdown editing.</p>
 
 <pre><code class="language-sh">$ brew cask install typora
 </code></pre>
