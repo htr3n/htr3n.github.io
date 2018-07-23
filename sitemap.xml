@@ -18,7 +18,7 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/</loc>
+    <loc>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -161,6 +161,11 @@
     <loc>https://htr3n.github.io/tags/apple/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/posts/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -528,11 +533,6 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://htr3n.github.io/portfolio/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
@@ -708,12 +708,6 @@
   <url>
     <loc>https://htr3n.github.io/tags/writing/</loc>
     <lastmod>2013-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/tags/wsdl/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

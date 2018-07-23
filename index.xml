@@ -43,10 +43,10 @@
     
     <item>
       <title>A journey from Apache CXF 2.2 to 3.2</title>
-      <link>https://htr3n.github.io/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/</link>
+      <link>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/06/a-journey-from-apache-cxf-2.2-to-3.2/</guid>
+      <guid>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</guid>
       <description>I have used Apache CXF 2.2 to develop Web services for some R&amp;amp;D projects that I took part in. At that time, I considered either Apache Axis/Axis2 or CXF (formerly Codehaus XFire project). I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (+) and many standards, especially JAX-WS and JAX-RS. Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end).</description>
     </item>
     
