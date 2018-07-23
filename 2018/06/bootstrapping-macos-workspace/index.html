@@ -185,8 +185,6 @@
 
 <p>Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the default values. As a result, I often find myself searching around over and over for some desirable settings. Thus, this post is kind of a note-to-self on few useful tweaks for my development box so that I can easily reach out later.</p>
 
-<!--more--> 
-
 <p><strong>Update</strong>: As it turned out that the tweaks and configurations were getting longer and became tedious to follow, I split them into two parts:</p>
 
 <ul>
@@ -206,7 +204,8 @@
 System Integrity Protection status: enabled.
 </code></pre>
 
-<p>The tweak I always do right after installing or recovering a Mac is to disable SIP. Just (re)start macOS in <em>Recovery Mode</em> (restarting or turning on your Mac and immediately pressing <kbd>⌘</kbd> + <kbd>R</kbd>&mdash;shortcut to remember <kbd>R</kbd> for &lsquo;<strong>R</strong>ecovery&rsquo;&mdash;and wait until macOS boots into its recovery mode. Then open menu &lsquo;<em>Utility</em>&rsquo; &gt; &lsquo;<em>Terminal</em>&rsquo; and execute the following commands.</p>
+<p>The tweak I always do right after installing or recovering a Mac is to disable SIP. Just (re)start macOS in <em>Recovery Mode</em> (restarting or turning on your Mac and immediately pressing <kbd>⌘</kbd> + <kbd>R</kbd>&mdash;shortcut to remember <kbd>R</kbd> for &lsquo;<strong>R</strong>ecovery&rsquo;&mdash;and wait until macOS boots into its recovery mode. Then open menu <span class="menu">Utility ▸ Terminal</span>
+ and execute the following commands.</p>
 
 <pre><code class="language-sh">$ csrutil disable
 $ reboot
@@ -288,9 +287,10 @@ System Integrity Protection status: disabled.
 </figure>
 
 
-<p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with <kbd>Shift</kbd> + <kbd>↓ ↑ ← →</kbd>.</p>
+<p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with <kbd>shift</kbd> + <kbd>↓ ↑ ← →</kbd>.</p>
 
-<p>For that reason, I always disable that feature in any macOS that I am working on. Unfortunately, this cannot be done with &lsquo;<em>System Preferences</em>&rsquo; but command line. After each command, you must re-start the editors to see the effect.</p>
+<p>For that reason, I always disable that feature in any macOS that I am working on. Unfortunately, this cannot be done with <span class="menu">System Preferences</span>
+ but command line. After each command, you must re-start the editors to see the effect.</p>
 
 <pre><code class="language-sh"># disable 'Character Picker'
 $ defaults write -g ApplePressAndHoldEnabled -bool false
@@ -298,7 +298,8 @@ $ defaults write -g ApplePressAndHoldEnabled -bool false
 $ defaults write -g ApplePressAndHoldEnabled -bool true
 </code></pre>
 
-<p>Another option relating to key repeating is tuning its speed/rate and delay. Luckily, we can do this via &lsquo;<em>System Preferences</em>&rsquo; -&gt; &lsquo;<em>Keyboard</em>&rsquo;. My favourite is &lsquo;<em>fastest</em>&rsquo; repeating and &lsquo;<em>shortest</em>&rsquo; delay as possible.</p>
+<p>Another option relating to key repeating is tuning its speed/rate and delay. Luckily, we can do this via <span class="menu">System Preferences ▸ Keyboard</span>
+. My favourite is &lsquo;<em>fastest</em>&rsquo; repeating and &lsquo;<em>shortest</em>&rsquo; delay as possible.</p>
 
 <figure >
     
@@ -352,14 +353,14 @@ $ xcode-select --install
 $ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre>
 
-<p>Then we need to add <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> (where Homebrew links the executable files) to the environment variable <code>PATH</code>. This can be done by altering the shell startup scripts. For instance, for bash shell it is <em>~/.bash_profile</em>, for zsh shell it is <em>~/.zsh_profile</em>.</p>
+<p>Then we need to add <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> (where Homebrew links the executable files) to the environment variable <code>PATH</code>. This can be done by altering the shell startup scripts. For instance, for Bash shell it is <code>~/.bash_profile</code>, for Zshell it is <code>~/.zsh_profile</code>.</p>
 
 <pre><code class="language-shell">export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 </code></pre>
 
 <p>Should you want the Homebrew tools have higher priority than the others, just switch <code>$PATH</code> to the end instead. We now can start using <code>brew</code> to install some necessary tools.</p>
 
-<pre><code class="language-sh">$ brew install ack ant curl dnsmasq docker gcc git go gradle maven mysql node openssl openssh python3 postgresql php72 composer r ruby rbenv sassc yarn tmux zsh 
+<pre><code class="language-sh">$ brew install ack curl dnsmasq docker gcc git go gradle maven mysql node openssl openssh python3 php72 composer ruby rbenv sassc yarn zsh 
 </code></pre>
 
 <p>Homebrew can also help handling macOS start-up services which are useful for managing servers like Apache httpd, nginx, php-fpm, MySQL, PostgreSQL, etc.</p>
@@ -395,9 +396,9 @@ $ brew bundle
 
 <h3 id="text-code-editors">Text/Code Editors</h3>
 
-<p>There are quite a number of editors in macOS for developers ranging from, er, the built-in Text Editor, <em>Sublime Text</em>, <em>TextMate</em>, <em>TextWrangler</em>, the nerdy <em>Vim</em>, <em>Emacs</em>, and recently <em>Atom</em>, <em>Visual Studio Code</em>, <em>Brackets</em>, to name but a few. You might install these editos using Cask.</p>
+<p>There are quite a number of editors in macOS for developers ranging from, er, the built-in Text Editor, <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="https://macromates.com">TextMate</a>, <a href="https://www.barebones.com/products/textwrangler">TextWrangler</a>, the nerdy <a href="https://www.vim.org">Vim</a>, <a href="https://www.gnu.org/software/emacs">Emacs</a>, and recently <a href="https://atom.io">Atom</a>, <a href="https://code.visualstudio.com">Visual Studio Code</a>, <a href="http://brackets.io">Brackets</a>, to name but a few. You might install these editos using Cask.</p>
 
-<p>In macOS, Sublime Text is often a powerful editor for many of us but it is quite costly. I tend to love <a href="https://atom.io">Atom</a> which is developed by Github as an effort to build a modern editor for developers. Atom enables a plethora of extensions to become a very promising choice. Nevertheless, I was skeptical with its sluggishness in early days and therefore leaned to <a href="https://code.visualstudio.com">Visual Studio Code</a>, my current Swiss-army-knife editor-of-choice instead.</p>
+<p>In macOS, Sublime Text is often a powerful editor for many of us but it is quite costly. I used to love and work with Atom developed by Github as an effort to build a modern editor for developers. Atom has a plethora of extensions to become a very promising choice. Nevertheless, I was growing skeptical with its sluggishness in early days and therefore leaned to <a href="https://code.visualstudio.com">Visual Studio Code</a>, my current Swiss-army-knife editor-of-choice instead.</p>
 
 <pre><code class="language-sh">$ brew cask install visual-studio-code
 </code></pre>
@@ -407,12 +408,14 @@ $ brew bundle
 <pre><code class="language-sh">$ brew install vim
 </code></pre>
 
-<p>For Markdown editors, e.g. Github infamous <em>README.md</em> or my blog articles, I used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes a second choice for now (at least until Typora&rsquo;s developers announce their paid plans). With Typora, I can directly write Markdown articles just like Microsoft Word.  I can do <kbd>⌘</kbd> + <kbd>/</kbd> to instantly switch back and forth between <em>Visual Editing</em> and <em>Source</em> modes. Even better, I can adapt the Markdown render in Typora to be nearly indentical to my blog and therefore, experience <em>WYSIWYG</em> Markdown editing.</p>
+<p>For Markdown editors, e.g. Github infamous <em>README.md</em> or my blog posts, I used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes second in the pecking order for now (at least until Typora&rsquo;s developers announce their paid plans).</p>
+
+<p>With Typora, I can directly write Markdown articles just like Microsoft Word.  I can do <kbd>⌘</kbd> + <kbd>/</kbd> to instantly switch back and forth between <em>Visual Editing</em> and <em>Source</em> modes. Even better, I can adapt the Markdown render in Typora to be nearly indentical to my blog and therefore, experience a kind of semi-<em>WYSIWYG</em> Markdown editing.</p>
 
 <pre><code class="language-sh">$ brew cask install typora
 </code></pre>
 
-<h3 id="other-nice-to-have-tools">Other nice -to-have tools</h3>
+<h3 id="other-nice-to-have-tools">Other nice-to-have tools</h3>
 
 <h4 id="ack-https-beyondgrep-com"><a href="https://beyondgrep.com">Ack</a></h4>
 
