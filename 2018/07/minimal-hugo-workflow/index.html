@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+
     <head>
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta charset="utf-8">
@@ -187,7 +189,7 @@
 
 <p></p>
 
-<p>On the run-time side, Hugo is delivered as a reasonably fat executable binary (about 30~50 MB). We almost do not have to install anything else to make it work (although this is not entirely true since Hugo 0.43+).</p>
+<p>On the run-time side, it&rsquo;s also nice that Hugo is often delivered as a reasonably fat executable binary (about 30~50 MB). We almost do not have to install anything else to make it work (although this is not entirely true since Hugo 0.43+).</p>
 
 <p>Using Hugo to <a href="https://github.com/htr3n/htr3n-blog">build</a> this blog, I have learned a lot of things and tried to set up a simple blogging workflow to automate as much as possible the process from writing articles and altering themes to generating sites and watching for changes. My Hugo based blogging workflow comprises three aspects:</p>
 
@@ -199,9 +201,28 @@
 
 <p>I will take <a href="https://github.com/htr3n/htr3n-blog">my own Hugo blogging project</a> as an illustrative example. An overview of the project structure is shown in the picture below.</p>
 
-<p><img src="project-structure.png" alt="Simple Hugo project structure" /></p>
 
-<p>Some relevant project resources:</p>
+
+    
+
+<figure >
+    
+        <img src="project-structure.png" 
+            
+            
+            
+        />
+    
+    
+    <figcaption>
+        <span class="img--caption">Figure 1. A simple Hugo project structure</span>
+    </figcaption>
+    
+</figure>
+
+
+
+<p><strong>Some relevant project resources:</strong></p>
 
 <ul>
 <li><code>assets</code>: my pre-processing resources (e.g. SASS, LESS, images, JavaScript).</li>
@@ -332,7 +353,26 @@ Press Ctrl+C to stop
 
 <p>After all, we can open the browser to <a href="http://localhost:1313">http://localhost:1313</a> and enjoy the experience of live editing side-by-side.</p>
 
-<p><img src="side-by-side.png" alt="Typora editing and generated pages" /></p>
+
+
+    
+
+<figure >
+    
+        <img src="side-by-side.png" 
+            
+            
+            
+        />
+    
+    
+    <figcaption>
+        <span class="img--caption">Figure 2. Typora (right) and the generated HTML pages (left)</span>
+    </figcaption>
+    
+</figure>
+
+
 
 <p>At this point, we seem to miss <em>cache busting</em> which is provided in the <em>endogenous pipeline</em> with Hugo. That is also the biggest advantage of using external tools as we need to establish the connections between Hugo generated resources and Gulp&rsquo;s manipulated resources on our own.</p>
 
@@ -350,7 +390,7 @@ then use Hugo’s <a href="https://gohugo.io/templates/data-templates/">data te
 &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ $styles.Permalink }}&quot; integrity=&quot;{{ $styles.Data.Integrity }}&quot;&gt;
 </code></pre>
 
-<p>It seems Gulp becomes redundant here as Hugo can perform <code>toCSS</code>, <code>postCSS</code>, and <code>minify</code> just fine. Nonetheless, in case you need other functionalities that are not yet provided by Hugo, Gulp will be what you should ask for. Besides, as per <strong>NOTE</strong> above, there are still some issues with Hugo&rsquo;s extension regarding sourcemaps whilst Gulp&rsquo;s asset pipeline above works flawlessly.</p>
+<p>It seems Gulp becomes redundant here as Hugo can perform <code>toCSS</code>, <code>postCSS</code>, and <code>minify</code> just fine. Nonetheless, in case you need other functionalities that are not yet provided by Hugo, Gulp will be what you should ask for. Besides, as per <strong>Note</strong> above, there are still some issues with Hugo&rsquo;s extension regarding sourcemaps whilst Gulp&rsquo;s asset pipeline above works flawlessly.</p>
 
 <h4 id="more-automation-please">More automation, please!!!</h4>
 
@@ -485,6 +525,9 @@ if (!doNotTrack) {
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+
 
     </body>
 </html>

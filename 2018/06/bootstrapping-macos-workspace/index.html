@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+
     <head>
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta charset="utf-8">
@@ -225,38 +227,50 @@ System Integrity Protection status: disabled.
 
 <p>That means only signed apps are allowed to launch, i.e. breaking a lot of useful unsigned apps whose developers cannot afford to pay US$99 yearly membership for <em>Apple Developer Program</em>.</p>
 
+
+
+    
+
 <figure >
     
-        <img src="enabled-gatekeeper.png" alt="Enabled Gatekeeper" />
+        <img src="enabled-gatekeeper.png" 
+            
+            align="center"
+            width="80%"
+        />
     
     
     <figcaption>
-        
-        
-            <span class="img--caption">Figure 1. Enabled Gatekeeper</span>
-        
+        <span class="img--caption">Figure 1. Enabled Gatekeeper</span>
     </figcaption>
     
 </figure>
+
 
 
 <p>We can circumvent that by disabling Gatekeeper. You do not have to restart macOS but only executing the following command <code>sudo spctl --master-disable</code>.</p>
 
 <p>After that, you will be able to see Gatekeeper being disabled.</p>
 
+
+
+    
+
 <figure >
     
-        <img src="disabled-gatekeeper.png" alt="Disabled Gatekeeper" />
+        <img src="disabled-gatekeeper.png" 
+            
+            align="center"
+            width="80%"
+        />
     
     
     <figcaption>
-        
-        
-            <span class="img--caption">Figure 2. Disabled Gatekeeper</span>
-        
+        <span class="img--caption">Figure 2. Disabled Gatekeeper</span>
     </figcaption>
     
 </figure>
+
 
 
 <p>Naturally Gatekeeper can be re-enabled at any time with <code>sudo spctl --master-enable</code>.</p>
@@ -272,19 +286,25 @@ System Integrity Protection status: disabled.
 
 <p>The behaviour for keyboard long pressing in macOS is also of polarised personal taste. A typical behaviour that we often see is that the letter keeps popping out since one holds down a key until the key is released. Some years back this has been changed into &lsquo;<em>Character Picker</em>&rsquo;. It means when a key is pressed and held, the non-standard characters corresponding characters will pop up as the picture below.</p>
 
+
+
+    
+
 <figure >
     
-        <img src="enabled-character-picker.png" alt="Character Picker in action" />
+        <img src="enabled-character-picker.png" 
+            
+            align="center"
+            width="80%"
+        />
     
     
     <figcaption>
-        
-        
-            <span class="img--caption">Figure 3. Character Picker in action</span>
-        
+        <span class="img--caption">Figure 3. Character Picker in action</span>
     </figcaption>
     
 </figure>
+
 
 
 <p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with <kbd>shift</kbd> + <kbd>↓ ↑ ← →</kbd>.</p>
@@ -301,19 +321,25 @@ $ defaults write -g ApplePressAndHoldEnabled -bool true
 <p>Another option relating to key repeating is tuning its speed/rate and delay. Luckily, we can do this via <span class="menu">System Preferences ▸ Keyboard</span>
 . My favourite is &lsquo;<em>fastest</em>&rsquo; repeating and &lsquo;<em>shortest</em>&rsquo; delay as possible.</p>
 
+
+
+    
+
 <figure >
     
-        <img src="speed-delay.png" alt="Key repating speed and delay" />
+        <img src="speed-delay.png" 
+            
+            align="center"
+            width="80%"
+        />
     
     
     <figcaption>
-        
-        
-            <span class="img--caption">Figure 4. Setting for key repeating and delay</span>
-        
+        <span class="img--caption">Figure 4. Setting for key repeating and delay</span>
     </figcaption>
     
 </figure>
+
 
 
 <p>Like many other options, we can change it via command line or fine tuning tool such as <a href="https://pqrs.org/osx/karabiner">Karabiner</a>.</p>
@@ -600,6 +626,9 @@ if (!doNotTrack) {
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+
 
     </body>
 </html>
