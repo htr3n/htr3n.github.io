@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://htr3n.github.io/2018/07/faster-zsh/</loc>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</loc>
     <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
@@ -165,7 +170,7 @@
   
   <url>
     <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -252,7 +257,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -432,7 +437,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/macos/</loc>
-    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -521,6 +526,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/performance/</loc>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/php/</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -568,6 +579,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/shell/</loc>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/sinh-vi%C3%AAn/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
@@ -599,7 +616,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/system/</loc>
-    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -724,8 +741,14 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/zsh/</loc>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

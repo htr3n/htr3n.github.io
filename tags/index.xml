@@ -402,7 +402,7 @@
     <item>
       <title>Macos</title>
       <link>https://htr3n.github.io/tags/macos/</link>
-      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/macos/</guid>
       <description></description>
@@ -535,6 +535,15 @@
     </item>
     
     <item>
+      <title>Performance</title>
+      <link>https://htr3n.github.io/tags/performance/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Php</title>
       <link>https://htr3n.github.io/tags/php/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -594,6 +603,15 @@
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://htr3n.github.io/tags/shell/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/shell/</guid>
       <description></description>
     </item>
     
@@ -801,6 +819,15 @@
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/yarn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zsh</title>
+      <link>https://htr3n.github.io/tags/zsh/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/zsh/</guid>
       <description></description>
     </item>
     
