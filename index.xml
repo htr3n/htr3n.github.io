@@ -29,7 +29,7 @@
         <link>https://htr3n.github.io/2018/07/faster-zsh/</link>
         <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
         
-        <guid>930ce24aa12e800cc63c525b48f74310</guid>
+        <guid>aae1df52150f8d1650c9677b9de0ed17</guid>
         <description>&lt;p&gt;Z shell (Zsh) has been my shell of choice in both Linux and macOS. I used to install &lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh&#34;&gt;oh-my-zsh&lt;/a&gt; or the claimed-to-be-faster &lt;a href=&#34;https://github.com/sorin-ionescu/prezto&#34;&gt;Prezto&lt;/a&gt; or &lt;a href=&#34;https://github.com/zimfw/zimfw&#34;&gt;Zim&lt;/a&gt; to leverage some of their cool libraries. And I have just realised that my favourite terminal app, &lt;a href=&#34;https://www.iterm2.com&#34;&gt;iTerm 2&lt;/a&gt;, becomes more and more sluggish when loading a new tab or window with more than one and a half second (without some virtual environment loaders like &lt;a href=&#34;https://github.com/creationix/nvm&#34;&gt;nvm&lt;/a&gt;, &lt;a href=&#34;https://rvm.io/&#34;&gt;rvm&lt;/a&gt;, &lt;a href=&#34;https://github.com/rbenv/rbenv&#34;&gt;rbenv&lt;/a&gt;, &lt;a href=&#34;http://www.jenv.be&#34;&gt;jenv&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -95,22 +95,22 @@ num  calls                time                       self            name
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;shell-startup-actual.png&#34; 
-            
-            
-            
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;shell-startup-actual.png&#34; 
+        
+        
+         /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 1. Source: https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 1. Source: https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -325,22 +325,22 @@ $ sudo rm -rf /private/var/log/asl/*.asl
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;iterm2-login.png&#34; 
-            
-            
-            
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;iterm2-login.png&#34; 
+        
+        
+         /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 2. iTerm 2 login setting&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 2. iTerm 2 login setting&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -348,22 +348,22 @@ $ sudo rm -rf /private/var/log/asl/*.asl
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;terminal-login.png&#34; 
-            
-            
-            
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;terminal-login.png&#34; 
+        
+        
+         /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 3. Built-in Terminal login setting&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 3. Built-in Terminal login setting&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -401,7 +401,7 @@ $ sudo rm -rf /private/var/log/asl/*.asl
         <link>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</link>
         <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
         
-        <guid>2e327e8e86880dc9dc9ab776905f24a3</guid>
+        <guid>a8c9e3432c339d2f1f185b0b11ef0166</guid>
         <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is a blazingly fast static site generator based on &lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt;. My &lt;a href=&#34;https://htr3n.github.io/2018/01/first-experience-with-hugo/&#34;&gt;first experience with Hugo&lt;/a&gt; was truly pleasant. I appreciate the separation of contents, presentations, and site generation logics in Hugo that leads to less effort for maintenance or switching themes.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -420,22 +420,22 @@ $ sudo rm -rf /private/var/log/asl/*.asl
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;project-structure.png&#34; 
-            
-            
-            
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;project-structure.png&#34; 
+        
+        
+         /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 1. A simple Hugo project structure&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 1. A simple Hugo project structure&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -572,22 +572,22 @@ Press Ctrl+C to stop
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;side-by-side.png&#34; 
-            
-            
-            
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;side-by-side.png&#34; 
+        
+        
+         /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 2. Typora (right) and the generated HTML pages (left)&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 2. Typora (left) and the generated HTML pages (right)&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -647,7 +647,7 @@ then use Hugo’s &lt;a href=&#34;https://gohugo.io/templates/data-templates/&#
         <link>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</link>
         <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
         
-        <guid>ae4943df6f54a6883a2c165950317228</guid>
+        <guid>79daf0dbfbce44f6ef573066212e1d74</guid>
         <description>&lt;p&gt;I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&amp;rdquo; and 15&amp;rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -696,22 +696,22 @@ System Integrity Protection status: disabled.
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;enabled-gatekeeper.png&#34; 
-            
-            align=&#34;center&#34;
-            width=&#34;80%&#34;
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;enabled-gatekeeper.png&#34; 
+        
+        align=&#34;center&#34;
+        width=&#34;80%&#34; /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 1. Enabled Gatekeeper&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 1. Enabled Gatekeeper&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -721,22 +721,22 @@ System Integrity Protection status: disabled.
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;disabled-gatekeeper.png&#34; 
-            
-            align=&#34;center&#34;
-            width=&#34;80%&#34;
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;disabled-gatekeeper.png&#34; 
+        
+        align=&#34;center&#34;
+        width=&#34;80%&#34; /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 2. Disabled Gatekeeper&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 2. Disabled Gatekeeper&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -755,22 +755,22 @@ System Integrity Protection status: disabled.
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;enabled-character-picker.png&#34; 
-            
-            align=&#34;center&#34;
-            width=&#34;80%&#34;
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;enabled-character-picker.png&#34; 
+        
+        align=&#34;center&#34;
+        width=&#34;80%&#34; /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 3. Character Picker in action&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 3. Character Picker in action&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -790,22 +790,22 @@ $ defaults write -g ApplePressAndHoldEnabled -bool true
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;speed-delay.png&#34; 
-            
-            align=&#34;center&#34;
-            width=&#34;80%&#34;
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;speed-delay.png&#34; 
+        
+        align=&#34;center&#34;
+        width=&#34;80%&#34; /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 4. Setting for key repeating and delay&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 4. Setting for key repeating and delay&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
@@ -1478,29 +1478,29 @@ isset COLLECTION KEY
         <link>https://htr3n.github.io/2018/02/getting-started-webpack/</link>
         <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
         
-        <guid>612cec6895656de199857e568e2738ea</guid>
+        <guid>8d4087436613252549f2d15ac88fbf98</guid>
         <description>&lt;p&gt;Per definition &lt;a href=&#34;https://webpack.js.org/concepts&#34;&gt;here&lt;/a&gt;, Webpack is a &lt;em&gt;static module bundler&lt;/em&gt; for Web applications. It analyses and processes the &lt;em&gt;input application&lt;/em&gt; and generates output &lt;em&gt;bundles&lt;/em&gt;. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&amp;rsquo;ve started learning it.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
 
 
-    
+  
 
 &lt;figure &gt;
-    
-        &lt;img src=&#34;what-is-webpack.png&#34; 
-            
-            
-            
-        /&gt;
-    
-    
+  
+    &lt;img src=&#34;what-is-webpack.png&#34; 
+        
+        
+         /&gt;
+  
+  
     &lt;figcaption&gt;
-        &lt;span class=&#34;img--caption&#34;&gt;Figure 1. Webpack overview (source: https://webpack.github.io)&lt;/span&gt;
+      &lt;span class=&#34;img--caption&#34;&gt;Figure 1. Webpack overview (source: https://webpack.github.io)&lt;/span&gt;
     &lt;/figcaption&gt;
-    
+  
 &lt;/figure&gt;
+
 
 
 
