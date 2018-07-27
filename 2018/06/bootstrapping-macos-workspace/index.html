@@ -1,41 +1,407 @@
-<!DOCTYPE html><html lang="en"><head><link href="http://gmpg.org/xfn/11" rel="profile"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Cache-Control" content="public"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="generator" content="Hugo 0.45.1"><title>Bootstrapping macOS workspace • htr3n&#39;s</title><meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants"><meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Bootstrapping macOS workspace"><meta name="twitter:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.
+<!DOCTYPE html>
+<html lang="en">
+    
 
-"><meta property="og:title" content="Bootstrapping macOS workspace"><meta property="og:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
 
-"><meta property="og:type" content="article"><meta property="og:url" content="https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/"><meta property="article:published_time" content="2018-06-27T00:00:00&#43;00:00"><meta property="article:modified_time" content="2018-07-21T00:00:00&#43;00:00"><link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css"><link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print"><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.45.1" />
+    
+    
+    <title>Bootstrapping macOS workspace • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bootstrapping macOS workspace"/>
+<meta name="twitter:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.
+
+"/>
+
+<meta property="og:title" content="Bootstrapping macOS workspace" />
+<meta property="og:description" content="I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/" />
+
+
+
+<meta property="article:published_time" content="2018-06-27T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-21T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
+<link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--><!-- Icons --><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png"><link rel="shortcut icon" href="/favicon.png"></head><body><div class="sidebar"><div class="container"><div class="sidebar-about"><span class="site__title"><a href="https://htr3n.github.io/">htr3n&#39;s</a></span><div class="author-image"><img src="https://htr3n.github.io/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"></div><p class="site__description">technology, thoughts, opinions, rants</p></div><div><ul class="sidebar-nav"><li><a href="/posts/"><span>Tech</span></a></li><li><a href="/portfolio/"><span>Portfolio</span></a></li><li><a href="/vn/"><span>Tiếng Việt</span></a></li><li><a href="/about/"><span>About</span></a></li></ul></div><p><section class="social"><a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://medium.com/@htr3n"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://keybase.io/htr3n"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a></section></p><p class="copyright">&copy; 2018 htr3n. <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.<br>Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</p></div><div></div></div><div class="content container"><article><header><h1>Bootstrapping macOS workspace</h1><div class="post__meta"><i class="fas fa-calendar-alt"></i> Jun 27, 2018 in <a class="post__category" href="/categories/dev">DEV</a> • <a class="post__category" href="/categories/system">SYSTEM</a><br><i class="fas fa-tags"></i> <a class="post__tag" href="/tags/macos">macos</a> <a class="post__tag" href="/tags/sip">sip</a> <a class="post__tag" href="/tags/gatekeeper">gatekeeper</a> <a class="post__tag" href="/tags/keyboard">keyboard</a> <a class="post__tag" href="/tags/hostname">hostname</a><br><i class="fas fa-clock"></i> 10 min read</div></header><div class="post"><p>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.</p><p></p><p>Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the default values. As a result, I often find myself searching around over and over for some desirable settings. Thus, this post is kind of a note-to-self on few useful tweaks for my development box so that I can easily reach out later.</p><p><strong>Update</strong>: As it turned out that the tweaks and configurations were getting longer and became tedious to follow, I split them into two parts:</p><ul><li><a href="#system-tweak-and-configs">Part 1: System tweaks and configurations</a></li><li><a href="#dev-tools-and-configs">Part 2: Development tools and configurations</a></li></ul><hr><h2 id="system-tweak-and-configs">Part 1: System tweaks and configurations</h2><h3 id="disable-sip">Disable System Integrity Protection (SIP)</h3><p><a href="https://support.apple.com/en-us/ht204899">System Integration Protection</a> (SIP) is a security technology since OS X El Capitan 10.11 aiming at protecting certain system files and folders against malicious software. SIP even limits the access and actions of the root user account on protected parts of OS X. Unfortunately, the folder <code>/usr/local</code> needed for installing many development tools and utilities is under protection as well. That makes a lot of tools like <a href="https://brew.sh">Homebrew</a> fail to install. We can easily check SIP&rsquo;s current status.</p><pre><code class="language-sh">$ csrutil status
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+    <body>
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://htr3n.github.io/">htr3n&#39;s</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://htr3n.github.io/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         technology, thoughts, opinions, rants 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		
+				<li>
+					<a href="/posts/">
+						<span>Tech</span>
+					</a>
+				</li>
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://medium.com/@htr3n"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://keybase.io/htr3n"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 htr3n.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+<div class="content container">
+            <article>
+  <header>
+    <h1>Bootstrapping macOS workspace</h1>
+     
+    
+<div class="post__meta">
+    
+    <i class="fas fa-calendar-alt"></i> Jun 27, 2018
+    in
+              <a class="post__category" href="/categories/dev">DEV</a>
+              •
+              <a class="post__category" href="/categories/system">SYSTEM</a>
+              
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/macos">macos</a>
+           
+      
+          <a class="post__tag" href="/tags/sip">sip</a>
+           
+      
+          <a class="post__tag" href="/tags/gatekeeper">gatekeeper</a>
+           
+      
+          <a class="post__tag" href="/tags/keyboard">keyboard</a>
+           
+      
+          <a class="post__tag" href="/tags/hostname">hostname</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 10 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&rdquo; and 15&rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.</p>
+
+<p></p>
+
+<p>Nevertheless, a lot of changes, mostly for software development, have often been ignored or reset to the default values. As a result, I often find myself searching around over and over for some desirable settings. Thus, this post is kind of a note-to-self on few useful tweaks for my development box so that I can easily reach out later.</p>
+
+<p><strong>Update</strong>: As it turned out that the tweaks and configurations were getting longer and became tedious to follow, I split them into two parts:</p>
+
+<ul>
+<li><a href="#system-tweak-and-configs">Part 1: System tweaks and configurations</a></li>
+<li><a href="#dev-tools-and-configs">Part 2: Development tools and configurations</a></li>
+</ul>
+
+<hr />
+
+<h2 id="system-tweak-and-configs">Part 1: System tweaks and configurations</h2>
+
+<h3 id="disable-sip">Disable System Integrity Protection (SIP)</h3>
+
+<p><a href="https://support.apple.com/en-us/ht204899">System Integration Protection</a> (SIP) is a security technology since OS X El Capitan 10.11 aiming at protecting certain system files and folders against malicious software. SIP even limits the access and actions of the root user account on protected parts of OS X. Unfortunately, the folder  <code>/usr/local</code> needed for installing many development tools and utilities is under protection as well. That makes a lot of tools like <a href="https://brew.sh">Homebrew</a> fail to install. We can easily check SIP&rsquo;s current status.</p>
+
+<pre><code class="language-sh">$ csrutil status
 System Integrity Protection status: enabled.
-</code></pre><p>The tweak I always do right after installing or recovering a Mac is to disable SIP. Just (re)start macOS in <em>Recovery Mode</em> (restarting or turning on your Mac and immediately pressing <kbd>⌘</kbd> + <kbd>R</kbd>&mdash;shortcut to remember <kbd>R</kbd> for &lsquo;<strong>R</strong>ecovery&rsquo;&mdash;and wait until macOS boots into its recovery mode. Then open menu <span class="menu">Utility ▸ Terminal</span> and execute the following commands.</p><pre><code class="language-sh">$ csrutil disable
+</code></pre>
+
+<p>The tweak I always do right after installing or recovering a Mac is to disable SIP. Just (re)start macOS in <em>Recovery Mode</em> (restarting or turning on your Mac and immediately pressing <kbd>⌘</kbd> + <kbd>R</kbd>&mdash;shortcut to remember <kbd>R</kbd> for &lsquo;<strong>R</strong>ecovery&rsquo;&mdash;and wait until macOS boots into its recovery mode. Then open menu <span class="menu">Utility ▸ Terminal</span>
+ and execute the following commands.</p>
+
+<pre><code class="language-sh">$ csrutil disable
 $ reboot
-</code></pre><p>Your Mac will reboot and get back to the normal working mode. You can verify SIP status again.</p><pre><code class="language-sh">$ csrutil status
+</code></pre>
+
+<p>Your Mac will reboot and get back to the normal working mode. You can verify SIP status again.</p>
+
+<pre><code class="language-sh">$ csrutil status
 System Integrity Protection status: disabled.
-</code></pre><h3 id="disable-gatekeeper">Disable Gatekeeper</h3><p><em>Gatekeeper</em> was first introduced in OS X Mountain Lion. It is a security feature that prevents the users from launching potentially harmful apps.</p><p>From macOS Sierra and later, however, Apple made Gatekeeper even more restricted. Normal users would see only two choices in <em>System Preferences</em> &ndash;&gt; <em>Security &amp; Privacy</em> that &ldquo;<em>Allow apps downloaded from</em>&rdquo; either &ldquo;<em>App Store</em>&rdquo; or &ldquo;<em>App Store and identified developers</em>&rdquo;.</p><p>That means only signed apps are allowed to launch, i.e. breaking a lot of useful unsigned apps whose developers cannot afford to pay US$99 yearly membership for <em>Apple Developer Program</em>.</p><figure><img src="enabled-gatekeeper.png" align="center" width="80%"><figcaption><span class="img--caption">Figure 1. Enabled Gatekeeper</span></figcaption></figure><p>We can circumvent that by disabling Gatekeeper. You do not have to restart macOS but only executing the following command <code>sudo spctl --master-disable</code>.</p><p>After that, you will be able to see Gatekeeper being disabled.</p><figure><img src="disabled-gatekeeper.png" align="center" width="80%"><figcaption><span class="img--caption">Figure 2. Disabled Gatekeeper</span></figcaption></figure><p>Naturally Gatekeeper can be re-enabled at any time with <code>sudo spctl --master-enable</code>.</p><h3 id="reveal-library">Revealing &lsquo;~/Library&rsquo;</h3><p>In macOS, the folder &lsquo;<em>~/Library</em>&rsquo; within users home folder is hidden (since 10.7!?) seemingly to prevent any unintentional changes. It&rsquo;s not so difficult to navigate to this folder (and any other folders) using command line. In case you want to use Finder to navigate and explore &lsquo;<em>~/Library</em>&rsquo;, we can simply use the following command.</p><pre><code class="language-sh">$ chflags nohidden ~/Library
-</code></pre><h3 id="enabling-key-repeating">Enabling Key Repeating</h3><p>The behaviour for keyboard long pressing in macOS is also of polarised personal taste. A typical behaviour that we often see is that the letter keeps popping out since one holds down a key until the key is released. Some years back this has been changed into &lsquo;<em>Character Picker</em>&rsquo;. It means when a key is pressed and held, the non-standard characters corresponding characters will pop up as the picture below.</p><figure><img src="enabled-character-picker.png" align="center" width="80%"><figcaption><span class="img--caption">Figure 3. Character Picker in action</span></figcaption></figure><p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with <kbd>shift</kbd> + <kbd>↓ ↑ ← →</kbd>.</p><p>For that reason, I always disable that feature in any macOS that I am working on. Unfortunately, this cannot be done with <span class="menu">System Preferences</span> but command line. After each command, you must re-start the editors to see the effect.</p><pre><code class="language-sh"># disable 'Character Picker'
+</code></pre>
+
+<h3 id="disable-gatekeeper">Disable Gatekeeper</h3>
+
+<p><em>Gatekeeper</em> was first introduced in OS X Mountain Lion. It is a security feature that prevents the users from launching potentially harmful apps.</p>
+
+<p>From macOS Sierra and later, however, Apple made Gatekeeper even more restricted. Normal users would see only two choices in <em>System Preferences</em> &ndash;&gt; <em>Security &amp; Privacy</em> that &ldquo;<em>Allow apps downloaded from</em>&rdquo; either &ldquo;<em>App Store</em>&rdquo; or &ldquo;<em>App Store and identified developers</em>&rdquo;.</p>
+
+<p>That means only signed apps are allowed to launch, i.e. breaking a lot of useful unsigned apps whose developers cannot afford to pay US$99 yearly membership for <em>Apple Developer Program</em>.</p>
+
+
+
+  
+
+<figure >
+  
+    <img src="enabled-gatekeeper.png" 
+        
+        align="center"
+        width="80%" />
+  
+  
+    <figcaption>
+      <span class="img--caption">Figure 1. Enabled Gatekeeper</span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<p>We can circumvent that by disabling Gatekeeper. You do not have to restart macOS but only executing the following command <code>sudo spctl --master-disable</code>.</p>
+
+<p>After that, you will be able to see Gatekeeper being disabled.</p>
+
+
+
+  
+
+<figure >
+  
+    <img src="disabled-gatekeeper.png" 
+        
+        align="center"
+        width="80%" />
+  
+  
+    <figcaption>
+      <span class="img--caption">Figure 2. Disabled Gatekeeper</span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<p>Naturally Gatekeeper can be re-enabled at any time with <code>sudo spctl --master-enable</code>.</p>
+
+<h3 id="reveal-library">Revealing &lsquo;~/Library&rsquo;</h3>
+
+<p>In macOS, the folder &lsquo;<em>~/Library</em>&rsquo; within users home folder is hidden (since 10.7!?) seemingly to prevent any unintentional changes. It&rsquo;s not so difficult to navigate to this folder (and any other folders) using command line. In case you want to use Finder to navigate and explore &lsquo;<em>~/Library</em>&rsquo;, we can simply use the following command.</p>
+
+<pre><code class="language-sh">$ chflags nohidden ~/Library
+</code></pre>
+
+<h3 id="enabling-key-repeating">Enabling Key Repeating</h3>
+
+<p>The behaviour for keyboard long pressing in macOS is also of polarised personal taste. A typical behaviour that we often see is that the letter keeps popping out since one holds down a key until the key is released. Some years back this has been changed into &lsquo;<em>Character Picker</em>&rsquo;. It means when a key is pressed and held, the non-standard characters corresponding characters will pop up as the picture below.</p>
+
+
+
+  
+
+<figure >
+  
+    <img src="enabled-character-picker.png" 
+        
+        align="center"
+        width="80%" />
+  
+  
+    <figcaption>
+      <span class="img--caption">Figure 3. Character Picker in action</span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<p>Not a big fan of Character Picker, I rather like characters keep repeating when a key is held. In many cases, this behavior becomes very handy, for instance, when selecting large texts with <kbd>shift</kbd> + <kbd>↓ ↑ ← →</kbd>.</p>
+
+<p>For that reason, I always disable that feature in any macOS that I am working on. Unfortunately, this cannot be done with <span class="menu">System Preferences</span>
+ but command line. After each command, you must re-start the editors to see the effect.</p>
+
+<pre><code class="language-sh"># disable 'Character Picker'
 $ defaults write -g ApplePressAndHoldEnabled -bool false
 # it can be enabled
 $ defaults write -g ApplePressAndHoldEnabled -bool true
-</code></pre><p>Another option relating to key repeating is tuning its speed/rate and delay. Luckily, we can do this via <span class="menu">System Preferences ▸ Keyboard</span> . My favourite is &lsquo;<em>fastest</em>&rsquo; repeating and &lsquo;<em>shortest</em>&rsquo; delay as possible.</p><figure><img src="speed-delay.png" align="center" width="80%"><figcaption><span class="img--caption">Figure 4. Setting for key repeating and delay</span></figcaption></figure><p>Like many other options, we can change it via command line or fine tuning tool such as <a href="https://pqrs.org/osx/karabiner">Karabiner</a>.</p><pre><code class="language-sh"># InitialKeyRepeat: 120, 94, 68, 35, 25, 15 (lower is faster, default is 25)
+</code></pre>
+
+<p>Another option relating to key repeating is tuning its speed/rate and delay. Luckily, we can do this via <span class="menu">System Preferences ▸ Keyboard</span>
+. My favourite is &lsquo;<em>fastest</em>&rsquo; repeating and &lsquo;<em>shortest</em>&rsquo; delay as possible.</p>
+
+
+
+  
+
+<figure >
+  
+    <img src="speed-delay.png" 
+        
+        align="center"
+        width="80%" />
+  
+  
+    <figcaption>
+      <span class="img--caption">Figure 4. Setting for key repeating and delay</span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<p>Like many other options, we can change it via command line or fine tuning tool such as <a href="https://pqrs.org/osx/karabiner">Karabiner</a>.</p>
+
+<pre><code class="language-sh"># InitialKeyRepeat: 120, 94, 68, 35, 25, 15 (lower is faster, default is 25)
 $ defaults write -g InitialKeyRepeat -int 15
 # KeyRepeat: 120, 90, 60, 30, 12, 6, 2 (lower is faster, default is 6)
 $ defaults write -g KeyRepeat -int 2	
-</code></pre><h3 id="changing-hostnames">Changing Hostnames</h3><p>Most of the time, the default host name is not satisfied and you might want to have a cool name for your dev box. Then you are surely not alone. Here and there, you might find some cool combo like <code>harry@hogwart</code> , <code>alice@wonderland</code>, <code>yoda@dagobah</code>, <code>joker@gotham</code>, <code>neo@matrix</code>, <code>frodo@mordor</code> you name it. You can quickly do this via command line.</p><pre><code class="language-sh"># change the primary host name
+</code></pre>
+
+<h3 id="changing-hostnames">Changing Hostnames</h3>
+
+<p>Most of the time, the default host name is not satisfied and you might want to have a cool name for your dev box. Then you are surely not alone. Here and there, you might find some cool combo like <code>harry@hogwart</code> , <code>alice@wonderland</code>,  <code>yoda@dagobah</code>,  <code>joker@gotham</code>, <code>neo@matrix</code>, <code>frodo@mordor</code> you name it. You can quickly do this via command line.</p>
+
+<pre><code class="language-sh"># change the primary host name
 $ sudo scutil --set HostName gotham
 # ... do the same for local (Bonjour) host name 
 $ sudo scutil --set LocalHostName gotham
 # and finally, keep the user-friendly computer's name in Finder in sync
 $ sudo scutil --set ComputerName gotham
-</code></pre><hr><h2 id="dev-tools-and-configs">Part 2: Development tools and configurations</h2><p>In this part, I will focus more on some handy tools and configurations often used for my software development tasks.</p><h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3><p>Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to install the Xcode command line tools that Homebrew needs to build its tools.</p><pre><code class="language-sh"># install Xcode command line developer tools
+</code></pre>
+
+<hr />
+
+<h2 id="dev-tools-and-configs">Part 2: Development tools and configurations</h2>
+
+<p>In this part, I will focus more on some handy tools and configurations often used for my software development tasks.</p>
+
+<h3 id="homebrew-https-brew-sh"><a href="https://brew.sh">Homebrew</a></h3>
+
+<p>Homebrew provides a rich collection of tools I need, mostly open sources, that Apple does not. Installing Homebrew is super easy with a one-liner command. Before that, we only have to install the Xcode command line tools that Homebrew needs to build its tools.</p>
+
+<pre><code class="language-sh"># install Xcode command line developer tools
 $ xcode-select --install
 
 # now install Homebrew
 $ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre><p>Then we need to add <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> (where Homebrew links the executable files) to the environment variable <code>PATH</code>. This can be done by altering the shell startup scripts. For instance, for Bash shell it is <code>~/.bash_profile</code>, for Zshell it is <code>~/.zsh_profile</code>.</p><pre><code class="language-shell">export PATH=$PATH:/usr/local/bin:/usr/local/sbin
-</code></pre><p>Should you want the Homebrew tools have higher priority than the others, just switch <code>$PATH</code> to the end instead. We now can start using <code>brew</code> to install some necessary tools.</p><pre><code class="language-sh">$ brew install ack curl dnsmasq docker gcc git go gradle maven mysql node openssl openssh python3 php72 composer ruby rbenv sassc yarn zsh 
-</code></pre><p>Homebrew can also help handling macOS start-up services which are useful for managing servers like Apache httpd, nginx, php-fpm, MySQL, PostgreSQL, etc.</p><pre><code class="language-sh">$ brew services start httpd
+</code></pre>
+
+<p>Then we need to add <code>/usr/local/bin</code> and <code>/usr/local/sbin</code> (where Homebrew links the executable files) to the environment variable <code>PATH</code>. This can be done by altering the shell startup scripts. For instance, for Bash shell it is <code>~/.bash_profile</code>, for Zshell it is <code>~/.zsh_profile</code>.</p>
+
+<pre><code class="language-shell">export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+</code></pre>
+
+<p>Should you want the Homebrew tools have higher priority than the others, just switch <code>$PATH</code> to the end instead. We now can start using <code>brew</code> to install some necessary tools.</p>
+
+<pre><code class="language-sh">$ brew install ack curl dnsmasq docker gcc git go gradle maven mysql node openssl openssh python3 php72 composer ruby rbenv sassc yarn zsh 
+</code></pre>
+
+<p>Homebrew can also help handling macOS start-up services which are useful for managing servers like Apache httpd, nginx, php-fpm, MySQL, PostgreSQL, etc.</p>
+
+<pre><code class="language-sh">$ brew services start httpd
 $ brew services stop httpd
-</code></pre><p>For quick re-installing or recovering Homebrew, we can use <a href="https://github.com/Homebrew/homebrew-bundle">homebrew-bundle</a> for backing up the current Homebrew&rsquo;s installation and restoring later.</p><pre><code class="language-sh"># tap the bundle
+</code></pre>
+
+<p>For quick re-installing or recovering Homebrew, we can use <a href="https://github.com/Homebrew/homebrew-bundle">homebrew-bundle</a> for backing up the current Homebrew&rsquo;s installation and restoring later.</p>
+
+<pre><code class="language-sh"># tap the bundle
 $ brew tap Homebrew/bundle
 # dump all existing Homebrew packages to Brewfile
 $ brew bundle dump --force
@@ -43,20 +409,122 @@ $ brew bundle dump --force
 $ brew bundle list
 # restore/install all packages from the Brewfile 
 $ brew bundle
-</code></pre><p>Homebrew also incorporates <a href="https://github.com/Homebrew/homebrew-cask">Homebrew-Cask</a> (formerly an independent plugin for Homebrew) that can help to install many macOS apps as you might see in the subsequent parts.</p><h3 id="terminals-and-shells">Terminals and Shells</h3><p>Since working with Linux a lot and then macOS, I&rsquo;m rather familiar with the command line. There are many cases using terminals would be more convenient than graphical editors. Thus, I need a good terminal app. The built-in Terminal app in macOS is not bad but I usually opt for <a href="https://www.iterm2.com">iTerm2</a>.</p><pre><code class="language-sh">$ brew cask install iterm2
-</code></pre><p>Some of my favorite settings for iTerms are including dark themes such as <a href="https://draculatheme.com/iterm">Dracula</a>, <a href="https://gist.github.com/meqif/1238378">IR_Black</a>, <a href="https://github.com/junegunn/seoul256-iTerm2">seoul_256</a>, <a href="https://github.com/nathanbuchar/atom-one-dark-terminal">Atom One Dark</a> along with a fixed-width font like <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>, <a href="https://fonts.google.com/specimen/Cousine">Cousine</a>, <a href="https://fonts.google.com/specimen/Roboto+Mono">Roboto Mono</a>, <a href="https://github.com/tonsky/FiraCode">Fira Code</a> or <a href="https://www.typography.com/fonts/operator/overview/">Operator Mono</a> (very nice ligatures and italic mode), <a href="https://fonts.google.com/specimen/Inconsolata">Inconsolata</a> or its variants (Inconsolata-dz, Inconsolata-g), or <a href="https://github.com/source-foundry/Hack">Hack</a>. Some of these fonts can be installed via Homebrew Cask.</p><p>Along with iTerms 2, I also love <a href="http://www.zsh.org">Z shell</a> (zsh) which is an extended version of Bash shell a lot with many nice features like directory alias, command completion, path expansion, etc. You might also find some Zsh configuration frameworks like <a href="https://ohmyz.sh">oh-my-zsh</a> or <a href="https://github.com/sorin-ionescu/prezto">Prezto</a> amazing to start with. I&rsquo;ve tried both of them and found oh-my-zsh a bit sluggish and Prezto a bit difficult to add more extensions or customize. I have actually used a small piece from either of them and found myself quickly forgetting the customised parts taken from the others. Hence, I decided to develop a set of my own <a href="https://github.com/htr3n/zsh-config">ZSH configurations</a>. Moreover, I often keep a habit of writting Shell scripts in standard sh/bash as much as possible and keep zsh-specific separately for better portability and compatibility.</p><h3 id="text-code-editors">Text/Code Editors</h3><p>There are quite a number of editors in macOS for developers ranging from, er, the built-in Text Editor, <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="https://macromates.com">TextMate</a>, <a href="https://www.barebones.com/products/textwrangler">TextWrangler</a>, the nerdy <a href="https://www.vim.org">Vim</a>, <a href="https://www.gnu.org/software/emacs">Emacs</a>, and recently <a href="https://atom.io">Atom</a>, <a href="https://code.visualstudio.com">Visual Studio Code</a>, <a href="http://brackets.io">Brackets</a>, to name but a few. You might install these editos using Cask.</p><p>In macOS, Sublime Text is often a powerful editor for many of us but it is quite costly. I used to love and work with Atom developed by Github as an effort to build a modern editor for developers. Atom has a plethora of extensions to become a very promising choice. Nevertheless, I was growing skeptical with its sluggishness in early days and therefore leaned to <a href="https://code.visualstudio.com">Visual Studio Code</a>, my current Swiss-army-knife editor-of-choice instead.</p><pre><code class="language-sh">$ brew cask install visual-studio-code
-</code></pre><p>Frequently using terminal/console, I just grasp vim for quick editing tasks and <a href="https://github.com/htr3n/vim-config">customised it</a> a little bit.</p><pre><code class="language-sh">$ brew install vim
-</code></pre><p>For Markdown editors, e.g. Github infamous <em>README.md</em> or my blog posts, I used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes second in the pecking order for now (at least until Typora&rsquo;s developers announce their paid plans).</p><p>With Typora, I can directly write Markdown articles just like Microsoft Word. I can do <kbd>⌘</kbd> + <kbd>/</kbd> to instantly switch back and forth between <em>Visual Editing</em> and <em>Source</em> modes. Even better, I can adapt the Markdown render in Typora to be nearly indentical to my blog and therefore, experience a kind of semi-<em>WYSIWYG</em> Markdown editing.</p><pre><code class="language-sh">$ brew cask install typora
-</code></pre><h3 id="other-tools">Other nice-to-have tools</h3><h4 id="ack-https-beyondgrep-com"><a href="https://beyondgrep.com">Ack</a></h4><ul><li>Ack is faster and easier to use than grep</li></ul><pre><code class="language-sh">$ brew install ack
-</code></pre><h4 id="dropbox-https-www-dropbox-com"><a href="https://www.dropbox.com">Dropbox</a></h4><ul><li>Many of our customers and friends are sharing files using Dropbox, so are we ;). Note that it must be installed in &lsquo;<em>/Applications</em>&rsquo; to work properly.</li></ul><pre><code class="language-sh">$ brew cask install --appdir=&quot;/Applications&quot; dropbox
-</code></pre><h4 id="docker-ce-https-www-docker-com-community-edition-and-command-line"><a href="https://www.docker.com/community-edition">Docker CE</a> and command line</h4><ul><li>Every serious developer is talking about and working with it ;)</li></ul><pre><code class="language-sh">$ brew cask install docker
+</code></pre>
+
+<p>Homebrew also incorporates <a href="https://github.com/Homebrew/homebrew-cask">Homebrew-Cask</a> (formerly an independent plugin for Homebrew) that can help to install many macOS apps as you might see in the subsequent parts.</p>
+
+<h3 id="terminals-and-shells">Terminals and Shells</h3>
+
+<p>Since working with Linux a lot and then macOS, I&rsquo;m rather familiar with the command line. There are many cases using terminals would be more convenient than graphical editors. Thus, I need a good terminal app. The built-in Terminal app in macOS is not bad but I usually opt for <a href="https://www.iterm2.com">iTerm2</a>.</p>
+
+<pre><code class="language-sh">$ brew cask install iterm2
+</code></pre>
+
+<p>Some of my favorite settings for iTerms are including dark themes such as <a href="https://draculatheme.com/iterm">Dracula</a>, <a href="https://gist.github.com/meqif/1238378">IR_Black</a>, <a href="https://github.com/junegunn/seoul256-iTerm2">seoul_256</a>, <a href="https://github.com/nathanbuchar/atom-one-dark-terminal">Atom One Dark</a> along with a fixed-width font like <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>, <a href="https://fonts.google.com/specimen/Cousine">Cousine</a>, <a href="https://fonts.google.com/specimen/Roboto+Mono">Roboto Mono</a>, <a href="https://github.com/tonsky/FiraCode">Fira Code</a> or <a href="https://www.typography.com/fonts/operator/overview/">Operator Mono</a> (very nice ligatures and italic mode), <a href="https://fonts.google.com/specimen/Inconsolata">Inconsolata</a> or its variants (Inconsolata-dz, Inconsolata-g), or <a href="https://github.com/source-foundry/Hack">Hack</a>. Some of these fonts can be installed via Homebrew Cask.</p>
+
+<p>Along with iTerms 2, I also love <a href="http://www.zsh.org">Z shell</a> (zsh) which is an extended version of Bash shell a lot with many nice features like directory alias, command completion, path expansion, etc. You might also find some Zsh configuration frameworks like <a href="https://ohmyz.sh">oh-my-zsh</a> or <a href="https://github.com/sorin-ionescu/prezto">Prezto</a> amazing to start with. I&rsquo;ve tried both of them and found oh-my-zsh a bit sluggish and Prezto a bit difficult to add more extensions or customize. I have actually used a small piece from either of them and found myself quickly forgetting the customised parts taken from the others. Hence, I decided to develop a set of my own <a href="https://github.com/htr3n/zsh-config">ZSH configurations</a>. Moreover, I often keep a habit of writting Shell scripts in standard sh/bash as much as possible and keep zsh-specific separately for better portability and compatibility.</p>
+
+<h3 id="text-code-editors">Text/Code Editors</h3>
+
+<p>There are quite a number of editors in macOS for developers ranging from, er, the built-in Text Editor, <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="https://macromates.com">TextMate</a>, <a href="https://www.barebones.com/products/textwrangler">TextWrangler</a>, the nerdy <a href="https://www.vim.org">Vim</a>, <a href="https://www.gnu.org/software/emacs">Emacs</a>, and recently <a href="https://atom.io">Atom</a>, <a href="https://code.visualstudio.com">Visual Studio Code</a>, <a href="http://brackets.io">Brackets</a>, to name but a few. You might install these editos using Cask.</p>
+
+<p>In macOS, Sublime Text is often a powerful editor for many of us but it is quite costly. I used to love and work with Atom developed by Github as an effort to build a modern editor for developers. Atom has a plethora of extensions to become a very promising choice. Nevertheless, I was growing skeptical with its sluggishness in early days and therefore leaned to <a href="https://code.visualstudio.com">Visual Studio Code</a>, my current Swiss-army-knife editor-of-choice instead.</p>
+
+<pre><code class="language-sh">$ brew cask install visual-studio-code
+</code></pre>
+
+<p>Frequently using terminal/console, I just grasp vim for quick editing tasks and <a href="https://github.com/htr3n/vim-config">customised it</a> a little bit.</p>
+
+<pre><code class="language-sh">$ brew install vim
+</code></pre>
+
+<p>For Markdown editors, e.g. Github infamous <em>README.md</em> or my blog posts, I used <a href="http://macdown.uranusjr.com">MacDown</a>. After discovering <a href="https://typora.io">Typora</a>, MacDown becomes second in the pecking order for now (at least until Typora&rsquo;s developers announce their paid plans).</p>
+
+<p>With Typora, I can directly write Markdown articles just like Microsoft Word.  I can do <kbd>⌘</kbd> + <kbd>/</kbd> to instantly switch back and forth between <em>Visual Editing</em> and <em>Source</em> modes. Even better, I can adapt the Markdown render in Typora to be nearly indentical to my blog and therefore, experience a kind of semi-<em>WYSIWYG</em> Markdown editing.</p>
+
+<pre><code class="language-sh">$ brew cask install typora
+</code></pre>
+
+<h3 id="other-tools">Other nice-to-have tools</h3>
+
+<h4 id="ack-https-beyondgrep-com"><a href="https://beyondgrep.com">Ack</a></h4>
+
+<ul>
+<li>Ack is faster and easier to use than grep</li>
+</ul>
+
+<pre><code class="language-sh">$ brew install ack
+</code></pre>
+
+<h4 id="dropbox-https-www-dropbox-com"><a href="https://www.dropbox.com">Dropbox</a></h4>
+
+<ul>
+<li>Many of our customers and friends are sharing files using Dropbox, so are we ;). Note that it must be installed in &lsquo;<em>/Applications</em>&rsquo; to work properly.</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install --appdir=&quot;/Applications&quot; dropbox
+</code></pre>
+
+<h4 id="docker-ce-https-www-docker-com-community-edition-and-command-line"><a href="https://www.docker.com/community-edition">Docker CE</a> and command line</h4>
+
+<ul>
+<li>Every serious developer is talking about and working with it ;)</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install docker
 $ brew install docker
-</code></pre><h4 id="spectacle-https-www-spectacleapp-com"><a href="https://www.spectacleapp.com">Spectacle</a></h4><ul><li>This is an amazing free app for resizing windows using shortcuts. I use it a lot to quickly arrange the working windows.</li></ul><pre><code class="language-sh">$ brew cask install spectacle
-</code></pre><h4 id="alfred-https-www-alfredapp-com-powerpack"><a href="https://www.alfredapp.com">Alfred</a> + Powerpack ($)</h4><ul><li>Alfred is a must-have for me and, maybe, many other macOS users. The free version is useful enough but the paid (for Powerpack) can blow anyone away. Alfred helps me much more when I prefer to use the keyboard as much as possible instead of reaching for the mice.</li></ul><pre><code class="language-sh">$ brew cask install alfred
-</code></pre><h4 id="1password-https-1password-com"><a href="https://1password.com">1Password</a> ($)</h4><ul><li>Help storing all of my private information and authentication in iCloud or Dropbox and using them in macOS or iOS.</li></ul><pre><code class="language-sh">$ brew cask install 1password
-</code></pre><h4 id="f-lux-https-justgetflux-com"><a href="https://justgetflux.com">F.lux</a></h4><ul><li>Saving my eyes staring daily at computer&rsquo;s monitors (macOS also has Night Shift mode but my eyes still find F.lux more pleasant at night)</li></ul><pre><code class="language-sh">$ brew cask install flux
-</code></pre><h4 id="web-browsers">Web Browsers</h4><ul><li>Installing Firefox and Google Chrome mainly for Web development, testing and debugging as I find Safari is, not perfect though, sufficient for daily use and conveniently sharing bookmarks and history links between macOS and my iPad and iPhone.</li></ul><pre><code class="language-sh">$ brew cask install google-chrome firefox
-</code></pre><h4 id="remote-access">Remote Access</h4><p>SSH/SFTP it is.</p><pre><code class="language-sh"># I prefer OpenSSH to the stock BSD SSH
+</code></pre>
+
+<h4 id="spectacle-https-www-spectacleapp-com"><a href="https://www.spectacleapp.com">Spectacle</a></h4>
+
+<ul>
+<li>This is an amazing free app for resizing windows using shortcuts. I use it a lot to quickly arrange the working windows.</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install spectacle
+</code></pre>
+
+<h4 id="alfred-https-www-alfredapp-com-powerpack"><a href="https://www.alfredapp.com">Alfred</a> + Powerpack ($)</h4>
+
+<ul>
+<li>Alfred is a must-have for me and, maybe, many other macOS users. The free version is useful enough but the paid (for Powerpack) can blow anyone away. Alfred helps me much more when I prefer to use the keyboard as much as possible instead of reaching for the mice.</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install alfred
+</code></pre>
+
+<h4 id="1password-https-1password-com"><a href="https://1password.com">1Password</a> ($)</h4>
+
+<ul>
+<li>Help storing all of my private information and authentication in iCloud or Dropbox and using them in macOS or iOS.</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install 1password
+</code></pre>
+
+<h4 id="f-lux-https-justgetflux-com"><a href="https://justgetflux.com">F.lux</a></h4>
+
+<ul>
+<li>Saving my eyes staring daily at computer&rsquo;s monitors (macOS also has Night Shift mode but my eyes still find F.lux more pleasant at night)</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install flux
+</code></pre>
+
+<h4 id="web-browsers">Web Browsers</h4>
+
+<ul>
+<li>Installing Firefox and Google Chrome mainly for Web development, testing and debugging as I find Safari is, not perfect though, sufficient for daily use and conveniently sharing bookmarks and history links between macOS and my iPad and iPhone.</li>
+</ul>
+
+<pre><code class="language-sh">$ brew cask install google-chrome firefox
+</code></pre>
+
+<h4 id="remote-access">Remote Access</h4>
+
+<p>SSH/SFTP it is.</p>
+
+<pre><code class="language-sh"># I prefer OpenSSH to the stock BSD SSH
 $ brew install openssh
 # ...  love to quickly copy my public key to the servers
 $ brew install ssh-copy-id
@@ -64,10 +532,58 @@ $ brew install ssh-copy-id
 $ ssh-keygen -t rsa -b 4096 -C &quot;MacBookPro email@example.com&quot;
 # copy the public key to the host for passwordless authentication
 $ ssh-copy-id user@host
-</code></pre><h4 id="networking-tools">Networking Tools</h4><pre><code class="language-sh">$ brew install netcat curl wget nmap
-</code></pre><h4 id="communication">Communication</h4><p><a href="https://www.skype.com">Skype</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://keybase.io">Keybase</a> (open source end-to-end encryption)</p><pre><code class="language-sh">$ brew cask install skype slack keybase
-</code></pre><h4 id="gnu-tools">GNU Tools</h4><pre><code class="language-sh">$ brew install coreutils autoconf automake findutils gawk gcc gnu-sed grep
-</code></pre></div><div class="post--navigation post--navigation-single"><a href="/2018/06/apache-cxf-2-to-3/" class="post--navigation-prev"><i aria-hidden="true" class="fa fa-chevron-left"></i> <span>A journey from Apache CXF 2.2 to 3.2</span> </a><a href="/2018/07/minimal-hugo-workflow/" class="post--navigation-next"><span>A mininal Hugo blogging workflow</span> <i aria-hidden="true" class="fa fa-chevron-right"></i></a></div><div class="post__related"><h2>Related Articles</h2><ul class="related-posts"><li><span class="list__title--small"><a href="/2017/09/apache-httpd-php-macos/">Apache httpd 2.4 and PHP 7 in macOS</a> <time class="pull-right hidden-tablet">Sep 25 &#39;17</time></span></li></ul></div><div id="disqus_thread"></div><script type="text/javascript">(function () {
+</code></pre>
+
+<h4 id="networking-tools">Networking Tools</h4>
+
+<pre><code class="language-sh">$ brew install netcat curl wget nmap
+</code></pre>
+
+<h4 id="communication">Communication</h4>
+
+<p><a href="https://www.skype.com">Skype</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://keybase.io">Keybase</a> (open source end-to-end encryption)</p>
+
+<pre><code class="language-sh">$ brew cask install skype slack keybase
+</code></pre>
+
+<h4 id="gnu-tools">GNU Tools</h4>
+
+<pre><code class="language-sh">$ brew install coreutils autoconf automake findutils gawk gcc gnu-sed grep
+</code></pre>
+  </div>
+  <div class="post--navigation post--navigation-single">
+    <a href="/2018/06/apache-cxf-2-to-3/" class="post--navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span>A journey from Apache CXF 2.2 to 3.2</span>
+    </a>
+    <a href="/2018/07/minimal-hugo-workflow/" class="post--navigation-next">
+      <span>A mininal Hugo blogging workflow</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+</div>
+
+  
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/2017/09/apache-httpd-php-macos/">Apache httpd 2.4 and PHP 7 in macOS</a>
+      
+      <time class="pull-right hidden-tablet">Sep 25 &#39;17</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
     if (location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "") {
@@ -80,13 +596,44 @@ $ ssh-copy-id user@host
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || 
       document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></article></div><script>var doNotTrack = false;
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+</article>
+
+        </div>
+        
+<script>
+var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-112764962-1', 'auto');
 	
 	ga('send', 'pageview');
-}</script><script async src="https://www.google-analytics.com/analytics.js"></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script><noscript id="deferred-styles"><link rel="stylesheet" type="text/css" href="https://htr3n.github.io//css/github.min.css"></noscript><script>var loadDeferredStyles = function () {
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+<noscript id="deferred-styles">
+  
+  <link rel="stylesheet" type="text/css" href="https://htr3n.github.io//css/github.min.css" />
+</noscript>
+
+<script>
+  var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
@@ -101,4 +648,19 @@ if (!doNotTrack) {
     window.setTimeout(loadDeferredStyles, 0);
   });
   else
-    window.addEventListener('load', loadDeferredStyles);</script></body></html>
+    window.addEventListener('load', loadDeferredStyles);
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    
+
+
+    </body>
+</html>

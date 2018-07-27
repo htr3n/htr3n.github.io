@@ -1,33 +1,284 @@
-<!DOCTYPE html><html lang="en"><head><link href="http://gmpg.org/xfn/11" rel="profile"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Cache-Control" content="public"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="generator" content="Hugo 0.45.1"><title>Node.js package managers: NPM and Yarn • htr3n&#39;s</title><meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants"><meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Node.js package managers: NPM and Yarn"><meta name="twitter:description" content="Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources.
+<!DOCTYPE html>
+<html lang="en">
+    
 
-"><meta property="og:title" content="Node.js package managers: NPM and Yarn"><meta property="og:description" content="Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources.
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
 
-"><meta property="og:type" content="article"><meta property="og:url" content="https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/"><meta property="article:published_time" content="2018-04-23T00:00:00&#43;00:00"><meta property="article:modified_time" content="2018-04-23T00:00:00&#43;00:00"><link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css"><link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print"><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.45.1" />
+    
+    
+    <title>Node.js package managers: NPM and Yarn • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node.js package managers: NPM and Yarn"/>
+<meta name="twitter:description" content="Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources.
+
+"/>
+
+<meta property="og:title" content="Node.js package managers: NPM and Yarn" />
+<meta property="og:description" content="Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/" />
+
+
+
+<meta property="article:published_time" content="2018-04-23T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-04-23T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
+<link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--><!-- Icons --><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png"><link rel="shortcut icon" href="/favicon.png"></head><body><div class="sidebar"><div class="container"><div class="sidebar-about"><span class="site__title"><a href="https://htr3n.github.io/">htr3n&#39;s</a></span><div class="author-image"><img src="https://htr3n.github.io/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"></div><p class="site__description">technology, thoughts, opinions, rants</p></div><div><ul class="sidebar-nav"><li><a href="/posts/"><span>Tech</span></a></li><li><a href="/portfolio/"><span>Portfolio</span></a></li><li><a href="/vn/"><span>Tiếng Việt</span></a></li><li><a href="/about/"><span>About</span></a></li></ul></div><p><section class="social"><a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://medium.com/@htr3n"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://keybase.io/htr3n"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a></section></p><p class="copyright">&copy; 2018 htr3n. <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.<br>Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</p></div><div></div></div><div class="content container"><article><header><h1>Node.js package managers: NPM and Yarn</h1><div class="post__meta"><i class="fas fa-calendar-alt"></i> Apr 23, 2018 in <a class="post__category" href="/categories/dev">DEV</a><br><i class="fas fa-tags"></i> <a class="post__tag" href="/tags/javascript">javascript</a> <a class="post__tag" href="/tags/node.js">node.js</a> <a class="post__tag" href="/tags/package-management">package management</a> <a class="post__tag" href="/tags/npm">npm</a> <a class="post__tag" href="/tags/yarn">yarn</a><br><i class="fas fa-clock"></i> 5 min read</div></header><div class="post"><p>Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources.</p><p></p><p>Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, <a href="https://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack">several package managers</a> have been developed, notably, <a href="https://www.npmjs.org/">npm</a>, <a href="https://anymod.com">anymod</a> (formerly <code>component</code>), <a href="http://volojs.org">volo</a>, <a href="http://packages.ringojs.org">ringojs</a>, <a href="https://bower.io">bower</a>, <a href="https://yarnpkg.com">yarn</a>, <a href="https://pnpm.js.org"><code>pnpm</code></a>, to name but a few.</p><p>In this post, we shall walk through the two tools that have been seemingly living up to the high expectation of a majority of JavaScript developers and communities, <code>npm</code> and <code>yarn</code>. <code>pnpm</code> is an improvement that <a href="https://github.com/pnpm/node-package-manager-benchmark">performs sometimes better</a> than <code>npm</code> and <code>yarn</code>. The great advantage of using <code>pnpm</code> is that we just replace the command <code>npm</code> by <code>pnpm</code> and keep the rest intact. Bower is a powerful tool that supports not only JS but also various types of Web resources including HTML, CSS, fonts, images. Nevertheless, the core Bower developers and maintainers <a href="https://bower.io/blog/2017/how-to-migrate-away-from-bower">had recently recommended the users to switch to <code>yarn</code></a>.</p><ul><li><code>npm</code> seems to be the <em>de facto</em> package management included with Node.js. When Node.js is installed, <code>npm</code> will also be available and ready to use as well. This is one among many reasons why <code>npm</code> is well-known and widely used by JS developers.</li><li><code>yarn</code> was <a href="https://code.facebook.com/posts/1840075619545360">originally developed by Facebook</a> to overcome existing problems of existing package management tools. Some notable <code>yarn</code>&rsquo;s features are <em>deterministic model</em> (producing the same result when repeating), <em>flat mode</em> (resolving mismatching versions of dependencies to a single version to avoid duplicate), <em>security first</em>, <em>offline mode</em>, <em>network performance</em>, and so forth. Nevertheless, recent versions of <code>npm</code> also improve significantly by learning and incorporate several good features from <code>yarn</code>.</li></ul><h2 id="walking-through">Walking Through</h2><p>In this part, we will go through a typical development workflow that each tool provides with basic steps and some commonly used options.</p><h3 id="0-installing-and-upgrading">0. Installing and Upgrading</h3><h5 id="npm">NPM</h5><p>As mentioned above, <code>npm</code> is available wherever Node.js is installed. So, the only thing to do is to upgrade <code>npm</code></p><pre><code class="language-sh">npm install npm@latest -g
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+    <body>
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://htr3n.github.io/">htr3n&#39;s</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://htr3n.github.io/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         technology, thoughts, opinions, rants 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		
+				<li>
+					<a href="/posts/">
+						<span>Tech</span>
+					</a>
+				</li>
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://medium.com/@htr3n"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://keybase.io/htr3n"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 htr3n.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+<div class="content container">
+            <article>
+  <header>
+    <h1>Node.js package managers: NPM and Yarn</h1>
+     
+    
+<div class="post__meta">
+    
+    <i class="fas fa-calendar-alt"></i> Apr 23, 2018
+    in
+              <a class="post__category" href="/categories/dev">DEV</a>
+              
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/javascript">javascript</a>
+           
+      
+          <a class="post__tag" href="/tags/node.js">node.js</a>
+           
+      
+          <a class="post__tag" href="/tags/package-management">package management</a>
+           
+      
+          <a class="post__tag" href="/tags/npm">npm</a>
+           
+      
+          <a class="post__tag" href="/tags/yarn">yarn</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 5 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>Node.js is an increasingly popular and widely used JavaScript run-time nowadays. One of the fundamental and important aspects of Node.js, as many others, is to manage the dependencies among software artefacts at both compilation and run-time, front-end and back-end, JavaScripts and non-JavaScript resources.</p>
+
+<p></p>
+
+<p>Better dependency management would advocate modularisation and decoupling of software components. Since the dawn of Node.js, <a href="https://stackoverflow.com/questions/35062852/npm-vs-bower-vs-browserify-vs-gulp-vs-grunt-vs-webpack">several package managers</a> have been developed, notably, <a href="https://www.npmjs.org/">npm</a>, <a href="https://anymod.com">anymod</a> (formerly <code>component</code>), <a href="http://volojs.org">volo</a>, <a href="http://packages.ringojs.org">ringojs</a>, <a href="https://bower.io">bower</a>, <a href="https://yarnpkg.com">yarn</a>, <a href="https://pnpm.js.org"><code>pnpm</code></a>, to name but a few.</p>
+
+<p>In this post, we shall walk through the two tools that have been seemingly living up to the high expectation of a majority of JavaScript developers and communities, <code>npm</code> and <code>yarn</code>. <code>pnpm</code> is an improvement that <a href="https://github.com/pnpm/node-package-manager-benchmark">performs sometimes better</a> than <code>npm</code> and <code>yarn</code>. The great advantage of using <code>pnpm</code> is that we just replace the command <code>npm</code> by <code>pnpm</code> and keep the rest intact.  Bower is a powerful tool that supports not only JS but also various types of Web resources including HTML, CSS, fonts, images. Nevertheless, the core Bower developers and maintainers <a href="https://bower.io/blog/2017/how-to-migrate-away-from-bower">had recently recommended the users to switch to <code>yarn</code></a>.</p>
+
+<ul>
+<li><code>npm</code> seems to be the <em>de facto</em> package management included with Node.js. When Node.js is installed, <code>npm</code> will also be available and ready to use as well. This is one among many reasons why <code>npm</code> is well-known and widely used by JS developers.</li>
+<li><code>yarn</code> was <a href="https://code.facebook.com/posts/1840075619545360">originally developed by Facebook</a> to overcome existing problems of existing package management tools. Some notable <code>yarn</code>&rsquo;s features are <em>deterministic model</em> (producing the same result when repeating), <em>flat mode</em> (resolving mismatching versions of dependencies to a single version to avoid duplicate), <em>security first</em>, <em>offline mode</em>, <em>network performance</em>, and so forth. Nevertheless, recent versions of <code>npm</code> also improve significantly by learning  and incorporate several good features from <code>yarn</code>.</li>
+</ul>
+
+<h2 id="walking-through">Walking Through</h2>
+
+<p>In this part, we will go through a typical development workflow that each tool provides with basic steps and some commonly used options.</p>
+
+<h3 id="0-installing-and-upgrading">0. Installing and Upgrading</h3>
+
+<h5 id="npm">NPM</h5>
+
+<p>As mentioned above, <code>npm</code> is available wherever Node.js is installed. So, the only thing to do is to upgrade <code>npm</code></p>
+
+<pre><code class="language-sh">npm install npm@latest -g
 # you can also use the alias 'i'
 npm i npm@latest -g
-</code></pre><h5 id="yarn">Yarn</h5><p>Yarn can be installed via <code>npm</code> but this method is <a href="https://yarnpkg.com/en/docs/install#install-via-npm">not recommended due to security reason</a>.</p><pre><code class="language-sh">npm install --g yarn
-</code></pre><p>macOS users can install Yarn using <a href="https://brew.sh">Homebrew</a>.</p><pre><code class="language-sh"># installing
+</code></pre>
+
+<h5 id="yarn">Yarn</h5>
+
+<p>Yarn can be installed via <code>npm</code> but this method is <a href="https://yarnpkg.com/en/docs/install#install-via-npm">not recommended due to security reason</a>.</p>
+
+<pre><code class="language-sh">npm install --g yarn
+</code></pre>
+
+<p>macOS users can install Yarn using <a href="https://brew.sh">Homebrew</a>.</p>
+
+<pre><code class="language-sh"># installing
 brew update &amp;&amp; brew install yarn
 # upgrading
 brew upgrade yarn
-</code></pre><p>There are also <a href="https://yarnpkg.com/en/docs/install">concrete instructions</a> for Linux and Windows users, too.</p><h3 id="1-starting-new-projects">1. Starting New Projects</h3><h5 id="npm-1">NPM</h5><pre><code class="language-sh">npm init [-f|--force] [-y|--yes]
-</code></pre><p><code>npm init</code> will ask you a number of questions and create an initial configuration file <code>package.json</code>. In case you do not want to answer the questions one by one, you can use any option <code>-f</code>, <code>--force</code>, <code>-y</code> or <code>--yes</code> to skip all questions and get a default <code>package.json</code> in the current directory.</p><h5 id="yarn-1">Yarn</h5><pre><code class="language-sh">yarn init [-y | --yes] [-p | --private]
-</code></pre><p>This command is totally similar to <code>npm init</code> and the outcome will be <code>package.json</code>. The only difference is <code>-p</code> or <code>--private</code> to set <code>&quot;private&quot;: true</code>.</p><h3 id="2-getting-information">2. Getting Information</h3><h5 id="npm-2">NPM</h5><pre><code class="language-sh"># display a particular package's information
+</code></pre>
+
+<p>There are also <a href="https://yarnpkg.com/en/docs/install">concrete instructions</a> for Linux and Windows users, too.</p>
+
+<h3 id="1-starting-new-projects">1. Starting New Projects</h3>
+
+<h5 id="npm-1">NPM</h5>
+
+<pre><code class="language-sh">npm init [-f|--force] [-y|--yes]
+</code></pre>
+
+<p><code>npm init</code> will ask you a number of questions and create an initial configuration file <code>package.json</code>. In case you do not want to answer the questions one by one, you can use any option <code>-f</code>, <code>--force</code>,  <code>-y</code> or <code>--yes</code> to skip all questions and get a default <code>package.json</code> in the current directory.</p>
+
+<h5 id="yarn-1">Yarn</h5>
+
+<pre><code class="language-sh">yarn init [-y | --yes] [-p | --private]
+</code></pre>
+
+<p>This command is totally similar to <code>npm init</code> and the outcome will be <code>package.json</code>. The only difference is <code>-p</code> or <code>--private</code> to set <code>&quot;private&quot;: true</code>.</p>
+
+<h3 id="2-getting-information">2. Getting Information</h3>
+
+<h5 id="npm-2">NPM</h5>
+
+<pre><code class="language-sh"># display a particular package's information
 npm view eslint
 npm info eslint
 # search for a package/name
 npm search eslint
 # list installed packages
 npm ls
-</code></pre><h5 id="yarn-2">Yarn</h5><p>Yarn developers deliberately do not add support for searching packages like <code>npm</code> as <a href="https://github.com/yarnpkg/yarn/issues/778#issuecomment-253146299">explained here</a>.</p><pre><code class="language-sh"># display a particular package's information
+</code></pre>
+
+<h5 id="yarn-2">Yarn</h5>
+
+<p>Yarn developers deliberately do not add support for searching packages like <code>npm</code> as <a href="https://github.com/yarnpkg/yarn/issues/778#issuecomment-253146299">explained here</a>.</p>
+
+<pre><code class="language-sh"># display a particular package's information
 yarn info eslint
 # list installed packages
 yarn list
-</code></pre><p>Yarn provodes a nice command for showing why a certain package was installed.</p><pre><code class="language-sh">yarn why eslint
-</code></pre><h3 id="3-installing-dependencies">3. Installing Dependencies</h3><p>Both <code>npm</code> and <code>yarn</code> provide several options to add dependencies ranging from registered packages, tarballs, to git repositories. Please note that, <code>npm</code> and <code>yarn</code> also support manipulating global package repositories, i.e. installed packages that are available to the whole working system instead of local projects. In most of the case, we can use the option <code>-g</code> for <code>npm</code> and the command <code>global</code> for <code>yarn</code>. Thus, in the following steps, we mainly concentrate on local repositories.</p><h5 id="npm-3">NPM</h5><pre><code class="language-sh"># install all dependencies defined in package.json
+</code></pre>
+
+<p>Yarn provodes a nice command for showing why a certain package was installed.</p>
+
+<pre><code class="language-sh">yarn why eslint
+</code></pre>
+
+<h3 id="3-installing-dependencies">3. Installing Dependencies</h3>
+
+<p>Both <code>npm</code> and <code>yarn</code> provide several options to add dependencies ranging from registered packages, tarballs, to git repositories. Please note that, <code>npm</code> and <code>yarn</code> also support manipulating global package repositories, i.e. installed packages that are available to the whole working system instead of local projects. In most of the case, we can use the option <code>-g</code> for <code>npm</code> and the command <code>global</code> for <code>yarn</code>. Thus, in the following steps, we mainly concentrate on local repositories.</p>
+
+<h5 id="npm-3">NPM</h5>
+
+<pre><code class="language-sh"># install all dependencies defined in package.json
 npm install
 # add a registered package and record it in 'dependencies' 
 npm install eslint
@@ -37,7 +288,11 @@ npm install eslint@3.0.0
 npm install --save-dev eslint
 # add a git repos
 npm install git@github.com:eslint/eslint.git
-</code></pre><h5 id="yarn-3">Yarn</h5><pre><code class="language-sh"># install all dependencies defined in package.json
+</code></pre>
+
+<h5 id="yarn-3">Yarn</h5>
+
+<pre><code class="language-sh"># install all dependencies defined in package.json
 yarn install
 # add a registered package
 yarn add eslint
@@ -47,13 +302,23 @@ yarn add eslint@3.0.0
 yarn add --dev eslint
 # add a git repos
 yarn add git@github.com:eslint/eslint.git
-</code></pre><h3 id="3-upgrading-packages">3. Upgrading Packages</h3><h5 id="npm-4">NPM</h5><pre><code class="language-sh"># check outdated packages
+</code></pre>
+
+<h3 id="3-upgrading-packages">3. Upgrading Packages</h3>
+
+<h5 id="npm-4">NPM</h5>
+
+<pre><code class="language-sh"># check outdated packages
 npm outdated
 # upgrade all to the latest versions w.r.t version ranges in 'package.json' (since 2.6.1 default to top level packages)
 npm update
 # upgrade a specific package
 npm update eslint
-</code></pre><h5 id="yarn-4">Yarn</h5><pre><code class="language-sh"># check outdated packages
+</code></pre>
+
+<h5 id="yarn-4">Yarn</h5>
+
+<pre><code class="language-sh"># check outdated packages
 yarn outdated
 # upgrade all
 yarn upgrade
@@ -63,14 +328,82 @@ yarn upgrade --latest
 yarn upgrade eslint
 # upgrade packages match a pattern
 yarn upgrade --pattern eslint
-</code></pre><h3 id="4-removing-packages">4. Removing Packages</h3><h5 id="npm-5">NPM</h5><pre><code class="language-sh">npm uninstall eslint
-</code></pre><h5 id="yarn-5">Yarn</h5><pre><code class="language-sh">yarn remove eslint
-</code></pre><h3 id="5-running-commands">5. Running Commands</h3><h5 id="npm-6">NPM</h5><p><code>npm</code> allows users to define executable scripts in <code>package.json</code> under the section</p><pre><code class="language-json">&quot;scripts&quot; : { &quot;test&quot; : &quot;...&quot; }
-</code></pre><p>then use <code>npm run script-name</code> to execute the predefined scripts.</p><pre><code class="language-sh">npm run test
-</code></pre><p>Nevertheless, <code>npm</code> provides a short form for executing testing scripts as well.</p><pre><code>npm test
-</code></pre><h5 id="yarn-6">Yarn</h5><p>Similar to <code>npm</code>, <code>yarn</code> users can execute scripts with <code>yarn run script-name</code> and <code>yarn test</code> for testing.</p><pre><code class="language-sh">yarn run start
+</code></pre>
+
+<h3 id="4-removing-packages">4. Removing Packages</h3>
+
+<h5 id="npm-5">NPM</h5>
+
+<pre><code class="language-sh">npm uninstall eslint
+</code></pre>
+
+<h5 id="yarn-5">Yarn</h5>
+
+<pre><code class="language-sh">yarn remove eslint
+</code></pre>
+
+<h3 id="5-running-commands">5. Running Commands</h3>
+
+<h5 id="npm-6">NPM</h5>
+
+<p><code>npm</code> allows users to define executable scripts in <code>package.json</code> under the section</p>
+
+<pre><code class="language-json">&quot;scripts&quot; : { &quot;test&quot; : &quot;...&quot; }
+</code></pre>
+
+<p>then use <code>npm run script-name</code> to execute the predefined scripts.</p>
+
+<pre><code class="language-sh">npm run test
+</code></pre>
+
+<p>Nevertheless, <code>npm</code> provides a short form for executing testing scripts as well.</p>
+
+<pre><code>npm test
+</code></pre>
+
+<h5 id="yarn-6">Yarn</h5>
+
+<p>Similar to <code>npm</code>, <code>yarn</code> users can execute scripts with <code>yarn run script-name</code> and <code>yarn test</code> for testing.</p>
+
+<pre><code class="language-sh">yarn run start
 yarn test
-</code></pre><p>So far, we have walked through some basic steps of a typical development workflow, ranging from initialisation to inquiring and manipulating packages. Apart from that, both <code>npm</code> and <code>yarn</code> also go extra length with many more different functionality. Backing by very strong and active communities, your development projects will surely in safe hands when choosing either of them.</p></div><div class="post--navigation post--navigation-single"><a href="/2018/03/confusing-hugo-issues-datetime-and-isset/" class="post--navigation-prev"><i aria-hidden="true" class="fa fa-chevron-left"></i> <span>Confusing Hugo issues: datetime and &#39;isset&#39;</span> </a><a href="/2018/05/integration-laravel-gentelella/" class="post--navigation-next"><span>Integration Laravel 5 and Gentelella admin theme</span> <i aria-hidden="true" class="fa fa-chevron-right"></i></a></div><div class="post__related"><h2>Related Articles</h2><ul class="related-posts"><li><span class="list__title--small"><a href="/2018/02/getting-started-webpack/">Getting started with Webpack</a> <time class="pull-right hidden-tablet">Feb 16 &#39;18</time></span></li></ul></div><div id="disqus_thread"></div><script type="text/javascript">(function () {
+</code></pre>
+
+<p>So far, we have walked through some basic steps of a typical development workflow, ranging from initialisation to inquiring and manipulating packages. Apart from that, both <code>npm</code> and <code>yarn</code> also go extra length with many more different functionality. Backing by very strong and active communities, your development projects will surely in safe hands when choosing either of them.</p>
+  </div>
+  <div class="post--navigation post--navigation-single">
+    <a href="/2018/03/confusing-hugo-issues-datetime-and-isset/" class="post--navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span>Confusing Hugo issues: datetime and &#39;isset&#39;</span>
+    </a>
+    <a href="/2018/05/integration-laravel-gentelella/" class="post--navigation-next">
+      <span>Integration Laravel 5 and Gentelella admin theme</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+</div>
+
+  
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/2018/02/getting-started-webpack/">Getting started with Webpack</a>
+      
+      <time class="pull-right hidden-tablet">Feb 16 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
     if (location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "") {
@@ -83,13 +416,44 @@ yarn test
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || 
       document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></article></div><script>var doNotTrack = false;
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+</article>
+
+        </div>
+        
+<script>
+var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-112764962-1', 'auto');
 	
 	ga('send', 'pageview');
-}</script><script async src="https://www.google-analytics.com/analytics.js"></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script><noscript id="deferred-styles"><link rel="stylesheet" type="text/css" href="https://htr3n.github.io//css/github.min.css"></noscript><script>var loadDeferredStyles = function () {
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+<noscript id="deferred-styles">
+  
+  <link rel="stylesheet" type="text/css" href="https://htr3n.github.io//css/github.min.css" />
+</noscript>
+
+<script>
+  var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
@@ -104,4 +468,19 @@ if (!doNotTrack) {
     window.setTimeout(loadDeferredStyles, 0);
   });
   else
-    window.addEventListener('load', loadDeferredStyles);</script></body></html>
+    window.addEventListener('load', loadDeferredStyles);
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    
+
+
+    </body>
+</html>

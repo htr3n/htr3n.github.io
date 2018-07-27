@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utilities on htr3n&#39;s</title>
+    <link>http://blog.test:8888/tags/utilities/</link>
+    <description>Recent content in Utilities on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 08 Jul 2018 18:37:22 +1000</lastBuildDate>
+    
+	<atom:link href="http://blog.test:8888/tags/utilities/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Some less-known and underused macOS utilities</title>
+      <link>http://blog.test:8888/2018/07/less-known-macos-utilities/</link>
+      <pubDate>Sun, 08 Jul 2018 18:37:22 +1000</pubDate>
+      
+      <guid>http://blog.test:8888/2018/07/less-known-macos-utilities/</guid>
+      <description>launchctl launchd for creating daemons and agents
+scutil
+systemsetup
+otool
+otool -L /bin/bash  ASLs/Logging
+Disk Utility Resize hdiutil resize -size 10g filename.sparsebundle  Creating a sparsebundle (rw) hdiutil create -size &amp;lt;size&amp;gt;g -fs HFS+J -volname &amp;lt;volume_name&amp;gt; &amp;lt;file-name&amp;gt;.sparsebundle hdiutil resize -limits rw.dmg hdiutil create -verbose -type SPARSEBUNDLE -fs HFS+J -encryption AES-128 -stdinpass -nospotlight -volname &amp;quot;HOME&amp;quot; -size 200g HOME.sparsebundle  Creating ISO image from a path or CDR hdiutil makehybrid -o image.</description>
+    </item>
+    
+  </channel>
+</rss>

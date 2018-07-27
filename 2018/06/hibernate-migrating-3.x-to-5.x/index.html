@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.45.1" />
+    
+    
+    <title>Hibernate: Migrating 3.x to 5.x • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hibernate: Migrating 3.x to 5.x"/>
+<meta name="twitter:description" content="Recently I had to upgrade a codebase using Hibernate 3.x ORM on Spring 3 to Hibernate 5 (and Spring 5, respectively). Here I note down some aspects and issues that I have to deal with during this migration.
+An overview of a simple data access architecture is as following. The current codebase leverages lots of Hibernate native API that are rich and optimized. I am looking forward to be less dependent on Hibernate-specific stuffs and using standards such as Java Persistence API (JPA) and Java Transaction API (JTA) as much as possible in my projects."/>
+
+<meta property="og:title" content="Hibernate: Migrating 3.x to 5.x" />
+<meta property="og:description" content="Recently I had to upgrade a codebase using Hibernate 3.x ORM on Spring 3 to Hibernate 5 (and Spring 5, respectively). Here I note down some aspects and issues that I have to deal with during this migration.
+An overview of a simple data access architecture is as following. The current codebase leverages lots of Hibernate native API that are rich and optimized. I am looking forward to be less dependent on Hibernate-specific stuffs and using standards such as Java Persistence API (JPA) and Java Transaction API (JTA) as much as possible in my projects." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.test:8888/2018/06/hibernate-migrating-3.x-to-5.x/" />
+
+
+
+<meta property="article:published_time" content="2018-06-12T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-06-12T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<link rel="stylesheet" href="http://blog.test:8888//css/hyde-hyde.css">
+<link rel="stylesheet" href="http://blog.test:8888//css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+    <body>
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="http://blog.test:8888/">htr3n&#39;s</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="http://blog.test:8888/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         technology, thoughts, opinions, rants 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		
+				<li>
+					<a href="/posts/">
+						<span>Tech</span>
+					</a>
+				</li>
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://medium.com/@htr3n"><i class="fab fa-medium fa-lg" aria-hidden="true"></i></a>
+	
+	&nbsp;<a href="https://keybase.io/htr3n"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 htr3n.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+<div class="content container">
+            <article>
+  <header>
+    <h1>Hibernate: Migrating 3.x to 5.x</h1>
+     
+    
+<div class="post__meta">
+    
+    <i class="fas fa-calendar-alt"></i> Jun 12, 2018
+    in
+              <a class="post__category" href="/categories/dev">DEV</a>
+              
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/database">database</a>
+           
+      
+          <a class="post__tag" href="/tags/orm">orm</a>
+           
+      
+          <a class="post__tag" href="/tags/hibernate">hibernate</a>
+           
+      
+          <a class="post__tag" href="/tags/spring-framework">spring-framework</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<p>Recently I had to upgrade a codebase using Hibernate 3.x ORM on Spring 3 to Hibernate 5 (and Spring 5, respectively). Here I note down some aspects and issues that I have to deal with during this migration.</p>
+
+<p>An overview of a simple data access architecture is as following. The current codebase leverages lots of Hibernate native API that are rich and optimized. I am looking forward to be less dependent on Hibernate-specific stuffs and using standards such as <a href="http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html">Java Persistence API</a> (JPA) and <a href="http://www.oracle.com/technetwork/java/javaee/jta/index.html">Java Transaction API</a> (JTA) as much as possible in my projects. As such, it is possible to switch the projects to another JPA provider, for instance <a href="http://www.eclipse.org/eclipselink/">EclipseLink</a>, if needed.</p>
+
+<p><img src="data_access_layers.svg" alt="Data access layer" /></p>
+
+<h3 id="the-legacy-hibernatedaosupport-hibernatetemplate">The Legacy HibernateDaoSupport/HibernateTemplate</h3>
+
+<p>Spring ORM 3 provides several facades to ease data access with Hibernate. Using <a href="https://docs.spring.io/spring/docs/3.2.8.RELEASE/javadoc-api/org/springframework/orm/hibernate3/support/HibernateDaoSupport.html">HibernateDaoSupport</a> and <a href="https://docs.spring.io/spring/docs/3.2.18.RELEASE/javadoc-api/org/springframework/orm/hibernate3/HibernateTemplate.html">HibernateTemplate</a> we can be highly productive due to their rich API and can also leverage Spring transaction management. <em>HibernateDaoSupport</em> is indeed a wrapper of <em>HibernateTemplate</em> that simplifies data access code than raw <a href="https://docs.jboss.org/hibernate/orm/3.5/api/org/hibernate/Session.html">Session API</a>. In turn, <em>HibernateTemplate</em> actualls ties to a Hibernate&rsquo;s <a href="https://docs.jboss.org/hibernate/orm/3.5/api/org/hibernate/SessionFactory.html">SessionFactory</a> behind the scene. So the basic CRUD code for accessing database is rather simple and straightforward.</p>
+
+<pre><code class="language-java">public class CustomerDaoImpl extends org.springframework.orm.hibernate3.support.HibernateDaoSupport {
+    public Customer create(Customer customer) {
+      	Customer customer = new Customer();
+      	customer.setId(...);
+      	...
+      	saveOrUpdate(customer);  
+    }
+    public Customer retrieve(String customerId) {
+      	return getHibernateTemplate().get(Customer.class, customerId);
+    }
+    public void saveOrUpdate(Customer customer){
+      	getHibernateTemplate().saveOrUpdate(customer);    
+    }
+    public void delete(Customer customer) {
+        getHibernateTemplate().delete(customer);
+    }
+}
+</code></pre>
+
+<p>Nevertheless, since Hibernate 3.0.1, we can leverage plain Hibernate <a href="https://docs.jboss.org/hibernate/orm/3.5/api/org/hibernate/Session.html">Session</a> to develop data access objects instead of binding to any Spring-specific helpers.</p>
+
+<pre><code class="language-java">public class CustomerDaoImpl implements CustomerDao {
+
+    private SessionFactory sessionFactory;
+
+    @Autowired
+    public void setSessionFactory(SessionFactory sessionFactory) {
+				this.sessionFactory = sessionFactory;
+    }
+
+}
+</code></pre>
+
+<h3 id="migrating-annotationsessionfactorybean">Migrating AnnotationSessionFactoryBean</h3>
+
+<p>In Spring ORM 3, I have often used <em>org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean</em> that subclasses <em>LocalSessionFactoryBean</em> and supports annotation metadata for mappings. Using <em>AnnotationSessionFactoryBean</em>, I can specify the packages wherein I put Hibernate annotated classes.</p>
+
+<pre><code class="language-xml">&lt;bean id=&quot;sessionFactory&quot; scope=&quot;singleton&quot;
+      class=&quot;org.springframework.orm.hibernate5.LocalSessionFactoryBean&quot;
+      p:packagesToScan=&quot;westbank.db.entity&quot;
+      p:hibernateProperties-ref=&quot;hibernateProperties&quot; /&gt;
+&lt;bean id=&quot;hibernateProperties&quot;
+		class=&quot;org.springframework.beans.factory.config.PropertiesFactoryBean&quot;&gt;
+		&lt;property name=&quot;properties&quot;&gt;
+			&lt;props&gt;
+				&lt;prop key=&quot;hibernate.connection.driver_class&quot;&gt;${hibernate.connection.driver_class}&lt;/prop&gt;
+        ...
+      &lt;/props&gt;
+	  &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p>Since Spring 4.3, <em>AnnotationSessionFactoryBean</em> was deprecated in favor of Hibernate 4 and 5. Thus, <em>LocalSessionFactoryBean</em> must be used instead. The configuration is still similar.</p>
+
+<h3 id="spring-transaction-management">Spring Transaction Management</h3>
+
+<ul>
+<li>Spring sessionFactory requires transaction to work</li>
+</ul>
+
+<pre><code class="language-xml">&lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.orm.hibernate5.HibernateTransactionManager&quot;&gt;
+  &lt;property name=&quot;sessionFactory&quot; ref=&quot;sessionFactory&quot; /&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<h3 id="creating-database-schema">Creating Database Schema</h3>
+
+<p>In Hibernate 3, I have often used <a href="https://docs.jboss.org/hibernate/orm/3.5/api/org/hibernate/tool/hbm2ddl/SchemaExport.html"><em>SchemaExport</em></a> to initialise and create the underlying database using the configuration loaded by Spring as following code.</p>
+
+<pre><code class="language-java">import org.hibernate.tool.hbm2ddl.SchemaExport;
+...
+ApplicationContext ctx = getWebApplicationContext(); // inside a Servlet
+LocalSessionFactoryBean localSessionBean = (LocalSessionFactoryBean) ctx.getBean(&quot;&amp;sessionFactory&quot;);
+SchemaExport schemaExport = new SchemaExport(localSessionBean.getConfiguration());
+schemaExport.create(false, true);
+</code></pre>
+
+<ul>
+<li><p><a href="https://forum.hibernate.org/viewtopic.php?f=1&amp;t=1045049">https://forum.hibernate.org/viewtopic.php?f=1&amp;t=1045049</a></p></li>
+
+<li><p><a href="http://www.baeldung.com/simplifying-the-data-access-layer-with-spring-and-java-generics">http://www.baeldung.com/simplifying-the-data-access-layer-with-spring-and-java-generics</a></p></li>
+
+<li><p><a href="https://www.journaldev.com/3633/hibernate-interview-questions-and-answers#hibernatetemplate-class">https://www.journaldev.com/3633/hibernate-interview-questions-and-answers#hibernatetemplate-class</a></p></li>
+
+<li><p><a href="https://stackoverflow.com/questions/18002768/why-hibernatetemplate-isnt-recommended">https://stackoverflow.com/questions/18002768/why-hibernatetemplate-isnt-recommended</a></p></li>
+</ul>
+
+<h3 id="data-pooling">Data Pooling</h3>
+
+<ul>
+<li><code>org.hibernate.c3p0.internal.C3P0ConnectionProvider</code></li>
+<li><a href="https://stackoverflow.com/a/26710117/339302">https://stackoverflow.com/a/26710117/339302</a></li>
+</ul>
+
+<h3 id="hibernate-s-sessionfactory">Hibernate&rsquo;s SessionFactory</h3>
+
+<p>The legacy Spring ORM for Hibernate 3 offers <em>AnnotationSessionFactoryBean</em> to initialise a sessionFactory used by other data access components.</p>
+
+<pre><code class="language-xml">&lt;bean
+      id=&quot;sessionFactory&quot;
+      scope=&quot;singleton&quot;
+      class=&quot;org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean&quot;
+      p:packagesToScan=&quot;westbank.db.entity&quot;
+      p:hibernateProperties-ref=&quot;hibernateProperties&quot; /&gt;
+</code></pre>
+
+<p>When upgrading to Spring 5 / Hibernate 5, the configuration must be changed accordingly, with <em>LocalSessionFactoryBean</em> instead. And note that, there is no longer setting <code>scope=&quot;singleton&quot;</code>, otherwise the application context will fail to initialise the &lsquo;<em>sessionFactory</em>&rsquo; bean.</p>
+
+<pre><code class="language-xml">	&lt;bean id=&quot;sessionFactory&quot;
+		class=&quot;org.springframework.orm.hibernate5.LocalSessionFactoryBean&quot;
+		p:packagesToScan=&quot;westbank.db.entity&quot;
+		p:hibernateProperties-ref=&quot;hibernateProperties&quot; /&gt;
+</code></pre>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/18011759/hibernate-sessionfactory-vs-spring-localsessionfactorybean">https://stackoverflow.com/questions/18011759/hibernate-sessionfactory-vs-spring-localsessionfactorybean</a></li>
+</ul>
+
+<h3 id="annotation-handling">Annotation Handling</h3>
+
+<p>Since Spring 4, <em>DefaultAnnotationHandlerMapping</em> has been deprecated and recommended to be replaced with <em>RequestMappingHandlerMapping</em> and <em>RequestMappingHandlerAdapter</em>. In case of legacy configuration, instead of</p>
+
+<pre><code class="language-xml">&lt;bean class=&quot;org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping&quot; /&gt;
+</code></pre>
+
+<p>we should use</p>
+
+<pre><code class="language-xml">&lt;bean class=&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping&quot;/&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&quot;/&gt;
+</code></pre>
+
+<p>Nevertheless, if we already use <code>&lt;mvc:annotation-driven /&gt;</code>, <code>&lt;context:component-scan base-package=&quot;...&quot;/&gt;</code> and <code>&lt;context:annotation-config /&gt;</code>, Spring will automatically scan and map the request handlers.</p>
+
+<h3 id="hibernate-s-legacy-criteria-api">Hibernate&rsquo;s Legacy Criteria API</h3>
+
+<pre><code>HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead (SessionImpl.java:1874)
+</code></pre>
+
+<h2 id="migrating-to-jpa">Migrating to JPA</h2>
+
+<p>On migrating to Java Persistence API (JPA), I have to review its versions and corresponding support from Hibernate to ensure I use the right version.</p>
+
+<table>
+<thead>
+<tr>
+<th>JPA Spec</th>
+<th>RI (EclipseLink)</th>
+<th>Hibernate/ORM</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>JPA 1.0 (<a href="https://jcp.org/en/jsr/detail?id=220">JSR 220</a>) in 2006</td>
+<td>1.0+</td>
+<td>ORM 3.2+</td>
+</tr>
+
+<tr>
+<td>JPA 2.0 (<a href="http://www.jcp.org/en/jsr/detail?id=317">JSR 317</a>, Java EE 6) approved 2009</td>
+<td>2.0+</td>
+<td>ORM 3.5+</td>
+</tr>
+
+<tr>
+<td>JPA 2.1 (<a href="https://www.jcp.org/en/jsr/detail?id=338">JSR 338</a>, Java EE 7) approved 2013</td>
+<td>2.5+</td>
+<td>ORM 4.3+</td>
+</tr>
+
+<tr>
+<td>JPA 2.2 (<a href="https://www.jcp.org/en/jsr/detail?id=338">JSR 338</a>) started/approved 2017</td>
+<td>2.6.5+</td>
+<td>ORM 5.3+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Here is a simple class model of Hibernate JPA.</p>
+
+<p><img src="jpa_hibernate.svg" alt="" /></p>
+
+<h2 id="some-typical-problems">Some typical problems</h2>
+
+<h4 id="lazy-fetching-of-associated-tables-objects">Lazy fetching of associated tables/objects</h4>
+
+<h5 id="description">Description</h5>
+
+<p><code>LazyInitializationException: failed to lazily initialize a collection of roles, could not initialize proxy - no Session</code></p>
+
+<h5 id="solutions">Solutions</h5>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://developer.jboss.org/wiki/Hibernate3MigrationGuides">https://developer.jboss.org/wiki/Hibernate3MigrationGuides</a></li>
+<li><a href="https://developer.jboss.org/wiki/HibernateCoreMigrationGuide40">https://developer.jboss.org/wiki/HibernateCoreMigrationGuide40</a></li>
+<li><a href="https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc">https://github.com/hibernate/hibernate-orm/blob/5.0/migration-guide.adoc</a></li>
+<li><a href="https://connectopensource.atlassian.net/wiki/spaces/CONNECTWIKI/pages/70909961/Hibernate+Upgrade+from+3.2.5.GA+to+5.1.0.Final">Hibernate Upgrade from 3.2.5.GA to 5.1.0.Final</a></li>
+<li><a href="http://www.joshlandin.com/2014/05/spring-integrated-hibernate-3-to.html">http://www.joshlandin.com/2014/05/spring-integrated-hibernate-3-to.html</a></li>
+<li><a href="https://otter606.wordpress.com/2017/02/12/migrating-a-spring-mvc-webapp-from-hibernate-3-to-hibernate-5">https://otter606.wordpress.com/2017/02/12/migrating-a-spring-mvc-webapp-from-hibernate-3-to-hibernate-5</a></li>
+</ul>
+
+  </div>
+  <div class="post--navigation post--navigation-single">
+    <a href="/2018/06/useful-apps-for-kids/" class="post--navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span>Useful apps for kids</span>
+    </a>
+    <a href="/2018/06/apache-cxf-2-to-3/" class="post--navigation-next">
+      <span>A journey from Apache CXF 2.2 to 3.2</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+</div>
+
+  
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'https-htr3n-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+</article>
+
+        </div>
+        
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-112764962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+<noscript id="deferred-styles">
+  
+  <link rel="stylesheet" type="text/css" href="http://blog.test:8888//css/github.min.css" />
+</noscript>
+
+<script>
+  var loadDeferredStyles = function () {
+    var addStylesNode = document.getElementById("deferred-styles");
+    if (addStylesNode) {
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement);
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    }
+  };
+  var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  if (raf) raf(function () {
+    window.setTimeout(loadDeferredStyles, 0);
+  });
+  else
+    window.addEventListener('load', loadDeferredStyles);
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+    
+
+
+    </body>
+</html>

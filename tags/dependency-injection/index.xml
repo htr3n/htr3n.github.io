@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dependency Injection on htr3n&#39;s</title>
+    <link>http://blog.test:8888/tags/dependency-injection/</link>
+    <description>Recent content in Dependency Injection on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 17 Jun 2018 12:09:39 +1000</lastBuildDate>
+    
+	<atom:link href="http://blog.test:8888/tags/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>On Spring Framework: Part 1 - The Core</title>
+      <link>http://blog.test:8888/2018/06/on-spring-framework-part-1---the-core/</link>
+      <pubDate>Sun, 17 Jun 2018 12:09:39 +1000</pubDate>
+      
+      <guid>http://blog.test:8888/2018/06/on-spring-framework-part-1---the-core/</guid>
+      <description>Fundamental Concepts Application Context  The interface ApplicationContext represents the Spring IoC (Inversion of Control) and defines tasks for instantiating, configuring, and assembling beans. For standalone applications, there are ClassPathXmlApplicationContext or FileSystemXmlApplicationContext whilst for web applications there is XmlWebApplicationContext.  Bean Configuration A typical bean configuration file is as following.
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&amp;quot;&amp;gt; &amp;lt;import resource=&amp;quot;...&amp;quot;/&amp;gt; &amp;lt;!-- instantiation using a constructor --&amp;gt; &amp;lt;bean id=&amp;quot;dataEntityService&amp;quot; class=&amp;quot;com.demo.DataEntityService&amp;quot;&amp;gt; .</description>
+    </item>
+    
+  </channel>
+</rss>
