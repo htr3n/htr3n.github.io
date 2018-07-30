@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+    <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.45.1" />
+
+    
+    
+    
+
+<title>Handy macOS QuickLook setting and usage • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="Handy macOS QuickLook setting and usage"/>
+<meta name="twitter:description" content="QuickLook is a simple but powerful feature of macOS that helps to preview the content of a file or folder in Finder without using any particular apps. This feature is very handy when we only want to have brief glance on a certain file or quickly examine its parts instead of opening a full-fledged app for that particular file.
+
+"/>
+
+
+
+<meta property="og:title" content="Handy macOS QuickLook setting and usage" />
+<meta property="og:description" content="QuickLook is a simple but powerful feature of macOS that helps to preview the content of a file or folder in Finder without using any particular apps. This feature is very handy when we only want to have brief glance on a certain file or quickly examine its parts instead of opening a full-fledged app for that particular file.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://htr3n.github.io/2018/07/handy-quicklook/" />
+
+
+
+<meta property="article:published_time" content="2018-07-30T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-30T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<link rel="stylesheet" href="https://htr3n.github.io//css/hyde-hyde.css">
+<link rel="stylesheet" href="https://htr3n.github.io//css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://htr3n.github.io/">htr3n&#39;s</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://htr3n.github.io/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         technology, thoughts, opinions, rants 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://keybase.io/htr3n"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 htr3n.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Handy macOS QuickLook setting and usage</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 30, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="post__category" href="/categories/dev">DEV</a>
+              •
+          
+              <a class="post__category" href="/categories/system">SYSTEM</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="post__tag" href="/tags/macos">macos</a>
+           
+      
+          <a class="post__tag" href="/tags/quicklook">quicklook</a>
+           
+      
+          <a class="post__tag" href="/tags/qlmanage">qlmanage</a>
+           
+      
+          <a class="post__tag" href="/tags/markdown">markdown</a>
+           
+      
+          <a class="post__tag" href="/tags/json">json</a>
+           
+      
+          <a class="post__tag" href="/tags/csv">csv</a>
+           
+      
+          <a class="post__tag" href="/tags/zip">zip</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p><a href="https://en.wikipedia.org/wiki/Quick_Look">QuickLook</a> is a simple but powerful feature of macOS that helps to preview the content of a file or folder in Finder without using any particular apps. This feature is very handy when we only want to have brief glance on a certain file or quickly examine its parts instead of opening a full-fledged app for that particular file.</p>
+
+<p></p>
+
+<p>Even nicer, Apple provides <a href="https://developer.apple.com/documentation/quicklook">API</a> for QuickLook programming and enables the use of <a href="http://www.quicklookplugins.com/">plugins</a> that convert a certain document from its native format into QuickLook previewing format. Before, it was also possible to also <a href="http://www.mactricksandtips.com/2013/01/22-finder-hacks-tricks-and-changes.html">select and copy text from QuickLook previewing</a> but then Apple removed that feature since macOS 10.11 El Capitan.</p>
+
+<p>QuickLook is well supported in Spotlight search. In Finder, it can be conveniently activated by selecting a file or folder and  then, for normal previewing, press <kbd>Space</kbd> or <kbd>⌘</kbd>+<kbd>Y</kbd>. For full-screen previewing, you can press <kbd>⌥</kbd>+<kbd>Space</kbd> (or using <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>Y</kbd> in case you have <kbd>⌥</kbd>+<kbd>Space</kbd> bound to some apps, for instance, <a href="https://www.alfredapp.com">Alfred</a> in my case).</p>
+
+<p>We might also use the command <code>qlmanage</code> but it works properly with built-in support and has issues with some external plugins.</p>
+
+<pre><code class="language-sh"># show the preview of file
+$ qlmanage -p &lt;path_to_file&gt;
+
+# or only show the thumpnail
+$ qlmanage -t &lt;path_to_file&gt;
+</code></pre>
+
+<h2 id="quicklook-settings">QuickLook Settings</h2>
+
+<p>QuickLook looks for and uses the plugins from both system-wide folders &lsquo;<em>/System/Library/QuickLook</em>&rsquo; and  &lsquo;<em>/Library/QuickLook</em>&rsquo; and also the home folder of each user in  &lsquo;<em>~/Library/QuickLook</em>&rsquo;.</p>
+
+<p>A QuickLook plugin is organised in a folder with an extension <code>.qlgenerator</code>. The main task of a plugin, as mentioned above, is to generate previewing contents for the corresponding file types.  We can see an example of the built-in plugin <code>Image.qlgenerator</code>.</p>
+
+<pre><code class="language-sh">$ tree /System/Library/QuickLook/Image.qlgenerator
+/System/Library/QuickLook/Image.qlgenerator
+└── Contents
+    ├── Info.plist
+    ├── MacOS
+    │   └── Image
+    ├── _CodeSignature
+    │   └── CodeResources
+    └── version.plist
+</code></pre>
+
+<p>The command <code>qlmanage</code> is provided in macOS since the announcement of QuickLook in 2007. It&rsquo;s very helpful for manipulating QuickLook, for instance, reloading the generators, resetting cache, and many more.  We will walk through some handy usage of <code>qlmanage</code>.</p>
+
+<h5 id="forcing-reloading-the-list-of-generators">Forcing reloading the list of generators</h5>
+
+<pre><code class="language-sh">$ qlmanage -r
+qlmanage: resetting quicklookd
+</code></pre>
+
+<h5 id="showing-the-list-of-generators">Showing the list of generators</h5>
+
+<p>This command can be used to see the current QuickLook generators list and also check which generator handles what file types. You might then see a long list of generators in your macOS.</p>
+
+<pre><code class="language-sh">$ qlmanage -m plugins
+</code></pre>
+
+<h5 id="resetting-quicklook-caches">Resetting QuickLook caches</h5>
+
+<pre><code class="language-sh">$ qlmanage -r cache
+</code></pre>
+
+<p>For more usage of <code>qlmanage</code>, we can look into its manual.</p>
+
+<pre><code class="language-sh">$ man qlmanage
+</code></pre>
+
+<h2 id="quicklook-plugins">QuickLook Plugins</h2>
+
+<p><a href="https://www.google.com/search?q=quicklook+plugins">Looking around</a>, we can easily find a lot of plugins to enhance the built-in support of macOS. Moreover, when we install some applications, there might be included QuickLook plugins too.</p>
+
+<p>Here is a list of plugins that I find very handy and use quite often in my macOS development box.</p>
+
+<h4 id="qlstephen">QLStephen</h4>
+
+<p><a href="https://whomwah.github.io/qlstephen">QLStephen</a> is sort of an awesome Swiss-army-knife that I ever used. It enables the preview of numerous plain text files not handled by the default support of macOS QuickLook, especially files having no extensions such as README, CHANGELOG, Makefile, Rakefile, etc.</p>
+
+<p>If you have already installed <a href="https://brew.sh">Homebrew</a>, it takes only a simple command to install QLStephen (in case you haven&rsquo;t, please feel free to head to <a href="https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/#homebrew">another post</a>).</p>
+
+<pre><code class="language-sh">$ brew cask install qlstephen
+</code></pre>
+
+
+
+  
+
+
+
+
+
+<figure >
+  
+  <img
+      
+        src="https://htr3n.github.io/2018/07/handy-quicklook/qlstephen.png"
+      
+        alt="QLStephen preview"
+        
+        
+        
+        width="80%" style="max-width: 100%;"
+         />
+  
+  
+  
+    <figcaption>
+      <span class="img--caption">
+        Figure 1. Using QLStephen to preview a Makefile (which has no extension and is not supported by macOS)
+        
+      </span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<h4 id="qlcolorcode">QLColorCode</h4>
+
+<p>I often quickly review my code using <a href="https://github.com/anthonygelibert/QLColorCode">this amazing plugin</a> forked/derived from the <a href="https://github.com/n8gray/QLColorCode">original one</a> developed by Nathan Gray (<a href="https://github.com/n8gray">n8gray</a>). The preview code will be nicely formatted and highlighted.</p>
+
+<pre><code class="language-sh">$ brew cask install qlcolorcode
+</code></pre>
+
+<p>The default setting of QLColorCode is totall fine. Nonetheless, you might want to customise some of its settings to your tastes too. Here are some of my favourites.</p>
+
+<pre><code class="language-sh">defaults write org.n8gray.QLColorCode textEncoding UTF-16
+defaults write org.n8gray.QLColorCode webkitTextEncoding UTF-16
+defaults write org.n8gray.QLColorCode font &quot;Source Code Pro&quot;
+defaults write org.n8gray.QLColorCode fontSizePoints 10
+defaults write org.n8gray.QLColorCode hlTheme zenburn
+defaults write org.n8gray.QLColorCode extraHLFlags &quot;-W -J 160&quot;
+defaults write org.n8gray.QLColorCode pathHL /usr/local/bin/highlight
+</code></pre>
+
+<p>Here is the result of previewing Java code.</p>
+
+
+
+  
+
+
+
+
+
+<figure >
+  
+  <img
+      
+        src="https://htr3n.github.io/2018/07/handy-quicklook/qlcolorcode.png"
+      
+        alt="QLStephen preview"
+        
+        
+        
+        width="80%" style="max-width: 100%;"
+         />
+  
+  
+  
+    <figcaption>
+      <span class="img--caption">
+        Figure 2. Code preview with syntax highlighting
+        
+      </span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<h4 id="qlcommonmark">QLCommonMark</h4>
+
+<p>I have been working with Markdown a lot, especially writing this blog all using Markdown and Hugo generator. It was quite a while I have searched around for a stable QuickLook plugin for Markdown. Before, I used <a href="https://github.com/ttscoff/MMD-QuickLook">MDD-QuickLook</a>, an excellent fork of the well-known <a href="https://github.com/fletcher">Fletcher</a>&rsquo;s original <a href="https://github.com/fletcher/MMD-QuickLook">plugin</a>. MDD-QuickLook allows me to customise the look of the Markdown preview using a Github based CSS file <code>~/.mdqlstyle.css</code>.</p>
+
+<p>When I found <a href="https://github.com/digitalmoksha/QLCommonMark">QLCommonMark</a>, it replaces MDD-QuickLook with a broader coverage including <a href="http://commonmark.org/">CommonMark</a> and Markdown and can be configured in the same way, just different filename <code>~/.cmqlstyle.css</code>. You can find my Markdown preview style <a href="https://gist.github.com/htr3n/ffdcb6238f868dd1605af2bbd1e53546">here</a>.</p>
+
+<pre><code class="language-sh">$ brew cask install qlcommonmark
+</code></pre>
+
+
+
+  
+
+
+
+
+
+<figure >
+  
+  <img
+      
+        src="https://htr3n.github.io/2018/07/handy-quicklook/qlcommonmark.png"
+      
+        alt="QLCommonMark preview"
+        
+        
+        
+        width="80%" style="max-width: 100%;"
+         />
+  
+  
+  
+    <figcaption>
+      <span class="img--caption">
+        Figure 3. Markdown preview with a Github based style
+        
+      </span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<h4 id="quicklook-json">QuickLook JSON</h4>
+
+<p>Both front-end and back-end developers are somehow familiar with JavaScript Object Notation (JSON) format. As JavaScript and its ecosystem are rapidly growing, JSON and its variations become extremely popular. Hence, a QuickLook plugin for JSON should be ready in your macOS dev box.</p>
+
+<pre><code class="language-sh">$ brew cask install quicklook-json
+</code></pre>
+
+<h4 id="quicklook-csv">QuickLook CSV</h4>
+
+<p><a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> is a very popular format due to its simplicity and commonly used in statistics and data analytics. It contains values separated by comma, tabs, semi-colons, or pipes. MacOS provides built-in support for CSV previewing but I prefer a nicer-looking preview with <a href="https://github.com/p2/quicklook-csv">QuickLook CSV</a> developed by Pascal Pfiffner (<a href="https://github.com/p2">p2</a>) with alternate row shading.</p>
+
+<pre><code class="language-sh">$ brew cask install quicklook-csv
+</code></pre>
+
+
+
+  
+
+
+
+
+
+<figure >
+  
+  <img
+      
+        src="https://htr3n.github.io/2018/07/handy-quicklook/csv.png"
+      
+        alt="CSV preview"
+        
+        
+        
+        width="80%" style="max-width: 100%;"
+         />
+  
+  
+  
+    <figcaption>
+      <span class="img--caption">
+        Figure 4. A CSV file preview
+        
+      </span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<h4 id="hetimazip">HetimaZip</h4>
+
+<p>There are many formats and standards around for compressing and archiving files such as <a href="https://www.7-zip.org/">7z</a>, <a href="http://bzip.org">bzip2</a>,  <a href="http://www.gzip.org">gzip</a>, <a href="https://www.rarlab.com/rar_file.htm">rar</a>, <a href="https://en.wikipedia.org/wiki/Zip_%28file_format%29">zip</a>, to name but a few. <a href="http://hetima.com/hetimazipql">HetimaZip</a> can help to <em>look through</em> a Zip archive without unzipping or opening it. Note that, this plugin also support well some file types based on Zip format such as <a href="https://en.wikipedia.org/wiki/JAR_%28file_format%29">Java ARchive</a> (<code>.jar</code>), iOS app (<a href="https://en.wikipedia.org/wiki/.ipa"><code>.ipa</code></a>), and many more.</p>
+
+<pre><code class="language-sh">$ brew cask install hetimazipql
+</code></pre>
+
+<p>Unfortunately, HetimaZip cannot handle <a href="https://en.wikipedia.org/wiki/Android_application_package">Android application package</a> (<code>.apk</code>). Thus we can combine with another nice plugin, <a href="https://github.com/hezi/QuickLookAPK">QuickLook APK</a>.</p>
+
+<pre><code class="language-sh">$ brew cask install quicklookapk
+</code></pre>
+
+<p>There is an alternative to HetimaZip, namely, <a href="https://macitbetter.com">BetterZip</a>. I have tried both but could not make BetterZip&rsquo;s work in macOS High Sierra like HetimaZip&rsquo;s to show the content of a normal Zip file.</p>
+
+
+
+  
+
+
+
+
+
+<figure >
+  
+  <img
+      
+        src="https://htr3n.github.io/2018/07/handy-quicklook/zip.png"
+      
+        alt="Zip file preview"
+        
+        
+        
+        width="80%" style="max-width: 100%;"
+         />
+  
+  
+  
+    <figcaption>
+      <span class="img--caption">
+        Figure 5. Looking through a Zip file content
+        
+      </span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<h4 id="suspicious-package">Suspicious Package</h4>
+
+<p>MacOs applications are sometimes distributed as <a href="https://en.wikipedia.org/wiki/Installer_%28macOS%29">installer packages</a> (<code>.pkg</code>). An installer package may run some scripts and install many files in your systems. A curious and careful user would need to find out what exactly the installation scripts doing and what files are going to be installed.</p>
+
+<p>Advanced macOS users can use <span class="menu">Show Package Contents</span>
+ to get inside the package, but it won&rsquo;t show much details. We can use the app <a href="https://www.mothersruin.com/software/SuspiciousPackage"><em>Suspicious Package</em></a> or its included QuickLook plugin to inspect any installer packages before approving for installation.</p>
+
+<pre><code class="language-sh">$ brew cask install suspicious-package
+</code></pre>
+
+<p>Note that it is a tad inconvenient that you <a href="https://www.mothersruin.com/software/SuspiciousPackage/faq.html#plugin-only">have to install the app</a> <em>Suspicious Package</em> only for its plugin. Copying the plugin alone won&rsquo;t work because it depends on the core libraries for previewing. I&rsquo;m not quite sure whether this is the developers&rsquo; intention or there are actual technical difficulties behind the scene to solely deliver the QuickLook plugin.</p>
+
+
+
+  
+
+
+
+
+
+<figure >
+  
+  <img
+      
+        src="https://htr3n.github.io/2018/07/handy-quicklook/package.png"
+      
+        alt="Installer package preview"
+        
+        
+        
+        width="80%" style="max-width: 100%;"
+         />
+  
+  
+  
+    <figcaption>
+      <span class="img--caption">
+        Figure 6. Looking through an installer package
+        
+      </span>
+    </figcaption>
+  
+</figure>
+
+
+
+
+<h4 id="qlimagesize">qlImageSize</h4>
+
+<p>Normally macOS provides sufficient plugins for quick-looking images. <a href="https://github.com/Nyx0uf/qlImageSize">qlImageSize</a> can enhance further by displaying the dimensions and size of the previewed image. These information is only available either when opening the image with an application or selecting the image file and pressing <kbd>⌘</kbd>+<kbd>I</kbd> in Finder. I like <em>qlImageSize</em> a lot as many times I just want to quickly see an image&rsquo;s dimensions and size this way.</p>
+
+<pre><code class="language-sh">$ brew cask install qlimagesize
+</code></pre>
+  </div>
+  
+
+<div class="post--navigation post--navigation-single">
+    
+    <a href="/2018/07/faster-zsh/" class="post--navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Faster and enjoyable ZSH (maybe)</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/2018/07/faster-zsh/">Faster and enjoyable ZSH (maybe)</a>
+      
+      <time class="pull-right hidden-tablet">Jul 23 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/07/minimal-hugo-workflow/">A mininal Hugo blogging workflow</a>
+      
+      <time class="pull-right hidden-tablet">Jul 14 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'https-htr3n-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-112764962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+<noscript id="deferred-styles">
+  
+  <link rel="stylesheet" type="text/css" href="https://htr3n.github.io/css/github.min.css" />
+</noscript>
+
+<script>
+  var loadDeferredStyles = function () {
+    var addStylesNode = document.getElementById("deferred-styles");
+    if (addStylesNode) {
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement);
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    }
+  };
+  var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  if (raf) raf(function () {
+    window.setTimeout(loadDeferredStyles, 0);
+  });
+  else
+    window.addEventListener('load', loadDeferredStyles);
+</script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

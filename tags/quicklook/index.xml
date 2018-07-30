@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quicklook on htr3n&#39;s</title>
-    <link>http://blog.test:8888/tags/quicklook/</link>
+    <link>https://htr3n.github.io/tags/quicklook/</link>
     <description>Recent content in Quicklook on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 07 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.test:8888/tags/quicklook/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://htr3n.github.io/tags/quicklook/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Handy macOS QuickLook setting</title>
-      <link>http://blog.test:8888/2018/07/handy-macos-quicklook-setting/</link>
-      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Handy macOS QuickLook setting and usage</title>
+      <link>https://htr3n.github.io/2018/07/handy-quicklook/</link>
+      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.test:8888/2018/07/handy-macos-quicklook-setting/</guid>
-      <description>&lt;p&gt;QuickLook is a nice feature or Mac OS/macOS that help to glance through different kinds of files in Finder without open any particular apps or editors. This feature is very handy when you only want to check on a certain file or quickly examine its parts instead of opening full-blown apps for that particular file.&lt;/p&gt;
+      <guid>https://htr3n.github.io/2018/07/handy-quicklook/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Quick_Look&#34;&gt;QuickLook&lt;/a&gt; is a simple but powerful feature of macOS that helps to preview the content of a file or folder in Finder without using any particular apps. This feature is very handy when we only want to have brief glance on a certain file or quickly examine its parts instead of opening a full-fledged app for that particular file.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

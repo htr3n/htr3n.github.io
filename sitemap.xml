@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://htr3n.github.io/2018/07/handy-quicklook/</loc>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/2018/07/faster-zsh/</loc>
     <lastmod>2018-07-27T00:00:00+00:00</lastmod>
   </url>
@@ -170,7 +175,7 @@
   
   <url>
     <loc>https://htr3n.github.io/posts/</loc>
-    <lastmod>2018-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -238,6 +243,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/csv/</loc>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/date/time/</loc>
     <lastmod>2018-03-31T08:55:31+11:00</lastmod>
     <priority>0</priority>
@@ -257,7 +268,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
-    <lastmod>2018-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -400,6 +411,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/json/</loc>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/keyboard/</loc>
     <lastmod>2018-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -437,7 +454,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/macos/</loc>
-    <lastmod>2018-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -549,6 +566,18 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/qlmanage/</loc>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/quicklook/</loc>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/quy%E1%BB%81n-im-l%E1%BA%B7ng/</loc>
     <lastmod>2017-01-19T10:28:00+07:00</lastmod>
     <priority>0</priority>
@@ -616,7 +645,7 @@
   
   <url>
     <loc>https://htr3n.github.io/categories/system/</loc>
-    <lastmod>2018-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -741,6 +770,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/zip/</loc>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/zsh/</loc>
     <lastmod>2018-07-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -748,7 +783,7 @@
   
   <url>
     <loc>https://htr3n.github.io/</loc>
-    <lastmod>2018-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
