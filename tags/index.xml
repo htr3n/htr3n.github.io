@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 15 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>1password</title>
+      <link>https://htr3n.github.io/tags/1password/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/1password/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ack</title>
+      <link>https://htr3n.github.io/tags/ack/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/ack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alfred</title>
+      <link>https://htr3n.github.io/tags/alfred/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/alfred/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Apache Cxf</title>
@@ -184,6 +211,15 @@
     </item>
     
     <item>
+      <title>F.lux</title>
+      <link>https://htr3n.github.io/tags/f.lux/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/f.lux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Fallacy</title>
       <link>https://htr3n.github.io/tags/fallacy/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
@@ -249,18 +285,9 @@
     <item>
       <title>Homebrew</title>
       <link>https://htr3n.github.io/tags/homebrew/</link>
-      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/tags/homebrew/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hostname</title>
-      <link>https://htr3n.github.io/tags/hostname/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/tags/hostname/</guid>
+      <guid>https://htr3n.github.io/tags/homebrew/</guid>
       <description></description>
     </item>
     
@@ -328,6 +355,15 @@
     </item>
     
     <item>
+      <title>Iterm</title>
+      <link>https://htr3n.github.io/tags/iterm/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/iterm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Javascript</title>
       <link>https://htr3n.github.io/tags/javascript/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -364,11 +400,11 @@
     </item>
     
     <item>
-      <title>Keyboard</title>
-      <link>https://htr3n.github.io/tags/keyboard/</link>
+      <title>Keybase</title>
+      <link>https://htr3n.github.io/tags/keybase/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/tags/keyboard/</guid>
+      <guid>https://htr3n.github.io/tags/keybase/</guid>
       <description></description>
     </item>
     
@@ -670,6 +706,15 @@
     </item>
     
     <item>
+      <title>Skype</title>
+      <link>https://htr3n.github.io/tags/skype/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/skype/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Sony</title>
       <link>https://htr3n.github.io/tags/sony/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
@@ -679,11 +724,29 @@
     </item>
     
     <item>
+      <title>Spectacle</title>
+      <link>https://htr3n.github.io/tags/spectacle/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/spectacle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Spring Framework</title>
       <link>https://htr3n.github.io/tags/spring-framework/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/spring-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://htr3n.github.io/tags/ssh/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     
@@ -774,6 +837,15 @@
       <pubDate>Sun, 28 Dec 2008 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/tr%E1%BA%BB-em/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typora</title>
+      <link>https://htr3n.github.io/tags/typora/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/typora/</guid>
       <description></description>
     </item>
     

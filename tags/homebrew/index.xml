@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://htr3n.github.io/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bootstrapping macOS workspace</title>
+      <link>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</guid>
+      <description>&lt;p&gt;I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and  lately MacBook Pro 13&amp;rdquo; and 15&amp;rdquo;. Time Machine has helped me a lot to transfer data from the old to the new machine.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Apache httpd 2.4 and PHP 7 in macOS</title>

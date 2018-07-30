@@ -158,7 +158,25 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/1password/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/ack/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/alfred/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -297,6 +315,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/f.lux/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/fallacy/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -340,12 +364,6 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/homebrew/</loc>
-    <lastmod>2018-07-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://htr3n.github.io/tags/hostname/</loc>
     <lastmod>2018-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -393,6 +411,12 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/iterm/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/javascript/</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -417,7 +441,7 @@
   </url>
   
   <url>
-    <loc>https://htr3n.github.io/tags/keyboard/</loc>
+    <loc>https://htr3n.github.io/tags/keybase/</loc>
     <lastmod>2018-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -626,14 +650,32 @@
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/skype/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/sony/</loc>
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://htr3n.github.io/tags/spectacle/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://htr3n.github.io/tags/spring-framework/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/ssh/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -657,7 +699,7 @@
   
   <url>
     <loc>https://htr3n.github.io/tags/</loc>
-    <lastmod>2018-06-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -706,6 +748,12 @@
   <url>
     <loc>https://htr3n.github.io/tags/tr%E1%BA%BB-em/</loc>
     <lastmod>2018-02-02T21:07:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://htr3n.github.io/tags/typora/</loc>
+    <lastmod>2018-07-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
