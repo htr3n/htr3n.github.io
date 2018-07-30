@@ -271,7 +271,7 @@
 <p>An easy approach is to rely on Laravel&rsquo;s <a href="https://laravel.com/docs/providers"><code>ServiceProvider</code></a> to load the submodules and register the necessary components of the submodules.</p>
 
 <pre><code class="language-php">class XYZServiceProvider extends \Illuminate\Support\ServiceProvider {
-  	public function boot() {}
+  public function boot() {}
 	public function register() {}
 }
 </code></pre>
@@ -350,8 +350,8 @@ return  [
 <pre><code class="language-php">namespace Laramod;
 
 class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider {
-  	public function boot() 
-  	{
+  public function boot() 
+  {
 		$this-&gt;findAndLoadModules();
 	}
 	public function register() 
