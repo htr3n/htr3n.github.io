@@ -25,7 +25,7 @@
     
     
       <item>
-        <title>Handy macOS QuickLook setting and usage</title>
+        <title>Handy macOS QuickLook configurations</title>
         <link>https://htr3n.github.io/2018/07/handy-quicklook/</link>
         <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
         
@@ -114,7 +114,7 @@ The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up
         <link>https://htr3n.github.io/2018/02/getting-started-webpack/</link>
         <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
         
-        <guid>ce641d2d87d5e8ff8dddd7875d65ca07</guid>
+        <guid>9ac7093afbad701f39a04e7ab3bcf7de</guid>
         <description>&lt;p&gt;Per definition &lt;a href=&#34;https://webpack.js.org/concepts&#34;&gt;here&lt;/a&gt;, Webpack is a &lt;em&gt;static module bundler&lt;/em&gt; for Web applications. It analyses and processes the &lt;em&gt;input application&lt;/em&gt; and generates output &lt;em&gt;bundles&lt;/em&gt;. The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&amp;rsquo;ve started learning it.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

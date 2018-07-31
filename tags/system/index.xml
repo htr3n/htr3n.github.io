@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>Some less-known and underused macOS utilities</title>
-      <link>http://blog.test:8888/2018/07/less-known-macos-utilities/</link>
+      <title>Some less-known and underused macOS tools</title>
+      <link>http://blog.test:8888/2018/07/less-known-macos-tools/</link>
       <pubDate>Sun, 08 Jul 2018 18:37:22 +1000</pubDate>
       
-      <guid>http://blog.test:8888/2018/07/less-known-macos-utilities/</guid>
+      <guid>http://blog.test:8888/2018/07/less-known-macos-tools/</guid>
       <description>launchctl launchd for creating daemons and agents
 scutil
 systemsetup

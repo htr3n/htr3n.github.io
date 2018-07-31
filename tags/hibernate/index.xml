@@ -23,10 +23,10 @@
     
     <item>
       <title>Hibernate: Migrating 3.x to 5.x</title>
-      <link>http://blog.test:8888/2018/06/hibernate-migrating-3.x-to-5.x/</link>
+      <link>http://blog.test:8888/2018/06/migrating-hibernate/</link>
       <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.test:8888/2018/06/hibernate-migrating-3.x-to-5.x/</guid>
+      <guid>http://blog.test:8888/2018/06/migrating-hibernate/</guid>
       <description>Recently I had to upgrade a codebase using Hibernate 3.x ORM on Spring 3 to Hibernate 5 (and Spring 5, respectively). Here I note down some aspects and issues that I have to deal with during this migration.
 An overview of a simple data access architecture is as following. The current codebase leverages lots of Hibernate native API that are rich and optimized. I am looking forward to be less dependent on Hibernate-specific stuffs and using standards such as Java Persistence API (JPA) and Java Transaction API (JTA) as much as possible in my projects.</description>
     </item>
