@@ -14,10 +14,10 @@
     
     <item>
       <title>Let&#39;s Grunt</title>
-      <link>http://blog.test:8888/2018/04/lets-grunt/</link>
+      <link>http://blog.test:8888/2018/04/grunt/</link>
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.test:8888/2018/04/lets-grunt/</guid>
+      <guid>http://blog.test:8888/2018/04/grunt/</guid>
       <description>Grunt is a JavaScript/Node.js based task runner in some ways very similar to Makefile and Apache Ant. It requires Node.js beforehand, just like Ant needs a Java Runtime. After installing Node.js, Grunt command line can be installed as following.
 npm install -g grunt-cli  Grunt tasks are defined in a configuration Gruntfile.js (JavaScript) or Gruntfile.coffee (CoffeeScript).
 // Grunt&#39;s wrapper function module.exports = function(grunt) { // let&#39;s grunt in here };  Grunt plugins and tasks grunt.</description>

@@ -7,19 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 06 Jul 2018 10:39:36 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.test:8888/tags/scss/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>CSS Preprocessors</title>
-      <link>http://blog.test:8888/2018/07/css-preprocessors/</link>
-      <pubDate>Fri, 06 Jul 2018 10:39:36 +1000</pubDate>
+      <title>CSS preprocessors: SASS vs. LESS</title>
+      <link>http://blog.test:8888/2018/07/css-preprocessors-sass-vs.-less/</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.test:8888/2018/07/css-preprocessors/</guid>
-      <description>A preprocessor, like other data processor components, takes input data and produces some output data according to some predefined sematics and logics. As the name implies, preprocessing stage often happen beforehand. For instance, C preprocessor is often used to handle the C header files, macros, and so on, before compiling.
-CSS (Cascading Style Sheet) is a declarative language used for defining the presentation of HTML documents. It was a nice idea to separate data (HTML content) with data formatting (CSS).</description>
+      <guid>http://blog.test:8888/2018/07/css-preprocessors-sass-vs.-less/</guid>
+      <description>A preprocessor is type of data processor component that takes input data and produces some output data according to some predefined or configured semantics and logics. As the name implies, preprocessing stage often happen beforehand. For instance, C preprocessor is often used to handle the C header files, macros, and so on, before the actual compilation.
+CSS (Cascading Style Sheet) is a declarative language used for defining the presentation of HTML documents.</description>
     </item>
     
   </channel>
