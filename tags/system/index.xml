@@ -18,7 +18,7 @@
       <pubDate>Sun, 08 Jul 2018 18:37:22 +1000</pubDate>
       
       <guid>http://blog.test:8888/2018/07/less-known-macos-tools/</guid>
-      <description>launchctl launchd for creating daemons and agents
+      <description>system_profiler SPFontsDataType  launchctl launchd for creating daemons and agents
 scutil
 systemsetup
 otool
