@@ -1,1 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?> <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on htr3n&#39;s</title><link>http://blog.test:8888/tags/web/<description>Recent content in Web on htr3n&#39;s</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright><lastbuilddate>Fri, 06 Jul 2018 00:00:00 +0000</lastbuilddate><atom:link href="http://blog.test:8888/tags/web/index.xml" rel="self" type="application/rss+xml"><item><title>CSS preprocessors: SASS vs. LESS</title><link>http://blog.test:8888/2018/07/css-preprocessors-sass-vs.-less/<pubdate>Fri, 06 Jul 2018 00:00:00 +0000</pubdate><guid>http://blog.test:8888/2018/07/css-preprocessors-sass-vs.-less/</guid><description>A preprocessor is type of data processor component that takes input data and produces some output data according to some predefined or configured semantics and logics. As the name implies, preprocessing stage often happen beforehand. For instance, C preprocessor is often used to handle the C header files, macros, and so on, before the actual compilation. CSS (Cascading Style Sheet) is a declarative language used for defining the presentation of HTML documents.</description></item><item><title>Learning to &#39;React&#39;</title><link>http://blog.test:8888/2018/05/learning-to-react/<pubdate>Tue, 01 May 2018 00:00:00 +0000</pubdate><guid>http://blog.test:8888/2018/05/learning-to-react/</guid><description></description></item><item><title>A different &#39;Vue&#39; on Web app development</title><link>http://blog.test:8888/2018/04/a-different-vue-on-web-app-development/<pubdate>Thu, 05 Apr 2018 00:00:00 +0000</pubdate><guid>http://blog.test:8888/2018/04/a-different-vue-on-web-app-development/</guid><description></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on htr3n&#39;s</title>
+    <link>https://blog.test:8443/tags/web/</link>
+    <description>Recent content in Web on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 06 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.test:8443/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS preprocessors: SASS vs. LESS</title>
+      <link>https://blog.test:8443/2018/07/css-preprocessors-sass-vs.-less/</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/07/css-preprocessors-sass-vs.-less/</guid>
+      <description>A preprocessor is type of data processor component that takes input data and produces some output data according to some predefined or configured semantics and logics. As the name implies, preprocessing stage often happen beforehand. For instance, C preprocessor is often used to handle the C header files, macros, and so on, before the actual compilation.
+CSS (Cascading Style Sheet) is a declarative language used for defining the presentation of HTML documents.</description>
+    </item>
+    
+    <item>
+      <title>Learning to &#39;React&#39;</title>
+      <link>https://blog.test:8443/2018/05/learning-to-react/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/05/learning-to-react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A different &#39;Vue&#39; on Web app development</title>
+      <link>https://blog.test:8443/2018/04/a-different-vue-on-web-app-development/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/04/a-different-vue-on-web-app-development/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

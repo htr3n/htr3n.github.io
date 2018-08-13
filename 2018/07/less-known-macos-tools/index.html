@@ -1,27 +1,369 @@
-<!DOCTYPE html><html lang="en"><head><link href="https://gmpg.org/xfn/11" rel="profile"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Cache-Control" content="public"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="generator" content="Hugo 0.46"><title>Some less-known and underused macOS tools • htr3n&#39;s</title><meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants"><meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Some less-known and underused macOS tools"><meta name="twitter:description" content="system_profiler SPFontsDataType  launchctl launchd for creating daemons and agents
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.46" />
+
+    
+    
+    
+
+<title>Some less-known and underused macOS tools • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="Some less-known and underused macOS tools"/>
+<meta name="twitter:description" content="system_profiler SPFontsDataType  launchctl launchd for creating daemons and agents
 scutil
 systemsetup
 otool
 otool -L /bin/bash  ASLs/Logging
-Disk Utility Resize hdiutil resize -size 10g filename.sparsebundle  Creating a sparsebundle (rw) hdiutil create -size &lt;size&gt;g -fs HFS&#43;J -volname &lt;volume_name&gt; &lt;file-name&gt;.sparsebundle hdiutil resize -limits rw.dmg hdiutil create -verbose -type SPARSEBUNDLE -fs HFS&#43;J -encryption AES-128 -stdinpass -nospotlight -volname &quot;HOME&quot; -size 200g HOME.sparsebundle  Creating ISO image from a path or CDR hdiutil makehybrid -o image."><meta property="og:title" content="Some less-known and underused macOS tools"><meta property="og:description" content="system_profiler SPFontsDataType  launchctl launchd for creating daemons and agents
+Disk Utility Resize hdiutil resize -size 10g filename.sparsebundle  Creating a sparsebundle (rw) hdiutil create -size &lt;size&gt;g -fs HFS&#43;J -volname &lt;volume_name&gt; &lt;file-name&gt;.sparsebundle hdiutil resize -limits rw.dmg hdiutil create -verbose -type SPARSEBUNDLE -fs HFS&#43;J -encryption AES-128 -stdinpass -nospotlight -volname &quot;HOME&quot; -size 200g HOME.sparsebundle  Creating ISO image from a path or CDR hdiutil makehybrid -o image."/>
+
+
+
+<meta property="og:title" content="Some less-known and underused macOS tools" />
+<meta property="og:description" content="system_profiler SPFontsDataType  launchctl launchd for creating daemons and agents
 scutil
 systemsetup
 otool
 otool -L /bin/bash  ASLs/Logging
-Disk Utility Resize hdiutil resize -size 10g filename.sparsebundle  Creating a sparsebundle (rw) hdiutil create -size &lt;size&gt;g -fs HFS&#43;J -volname &lt;volume_name&gt; &lt;file-name&gt;.sparsebundle hdiutil resize -limits rw.dmg hdiutil create -verbose -type SPARSEBUNDLE -fs HFS&#43;J -encryption AES-128 -stdinpass -nospotlight -volname &quot;HOME&quot; -size 200g HOME.sparsebundle  Creating ISO image from a path or CDR hdiutil makehybrid -o image."><meta property="og:type" content="article"><meta property="og:url" content="http://blog.test:8888/2018/07/less-known-macos-tools/"><meta property="og:image" content="img/avatar.png"><meta property="article:published_time" content="2018-07-08T18:37:22&#43;10:00"><meta property="article:modified_time" content="2018-07-08T18:37:22&#43;10:00"><link rel="stylesheet" href="http://blog.test:8888/css/hyde-hyde.css"><link rel="stylesheet" href="http://blog.test:8888/css/print.min.css" media="print"><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+Disk Utility Resize hdiutil resize -size 10g filename.sparsebundle  Creating a sparsebundle (rw) hdiutil create -size &lt;size&gt;g -fs HFS&#43;J -volname &lt;volume_name&gt; &lt;file-name&gt;.sparsebundle hdiutil resize -limits rw.dmg hdiutil create -verbose -type SPARSEBUNDLE -fs HFS&#43;J -encryption AES-128 -stdinpass -nospotlight -volname &quot;HOME&quot; -size 200g HOME.sparsebundle  Creating ISO image from a path or CDR hdiutil makehybrid -o image." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.test:8443/2018/07/less-known-macos-tools/" />
+
+  <meta property="og:image" content="img/avatar.png" />
+
+
+
+<meta property="article:published_time" content="2018-07-08T18:37:22&#43;10:00"/>
+
+<meta property="article:modified_time" content="2018-07-08T18:37:22&#43;10:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--><!-- Icons --><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png"><link rel="shortcut icon" href="/favicon.png"></head><body><div class="sidebar"><div class="container"><div class="sidebar-about"><span class="site__title"><a href="http://blog.test:8888/">htr3n&#39;s</a></span><div class="author-image"><img src="http://blog.test:8888/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"></div><p class="site__description">technology, thoughts, opinions, rants</p></div><div><ul class="sidebar-nav"><li><a href="/posts/"><span>Posts</span></a></li><li><a href="/portfolio/"><span>Portfolio</span></a></li><li><a href="/vn/"><span>Tiếng Việt</span></a></li><li><a href="/about/"><span>About</span></a></li></ul></div><p><section class="social"><a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="https://keybase.io/htr3n"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a> &nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a></section></p><p class="copyright">&copy; 2018 htr3n. <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.<br>Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</p></div><div></div></div><div class="content container"><article><header><h1 class="post__title">Some less-known and underused macOS tools</h1><div class="post__meta"><i class="fas fa-calendar-alt"></i> Jul 8, 2018 in <a class="badge badge-category" href="/categories/dev">DEV</a> • <a class="badge badge-category" href="/categories/system">SYSTEM</a><br><i class="fas fa-tags"></i> <a class="badge badge-tag" href="/tags/dev">dev</a> <a class="badge badge-tag" href="/tags/macos">macos</a> <a class="badge badge-tag" href="/tags/system">system</a><br><i class="fas fa-clock"></i> 1 min read</div></header><div class="post"><pre><code>system_profiler SPFontsDataType
-</code></pre><p><code>launchctl</code> <code>launchd</code> for <a href="https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html">creating daemons and agents</a></p><p><code>scutil</code></p><p><code>systemsetup</code></p><p><code>otool</code></p><pre><code class="language-sh">otool -L /bin/bash
-</code></pre><p>ASLs/Logging</p><h2 id="disk-utility">Disk Utility</h2><h5 id="resize">Resize</h5><pre><code class="language-sh">hdiutil resize -size 10g filename.sparsebundle
-</code></pre><h5 id="creating-a-sparsebundle-rw">Creating a sparsebundle (rw)</h5><pre><code class="language-sh">hdiutil create -size &lt;size&gt;g -fs HFS+J -volname &lt;volume_name&gt; &lt;file-name&gt;.sparsebundle
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.test:8443/">htr3n&#39;s</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://blog.test:8443/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         technology, thoughts, opinions, rants 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/htr3n"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/htr3n"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/htr3n"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="https://stackoverflow.com/users/339302"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	&nbsp;<a href="https://keybase.io/htr3n"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	&nbsp;<a href="mailto:hoang.huy.tran&#43;blog@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 htr3n.
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1 class="post__title">Some less-known and underused macOS tools</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jul 8, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/dev">DEV</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/system">SYSTEM</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/dev">dev</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/macos">macos</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/system">system</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<pre><code>system_profiler SPFontsDataType
+</code></pre>
+
+<p><code>launchctl</code>  <code>launchd</code> for <a href="https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html">creating daemons and agents</a></p>
+
+<p><code>scutil</code></p>
+
+<p><code>systemsetup</code></p>
+
+<p><code>otool</code></p>
+
+<pre><code class="language-sh">otool -L /bin/bash
+</code></pre>
+
+<p>ASLs/Logging</p>
+
+<h2 id="disk-utility">Disk Utility</h2>
+
+<h5 id="resize">Resize</h5>
+
+<pre><code class="language-sh">hdiutil resize -size 10g filename.sparsebundle
+</code></pre>
+
+<h5 id="creating-a-sparsebundle-rw">Creating a sparsebundle (rw)</h5>
+
+<pre><code class="language-sh">hdiutil create -size &lt;size&gt;g -fs HFS+J -volname &lt;volume_name&gt; &lt;file-name&gt;.sparsebundle
 hdiutil resize -limits rw.dmg
 hdiutil create -verbose -type SPARSEBUNDLE -fs HFS+J -encryption AES-128 -stdinpass -nospotlight -volname &quot;HOME&quot; -size 200g HOME.sparsebundle
-</code></pre><h5 id="creating-iso-image-from-a-path-or-cdr">Creating ISO image from a path or CDR</h5><pre><code class="language-sh">hdiutil makehybrid -o image.iso ~/path/to/folder -iso -joliet
+</code></pre>
+
+<h5 id="creating-iso-image-from-a-path-or-cdr">Creating ISO image from a path or CDR</h5>
+
+<pre><code class="language-sh">hdiutil makehybrid -o image.iso ~/path/to/folder -iso -joliet
 hdiutil makehybrid -iso -joliet -o [filename].iso [filename].cdr
-</code></pre><h5 id="convert-dmg-ro-rw">Convert DMG RO &lt;&ndash;&gt; RW</h5><pre><code class="language-sh">hdiutil convert ro.dmg -format UDRW -o rw.dmg
+</code></pre>
+
+<h5 id="convert-dmg-ro-rw">Convert DMG RO &lt;&ndash;&gt; RW</h5>
+
+<pre><code class="language-sh">hdiutil convert ro.dmg -format UDRW -o rw.dmg
 hdiutil convert rw.dmg -format UDZO -imagekey zlib-level=9 -o ro.dmg
-</code></pre><h6 id="options">Options</h6><ul><li>UDRW - UDIF read/write image<br></li><li>UDRO - UDIF read-only image<br></li><li>UDCO - UDIF ADC-compressed image<br></li><li>UDZO - UDIF zlib-compressed image<br></li><li>UDBZ - UDIF bzip2-compressed image (OS X 10.4+ only)<br></li><li>UFBI - UDIF entire image with MD5 checksum<br></li><li>UDRo - UDIF read-only (obsolete format)<br></li><li>UDCo - UDIF compressed (obsolete format)<br></li><li>UDTO - DVD/CD-R master for export<br></li><li>UDxx - UDIF stub image<br></li><li>UDSP - SPARSE (grows with content)<br></li><li>UDSB - SPARSEBUNDLE (grows with content; bundle-backed)<br></li><li>RdWr - NDIF read/write image (deprecated)<br></li><li>Rdxx - NDIF read-only image (Disk Copy 6.3.3 format)<br></li><li>ROCo - NDIF compressed image (deprecated)<br></li><li>Rken - NDIF compressed (obsolete format)<br></li><li>DC42 - Disk Copy 4.2 image</li></ul></div><div class="post--navigation post--navigation-single"><a href="/2018/07/css-preprocessors-sass-vs.-less/" class="post--navigation-prev"><i aria-hidden="true" class="fa fa-chevron-left"></i> <span class="navigation-tittle">CSS preprocessors: SASS vs. LESS</span> </a><a href="/2018/07/minimal-hugo-workflow/" class="post--navigation-next"><span class="navigation-tittle">A mininal Hugo blogging workflow</span> <i aria-hidden="true" class="fa fa-chevron-right"></i></a></div><div class="post__related"><h2>Related Articles</h2><ul class="related-posts"><li><span class="list__title--small"><a href="/2018/07/css-preprocessors-sass-vs.-less/">CSS preprocessors: SASS vs. LESS</a> <time class="pull-right hidden-tablet">Jul 06 &#39;18</time></span></li><li><span class="list__title--small"><a href="/2018/05/integration-laravel-gentelella/">Integration Laravel 5 and Gentelella admin theme</a> <time class="pull-right hidden-tablet">May 09 &#39;18</time></span></li></ul></div><div id="disqus_thread"></div><script type="text/javascript">(function () {
+</code></pre>
+
+<h6 id="options">Options</h6>
+
+<ul>
+<li>UDRW - UDIF read/write image<br /></li>
+<li>UDRO - UDIF read-only image<br /></li>
+<li>UDCO - UDIF ADC-compressed image<br /></li>
+<li>UDZO - UDIF zlib-compressed image<br /></li>
+<li>UDBZ - UDIF bzip2-compressed image (OS X 10.4+ only)<br /></li>
+<li>UFBI - UDIF entire image with MD5 checksum<br /></li>
+<li>UDRo - UDIF read-only (obsolete format)<br /></li>
+<li>UDCo - UDIF compressed (obsolete format)<br /></li>
+<li>UDTO - DVD/CD-R master for export<br /></li>
+<li>UDxx - UDIF stub image<br /></li>
+<li>UDSP - SPARSE (grows with content)<br /></li>
+<li>UDSB - SPARSEBUNDLE (grows with content; bundle-backed)<br /></li>
+<li>RdWr - NDIF read/write image (deprecated)<br /></li>
+<li>Rdxx - NDIF read-only image (Disk Copy 6.3.3 format)<br /></li>
+<li>ROCo - NDIF compressed image (deprecated)<br /></li>
+<li>Rken - NDIF compressed (obsolete format)<br /></li>
+<li>DC42 - Disk Copy 4.2 image</li>
+</ul>
+
+  </div>
+  
+
+<div class="post--navigation post--navigation-single">
+    
+    <a href="/2018/07/css-preprocessors-sass-vs.-less/" class="post--navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">CSS preprocessors: SASS vs. LESS</span>
+    </a>
+    
+    
+    <a href="/2018/07/minimal-hugo-workflow/" class="post--navigation-next">
+      <span class="navigation-tittle">A mininal Hugo blogging workflow</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/2018/07/css-preprocessors-sass-vs.-less/">CSS preprocessors: SASS vs. LESS</a>
+      
+      <time class="pull-right hidden-tablet">Jul 06 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/05/integration-laravel-gentelella/">Integration Laravel 5 and Gentelella admin theme</a>
+      
+      <time class="pull-right hidden-tablet">May 09 &#39;18</time>
+      
+  </span>
+</li>
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
     if (location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "") {
@@ -34,13 +376,54 @@ hdiutil convert rw.dmg -format UDZO -imagekey zlib-level=9 -o ro.dmg
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || 
       document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></article></div><script>var doNotTrack = false;
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script>
+var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-112764962-1', 'auto');
 	
 	ga('send', 'pageview');
-}</script><script async src="https://www.google-analytics.com/analytics.js"></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script><noscript id="deferred-styles"><link rel="stylesheet" type="text/css" href="http://blog.test:8888/css/atom-one-light.min.css"></noscript><script>var loadDeferredStyles = function () {
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+<noscript id="deferred-styles">
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.test:8443/css/atom-one-light.min.css" />
+  
+</noscript>
+
+<script>
+  var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
@@ -55,4 +438,27 @@ if (!doNotTrack) {
     window.setTimeout(loadDeferredStyles, 0);
   });
   else
-    window.addEventListener('load', loadDeferredStyles);</script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script><script type="text/javascript">hljs.initHighlightingOnLoad();</script></body></html>
+    window.addEventListener('load', loadDeferredStyles);
+</script>
+
+
+    
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>
