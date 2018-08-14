@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 06 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Aug 2018 10:11:30 +0700</lastBuildDate>
     
 	<atom:link href="https://blog.test:8443/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Best Typography</title>
+      <link>https://blog.test:8443/2018/08/best-typography/</link>
+      <pubDate>Mon, 13 Aug 2018 10:11:30 +0700</pubDate>
+      
+      <guid>https://blog.test:8443/2018/08/best-typography/</guid>
+      <description>abcde­fghijklmnopqrstu­vwxyz­abcde­fghijklmnopqrstu­vwxyz­abcde­fgh
+= 2.31 alphabets
+https://practicaltypography.com/line-length.html</description>
+    </item>
     
     <item>
       <title>CSS preprocessors: SASS vs. LESS</title>

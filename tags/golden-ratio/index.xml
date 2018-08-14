@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golden Ratio on htr3n&#39;s</title>
+    <link>https://blog.test:8443/tags/golden-ratio/</link>
+    <description>Recent content in Golden Ratio on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 13 Aug 2018 10:11:30 +0700</lastBuildDate>
+    
+	<atom:link href="https://blog.test:8443/tags/golden-ratio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Best Typography</title>
+      <link>https://blog.test:8443/2018/08/best-typography/</link>
+      <pubDate>Mon, 13 Aug 2018 10:11:30 +0700</pubDate>
+      
+      <guid>https://blog.test:8443/2018/08/best-typography/</guid>
+      <description>abcde­fghijklmnopqrstu­vwxyz­abcde­fghijklmnopqrstu­vwxyz­abcde­fgh
+= 2.31 alphabets
+https://practicaltypography.com/line-length.html</description>
+    </item>
+    
+  </channel>
+</rss>
