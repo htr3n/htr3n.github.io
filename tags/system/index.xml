@@ -23,7 +23,7 @@ scutil
 systemsetup
 otool
 otool -L /bin/bash  ASLs/Logging
-Disk Utility Resize hdiutil resize -size 10g filename.sparsebundle  Creating a sparsebundle (rw) hdiutil create -size &amp;lt;size&amp;gt;g -fs HFS+J -volname &amp;lt;volume_name&amp;gt; &amp;lt;file-name&amp;gt;.sparsebundle hdiutil resize -limits rw.dmg hdiutil create -verbose -type SPARSEBUNDLE -fs HFS+J -encryption AES-128 -stdinpass -nospotlight -volname &amp;quot;HOME&amp;quot; -size 200g HOME.sparsebundle  Creating ISO image from a path or CDR hdiutil makehybrid -o image.</description>
+Disk Utility Resize hdiutil resize -size 10g filename.sparsebundle  Creating a sparsebundle (rw) hdiutil create -size &amp;lt;size&amp;gt;g -fs HFS+J -volname &amp;lt;volume_name&amp;gt; &amp;lt;file-name&amp;gt;.</description>
     </item>
     
   </channel>

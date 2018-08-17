@@ -29,8 +29,7 @@ https://practicaltypography.com/line-length.html</description>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.test:8443/2018/07/css-preprocessors-sass-vs.-less/</guid>
-      <description>A preprocessor is type of data processor component that takes input data and produces some output data according to some predefined or configured semantics and logics. As the name implies, preprocessing stage often happen beforehand. For instance, C preprocessor is often used to handle the C header files, macros, and so on, before the actual compilation.
-CSS (Cascading Style Sheet) is a declarative language used for defining the presentation of HTML documents.</description>
+      <description>A preprocessor is type of data processor component that takes input data and produces some output data according to some predefined or configured semantics and logics. As the name implies, preprocessing stage often happen beforehand.</description>
     </item>
     
     <item>
