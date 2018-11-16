@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?> <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>React on htr3n&#39;s</title><link>https://blog.test:8443/tags/react/<description>Recent content in React on htr3n&#39;s</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright><lastbuilddate>Tue, 01 May 2018 00:00:00 +0000</lastbuilddate><atom:link href="https://blog.test:8443/tags/react/index.xml" rel="self" type="application/rss+xml"><item><title>Learning to &#39;React&#39;</title><link>https://blog.test:8443/2018/05/learning-to-react/<pubdate>Tue, 01 May 2018 00:00:00 +0000</pubdate><guid>https://blog.test:8443/2018/05/learning-to-react/</guid><description></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on htr3n&#39;s</title>
+    <link>https://blog.test:8443/tags/react/</link>
+    <description>Recent content in React on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.test:8443/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning to &#39;React&#39;</title>
+      <link>https://blog.test:8443/2018/05/learning-to-react/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/05/learning-to-react/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?> <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring Web on htr3n&#39;s</title><link>https://blog.test:8443/tags/spring-web/<description>Recent content in Spring Web on htr3n&#39;s</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright><lastbuilddate>Sun, 17 Jun 2018 00:00:00 +0000</lastbuilddate><atom:link href="https://blog.test:8443/tags/spring-web/index.xml" rel="self" type="application/rss+xml"><item><title>Spring Spring Web/MVC</title><link>https://blog.test:8443/2018/06/spring-spring-web/mvc/<pubdate>Sun, 17 Jun 2018 00:00:00 +0000</pubdate><guid>https://blog.test:8443/2018/06/spring-spring-web/mvc/</guid><description>Spring Web Servlet Lifecycle A Servlet lifecycle is managed by the container in which it has been deployed. https://docs.oracle.com/javaee/6/tutorial/doc/bnafi.html http://docs.jboss.org/jbossas/javadoc/7.1.2.Final/javax/servlet/Servlet.html ContextLoaderListener This is the bootstrap listener to manipulate the Spring&amp;rsquo;s root WebApplicationContext (being shared by all servlets within the web application).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Web on htr3n&#39;s</title>
+    <link>https://blog.test:8443/tags/spring-web/</link>
+    <description>Recent content in Spring Web on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.test:8443/tags/spring-web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Spring Web/MVC</title>
+      <link>https://blog.test:8443/2018/06/spring-spring-web-mvc/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/06/spring-spring-web-mvc/</guid>
+      <description>Spring Web Servlet Lifecycle A Servlet lifecycle is managed by the container in which it has been deployed.
+ https://docs.oracle.com/javaee/6/tutorial/doc/bnafi.html http://docs.jboss.org/jbossas/javadoc/7.1.2.Final/javax/servlet/Servlet.html  ContextLoaderListener This is the bootstrap listener to manipulate the Spring&amp;rsquo;s root WebApplicationContext (being shared by all servlets within the web application).</description>
+    </item>
+    
+  </channel>
+</rss>

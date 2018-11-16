@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?> <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>System on htr3n&#39;s</title><link>https://blog.test:8443/tags/system/<description>Recent content in System on htr3n&#39;s</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright><lastbuilddate>Sun, 08 Jul 2018 18:37:22 +1000</lastbuilddate><atom:link href="https://blog.test:8443/tags/system/index.xml" rel="self" type="application/rss+xml"><item><title>Some less-known and underused macOS tools</title><link>https://blog.test:8443/2018/07/less-known-macos-tools/<pubdate>Sun, 08 Jul 2018 18:37:22 +1000</pubdate><guid>https://blog.test:8443/2018/07/less-known-macos-tools/</guid><description>system_profiler SPFontsDataType launchctl launchd for creating daemons and agents scutil systemsetup otool otool -L /bin/bash ASLs/Logging Disk Utility Resize hdiutil resize -size 10g filename.sparsebundle Creating a sparsebundle (rw) hdiutil create -size &amp;lt;size&amp;gt;g -fs HFS+J -volname &amp;lt;volume_name&amp;gt; &amp;lt;file-name&amp;gt;.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System on htr3n&#39;s</title>
+    <link>https://blog.test:8443/tags/system/</link>
+    <description>Recent content in System on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 08 Jul 2018 18:37:22 +1000</lastBuildDate>
+    
+	<atom:link href="https://blog.test:8443/tags/system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Some less-known or underused macOS tools</title>
+      <link>https://blog.test:8443/2018/07/less-known-macos-tools/</link>
+      <pubDate>Sun, 08 Jul 2018 18:37:22 +1000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/07/less-known-macos-tools/</guid>
+      <description>Mouting got stuck Time Machine can be configured to store backup data on a remote server, for instance, via SambaFS. Up to macOS 10.13, after selecting the dedicated shared folder, Time Machine works automatically and flawlessly.</description>
+    </item>
+    
+  </channel>
+</rss>
