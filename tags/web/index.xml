@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 13 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.test:8443/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning to &#39;React&#39;</title>
+      <link>https://blog.test:8443/2018/11/learning-to-react/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/11/learning-to-react/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Notes to self on Web fonts and typography</title>
@@ -32,15 +41,6 @@ Web Fonts Some of my selection criteria
       
       <guid>https://blog.test:8443/2018/07/css-preprocessors-sass-vs.-less/</guid>
       <description>A preprocessor is type of data processor component that takes input data and produces some output data according to some predefined or configured semantics and logics. As the name implies, preprocessing stage often happen beforehand.</description>
-    </item>
-    
-    <item>
-      <title>Learning to &#39;React&#39;</title>
-      <link>https://blog.test:8443/2018/05/learning-to-react/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/2018/05/learning-to-react/</guid>
-      <description></description>
     </item>
     
   </channel>
