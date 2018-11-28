@@ -17,7 +17,7 @@
     
     
 
-<title>Hugo hidden treasures • htr3n&#39;s</title>
+<title>Spring Data JPA • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 
@@ -30,23 +30,23 @@
 
 
 
-<meta name="twitter:title" content="Hugo hidden treasures"/>
-<meta name="twitter:description" content="I have been spending quite a fair amount of time working with Hugo, especially on building this blog. Since then Hugo keeps amazing me with a plethora of nice features, ranging from systematic content structures, well-organised theming, to powerful templating, several useful functions and shortcodes."/>
+<meta name="twitter:title" content="Spring Data JPA"/>
+<meta name="twitter:description" content="Java Persistence API (JPA) is historically part of the Java EE platform. It defines a standard Java API dealing with relational databases. EclipseLink (formerly Oracle TopLink) is considered a reference implementation but Red Hat (formerly JBoss) Hibernate ORM has significantly influenced the current shape of JPA."/>
 
 
 
-<meta property="og:title" content="Hugo hidden treasures" />
-<meta property="og:description" content="I have been spending quite a fair amount of time working with Hugo, especially on building this blog. Since then Hugo keeps amazing me with a plethora of nice features, ranging from systematic content structures, well-organised theming, to powerful templating, several useful functions and shortcodes." />
+<meta property="og:title" content="Spring Data JPA" />
+<meta property="og:description" content="Java Persistence API (JPA) is historically part of the Java EE platform. It defines a standard Java API dealing with relational databases. EclipseLink (formerly Oracle TopLink) is considered a reference implementation but Red Hat (formerly JBoss) Hibernate ORM has significantly influenced the current shape of JPA." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.test:8443/2018/08/hugo-hidden-treasures/" />
+<meta property="og:url" content="https://blog.test:8443/2018/11/spring-jpa/" />
 
   <meta property="og:image" content="img/avatar.png" />
 
 
 
-<meta property="article:published_time" content="2018-08-01T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-11-22T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-08-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-22T00:00:00&#43;00:00"/>
 
 
 
@@ -197,13 +197,13 @@
             
     <article>
   <header>
-    <h1>Hugo hidden treasures</h1>
+    <h1>Spring Data JPA</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Aug 1, 2018
+      <i class="fas fa-calendar-alt"></i> Nov 22, 2018
     
     
     
@@ -224,16 +224,19 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/tags/dev">dev</a>
+          <a class="badge badge-tag" href="/tags/spring-framework">spring framework</a>
            
       
-          <a class="badge badge-tag" href="/tags/hugo">hugo</a>
+          <a class="badge badge-tag" href="/tags/database">database</a>
            
       
-          <a class="badge badge-tag" href="/tags/undocumented">undocumented</a>
+          <a class="badge badge-tag" href="/tags/jpa">jpa</a>
            
       
-          <a class="badge badge-tag" href="/tags/hidden">hidden</a>
+          <a class="badge badge-tag" href="/tags/spring-boot">spring boot</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/transaction">transaction</a>
           
       
     
@@ -247,35 +250,37 @@
   
   
   <div class="post">
-    
+    <p><a href="https://en.wikipedia.org/wiki/Java_Persistence_API">Java Persistence API (JPA)</a> is historically part of the Java EE platform. It defines a standard Java API dealing with relational databases. <a href="http://www.eclipse.org/eclipselink/">EclipseLink</a> (formerly Oracle TopLink) is considered a reference implementation but Red Hat (formerly JBoss) <a href="http://hibernate.org/orm/">Hibernate ORM</a> has significantly influenced the current shape of JPA. Apart from EclipseLink and Hibernate, there are also some other JPA implementations such as <a href="http://www.datanucleus.org/">DataNucleus</a>, Apache <a href="http://openjpa.apache.org/">OpenJPA</a>.</p>
 
-<p>I have been spending quite a fair amount of time working with Hugo, especially on building this blog. Since then Hugo keeps amazing me with a plethora of nice features, ranging from <a href="https://gohugo.io/content-management">systematic content structures</a>, <a href="https://gohugo.io/themes">well-organised theming</a>, to powerful <a href="https://gohugo.io/templates">templating</a>, several useful <a href="https://gohugo.io/functions">functions</a> and <a href="https://gohugo.io/content-management/shortcodes">shortcodes</a>.</p>
+<p>A part of Spring framework, namely, Spring Data JPA, is sort of a <a href="https://en.wikipedia.org/wiki/Facade_pattern"><em>façade</em></a> that provides a data access abstraction layer rather than a true JPA implementation. We can choose any JPA providers, not only Hibernate or EclipseLink but also anything else.</p>
 
-<!-- more -->
+<ul>
+<li><p><a href="https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html">JpaRepository<T, ID></a></p></li>
 
-<p>The <a href="https://gohugo.io/documentation">documentation</a> is quite rich and covers most of Hugo major aspects. Nonetheless, it is sometimes caught off-speed due to the incredible development progress made by amazing Hugo authors and contributors ❤️.</p>
+<li><p><a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/PagingAndSortingRepository.html?is-external=true">PagingAndSortingRepository<T, ID></a></p></li>
 
-<h2 id="go-templates">Go Templates</h2>
+<li><p><a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html">CrudRepository<T, ID></a></p></li>
+</ul>
 
-<h3 id="variable-scoping">Variable Scoping</h3>
+<script type="application/javascript" src="//gist.github.com/htr3n/78fcb57e1ad020d858b06eb03f0f4942.js?file=CrudRepository.java"></script>
 
-<p><code>{{ .Site.BaseURL }}</code></p>
+<script type="application/javascript" src="//gist.github.com/htr3n/78fcb57e1ad020d858b06eb03f0f4942.js?file=PagingAndSortingRepository.java"></script>
 
-<p><code>{{ $.Site.BaseUrl }}</code></p>
+<script type="application/javascript" src="//gist.github.com/htr3n/78fcb57e1ad020d858b06eb03f0f4942.js?file=JpaRepository.java"></script>
 
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="/2018/07/handy-quicklook/" class="navigation-prev">
+    <a href="/2018/11/test-driven-spring-jdbc/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Handy macOS QuickLook configurations</span>
+      <span class="navigation-tittle">Back to basics: Test-driven Spring JDBC</span>
     </a>
     
     
-    <a href="/2018/08/notes-to-self-web-fonts-and-typography/" class="navigation-next">
-      <span class="navigation-tittle">Notes to Self: Web Fonts and Typography</span>
+    <a href="/2018/11/spring-boot-trailing-whitespaces/" class="navigation-next">
+      <span class="navigation-tittle">Spring Boot properties loading issues with trailing whitespaces</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>
     
@@ -292,45 +297,36 @@
         
 <li>
   <span class="list__title--small">
-    <a href="/2018/07/minimal-hugo-workflow/" >A mininal Hugo blogging workflow</a>
+    <a href="/2018/11/test-driven-spring-jdbc/" >Back to basics: Test-driven Spring JDBC</a>
       
-      <time class="pull-right hidden-tablet">Jul 14 &#39;18</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/2018/07/less-known-macos-tools/" class="draft">Some less-known or underused macOS tools</a>
-      
-      <time class="pull-right hidden-tablet">Jul 08 &#39;18</time>
+      <time class="pull-right hidden-tablet">Nov 20 &#39;18</time>
       
   </span>
 </li>
 
 <li>
   <span class="list__title--small">
-    <a href="/2018/07/css-preprocessors-sass-vs.-less/" class="draft">CSS preprocessors: SASS vs. LESS</a>
+    <a href="/2018/11/spring-boot-di-meets-coc/" class="draft">Tour de Spring Boot: DI meets CoC</a>
       
-      <time class="pull-right hidden-tablet">Jul 06 &#39;18</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/2018/05/integration-laravel-gentelella/" >Integration Laravel 5 and Gentelella admin theme</a>
-      
-      <time class="pull-right hidden-tablet">May 09 &#39;18</time>
+      <time class="pull-right hidden-tablet">Nov 19 &#39;18</time>
       
   </span>
 </li>
 
 <li>
   <span class="list__title--small">
-    <a href="/2018/03/confusing-hugo-issues-datetime-and-isset/" >Confusing Hugo issues: datetime and &#39;isset&#39;</a>
+    <a href="/2018/06/on-spring-framework-part-1-the-core/" class="draft">On Spring Framework: Part 1 - The Core</a>
       
-      <time class="pull-right hidden-tablet">Mar 31 &#39;18</time>
+      <time class="pull-right hidden-tablet">Jun 17 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/06/migrating-hibernate/" class="draft">Hibernate: Migrating 3.x to 5.x</a>
+      
+      <time class="pull-right hidden-tablet">Jun 12 &#39;18</time>
       
   </span>
 </li>

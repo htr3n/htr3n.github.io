@@ -7,18 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 17 Jun 2018 12:09:39 +1000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.test:8443/tags/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>On Spring Framework: Part 1 - The Core</title>
-      <link>https://blog.test:8443/2018/06/on-spring-framework-part-1-the-core/</link>
-      <pubDate>Sun, 17 Jun 2018 12:09:39 +1000</pubDate>
+      <title>Tour de Spring Boot: DI meets CoC</title>
+      <link>https://blog.test:8443/2018/11/spring-boot-di-meets-coc/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/06/on-spring-framework-part-1-the-core/</guid>
-      <description>Fundamental Concepts Application Context  The interface ApplicationContext represents the Spring IoC (Inversion of Control) and defines tasks for instantiating, configuring, and assembling beans. For standalone applications, there are ClassPathXmlApplicationContext or FileSystemXmlApplicationContext whilst for web applications there is XmlWebApplicationContext.</description>
+      <guid>https://blog.test:8443/2018/11/spring-boot-di-meets-coc/</guid>
+      <description>I started using Spring framework back to 2009 or so to develop few demos for European projects. Most of these projects featured several Web services some of which share back-end databases and some need to talk with external services or WS-BPEL business processes, and so on.</description>
     </item>
     
   </channel>

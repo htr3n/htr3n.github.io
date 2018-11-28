@@ -48,11 +48,9 @@
 
 
 
-<meta property="article:published_time" content="2018-06-17T12:09:39&#43;10:00"/>
+<meta property="article:published_time" content="2018-06-17T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-06-17T12:09:39&#43;10:00"/>
-
-
+<meta property="article:modified_time" content="2018-06-17T00:00:00&#43;00:00"/>
 
 
 
@@ -67,7 +65,9 @@
 
 
 
-    <link href="https://fonts.googleapis.com/css?family=Bitter|IBM+Plex+Serif" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
 
 
 
@@ -96,7 +96,7 @@
     <body class=" ">
     
 <div class="sidebar">
-  <div class="container ">
+  <div class="">
     <div class="sidebar-about">
       <span class="site__title">
         <a href="https://blog.test:8443/">htr3n&#39;s</a>
@@ -189,7 +189,7 @@
     </div>
     <div class="copyright">
   &copy; 2018 htr3n.
-  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.<br/>
   Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
   
 </div>
@@ -231,16 +231,22 @@
           <a class="badge badge-tag" href="/tags/spring-framework">spring-framework</a>
            
       
-          <a class="badge badge-tag" href="/tags/dependency-injection">dependency-injection</a>
+          <a class="badge badge-tag" href="/tags/database">database</a>
            
       
-          <a class="badge badge-tag" href="/tags/inversion-of-control">inversion-of-control</a>
+          <a class="badge badge-tag" href="/tags/jdbc">jdbc</a>
            
       
-          <a class="badge badge-tag" href="/tags/application-context">application-context</a>
+          <a class="badge badge-tag" href="/tags/jdbctemplate">jdbctemplate</a>
            
       
-          <a class="badge badge-tag" href="/tags/factory">factory</a>
+          <a class="badge badge-tag" href="/tags/spring-boot">spring-boot</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/junit">junit</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/unit-test">unit-test</a>
           
       
     
@@ -412,7 +418,16 @@ service.doSomething();
         
 <li>
   <span class="list__title--small">
-    <a href="/2018/06/spring-web-mvc/">Spring Web/MVC</a>
+    <a href="/2018/06/migrating-hibernate/" class="draft">Hibernate: Migrating 3.x to 5.x</a>
+      
+      <time class="pull-right hidden-tablet">Jun 12 &#39;18</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/2018/06/spring-web-mvc/" class="draft">Spring Web/MVC</a>
       
       <time class="pull-right hidden-tablet">Jun 17 &#39;18</time>
       
@@ -421,21 +436,13 @@ service.doSomething();
 
 <li>
   <span class="list__title--small">
-    <a href="/2018/06/apache-cxf-2-to-3/">A journey from Apache CXF 2.2 to 3.2</a>
+    <a href="/2018/06/apache-cxf-2-to-3/" >A journey from Apache CXF 2.2 to 3.2</a>
       
       <time class="pull-right hidden-tablet">Jun 15 &#39;18</time>
       
   </span>
 </li>
 
-<li>
-  <span class="list__title--small">
-    <a href="/2018/06/migrating-hibernate/">Hibernate: Migrating 3.x to 5.x</a>
-      
-      <time class="pull-right hidden-tablet">Jun 12 &#39;18</time>
-      
-  </span>
-</li>
 
     </ul>
 </div>
@@ -505,6 +512,8 @@ if (!doNotTrack) {
   
   <link rel="stylesheet" type="text/css" href="https://blog.test:8443/css/atom-one-light.min.css" />
   
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codecopy/umd/codecopy.min.css">
 </noscript>
 
 <script>
@@ -524,12 +533,17 @@ if (!doNotTrack) {
   });
   else
     window.addEventListener('load', loadDeferredStyles);
+  
+  document.addEventListener('DOMContentLoaded', function (event) {
+    codecopy('pre');
+  });
 </script>
+<script defer src="//cdn.jsdelivr.net/npm/codecopy/umd/codecopy.min.js"></script>
 
 
     
     
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
         
     
     <script type="text/javascript">
