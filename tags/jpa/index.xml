@@ -6,18 +6,17 @@
     <description>Recent content in Jpa on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.test:8443/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Spring Data JPA</title>
-      <link>https://blog.test:8443/2018/11/spring-jpa/</link>
-      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      <title>Spring Data Access JPA</title>
+      <link>https://blog.test:8443/2018/11/spring-data-access-jpa/</link>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/11/spring-jpa/</guid>
+      <guid>https://blog.test:8443/2018/11/spring-data-access-jpa/</guid>
       <description>Java Persistence API (JPA) is historically part of the Java EE platform. It defines a standard Java API dealing with relational databases. EclipseLink (formerly Oracle TopLink) is considered a reference implementation but Red Hat (formerly JBoss) Hibernate ORM has significantly influenced the current shape of JPA.</description>
     </item>
     

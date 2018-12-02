@@ -6,19 +6,18 @@
     <description>Recent content in Auto Configuration on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.test:8443/tags/auto-configuration/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tour de Spring Boot: DI meets CoC</title>
-      <link>https://blog.test:8443/2018/11/spring-boot-di-meets-coc/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      <link>https://blog.test:8443/2018/12/spring-boot-di-meets-coc/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/11/spring-boot-di-meets-coc/</guid>
-      <description>I started using Spring framework back to 2009 or so to develop few demos for European projects. Most of these projects featured several Web services some of which share back-end databases and some need to talk with external services or WS-BPEL business processes, and so on.</description>
+      <guid>https://blog.test:8443/2018/12/spring-boot-di-meets-coc/</guid>
+      <description>I started using Spring framework few years back in 2009 to develop demo systems for some EU projects. These projects featured a number of Web services some of which share back-end databases and some other talk to external services or WS-BPEL business processes.</description>
     </item>
     
   </channel>
