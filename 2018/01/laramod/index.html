@@ -72,7 +72,16 @@ class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider
     {
     }
 }
-</code></pre><h4 id="registering-the-service-provider">Registering the Service Provider</h4><p>The <code>ModulesServiceProvider</code> must be registered in <code>/config/app.php</code> in order to be loaded by Laravel.</p><script type="application/javascript" src="//gist.github.com/htr3n/39e631c6726ed69ab26e2cd3bbe1964f.js"></script><h4 id="autoloading-submodules-classes">Autoloading Submodules&rsquo; Classes</h4><p>Apart from resources like views, i18n, database migration loaded in the previous steps, a submodule can also contain other PHP classes such as database ORM models and controllers.</p><p>One natural approach would be to leverage the <a href="http://www.php-fig.org/psr/psr-4">PSR-4 autoloader</a> autoloading supported by Laravel 5.5. This approach also nicely fits when we want to define separate namespaces for each submodule and especially submodule&rsquo;s components.</p><p>For this, we can define the submodule&rsquo;s namespace and manually specify the submodule&rsquo;s classpaths to be loaded in <code>composer.json</code> as following.</p><pre><code class="language-json">{
+</code></pre><h4 id="registering-the-service-provider">Registering the Service Provider</h4><p>The <code>ModulesServiceProvider</code> must be registered in <code>/config/app.php</code> in order to be loaded by Laravel.</p><pre><code class="language-php">&lt;?php
+return [
+    ...
+    'providers' =&gt; [
+        ...
+        \Laramod\ModulesServiceProvider::class,
+     ],
+    ...
+];
+</code></pre><h4 id="autoloading-submodules-classes">Autoloading Submodules&rsquo; Classes</h4><p>Apart from resources like views, i18n, database migration loaded in the previous steps, a submodule can also contain other PHP classes such as database ORM models and controllers.</p><p>One natural approach would be to leverage the <a href="http://www.php-fig.org/psr/psr-4">PSR-4 autoloader</a> autoloading supported by Laravel 5.5. This approach also nicely fits when we want to define separate namespaces for each submodule and especially submodule&rsquo;s components.</p><p>For this, we can define the submodule&rsquo;s namespace and manually specify the submodule&rsquo;s classpaths to be loaded in <code>composer.json</code> as following.</p><pre><code class="language-json">{
   &quot;psr-4&quot;: {
     &quot;App\\&quot;: &quot;app/&quot;,
     &quot;Core\\&quot;: &quot;modules/Core/&quot;,
