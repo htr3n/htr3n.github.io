@@ -255,7 +255,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
     
     <br/>
-    <i class="fas fa-clock"></i> 1 min read
+    <i class="fas fa-clock"></i> 2 min read
 </div>
 
 
@@ -268,18 +268,78 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>A part of Spring framework, namely, Spring Data JPA, is sort of a <a href="https://en.wikipedia.org/wiki/Facade_pattern"><em>façade</em></a> that provides a data access abstraction layer rather than a true JPA implementation. We can choose any JPA providers, not only Hibernate or EclipseLink but also anything else.</p>
 
 <ul>
-<li><p><a href="https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html">JpaRepository<T, ID></a></p></li>
-
-<li><p><a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/PagingAndSortingRepository.html?is-external=true">PagingAndSortingRepository<T, ID></a></p></li>
-
-<li><p><a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html">CrudRepository<T, ID></a></p></li>
+<li><a href="https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html">JpaRepository<T, ID></a></li>
 </ul>
 
-<script type="application/javascript" src="//gist.github.com/htr3n/78fcb57e1ad020d858b06eb03f0f4942.js?file=CrudRepository.java"></script>
+<pre><code class="language-java">package org.springframework.data.jpa.repository;
 
-<script type="application/javascript" src="//gist.github.com/htr3n/78fcb57e1ad020d858b06eb03f0f4942.js?file=PagingAndSortingRepository.java"></script>
+import java.util.List;
 
-<script type="application/javascript" src="//gist.github.com/htr3n/78fcb57e1ad020d858b06eb03f0f4942.js?file=JpaRepository.java"></script>
+import javax.persistence.EntityManager;
+
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.QueryByExampleExecutor;
+
+public interface JpaRepository&lt;T, ID&gt; extends PagingAndSortingRepository&lt;T, ID&gt;, QueryByExampleExecutor&lt;T&gt; {
+
+  List&lt;T&gt; findAll();
+  List&lt;T&gt; findAll(Sort sort);
+  List&lt;T&gt; findAllById(Iterable&lt;ID&gt; ids);
+  &lt;S extends T&gt; List&lt;S&gt; saveAll(Iterable&lt;S&gt; entities);
+  void flush();
+  &lt;S extends T&gt; S saveAndFlush(S entity);
+  void deleteInBatch(Iterable&lt;T&gt; entities);
+  void deleteAllInBatch();
+  T getOne(ID id);
+  @Override
+  &lt;S extends T&gt; List&lt;S&gt; findAll(Example&lt;S&gt; example);
+  @Override
+  &lt;S extends T&gt; List&lt;S&gt; findAll(Example&lt;S&gt; example, Sort sort);
+}
+</code></pre>
+
+<ul>
+<li><a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/PagingAndSortingRepository.html?is-external=true">PagingAndSortingRepository<T, ID></a></li>
+</ul>
+
+<pre><code class="language-java">package org.springframework.data.repository;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+
+public interface PagingAndSortingRepository&lt;T, ID&gt; extends CrudRepository&lt;T, ID&gt; {
+  Iterable&lt;T&gt; findAll(Sort sort);
+  Page&lt;T&gt; findAll(Pageable pageable);
+}
+</code></pre>
+
+<ul>
+<li><a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html">CrudRepository<T, ID></a></li>
+</ul>
+
+<pre><code class="language-java">package org.springframework.data.repository;
+
+import java.util.Optional;
+
+@NoRepositoryBean
+public interface CrudRepository&lt;T, ID&gt; extends Repository&lt;T, ID&gt; {
+  &lt;S extends T&gt; S save(S entity);
+  &lt;S extends T&gt; Iterable&lt;S&gt; saveAll(Iterable&lt;S&gt; entities);
+  Optional&lt;T&gt; findById(ID id);
+  boolean existsById(ID id);
+  Iterable&lt;T&gt; findAll();
+  Iterable&lt;T&gt; findAllById(Iterable&lt;ID&gt; ids);
+  long count();
+  void deleteById(ID id);
+  void delete(T entity);
+  void deleteAll(Iterable&lt;? extends T&gt; entities);
+  void deleteAll();
+}
+</code></pre>
 
   </div>
   
@@ -331,15 +391,6 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     <a href="/2018/11/spring-boot-trailing-whitespaces/" >Spring Boot properties issues with trailing whitespaces</a>
       
       <time class="pull-right hidden-tablet">Nov 27 &#39;18</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/2018/06/on-spring-framework-part-1-the-core/" class="draft">On Spring Framework: Part 1 - The Core</a>
-      
-      <time class="pull-right hidden-tablet">Jun 17 &#39;18</time>
       
   </span>
 </li>

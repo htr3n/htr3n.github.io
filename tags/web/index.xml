@@ -33,14 +33,5 @@ Web Fonts Some of my selection criteria
  Not too narrow: a too narrow font creates too much density and often makes my eyes quickly tired (e.</description>
     </item>
     
-    <item>
-      <title>CSS preprocessors: SASS vs. LESS</title>
-      <link>https://blog.test:8443/2018/07/css-preprocessors-sass-vs.-less/</link>
-      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/2018/07/css-preprocessors-sass-vs.-less/</guid>
-      <description>A preprocessor is type of data processor component that takes input data and produces some output data according to some predefined or configured semantics and logics. As the name implies, preprocessing stage often happen beforehand.</description>
-    </item>
-    
   </channel>
 </rss>

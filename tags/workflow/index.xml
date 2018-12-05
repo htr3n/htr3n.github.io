@@ -6,18 +6,18 @@
     <description>Recent content in Workflow on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.test:8443/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Alfred 3 workflow development</title>
-      <link>https://blog.test:8443/2018/06/alfred-3-workflow-development/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
+      <link>https://blog.test:8443/2018/12/alfred-3-workflow-development/</link>
+      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/06/alfred-3-workflow-development/</guid>
-      <description>The free app Alfred is extremely popular and well-known to a lot of Mac users as a simple but powerful tool for automating task/app launching and many others. Since version 3, Alfred has been revamped with even more cool interfaces and features and good integrations with numerous third-party applications.</description>
+      <guid>https://blog.test:8443/2018/12/alfred-3-workflow-development/</guid>
+      <description>Alfred is extremely popular to a lot of Mac users as a simple but powerful tool for automating tasks and many others. Since version 3, Alfred has been revamped with even cooler interfaces and features and good integrations with numerous third-party applications.</description>
     </item>
     
   </channel>
