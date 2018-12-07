@@ -10,7 +10,7 @@ try (
       // process the ResultSet
     }
   } catch (SQLException e2) {
-    e2.printStackTrace();    
+    e2.printStackTrace();
   }
 } catch (SQLException e1) {
   e1.printStackTrace();
@@ -60,13 +60,13 @@ public class CustomerDao {
   private JdbcTemplate jdbcTemplate;
 
   // Create
-  public Customer create(Customer customer) { ... } 
+  public Customer create(Customer customer) { ... }
   // Retrieve
   public List&lt;Customer&gt; findAll() {...}
   // Retrieve
-  public Optional&lt;Customer&gt; findById(Integer id) { ... } 
+  public Optional&lt;Customer&gt; findById(Integer id) { ... }
   // Update
-  public boolean update(Customer customer) { ... } 
+  public boolean update(Customer customer) { ... }
   // Delete
   public boolean delete(Integer id) { ... }
 }
@@ -119,11 +119,9 @@ public class CustomerDaoTest {
   @Test
   public void create_shouldReturnValidCustomer_whenAddingNewCustomer() {
     customerDao.create(alice);
-
     assertThat(alice.getId()).isNotNull();
 
     Optional&lt;Customer&gt; result = customerDao.findById(alice.getId());
-
     assertThat(result).isPresent();
     assertThat(alice).hasFieldOrPropertyWithValue(&quot;name&quot;, ALICE_NAME);
     assertThat(alice).hasFieldOrPropertyWithValue(&quot;email&quot;, ALICE_EMAIL);
@@ -138,9 +136,7 @@ public class CustomerDaoTest {
   @Test
   public void findById_shouldReturnValidCustomer_forExistingCustomer() {
     customerDao.create(alice);
-
     Optional&lt;Customer&gt; validCustomer = customerDao.findById(alice.getId());
-
     assertThat(validCustomer).isPresent();
     assertThat(validCustomer.get().getName()).isEqualTo(alice.getName());
     assertThat(validCustomer.get().getEmail()).isEqualTo(alice.getEmail());
@@ -154,20 +150,16 @@ public class CustomerDaoTest {
 
   @Test
   public void findAll_shouldYieldListOfCustomers_forNonemptyDatabase() {
-
     customerDao.create(alice);
     List&lt;Customer&gt; customers = customerDao.findAll();
-
     assertThat(customers).isNotNull().hasSize(ONE_CUSTOMER);
 
     Customer result = customers.get(0);
-
     assertThat(result).hasFieldOrPropertyWithValue(&quot;name&quot;, ALICE_NAME);
     assertThat(result).hasFieldOrPropertyWithValue(&quot;email&quot;, ALICE_EMAIL);
 
     customerDao.create(bob);
     customers = customerDao.findAll();
-
     assertThat(customers).isNotNull().hasSize(TWO_CUSTOMERS);
   }
 
@@ -181,7 +173,6 @@ public class CustomerDaoTest {
   @Test
   public void update_shouldYieldTrue_forExistingCustomer() {
     customerDao.create(alice);
-
     assertThat(alice.getId()).isNotNull();
     assertThat(customerDao.update(alice)).isTrue();
 
@@ -190,7 +181,6 @@ public class CustomerDaoTest {
     assertThat(customerDao.update(alice)).isTrue();
 
     Optional&lt;Customer&gt; found = customerDao.findById(alice.getId());
-
     assertThat(found).isPresent();
     assertThat(found.get().getName()).isEqualTo(alice.getName());
     assertThat(found.get().getEmail()).isEqualTo(alice.getEmail());
@@ -214,12 +204,14 @@ public class CustomerDaoTest {
 public Customer create(Customer customer) {
   String sql = &quot;INSERT INTO customer (name, email) VALUES (?, ?)&quot;;
   KeyHolder keyHolder = new GeneratedKeyHolder();
+  
   this.jdbcTemplate.update(connection -&gt; {
     PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
     statement.setString(1, customer.getName());
     statement.setString(2, customer.getEmail());
     return statement;
   }, keyHolder);
+  
   Integer newCustomerId = keyHolder.getKey().intValue();
   customer.setId(newCustomerId);
   return customer;
@@ -236,8 +228,8 @@ public List&lt;Customer&gt; findAll() {
 // Retrieve
 public Optional&lt;Customer&gt; findCustomerById(Integer id) {
   String sql = &quot;SELECT id, name, email FROM customer WHERE id = ?&quot;;
-  return this.jdbcTemplate.query(sql, 
-    rs -&gt; rs.next() ? Optional.of(new CustomerMapper().mapRow(rs, 1)): Optional.empty(), 
+  return this.jdbcTemplate.query(sql,
+    rs -&gt; rs.next() ? Optional.of(new CustomerMapper().mapRow(rs, 1)): Optional.empty(),
     id);
 }
 </code></pre><p>When working with pure JDBC, we must map the database query result onto the domain entity on our own. This can be quickly done by implementing the interface <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/RowMapper.html"><code>RowMapper&lt;T&gt;</code></a>.</p><pre><code class="language-java">class CustomerMapper implements RowMapper&lt;Customer&gt; {
@@ -281,7 +273,7 @@ if (!doNotTrack) {
 	ga('create', 'UA-112764962-1', 'auto');
 	
 	ga('send', 'pageview');
-}</script><script async src="https://www.google-analytics.com/analytics.js"></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script><noscript id="deferred-styles"><link rel="stylesheet" type="text/css" href="/css/new-moon.css"><link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"></noscript><script>var loadDeferredStyles = function () {
+}</script><script async src="https://www.google-analytics.com/analytics.js"></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script><noscript id="deferred-styles"><link rel="stylesheet" type="text/css" href="/css/ocean.min.css"><link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"></noscript><script>var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
