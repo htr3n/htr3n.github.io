@@ -6,27 +6,27 @@
     <description>Recent content in Hibernate on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.test:8443/tags/hibernate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Spring Data Access JPA</title>
-      <link>https://blog.test:8443/2018/11/spring-data-access-jpa/</link>
-      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+      <title>Hibernate: Migrating 3.x to 5.x</title>
+      <link>https://blog.test:8443/2018/12/migrating-hibernate/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/11/spring-data-access-jpa/</guid>
-      <description>Java Persistence API (JPA) is historically part of the Java EE platform. It defines a standard Java API dealing with relational databases. EclipseLink (formerly Oracle TopLink) is considered a reference implementation but Red Hat (formerly JBoss) Hibernate ORM has significantly influenced the current shape of JPA.</description>
+      <guid>https://blog.test:8443/2018/12/migrating-hibernate/</guid>
+      <description>Recently I had to upgrade a codebase using Hibernate 3.x ORM on Spring 3 to Hibernate 5 (and Spring 5, respectively). Here I note down some aspects and issues that I have to deal with during this migration.</description>
     </item>
     
     <item>
-      <title>Hibernate: Migrating 3.x to 5.x</title>
-      <link>https://blog.test:8443/2018/06/migrating-hibernate/</link>
-      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      <title>Spring Data Access JPA</title>
+      <link>https://blog.test:8443/2018/12/spring-data-access-jpa/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/06/migrating-hibernate/</guid>
-      <description>Recently I had to upgrade a codebase using Hibernate 3.x ORM on Spring 3 to Hibernate 5 (and Spring 5, respectively). Here I note down some aspects and issues that I have to deal with during this migration.</description>
+      <guid>https://blog.test:8443/2018/12/spring-data-access-jpa/</guid>
+      <description>Java Persistence API (JPA) is historically part of the Java EE platform. It defines a standard Java API dealing with relational databases. EclipseLink (formerly Oracle TopLink) is considered a reference implementation but Red Hat (formerly JBoss) Hibernate ORM has significantly influenced the current shape of JPA.</description>
     </item>
     
   </channel>
