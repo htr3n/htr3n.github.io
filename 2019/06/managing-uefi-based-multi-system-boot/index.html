@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Managing UEFI based Multi-System Boot • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Managing UEFI based Multi-System Boot"/>
+<meta name="twitter:description" content="My Lenovo T430s originally support both UEFI mode and backward compatibility with legacy BIOS mode. Planning to install multiple OSs for experimenting purposes, I have messed up these modes and hard drive partitions so many times leading to re-installing the whole system."/>
+
+<meta property="og:title" content="Managing UEFI based Multi-System Boot" />
+<meta property="og:description" content="My Lenovo T430s originally support both UEFI mode and backward compatibility with legacy BIOS mode. Planning to install multiple OSs for experimenting purposes, I have messed up these modes and hard drive partitions so many times leading to re-installing the whole system." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.test:8443/2019/06/managing-uefi-based-multi-system-boot/" />
+<meta property="article:published_time" content="2019-06-28T13:28:34&#43;10:00"/>
+<meta property="article:modified_time" content="2019-06-28T13:28:34&#43;10:00"/>
+
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.test:8443/scss/hyde-hyde.css" >
+
+
+<link rel="stylesheet" href="https://blog.test:8443/scss/print.css" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.test:8443/">htr3n&#39;s</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://blog.test:8443//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+      </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">htr3n&#39;s</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 htr3n
+  
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Managing UEFI based Multi-System Boot</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 28, 2019
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/system">SYSTEM</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/boot">boot</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/uefi">uefi</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/multiple-os">multiple os</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/windows">windows</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ubuntu">ubuntu</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/fedora">fedora</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/arch">arch</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/t430s">t430s</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<p>My Lenovo T430s originally support both <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface#CSM_booting">UEFI</a> mode and backward compatibility with legacy <a href="https://en.wikipedia.org/wiki/BIOS">BIOS</a> mode. Planning to install multiple OSs for experimenting purposes, I have messed up these modes and hard drive partitions so many times leading to re-installing the whole system. Eventually, I have figured out a potential solution to make multiple systems including Windows 10 and few Linux distros live together peacefully and manageably ;)</p>
+
+<h2 id="general-strategy">General Strategy</h2>
+
+<p>Let&rsquo;s assume we want to install Windows 10 alongside some representatives Linux systems such as <a href="https://ubuntu.com">Ubuntu</a>, <a href="https://fedoraproject.org/">Fedora</a>, <a href="https://www.opensuse.org">OpenSUSE</a>, and <a href="https://www.archlinux.org">Arch Linux</a>.</p>
+
+<p>My hard-learned strategy is quite simple and working wonder so far.</p>
+
+<ol>
+<li>Install Windows 10 first and let it automatically partition the whole hard drive</li>
+<li>Then, either (1) boot straight into Windows and shrink the partitions there or (2) just start any Linux live and use <a href="https://gparted.org">GParted</a> to create and manage the partitions. Method (2) would be more efficient as we will mostly deal with Linux after Windows has been installed.</li>
+<li>Install each Linux respectively on the dedicated partition</li>
+<li>Manage or fix the boot system (UEFI, GRUB, etc.)</li>
+</ol>
+
+<p>Here is an alternative:</p>
+
+<ul>
+<li>Instead of installing Windows 10 first, you can use any disk partitioning tools such as <a href="https://gparted.org">GParted</a>, <a href="https://www.gnu.org/software/parted/">GNU parted</a>, <a href="http://www.rodsbooks.com/gdisk/">gdisk</a>, etc. beforehand. Eventually, your system MUST HAVE an <a href="https://en.wikipedia.org/wiki/EFI_system_partition">EFI system partition</a> (ESP). I chose to let Windows handle the partitioning because most of PC vendors support well Windows and in turn, Windows treats them quite nicely, especially when dealing with various kinds UEFI firmware as well as creating necessary partitions for system recovery. The only caveat is that, the ESP created by Windows 10 will be about 100MB large and sometimes considered too small by some Linux installers (e.g. OpenSUSE) but eventually they accept it and proceed without issues.</li>
+</ul>
+
+<blockquote>
+<p><strong>NOTES</strong></p>
+
+<ul>
+<li>When relying on Windows 10 installer to create an ESP, we MUST leave it alone and <strong>MUSN&rsquo;T create any additional ESP</strong> when installing Linux unless you want to start everything over.</li>
+<li>Most of Linux installers will accept and play nicely with an existing ESP, we only need to <strong>mount the ESP at  the convention folder <code>/boot/efi</code></strong> (or <code>/efi</code> but not in all distros) whenever dealing with disk partitioning or creating file systems for installing a new Linux system.</li>
+<li>The ESP will be recognized by Linux under many terms e.g. &ldquo;EFI system&rdquo; or just EFI. In case you want to be sure, some special signs would be file system <strong>FAT32</strong> with partition ID <code>EF</code> (MBR disk) or partition type GUID <code>C12A7328-F81F-11D2-BA4B-00A0C93EC93B</code> (GPT disk) per UEFI specs.</li>
+<li>Before tinkering with any new installation, it&rsquo;s always wise to make a back up of the ESP. In Windows, this task is doable but quite difficult as involving some serious <a href="https://superuser.com/questions/965751/how-to-access-efi-partition-on-windows-10">command line skill</a> and/or <a href="https://support.microsoft.com/help/315943/you-cannot-access-an-efi-system-partition-with-the-mountvol-utility-in">diskpart tool</a> to gain access to the system, hidden ESP. It would be efficient to use any Linux live with CD or USB that treats the ESP as normal FAT32 partition, then copy the whole file system content to a safe place (USB or network shares).</li>
+<li>The Linux distro installed later will take over and arrange the system booting. Normally, it will create a new boot entry and set that entry first in the boot order. The boot entry of a Linux system often starts <a href="https://www.gnu.org/software/grub/">GNU GRUB</a> boot loader that presents a boot menu. One good take-away here is whatever Linux distros that you are familiar with or used to, install it last. Then work on it to control the rest of the system. Nonetheless, there are also some good choices regarding system boot management that we will discuss later.</li>
+</ul>
+</blockquote>
+
+<figure>
+    <img src="partitions.jpg" style="max-width:100%;display:block;margin:auto"> 
+</figure>
+
+<h3 id="fedora">Fedora</h3>
+
+<p>The installer of Fedora does most of the job well. Like other distros, the ESP partition existed and only needs to be mounted on <code>/boot/efi</code>. When the installation finishes, Fedora will set up the UEFI boot order and take over to show its own GRUB menu.</p>
+
+<h3 id="opensuse">OpenSUSE</h3>
+
+<h3 id="arch-linux">Arch Linux</h3>
+
+<pre><code class="language-sh">pacman -Syu
+# install necessary packages
+pacman -S grub efibootmgr dosfstools os-prober mtools
+mkdir -p /boot/efi
+# mount the EFI partition to /boot/efi
+mount /dev/XXX /boot/efi
+# install UEFI GRUB with the ID &quot;arch&quot; corresponding to the folder &quot;&quot;/boot/efi/EFI/arch&quot;
+grub-install --target=x86_64-efi --bootloader-id=arch --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+
+<p>For beginners who are not used to working in terminal mode with lots of command lines, it would be wise to install GNOME or similar graphical user interfaces like KDE, Xfce, etc. before finishing.</p>
+
+<blockquote>
+<p><strong>Note</strong></p>
+
+<p>After finishing installing Arch Linux and rebooting, I have experienced a black screen following the booting logo. I was not able to figure it out but the system starts normally when turning off and on again showing Arch&rsquo;s GRUB menu.</p>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then">https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then</a></li>
+<li><a href="https://jdebp.eu/FGA/efi-boot-process.html">https://jdebp.eu/FGA/efi-boot-process.html</a></li>
+<li><a href="http://ximalas.info/2015/03/19/uefi-gpt-windows-10-freebsd-10-and-refind">http://ximalas.info/2015/03/19/uefi-gpt-windows-10-freebsd-10-and-refind</a></li>
+<li><a href="http://rodsbooks.com/linux-uefi">http://rodsbooks.com/linux-uefi</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface">https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface</a></li>
+<li><a href="https://wiki.debian.org/UEFI">https://wiki.debian.org/UEFI</a></li>
+<li><a href="https://help.ubuntu.com/community/UEFI">https://help.ubuntu.com/community/UEFI</a></li>
+<li><a href="https://fedoraproject.org/wiki/Unified_Extensible_Firmware_Interface">https://fedoraproject.org/wiki/Unified_Extensible_Firmware_Interface</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/boot-and-uefi">https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/boot-and-uefi</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-installing-using-the-mbr-or-gpt-partition-style">https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-setup-installing-using-the-mbr-or-gpt-partition-style</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions">https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions</a></li>
+<li><a href="https://superuser.com/questions/1247300/how-to-make-uefi-bios-start-grub-not-windows">https://superuser.com/questions/1247300/how-to-make-uefi-bios-start-grub-not-windows</a></li>
+<li><a href="https://askubuntu.com/questions/831216/how-can-i-reinstall-grub-to-the-efi-partition">https://askubuntu.com/questions/831216/how-can-i-reinstall-grub-to-the-efi-partition</a></li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2019/06/t430s-bios-supervisor-password-removal/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Lenovo Thinkpad T430s BIOS Supervisor Password Removal</span>
+    </a>
+    
+    
+    <a href="/2099/01/notes-to-self-web-fonts-and-typography/" class="navigation-next">
+      <span class="navigation-tittle">Notes to Self: Web Fonts and Typography</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/2019/06/t430s-bios-supervisor-password-removal/" >Lenovo Thinkpad T430s BIOS Supervisor Password Removal</a>
+      
+      <time class="pull-right hidden-tablet">Jun 24, 2019</time>
+      
+  </span>
+</li>
+
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'https-htr3n-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-112764962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+<noscript id="deferred-styles">
+  
+  
+</noscript>
+
+<script>
+  var loadDeferredStyles = function () {
+    var addStylesNode = document.getElementById("deferred-styles");
+    if (addStylesNode) {
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement);
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    }
+  };
+  var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  if (raf) raf(function () {
+    window.setTimeout(loadDeferredStyles, 0);
+  });
+  else
+    window.addEventListener('load', loadDeferredStyles);
+  
+  document.addEventListener('DOMContentLoaded', function (event) {
+    codecopy('pre');
+  });
+</script>
+
+<script defer src="/js/codecopy.min.js"></script>
+
+
+
+
+
+    
+
+
+
+    </body>
+</html>
