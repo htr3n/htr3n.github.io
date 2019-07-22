@@ -1,1 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?> <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hugo on htr3n&#39;s</title><link>https://htr3n.github.io/tags/hugo/<description>Recent content in hugo on htr3n&#39;s</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastbuilddate>Sat, 14 Jul 2018 00:00:00 +0000</lastbuilddate><atom:link href="https://htr3n.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml"><item><title>A mininal Hugo blogging workflow</title><link>https://htr3n.github.io/2018/07/minimal-hugo-workflow/<pubdate>Sat, 14 Jul 2018 00:00:00 +0000</pubdate><guid>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</guid><description>Hugo is a blazingly fast static site generator based on Go. My first experience with Hugo was truly pleasant. I appreciate the separation of contents, presentations, and site generation logics in Hugo that leads to less effort for maintenance or switching themes.</description></item><item><title>Confusing Hugo issues: datetime and &#39;isset&#39;</title><link>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/<pubdate>Sat, 31 Mar 2018 00:00:00 +0000</pubdate><guid>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</guid><description>Yesterday I got notified from Github for two opening issues of the Hugo&amp;rsquo;s theme hyde-hyde I have ported and developed further. The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up.</description></item><item><title>First experience with Hugo</title><link>https://htr3n.github.io/2018/01/first-experience-with-hugo/<pubdate>Tue, 23 Jan 2018 00:00:00 +0000</pubdate><guid>https://htr3n.github.io/2018/01/first-experience-with-hugo/</guid><description>To commence my journey in software development, I have looked for a Web framework to build my personal blog. I have started writing blog posts mainly using (Multi)Markdown and plan to migrate other posts to Markdown too.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on htr3n&#39;s</title>
+    <link>https://htr3n.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://htr3n.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A mininal Hugo blogging workflow</title>
+      <link>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</guid>
+      <description>Hugo is a blazingly fast static site generator based on Go. My first experience with Hugo was truly pleasant. I appreciate the separation of contents, presentations, and site generation logics in Hugo that leads to less effort for maintenance or switching themes.</description>
+    </item>
+    
+    <item>
+      <title>Confusing Hugo issues: datetime and &#39;isset&#39;</title>
+      <link>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</link>
+      <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</guid>
+      <description>Yesterday I got notified from Github for two opening issues of the Hugo&amp;rsquo;s theme hyde-hyde I have ported and developed further.
+The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up.</description>
+    </item>
+    
+    <item>
+      <title>First experience with Hugo</title>
+      <link>https://htr3n.github.io/2018/01/first-experience-with-hugo/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2018/01/first-experience-with-hugo/</guid>
+      <description>To commence my journey in software development, I have looked for a Web framework to build my personal blog. I have started writing blog posts mainly using (Multi)Markdown and plan to migrate other posts to Markdown too.</description>
+    </item>
+    
+  </channel>
+</rss>

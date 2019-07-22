@@ -1,1 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?> <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>rants on htr3n&#39;s</title><link>https://htr3n.github.io/tags/rants/<description>Recent content in rants on htr3n&#39;s</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastbuilddate>Sat, 27 Dec 2008 00:00:00 +0000</lastbuilddate><atom:link href="https://htr3n.github.io/tags/rants/index.xml" rel="self" type="application/rss+xml"><item><title>Du học sinh - chuyện nên vui hay buồn</title><link>https://htr3n.github.io/2008/12/du-hoc-sinh/<pubdate>Sat, 27 Dec 2008 00:00:00 +0000</pubdate><guid>https://htr3n.github.io/2008/12/du-hoc-sinh/</guid><description>Hôm nay qua mailling list nhận được link về bài báo này, đề ngày 09/12/06, nhưng tôi nhớ là có một bài báo tương tự trên báo Thanh niên mùa Noel năm ngoái.</description></item><item><title>Quyền và nghĩa vụ im lặng</title><link>https://htr3n.github.io/2008/12/quyen-va-nghia-vu-im-lang/<pubdate>Sat, 27 Dec 2008 00:00:00 +0000</pubdate><guid>https://htr3n.github.io/2008/12/quyen-va-nghia-vu-im-lang/</guid><description>Đặt gạch lâu rồi, mà bị deadline của mấy bài báo &amp;ldquo;dí&amp;rdquo;&amp;rdquo; cháy mông nên giờ mới viết được mấy dòng chia sẻ vài suy nghĩ cá nhân về sự kiện &amp;ldquo;quyền im lặng&amp;rdquo; (sau đây là QIM ;) đang gây tranh luận trong và ngoài cái &amp;ldquo;phòng ngủ lớn nhất vn&amp;rdquo; (có khả năng &amp;ldquo;lớn nhất thế giới&amp;rdquo;, sau đây gọi tăt là QH).</description></item><item><title>Bách khoa toàn ... sạn</title><link>https://htr3n.github.io/2007/07/bach-khoa-toan-san/<pubdate>Fri, 27 Jul 2007 00:00:00 +0000</pubdate><guid>https://htr3n.github.io/2007/07/bach-khoa-toan-san/</guid><description>Tình cờ đọc bài báo trên báo Lao động giới thiệu về bách khoa toàn thư online. Thằng tui hí hửng quá trời vì nhiều khi cũng cần tra cứu vài thứ mà hổng biết tìm ở đâu.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rants on htr3n&#39;s</title>
+    <link>https://htr3n.github.io/tags/rants/</link>
+    <description>Recent content in rants on htr3n&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Dec 2008 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://htr3n.github.io/tags/rants/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Du học sinh - chuyện nên vui hay buồn</title>
+      <link>https://htr3n.github.io/2008/12/du-hoc-sinh/</link>
+      <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2008/12/du-hoc-sinh/</guid>
+      <description>Hôm nay qua mailling list nhận được link về bài báo này, đề ngày 09/12/06, nhưng tôi nhớ là có một bài báo tương tự trên báo Thanh niên mùa Noel năm ngoái.</description>
+    </item>
+    
+    <item>
+      <title>Quyền và nghĩa vụ im lặng</title>
+      <link>https://htr3n.github.io/2008/12/quyen-va-nghia-vu-im-lang/</link>
+      <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2008/12/quyen-va-nghia-vu-im-lang/</guid>
+      <description>Đặt gạch lâu rồi, mà bị deadline của mấy bài báo &amp;ldquo;dí&amp;rdquo;&amp;rdquo; cháy mông nên giờ mới viết được mấy dòng chia sẻ vài suy nghĩ cá nhân về sự kiện &amp;ldquo;quyền im lặng&amp;rdquo; (sau đây là QIM ;) đang gây tranh luận trong và ngoài cái &amp;ldquo;phòng ngủ lớn nhất vn&amp;rdquo; (có khả năng &amp;ldquo;lớn nhất thế giới&amp;rdquo;, sau đây gọi tăt là QH).</description>
+    </item>
+    
+    <item>
+      <title>Bách khoa toàn ... sạn</title>
+      <link>https://htr3n.github.io/2007/07/bach-khoa-toan-san/</link>
+      <pubDate>Fri, 27 Jul 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/2007/07/bach-khoa-toan-san/</guid>
+      <description>Tình cờ đọc bài báo trên báo Lao động giới thiệu về bách khoa toàn thư online. Thằng tui hí hửng quá trời vì nhiều khi cũng cần tra cứu vài thứ mà hổng biết tìm ở đâu.</description>
+    </item>
+    
+  </channel>
+</rss>

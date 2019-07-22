@@ -1,35 +1,262 @@
-<!DOCTYPE html><html lang="en"><head><link href="https://gmpg.org/xfn/11" rel="profile"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Cache-Control" content="public"><!-- Enable responsiveness on mobile devices --><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="generator" content="Hugo 0.55.6"><title>Spring Boot properties issues with trailing whitespaces • htr3n&#39;s</title><meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants"><meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Spring Boot properties issues with trailing whitespaces"><meta name="twitter:description" content="An innocent invisible trailing whitespace in a Spring Boot properties file might cause complex Spring based applications go sideway. With some cautious settings of our code editors, we can avoid such a funny but rather embarrassing problem"><meta property="og:title" content="Spring Boot properties issues with trailing whitespaces"><meta property="og:description" content="An innocent invisible trailing whitespace in a Spring Boot properties file might cause complex Spring based applications go sideway. With some cautious settings of our code editors, we can avoid such a funny but rather embarrassing problem"><meta property="og:type" content="article"><meta property="og:url" content="https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/"><meta property="article:published_time" content="2018-11-27T00:00:00&#43;00:00"><meta property="article:modified_time" content="2018-11-28T00:00:00&#43;00:00"><link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet"><link rel="stylesheet" href="https://htr3n.github.io/scss/hyde-hyde.css"><link rel="stylesheet" href="https://htr3n.github.io/scss/print.css" media="print"><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6"/>
+<title>Spring Boot properties issues with trailing whitespaces • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring Boot properties issues with trailing whitespaces"/>
+<meta name="twitter:description" content="An innocent invisible trailing whitespace in a Spring Boot properties file might cause complex Spring based applications go sideway. With some cautious settings of our code editors, we can avoid such a funny but rather embarrassing problem"/>
+<meta property="og:title" content="Spring Boot properties issues with trailing whitespaces"/>
+<meta property="og:description" content="An innocent invisible trailing whitespace in a Spring Boot properties file might cause complex Spring based applications go sideway. With some cautious settings of our code editors, we can avoid such a funny but rather embarrassing problem"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/"/>
+<meta property="article:published_time" content="2018-11-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-28T00:00:00&#43;00:00"/>
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/hyde-hyde.css">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/print.css" media="print">
+<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--><!-- Icons --><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png"><link rel="shortcut icon" href="/favicon.png"></head><body class=""><div class="sidebar"><div class=""><div class="sidebar-about"><span class="site__title"><a href="https://htr3n.github.io/">htr3n&#39;s</a></span><div class="author-image"><img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"></div><p class="site__description"></p></div><div class="collapsible-menu"><input type="checkbox" id="menuToggle"> <label for="menuToggle">htr3n&#39;s</label><div class="menu-content"><div><ul class="sidebar-nav"><li><a href="/posts/"><span>Posts</span></a></li><li><a href="/portfolio/"><span>Portfolio</span></a></li><li><a href="/vn/"><span>Tiếng Việt</span></a></li><li><a href="/about/"><span>About</span></a></li></ul></div><section class="social"><a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a> <a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a> <a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a> <a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a> <a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a> <a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a></section></div></div><div class="copyright">&copy; 2019 htr3n <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></div><div class="builtwith">Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</div></div></div><div class="content container"><article><header><h1>Spring Boot properties issues with trailing whitespaces</h1><div class="post__meta"><i class="fas fa-calendar-alt"></i> Nov 27, 2018 in <a class="badge badge-category" href="/categories/dev">DEV</a><br><i class="fas fa-tags"></i> <a class="badge badge-tag" href="/tags/spring-framework">spring framework</a> <a class="badge badge-tag" href="/tags/properties">properties</a> <a class="badge badge-tag" href="/tags/bug">bug</a> <a class="badge badge-tag" href="/tags/trailing-whitespaces">trailing whitespaces</a> <a class="badge badge-tag" href="/tags/trimming">trimming</a><br><i class="fas fa-clock"></i> 7 min read</div></header><div class="post"><blockquote><p><strong>TL;DR:</strong><br>Spring Boot does not trim off the <a href="#root-causes">trailing whitespaces in <code>*.properties</code></a> that in turn might lead to some <a href="#problem">unexpected errors</a>. As the Spring development team decides to <a href="https://github.com/spring-projects/spring-boot/issues/4106#issuecomment-173278825">not fix this issue</a>, we can <a href="#solutions">configure code editors</a> to avoid some similar problems.</p></blockquote><h2 id="fun">The fun &hellip;</h2><p>Coming back working with Spring after few years, I was thrilled trying out Spring Boot 2 with its superb cool auto-configurations and many more. It&rsquo;s a lot much more fun to work with than Spring 3 used in <a href="https://github.com/htr3n/loan-approval-portal">some</a> of my previous projects.</p><h2 id="problem">, the problem &hellip;</h2><p>When tinkering with Spring Boot, I found a half-funny half-annoying issue that made one of my Spring apps failed to launch. As the project is rather clumpy and full of experimenting code, here I will replicate this issue in a smaller and simpler scale.</p><p>Let&rsquo;s create a small Spring Boot project with JPA and H2. We can either use <a href="https://start.spring.io/">Spring Initialzr</a>, <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli-using-the-cli.html">Spring Boot CLI</a>, or IDE such as IntelliJ IDEA, Eclipse or NetBeans. To keep it simple, I use Spring Boot CLI that <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli">can be easily installed</a>.</p><pre><code class="language-sh">$ spring version
+    <![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.png">
+</head>
+<body class="">
+<div class="sidebar">
+<div class="">
+<div class="sidebar-about">
+<span class="site__title">
+<a href="https://htr3n.github.io/">htr3n&#39;s</a>
+</span>
+<div class="author-image">
+<img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+</div>
+<p class="site__description">
+</p>
+</div>
+<div class="collapsible-menu">
+<input type="checkbox" id="menuToggle">
+<label for="menuToggle">htr3n&#39;s</label>
+<div class="menu-content">
+<div>
+<ul class="sidebar-nav">
+<li>
+<a href="/posts/">
+<span>Posts</span>
+</a>
+</li>
+<li>
+<a href="/portfolio/">
+<span>Portfolio</span>
+</a>
+</li>
+<li>
+<a href="/vn/">
+<span>Tiếng Việt</span>
+</a>
+</li>
+<li>
+<a href="/about/">
+<span>About</span>
+</a>
+</li>
+</ul>
+</div>
+<section class="social">
+<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+</section>
+</div>
+</div>
+<div class="copyright">
+&copy; 2019 htr3n
+<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+</div>
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+</div>
+</div>
+<div class="content container">
+<article>
+<header>
+<h1>Spring Boot properties issues with trailing whitespaces</h1>
+<div class="post__meta">
+<i class="fas fa-calendar-alt"></i> Nov 27, 2018 in
+<a class="badge badge-category" href="/categories/dev">DEV</a>
+<br/>
+<i class="fas fa-tags"></i>
+<a class="badge badge-tag" href="/tags/spring-framework">spring framework</a>
+<a class="badge badge-tag" href="/tags/properties">properties</a>
+<a class="badge badge-tag" href="/tags/bug">bug</a>
+<a class="badge badge-tag" href="/tags/trailing-whitespaces">trailing whitespaces</a>
+<a class="badge badge-tag" href="/tags/trimming">trimming</a>
+<br/>
+<i class="fas fa-clock"></i> 7 min read
+</div>
+</header>
+<div class="post">
+<blockquote>
+<p><strong>TL;DR:</strong><br>Spring Boot does not trim off the <a href="#root-causes">trailing whitespaces in <code>*.properties</code></a> that in turn might lead to some <a href="#problem">unexpected errors</a>. As the Spring development team decides to <a href="https://github.com/spring-projects/spring-boot/issues/4106#issuecomment-173278825">not fix this issue</a>, we can <a href="#solutions">configure code editors</a> to avoid some similar problems.</p>
+</blockquote>
+<h2 id="fun">The fun &hellip;</h2>
+<p>Coming back working with Spring after few years, I was thrilled trying out Spring Boot 2 with its superb cool auto-configurations and many more. It&rsquo;s a lot much more fun to work with than Spring 3 used in <a href="https://github.com/htr3n/loan-approval-portal">some</a> of my previous projects.</p>
+<h2 id="problem">, the problem &hellip;</h2>
+<p>When tinkering with Spring Boot, I found a half-funny half-annoying issue that made one of my Spring apps failed to launch. As the project is rather clumpy and full of experimenting code, here I will replicate this issue in a smaller and simpler scale.</p>
+<p>Let&rsquo;s create a small Spring Boot project with JPA and H2. We can either use <a href="https://start.spring.io/">Spring Initialzr</a>, <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli-using-the-cli.html">Spring Boot CLI</a>, or IDE such as IntelliJ IDEA, Eclipse or NetBeans. To keep it simple, I use Spring Boot CLI that <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli">can be easily installed</a>.</p>
+<pre><code class="language-sh">$ spring version
 Spring CLI v2.1.0.RELEASE
 $ spring init --dependencies=data-jpa,h2 spring-boot-trailing-spaces
 Using service at https://start.spring.io
 Project extracted to '/dev/spring-framework/spring-boot-trailing-spaces'
-</code></pre><p>The newly created Spring application can be launched with Maven.</p><pre><code class="language-sh">$ cd spring-boot-trailing-spaces
+</code></pre>
+<p>The newly created Spring application can be launched with Maven.</p>
+<pre><code class="language-sh">$ cd spring-boot-trailing-spaces
 $ mvn spring-boot:run
 ...
-</code></pre><p>There should be no problem as we have not made any changes. Now, open &ldquo;<code>src/main/resources/application.properties</code>&rdquo; with an editor, then copy and paste the following code. Promise me that you don&rsquo;t change the pasted code ;)</p><pre><code class="language-properties">spring.datasource.url=jdbc:h2:mem:testdb
+</code></pre>
+<p>There should be no problem as we have not made any changes. Now, open &ldquo;<code>src/main/resources/application.properties</code>&rdquo; with an editor, then copy and paste the following code. Promise me that you don&rsquo;t change the pasted code ;)</p>
+<pre><code class="language-properties">spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver 
 spring.datasource.username=sa
 spring.datasource.password=
-</code></pre><p>These lines are typical data source configuration of an embedded H2 database engine that you might have seen around or used many times. Unfortunately, this time they will crash the Spring application.</p><pre><code class="language-sh">$ mvn spring-boot:run
+</code></pre>
+<p>These lines are typical data source configuration of an embedded H2 database engine that you might have seen around or used many times. Unfortunately, this time they will crash the Spring application.</p>
+<pre><code class="language-sh">$ mvn spring-boot:run
 ...
 2018-11-27 21:20:54.289 ERROR 92868 --- [           main] o.s.boot.SpringApplication               : Application run failed
 org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: org.h2.Driver
-</code></pre><p>Walking across the lengthy exception stack and error messages, the main culprit seems to be &ldquo;<em>Cannot load driver class: org.h2.Driver</em>&rdquo;.</p><p>Why is that?</p><h2 id="root-causes">, the root causes? &hellip;</h2><p>The very first thing came to my mind is to check whether H2 jar is included properly in the classpath.</p><pre><code class="language-sh">$ mvn dependency:tree
+</code></pre>
+<p>Walking across the lengthy exception stack and error messages, the main culprit seems to be &ldquo;<em>Cannot load driver class: org.h2.Driver</em>&rdquo;.</p>
+<p>Why is that?</p>
+<h2 id="root-causes">, the root causes? &hellip;</h2>
+<p>The very first thing came to my mind is to check whether H2 jar is included properly in the classpath.</p>
+<pre><code class="language-sh">$ mvn dependency:tree
 ...
 [INFO] +- com.h2database:h2:jar:1.4.197:runtime
 ...
-</code></pre><p>Yup, it&rsquo;s there!</p><p>You can try further on, like I did, to remove <code>$HOME/.m2</code> and re-run Maven or even restart the machine (but the app still doesn&rsquo;t work!!!).</p><p>I have searched around for this specific issue and found some similar or the same exception, for instance, <a href="https://stackoverflow.com/a/51193609">here</a>, <a href="https://stackoverflow.com/q/40137347">here</a>, <a href="https://stackoverflow.com/q/4008011">here</a> or <a href="https://stackoverflow.com/q/43616563">here</a>. None of the solutions there can fix it.</p><p>It took me nearly half an hour to figure out the root cause. That is the single <em>trailing space</em> at the end of <code>org.h2.Driver</code>. Here I intentionally added in order to replicate exactly the original problem in my experimenting project. And the fault was mine who just lazily copied and pasted these few lines of Spring Boot configurations. After I removed all trailing spaces, the error disappeared.</p><p>Voilà!</p><h2 id="solutions">&hellip; and the solutions?!</h2><p>No copy &amp; paste please, you might say ;)</p><p><img src="no-copy-paste.jpg" alt=""></p><p>I would blame the Pivotal development team (just kidding ;) as they should have handled such a trivial issue better because trailing whitespaces, by default in most editors, are not always visible nor printable. Indeed, trailing whitespaces in Spring properties has driven many developers crazy <a href="https://github.com/spring-projects/spring-boot/issues/7251">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/7251">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/13967">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/5421">here</a> or <a href="https://github.com/spring-projects/spring-boot/issues/4106">here</a>. Note that it&rsquo;s for now <a href="https://github.com/spring-projects/spring-boot/issues/4106">official</a> that the Spring Boot team won&rsquo;t fix this because they <a href="https://github.com/spring-projects/spring-boot/issues/4106#issuecomment-173278825">cannot safely trim properties</a>. So, it&rsquo;s our responsibilities to take care of these whitespaces.</p><blockquote><strong>Sidenote:</strong><br>Whitespaces can also become <a href="https://blog.codinghorror.com/whitespace-the-silent-killer/">worst enemies to source code controls</a> (but not all whitespaces are born equal, for instance, two continuous trailing spaces in some flavours of <a href="https://daringfireball.net/projects/markdown/">Markdown</a> should be persisted as they are translated into HTML line-breaks <code>&lt;br&gt;</code>).</blockquote><p>Fortunately, most of code editors somehow can help to remedy the aforementioned issue either with built-in features or extensions. There are two possible non-exclusive methods (which can be combined of course)</p><ul><li><p><strong>M1</strong>. Showing or highlighting whitespaces</p></li><li><p><strong>M2</strong>. (Automatically) trimming off whitespaces</p></li></ul><p>For the first method, we configure the editors to force hard-to-see non-printable characters like tabs and spaces become visible. For instance, the problematic example above is shown in Visual Studio Code with the extension <a href="https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces">Trailing Spaces</a> helps to highlight the trailing whitespaces in red. This way might be a bit UI-intrusive as highlighted whitespaces everywhere can distract many of us. I personally don&rsquo;t really like having the whitespaces and tabs messing up with my code structure.</p><p><img src="trailing-space.png" alt="Trailing spaces in code editor"></p><p>The second method can be automatic or manual in which the editors (maybe with support from extensions) can remove the whitespaces during saving or via some editing commands. However, beware the issues with Markdown trailing whitespaces, we should use this option per language specific settings if possible.</p><p>We will examine few popular code editors (please add more of yours in the comment) regarding these two methods.</p><ul><li><p><a href="https://atom.io/">Atom</a></p><ul><li>Either <span class="menu">Preferences ▸ Show Invisibles</span> or <code>config.cson</code></li></ul><pre><code class="language-json">&quot;*&quot;:
+</code></pre>
+<p>Yup, it&rsquo;s there!</p>
+<p>You can try further on, like I did, to remove <code>$HOME/.m2</code> and re-run Maven or even restart the machine (but the app still doesn&rsquo;t work!!!).</p>
+<p>I have searched around for this specific issue and found some similar or the same exception, for instance, <a href="https://stackoverflow.com/a/51193609">here</a>, <a href="https://stackoverflow.com/q/40137347">here</a>, <a href="https://stackoverflow.com/q/4008011">here</a> or <a href="https://stackoverflow.com/q/43616563">here</a>. None of the solutions there can fix it.</p>
+<p>It took me nearly half an hour to figure out the root cause. That is the single <em>trailing space</em> at the end of <code>org.h2.Driver</code>. Here I intentionally added in order to replicate exactly the original problem in my experimenting project. And the fault was mine who just lazily copied and pasted these few lines of Spring Boot configurations. After I removed all trailing spaces, the error disappeared.</p>
+<p>Voilà!</p>
+<h2 id="solutions">&hellip; and the solutions?!</h2>
+<p>No copy &amp; paste please, you might say ;)</p>
+<p><img src="no-copy-paste.jpg" alt=""/></p>
+<p>I would blame the Pivotal development team (just kidding ;) as they should have handled such a trivial issue better because trailing whitespaces, by default in most editors, are not always visible nor printable. Indeed, trailing whitespaces in Spring properties has driven many developers crazy <a href="https://github.com/spring-projects/spring-boot/issues/7251">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/7251">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/13967">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/5421">here</a> or <a href="https://github.com/spring-projects/spring-boot/issues/4106">here</a>. Note that it&rsquo;s for now <a href="https://github.com/spring-projects/spring-boot/issues/4106">official</a> that the Spring Boot team won&rsquo;t fix this because they <a href="https://github.com/spring-projects/spring-boot/issues/4106#issuecomment-173278825">cannot safely trim properties</a>. So, it&rsquo;s our responsibilities to take care of these whitespaces.</p>
+<blockquote>
+<strong>Sidenote:</strong><br>
+Whitespaces can also become <a href="https://blog.codinghorror.com/whitespace-the-silent-killer/">worst enemies to source code controls</a> (but not all whitespaces are born equal, for instance, two continuous trailing spaces in some flavours of <a href="https://daringfireball.net/projects/markdown/">Markdown</a> should be persisted as they are translated into HTML line-breaks <code>&lt;br&gt;</code>).
+</blockquote>
+<p>Fortunately, most of code editors somehow can help to remedy the aforementioned issue either with built-in features or extensions. There are two possible non-exclusive methods (which can be combined of course)</p>
+<ul>
+<li><p><strong>M1</strong>. Showing or highlighting whitespaces</p></li>
+<li><p><strong>M2</strong>. (Automatically) trimming off whitespaces</p></li>
+</ul>
+<p>For the first method, we configure the editors to force hard-to-see non-printable characters like tabs and spaces become visible. For instance, the problematic example above is shown in Visual Studio Code with the extension <a href="https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces">Trailing Spaces</a> helps to highlight the trailing whitespaces in red. This way might be a bit UI-intrusive as highlighted whitespaces everywhere can distract many of us. I personally don&rsquo;t really like having the whitespaces and tabs messing up with my code structure.</p>
+<p><img src="trailing-space.png" alt="Trailing spaces in code editor"/></p>
+<p>The second method can be automatic or manual in which the editors (maybe with support from extensions) can remove the whitespaces during saving or via some editing commands. However, beware the issues with Markdown trailing whitespaces, we should use this option per language specific settings if possible.</p>
+<p>We will examine few popular code editors (please add more of yours in the comment) regarding these two methods.</p>
+<ul>
+<li><p><a href="https://atom.io/">Atom</a></p>
+<ul>
+<li>Either <span class="menu">Preferences ▸ Show Invisibles</span>
+or <code>config.cson</code></li>
+</ul>
+<pre><code class="language-json">&quot;*&quot;:
   editor:
     ...
     showInvisibles: true
-</code></pre><ul><li><p><a href="https://www.eclipse.org/">Eclipse</a></p></li><li><p>(<strong>M1</strong>) From version 3.7+: <span class="menu">Preferences ▸ General ▸ Editors ▸ Text Editors </span>: Turn on &ldquo;<em>Show whitespace characters</em>&rdquo; and fine-tune the option via &ldquo;<em>configure visibility</em>&ldquo;</p></li><li><p>(<strong>M2</strong>) It&rsquo;s rather tedious in Eclipse as many people have already complained. It&rsquo;s perhaps due to the nature of Eclipse as a platform for several editors and plugins working together. IMHO, Eclipse should offer a common option to remove trailing whitespaces for all editors in the same level and place as &ldquo;<em>Show whitespace characters</em>&rdquo; above. Each kind of editor then might offer specific and optimal ways for certain file types. Unfortunately, for now we have to configure for each file type editor or formatter. For instance, Java editor <span class="menu">Preferences ▸ Java ▸ Editor ▸ Save Actions</span> , check &ldquo;<em>Additional actions</em>&rdquo;, choose &ldquo;<em>Configure</em>&rdquo;. Next, in the &ldquo;<em>Code Organizing</em>&rdquo; tab check &ldquo;<em>Remove trailing whitespace</em>&rdquo;. Unfortunately, properties file in our example does not provide such options in Eclipse.</p></li><li><p>(<strong>M2</strong>) You may want to use the plugin <a href="https://github.com/iloveeclipse/anyedittools">AnyEdit Tools</a> to clean up trailing whitespaces for all file types: <span class="menu">Preferences ▸ AnyEdit Tools ▸ Auto ▸ Convert ▸ Remove trailing whitespace</span></p></li><li><p>(<strong>M2</strong>) A universal approach, also a little more difficult, is to use &ldquo;<em>Search &amp; Replace</em>&rdquo; to search with regular expressions for all of <code>&quot;[\t ]+$&quot;</code> (i.e. more than one whitespaces and/or tabs, please note the whitespace between <code>\t</code> and <code>]</code>) and replace them with<code>&quot;&quot;</code> (blank/empty).</p></li><li><p><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></p></li><li><p>(<strong>M1</strong>) <span class="menu">Preferences ▸ Editor ▸ Appearance ▸ Show whitespaces</span> or <span class="menu">View ▸ Active Editor ▸ Show whitespaces</span></p></li><li><p>(<strong>M2</strong>) Since 2017.2 and later, there is an option <span class="menu">Preferences ▸ Editor ▸ General ▸ Strip trailing whitespaces on Save</span> with &ldquo;<code>All</code>&rdquo;, &ldquo;<code>Modified Lines</code>&rdquo; or &ldquo;<code>None</code>&rdquo; but the IDE does not quite behave, i.e. I chose &ldquo;<code>All</code>&rdquo; but the trailing spaces are still there after saving. It&rsquo;s rather lame and embarrassing for such a highly praised and expensive IDEs.</p></li><li><p><a href="https://www.sublimetext.com/">Sublime Text</a></p></li><li><p>(<strong>M1</strong>) <span class="menu">Preferences ▸ Preferences.sublime-settings—User</span> : <code>&quot;draw_white_space&quot;: &quot;all&quot;</code> (show all whitespaces) or <code>&quot;draw_white_space&quot;: &quot;selection&quot;</code> (only show within the selection)</p></li><li><p>(<strong>M2</strong>) <span class="menu">Preferences ▸ Preferences.sublime-settings—User</span> : <code>&quot;trim_trailing_white_space_on_save&quot;: false</code></p></li><li><p>(<strong>M2</strong>) Use the plug-in <a href="https://github.com/jonlabelle/Trimmer">Trimmer</a> for manually cleaning up whitespaces</p></li><li><p><a href="https://code.visualstudio.com/">Visual Studio Code</a></p></li><li><p>(<strong>M1</strong>) Either <span class="menu">Preferences ▸ Settings ▸ Render Whitespace</span> or <code>settings.json</code> ▸ <code>&quot;editor.renderWhitespace&quot;: &quot;boundary&quot;</code> (to render whitespaces everywhere except single space between words) or <code>&quot;editor.renderWhitespace&quot;: &quot;all&quot;</code> (to render all whitespaces)</p></li><li><p>(<strong>M2</strong>) Either <span class="menu">Preferences ▸ Settings ▸ Render Whitespace</span> or <code>settings.json</code> ▸ <code>&quot;files.trimTrailingWhitespace&quot;: true</code></p></li><li><p>(<strong>M1+2</strong>) I use the extension <a href="https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces">Trailing Spaces</a> that even goes further with red colour highlighting of whitespaces and provides extra commands for (manually) trimming whitespaces.</p></li><li><p><a href="https://www.vim.org/">Vim</a></p></li><li><p>You can follow the tips on <a href="http://vim.wikia.com/wiki/Highlight_unwanted_spaces">highlighting unwanted spaces</a> and <a href="http://vim.wikia.com/wiki/Remove_unwanted_spaces">removing unwanted spaces</a>, some other <a href="https://vi.stackexchange.com/a/2285">advanced tips on Vi and Vim SE</a>, or using a plug-in that can highlight trailing whitespaces and provide commands to strip all of them</p></li><li><p>(<strong>M1+2</strong>) <a href="https://github.com/bronson/vim-trailing-whitespace">vim-trailing-whitespace</a> highlighting and trimming with <code>:FixWhitespace</code></p></li><li><p>(<strong>M1+2</strong>) <a href="ntpeters/vim-better-whitespace">ntpeters/vim-better-whitespace</a> highlighting and trimming with <code>:StripWhitespace</code></p></li><li><p>(<strong>M1</strong>) <a href="https://www.vim.org/scripts/script.php?script_id=3966">ShowTrailingWhitespace</a>: mostly trimming whitespaces</p></li><li><p>(<strong>M2</strong>) <a href="https://www.vim.org/scripts/script.php?script_id=3967">DeleteTrailingWhitespace</a>: removing trailing whitespaces with <code>:DeleteTrailingWhitespace</code> or automatically when the buffer is saved</p></li></ul><p>For the sake of completeness, there are some editor-independent solutions too.</p><ul><li><p><a href="https://www.gnu.org/software/sed/manual/sed.html">sed&mdash;a stream editor</a> (credits to Tim Pote&rsquo;s excellent <a href="https://stackoverflow.com/a/10711226/339302">SO answer</a>)</p></li><li><p>For POSIX</p></li></ul><pre><code class="language-sh">find . -type f -name '*.properties' \
+</code></pre>
+<ul>
+<li><p><a href="https://www.eclipse.org/">Eclipse</a></p></li>
+<li><p>(<strong>M1</strong>) From version 3.7+: <span class="menu">Preferences ▸ General ▸ Editors ▸ Text Editors </span>
+: Turn on &ldquo;<em>Show whitespace characters</em>&rdquo; and fine-tune the option via &ldquo;<em>configure visibility</em>&ldquo;</p></li>
+<li><p>(<strong>M2</strong>) It&rsquo;s rather tedious in Eclipse as many people have already complained. It&rsquo;s perhaps due to the nature of Eclipse as a platform for several editors and plugins working together. IMHO, Eclipse should offer a common option to remove trailing whitespaces for all editors in the same level and place as &ldquo;<em>Show whitespace characters</em>&rdquo; above. Each kind of editor then might offer specific and optimal ways for certain file types. Unfortunately, for now we have to configure for each file type editor or formatter. For instance, Java editor <span class="menu">Preferences ▸ Java ▸ Editor ▸ Save Actions</span>
+, check &ldquo;<em>Additional actions</em>&rdquo;, choose &ldquo;<em>Configure</em>&rdquo;. Next, in the &ldquo;<em>Code Organizing</em>&rdquo; tab check &ldquo;<em>Remove trailing whitespace</em>&rdquo;. Unfortunately, properties file in our example does not provide such options in Eclipse.</p></li>
+<li><p>(<strong>M2</strong>) You may want to use the plugin <a href="https://github.com/iloveeclipse/anyedittools">AnyEdit Tools</a> to clean up trailing whitespaces for all file types: <span class="menu">Preferences ▸ AnyEdit Tools ▸ Auto ▸ Convert ▸ Remove trailing whitespace</span>
+</p></li>
+<li><p>(<strong>M2</strong>) A universal approach, also a little more difficult, is to use &ldquo;<em>Search &amp; Replace</em>&rdquo; to search with regular expressions for all of <code>&quot;[\t ]+$&quot;</code> (i.e. more than one whitespaces and/or tabs, please note the whitespace between <code>\t</code> and <code>]</code>) and replace them with<code>&quot;&quot;</code> (blank/empty).</p></li>
+<li><p><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></p></li>
+<li><p>(<strong>M1</strong>) <span class="menu">Preferences ▸ Editor ▸ Appearance ▸ Show whitespaces</span>
+or <span class="menu">View ▸ Active Editor ▸ Show whitespaces</span>
+</p></li>
+<li><p>(<strong>M2</strong>) Since 2017.2 and later, there is an option <span class="menu">Preferences ▸ Editor ▸ General ▸ Strip trailing whitespaces on Save</span>
+with &ldquo;<code>All</code>&rdquo;, &ldquo;<code>Modified Lines</code>&rdquo; or &ldquo;<code>None</code>&rdquo; but the IDE does not quite behave, i.e. I chose &ldquo;<code>All</code>&rdquo; but the trailing spaces are still there after saving. It&rsquo;s rather lame and embarrassing for such a highly praised and expensive IDEs.</p></li>
+<li><p><a href="https://www.sublimetext.com/">Sublime Text</a></p></li>
+<li><p>(<strong>M1</strong>) <span class="menu">Preferences ▸ Preferences.sublime-settings—User</span>
+: <code>&quot;draw_white_space&quot;: &quot;all&quot;</code> (show all whitespaces) or <code>&quot;draw_white_space&quot;: &quot;selection&quot;</code> (only show within the selection)</p></li>
+<li><p>(<strong>M2</strong>) <span class="menu">Preferences ▸ Preferences.sublime-settings—User</span>
+: <code>&quot;trim_trailing_white_space_on_save&quot;: false</code></p></li>
+<li><p>(<strong>M2</strong>) Use the plug-in <a href="https://github.com/jonlabelle/Trimmer">Trimmer</a> for manually cleaning up whitespaces</p></li>
+<li><p><a href="https://code.visualstudio.com/">Visual Studio Code</a></p></li>
+<li><p>(<strong>M1</strong>) Either <span class="menu">Preferences ▸ Settings ▸ Render Whitespace</span>
+or <code>settings.json</code> ▸ <code>&quot;editor.renderWhitespace&quot;: &quot;boundary&quot;</code> (to render whitespaces everywhere except single space between words) or <code>&quot;editor.renderWhitespace&quot;: &quot;all&quot;</code> (to render all whitespaces)</p></li>
+<li><p>(<strong>M2</strong>) Either <span class="menu">Preferences ▸ Settings ▸ Render Whitespace</span>
+or <code>settings.json</code> ▸ <code>&quot;files.trimTrailingWhitespace&quot;: true</code></p></li>
+<li><p>(<strong>M1+2</strong>) I use the extension <a href="https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces">Trailing Spaces</a> that even goes further with red colour highlighting of whitespaces and provides extra commands for (manually) trimming whitespaces.</p></li>
+<li><p><a href="https://www.vim.org/">Vim</a></p></li>
+<li><p>You can follow the tips on <a href="http://vim.wikia.com/wiki/Highlight_unwanted_spaces">highlighting unwanted spaces</a> and <a href="http://vim.wikia.com/wiki/Remove_unwanted_spaces">removing unwanted spaces</a>, some other <a href="https://vi.stackexchange.com/a/2285">advanced tips on Vi and Vim SE</a>, or using a plug-in that can highlight trailing whitespaces and provide commands to strip all of them</p></li>
+<li><p>(<strong>M1+2</strong>) <a href="https://github.com/bronson/vim-trailing-whitespace">vim-trailing-whitespace</a> highlighting and trimming with <code>:FixWhitespace</code></p></li>
+<li><p>(<strong>M1+2</strong>) <a href="ntpeters/vim-better-whitespace">ntpeters/vim-better-whitespace</a> highlighting and trimming with <code>:StripWhitespace</code></p></li>
+<li><p>(<strong>M1</strong>) <a href="https://www.vim.org/scripts/script.php?script_id=3966">ShowTrailingWhitespace</a>: mostly trimming whitespaces</p></li>
+<li><p>(<strong>M2</strong>) <a href="https://www.vim.org/scripts/script.php?script_id=3967">DeleteTrailingWhitespace</a>: removing trailing whitespaces with <code>:DeleteTrailingWhitespace</code> or automatically when the buffer is saved</p></li>
+</ul>
+<p>For the sake of completeness, there are some editor-independent solutions too.</p>
+<ul>
+<li><p><a href="https://www.gnu.org/software/sed/manual/sed.html">sed&mdash;a stream editor</a> (credits to Tim Pote&rsquo;s excellent <a href="https://stackoverflow.com/a/10711226/339302">SO answer</a>)</p></li>
+<li><p>For POSIX</p></li>
+</ul>
+<pre><code class="language-sh">find . -type f -name '*.properties' \
 -exec sed --in-place 's/[[:space:]]\+$//' {} \+
-</code></pre><ul><li>For macOS/BSD</li></ul></li></ul><pre><code class="language-sh">  find . -iname '*.properties' -type f \
+</code></pre>
+<ul>
+<li>For macOS/BSD</li>
+</ul></li>
+</ul>
+<pre><code class="language-sh">  find . -iname '*.properties' -type f \
    -exec sed -i '' 's/[[:space:]]\{1,\}$//' {} \+
-</code></pre><p>Wow, quite a long post for such a trivial issue, eh?! Thanks for reading to the end and I hope that my wasted time and effort here would save some of yours in future.</p><p>Cheers!</p></div><div class="navigation navigation-single"><a href="/2018/11/test-driven-spring-jdbc/" class="navigation-prev"><i aria-hidden="true" class="fa fa-chevron-left"></i> <span class="navigation-tittle">Back to basics: Test-driven Spring JDBC</span> </a><a href="/2018/12/spring-boot-di-meets-coc/" class="navigation-next"><span class="navigation-tittle">Tour de Spring Boot: DI meets CoC</span> <i aria-hidden="true" class="fa fa-chevron-right"></i></a></div><div class="post__related"><h2>Related Articles</h2><ul class="related-posts"><li><span class="list__title--small"><a href="/2018/11/test-driven-spring-jdbc/">Back to basics: Test-driven Spring JDBC</a> <time class="pull-right hidden-tablet">Nov 20, 2018</time></span></li></ul></div><div id="disqus_thread"></div><script type="text/javascript">(function () {
+</code></pre>
+<p>Wow, quite a long post for such a trivial issue, eh?! Thanks for reading to the end and I hope that my wasted time and effort here would save some of yours in future.</p>
+<p>Cheers!</p>
+</div>
+<div class="navigation navigation-single">
+<a href="/2018/11/test-driven-spring-jdbc/" class="navigation-prev">
+<i aria-hidden="true" class="fa fa-chevron-left"></i>
+<span class="navigation-tittle">Back to basics: Test-driven Spring JDBC</span>
+</a>
+<a href="/2018/12/spring-boot-di-meets-coc/" class="navigation-next">
+<span class="navigation-tittle">Tour de Spring Boot: DI meets CoC</span>
+<i aria-hidden="true" class="fa fa-chevron-right"></i>
+</a>
+</div>
+<div class="post__related">
+<h2>Related Articles</h2>
+<ul class="related-posts">
+<li>
+<span class="list__title--small">
+<a href="/2018/11/test-driven-spring-jdbc/">Back to basics: Test-driven Spring JDBC</a>
+<time class="pull-right hidden-tablet">Nov 20, 2018</time>
+</span>
+</li>
+</ul>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+(function () {
     if (location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "") {
@@ -42,13 +269,34 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || 
       document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></article></div><script type="application/javascript">var doNotTrack = false;
+  })();
+</script>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</article>
+</div>
+<script type="application/javascript">
+var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-112764962-1', 'auto');
 	
 	ga('send', 'pageview');
-}</script><script async src="https://www.google-analytics.com/analytics.js"></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script><noscript id="deferred-styles"><link rel="stylesheet" type="text/css" href="/css/ocean.min.css"><link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"></noscript><script>var loadDeferredStyles = function () {
+}
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+<noscript id="deferred-styles">
+<link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
+</noscript>
+<script>
+var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
@@ -67,4 +315,12 @@ if (!doNotTrack) {
   
   document.addEventListener('DOMContentLoaded', function (event) {
     codecopy('pre');
-  });</script><script defer="defer" src="/js/codecopy.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script><script type="text/javascript">hljs.initHighlightingOnLoad();</script></body></html>
+  });
+</script>
+<script defer="defer" src="/js/codecopy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>

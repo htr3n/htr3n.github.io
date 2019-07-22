@@ -1,7 +1,119 @@
-<!DOCTYPE html><html lang="en"><head><link href="https://gmpg.org/xfn/11" rel="profile"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Cache-Control" content="public"><!-- Enable responsiveness on mobile devices --><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="generator" content="Hugo 0.55.6"><title>A journey from Apache CXF 2.2 to 3.2 • htr3n&#39;s</title><meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants"><meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="A journey from Apache CXF 2.2 to 3.2"><meta name="twitter:description" content="Apache CXF is very powerful and flexible for developing services but it&#39;s not pain-free to upgrade the legacy code"><meta property="og:title" content="A journey from Apache CXF 2.2 to 3.2"><meta property="og:description" content="Apache CXF is very powerful and flexible for developing services but it&#39;s not pain-free to upgrade the legacy code"><meta property="og:type" content="article"><meta property="og:url" content="https://htr3n.github.io/2018/06/apache-cxf-2-to-3/"><meta property="article:published_time" content="2018-06-15T00:00:00&#43;00:00"><meta property="article:modified_time" content="2018-06-26T00:00:00&#43;00:00"><link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet"><link rel="stylesheet" href="https://htr3n.github.io/scss/hyde-hyde.css"><link rel="stylesheet" href="https://htr3n.github.io/scss/print.css" media="print"><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6"/>
+<title>A journey from Apache CXF 2.2 to 3.2 • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A journey from Apache CXF 2.2 to 3.2"/>
+<meta name="twitter:description" content="Apache CXF is very powerful and flexible for developing services but it&#39;s not pain-free to upgrade the legacy code"/>
+<meta property="og:title" content="A journey from Apache CXF 2.2 to 3.2"/>
+<meta property="og:description" content="Apache CXF is very powerful and flexible for developing services but it&#39;s not pain-free to upgrade the legacy code"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://htr3n.github.io/2018/06/apache-cxf-2-to-3/"/>
+<meta property="article:published_time" content="2018-06-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-06-26T00:00:00&#43;00:00"/>
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/hyde-hyde.css">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/print.css" media="print">
+<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]--><!-- Icons --><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png"><link rel="shortcut icon" href="/favicon.png"></head><body class=""><div class="sidebar"><div class=""><div class="sidebar-about"><span class="site__title"><a href="https://htr3n.github.io/">htr3n&#39;s</a></span><div class="author-image"><img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center"></div><p class="site__description"></p></div><div class="collapsible-menu"><input type="checkbox" id="menuToggle"> <label for="menuToggle">htr3n&#39;s</label><div class="menu-content"><div><ul class="sidebar-nav"><li><a href="/posts/"><span>Posts</span></a></li><li><a href="/portfolio/"><span>Portfolio</span></a></li><li><a href="/vn/"><span>Tiếng Việt</span></a></li><li><a href="/about/"><span>About</span></a></li></ul></div><section class="social"><a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a> <a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a> <a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a> <a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a> <a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a> <a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a></section></div></div><div class="copyright">&copy; 2019 htr3n <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></div><div class="builtwith">Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.</div></div></div><div class="content container"><article><header><h1>A journey from Apache CXF 2.2 to 3.2</h1><div class="post__meta"><i class="fas fa-calendar-alt"></i> Jun 15, 2018 in <a class="badge badge-category" href="/categories/dev">DEV</a><br><i class="fas fa-tags"></i> <a class="badge badge-tag" href="/tags/apache-cxf">apache-cxf</a> <a class="badge badge-tag" href="/tags/web-service">web-service</a> <a class="badge badge-tag" href="/tags/jaxws">jaxws</a> <a class="badge badge-tag" href="/tags/wsdl2java">wsdl2java</a> <a class="badge badge-tag" href="/tags/migration">migration</a> <a class="badge badge-tag" href="/tags/spring-framework">spring-framework</a><br><i class="fas fa-clock"></i> 6 min read</div></header><div class="post"><p>I have used <a href="https://cxf.apache.org">Apache CXF</a> 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, it was a choice between <a href="http://axis.apache.org/axis2/java/core">Apache Axis/Axis2</a> and CXF (formerly Codehaus XFire project).</p><p>I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (+) and many standards, especially JAX-WS and JAX-RS.</p><p>Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end). Everything went well for me on modelling and developing Web services based on JAX-WS for both directions: WSDL-first and Java-first.</p><p>In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any code overwriting. CXF services are so easy to configure with Spring Framework 3.0. The implementations of the services were loaded as Spring managed beans. The expose of a service is done via a CXF directive <code>&lt;jaxws:endpoint&gt;</code> of which the <code>implementor</code> attribute refers to the corresponding bean.</p><pre><code class="language-xml">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    <![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.png">
+</head>
+<body class="">
+<div class="sidebar">
+<div class="">
+<div class="sidebar-about">
+<span class="site__title">
+<a href="https://htr3n.github.io/">htr3n&#39;s</a>
+</span>
+<div class="author-image">
+<img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+</div>
+<p class="site__description">
+</p>
+</div>
+<div class="collapsible-menu">
+<input type="checkbox" id="menuToggle">
+<label for="menuToggle">htr3n&#39;s</label>
+<div class="menu-content">
+<div>
+<ul class="sidebar-nav">
+<li>
+<a href="/posts/">
+<span>Posts</span>
+</a>
+</li>
+<li>
+<a href="/portfolio/">
+<span>Portfolio</span>
+</a>
+</li>
+<li>
+<a href="/vn/">
+<span>Tiếng Việt</span>
+</a>
+</li>
+<li>
+<a href="/about/">
+<span>About</span>
+</a>
+</li>
+</ul>
+</div>
+<section class="social">
+<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+</section>
+</div>
+</div>
+<div class="copyright">
+&copy; 2019 htr3n
+<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+</div>
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+</div>
+</div>
+<div class="content container">
+<article>
+<header>
+<h1>A journey from Apache CXF 2.2 to 3.2</h1>
+<div class="post__meta">
+<i class="fas fa-calendar-alt"></i> Jun 15, 2018 in
+<a class="badge badge-category" href="/categories/dev">DEV</a>
+<br/>
+<i class="fas fa-tags"></i>
+<a class="badge badge-tag" href="/tags/apache-cxf">apache-cxf</a>
+<a class="badge badge-tag" href="/tags/web-service">web-service</a>
+<a class="badge badge-tag" href="/tags/jaxws">jaxws</a>
+<a class="badge badge-tag" href="/tags/wsdl2java">wsdl2java</a>
+<a class="badge badge-tag" href="/tags/migration">migration</a>
+<a class="badge badge-tag" href="/tags/spring-framework">spring-framework</a>
+<br/>
+<i class="fas fa-clock"></i> 6 min read
+</div>
+</header>
+<div class="post">
+<p>I have used <a href="https://cxf.apache.org">Apache CXF</a> 2.2 to develop Web services for some R&amp;D projects that I took part in. At that time, it was a choice between <a href="http://axis.apache.org/axis2/java/core">Apache Axis/Axis2</a> and CXF (formerly Codehaus XFire project).</p>
+<p>I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (+) and many standards, especially JAX-WS and JAX-RS.</p>
+<p>Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end). Everything went well for me on modelling and developing Web services based on JAX-WS for both directions: WSDL-first and Java-first.</p>
+<p>In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any code overwriting. CXF services are so easy to configure with Spring Framework 3.0. The implementations of the services were loaded as Spring managed beans. The expose of a service is done via a CXF directive <code>&lt;jaxws:endpoint&gt;</code> of which the <code>implementor</code> attribute refers to the corresponding bean.</p>
+<pre><code class="language-xml">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
        xmlns:jaxws=&quot;http://cxf.apache.org/jaxws&quot;&gt;
   &lt;import resource=&quot;classpath:META-INF/cxf/cxf.xml&quot; /&gt;
   &lt;import resource=&quot;classpath:META-INF/cxf/cxf-extension-soap.xml&quot; /&gt;
@@ -16,7 +128,9 @@
                   address=&quot;/CreditWorthiness&quot;&gt;
   &lt;/jaxws:endpoint&gt;
 &lt;/beans&gt;
-</code></pre><p>In the Web app configuration <code>web.xml</code>, CXF Servlet must be loaded by the container.</p><pre><code class="language-xml">&lt;servlet&gt;
+</code></pre>
+<p>In the Web app configuration <code>web.xml</code>, CXF Servlet must be loaded by the container.</p>
+<pre><code class="language-xml">&lt;servlet&gt;
   &lt;servlet-name&gt;cxf&lt;/servlet-name&gt;
   &lt;servlet-class&gt;org.apache.cxf.transport.servlet.CXFServlet&lt;/servlet-class&gt;
   &lt;load-on-startup&gt;2&lt;/load-on-startup&gt;
@@ -25,10 +139,23 @@
   &lt;servlet-name&gt;cxf&lt;/servlet-name&gt;
   &lt;url-pattern&gt;/services/*&lt;/url-pattern&gt;
 &lt;/servlet-mapping&gt;
-</code></pre><h2 id="upgrading-apache-cxf">Upgrading Apache CXF</h2><p>For a while I haven&rsquo;t taken part in further WS development, i.e. not using Apache CXF a lot. One day I thought I could use the WS project to showcase and review my relevant knowledge. The codebase still works well after some mysterious library missing that I have not seen before. It is possible due to the built-in libraries for XML parsing that were implicitly used but now changed in the newer JRE. Apart from that, most of the libraries are also outdated. So I dedice to spend some time to exercise upgrading the project and refactor a bit its source code. Here I jot down some major points on upgrading Apache CXF.</p><p>The upgrading was not as easy and smooth as just changing the dependencies&rsquo; versions. A lot of conflicts or major refactoring happened. I had to read thoroughly the <a href="http://cxf.apache.org/docs/migration-guides.html">documentation on CXF site for migration</a> and decided to go gradually over each major version of Apache CXF.</p><h2 id="from-version-2-2-to-2-7">&hellip; from version 2.2 to 2.7 &hellip;</h2><p>From Apache CXF 2.2 to 2.6, not so many changes are relevant for the project as I mainly used <code>cxf-rt-frontend-jaxws</code>. Another <a href="http://cxf.apache.org/docs/embedding-cxf-inside-spring.html">significant change since 2.4</a> causes errors for Spring / Jetty server regarding importing CXF&rsquo;s XML resources. Recall the aforementioned Spring bean configuration where CXF service implementations were loaded and published? There are a number of <code>&lt;import&gt;</code> directives. These directives advise Spring to load the corresponding CXF resources. Now we only need &ldquo;<em>one to rule them all</em>&rdquo;.</p><pre><code class="language-xml">&lt;import resource=&quot;classpath:META-INF/cxf/cxf.xml&quot; /&gt;
-</code></pre><p>To upgrade to version 2.6, I have to revise the project with respect to the merging of <code>cxf-common-utilites</code> into <code>cxf-api</code>, the removal of <code>cxf-rt-binding-http</code>, and the refactoring that impact <code>cxf-rt-core</code>. Most of the other changes from 2.2 to 2.7 are for JAX-RS, which were used very little or none in my project.</p><h2 id="and-to-version-3-0">&hellip; and to version 3.0+</h2><p>Apache CXF 3.0 requires a rather disruptive change, from Spring Framework 3.0 to 3.2+. Again, I used standard Spring bean configurations which are still valid for Spring 3.2. Hence, the project works well with Spring 3.2.18-RELEASE. I only need to remove all version numbers in the Spring XML schemas. The major change I must deal with is to remove the dependency of <code>cxf-api</code> as it was merged with <code>cxf-core</code>.</p><p>Then there comes the most dramatic issue with CXF 3.0.16 (sic!). <code>cxf-codegen-plugin</code> used to generate Java code from WSDLs refused to work (which was no problem in earlier verions) and spit out errors like this.</p><pre><code>[ERROR] Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java failed: org.apache.cxf.wsdl11.WSDLRuntimeException: Fail to create wsdl definition file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e: WSDLException: faultCode=PARSER_ERROR: Problem parsing 'file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e'.: java.io.FileNotFoundException: &lt; (No such file or directory) -&gt; [Help 1]
+</code></pre>
+<h2 id="upgrading-apache-cxf">Upgrading Apache CXF</h2>
+<p>For a while I haven&rsquo;t taken part in further WS development, i.e. not using Apache CXF a lot. One day I thought I could use the WS project to showcase and review my relevant knowledge. The codebase still works well after some mysterious library missing that I have not seen before. It is possible due to the built-in libraries for XML parsing that were implicitly used but now changed in the newer JRE. Apart from that, most of the libraries are also outdated. So I dedice to spend some time to exercise upgrading the project and refactor a bit its source code. Here I jot down some major points on upgrading Apache CXF.</p>
+<p>The upgrading was not as easy and smooth as just changing the dependencies&rsquo; versions. A lot of conflicts or major refactoring happened. I had to read thoroughly the <a href="http://cxf.apache.org/docs/migration-guides.html">documentation on CXF site for migration</a> and decided to go gradually over each major version of Apache CXF.</p>
+<h2 id="from-version-2-2-to-2-7">&hellip; from version 2.2 to 2.7 &hellip;</h2>
+<p>From Apache CXF 2.2 to 2.6, not so many changes are relevant for the project as I mainly used <code>cxf-rt-frontend-jaxws</code>. Another <a href="http://cxf.apache.org/docs/embedding-cxf-inside-spring.html">significant change since 2.4</a> causes errors for Spring / Jetty server regarding importing CXF&rsquo;s XML resources. Recall the aforementioned Spring bean configuration where CXF service implementations were loaded and published? There are a number of <code>&lt;import&gt;</code> directives. These directives advise Spring to load the corresponding CXF resources. Now we only need &ldquo;<em>one to rule them all</em>&rdquo;.</p>
+<pre><code class="language-xml">&lt;import resource=&quot;classpath:META-INF/cxf/cxf.xml&quot; /&gt;
+</code></pre>
+<p>To upgrade to version 2.6, I have to revise the project with respect to the merging of <code>cxf-common-utilites</code> into <code>cxf-api</code>, the removal of <code>cxf-rt-binding-http</code>, and the refactoring that impact <code>cxf-rt-core</code>. Most of the other changes from 2.2 to 2.7 are for JAX-RS, which were used very little or none in my project.</p>
+<h2 id="and-to-version-3-0">&hellip; and to version 3.0+</h2>
+<p>Apache CXF 3.0 requires a rather disruptive change, from Spring Framework 3.0 to 3.2+. Again, I used standard Spring bean configurations which are still valid for Spring 3.2. Hence, the project works well with Spring 3.2.18-RELEASE. I only need to remove all version numbers in the Spring XML schemas. The major change I must deal with is to remove the dependency of <code>cxf-api</code> as it was merged with <code>cxf-core</code>.</p>
+<p>Then there comes the most dramatic issue with CXF 3.0.16 (sic!). <code>cxf-codegen-plugin</code> used to generate Java code from WSDLs refused to work (which was no problem in earlier verions) and spit out errors like this.</p>
+<pre><code>[ERROR] Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java failed: org.apache.cxf.wsdl11.WSDLRuntimeException: Fail to create wsdl definition file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e: WSDLException: faultCode=PARSER_ERROR: Problem parsing 'file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e'.: java.io.FileNotFoundException: &lt; (No such file or directory) -&gt; [Help 1]
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java failed: org.apache.cxf.wsdl11.WSDLRuntimeException: Fail to create wsdl definition file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e: WSDLException: faultCode=PARSER_ERROR: Problem parsing 'file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e'.: java.io.FileNotFoundException: &lt; (No such file or directory)
-</code></pre><p>What puzzles me is that I have tried the command tool <code>wsdl2java</code> of Apache CXF 3.0.16 with each WSDL and, strangely, found no errors at all. After some extra trial-and-error effort, I eventually figured out that an extra option for <code>cxf-codegen-plugin</code> causes the error. The old/original plugin configuration in <code>pom.xml</code> is as following.</p><pre><code class="language-xml">&lt;plugin&gt;
+</code></pre>
+<p>What puzzles me is that I have tried the command tool <code>wsdl2java</code> of Apache CXF 3.0.16 with each WSDL and, strangely, found no errors at all. After some extra trial-and-error effort, I eventually figured out that an extra option for <code>cxf-codegen-plugin</code> causes the error. The old/original plugin configuration in <code>pom.xml</code> is as following.</p>
+<pre><code class="language-xml">&lt;plugin&gt;
   &lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;
   &lt;artifactId&gt;cxf-codegen-plugin&lt;/artifactId&gt;
   &lt;version&gt;${cxf.version}&lt;/version&gt;
@@ -57,9 +184,18 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
     &lt;/execution&gt;
   &lt;/executions&gt;
 &lt;/plugin&gt;
-</code></pre><p>The option <code>&lt;wsdlList&gt;</code> is the culprit. It was declared <code>boolean</code> since CXF 2.2 to 2.7.0 as I found <a href="https://cxf.apache.org/javadoc/latest-2.7.x/org/apache/cxf/maven_plugin/wsdl2java/Option.html">here</a>. However, in <a href="http://cxf.apache.org/docs/wsdl-to-java.html">the most recent documentation</a> of CXF 3, <code>wsdlList</code> is still listed as an option for <code>wsdl2java</code> but no longer of type <code>boolean</code> (<code>-wsdlList &lt;wsdlurl&gt;</code>). To make it worse, the option is totally hidden/undocumented. So all I have to do is to disable the line <code>&lt;wsdlList&gt;true&lt;/wsdlList&gt;</code> and <code>cxf-codegen-plugin</code> works again in CXF 3.0+.</p><p>The problems with <code>cxf-codegen-plugin</code> keep raising when upgrading CXF to 3.2.4. This time, it threw another exception though.</p><pre><code>[ERROR] Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java failed: org.xml.sax.SAXNotRecognizedException: Property 'http://javax.xml.XMLConstants/property/accessExternalSchema' is not recognized. -&gt; [Help 1]
+</code></pre>
+<p>The option <code>&lt;wsdlList&gt;</code> is the culprit. It was declared <code>boolean</code> since CXF 2.2 to 2.7.0 as I found <a href="https://cxf.apache.org/javadoc/latest-2.7.x/org/apache/cxf/maven_plugin/wsdl2java/Option.html">here</a>. However, in <a href="http://cxf.apache.org/docs/wsdl-to-java.html">the most recent documentation</a> of CXF 3, <code>wsdlList</code> is still listed as an option for <code>wsdl2java</code> but no longer of type <code>boolean</code> (<code>-wsdlList &lt;wsdlurl&gt;</code>). To make it worse, the option is totally hidden/undocumented. So all I have to do is to disable the line <code>&lt;wsdlList&gt;true&lt;/wsdlList&gt;</code> and <code>cxf-codegen-plugin</code> works again in CXF 3.0+.</p>
+<p>The problems with <code>cxf-codegen-plugin</code> keep raising when upgrading CXF to 3.2.4. This time, it threw another exception though.</p>
+<pre><code>[ERROR] Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java failed: org.xml.sax.SAXNotRecognizedException: Property 'http://javax.xml.XMLConstants/property/accessExternalSchema' is not recognized. -&gt; [Help 1]
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java failed: org.xml.sax.SAXNotRecognizedException: Property 'http://javax.xml.XMLConstants/property/accessExternalSchema' is not recognized.
-</code></pre><p>We can see that the error is due to schema validation. Before, I wanted to make sure that the WSDLs were valid before generating Java code. Thus, I chose to enable validation by <code>&lt;validateWsdl&gt;true&lt;/validateWsdl&gt;</code>. This option is actually the root cause of the aforementioned exception during validation. The problem seems to stem from <a href="http://docs.oracle.com/javase/tutorial/jaxp/properties/properties.html">new XML security properties in JAXB 1.5</a> introduced in Java 8. When I disable that option, the plugin works fine again (voila!). But that means I must live in a maybe-not-error-free world (D&rsquo;oh!). But we are all, aren&rsquo;t we?</p><p>After all of the above, I can get my project to work with Apache CXF 3.2.4 while keeping the business logic of services intact.</p><h2 id="update-2018-06-25-xml-less-spring-configuration">Update 2018-06-25: XML-less Spring Configuration</h2><p>As deciding to switch to XML-less Spring configuration to learn more about Spring Java annotations, I also tried to migrate CXF settings, too. Here are some last updates.</p><h3 id="loading-cxfservlet">Loading CXFServlet</h3><pre><code class="language-java">public class MyWebApplicationInitializer implements org.springframework.web.WebApplicationInitializer {
+</code></pre>
+<p>We can see that the error is due to schema validation. Before, I wanted to make sure that the WSDLs were valid before generating Java code. Thus, I chose to enable validation by <code>&lt;validateWsdl&gt;true&lt;/validateWsdl&gt;</code>. This option is actually the root cause of the aforementioned exception during validation. The problem seems to stem from <a href="http://docs.oracle.com/javase/tutorial/jaxp/properties/properties.html">new XML security properties in JAXB 1.5</a> introduced in Java 8. When I disable that option, the plugin works fine again (voila!). But that means I must live in a maybe-not-error-free world (D&rsquo;oh!). But we are all, aren&rsquo;t we?</p>
+<p>After all of the above, I can get my project to work with Apache CXF 3.2.4 while keeping the business logic of services intact.</p>
+<h2 id="update-2018-06-25-xml-less-spring-configuration">Update 2018-06-25: XML-less Spring Configuration</h2>
+<p>As deciding to switch to XML-less Spring configuration to learn more about Spring Java annotations, I also tried to migrate CXF settings, too. Here are some last updates.</p>
+<h3 id="loading-cxfservlet">Loading CXFServlet</h3>
+<pre><code class="language-java">public class MyWebApplicationInitializer implements org.springframework.web.WebApplicationInitializer {
   @Override
   public void onStartup(ServletContext container) throws ServletException {
     AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
@@ -73,7 +209,10 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
     reg.addMapping(&quot;/services/*&quot;);
   }
 }
-</code></pre><h3 id="publishing-services">Publishing Services</h3><p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing existing CXF&rsquo;s XML resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<em>cxf</em>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p><pre><code class="language-java">import com.example.HelloWorldImpl;
+</code></pre>
+<h3 id="publishing-services">Publishing Services</h3>
+<p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing existing CXF&rsquo;s XML resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<em>cxf</em>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
+<pre><code class="language-java">import com.example.HelloWorldImpl;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.bus.spring.SpringBus;
@@ -99,7 +238,24 @@ public class ServiceConfiguration {
     return endpoint;
   }
 }
-</code></pre><blockquote><p><strong>IMPORTANT</strong><br><code>Endpoint.publish()</code> must be called to expose the service endpoint instead of <code>Endpoint.setAddress()</code> as above.</p></blockquote></div><div class="navigation navigation-single"><a href="/2018/05/integration-laravel-gentelella/" class="navigation-prev"><i aria-hidden="true" class="fa fa-chevron-left"></i> <span class="navigation-tittle">Integration Laravel 5 and Gentelella admin theme</span> </a><a href="/2018/06/bootstrapping-macos-workspace/" class="navigation-next"><span class="navigation-tittle">Bootstrapping macOS workspace</span> <i aria-hidden="true" class="fa fa-chevron-right"></i></a></div><div id="disqus_thread"></div><script type="text/javascript">(function () {
+</code></pre>
+<blockquote>
+<p><strong>IMPORTANT</strong><br/><code>Endpoint.publish()</code> must be called to expose the service endpoint instead of <code>Endpoint.setAddress()</code> as above.</p>
+</blockquote>
+</div>
+<div class="navigation navigation-single">
+<a href="/2018/05/integration-laravel-gentelella/" class="navigation-prev">
+<i aria-hidden="true" class="fa fa-chevron-left"></i>
+<span class="navigation-tittle">Integration Laravel 5 and Gentelella admin theme</span>
+</a>
+<a href="/2018/06/bootstrapping-macos-workspace/" class="navigation-next">
+<span class="navigation-tittle">Bootstrapping macOS workspace</span>
+<i aria-hidden="true" class="fa fa-chevron-right"></i>
+</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+(function () {
     if (location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "") {
@@ -112,13 +268,34 @@ public class ServiceConfiguration {
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || 
       document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></article></div><script type="application/javascript">var doNotTrack = false;
+  })();
+</script>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</article>
+</div>
+<script type="application/javascript">
+var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-112764962-1', 'auto');
 	
 	ga('send', 'pageview');
-}</script><script async src="https://www.google-analytics.com/analytics.js"></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script><noscript id="deferred-styles"><link rel="stylesheet" type="text/css" href="/css/ocean.min.css"><link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"></noscript><script>var loadDeferredStyles = function () {
+}
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+<noscript id="deferred-styles">
+<link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
+</noscript>
+<script>
+var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
@@ -137,4 +314,12 @@ if (!doNotTrack) {
   
   document.addEventListener('DOMContentLoaded', function (event) {
     codecopy('pre');
-  });</script><script defer="defer" src="/js/codecopy.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script><script type="text/javascript">hljs.initHighlightingOnLoad();</script></body></html>
+  });
+</script>
+<script defer="defer" src="/js/codecopy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
