@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bibliography on htr3n&#39;s</title>
-    <link>https://blog.test:8443/tags/bibliography/</link>
+    <link>https://htr3n.github.io/tags/bibliography/</link>
     <description>Recent content in bibliography on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 15 Jan 2009 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.test:8443/tags/bibliography/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://htr3n.github.io/tags/bibliography/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sắp xếp trích dẫn (citations) trong (La)TeX</title>
-      <link>https://blog.test:8443/2009/01/sap-xep-trich-dan-latex/</link>
+      <link>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2009/01/sap-xep-trich-dan-latex/</guid>
+      <guid>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</guid>
       <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như [1, 2] hoặc dạng chữ như [Lamport94].</description>
     </item>
     

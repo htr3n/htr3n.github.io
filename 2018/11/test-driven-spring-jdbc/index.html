@@ -1,241 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    
-
-
-    <head>
-    <link href="https://gmpg.org/xfn/11" rel="profile">
-    <meta charset="utf-8">
+<head>
+<link href="https://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.66.0" />
-
-    
-    
-    
-
+<meta http-equiv="Cache-Control" content="public"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0"/>
 <title>Back to basics: Test-driven Spring JDBC • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Back to basics: Test-driven Spring JDBC"/>
 <meta name="twitter:description" content="A hand-on experience on JDBC programming can help to further understand many concepts and techniques of complex data access libraries. Besides, appropriate test cases might reveal some problematic usage or issues early on"/>
-
-<meta property="og:title" content="Back to basics: Test-driven Spring JDBC" />
-<meta property="og:description" content="A hand-on experience on JDBC programming can help to further understand many concepts and techniques of complex data access libraries. Besides, appropriate test cases might reveal some problematic usage or issues early on" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.test:8443/2018/11/test-driven-spring-jdbc/" />
-<meta property="article:published_time" content="2018-11-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2018-12-07T00:00:00+00:00" />
-
-
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
-
-
-
-
-
-<link rel="stylesheet" href="https://blog.test:8443/scss/hyde-hyde.css" >
-
-
-<link rel="stylesheet" href="https://blog.test:8443/scss/print.css" media="print">
-
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+<meta property="og:title" content="Back to basics: Test-driven Spring JDBC"/>
+<meta property="og:description" content="A hand-on experience on JDBC programming can help to further understand many concepts and techniques of complex data access libraries. Besides, appropriate test cases might reveal some problematic usage or issues early on"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://htr3n.github.io/2018/11/test-driven-spring-jdbc/"/>
+<meta property="article:published_time" content="2018-11-20T00:00:00+00:00"/>
+<meta property="article:modified_time" content="2018-12-07T00:00:00+00:00"/>
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/hyde-hyde.css">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/print.css" media="print">
+<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    
-    
-
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.png">
 </head>
-
-
-    <body class=" ">
-    
+<body class="">
 <div class="sidebar">
-  <div class="">
-    <div class="sidebar-about">
-      <span class="site__title">
-        <a href="https://blog.test:8443/">htr3n&#39;s</a>
-      </span>
-      
-      
-      
-      <div class="author-image">
-        <img src="https://blog.test:8443//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
-      </div>
-      
-      <p class="site__description">
-        
-      </p>
-    </div>
-    <div class="collapsible-menu">
-      <input type="checkbox" id="menuToggle">
-      <label for="menuToggle">htr3n&#39;s</label>
-      <div class="menu-content">
-        <div>
-	<ul class="sidebar-nav">
-		 
-		 
-			 
-				<li>
-					<a href="/posts/">
-						<span>Posts</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/portfolio/">
-						<span>Portfolio</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/vn/">
-						<span>Tiếng Việt</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-			 
-		
-	</ul>
+<div class="">
+<div class="sidebar-about">
+<span class="site__title">
+<a href="https://htr3n.github.io/">htr3n&#39;s</a>
+</span>
+<div class="author-image">
+<img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
 </div>
-
-        <section class="social">
-	
-	<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	
-	
-	
-	<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
-	
+<p class="site__description">
+</p>
+</div>
+<div class="collapsible-menu">
+<input type="checkbox" id="menuToggle">
+<label for="menuToggle">htr3n&#39;s</label>
+<div class="menu-content">
+<div>
+<ul class="sidebar-nav">
+<li>
+<a href="/posts/">
+<span>Posts</span>
+</a>
+</li>
+<li>
+<a href="/portfolio/">
+<span>Portfolio</span>
+</a>
+</li>
+<li>
+<a href="/vn/">
+<span>Tiếng Việt</span>
+</a>
+</li>
+<li>
+<a href="/about/">
+<span>About</span>
+</a>
+</li>
+</ul>
+</div>
+<section class="social">
+<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 </section>
-
-      </div>
-    </div>
-    
-<div class="copyright">
-  &copy; 2020 htr3n
-  
-    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
-  
 </div>
-
-
+</div>
+<div class="copyright">
+&copy; 2020 htr3n
+<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+</div>
 <div class="builtwith">
 Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
 </div>
-
-
-  </div>
 </div>
-
-        <div class="content container">
-            
-    
+</div>
+<div class="content container">
 <article>
-  <header>
-    <h1>Back to basics: Test-driven Spring JDBC</h1>
-    
-    
+<header>
+<h1>Back to basics: Test-driven Spring JDBC</h1>
 <div class="post__meta">
-    
-    
-      <i class="fas fa-calendar-alt"></i> Nov 20, 2018
-    
-    
-    
-      
-      
-          in
-          
-          
-              <a class="badge badge-category" href="/categories/dev">DEV</a>
-              
-          
-      
-    
-    
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="badge badge-tag" href="/tags/spring-framework">spring framework</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/database">database</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/jdbc">jdbc</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/jdbctemplate">jdbctemplate</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/spring-boot">spring boot</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/junit">junit</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/unit-test">unit test</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 10 min read
+<i class="fas fa-calendar-alt"></i> Nov 20, 2018 in
+<a class="badge badge-category" href="/categories/dev">DEV</a>
+<br/>
+<i class="fas fa-tags"></i>
+<a class="badge badge-tag" href="/tags/spring-framework">spring framework</a>
+<a class="badge badge-tag" href="/tags/database">database</a>
+<a class="badge badge-tag" href="/tags/jdbc">jdbc</a>
+<a class="badge badge-tag" href="/tags/jdbctemplate">jdbctemplate</a>
+<a class="badge badge-tag" href="/tags/spring-boot">spring boot</a>
+<a class="badge badge-tag" href="/tags/junit">junit</a>
+<a class="badge badge-tag" href="/tags/unit-test">unit test</a>
+<br/>
+<i class="fas fa-clock"></i> 10 min read
 </div>
-
-
-  </header>
-  
-  
-  <div class="post">
-    <p><a href="https://spring.io">Spring</a> is a popular heavy-weight framework for developing Java/Groovy based applications. Its rich libraries and software stack can cover from front-end to back-end development. In 2009 I used Spring Framework 3 to develop <a href="https://github.com/htr3n/loan-approval-portal">web services and MVC + Hibernate portal</a> for a fictious <a href="https://github.com/htr3n/loan-approval">loan approval process</a>. Despite a tad steep learning-curve, I could manage to get the services and portal up and running and integrated with third-party libraries quite smoothly.</p>
+</header>
+<div class="post">
+<p><a href="https://spring.io">Spring</a> is a popular heavy-weight framework for developing Java/Groovy based applications. Its rich libraries and software stack can cover from front-end to back-end development. In 2009 I used Spring Framework 3 to develop <a href="https://github.com/htr3n/loan-approval-portal">web services and MVC + Hibernate portal</a> for a fictious <a href="https://github.com/htr3n/loan-approval">loan approval process</a>. Despite a tad steep learning-curve, I could manage to get the services and portal up and running and integrated with third-party libraries quite smoothly.</p>
 <p>In my prevous projects, I mostly used Spring with Hibernate and/or JPA for higher abstraction level of data access. Coming back working with Spring after few years, I want to delve into lower layer of data access to better understand what behind the scene of Hibernate/JPA abstraction layers. This post is sort of my note-to-self on Spring and JDBC (Java Database Connectivity), especially on <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html">JdbcTemplate</a>. Besides, it also reports a tricky case with retrieving data with <code>JdbcTemplate.queryForXXX()</code> employed by several on-line tutorials which was efficiently exposed by appropriate tests.</p>
 <h2 id="background">Background</h2>
 <p>JDBC defines standard application programming interface (API) based on that a client can access a database. Each database vendor often provides low-level vendor-specific database drivers based on JDBC predefined interfaces. JDBC is considered the lowest recommended abstraction level to work with databases in Java.</p>
@@ -247,7 +122,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>Retrieve and process the <a href="https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html">ResultSet</a> (if any)</li>
 <li>Close the statement and release all resources (connection is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html">AutoCloseable</a>)</li>
 </ol>
-<p>Along these steps, we should also handle any <a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/sqlexception.html">database exceptions</a> as well. You can find more details on JDBC programming <a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html">here</a>.  Here is a simple example of accessing databases using JDBC and <a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html"><em>try-with-resources</em></a>.</p>
+<p>Along these steps, we should also handle any <a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/sqlexception.html">database exceptions</a> as well. You can find more details on JDBC programming <a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html">here</a>. Here is a simple example of accessing databases using JDBC and <a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html"><em>try-with-resources</em></a>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">DataSource ds <span style="color:#f92672">=</span> <span style="color:#f92672">...;</span> <span style="color:#75715e">// obtain a DataSource object
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">try</span> <span style="color:#f92672">(</span>
   Connection conn <span style="color:#f92672">=</span> ds<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">();</span>
@@ -262,7 +137,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
   e1<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p>Fortunately, Spring, via  <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html">JdbcTemplate</a>, ofters a higher level of abstraction on top of Java JDBC that would save us a lot of boiler plate code and enable smooth integration with the rest of Spring framework&rsquo;s ecosystem. As such, we can leverage other parts of Spring farmework, for instance, the awesome <a href="https://spring.io/projects/spring-boot">Spring Boot</a>, to automate lots of configuration effort.</p>
+</code></pre></div><p>Fortunately, Spring, via <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html">JdbcTemplate</a>, ofters a higher level of abstraction on top of Java JDBC that would save us a lot of boiler plate code and enable smooth integration with the rest of Spring framework&rsquo;s ecosystem. As such, we can leverage other parts of Spring farmework, for instance, the awesome <a href="https://spring.io/projects/spring-boot">Spring Boot</a>, to automate lots of configuration effort.</p>
 <h2 id="a-simple-crud-project-with-spring-jdbc">A simple CRUD project with Spring JDBC</h2>
 <p>Nothing is better than a hand-on development project that demonstrate how Spring JDBC works. We can start with <a href="https://start.spring.io/">Spring Initialzr</a> and <a href="https://spring.io/projects/spring-boot">Spring Boot</a> to jump start and better concentrate on the main code instead of numerous dependencies and configurations.</p>
 <p>There are a few ways to bootstrap a project with Spring Initialzr. Most of the popular Java IDE such as Eclipse or Intellij IDEA with Spring extensions can create a new project via Spring Initialzr. You can also achieve the same result from the web site <a href="https://start.spring.io">https://start.spring.io</a> or even using <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli">Spring Boot CLI</a>.</p>
@@ -349,9 +224,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </code></pre></div><h4 id="crud-tests">CRUD Tests</h4>
 <p>Before starting implementing the CRUD methods, we create some unit tests in <code>CustomerDaoTest</code>. Again, Spring Boot will help us a lot here with setting up and shutting down properly the testing environment via annotations such as <code>@RunWith</code> and <code>@SpringBootTest</code>. We only need to declare an <em>autowired</em> object <code>CustomerDao</code>.</p>
 <p>Spring offers powerful means for database testing, for instance, <code>@Transational</code> and <code>@Rollback</code>. With these annotations, Spring will take care of database transactions as well as rollling back the testing databases to its initial state.</p>
-<p>Unfortunately, it would be too tedious to annotate each test method. Spring Boot comes to handy with  <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/jdbc/JdbcTest.html"><code>@JdbcTest</code></a> that enables several useful features for JDBC tests including an in-memory embedded database as well as transactional and roll back at the end of each test.</p>
+<p>Unfortunately, it would be too tedious to annotate each test method. Spring Boot comes to handy with <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/jdbc/JdbcTest.html"><code>@JdbcTest</code></a> that enables several useful features for JDBC tests including an in-memory embedded database as well as transactional and roll back at the end of each test.</p>
 <blockquote>
-<p><strong>IMPORTANT</strong><!-- raw HTML omitted -->By default, <code>@JdbcTest</code> <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-jdbc-test">won&rsquo;t load regular <code>Component</code></a>, and as a result, <code>CustomerDao</code> won&rsquo;t be loaded because it is a <code>@Repository</code>, i.e. a sub-type of <code>@Component</code>. Spring will inform us that it fails to find the required autowire <code>CustomerDao</code> for <code>CustomerDaoTest</code>.  To fix this, simply annotation  <code>CustomerDaoTest</code> with <code>@ComponentScan</code>.</p>
+<p><strong>IMPORTANT</strong>By default, <code>@JdbcTest</code> <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-jdbc-test">won&rsquo;t load regular <code>Component</code></a>, and as a result, <code>CustomerDao</code> won&rsquo;t be loaded because it is a <code>@Repository</code>, i.e. a sub-type of <code>@Component</code>. Spring will inform us that it fails to find the required autowire <code>CustomerDao</code> for <code>CustomerDaoTest</code>. To fix this, simply annotation <code>CustomerDaoTest</code> with <code>@ComponentScan</code>.</p>
 </blockquote>
 <p>This is the whole test case for our tentative CRUD methods.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> io.github.htr3n.springjdbcsimple.dao<span style="color:#f92672">;</span>
@@ -504,7 +379,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span>newCustomerId<span style="color:#f92672">);</span>
   <span style="color:#66d9ef">return</span> customer<span style="color:#f92672">;</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p>Please note that, Spring also provides another helper, namely, <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/simple/SimpleJdbcInsert.html"><code>SimpleJdbcInsert</code></a> with methods <code>executeAndReturnKey()</code>. Per the class&rsquo;s documentation, <code>SimpleJdbcInsert</code>  is indeed a higher level wrapper of <code>JdbcTemplate</code>.</p>
+</code></pre></div><p>Please note that, Spring also provides another helper, namely, <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/simple/SimpleJdbcInsert.html"><code>SimpleJdbcInsert</code></a> with methods <code>executeAndReturnKey()</code>. Per the class&rsquo;s documentation, <code>SimpleJdbcInsert</code> is indeed a higher level wrapper of <code>JdbcTemplate</code>.</p>
 <p><strong>R</strong>etrieve</p>
 <p>In this project, we develop two retrieval methods: <code>findAll()</code> will return a list of all customers whilst <code>findById()</code> will look for a certain customer using the input ID.</p>
 <p>The method <code>findAll()</code> is rather a piece of cake but <code>findById()</code> is quite tricky. Most of the tutorials or guides on Spring <code>JdbcTemplate</code> I have found on the Internet blindly use the method <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html#queryForObject-java.lang.String-java.lang.Class-">JdbcTemplate.queryForObject()</a> to look up a database row. Trust me, I made the same mistake, too, along the line of this.</p>
@@ -554,38 +429,20 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </code></pre></div><p>Finally, we finish implementing all necessary CRUD methods and hopefully pass all the aforementioned tests.</p>
 <p><img src="passed-tests.png" alt="Passed tests"></p>
 <p>You can check out the <a href="https://github.com/htr3n/spring-jdbc-simple">project source code</a> available on Github.</p>
-
-  </div>
-  
-
-<div class="navigation navigation-single">
-    
-    <a href="/2018/07/handy-quicklook/" class="navigation-prev">
-      <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Handy macOS QuickLook configurations</span>
-    </a>
-    
-    
-    <a href="/2018/11/spring-boot-trailing-whitespaces/" class="navigation-next">
-      <span class="navigation-tittle">Spring Boot properties issues with trailing whitespaces</span>
-      <i aria-hidden="true" class="fa fa-chevron-right"></i>
-    </a>
-    
 </div>
-
-
-  
-
-
-
-
-  
-    
-        <div id="disqus_thread"></div>
+<div class="navigation navigation-single">
+<a href="/2018/07/handy-quicklook/" class="navigation-prev">
+<i aria-hidden="true" class="fa fa-chevron-left"></i>
+<span class="navigation-tittle">Handy macOS QuickLook configurations</span>
+</a>
+<a href="/2018/11/spring-boot-trailing-whitespaces/" class="navigation-next">
+<span class="navigation-tittle">Spring Boot properties issues with trailing whitespaces</span>
+<i aria-hidden="true" class="fa fa-chevron-right"></i>
+</a>
+</div>
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-    
-
-    (function () {
+(function () {
     if (location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "") {
@@ -600,26 +457,15 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
       document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-
 <noscript>
-  Please enable JavaScript to view the
-  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
 </noscript>
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by
-  <span class="logo-disqus">Disqus</span>
+<span class="logo-disqus">Disqus</span>
 </a>
-
-    
-
-
 </article>
-
-
-        </div>
-        
-    
-
-
+</div>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -629,21 +475,14 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
-
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
-  
-  
-  <link rel="stylesheet" type="text/css" href="/css/ocean.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css" />
-  
+<link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
 </noscript>
-
 <script>
-  var loadDeferredStyles = function () {
+var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
@@ -664,27 +503,10 @@ if (!doNotTrack) {
     codecopy('pre');
   });
 </script>
-
-<script defer src="/js/codecopy.min.js"></script>
-
-
-    
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-        
-    
-    <script type="text/javascript">
-        
-        hljs.initHighlightingOnLoad();
-    </script>
-    
-
-
-
-
-    
-
-
-
-    </body>
+<script defer="defer" src="/js/codecopy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+</body>
 </html>

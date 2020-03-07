@@ -2,30 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>alfred on htr3n&#39;s</title>
-    <link>https://blog.test:8443/tags/alfred/</link>
+    <link>https://htr3n.github.io/tags/alfred/</link>
     <description>Recent content in alfred on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.test:8443/tags/alfred/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://htr3n.github.io/tags/alfred/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Alfred 3 workflow development</title>
-      <link>https://blog.test:8443/2018/12/alfred-3-workflow-development/</link>
-      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/2018/12/alfred-3-workflow-development/</guid>
-      <description>Alfred is extremely popular to a lot of Mac users as a simple but powerful tool for automating tasks and many others. Since version 3, Alfred has been revamped with even cooler interfaces and features and good integrations with numerous third-party applications.</description>
-    </item>
     
     <item>
       <title>Bootstrapping macOS workspace</title>
-      <link>https://blog.test:8443/2018/06/bootstrapping-macos-workspace/</link>
+      <link>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/06/bootstrapping-macos-workspace/</guid>
+      <guid>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</guid>
       <description>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and lately MacBook Pro 13&amp;rdquo; and 15&amp;rdquo;. From time to time, Time Machine has become extremely handy for transferring my data from the old to the new machine.</description>
     </item>
     

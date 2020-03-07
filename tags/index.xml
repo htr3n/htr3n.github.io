@@ -2,1542 +2,1281 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on htr3n&#39;s</title>
-    <link>https://blog.test:8443/tags/</link>
+    <link>https://htr3n.github.io/tags/</link>
     <description>Recent content in Tags on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jul 2019 12:33:36 +1000</lastBuildDate>
     
-	<atom:link href="https://blog.test:8443/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://htr3n.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>golden ratio</title>
-      <link>https://blog.test:8443/tags/golden-ratio/</link>
-      <pubDate>Thu, 01 Jan 2099 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/golden-ratio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>typography</title>
-      <link>https://blog.test:8443/tags/typography/</link>
-      <pubDate>Thu, 01 Jan 2099 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/typography/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://blog.test:8443/tags/web/</link>
-      <pubDate>Thu, 01 Jan 2099 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/web/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>api</title>
-      <link>https://blog.test:8443/tags/api/</link>
+      <link>https://htr3n.github.io/tags/api/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/api/</guid>
+      <guid>https://htr3n.github.io/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chromium</title>
-      <link>https://blog.test:8443/tags/chromium/</link>
+      <link>https://htr3n.github.io/tags/chromium/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/chromium/</guid>
+      <guid>https://htr3n.github.io/tags/chromium/</guid>
       <description></description>
     </item>
     
     <item>
       <title>environment variables</title>
-      <link>https://blog.test:8443/tags/environment-variables/</link>
+      <link>https://htr3n.github.io/tags/environment-variables/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/environment-variables/</guid>
+      <guid>https://htr3n.github.io/tags/environment-variables/</guid>
       <description></description>
     </item>
     
     <item>
       <title>google</title>
-      <link>https://blog.test:8443/tags/google/</link>
+      <link>https://htr3n.github.io/tags/google/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/google/</guid>
+      <guid>https://htr3n.github.io/tags/google/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gui</title>
-      <link>https://blog.test:8443/tags/gui/</link>
+      <link>https://htr3n.github.io/tags/gui/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/gui/</guid>
+      <guid>https://htr3n.github.io/tags/gui/</guid>
       <description></description>
     </item>
     
     <item>
       <title>macOS</title>
-      <link>https://blog.test:8443/tags/macos/</link>
+      <link>https://htr3n.github.io/tags/macos/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/macos/</guid>
+      <guid>https://htr3n.github.io/tags/macos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>https://blog.test:8443/tags/shell/</link>
+      <link>https://htr3n.github.io/tags/shell/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>arch</title>
-      <link>https://blog.test:8443/tags/arch/</link>
-      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/arch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>boot</title>
-      <link>https://blog.test:8443/tags/boot/</link>
-      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/boot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fedora</title>
-      <link>https://blog.test:8443/tags/fedora/</link>
-      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/fedora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>multiple os</title>
-      <link>https://blog.test:8443/tags/multiple-os/</link>
-      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/multiple-os/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>t430s</title>
-      <link>https://blog.test:8443/tags/t430s/</link>
-      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/t430s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://blog.test:8443/tags/ubuntu/</link>
-      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>uefi</title>
-      <link>https://blog.test:8443/tags/uefi/</link>
-      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/uefi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://blog.test:8443/tags/windows/</link>
-      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/windows/</guid>
+      <guid>https://htr3n.github.io/tags/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bios</title>
-      <link>https://blog.test:8443/tags/bios/</link>
+      <link>https://htr3n.github.io/tags/bios/</link>
       <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/bios/</guid>
+      <guid>https://htr3n.github.io/tags/bios/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eeprom</title>
-      <link>https://blog.test:8443/tags/eeprom/</link>
+      <link>https://htr3n.github.io/tags/eeprom/</link>
       <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/eeprom/</guid>
+      <guid>https://htr3n.github.io/tags/eeprom/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lenovo</title>
-      <link>https://blog.test:8443/tags/lenovo/</link>
+      <link>https://htr3n.github.io/tags/lenovo/</link>
       <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/lenovo/</guid>
+      <guid>https://htr3n.github.io/tags/lenovo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>short-circuit</title>
-      <link>https://blog.test:8443/tags/short-circuit/</link>
+      <link>https://htr3n.github.io/tags/short-circuit/</link>
       <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/short-circuit/</guid>
+      <guid>https://htr3n.github.io/tags/short-circuit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>supervisor password</title>
-      <link>https://blog.test:8443/tags/supervisor-password/</link>
+      <link>https://htr3n.github.io/tags/supervisor-password/</link>
       <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/supervisor-password/</guid>
+      <guid>https://htr3n.github.io/tags/supervisor-password/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>austria</title>
-      <link>https://blog.test:8443/tags/austria/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
+      <title>t430s</title>
+      <link>https://htr3n.github.io/tags/t430s/</link>
+      <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/austria/</guid>
+      <guid>https://htr3n.github.io/tags/t430s/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>châu âu</title>
-      <link>https://blog.test:8443/tags/ch%C3%A2u-%C3%A2u/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
+      <title>uefi</title>
+      <link>https://htr3n.github.io/tags/uefi/</link>
+      <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
       
-      <guid>https://blog.test:8443/tags/ch%C3%A2u-%C3%A2u/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>driving</title>
-      <link>https://blog.test:8443/tags/driving/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/driving/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>europe</title>
-      <link>https://blog.test:8443/tags/europe/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/europe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>giao thông</title>
-      <link>https://blog.test:8443/tags/giao-th%C3%B4ng/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/giao-th%C3%B4ng/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>law</title>
-      <link>https://blog.test:8443/tags/law/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/law/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>license</title>
-      <link>https://blog.test:8443/tags/license/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/license/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>luật</title>
-      <link>https://blog.test:8443/tags/lu%E1%BA%ADt/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/lu%E1%BA%ADt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lái xe</title>
-      <link>https://blog.test:8443/tags/l%C3%A1i-xe/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/l%C3%A1i-xe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>traffic</title>
-      <link>https://blog.test:8443/tags/traffic/</link>
-      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/traffic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>việt nam</title>
-      <link>https://blog.test:8443/tags/vi%E1%BB%87t-nam/</link>
-      <pubDate>Wed, 27 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/vi%E1%BB%87t-nam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apache-cxf</title>
-      <link>https://blog.test:8443/tags/apache-cxf/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/apache-cxf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>autowired</title>
-      <link>https://blog.test:8443/tags/autowired/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/autowired/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dependency injection</title>
-      <link>https://blog.test:8443/tags/dependency-injection/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/dependency-injection/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jax-ws</title>
-      <link>https://blog.test:8443/tags/jax-ws/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/jax-ws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spring boot</title>
-      <link>https://blog.test:8443/tags/spring-boot/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/spring-boot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spring-framework</title>
-      <link>https://blog.test:8443/tags/spring-framework/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/spring-framework/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web-service</title>
-      <link>https://blog.test:8443/tags/web-service/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/web-service/</guid>
+      <guid>https://htr3n.github.io/tags/uefi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jsp</title>
-      <link>https://blog.test:8443/tags/jsp/</link>
+      <link>https://htr3n.github.io/tags/jsp/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/jsp/</guid>
+      <guid>https://htr3n.github.io/tags/jsp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring boot</title>
+      <link>https://htr3n.github.io/tags/spring-boot/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring-framework</title>
+      <link>https://htr3n.github.io/tags/spring-framework/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/spring-framework/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tomcat</title>
-      <link>https://blog.test:8443/tags/tomcat/</link>
+      <link>https://htr3n.github.io/tags/tomcat/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/tomcat/</guid>
+      <guid>https://htr3n.github.io/tags/tomcat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>validation</title>
-      <link>https://blog.test:8443/tags/validation/</link>
+      <link>https://htr3n.github.io/tags/validation/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/validation/</guid>
+      <guid>https://htr3n.github.io/tags/validation/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>database</title>
-      <link>https://blog.test:8443/tags/database/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      <title>web</title>
+      <link>https://htr3n.github.io/tags/web/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gulp</title>
-      <link>https://blog.test:8443/tags/gulp/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/gulp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hibernate</title>
-      <link>https://blog.test:8443/tags/hibernate/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/hibernate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>https://blog.test:8443/tags/java/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://blog.test:8443/tags/javascript/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mvc</title>
-      <link>https://blog.test:8443/tags/mvc/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/mvc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>node.js</title>
-      <link>https://blog.test:8443/tags/node.js/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/node.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>npm</title>
-      <link>https://blog.test:8443/tags/npm/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/npm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>orm</title>
-      <link>https://blog.test:8443/tags/orm/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/orm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>react</title>
-      <link>https://blog.test:8443/tags/react/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>servlet</title>
-      <link>https://blog.test:8443/tags/servlet/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/servlet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spring-web</title>
-      <link>https://blog.test:8443/tags/spring-web/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/spring-web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>state management</title>
-      <link>https://blog.test:8443/tags/state-management/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/state-management/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>yarn</title>
-      <link>https://blog.test:8443/tags/yarn/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/yarn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>alfred</title>
-      <link>https://blog.test:8443/tags/alfred/</link>
-      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/alfred/</guid>
+      <guid>https://htr3n.github.io/tags/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>auto-configuration</title>
-      <link>https://blog.test:8443/tags/auto-configuration/</link>
+      <link>https://htr3n.github.io/tags/auto-configuration/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/auto-configuration/</guid>
+      <guid>https://htr3n.github.io/tags/auto-configuration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>convention over configuration</title>
-      <link>https://blog.test:8443/tags/convention-over-configuration/</link>
+      <link>https://htr3n.github.io/tags/convention-over-configuration/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/convention-over-configuration/</guid>
+      <guid>https://htr3n.github.io/tags/convention-over-configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dependency injection</title>
+      <link>https://htr3n.github.io/tags/dependency-injection/</link>
+      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/dependency-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://htr3n.github.io/tags/java/</link>
+      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>productivity</title>
-      <link>https://blog.test:8443/tags/productivity/</link>
+      <link>https://htr3n.github.io/tags/productivity/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/productivity/</guid>
+      <guid>https://htr3n.github.io/tags/productivity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>software design</title>
-      <link>https://blog.test:8443/tags/software-design/</link>
+      <link>https://htr3n.github.io/tags/software-design/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/software-design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>workflow</title>
-      <link>https://blog.test:8443/tags/workflow/</link>
-      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/tags/workflow/</guid>
+      <guid>https://htr3n.github.io/tags/software-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bug</title>
-      <link>https://blog.test:8443/tags/bug/</link>
+      <link>https://htr3n.github.io/tags/bug/</link>
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/bug/</guid>
+      <guid>https://htr3n.github.io/tags/bug/</guid>
       <description></description>
     </item>
     
     <item>
       <title>properties</title>
-      <link>https://blog.test:8443/tags/properties/</link>
+      <link>https://htr3n.github.io/tags/properties/</link>
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/properties/</guid>
+      <guid>https://htr3n.github.io/tags/properties/</guid>
       <description></description>
     </item>
     
     <item>
       <title>trailing whitespaces</title>
-      <link>https://blog.test:8443/tags/trailing-whitespaces/</link>
+      <link>https://htr3n.github.io/tags/trailing-whitespaces/</link>
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/trailing-whitespaces/</guid>
+      <guid>https://htr3n.github.io/tags/trailing-whitespaces/</guid>
       <description></description>
     </item>
     
     <item>
       <title>trimming</title>
-      <link>https://blog.test:8443/tags/trimming/</link>
+      <link>https://htr3n.github.io/tags/trimming/</link>
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/trimming/</guid>
+      <guid>https://htr3n.github.io/tags/trimming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://htr3n.github.io/tags/database/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jdbc</title>
-      <link>https://blog.test:8443/tags/jdbc/</link>
+      <link>https://htr3n.github.io/tags/jdbc/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/jdbc/</guid>
+      <guid>https://htr3n.github.io/tags/jdbc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jdbctemplate</title>
-      <link>https://blog.test:8443/tags/jdbctemplate/</link>
+      <link>https://htr3n.github.io/tags/jdbctemplate/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/jdbctemplate/</guid>
+      <guid>https://htr3n.github.io/tags/jdbctemplate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>junit</title>
-      <link>https://blog.test:8443/tags/junit/</link>
+      <link>https://htr3n.github.io/tags/junit/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/junit/</guid>
+      <guid>https://htr3n.github.io/tags/junit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unit test</title>
-      <link>https://blog.test:8443/tags/unit-test/</link>
+      <link>https://htr3n.github.io/tags/unit-test/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/unit-test/</guid>
+      <guid>https://htr3n.github.io/tags/unit-test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>csv</title>
-      <link>https://blog.test:8443/tags/csv/</link>
+      <link>https://htr3n.github.io/tags/csv/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/csv/</guid>
+      <guid>https://htr3n.github.io/tags/csv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>json</title>
-      <link>https://blog.test:8443/tags/json/</link>
+      <link>https://htr3n.github.io/tags/json/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/json/</guid>
+      <guid>https://htr3n.github.io/tags/json/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>https://blog.test:8443/tags/markdown/</link>
+      <link>https://htr3n.github.io/tags/markdown/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/markdown/</guid>
+      <guid>https://htr3n.github.io/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>qlcolorcode</title>
-      <link>https://blog.test:8443/tags/qlcolorcode/</link>
+      <link>https://htr3n.github.io/tags/qlcolorcode/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/qlcolorcode/</guid>
+      <guid>https://htr3n.github.io/tags/qlcolorcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>qlmanage</title>
-      <link>https://blog.test:8443/tags/qlmanage/</link>
+      <link>https://htr3n.github.io/tags/qlmanage/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/qlmanage/</guid>
+      <guid>https://htr3n.github.io/tags/qlmanage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>qlstephen</title>
-      <link>https://blog.test:8443/tags/qlstephen/</link>
+      <link>https://htr3n.github.io/tags/qlstephen/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/qlstephen/</guid>
+      <guid>https://htr3n.github.io/tags/qlstephen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>quicklook</title>
-      <link>https://blog.test:8443/tags/quicklook/</link>
+      <link>https://htr3n.github.io/tags/quicklook/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/quicklook/</guid>
+      <guid>https://htr3n.github.io/tags/quicklook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zip</title>
-      <link>https://blog.test:8443/tags/zip/</link>
+      <link>https://htr3n.github.io/tags/zip/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/zip/</guid>
+      <guid>https://htr3n.github.io/tags/zip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>performance</title>
-      <link>https://blog.test:8443/tags/performance/</link>
+      <link>https://htr3n.github.io/tags/performance/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/performance/</guid>
+      <guid>https://htr3n.github.io/tags/performance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zsh</title>
-      <link>https://blog.test:8443/tags/zsh/</link>
+      <link>https://htr3n.github.io/tags/zsh/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/zsh/</guid>
+      <guid>https://htr3n.github.io/tags/zsh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>https://blog.test:8443/tags/css/</link>
+      <link>https://htr3n.github.io/tags/css/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/css/</guid>
+      <guid>https://htr3n.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gulp</title>
+      <link>https://htr3n.github.io/tags/gulp/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/gulp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://blog.test:8443/tags/hugo/</link>
+      <link>https://htr3n.github.io/tags/hugo/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/hugo/</guid>
+      <guid>https://htr3n.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>minification</title>
-      <link>https://blog.test:8443/tags/minification/</link>
+      <link>https://htr3n.github.io/tags/minification/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/minification/</guid>
+      <guid>https://htr3n.github.io/tags/minification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npm</title>
+      <link>https://htr3n.github.io/tags/npm/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/npm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sass</title>
-      <link>https://blog.test:8443/tags/sass/</link>
+      <link>https://htr3n.github.io/tags/sass/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/sass/</guid>
+      <guid>https://htr3n.github.io/tags/sass/</guid>
       <description></description>
     </item>
     
     <item>
       <title>1password</title>
-      <link>https://blog.test:8443/tags/1password/</link>
+      <link>https://htr3n.github.io/tags/1password/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/1password/</guid>
+      <guid>https://htr3n.github.io/tags/1password/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ack</title>
-      <link>https://blog.test:8443/tags/ack/</link>
+      <link>https://htr3n.github.io/tags/ack/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/ack/</guid>
+      <guid>https://htr3n.github.io/tags/ack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alfred</title>
+      <link>https://htr3n.github.io/tags/alfred/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/alfred/</guid>
       <description></description>
     </item>
     
     <item>
       <title>f.lux</title>
-      <link>https://blog.test:8443/tags/f.lux/</link>
+      <link>https://htr3n.github.io/tags/f.lux/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/f.lux/</guid>
+      <guid>https://htr3n.github.io/tags/f.lux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gatekeeper</title>
-      <link>https://blog.test:8443/tags/gatekeeper/</link>
+      <link>https://htr3n.github.io/tags/gatekeeper/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/gatekeeper/</guid>
+      <guid>https://htr3n.github.io/tags/gatekeeper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>homebrew</title>
-      <link>https://blog.test:8443/tags/homebrew/</link>
+      <link>https://htr3n.github.io/tags/homebrew/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/homebrew/</guid>
+      <guid>https://htr3n.github.io/tags/homebrew/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iterm</title>
-      <link>https://blog.test:8443/tags/iterm/</link>
+      <link>https://htr3n.github.io/tags/iterm/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/iterm/</guid>
+      <guid>https://htr3n.github.io/tags/iterm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>keybase</title>
-      <link>https://blog.test:8443/tags/keybase/</link>
+      <link>https://htr3n.github.io/tags/keybase/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/keybase/</guid>
+      <guid>https://htr3n.github.io/tags/keybase/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sip</title>
-      <link>https://blog.test:8443/tags/sip/</link>
+      <link>https://htr3n.github.io/tags/sip/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/sip/</guid>
+      <guid>https://htr3n.github.io/tags/sip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>skype</title>
-      <link>https://blog.test:8443/tags/skype/</link>
+      <link>https://htr3n.github.io/tags/skype/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/skype/</guid>
+      <guid>https://htr3n.github.io/tags/skype/</guid>
       <description></description>
     </item>
     
     <item>
       <title>spectacle</title>
-      <link>https://blog.test:8443/tags/spectacle/</link>
+      <link>https://htr3n.github.io/tags/spectacle/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/spectacle/</guid>
+      <guid>https://htr3n.github.io/tags/spectacle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://blog.test:8443/tags/ssh/</link>
+      <link>https://htr3n.github.io/tags/ssh/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/ssh/</guid>
+      <guid>https://htr3n.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>typora</title>
-      <link>https://blog.test:8443/tags/typora/</link>
+      <link>https://htr3n.github.io/tags/typora/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/typora/</guid>
+      <guid>https://htr3n.github.io/tags/typora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache-cxf</title>
+      <link>https://htr3n.github.io/tags/apache-cxf/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/apache-cxf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jaxws</title>
-      <link>https://blog.test:8443/tags/jaxws/</link>
+      <link>https://htr3n.github.io/tags/jaxws/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/jaxws/</guid>
+      <guid>https://htr3n.github.io/tags/jaxws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>migration</title>
-      <link>https://blog.test:8443/tags/migration/</link>
+      <link>https://htr3n.github.io/tags/migration/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/migration/</guid>
+      <guid>https://htr3n.github.io/tags/migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web-service</title>
+      <link>https://htr3n.github.io/tags/web-service/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/web-service/</guid>
       <description></description>
     </item>
     
     <item>
       <title>wsdl2java</title>
-      <link>https://blog.test:8443/tags/wsdl2java/</link>
+      <link>https://htr3n.github.io/tags/wsdl2java/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/wsdl2java/</guid>
+      <guid>https://htr3n.github.io/tags/wsdl2java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dev</title>
-      <link>https://blog.test:8443/tags/dev/</link>
+      <link>https://htr3n.github.io/tags/dev/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/dev/</guid>
+      <guid>https://htr3n.github.io/tags/dev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gentelella</title>
-      <link>https://blog.test:8443/tags/gentelella/</link>
+      <link>https://htr3n.github.io/tags/gentelella/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/gentelella/</guid>
+      <guid>https://htr3n.github.io/tags/gentelella/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://htr3n.github.io/tags/javascript/</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>laravel</title>
-      <link>https://blog.test:8443/tags/laravel/</link>
+      <link>https://htr3n.github.io/tags/laravel/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/laravel/</guid>
+      <guid>https://htr3n.github.io/tags/laravel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php</title>
-      <link>https://blog.test:8443/tags/php/</link>
+      <link>https://htr3n.github.io/tags/php/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/php/</guid>
+      <guid>https://htr3n.github.io/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>theme</title>
-      <link>https://blog.test:8443/tags/theme/</link>
+      <link>https://htr3n.github.io/tags/theme/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/theme/</guid>
+      <guid>https://htr3n.github.io/tags/theme/</guid>
       <description></description>
     </item>
     
     <item>
       <title>webpack</title>
-      <link>https://blog.test:8443/tags/webpack/</link>
+      <link>https://htr3n.github.io/tags/webpack/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/webpack/</guid>
+      <guid>https://htr3n.github.io/tags/webpack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dependency-management</title>
-      <link>https://blog.test:8443/tags/dependency-management/</link>
+      <link>https://htr3n.github.io/tags/dependency-management/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/dependency-management/</guid>
+      <guid>https://htr3n.github.io/tags/dependency-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node.js</title>
+      <link>https://htr3n.github.io/tags/node.js/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/node.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>package-management</title>
-      <link>https://blog.test:8443/tags/package-management/</link>
+      <link>https://htr3n.github.io/tags/package-management/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/package-management/</guid>
+      <guid>https://htr3n.github.io/tags/package-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yarn</title>
+      <link>https://htr3n.github.io/tags/yarn/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/yarn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>https://blog.test:8443/tags/golang/</link>
+      <link>https://htr3n.github.io/tags/golang/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/golang/</guid>
+      <guid>https://htr3n.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>isset</title>
-      <link>https://blog.test:8443/tags/isset/</link>
+      <link>https://htr3n.github.io/tags/isset/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/isset/</guid>
+      <guid>https://htr3n.github.io/tags/isset/</guid>
       <description></description>
     </item>
     
     <item>
       <title>with</title>
-      <link>https://blog.test:8443/tags/with/</link>
+      <link>https://htr3n.github.io/tags/with/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/with/</guid>
+      <guid>https://htr3n.github.io/tags/with/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bundler</title>
-      <link>https://blog.test:8443/tags/bundler/</link>
+      <link>https://htr3n.github.io/tags/bundler/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/bundler/</guid>
+      <guid>https://htr3n.github.io/tags/bundler/</guid>
       <description></description>
     </item>
     
     <item>
       <title>module</title>
-      <link>https://blog.test:8443/tags/module/</link>
+      <link>https://htr3n.github.io/tags/module/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/module/</guid>
+      <guid>https://htr3n.github.io/tags/module/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>https://blog.test:8443/tags/jekyll/</link>
+      <link>https://htr3n.github.io/tags/jekyll/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/jekyll/</guid>
+      <guid>https://htr3n.github.io/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>static site generators</title>
-      <link>https://blog.test:8443/tags/static-site-generators/</link>
+      <link>https://htr3n.github.io/tags/static-site-generators/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/static-site-generators/</guid>
+      <guid>https://htr3n.github.io/tags/static-site-generators/</guid>
       <description></description>
     </item>
     
     <item>
       <title>laramod</title>
-      <link>https://blog.test:8443/tags/laramod/</link>
+      <link>https://htr3n.github.io/tags/laramod/</link>
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/laramod/</guid>
+      <guid>https://htr3n.github.io/tags/laramod/</guid>
       <description></description>
     </item>
     
     <item>
       <title>modularisation</title>
-      <link>https://blog.test:8443/tags/modularisation/</link>
+      <link>https://htr3n.github.io/tags/modularisation/</link>
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/modularisation/</guid>
+      <guid>https://htr3n.github.io/tags/modularisation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>refactor</title>
-      <link>https://blog.test:8443/tags/refactor/</link>
+      <link>https://htr3n.github.io/tags/refactor/</link>
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/refactor/</guid>
+      <guid>https://htr3n.github.io/tags/refactor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fallacy</title>
-      <link>https://blog.test:8443/tags/fallacy/</link>
+      <link>https://htr3n.github.io/tags/fallacy/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/fallacy/</guid>
+      <guid>https://htr3n.github.io/tags/fallacy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ngụy biện</title>
-      <link>https://blog.test:8443/tags/ng%E1%BB%A5y-bi%E1%BB%87n/</link>
+      <link>https://htr3n.github.io/tags/ng%E1%BB%A5y-bi%E1%BB%87n/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/ng%E1%BB%A5y-bi%E1%BB%87n/</guid>
+      <guid>https://htr3n.github.io/tags/ng%E1%BB%A5y-bi%E1%BB%87n/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dnsmasq</title>
-      <link>https://blog.test:8443/tags/dnsmasq/</link>
+      <link>https://htr3n.github.io/tags/dnsmasq/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/dnsmasq/</guid>
+      <guid>https://htr3n.github.io/tags/dnsmasq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>httpd</title>
-      <link>https://blog.test:8443/tags/httpd/</link>
+      <link>https://htr3n.github.io/tags/httpd/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/httpd/</guid>
+      <guid>https://htr3n.github.io/tags/httpd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>server</title>
-      <link>https://blog.test:8443/tags/server/</link>
+      <link>https://htr3n.github.io/tags/server/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/server/</guid>
+      <guid>https://htr3n.github.io/tags/server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dạy con</title>
-      <link>https://blog.test:8443/tags/d%E1%BA%A1y-con/</link>
+      <link>https://htr3n.github.io/tags/d%E1%BA%A1y-con/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/d%E1%BA%A1y-con/</guid>
+      <guid>https://htr3n.github.io/tags/d%E1%BA%A1y-con/</guid>
       <description></description>
     </item>
     
     <item>
       <title>family</title>
-      <link>https://blog.test:8443/tags/family/</link>
+      <link>https://htr3n.github.io/tags/family/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/family/</guid>
+      <guid>https://htr3n.github.io/tags/family/</guid>
       <description></description>
     </item>
     
     <item>
       <title>parenting</title>
-      <link>https://blog.test:8443/tags/parenting/</link>
+      <link>https://htr3n.github.io/tags/parenting/</link>
       <pubDate>Wed, 01 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/parenting/</guid>
+      <guid>https://htr3n.github.io/tags/parenting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>english</title>
-      <link>https://blog.test:8443/tags/english/</link>
+      <link>https://htr3n.github.io/tags/english/</link>
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/english/</guid>
+      <guid>https://htr3n.github.io/tags/english/</guid>
       <description></description>
     </item>
     
     <item>
       <title>transitional words</title>
-      <link>https://blog.test:8443/tags/transitional-words/</link>
+      <link>https://htr3n.github.io/tags/transitional-words/</link>
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/transitional-words/</guid>
+      <guid>https://htr3n.github.io/tags/transitional-words/</guid>
       <description></description>
     </item>
     
     <item>
       <title>writing</title>
-      <link>https://blog.test:8443/tags/writing/</link>
+      <link>https://htr3n.github.io/tags/writing/</link>
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/writing/</guid>
+      <guid>https://htr3n.github.io/tags/writing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bibliography</title>
-      <link>https://blog.test:8443/tags/bibliography/</link>
+      <link>https://htr3n.github.io/tags/bibliography/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/bibliography/</guid>
+      <guid>https://htr3n.github.io/tags/bibliography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>citation</title>
-      <link>https://blog.test:8443/tags/citation/</link>
+      <link>https://htr3n.github.io/tags/citation/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/citation/</guid>
+      <guid>https://htr3n.github.io/tags/citation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cite</title>
-      <link>https://blog.test:8443/tags/cite/</link>
+      <link>https://htr3n.github.io/tags/cite/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/cite/</guid>
+      <guid>https://htr3n.github.io/tags/cite/</guid>
       <description></description>
     </item>
     
     <item>
       <title>critical thinking</title>
-      <link>https://blog.test:8443/tags/critical-thinking/</link>
+      <link>https://htr3n.github.io/tags/critical-thinking/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/critical-thinking/</guid>
+      <guid>https://htr3n.github.io/tags/critical-thinking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hyperref</title>
-      <link>https://blog.test:8443/tags/hyperref/</link>
+      <link>https://htr3n.github.io/tags/hyperref/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/hyperref/</guid>
+      <guid>https://htr3n.github.io/tags/hyperref/</guid>
       <description></description>
     </item>
     
     <item>
       <title>natbib</title>
-      <link>https://blog.test:8443/tags/natbib/</link>
+      <link>https://htr3n.github.io/tags/natbib/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/natbib/</guid>
+      <guid>https://htr3n.github.io/tags/natbib/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tex</title>
-      <link>https://blog.test:8443/tags/tex/</link>
+      <link>https://htr3n.github.io/tags/tex/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/tex/</guid>
+      <guid>https://htr3n.github.io/tags/tex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>children</title>
-      <link>https://blog.test:8443/tags/children/</link>
+      <link>https://htr3n.github.io/tags/children/</link>
       <pubDate>Sun, 28 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/children/</guid>
+      <guid>https://htr3n.github.io/tags/children/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chính trị</title>
-      <link>https://blog.test:8443/tags/ch%C3%ADnh-tr%E1%BB%8B/</link>
+      <link>https://htr3n.github.io/tags/ch%C3%ADnh-tr%E1%BB%8B/</link>
       <pubDate>Sun, 28 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/ch%C3%ADnh-tr%E1%BB%8B/</guid>
+      <guid>https://htr3n.github.io/tags/ch%C3%ADnh-tr%E1%BB%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gia đình</title>
-      <link>https://blog.test:8443/tags/gia-%C4%91%C3%ACnh/</link>
+      <link>https://htr3n.github.io/tags/gia-%C4%91%C3%ACnh/</link>
       <pubDate>Sun, 28 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/gia-%C4%91%C3%ACnh/</guid>
+      <guid>https://htr3n.github.io/tags/gia-%C4%91%C3%ACnh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>trẻ em</title>
-      <link>https://blog.test:8443/tags/tr%E1%BA%BB-em/</link>
+      <link>https://htr3n.github.io/tags/tr%E1%BA%BB-em/</link>
       <pubDate>Sun, 28 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/tr%E1%BA%BB-em/</guid>
+      <guid>https://htr3n.github.io/tags/tr%E1%BA%BB-em/</guid>
       <description></description>
     </item>
     
     <item>
       <title>du học</title>
-      <link>https://blog.test:8443/tags/du-h%E1%BB%8Dc/</link>
+      <link>https://htr3n.github.io/tags/du-h%E1%BB%8Dc/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/du-h%E1%BB%8Dc/</guid>
+      <guid>https://htr3n.github.io/tags/du-h%E1%BB%8Dc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>niềm tin</title>
-      <link>https://blog.test:8443/tags/ni%E1%BB%81m-tin/</link>
+      <link>https://htr3n.github.io/tags/ni%E1%BB%81m-tin/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/ni%E1%BB%81m-tin/</guid>
+      <guid>https://htr3n.github.io/tags/ni%E1%BB%81m-tin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>politics</title>
-      <link>https://blog.test:8443/tags/politics/</link>
+      <link>https://htr3n.github.io/tags/politics/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/politics/</guid>
+      <guid>https://htr3n.github.io/tags/politics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>quyền im lặng</title>
-      <link>https://blog.test:8443/tags/quy%E1%BB%81n-im-l%E1%BA%B7ng/</link>
+      <link>https://htr3n.github.io/tags/quy%E1%BB%81n-im-l%E1%BA%B7ng/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/quy%E1%BB%81n-im-l%E1%BA%B7ng/</guid>
+      <guid>https://htr3n.github.io/tags/quy%E1%BB%81n-im-l%E1%BA%B7ng/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rants</title>
-      <link>https://blog.test:8443/tags/rants/</link>
+      <link>https://htr3n.github.io/tags/rants/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/rants/</guid>
+      <guid>https://htr3n.github.io/tags/rants/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sinh viên</title>
-      <link>https://blog.test:8443/tags/sinh-vi%C3%AAn/</link>
+      <link>https://htr3n.github.io/tags/sinh-vi%C3%AAn/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/sinh-vi%C3%AAn/</guid>
+      <guid>https://htr3n.github.io/tags/sinh-vi%C3%AAn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sổ hộ khẩu</title>
-      <link>https://blog.test:8443/tags/s%E1%BB%95-h%E1%BB%99-kh%E1%BA%A9u/</link>
+      <link>https://htr3n.github.io/tags/s%E1%BB%95-h%E1%BB%99-kh%E1%BA%A9u/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/s%E1%BB%95-h%E1%BB%99-kh%E1%BA%A9u/</guid>
+      <guid>https://htr3n.github.io/tags/s%E1%BB%95-h%E1%BB%99-kh%E1%BA%A9u/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tinh thần phản biện</title>
-      <link>https://blog.test:8443/tags/tinh-th%E1%BA%A7n-ph%E1%BA%A3n-bi%E1%BB%87n/</link>
+      <link>https://htr3n.github.io/tags/tinh-th%E1%BA%A7n-ph%E1%BA%A3n-bi%E1%BB%87n/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/tinh-th%E1%BA%A7n-ph%E1%BA%A3n-bi%E1%BB%87n/</guid>
+      <guid>https://htr3n.github.io/tags/tinh-th%E1%BA%A7n-ph%E1%BA%A3n-bi%E1%BB%87n/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tranh luận</title>
-      <link>https://blog.test:8443/tags/tranh-lu%E1%BA%ADn/</link>
+      <link>https://htr3n.github.io/tags/tranh-lu%E1%BA%ADn/</link>
       <pubDate>Sat, 27 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/tranh-lu%E1%BA%ADn/</guid>
+      <guid>https://htr3n.github.io/tags/tranh-lu%E1%BA%ADn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>atom</title>
-      <link>https://blog.test:8443/tags/atom/</link>
+      <link>https://htr3n.github.io/tags/atom/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/atom/</guid>
+      <guid>https://htr3n.github.io/tags/atom/</guid>
       <description></description>
     </item>
     
     <item>
       <title>newsreader</title>
-      <link>https://blog.test:8443/tags/newsreader/</link>
+      <link>https://htr3n.github.io/tags/newsreader/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/newsreader/</guid>
+      <guid>https://htr3n.github.io/tags/newsreader/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rss</title>
-      <link>https://blog.test:8443/tags/rss/</link>
+      <link>https://htr3n.github.io/tags/rss/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/rss/</guid>
+      <guid>https://htr3n.github.io/tags/rss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>thông tin</title>
-      <link>https://blog.test:8443/tags/th%C3%B4ng-tin/</link>
+      <link>https://htr3n.github.io/tags/th%C3%B4ng-tin/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/th%C3%B4ng-tin/</guid>
+      <guid>https://htr3n.github.io/tags/th%C3%B4ng-tin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unicode</title>
-      <link>https://blog.test:8443/tags/unicode/</link>
+      <link>https://htr3n.github.io/tags/unicode/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/unicode/</guid>
+      <guid>https://htr3n.github.io/tags/unicode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vietnamese</title>
-      <link>https://blog.test:8443/tags/vietnamese/</link>
+      <link>https://htr3n.github.io/tags/vietnamese/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/vietnamese/</guid>
+      <guid>https://htr3n.github.io/tags/vietnamese/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apple</title>
-      <link>https://blog.test:8443/tags/apple/</link>
+      <link>https://htr3n.github.io/tags/apple/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/apple/</guid>
+      <guid>https://htr3n.github.io/tags/apple/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iPhone</title>
-      <link>https://blog.test:8443/tags/iphone/</link>
+      <link>https://htr3n.github.io/tags/iphone/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/iphone/</guid>
+      <guid>https://htr3n.github.io/tags/iphone/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tech</title>
-      <link>https://blog.test:8443/tags/tech/</link>
+      <link>https://htr3n.github.io/tags/tech/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/tech/</guid>
+      <guid>https://htr3n.github.io/tags/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>táo</title>
-      <link>https://blog.test:8443/tags/t%C3%A1o/</link>
+      <link>https://htr3n.github.io/tags/t%C3%A1o/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/t%C3%A1o/</guid>
+      <guid>https://htr3n.github.io/tags/t%C3%A1o/</guid>
       <description></description>
     </item>
     
     <item>
       <title>điện thoại</title>
-      <link>https://blog.test:8443/tags/%C4%91i%E1%BB%87n-tho%E1%BA%A1i/</link>
+      <link>https://htr3n.github.io/tags/%C4%91i%E1%BB%87n-tho%E1%BA%A1i/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/%C4%91i%E1%BB%87n-tho%E1%BA%A1i/</guid>
+      <guid>https://htr3n.github.io/tags/%C4%91i%E1%BB%87n-tho%E1%BA%A1i/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dell</title>
-      <link>https://blog.test:8443/tags/dell/</link>
+      <link>https://htr3n.github.io/tags/dell/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/dell/</guid>
+      <guid>https://htr3n.github.io/tags/dell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hp</title>
-      <link>https://blog.test:8443/tags/hp/</link>
+      <link>https://htr3n.github.io/tags/hp/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/hp/</guid>
+      <guid>https://htr3n.github.io/tags/hp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ibm</title>
-      <link>https://blog.test:8443/tags/ibm/</link>
+      <link>https://htr3n.github.io/tags/ibm/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/ibm/</guid>
+      <guid>https://htr3n.github.io/tags/ibm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kinh nghiệm</title>
-      <link>https://blog.test:8443/tags/kinh-nghi%E1%BB%87m/</link>
+      <link>https://htr3n.github.io/tags/kinh-nghi%E1%BB%87m/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/kinh-nghi%E1%BB%87m/</guid>
+      <guid>https://htr3n.github.io/tags/kinh-nghi%E1%BB%87m/</guid>
       <description></description>
     </item>
     
     <item>
       <title>laptop</title>
-      <link>https://blog.test:8443/tags/laptop/</link>
+      <link>https://htr3n.github.io/tags/laptop/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/laptop/</guid>
+      <guid>https://htr3n.github.io/tags/laptop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>macbook</title>
-      <link>https://blog.test:8443/tags/macbook/</link>
+      <link>https://htr3n.github.io/tags/macbook/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/macbook/</guid>
+      <guid>https://htr3n.github.io/tags/macbook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>máy tính xách tay</title>
-      <link>https://blog.test:8443/tags/m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay/</link>
+      <link>https://htr3n.github.io/tags/m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay/</guid>
+      <guid>https://htr3n.github.io/tags/m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sony</title>
-      <link>https://blog.test:8443/tags/sony/</link>
+      <link>https://htr3n.github.io/tags/sony/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/sony/</guid>
+      <guid>https://htr3n.github.io/tags/sony/</guid>
       <description></description>
     </item>
     
     <item>
       <title>date/time</title>
-      <link>https://blog.test:8443/tags/date/time/</link>
+      <link>https://htr3n.github.io/tags/date/time/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/tags/date/time/</guid>
+      <guid>https://htr3n.github.io/tags/date/time/</guid>
       <description></description>
     </item>
     

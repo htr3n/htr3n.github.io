@@ -2,91 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>spring-framework on htr3n&#39;s</title>
-    <link>https://blog.test:8443/tags/spring-framework/</link>
+    <link>https://htr3n.github.io/tags/spring-framework/</link>
     <description>Recent content in spring-framework on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.test:8443/tags/spring-framework/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://htr3n.github.io/tags/spring-framework/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Enabling Autowired for Apache CXF with Spring Boot</title>
-      <link>https://blog.test:8443/2019/01/enabling-autowired-for-apache-cxf-with-spring-boot/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/2019/01/enabling-autowired-for-apache-cxf-with-spring-boot/</guid>
-      <description>Bean Injection Problem Spring Context Hierarchy https://www.blackpepper.co.uk/blog/a-modular-architecture-with-spring-boot
-Database https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.java-config
-@EnableJpaRepositories
-https://springbootdev.com/2017/11/13/what-are-the-uses-of-entityscan-and-enablejparepositories-annotations/
-https://github.com/spring-projects/spring-boot/issues/8134
-@EntityScan
-https://raymondhlee.wordpress.com/tag/enablejparepositories</description>
-    </item>
     
     <item>
       <title>Making JSP work with Spring Boot 2</title>
-      <link>https://blog.test:8443/2018/12/jsp-spring-boot/</link>
+      <link>https://htr3n.github.io/2018/12/jsp-spring-boot/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/12/jsp-spring-boot/</guid>
+      <guid>https://htr3n.github.io/2018/12/jsp-spring-boot/</guid>
       <description>One of my past projects relied heavily on XML based configurations and JSP technologies dated back to Spring Framework 3.x. It is still working fine after upgrading to Spring 5 and corresponding dependent libraries such as Hibernate 5, HikariCP 3 and Apache CXF 3.</description>
     </item>
     
     <item>
-      <title>Hibernate: Migrating 3.x to 5.x</title>
-      <link>https://blog.test:8443/2018/12/migrating-hibernate/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/2018/12/migrating-hibernate/</guid>
-      <description>Recently I had to upgrade a codebase using Hibernate 3.x ORM on Spring 3 to Hibernate 5 (and Spring 5, respectively). Here I note down some aspects and issues that I have to deal with during this migration.</description>
-    </item>
-    
-    <item>
-      <title>Spring Web/MVC</title>
-      <link>https://blog.test:8443/2018/12/spring-web/mvc/</link>
-      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.test:8443/2018/12/spring-web/mvc/</guid>
-      <description>Spring Web Servlet Lifecycle A Servlet lifecycle is managed by the container in which it has been deployed.
- https://docs.oracle.com/javaee/6/tutorial/doc/bnafi.html http://docs.jboss.org/jbossas/javadoc/7.1.2.Final/javax/servlet/Servlet.html  ContextLoaderListener This is the bootstrap listener to manipulate the Spring&amp;rsquo;s root WebApplicationContext (being shared by all servlets within the web application).</description>
-    </item>
-    
-    <item>
       <title>Tour de Spring Boot: DI meets CoC</title>
-      <link>https://blog.test:8443/2018/12/spring-boot-di-meets-coc/</link>
+      <link>https://htr3n.github.io/2018/12/spring-boot-di-meets-coc/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/12/spring-boot-di-meets-coc/</guid>
+      <guid>https://htr3n.github.io/2018/12/spring-boot-di-meets-coc/</guid>
       <description>I started using Spring framework few years back in 2009 to develop demo systems for some EU projects. These projects featured a number of Web services some of which share back-end databases and some other talk to external services or WS-BPEL business processes.</description>
     </item>
     
     <item>
       <title>Spring Boot properties issues with trailing whitespaces</title>
-      <link>https://blog.test:8443/2018/11/spring-boot-trailing-whitespaces/</link>
+      <link>https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/</link>
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/11/spring-boot-trailing-whitespaces/</guid>
+      <guid>https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/</guid>
       <description>__TL;DR:__Spring Boot does not trim off the trailing whitespaces in *.properties that in turn might lead to some unexpected errors. As the Spring development team decides to not fix this issue, we can configure code editors to avoid some similar problems.</description>
     </item>
     
     <item>
       <title>Back to basics: Test-driven Spring JDBC</title>
-      <link>https://blog.test:8443/2018/11/test-driven-spring-jdbc/</link>
+      <link>https://htr3n.github.io/2018/11/test-driven-spring-jdbc/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/11/test-driven-spring-jdbc/</guid>
+      <guid>https://htr3n.github.io/2018/11/test-driven-spring-jdbc/</guid>
       <description>Spring is a popular heavy-weight framework for developing Java/Groovy based applications. Its rich libraries and software stack can cover from front-end to back-end development. In 2009 I used Spring Framework 3 to develop web services and MVC + Hibernate portal for a fictious loan approval process.</description>
     </item>
     
     <item>
       <title>A journey from Apache CXF 2.2 to 3.2</title>
-      <link>https://blog.test:8443/2018/06/apache-cxf-2-to-3/</link>
+      <link>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.test:8443/2018/06/apache-cxf-2-to-3/</guid>
+      <guid>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</guid>
       <description>I have used Apache CXF 2.2 to develop Web services for some R&amp;amp;D projects that I took part in. At that time, it was a choice between Apache Axis/Axis2 and CXF (formerly Codehaus XFire project).</description>
     </item>
     

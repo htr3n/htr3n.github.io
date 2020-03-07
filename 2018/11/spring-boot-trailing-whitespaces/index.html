@@ -1,236 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    
-
-
-    <head>
-    <link href="https://gmpg.org/xfn/11" rel="profile">
-    <meta charset="utf-8">
+<head>
+<link href="https://gmpg.org/xfn/11" rel="profile">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
-<!-- Enable responsiveness on mobile devices -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.66.0" />
-
-    
-    
-    
-
+<meta http-equiv="Cache-Control" content="public"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0"/>
 <title>Spring Boot properties issues with trailing whitespaces • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring Boot properties issues with trailing whitespaces"/>
 <meta name="twitter:description" content="An innocent invisible trailing whitespace in a Spring Boot properties file might cause complex Spring based applications go sideway. With some cautious settings of our code editors, we can avoid such a funny but rather embarrassing problem"/>
-
-<meta property="og:title" content="Spring Boot properties issues with trailing whitespaces" />
-<meta property="og:description" content="An innocent invisible trailing whitespace in a Spring Boot properties file might cause complex Spring based applications go sideway. With some cautious settings of our code editors, we can avoid such a funny but rather embarrassing problem" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.test:8443/2018/11/spring-boot-trailing-whitespaces/" />
-<meta property="article:published_time" content="2018-11-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2018-11-28T00:00:00+00:00" />
-
-
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
-
-
-
-
-
-<link rel="stylesheet" href="https://blog.test:8443/scss/hyde-hyde.css" >
-
-
-<link rel="stylesheet" href="https://blog.test:8443/scss/print.css" media="print">
-
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+<meta property="og:title" content="Spring Boot properties issues with trailing whitespaces"/>
+<meta property="og:description" content="An innocent invisible trailing whitespace in a Spring Boot properties file might cause complex Spring based applications go sideway. With some cautious settings of our code editors, we can avoid such a funny but rather embarrassing problem"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/"/>
+<meta property="article:published_time" content="2018-11-27T00:00:00+00:00"/>
+<meta property="article:modified_time" content="2018-11-28T00:00:00+00:00"/>
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/hyde-hyde.css">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/print.css" media="print">
+<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    
-    
-
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.png">
 </head>
-
-
-    <body class=" ">
-    
+<body class="">
 <div class="sidebar">
-  <div class="">
-    <div class="sidebar-about">
-      <span class="site__title">
-        <a href="https://blog.test:8443/">htr3n&#39;s</a>
-      </span>
-      
-      
-      
-      <div class="author-image">
-        <img src="https://blog.test:8443//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
-      </div>
-      
-      <p class="site__description">
-        
-      </p>
-    </div>
-    <div class="collapsible-menu">
-      <input type="checkbox" id="menuToggle">
-      <label for="menuToggle">htr3n&#39;s</label>
-      <div class="menu-content">
-        <div>
-	<ul class="sidebar-nav">
-		 
-		 
-			 
-				<li>
-					<a href="/posts/">
-						<span>Posts</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/portfolio/">
-						<span>Portfolio</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/vn/">
-						<span>Tiếng Việt</span>
-					</a>
-				</li>
-			 
-		 
-			 
-				<li>
-					<a href="/about/">
-						<span>About</span>
-					</a>
-				</li>
-			 
-		
-	</ul>
+<div class="">
+<div class="sidebar-about">
+<span class="site__title">
+<a href="https://htr3n.github.io/">htr3n&#39;s</a>
+</span>
+<div class="author-image">
+<img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
 </div>
-
-        <section class="social">
-	
-	<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	
-	
-	
-	<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-	
-	
-	<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	
-	<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
-	
+<p class="site__description">
+</p>
+</div>
+<div class="collapsible-menu">
+<input type="checkbox" id="menuToggle">
+<label for="menuToggle">htr3n&#39;s</label>
+<div class="menu-content">
+<div>
+<ul class="sidebar-nav">
+<li>
+<a href="/posts/">
+<span>Posts</span>
+</a>
+</li>
+<li>
+<a href="/portfolio/">
+<span>Portfolio</span>
+</a>
+</li>
+<li>
+<a href="/vn/">
+<span>Tiếng Việt</span>
+</a>
+</li>
+<li>
+<a href="/about/">
+<span>About</span>
+</a>
+</li>
+</ul>
+</div>
+<section class="social">
+<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 </section>
-
-      </div>
-    </div>
-    
-<div class="copyright">
-  &copy; 2020 htr3n
-  
-    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
-  
 </div>
-
-
+</div>
+<div class="copyright">
+&copy; 2020 htr3n
+<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+</div>
 <div class="builtwith">
 Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
 </div>
-
-
-  </div>
 </div>
-
-        <div class="content container">
-            
-    
+</div>
+<div class="content container">
 <article>
-  <header>
-    <h1>Spring Boot properties issues with trailing whitespaces</h1>
-    
-    
+<header>
+<h1>Spring Boot properties issues with trailing whitespaces</h1>
 <div class="post__meta">
-    
-    
-      <i class="fas fa-calendar-alt"></i> Nov 27, 2018
-    
-    
-    
-      
-      
-          in
-          
-          
-              <a class="badge badge-category" href="/categories/dev">DEV</a>
-              
-          
-      
-    
-    
-    
-      
-      
-          <br/>
-           <i class="fas fa-tags"></i>
-          
-          <a class="badge badge-tag" href="/tags/spring-framework">spring framework</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/properties">properties</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/bug">bug</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/trailing-whitespaces">trailing whitespaces</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/trimming">trimming</a>
-          
-      
-    
-    
-    <br/>
-    <i class="fas fa-clock"></i> 7 min read
+<i class="fas fa-calendar-alt"></i> Nov 27, 2018 in
+<a class="badge badge-category" href="/categories/dev">DEV</a>
+<br/>
+<i class="fas fa-tags"></i>
+<a class="badge badge-tag" href="/tags/spring-framework">spring framework</a>
+<a class="badge badge-tag" href="/tags/properties">properties</a>
+<a class="badge badge-tag" href="/tags/bug">bug</a>
+<a class="badge badge-tag" href="/tags/trailing-whitespaces">trailing whitespaces</a>
+<a class="badge badge-tag" href="/tags/trimming">trimming</a>
+<br/>
+<i class="fas fa-clock"></i> 7 min read
 </div>
-
-
-  </header>
-  
-  
-  <div class="post">
-    <blockquote>
-<p>__TL;DR:__<!-- raw HTML omitted -->Spring Boot does not trim off the <a href="#root-causes">trailing whitespaces in <code>*.properties</code></a> that in turn might lead to some <a href="#problem">unexpected errors</a>. As the Spring development team decides to <a href="https://github.com/spring-projects/spring-boot/issues/4106#issuecomment-173278825">not fix this issue</a>, we can <a href="#solutions">configure code editors</a> to avoid some similar problems.</p>
+</header>
+<div class="post">
+<blockquote>
+<p>__TL;DR:__Spring Boot does not trim off the <a href="#root-causes">trailing whitespaces in <code>*.properties</code></a> that in turn might lead to some <a href="#problem">unexpected errors</a>. As the Spring development team decides to <a href="https://github.com/spring-projects/spring-boot/issues/4106#issuecomment-173278825">not fix this issue</a>, we can <a href="#solutions">configure code editors</a> to avoid some similar problems.</p>
 </blockquote>
 <h2 id="fun">The fun &hellip;</h2>
 <p>Coming back working with Spring after few years, I was thrilled trying out Spring Boot 2 with its superb cool auto-configurations and many more. It&rsquo;s a lot much more fun to work with than Spring 3 used in <a href="https://github.com/htr3n/loan-approval-portal">some</a> of my previous projects.</p>
@@ -273,11 +152,10 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 <p>No copy &amp; paste please, you might say ;)</p>
 <p><img src="no-copy-paste.jpg" alt=""></p>
 <p>I would blame the Pivotal development team (just kidding ;) as they should have handled such a trivial issue better because trailing whitespaces, by default in most editors, are not always visible nor printable. Indeed, trailing whitespaces in Spring properties has driven many developers crazy <a href="https://github.com/spring-projects/spring-boot/issues/7251">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/7251">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/13967">here</a>, <a href="https://github.com/spring-projects/spring-boot/issues/5421">here</a> or <a href="https://github.com/spring-projects/spring-boot/issues/4106">here</a>. Note that it&rsquo;s for now <a href="https://github.com/spring-projects/spring-boot/issues/4106">official</a> that the Spring Boot team won&rsquo;t fix this because they <a href="https://github.com/spring-projects/spring-boot/issues/4106#issuecomment-173278825">cannot safely trim properties</a>. So, it&rsquo;s our responsibilities to take care of these whitespaces.</p>
-<blockquote >
-    <strong>Sidenote:</strong><br>
-    Whitespaces can also become <a href="https://blog.codinghorror.com/whitespace-the-silent-killer/">worst enemies to source code controls</a> (but not all whitespaces are born equal, for instance, two continuous trailing spaces in some flavours of <a href="https://daringfireball.net/projects/markdown/">Markdown</a> should be persisted as they are translated into HTML line-breaks <code>&lt;br&gt;</code>).
+<blockquote>
+<strong>Sidenote:</strong><br>
+Whitespaces can also become <a href="https://blog.codinghorror.com/whitespace-the-silent-killer/">worst enemies to source code controls</a> (but not all whitespaces are born equal, for instance, two continuous trailing spaces in some flavours of <a href="https://daringfireball.net/projects/markdown/">Markdown</a> should be persisted as they are translated into HTML line-breaks <code>&lt;br&gt;</code>).
 </blockquote>
-
 <p>Fortunately, most of code editors somehow can help to remedy the aforementioned issue either with built-in features or extensions. There are two possible non-exclusive methods (which can be combined of course)</p>
 <ul>
 <li>
@@ -297,7 +175,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 <ul>
 <li>
 <p>Either <span class="menu">Preferences ▸ Show Invisibles</span>
- or <code>config.cson</code></p>
+or <code>config.cson</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;*&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>
   <span style="color:#960050;background-color:#1e0010">editor:</span>
     <span style="color:#960050;background-color:#1e0010">...</span>
@@ -308,23 +186,23 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 <li>
 <p><a href="https://www.eclipse.org/">Eclipse</a></p>
 <ul>
-<li>(<strong>M1</strong>) From version 3.7+:  <span class="menu">Preferences ▸ General ▸ Editors ▸ Text Editors </span>
+<li>(<strong>M1</strong>) From version 3.7+: <span class="menu">Preferences ▸ General ▸ Editors ▸ Text Editors </span>
 : Turn on &ldquo;<em>Show whitespace characters</em>&rdquo; and fine-tune the option via &ldquo;<em>configure visibility</em>&rdquo;</li>
 <li>(<strong>M2</strong>) It&rsquo;s rather tedious in Eclipse as many people have already complained. It&rsquo;s perhaps due to the nature of Eclipse as a platform for several editors and plugins working together. IMHO, Eclipse should offer a common option to remove trailing whitespaces for all editors in the same level and place as &ldquo;<em>Show whitespace characters</em>&rdquo; above. Each kind of editor then might offer specific and optimal ways for certain file types. Unfortunately, for now we have to configure for each file type editor or formatter. For instance, Java editor <span class="menu">Preferences ▸ Java ▸ Editor ▸ Save Actions</span>
-,  check &ldquo;<em>Additional actions</em>&quot;, choose &ldquo;<em>Configure</em>&quot;. Next, in the &ldquo;<em>Code Organizing</em>&rdquo; tab check &ldquo;<em>Remove trailing whitespace</em>&quot;. Unfortunately, properties file in our example does not provide such options in Eclipse.</li>
-<li>(<strong>M2</strong>) You may want to use the plugin <a href="https://github.com/iloveeclipse/anyedittools">AnyEdit Tools</a> to clean up trailing whitespaces for all file types:  <span class="menu">Preferences ▸ AnyEdit Tools ▸ Auto ▸ Convert ▸ Remove trailing whitespace</span>
+, check &ldquo;<em>Additional actions</em>&quot;, choose &ldquo;<em>Configure</em>&quot;. Next, in the &ldquo;<em>Code Organizing</em>&rdquo; tab check &ldquo;<em>Remove trailing whitespace</em>&quot;. Unfortunately, properties file in our example does not provide such options in Eclipse.</li>
+<li>(<strong>M2</strong>) You may want to use the plugin <a href="https://github.com/iloveeclipse/anyedittools">AnyEdit Tools</a> to clean up trailing whitespaces for all file types: <span class="menu">Preferences ▸ AnyEdit Tools ▸ Auto ▸ Convert ▸ Remove trailing whitespace</span>
 </li>
-<li>(<strong>M2</strong>) A universal approach, also a little more difficult, is to use &ldquo;<em>Search &amp; Replace</em>&rdquo; to search with regular expressions for all of <code>&quot;[\t ]+$&quot;</code> (i.e. more than one whitespaces and/or tabs, please note the whitespace between <code>\t</code> and <code>]</code>) and replace them with<code> &quot;&quot;</code> (blank/empty).</li>
+<li>(<strong>M2</strong>) A universal approach, also a little more difficult, is to use &ldquo;<em>Search &amp; Replace</em>&rdquo; to search with regular expressions for all of <code>&quot;[\t ]+$&quot;</code> (i.e. more than one whitespaces and/or tabs, please note the whitespace between <code>\t</code> and <code>]</code>) and replace them with<code>&quot;&quot;</code> (blank/empty).</li>
 </ul>
 </li>
 <li>
 <p><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></p>
 <ul>
 <li>(<strong>M1</strong>) <span class="menu">Preferences ▸ Editor ▸ Appearance ▸ Show whitespaces</span>
- or <span class="menu">View ▸ Active Editor ▸ Show whitespaces</span>
+or <span class="menu">View ▸ Active Editor ▸ Show whitespaces</span>
 </li>
 <li>(<strong>M2</strong>) Since 2017.2 and later, there is an option <span class="menu">Preferences ▸ Editor ▸ General ▸ Strip trailing whitespaces on Save</span>
- with &ldquo;<code>All</code>&rdquo;, &ldquo;<code>Modified Lines</code>&rdquo; or &ldquo;<code>None</code>&rdquo; but the IDE does not quite behave, i.e. I chose &ldquo;<code>All</code>&rdquo; but the trailing spaces are still there after saving. It&rsquo;s rather lame and embarrassing for such a highly praised and expensive IDEs.</li>
+with &ldquo;<code>All</code>&rdquo;, &ldquo;<code>Modified Lines</code>&rdquo; or &ldquo;<code>None</code>&rdquo; but the IDE does not quite behave, i.e. I chose &ldquo;<code>All</code>&rdquo; but the trailing spaces are still there after saving. It&rsquo;s rather lame and embarrassing for such a highly praised and expensive IDEs.</li>
 </ul>
 </li>
 <li>
@@ -343,9 +221,9 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 <p><a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
 <ul>
 <li>(<strong>M1</strong>) Either <span class="menu">Preferences ▸ Settings ▸ Render Whitespace</span>
- or <code>settings.json</code> ▸ <code>&quot;editor.renderWhitespace&quot;: &quot;boundary&quot;</code> (to render whitespaces everywhere except single space between words) or <code>&quot;editor.renderWhitespace&quot;: &quot;all&quot;</code> (to render all whitespaces)</li>
+or <code>settings.json</code> ▸ <code>&quot;editor.renderWhitespace&quot;: &quot;boundary&quot;</code> (to render whitespaces everywhere except single space between words) or <code>&quot;editor.renderWhitespace&quot;: &quot;all&quot;</code> (to render all whitespaces)</li>
 <li>(<strong>M2</strong>) Either <span class="menu">Preferences ▸ Settings ▸ Render Whitespace</span>
- or <code>settings.json</code> ▸  <code>&quot;files.trimTrailingWhitespace&quot;: true</code></li>
+or <code>settings.json</code> ▸ <code>&quot;files.trimTrailingWhitespace&quot;: true</code></li>
 <li>(<strong>M1+2</strong>) I use the extension <a href="https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces">Trailing Spaces</a> that even goes further with red colour highlighting of whitespaces and provides extra commands for (manually) trimming whitespaces.</li>
 </ul>
 </li>
@@ -381,56 +259,31 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 </ul>
 <p>Wow, quite a long post for such a trivial issue, eh?! Thanks for reading to the end and I hope that my wasted time and effort here would save some of yours in future.</p>
 <p>Cheers!</p>
-
-  </div>
-  
-
+</div>
 <div class="navigation navigation-single">
-    
-    <a href="/2018/11/test-driven-spring-jdbc/" class="navigation-prev">
-      <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Back to basics: Test-driven Spring JDBC</span>
-    </a>
-    
-    
-    <a href="/2018/12/spring-boot-di-meets-coc/" class="navigation-next">
-      <span class="navigation-tittle">Tour de Spring Boot: DI meets CoC</span>
-      <i aria-hidden="true" class="fa fa-chevron-right"></i>
-    </a>
-    
+<a href="/2018/11/test-driven-spring-jdbc/" class="navigation-prev">
+<i aria-hidden="true" class="fa fa-chevron-left"></i>
+<span class="navigation-tittle">Back to basics: Test-driven Spring JDBC</span>
+</a>
+<a href="/2018/12/spring-boot-di-meets-coc/" class="navigation-next">
+<span class="navigation-tittle">Tour de Spring Boot: DI meets CoC</span>
+<i aria-hidden="true" class="fa fa-chevron-right"></i>
+</a>
 </div>
-
-
-  
-
-
 <div class="post__related">
-    
-    <h2>Related Articles</h2>
-    <ul class="related-posts">
-        
+<h2>Related Articles</h2>
+<ul class="related-posts">
 <li>
-  <span class="list__title--small">
-    <a href="/2018/11/test-driven-spring-jdbc/" >Back to basics: Test-driven Spring JDBC</a>
-      
-      <time class="pull-right hidden-tablet">Nov 20, 2018</time>
-      
-  </span>
+<span class="list__title--small">
+<a href="/2018/11/test-driven-spring-jdbc/">Back to basics: Test-driven Spring JDBC</a>
+<time class="pull-right hidden-tablet">Nov 20, 2018</time>
+</span>
 </li>
-
-
-    </ul>
+</ul>
 </div>
-
-
-
-  
-    
-        <div id="disqus_thread"></div>
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-    
-
-    (function () {
+(function () {
     if (location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "") {
@@ -445,26 +298,15 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
       document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-
 <noscript>
-  Please enable JavaScript to view the
-  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
 </noscript>
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by
-  <span class="logo-disqus">Disqus</span>
+<span class="logo-disqus">Disqus</span>
 </a>
-
-    
-
-
 </article>
-
-
-        </div>
-        
-    
-
-
+</div>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -474,21 +316,14 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
-
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
-  
-  
-  <link rel="stylesheet" type="text/css" href="/css/ocean.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css" />
-  
+<link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
 </noscript>
-
 <script>
-  var loadDeferredStyles = function () {
+var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
@@ -509,27 +344,10 @@ if (!doNotTrack) {
     codecopy('pre');
   });
 </script>
-
-<script defer src="/js/codecopy.min.js"></script>
-
-
-    
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-        
-    
-    <script type="text/javascript">
-        
-        hljs.initHighlightingOnLoad();
-    </script>
-    
-
-
-
-
-    
-
-
-
-    </body>
+<script defer="defer" src="/js/codecopy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+</body>
 </html>
