@@ -1,22 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web-service on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/web-service/</link>
+    <link>https://blog.test:8443/tags/web-service/</link>
     <description>Recent content in web-service on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/web-service/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/web-service/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Enabling Autowired for Apache CXF with Spring Boot</title>
+      <link>https://blog.test:8443/2019/01/enabling-autowired-for-apache-cxf-with-spring-boot/</link>
+      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2019/01/enabling-autowired-for-apache-cxf-with-spring-boot/</guid>
+      <description>Bean Injection Problem Spring Context Hierarchy https://www.blackpepper.co.uk/blog/a-modular-architecture-with-spring-boot
+Database https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.java-config
+@EnableJpaRepositories
+https://springbootdev.com/2017/11/13/what-are-the-uses-of-entityscan-and-enablejparepositories-annotations/
+https://github.com/spring-projects/spring-boot/issues/8134
+@EntityScan
+https://raymondhlee.wordpress.com/tag/enablejparepositories</description>
+    </item>
+    
+    <item>
       <title>A journey from Apache CXF 2.2 to 3.2</title>
-      <link>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</link>
+      <link>https://blog.test:8443/2018/06/apache-cxf-2-to-3/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</guid>
+      <guid>https://blog.test:8443/2018/06/apache-cxf-2-to-3/</guid>
       <description>I have used Apache CXF 2.2 to develop Web services for some R&amp;amp;D projects that I took part in. At that time, it was a choice between Apache Axis/Axis2 and CXF (formerly Codehaus XFire project).</description>
     </item>
     

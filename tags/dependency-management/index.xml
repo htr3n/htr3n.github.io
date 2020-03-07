@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dependency-management on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/dependency-management/</link>
+    <link>https://blog.test:8443/tags/dependency-management/</link>
     <description>Recent content in dependency-management on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/dependency-management/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/dependency-management/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Node.js package managers: NPM and Yarn</title>
-      <link>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</link>
+      <link>https://blog.test:8443/2018/04/node.js-package-managers-npm-and-yarn/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</guid>
+      <guid>https://blog.test:8443/2018/04/node.js-package-managers-npm-and-yarn/</guid>
       <description>Node.js is an increasingly popular and widely used JavaScript runtime nowadays. One of the important aspects of Node.js is to manage the dependencies among software artefacts. Better dependency management would advocate modularisation and decoupling of software components.</description>
     </item>
     

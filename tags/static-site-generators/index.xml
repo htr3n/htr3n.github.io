@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>static site generators on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/static-site-generators/</link>
+    <link>https://blog.test:8443/tags/static-site-generators/</link>
     <description>Recent content in static site generators on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/static-site-generators/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/static-site-generators/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>First experience with Hugo</title>
-      <link>https://htr3n.github.io/2018/01/first-experience-with-hugo/</link>
+      <link>https://blog.test:8443/2018/01/first-experience-with-hugo/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/01/first-experience-with-hugo/</guid>
+      <guid>https://blog.test:8443/2018/01/first-experience-with-hugo/</guid>
       <description>To commence my journey in software development, I have looked for a Web framework to build my personal blog. I have started writing blog posts mainly using (Multi)Markdown and plan to migrate other posts to Markdown too.</description>
     </item>
     

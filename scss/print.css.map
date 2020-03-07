@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "print.css",
-	"sourceRoot": "/Users/htr3n/working/dev/dev-repos/htr3n/htr3n-blog",
+	"sourceRoot": "/home/alext/Documents/htr3n-blog",
 	"sources": [
 		"assets/scss/print.scss",
 		"assets/scss/hyde-hyde/_variables.scss",

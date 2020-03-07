@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>date/time on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/date/time/</link>
+    <link>https://blog.test:8443/tags/date/time/</link>
     <description>Recent content in date/time on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/date/time/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/date/time/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Confusing Hugo issues: datetime and &#39;isset&#39;</title>
-      <link>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</link>
+      <link>https://blog.test:8443/2018/03/confusing-hugo-issues-datetime-and-isset/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</guid>
+      <guid>https://blog.test:8443/2018/03/confusing-hugo-issues-datetime-and-isset/</guid>
       <description>Yesterday I got notified from Github for two opening issues of the Hugo&amp;rsquo;s theme hyde-hyde I have ported and developed further.
 The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up.</description>
     </item>

@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tex on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/tex/</link>
+    <link>https://blog.test:8443/tags/tex/</link>
     <description>Recent content in tex on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 15 Jan 2009 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/tex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/tex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sắp xếp trích dẫn (citations) trong (La)TeX</title>
-      <link>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</link>
+      <link>https://blog.test:8443/2009/01/sap-xep-trich-dan-latex/</link>
       <pubDate>Thu, 15 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2009/01/sap-xep-trich-dan-latex/</guid>
+      <guid>https://blog.test:8443/2009/01/sap-xep-trich-dan-latex/</guid>
       <description>LaTeX cho phép tạo các trích dẫn (citations) để tham chiếu đến các tài liệu tham khảo tương ứng. Các trích dẫn, tùy theo định dạng (format/style) của tài liệu, có thể dạng số như [1, 2] hoặc dạng chữ như [Lamport94].</description>
     </item>
     
     <item>
       <title>Soạn tài liệu TeX tiếng Việt (Unicode)</title>
-      <link>https://htr3n.github.io/2008/12/latex-tieng-viet-unicode/</link>
+      <link>https://blog.test:8443/2008/12/latex-tieng-viet-unicode/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2008/12/latex-tieng-viet-unicode/</guid>
+      <guid>https://blog.test:8443/2008/12/latex-tieng-viet-unicode/</guid>
       <description>LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS).</description>
     </item>
     

@@ -1,42 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/javascript/</link>
+    <link>https://blog.test:8443/tags/javascript/</link>
     <description>Recent content in javascript on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Getting your hands dirty with Gulp</title>
+      <link>https://blog.test:8443/2018/12/getting-your-hands-dirty-with-gulp/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/getting-your-hands-dirty-with-gulp/</guid>
+      <description>Gulp is a JavaScript/Node.js based tool often used for automating many development tasks such as analysing, compiling, compressing, transforming source code and application resources, to name but a few. It is very popular alongside Grunt, and Webpack.</description>
+    </item>
+    
+    <item>
+      <title>Learning to &#39;React&#39;</title>
+      <link>https://blog.test:8443/2018/12/learning-to-react/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/learning-to-react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Integration Laravel 5 and Gentelella admin theme</title>
-      <link>https://htr3n.github.io/2018/05/integration-laravel-gentelella/</link>
+      <link>https://blog.test:8443/2018/05/integration-laravel-gentelella/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/05/integration-laravel-gentelella/</guid>
+      <guid>https://blog.test:8443/2018/05/integration-laravel-gentelella/</guid>
       <description>Gentelella is a very nice and gently-looking Bootstrap based admin theme developed by Aigars Silkalns (aka puikinsh). It can be integrated into several Web application frameworks. This post is one of my development exercises in which Gentelella is used to decorate a Laravel 5 based Web application.</description>
     </item>
     
     <item>
       <title>Node.js package managers: NPM and Yarn</title>
-      <link>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</link>
+      <link>https://blog.test:8443/2018/04/node.js-package-managers-npm-and-yarn/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</guid>
+      <guid>https://blog.test:8443/2018/04/node.js-package-managers-npm-and-yarn/</guid>
       <description>Node.js is an increasingly popular and widely used JavaScript runtime nowadays. One of the important aspects of Node.js is to manage the dependencies among software artefacts. Better dependency management would advocate modularisation and decoupling of software components.</description>
     </item>
     
     <item>
       <title>Getting started with Webpack</title>
-      <link>https://htr3n.github.io/2018/02/getting-started-webpack/</link>
+      <link>https://blog.test:8443/2018/02/getting-started-webpack/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/02/getting-started-webpack/</guid>
+      <guid>https://blog.test:8443/2018/02/getting-started-webpack/</guid>
       <description>Webpack is a static module bundler for Web applications. It analyses and processes the input application and generates output bundles.
-The design of Webpack architecture is highly modularised and extendable.</description>
+The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&amp;rsquo;ve started learning it.</description>
     </item>
     
   </channel>

@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>qlstephen on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/qlstephen/</link>
+    <link>https://blog.test:8443/tags/qlstephen/</link>
     <description>Recent content in qlstephen on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/qlstephen/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/qlstephen/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Handy macOS QuickLook configurations</title>
-      <link>https://htr3n.github.io/2018/07/handy-quicklook/</link>
+      <link>https://blog.test:8443/2018/07/handy-quicklook/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/07/handy-quicklook/</guid>
+      <guid>https://blog.test:8443/2018/07/handy-quicklook/</guid>
       <description>QuickLook is a simple but powerful feature of macOS that helps to preview the content of a file or folder in Finder without using any particular apps. This feature is very handy when we only want to have brief glance on a certain file or quickly examine its parts instead of opening a full-fledged app for that particular file.</description>
     </item>
     

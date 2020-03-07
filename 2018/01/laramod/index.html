@@ -1,114 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link href="https://gmpg.org/xfn/11" rel="profile">
-<meta charset="utf-8">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6"/>
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+    
+    
+    
+
 <title>LaraMod - Modularised Laravel 5 • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LaraMod - Modularised Laravel 5"/>
 <meta name="twitter:description" content="Restructuring Laravel to achieve better modular structure for PHP-based development projects"/>
-<meta property="og:title" content="LaraMod - Modularised Laravel 5"/>
-<meta property="og:description" content="Restructuring Laravel to achieve better modular structure for PHP-based development projects"/>
-<meta property="og:type" content="article"/>
-<meta property="og:url" content="https://htr3n.github.io/2018/01/laramod/"/>
-<meta property="article:published_time" content="2018-01-19T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-11-30T00:00:00&#43;00:00"/>
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
-<link rel="stylesheet" href="https://htr3n.github.io/scss/hyde-hyde.css">
-<link rel="stylesheet" href="https://htr3n.github.io/scss/print.css" media="print">
-<!--[if lt IE 9]>
+
+<meta property="og:title" content="LaraMod - Modularised Laravel 5" />
+<meta property="og:description" content="Restructuring Laravel to achieve better modular structure for PHP-based development projects" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.test:8443/2018/01/laramod/" />
+<meta property="article:published_time" content="2018-01-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-11-30T00:00:00+00:00" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.test:8443/scss/hyde-hyde.css" >
+
+
+<link rel="stylesheet" href="https://blog.test:8443/scss/print.css" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/favicon.png">
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
 </head>
-<body class="">
+
+
+    <body class=" ">
+    
 <div class="sidebar">
-<div class="">
-<div class="sidebar-about">
-<span class="site__title">
-<a href="https://htr3n.github.io/">htr3n&#39;s</a>
-</span>
-<div class="author-image">
-<img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+  <div class="">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.test:8443/">htr3n&#39;s</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://blog.test:8443//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+      </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">htr3n&#39;s</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/vn/">
+						<span>Tiếng Việt</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
 </div>
-<p class="site__description">
-</p>
-</div>
-<div class="collapsible-menu">
-<input type="checkbox" id="menuToggle">
-<label for="menuToggle">htr3n&#39;s</label>
-<div class="menu-content">
-<div>
-<ul class="sidebar-nav">
-<li>
-<a href="/posts/">
-<span>Posts</span>
-</a>
-</li>
-<li>
-<a href="/portfolio/">
-<span>Portfolio</span>
-</a>
-</li>
-<li>
-<a href="/vn/">
-<span>Tiếng Việt</span>
-</a>
-</li>
-<li>
-<a href="/about/">
-<span>About</span>
-</a>
-</li>
-</ul>
-</div>
-<section class="social">
-<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
-<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
-<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
 </section>
-</div>
-</div>
+
+      </div>
+    </div>
+    
 <div class="copyright">
-&copy; 2019 htr3n
-<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  &copy; 2020 htr3n
+  
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  
 </div>
+
+
 <div class="builtwith">
 Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
 </div>
+
+
+  </div>
 </div>
-</div>
-<div class="content container">
+
+        <div class="content container">
+            
+    
 <article>
-<header>
-<h1>LaraMod - Modularised Laravel 5</h1>
+  <header>
+    <h1>LaraMod - Modularised Laravel 5</h1>
+    
+    
 <div class="post__meta">
-<i class="fas fa-calendar-alt"></i> Jan 19, 2018 in
-<a class="badge badge-category" href="/categories/dev">DEV</a>
-<br/>
-<i class="fas fa-tags"></i>
-<a class="badge badge-tag" href="/tags/php">php</a>
-<a class="badge badge-tag" href="/tags/laravel">laravel</a>
-<a class="badge badge-tag" href="/tags/modularisation">modularisation</a>
-<a class="badge badge-tag" href="/tags/laramod">laramod</a>
-<a class="badge badge-tag" href="/tags/refactor">refactor</a>
-<br/>
-<i class="fas fa-clock"></i> 6 min read
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jan 19, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/dev">DEV</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/php">php</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/laravel">laravel</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/modularisation">modularisation</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/laramod">laramod</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/refactor">refactor</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min read
 </div>
-</header>
-<div class="post">
-<p><a href="https://laravel.com">Laravel</a> is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. For a simple development project, the structure is totally fine. Nevertheless, you might not want to mix up your source code and resources with Laravel&rsquo;s except some really necessary configurations.</p>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p><a href="https://laravel.com">Laravel</a> is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. For a simple development project, the structure is totally fine. Nevertheless, you might not want to mix up your source code and resources with Laravel&rsquo;s except some really necessary configurations.</p>
 <p>Moreover, you might also want to organise your project into submodules that are assigned to more than one team/person such that they can be developed silmutaneously. Thus, the need for complex submodule organisation is quite inevitable.</p>
 <p>From my struggle to organise a Laravel-based project such that I can divide and work on individual submodules such as <code>UserManagement</code>, <code>Authentication</code>, <code>Dashboard</code>, etc. whilst keeping the Laravel code base intact as much as possible (this could be convenient for upgrading Laravel) and keeping my code base separate from Laravel&rsquo;s.</p>
 <p>There are a number decent attempts on modalurasing Laravel projects for example <a href="https://nicolaswidart.com/blog/writing-modular-applications-with-laravel-modules">here</a>, <a href="https://github.com/caffeinated/modules">here</a> or <a href="http://kamranahmed.info/blog/2015/12/03/creating-a-modular-application-in-laravel">here</a>. Being inspired and learning from these articles, I decided to start a simple project on my own, namely, <a href="https://github.com/htr3n/laramod"><code>LaraMod</code></a>, for many reasons, but the biggest one is to dig deeper into Laravel 5 and PHP.</p>
@@ -125,155 +246,170 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 ├──Models
 ├──View
 └──routes.php
-</code></pre>
-<p>Such a structure can be very useful for different teams/people working independently. In LaraMod, there is an <code>artisan</code> command <code>gen:module</code> provided in <a href="https://github.com/htr3n/laramod/blob/master/app/Console/Commands/GenModuleCommand.php"><code>App\Console\Commands\GenModuleCommand</code></a> that can quickly create a submodule following that structure.</p>
-<pre><code class="language-sh">$ php artisan gen:module Authentication
-</code></pre>
-<h3 id="how-to-proceed">How to Proceed</h3>
+</code></pre><p>Such a structure can be very useful for different teams/people working independently. In LaraMod, there is an <code>artisan</code> command <code>gen:module</code> provided in <a href="https://github.com/htr3n/laramod/blob/master/app/Console/Commands/GenModuleCommand.php"><code>App\Console\Commands\GenModuleCommand</code></a> that can quickly create a submodule following that structure.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ php artisan gen:module Authentication
+</code></pre></div><h3 id="how-to-proceed">How to Proceed</h3>
 <p>An easy approach is to rely on Laravel&rsquo;s <a href="https://laravel.com/docs/providers"><code>ServiceProvider</code></a> to load the submodules and register the necessary components of the submodules.</p>
-<pre><code class="language-php">&lt;?php
-class XYZServiceProvider extends \Illuminate\Support\ServiceProvider {
-  public function boot() {}
-  public function register() {}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">XYZServiceProvider</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Illuminate\Support\ServiceProvider</span> {
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">boot</span>() {}
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">register</span>() {}
 }
-</code></pre>
-<p>A <code>ServiceProvider</code> contains two important methods <code>register()</code> and <code>boot()</code>. In this case, LaraMod mainly uses the method <code>boot()</code> to load the corresponding submodule. LaraMod also adopts a simple, conventional method for defining a submodule. That is, all submodules will be subfolders of the folder <code>/modules</code> and each module follows the conventional structure as mentioned above.</p>
+</code></pre></div><p>A <code>ServiceProvider</code> contains two important methods <code>register()</code> and <code>boot()</code>. In this case, LaraMod mainly uses the method <code>boot()</code> to load the corresponding submodule. LaraMod also adopts a simple, conventional method for defining a submodule. That is, all submodules will be subfolders of the folder <code>/modules</code> and each module follows the conventional structure as mentioned above.</p>
 <h4 id="automatically-loading-submodules">Automatically Loading Submodules</h4>
 <h5 id="loading-a-submodule">Loading a Submodule</h5>
 <p>First, we create a method <code>loadModule()</code> to load the resources such as views, i18n, database migration, and routes of a submodule using the provided methods <code>loadViewsFrom()</code>, <code>loadTranslationsFrom()</code>, <code>loadMigrationsFrom()</code>, <code>loadRoutesFrom()</code>, respectively. As models and controllers are essential PHP classes, they can be loaded using PSR-4 autoloaders as shown in the next parts.</p>
-<pre><code class="language-php">&lt;?php
-protected function loadModule($module)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadModule</span>($module)
 {
-    if ($module) {
-      // load the submodule's routes
-        if (file_exists(__DIR__ . '/' . $module . '/routes.php')) {
-            $this-&gt;loadRoutesFrom(__DIR__ . '/' . $module . '/routes.php');
+    <span style="color:#66d9ef">if</span> ($module) {
+      <span style="color:#75715e">// load the submodule&#39;s routes
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">file_exists</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">.</span> $module <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/routes.php&#39;</span>)) {
+            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadRoutesFrom</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">.</span> $module <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/routes.php&#39;</span>);
         }
-      // load the submodule's views
-        if (is_dir(__DIR__ . '/' . $module . '/Views')) {
-            $this-&gt;loadViewsFrom(__DIR__ . '/' . $module . '/Views', $module);
+      <span style="color:#75715e">// load the submodule&#39;s views
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is_dir</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">.</span> $module <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/Views&#39;</span>)) {
+            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadViewsFrom</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">.</span> $module <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/Views&#39;</span>, $module);
         }
-      // load the submodule's translation
-        if (is_dir(__DIR__ . '/' . $module . '/Lang')) {
-            $this-&gt;loadTranslationsFrom(__DIR__ . '/' . $module . '/Lang', $module);
+      <span style="color:#75715e">// load the submodule&#39;s translation
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is_dir</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">.</span> $module <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/Lang&#39;</span>)) {
+            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadTranslationsFrom</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">.</span> $module <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/Lang&#39;</span>, $module);
         }
-      // load the submodule's database migrations
-        if (is_dir(__DIR__ . '/' . $module . '/Migrations')) {
-            $this-&gt;loadMigrationsFrom(__DIR__ . '/' . $module . '/Migrations', $module);
+      <span style="color:#75715e">// load the submodule&#39;s database migrations
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is_dir</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">.</span> $module <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/Migrations&#39;</span>)) {
+            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadMigrationsFrom</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">.</span> $module <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/Migrations&#39;</span>, $module);
         }
     }
 }
-</code></pre>
-<h5 id="detecting-and-loading-submodules">Detecting and Loading Submodules</h5>
+</code></pre></div><h5 id="detecting-and-loading-submodules">Detecting and Loading Submodules</h5>
 <p>Then we can walk through the folder <code>module</code> and load all submodules using the method <code>loadModule()</code> created above.</p>
-<pre><code class="language-php">&lt;?php
-protected function findAndLoadModules()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findAndLoadModules</span>()
 {
-    $modules = config(&quot;module.modules&quot;);
-    if (!$modules) {
-        $modules = $this-&gt;getModuleNamesFromCurrentPath();
+    $modules <span style="color:#f92672">=</span> <span style="color:#a6e22e">config</span>(<span style="color:#e6db74">&#34;module.modules&#34;</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$modules) {
+        $modules <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getModuleNamesFromCurrentPath</span>();
     }
-    if ($modules) {
-        array_walk($modules, function ($module) {
-            $this-&gt;loadModule($module);
+    <span style="color:#66d9ef">if</span> ($modules) {
+        <span style="color:#a6e22e">array_walk</span>($modules, <span style="color:#66d9ef">function</span> ($module) {
+            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadModule</span>($module);
         });
     }
 }
-</code></pre>
-<p>Note that in this conventional approach, <code>findAndLoadModules()</code> will look for submodule configurations either (1) explicitly in the file <code>/config/module.php</code> with the following syntax or (2) implicitly as subfolders of <code>/modules</code> (in case <code>/config/module.php</code> does not exist).</p>
-<pre><code class="language-php">// module.php
-&lt;?php
-return  [
-    'modules' =&gt; [
-        'Core',
-        'Login',
-        'Dashboard',
-        'Home',
-        'User',
+</code></pre></div><p>Note that in this conventional approach, <code>findAndLoadModules()</code> will look for submodule configurations either (1) explicitly in the file <code>/config/module.php</code> with the following syntax or (2) implicitly as subfolders of <code>/modules</code> (in case <code>/config/module.php</code> does not exist).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// module.php
+<span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">return</span>  [
+    <span style="color:#e6db74">&#39;modules&#39;</span> <span style="color:#f92672">=&gt;</span> [
+        <span style="color:#e6db74">&#39;Core&#39;</span>,
+        <span style="color:#e6db74">&#39;Login&#39;</span>,
+        <span style="color:#e6db74">&#39;Dashboard&#39;</span>,
+        <span style="color:#e6db74">&#39;Home&#39;</span>,
+        <span style="color:#e6db74">&#39;User&#39;</span>,
     ]
 ];
-</code></pre>
-<p>Finally we invoke <code>findAndLoadModules()</code> within <code>boot()</code>.</p>
-<pre><code class="language-php">&lt;?php
-namespace Laramod;
-class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider
+</code></pre></div><p>Finally we invoke <code>findAndLoadModules()</code> within <code>boot()</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Laramod</span>;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ModulesServiceProvider</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Illuminate\Support\ServiceProvider</span>
 {
-    public function boot()
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">boot</span>()
     {
-        $this-&gt;findAndLoadModules();
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">findAndLoadModules</span>();
     }
-    public function register()
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">register</span>()
     {
     }
 }
-</code></pre>
-<h4 id="registering-the-service-provider">Registering the Service Provider</h4>
+</code></pre></div><h4 id="registering-the-service-provider">Registering the Service Provider</h4>
 <p>The <code>ModulesServiceProvider</code> must be registered in <code>/config/app.php</code> in order to be loaded by Laravel.</p>
-<pre><code class="language-php">&lt;?php
-return [
-    ...
-    'providers' =&gt; [
-        ...
-        \Laramod\ModulesServiceProvider::class,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">return</span> [
+    <span style="color:#f92672">...</span>
+    <span style="color:#e6db74">&#39;providers&#39;</span> <span style="color:#f92672">=&gt;</span> [
+        <span style="color:#f92672">...</span>
+        <span style="color:#a6e22e">\Laramod\ModulesServiceProvider</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>,
      ],
-    ...
+    <span style="color:#f92672">...</span>
 ];
-</code></pre>
-<h4 id="autoloading-submodules-classes">Autoloading Submodules&rsquo; Classes</h4>
+</code></pre></div><h4 id="autoloading-submodules-classes">Autoloading Submodules&rsquo; Classes</h4>
 <p>Apart from resources like views, i18n, database migration loaded in the previous steps, a submodule can also contain other PHP classes such as database ORM models and controllers.</p>
 <p>One natural approach would be to leverage the <a href="http://www.php-fig.org/psr/psr-4">PSR-4 autoloader</a> autoloading supported by Laravel 5.5. This approach also nicely fits when we want to define separate namespaces for each submodule and especially submodule&rsquo;s components.</p>
 <p>For this, we can define the submodule&rsquo;s namespace and manually specify the submodule&rsquo;s classpaths to be loaded in <code>composer.json</code> as following.</p>
-<pre><code class="language-json">{
-  &quot;psr-4&quot;: {
-    &quot;App\\&quot;: &quot;app/&quot;,
-    &quot;Core\\&quot;: &quot;modules/Core/&quot;,
-    &quot;Dashboard\\&quot;: &quot;modules/Dashboard/&quot;,
-    &quot;Login\\&quot;: &quot;modules/Login/&quot;,
-    &quot;User\\&quot;: &quot;modules/User/&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;psr-4&#34;</span>: {
+    <span style="color:#f92672">&#34;App\\&#34;</span>: <span style="color:#e6db74">&#34;app/&#34;</span>,
+    <span style="color:#f92672">&#34;Core\\&#34;</span>: <span style="color:#e6db74">&#34;modules/Core/&#34;</span>,
+    <span style="color:#f92672">&#34;Dashboard\\&#34;</span>: <span style="color:#e6db74">&#34;modules/Dashboard/&#34;</span>,
+    <span style="color:#f92672">&#34;Login\\&#34;</span>: <span style="color:#e6db74">&#34;modules/Login/&#34;</span>,
+    <span style="color:#f92672">&#34;User\\&#34;</span>: <span style="color:#e6db74">&#34;modules/User/&#34;</span>
   }
 }
-</code></pre>
-<p>Another technique for autoloading classes in Laravel 5 is to dynamically add PSR4 classpaths in <code>ModulesServiceProvider.php</code>.</p>
-<pre><code class="language-php">// ModulesServiceProvider.php
-&lt;?php
-...
-$loader = require base_path() . '/vendor/autoload.php';
-$loader-&gt;setPsr4(&quot;Core\\&quot;, __DIR__ . &quot;./Core/&quot;);
-$loader-&gt;setPsr4(&quot;Dashboard\\&quot;, __DIR__ . &quot;./Dashboard/&quot;);
-$loader-&gt;setPsr4(&quot;Login\\&quot;, __DIR__ . &quot;./Login/&quot;);
-$loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
-</code></pre>
-<p>One problem, though, is that LaraMod must be able to detect or guess the namespace classpaths. To do this, we can either use the configuration file <code>config/module.php</code> or, even nicer and smarter, scan the submodule&rsquo;s folders to extract the necessary information. However, loading time then will be really significant when the project grows because Laravel loaders willl do the scanning and loading whenever any classes are referenced.</p>
+</code></pre></div><p>Another technique for autoloading classes in Laravel 5 is to dynamically add PSR4 classpaths in <code>ModulesServiceProvider.php</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// ModulesServiceProvider.php
+<span style="color:#75715e">&lt;?php</span>
+<span style="color:#f92672">...</span>
+$loader <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">base_path</span>() <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/autoload.php&#39;</span>;
+$loader<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setPsr4</span>(<span style="color:#e6db74">&#34;Core</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>, <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;./Core/&#34;</span>);
+$loader<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setPsr4</span>(<span style="color:#e6db74">&#34;Dashboard</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>, <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;./Dashboard/&#34;</span>);
+$loader<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setPsr4</span>(<span style="color:#e6db74">&#34;Login</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>, <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;./Login/&#34;</span>);
+$loader<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setPsr4</span>(<span style="color:#e6db74">&#34;User</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>, <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;./User/&#34;</span>);
+</code></pre></div><p>One problem, though, is that LaraMod must be able to detect or guess the namespace classpaths. To do this, we can either use the configuration file <code>config/module.php</code> or, even nicer and smarter, scan the submodule&rsquo;s folders to extract the necessary information. However, loading time then will be really significant when the project grows because Laravel loaders willl do the scanning and loading whenever any classes are referenced.</p>
 <h3 id="accessing-submodule-resources">Accessing Submodule Resources</h3>
 <p>Given a submodule, for instance <code>SubmoduleA</code>, most of its classes such as controllers and database mapping models, if configuring properly using PSR-4, will be automatically loaded and used straightforwardly. Nonetheless, acessing to resources such as views and i18n (languages) requires a slightly different syntax, for instance, <code>SubmoduleA::blade_view_name</code> or <code>SubmoduleA::messages.error</code>. If the <code>SubmoduleA::</code> is missing, Laravel will look for views and language files in the default places.</p>
 <h2 id="finale">Finale</h2>
 <p>The outcome of my very first PHP project, LaraMod, would be a reasonable skeleton for modularising software projects based on Laravel 5. That is, you can just easily create a new submodule with the predefined conventional structure and add the PSR-4 namespaces and classpaths, then good you go. Each submodule should then be developed independently. Sure there are some areas that need improvement. For example, all testing stuffs are still under <code>/tests</code> and database seeders are still in <code>database/seeds</code>. The first one requires intervention with PHPUnit/<code>phpunit.xml</code> whilst the later asks for further changes in built-in Laravel <code>artisan</code> commands.</p>
 <p>For me&mdash;a new bie, it was not quite an all-pleasant journey to experience several Laravel aspects. Nevertheless, developing and customising LaraMod are extremely valuable as I could learn a lot about not only Laravel in particular but also PHP in general. Achieving reasonable modularisation for a complex software development project requires a lot of thoughtful design and hard work and even sometimes trade-offs and compromises. In sharing this, I hope LaraMod might become handy and helpful start so that your journeys with Laravel can be more pleasant and joyful. I look forward to hearing and learning from your experience, too.</p>
-</div>
+
+  </div>
+  
+
 <div class="navigation navigation-single">
-<a href="/2017/09/apache-httpd-php-macos/" class="navigation-prev">
-<i aria-hidden="true" class="fa fa-chevron-left"></i>
-<span class="navigation-tittle">Apache httpd 2.4 and PHP 7 in macOS</span>
-</a>
-<a href="/2018/01/first-experience-with-hugo/" class="navigation-next">
-<span class="navigation-tittle">First experience with Hugo</span>
-<i aria-hidden="true" class="fa fa-chevron-right"></i>
-</a>
+    
+    <a href="/2017/09/apache-httpd-php-macos/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Apache httpd 2.4 and PHP 7 in macOS</span>
+    </a>
+    
+    
+    <a href="/2018/01/first-experience-with-hugo/" class="navigation-next">
+      <span class="navigation-tittle">First experience with Hugo</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
 </div>
+
+
+  
+
+
 <div class="post__related">
-<h2>Related Articles</h2>
-<ul class="related-posts">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
 <li>
-<span class="list__title--small">
-<a href="/2017/09/apache-httpd-php-macos/">Apache httpd 2.4 and PHP 7 in macOS</a>
-<time class="pull-right hidden-tablet">Sep 25, 2017</time>
-</span>
+  <span class="list__title--small">
+    <a href="/2017/09/apache-httpd-php-macos/" >Apache httpd 2.4 and PHP 7 in macOS</a>
+      
+      <time class="pull-right hidden-tablet">Sep 25, 2017</time>
+      
+  </span>
 </li>
-</ul>
+
+
+    </ul>
 </div>
-<div id="disqus_thread"></div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
 <script type="text/javascript">
-(function () {
+    
+
+    (function () {
     if (location.hostname === "localhost" ||
       location.hostname === "127.0.0.1" ||
       location.hostname === "") {
@@ -288,15 +424,26 @@ $loader-&gt;setPsr4(&quot;User\\&quot;, __DIR__ . &quot;./User/&quot;);
       document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
+
 <noscript>
-Please enable JavaScript to view the
-<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
 </noscript>
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by
-<span class="logo-disqus">Disqus</span>
+  <span class="logo-disqus">Disqus</span>
 </a>
+
+    
+
+
 </article>
-</div>
+
+
+        </div>
+        
+    
+
+
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -306,14 +453,21 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
 <noscript id="deferred-styles">
-<link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
-<link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/ocean.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css" />
+  
 </noscript>
+
 <script>
-var loadDeferredStyles = function () {
+  var loadDeferredStyles = function () {
     var addStylesNode = document.getElementById("deferred-styles");
     if (addStylesNode) {
       var replacement = document.createElement("div");
@@ -334,10 +488,27 @@ var loadDeferredStyles = function () {
     codecopy('pre');
   });
 </script>
-<script defer="defer" src="/js/codecopy.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-<script type="text/javascript">
-hljs.initHighlightingOnLoad();
-</script>
-</body>
+
+<script defer src="/js/codecopy.min.js"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
 </html>

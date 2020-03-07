@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>httpd on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/tags/httpd/</link>
+    <link>https://blog.test:8443/tags/httpd/</link>
     <description>Recent content in httpd on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/tags/httpd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/tags/httpd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Apache httpd 2.4 and PHP 7 in macOS</title>
-      <link>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</link>
+      <link>https://blog.test:8443/2017/09/apache-httpd-php-macos/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</guid>
+      <guid>https://blog.test:8443/2017/09/apache-httpd-php-macos/</guid>
       <description>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development. MacOS are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS.</description>
     </item>
     

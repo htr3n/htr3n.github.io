@@ -1,178 +1,300 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on htr3n&#39;s</title>
-    <link>https://htr3n.github.io/posts/</link>
+    <link>https://blog.test:8443/posts/</link>
     <description>Recent content in Posts on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jul 2019 12:33:36 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://htr3n.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.test:8443/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Notes to Self: Web Fonts and Typography</title>
+      <link>https://blog.test:8443/2099/01/notes-to-self-web-fonts-and-typography/</link>
+      <pubDate>Thu, 01 Jan 2099 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2099/01/notes-to-self-web-fonts-and-typography/</guid>
+      <description>abcde­fghijklmnopqrstu­vwxyz­abcde­fghijklmnopqrstu­vwxyz­abcde­fgh
+= 2.31 alphabets
+https://practicaltypography.com/line-length.html
+Web Fonts Some of my selection criteria
+ Not too narrow: a too narrow font creates too much density and often makes my eyes quickly tired (e.</description>
+    </item>
+    
+    <item>
       <title>Chromium and macOS Environment Variables</title>
-      <link>https://htr3n.github.io/2019/07/chromium-macos-environment/</link>
+      <link>https://blog.test:8443/2019/07/chromium-macos-environment/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
-      <guid>https://htr3n.github.io/2019/07/chromium-macos-environment/</guid>
+      <guid>https://blog.test:8443/2019/07/chromium-macos-environment/</guid>
       <description>Trying Chromium in macOS Mojave (10.14), I confronted with the popular issue regarding Google API key missing. After obtaining an API key along with client ID and secret, I put it on some shell startup scripts as following.</description>
     </item>
     
     <item>
+      <title>Managing UEFI based Multi-System Boot</title>
+      <link>https://blog.test:8443/2019/06/managing-uefi-based-multi-system-boot/</link>
+      <pubDate>Fri, 28 Jun 2019 13:28:34 +1000</pubDate>
+      
+      <guid>https://blog.test:8443/2019/06/managing-uefi-based-multi-system-boot/</guid>
+      <description>My Lenovo T430s originally support both UEFI mode and backward compatibility with legacy BIOS mode. Planning to install multiple OSs for experimenting purposes, I have messed up these modes and hard drive partitions so many times leading to re-installing the whole system.</description>
+    </item>
+    
+    <item>
       <title>Lenovo Thinkpad T430s Supervisor Password Removal</title>
-      <link>https://htr3n.github.io/2019/06/t430s-supervisor-password-removal/</link>
+      <link>https://blog.test:8443/2019/06/t430s-supervisor-password-removal/</link>
       <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
       
-      <guid>https://htr3n.github.io/2019/06/t430s-supervisor-password-removal/</guid>
+      <guid>https://blog.test:8443/2019/06/t430s-supervisor-password-removal/</guid>
       <description>After a while merely working with macOS and Linux, I have recently decided to have an additional Windows box for some Windows-specific tools and development. I could be able to secure a second-hand Lenovo Thinkpad T430s on eBay for around 130 AUD, which is quite a decent price with CPU i5-3320M (2.</description>
     </item>
     
     <item>
+      <title>Enabling Autowired for Apache CXF with Spring Boot</title>
+      <link>https://blog.test:8443/2019/01/enabling-autowired-for-apache-cxf-with-spring-boot/</link>
+      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2019/01/enabling-autowired-for-apache-cxf-with-spring-boot/</guid>
+      <description>Bean Injection Problem Spring Context Hierarchy https://www.blackpepper.co.uk/blog/a-modular-architecture-with-spring-boot
+Database https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.java-config
+@EnableJpaRepositories
+https://springbootdev.com/2017/11/13/what-are-the-uses-of-entityscan-and-enablejparepositories-annotations/
+https://github.com/spring-projects/spring-boot/issues/8134
+@EntityScan
+https://raymondhlee.wordpress.com/tag/enablejparepositories</description>
+    </item>
+    
+    <item>
       <title>Making JSP work with Spring Boot 2</title>
-      <link>https://htr3n.github.io/2018/12/jsp-spring-boot/</link>
+      <link>https://blog.test:8443/2018/12/jsp-spring-boot/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/12/jsp-spring-boot/</guid>
+      <guid>https://blog.test:8443/2018/12/jsp-spring-boot/</guid>
       <description>One of my past projects relied heavily on XML based configurations and JSP technologies dated back to Spring Framework 3.x. It is still working fine after upgrading to Spring 5 and corresponding dependent libraries such as Hibernate 5, HikariCP 3 and Apache CXF 3.</description>
     </item>
     
     <item>
-      <title>Tour de Spring Boot: DI meets CoC</title>
-      <link>https://htr3n.github.io/2018/12/spring-boot-di-meets-coc/</link>
+      <title>Event Driven and Reactive</title>
+      <link>https://blog.test:8443/2018/12/event-driven-and-reactive/</link>
+      <pubDate>Wed, 12 Dec 2018 08:03:41 +1100</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/event-driven-and-reactive/</guid>
+      <description>Insert Lead paragraph here.
+A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus.</description>
+    </item>
+    
+    <item>
+      <title>Business Process Management</title>
+      <link>https://blog.test:8443/2018/12/business-process-management/</link>
+      <pubDate>Wed, 12 Dec 2018 08:02:54 +1100</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/business-process-management/</guid>
+      <description>Insert Lead paragraph here.
+A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus.</description>
+    </item>
+    
+    <item>
+      <title>Service Oriented Architectures</title>
+      <link>https://blog.test:8443/2018/12/service-oriented-architectures/</link>
+      <pubDate>Wed, 12 Dec 2018 08:02:18 +1100</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/service-oriented-architectures/</guid>
+      <description>Insert Lead paragraph here.
+A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus.</description>
+    </item>
+    
+    <item>
+      <title>Patterns vs Anti Patterns</title>
+      <link>https://blog.test:8443/2018/12/patterns-vs-anti-patterns/</link>
+      <pubDate>Wed, 12 Dec 2018 08:02:04 +1100</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/patterns-vs-anti-patterns/</guid>
+      <description>Insert Lead paragraph here.
+A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus.</description>
+    </item>
+    
+    <item>
+      <title>Getting your hands dirty with Gulp</title>
+      <link>https://blog.test:8443/2018/12/getting-your-hands-dirty-with-gulp/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/getting-your-hands-dirty-with-gulp/</guid>
+      <description>Gulp is a JavaScript/Node.js based tool often used for automating many development tasks such as analysing, compiling, compressing, transforming source code and application resources, to name but a few. It is very popular alongside Grunt, and Webpack.</description>
+    </item>
+    
+    <item>
+      <title>Hibernate: Migrating 3.x to 5.x</title>
+      <link>https://blog.test:8443/2018/12/migrating-hibernate/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/migrating-hibernate/</guid>
+      <description>Recently I had to upgrade a codebase using Hibernate 3.x ORM on Spring 3 to Hibernate 5 (and Spring 5, respectively). Here I note down some aspects and issues that I have to deal with during this migration.</description>
+    </item>
+    
+    <item>
+      <title>Learning to &#39;React&#39;</title>
+      <link>https://blog.test:8443/2018/12/learning-to-react/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/learning-to-react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Web/MVC</title>
+      <link>https://blog.test:8443/2018/12/spring-web/mvc/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/spring-web/mvc/</guid>
+      <description>Spring Web Servlet Lifecycle A Servlet lifecycle is managed by the container in which it has been deployed.
+ https://docs.oracle.com/javaee/6/tutorial/doc/bnafi.html http://docs.jboss.org/jbossas/javadoc/7.1.2.Final/javax/servlet/Servlet.html  ContextLoaderListener This is the bootstrap listener to manipulate the Spring&amp;rsquo;s root WebApplicationContext (being shared by all servlets within the web application).</description>
+    </item>
+    
+    <item>
+      <title>Alfred 3 workflow development</title>
+      <link>https://blog.test:8443/2018/12/alfred-3-workflow-development/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/12/spring-boot-di-meets-coc/</guid>
+      <guid>https://blog.test:8443/2018/12/alfred-3-workflow-development/</guid>
+      <description>Alfred is extremely popular to a lot of Mac users as a simple but powerful tool for automating tasks and many others. Since version 3, Alfred has been revamped with even cooler interfaces and features and good integrations with numerous third-party applications.</description>
+    </item>
+    
+    <item>
+      <title>Tour de Spring Boot: DI meets CoC</title>
+      <link>https://blog.test:8443/2018/12/spring-boot-di-meets-coc/</link>
+      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.test:8443/2018/12/spring-boot-di-meets-coc/</guid>
       <description>I started using Spring framework few years back in 2009 to develop demo systems for some EU projects. These projects featured a number of Web services some of which share back-end databases and some other talk to external services or WS-BPEL business processes.</description>
     </item>
     
     <item>
       <title>Spring Boot properties issues with trailing whitespaces</title>
-      <link>https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/</link>
+      <link>https://blog.test:8443/2018/11/spring-boot-trailing-whitespaces/</link>
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/</guid>
-      <description>TL;DR:
-Spring Boot does not trim off the trailing whitespaces in *.properties that in turn might lead to some unexpected errors. As the Spring development team decides to not fix this issue, we can configure code editors to avoid some similar problems.</description>
+      <guid>https://blog.test:8443/2018/11/spring-boot-trailing-whitespaces/</guid>
+      <description>__TL;DR:__Spring Boot does not trim off the trailing whitespaces in *.properties that in turn might lead to some unexpected errors. As the Spring development team decides to not fix this issue, we can configure code editors to avoid some similar problems.</description>
     </item>
     
     <item>
       <title>Back to basics: Test-driven Spring JDBC</title>
-      <link>https://htr3n.github.io/2018/11/test-driven-spring-jdbc/</link>
+      <link>https://blog.test:8443/2018/11/test-driven-spring-jdbc/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/11/test-driven-spring-jdbc/</guid>
+      <guid>https://blog.test:8443/2018/11/test-driven-spring-jdbc/</guid>
       <description>Spring is a popular heavy-weight framework for developing Java/Groovy based applications. Its rich libraries and software stack can cover from front-end to back-end development. In 2009 I used Spring Framework 3 to develop web services and MVC + Hibernate portal for a fictious loan approval process.</description>
     </item>
     
     <item>
       <title>Handy macOS QuickLook configurations</title>
-      <link>https://htr3n.github.io/2018/07/handy-quicklook/</link>
+      <link>https://blog.test:8443/2018/07/handy-quicklook/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/07/handy-quicklook/</guid>
+      <guid>https://blog.test:8443/2018/07/handy-quicklook/</guid>
       <description>QuickLook is a simple but powerful feature of macOS that helps to preview the content of a file or folder in Finder without using any particular apps. This feature is very handy when we only want to have brief glance on a certain file or quickly examine its parts instead of opening a full-fledged app for that particular file.</description>
     </item>
     
     <item>
       <title>Faster and enjoyable ZSH (maybe)</title>
-      <link>https://htr3n.github.io/2018/07/faster-zsh/</link>
+      <link>https://blog.test:8443/2018/07/faster-zsh/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/07/faster-zsh/</guid>
+      <guid>https://blog.test:8443/2018/07/faster-zsh/</guid>
       <description>Z shell (Zsh) has been my shell of choice in both Linux and macOS. I used to install oh-my-zsh or the claimed-to-be-faster Prezto or Zim to leverage some of their cool libraries.</description>
     </item>
     
     <item>
       <title>A mininal Hugo blogging workflow</title>
-      <link>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</link>
+      <link>https://blog.test:8443/2018/07/minimal-hugo-workflow/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</guid>
+      <guid>https://blog.test:8443/2018/07/minimal-hugo-workflow/</guid>
       <description>Hugo is a blazingly fast static site generator based on Go. My first experience with Hugo was truly pleasant. I appreciate the separation of contents, presentations, and site generation logics in Hugo that leads to less effort for maintenance or switching themes.</description>
     </item>
     
     <item>
       <title>Bootstrapping macOS workspace</title>
-      <link>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</link>
+      <link>https://blog.test:8443/2018/06/bootstrapping-macos-workspace/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</guid>
+      <guid>https://blog.test:8443/2018/06/bootstrapping-macos-workspace/</guid>
       <description>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and lately MacBook Pro 13&amp;rdquo; and 15&amp;rdquo;. From time to time, Time Machine has become extremely handy for transferring my data from the old to the new machine.</description>
     </item>
     
     <item>
       <title>A journey from Apache CXF 2.2 to 3.2</title>
-      <link>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</link>
+      <link>https://blog.test:8443/2018/06/apache-cxf-2-to-3/</link>
       <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/06/apache-cxf-2-to-3/</guid>
+      <guid>https://blog.test:8443/2018/06/apache-cxf-2-to-3/</guid>
       <description>I have used Apache CXF 2.2 to develop Web services for some R&amp;amp;D projects that I took part in. At that time, it was a choice between Apache Axis/Axis2 and CXF (formerly Codehaus XFire project).</description>
     </item>
     
     <item>
       <title>Integration Laravel 5 and Gentelella admin theme</title>
-      <link>https://htr3n.github.io/2018/05/integration-laravel-gentelella/</link>
+      <link>https://blog.test:8443/2018/05/integration-laravel-gentelella/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/05/integration-laravel-gentelella/</guid>
+      <guid>https://blog.test:8443/2018/05/integration-laravel-gentelella/</guid>
       <description>Gentelella is a very nice and gently-looking Bootstrap based admin theme developed by Aigars Silkalns (aka puikinsh). It can be integrated into several Web application frameworks. This post is one of my development exercises in which Gentelella is used to decorate a Laravel 5 based Web application.</description>
     </item>
     
     <item>
       <title>Node.js package managers: NPM and Yarn</title>
-      <link>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</link>
+      <link>https://blog.test:8443/2018/04/node.js-package-managers-npm-and-yarn/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/04/node.js-package-managers-npm-and-yarn/</guid>
+      <guid>https://blog.test:8443/2018/04/node.js-package-managers-npm-and-yarn/</guid>
       <description>Node.js is an increasingly popular and widely used JavaScript runtime nowadays. One of the important aspects of Node.js is to manage the dependencies among software artefacts. Better dependency management would advocate modularisation and decoupling of software components.</description>
     </item>
     
     <item>
       <title>Confusing Hugo issues: datetime and &#39;isset&#39;</title>
-      <link>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</link>
+      <link>https://blog.test:8443/2018/03/confusing-hugo-issues-datetime-and-isset/</link>
       <pubDate>Sat, 31 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</guid>
+      <guid>https://blog.test:8443/2018/03/confusing-hugo-issues-datetime-and-isset/</guid>
       <description>Yesterday I got notified from Github for two opening issues of the Hugo&amp;rsquo;s theme hyde-hyde I have ported and developed further.
 The newest one is reported by jdayton3 (Jonathan Dayton) on wrong dates shown up.</description>
     </item>
     
     <item>
       <title>Getting started with Webpack</title>
-      <link>https://htr3n.github.io/2018/02/getting-started-webpack/</link>
+      <link>https://blog.test:8443/2018/02/getting-started-webpack/</link>
       <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/02/getting-started-webpack/</guid>
+      <guid>https://blog.test:8443/2018/02/getting-started-webpack/</guid>
       <description>Webpack is a static module bundler for Web applications. It analyses and processes the input application and generates output bundles.
-The design of Webpack architecture is highly modularised and extendable.</description>
+The design of Webpack architecture is highly modularised and extendable. In this post, I share here some notes on major aspects of Webpack since I&amp;rsquo;ve started learning it.</description>
     </item>
     
     <item>
       <title>First experience with Hugo</title>
-      <link>https://htr3n.github.io/2018/01/first-experience-with-hugo/</link>
+      <link>https://blog.test:8443/2018/01/first-experience-with-hugo/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/01/first-experience-with-hugo/</guid>
+      <guid>https://blog.test:8443/2018/01/first-experience-with-hugo/</guid>
       <description>To commence my journey in software development, I have looked for a Web framework to build my personal blog. I have started writing blog posts mainly using (Multi)Markdown and plan to migrate other posts to Markdown too.</description>
     </item>
     
     <item>
       <title>LaraMod - Modularised Laravel 5</title>
-      <link>https://htr3n.github.io/2018/01/laramod/</link>
+      <link>https://blog.test:8443/2018/01/laramod/</link>
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2018/01/laramod/</guid>
+      <guid>https://blog.test:8443/2018/01/laramod/</guid>
       <description>Laravel is an amazing emerging, well-designed and well-developed PHP framework. It is currently under active development and has been among top Web development frameworks. For a simple development project, the structure is totally fine.</description>
     </item>
     
     <item>
       <title>Apache httpd 2.4 and PHP 7 in macOS</title>
-      <link>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</link>
+      <link>https://blog.test:8443/2017/09/apache-httpd-php-macos/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://htr3n.github.io/2017/09/apache-httpd-php-macos/</guid>
+      <guid>https://blog.test:8443/2017/09/apache-httpd-php-macos/</guid>
       <description>Together, Apache HTTP server, PHP, and MySQL form a powerful and popular combination for Web development. MacOS are often shipped with pre-installed versions of Apache HTTP server and PHP but these are often outdated and merely customised for macOS.</description>
     </item>
     
