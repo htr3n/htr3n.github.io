@@ -6,10 +6,15 @@
     <description>Recent content in node.js on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://htr3n.github.io/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 19 Oct 2021 11:36:00 +1000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Node Canvas Container for AWS Lambda</title>
+      <link>https://htr3n.github.io/2021/10/node-canvas-aws-lambda/</link>
+      <pubDate>Tue, 19 Oct 2021 11:36:00 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/2021/10/node-canvas-aws-lambda/</guid>
+      <description>The Cairo-backed node-canvas has been a pillar for many Node.js based projects that need to simulate a browser canvas on the server-side. One of our recent projects uses Apache ECharts to render some graphs.</description>
+    </item>
     
     <item>
       <title>Node.js package managers: NPM and Yarn</title>

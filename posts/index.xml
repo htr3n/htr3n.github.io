@@ -6,10 +6,15 @@
     <description>Recent content in Posts on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jul 2019 12:33:36 +1000</lastBuildDate>
-    
-	<atom:link href="https://htr3n.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 19 Oct 2021 11:36:00 +1000</lastBuildDate><atom:link href="https://htr3n.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Node Canvas Container for AWS Lambda</title>
+      <link>https://htr3n.github.io/2021/10/node-canvas-aws-lambda/</link>
+      <pubDate>Tue, 19 Oct 2021 11:36:00 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/2021/10/node-canvas-aws-lambda/</guid>
+      <description>The Cairo-backed node-canvas has been a pillar for many Node.js based projects that need to simulate a browser canvas on the server-side. One of our recent projects uses Apache ECharts to render some graphs.</description>
+    </item>
     
     <item>
       <title>Chromium and macOS Environment Variables</title>
@@ -53,7 +58,7 @@
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/</guid>
-      <description>__TL;DR:__Spring Boot does not trim off the trailing whitespaces in *.properties that in turn might lead to some unexpected errors. As the Spring development team decides to not fix this issue, we can configure code editors to avoid some similar problems.</description>
+      <description>TL;DR:Spring Boot does not trim off the trailing whitespaces in *.properties that in turn might lead to some unexpected errors. As the Spring development team decides to not fix this issue, we can configure code editors to avoid some similar problems.</description>
     </item>
     
     <item>
@@ -98,7 +103,7 @@
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</guid>
-      <description>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and lately MacBook Pro 13&amp;rdquo; and 15&amp;rdquo;. From time to time, Time Machine has become extremely handy for transferring my data from the old to the new machine.</description>
+      <description>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and lately MacBook Pro 13&amp;quot; and 15&amp;quot;. From time to time, Time Machine has become extremely handy for transferring my data from the old to the new machine.</description>
     </item>
     
     <item>

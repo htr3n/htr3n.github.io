@@ -4,9 +4,8 @@
 <link href="https://gmpg.org/xfn/11" rel="profile">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.66.0"/>
+<meta name="generator" content="Hugo 0.88.1"/>
 <title>Tour de Spring Boot: DI meets CoC • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -16,7 +15,7 @@
 <meta property="og:title" content="Tour de Spring Boot: DI meets CoC"/>
 <meta property="og:description" content="I started using Spring framework few years back in 2009 to develop demo systems for some EU projects. These projects featured a number of Web services some of which share back-end databases and some other talk to external services or WS-BPEL business processes."/>
 <meta property="og:type" content="article"/>
-<meta property="og:url" content="https://htr3n.github.io/2018/12/spring-boot-di-meets-coc/"/>
+<meta property="og:url" content="https://htr3n.github.io/2018/12/spring-boot-di-meets-coc/"/><meta property="article:section" content="posts"/>
 <meta property="article:published_time" content="2018-12-04T00:00:00+00:00"/>
 <meta property="article:modified_time" content="2018-12-04T00:00:00+00:00"/>
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
@@ -81,7 +80,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2020 htr3n
+&copy; 2021 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -117,7 +116,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>To be precise, Spring Boot is not a magic wand that would help us to navigate through the forest of Spring framework complexity or automatically resolve certain problems. It is more or less some sort of <a href="https://en.wikipedia.org/wiki/Convention_over_configuration"><em>convention over configuration</em></a> that might reduce significant effort on making Spring applications quickly up and running as well as ensure better compatibilities among integrated libraries.</p>
 <h2 id="quickstart">A Quick Start</h2>
 <p>Let&rsquo;s consider the following Java code defining a REST controller for an endpoint &ldquo;<code>/</code>&rdquo; that shall display a greeting.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#f92672">{</span>
   
   <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">)</span>
@@ -126,18 +125,18 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Just with this very minimal code, we can have a working Spring application. Assume that the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html">Spring Boot CLI</a> is available, start our application with the following command.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">spring run HelloWorld.java
-</code></pre></div><p>Spring Boot will launch an embedded Tomcat server and initialise a Web application to serve the endpoint at &ldquo;<a href="http://localhost:8080">http://localhost:8080</a>&rdquo;. Visiting this address will give us &ldquo;<em>Hello World!</em>&quot;. What could be cooler than that !?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">spring run HelloWorld.java
+</code></pre></div><p>Spring Boot will launch an embedded Tomcat server and initialise a Web application to serve the endpoint at &ldquo;<a href="http://localhost:8080">http://localhost:8080</a>&rdquo;. Visiting this address will give us &ldquo;<em>Hello World!</em>&rdquo;. What could be cooler than that !?</p>
 <p>Now, let&rsquo;s start a quick tour on some more appealing features that Spring Boot 2.1.0 offers.</p>
 <h2 id="bootstrapping">Project Bootstrapping</h2>
 <p>Using <a href="https://start.spring.io/">Spring Initializr</a> directly or via IDE /CLI, we can quickly bootstrap a dead simple or full-blown Spring development project. For instance, this command will create a Spring application development project, namely, <code>hello-world</code>, with JPA and H2 database.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">spring init --dependencies<span style="color:#f92672">=</span>web,data-jpa,h2 hello-world
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">spring init --dependencies<span style="color:#f92672">=</span>web,data-jpa,h2 hello-world
 </code></pre></div><p>After asking some questions such as the project&rsquo;s and package&rsquo;s names, the command line will download the core package and create a new development project that is ready to be imported to any IDE. Other than that, Eclipse or IntelliJ IDEA can just walk you through simple wizards in which you can craft your own project and choose the necessary components for the new project.</p>
 <p><img src="spring-boot-in-ide.png" alt="Spring Boot project in Eclipse"></p>
 <h2 id="dependency-management">Build and Dependency Management</h2>
 <p>Spring Boot 2 works with Spring Framework 5 and requires at least Java 8. You can either choose Maven or Gradle build system when creating the project. An excerpt of Maven <code>pom.xml</code> (stripped off few minor details) of our project is shown below.</p>
 <div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;project&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;project&gt;</span>
   <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
   <span style="color:#f92672">&lt;groupId&gt;</span>io.github.htr3n<span style="color:#f92672">&lt;/groupId&gt;</span>
   <span style="color:#f92672">&lt;artifactId&gt;</span>hello-world<span style="color:#f92672">&lt;/artifactId&gt;</span>
@@ -196,7 +195,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>In the <code>hello-world</code> project, we have chosen three components <code>spring-boot-starter-data-jpa</code> (JPA), <code>spring-boot-starter-web</code> (Web), <code>spring-boot-starter-test</code> (for testing) along with <code>mysql-connector-java</code> (MySQL).</p>
 <h2 id="autoconfiguration">Autoconfiguration</h2>
 <p>Intelligent autoconfiguration is perhaps one of the most prominent and important parts of Spring Boot. There are different levels of configuring a Spring based application. The simplest form of autoconfiguration is the &ldquo;<em>Hello World</em>&rdquo; example mentioned above. The new Maven based project created via the wizard or command line consists of <code>pom.xml</code> along with <code>application.properties</code>, <code>HelloWorldApplication.java</code> and <code>HelloWorldApplicationTest.java</code> as shown in Figure 1.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> io.github.htr3n<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> io.github.htr3n<span style="color:#f92672">;</span>
 
 <span style="color:#f92672">import</span> org.springframework.boot.SpringApplication<span style="color:#f92672">;</span>
 <span style="color:#f92672">import</span> org.springframework.boot.autoconfigure.SpringBootApplication<span style="color:#f92672">;</span>
@@ -220,7 +219,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h3 id="app-launcher-configuration">App Launcher Configuration</h3>
 <p>The <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> class is the main launcher of a Spring application. Prior to Spring Boot, in order to start a Spring app we have to manually initialise an <a href="https://docs.spring.io/spring-framework/docs/5.1.2.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html?is-external=true"><code>ApplicationContext</code></a>, parse system- and application-specific properties and input arguments (if needed), load all necessary beans and/or launch an embedded Web server like <a href="https://tomcat.apache.org/">Tomcat</a> or <a href="https://www.eclipse.org/jetty/">Jetty</a>. Now, all of these tasks will be automatically done using <code>SpringApplication</code> with <code>@SpringBootApplication</code> (or a combination of its sub-annotations).</p>
 <p>Apart from <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-application-property-files"><code>application.properties</code></a> (or <code>.yml</code>), we can configure and customise a Spring app using a <code>SpringApplication</code> or <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-spring-application.html#boot-features-fluent-builder-api"><code>SpringApplicationBuilder</code></a> instance. For instance, the following code will turn off the banner when launching our Spring app</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
   SpringApplication app <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SpringApplication<span style="color:#f92672">(</span>HelloWorldApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
   app<span style="color:#f92672">.</span><span style="color:#a6e22e">setBannerMode</span><span style="color:#f92672">(</span>Banner<span style="color:#f92672">.</span><span style="color:#a6e22e">Mode</span><span style="color:#f92672">.</span><span style="color:#a6e22e">OFF</span><span style="color:#f92672">);</span>
   app<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
@@ -234,14 +233,14 @@ Please beware of the trailing whitespaces in Spring <code>.properties</code> as 
 </blockquote>
 <p>Besides the default <code>application.properties</code>, Spring allows us to activate various profiles using the naming convention <code>application-{profile}.properties</code>. It comes very handy in case we look forward to separating testing-specific environments, for example, using <code>application-test.properties</code>, from production environments. We can still ask to load property sources with <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/PropertySource.html"><code>@PropertySource</code></a> as usual in Spring.</p>
 <h3 id="components-and-beans-configuration">Components and Beans Configuration</h3>
-<p>Other components and bean configurations can be loaded from different sources including XML files, Java classes (with <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>), or Groovy (also annotated with <code>@Configuration</code> as Java or via Groovy <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli-groovy-beans-dsl.html">Beans DSL</a> &ldquo;<code>beans {...}</code>&rdquo;).</p>
+<p>Other components and bean configurations can be loaded from different sources including XML files, Java classes (with <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>), or Groovy (also annotated with <code>@Configuration</code> as Java or via Groovy <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli-groovy-beans-dsl.html">Beans DSL</a> &ldquo;<code>beans {...}</code>&quot;).</p>
 <p>Note that, all components in the sub-paths under the main class annotated with <code>@SpringBootApplication</code> will be automatically scanned and initialised. The rest of beans configuration will be handed over to Spring&rsquo;s <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-spring-beans-and-dependency-injection.html"><em>dependency injection mechanism</em></a>.</p>
 <h3 id="web-configuration">Web Configuration</h3>
 <p>Spring Boot often <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-spring-application.html#boot-features-web-environment">tries to establish</a> an appropriate <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a> based on classpath scanning and app-specific configurations. For instance, to enable the traditional Spring Web MVC, I simply include the component <code>spring-boot-starter-web</code> in the POM as <a href="#dependency-management">shown in the previous section</a>. Spring Boot will automatically adds relevant components for resolving and serving Web pages and resources.</p>
 <p>We can add extra components such as <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html">WebFlux</a>&mdash;the reactive framework added in Spring 5+ (<code>spring-boot-starter-webflux</code>), <a href="https://www.thymeleaf.org/">Thymeleaf</a> template engine (<code>spring-boot-starter-thymeleaf</code>), Spring Web services (<code>spring-boot-starter-web-services</code>) and <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket">WebSocket</a> (<code>spring-boot-starter-websocket</code>).</p>
 <p>Spring <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html">Web MVC</a> is totally capable to handle most of HTTP requests via <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html">servlets</a> or <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/stereotype/Controller.html">controllers</a> like the simple Hello World example above. Should you need more advanced control of RESTful endpoints, just add either one of <a href="http://spring.io/projects/spring-hateoas">Spring HATEOAS</a> (<code>spring-boot-starter-hateoas</code>), <a href="https://jersey.github.io/">Jersey</a> (<code>spring-boot-starter-jersey</code>) or <a href="https://cxf.apache.org/">Apache CXF</a>.</p>
 <p>By default, the Web starter will use Tomcat as the underlying embedded application server. When we opt for another server, we must explicitly exclude Tomcat and add either <code>spring-boot-starter-jetty</code> (Jetty) or <code>spring-boot-starter-undertow</code> (Undertow) in our POM.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
   <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
   <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
   <span style="color:#f92672">&lt;exclusions&gt;</span>
@@ -257,7 +256,7 @@ Please beware of the trailing whitespaces in Spring <code>.properties</code> as 
 <span style="color:#f92672">&lt;/dependency&gt;</span>
 </code></pre></div><p>Many of the embedded server&rsquo;s settings can be defined in <code>application.properties</code> such as the network address, port, sessions, and so on. These settings can also be done programmatically by defining bean implementing <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/server/WebServerFactoryCustomizer.html"><code>WebServerFactoryCustomizer</code></a> that enables access to customise the underlying <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/server/WebServerFactory.html"><code>WebServerFactory</code></a>. For instance, you can refer to more fine-tuned customisations for <a href="https://github.com/spring-projects/spring-boot/blob/v2.1.0.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/embedded/JettyWebServerFactoryCustomizer.java">Jetty</a>, <a href="https://github.com/spring-projects/spring-boot/blobv2.1.0.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/embedded/TomcatWebServerFactoryCustomizer.java">Tomcat</a>, or <a href="https://github.com/spring-projects/spring-boot/blob/v2.1.0.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/embedded/UndertowWebServerFactoryCustomizer.java">Undertow</a>.</p>
 <p>Following up our example on excluding Tomcat and adding Jetty, we can create a simple bean to change the Jetty server from the default port <code>8080</code> to <code>9999</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> io.github.htr3n<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> io.github.htr3n<span style="color:#f92672">;</span>
 
 <span style="color:#f92672">import</span> org.springframework.boot.web.server.ConfigurableWebServerFactory<span style="color:#f92672">;</span>
 <span style="color:#f92672">import</span> org.springframework.boot.web.server.WebServerFactoryCustomizer<span style="color:#f92672">;</span>
@@ -274,7 +273,7 @@ Please beware of the trailing whitespaces in Spring <code>.properties</code> as 
 </code></pre></div><h3 id="data-access-configuration">Data Access Configuration</h3>
 <p>Going through various versions, Spring framework always provides considerable support and different abstraction levels for <a href="http://spring.io/projects/spring-data">database access</a>. In general, it often requires some configurations for data sources and sometimes the intermediate layers such as pooling or caching.</p>
 <p>Spring Boot has taken further steps forward by auto-configuring in some popular circumstances, for instance, embedded databases, database pooling, to name but a few. What we need to do is to add appropriate dependencies. In the <code>hello-world</code> project, <a href="https://www.h2database.com/html/main.html">H2 database engine</a> will be auto-configured by Spring Boot.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependencies&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependencies&gt;</span>
   ...
   <span style="color:#f92672">&lt;dependency&gt;</span>
     <span style="color:#f92672">&lt;groupId&gt;</span>com.h2database<span style="color:#f92672">&lt;/groupId&gt;</span>
@@ -285,12 +284,12 @@ Please beware of the trailing whitespaces in Spring <code>.properties</code> as 
 <span style="color:#f92672">&lt;/dependencies&gt;</span>
 </code></pre></div><p>Note that, including database dependencies alone won&rsquo;t trigger any auto-configuration. It&rsquo;s only when Spring Boot found some sort of data access components such as <code>spring-boot-starter-jdbc</code>, <code>spring-boot-starter-data-jpa</code> (which transitively embraces <code>spring-jdbc</code>) on the classpath.</p>
 <p>Atop the data connection layer, Spring Boot takes the liberty of <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html#boot-features-connect-to-production-database">choosing other data access components</a>. Note that the design decisions taken by Spring Boot are often based on some popular and widely-used conventions in Spring based application developments. The decisions for data access, like other components, can be overriden with our own information. For example, I can define my own H2 data source in <code>application.properties</code>.</p>
-<pre><code class="language-properties" data-lang="properties">spring.datasource.url=jdbc:h2:mem:helloword_db;DB_CLOSE_ON_EXIT=FALSE
+<pre tabindex="0"><code class="language-properties" data-lang="properties">spring.datasource.url=jdbc:h2:mem:helloword_db;DB_CLOSE_ON_EXIT=FALSE
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=sa
 </code></pre><p>Next, Spring Boot will try to initialise the database. High level data access components such as <a href="https://spring.io/projects/spring-data-jpa">Spring Data JPA</a>, <a href="http://hibernate.org/orm/">Hibernate</a> can be customised via <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-database-initialization">specific properties</a>. Nonetheless, Spring Boot can look into the classpath for a <a href="https://en.wikipedia.org/wiki/Data_definition_language">schema definition script</a>, namely, <code>schema.sql</code>, and a <a href="https://en.wikipedia.org/wiki/Data_manipulation_language">data manipulation script</a>, namely, <code>data.sql</code> and execute them if found. Here is an example of these scripts for a simple database <code>customer</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- schema.sql
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- schema.sql
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> customer;
 <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> customer(
   id integer <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> auto_increment,
@@ -305,7 +304,7 @@ spring.datasource.password=sa
 <h2 id="development-support">Development Support</h2>
 <h3 id="testing">Testing</h3>
 <p>Testing is always a crucial part of any development process and Spring apps are no exception. That&rsquo;s why Spring Boot provides <code>spring-boot-starter-test</code> that comprises several handy components such as <a href="https://junit.org/junit4/">JUnit</a>, <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html">Spring Tests</a>, <a href="https://site.mockito.org/">Mockito</a>, to name but a few.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
 <span style="color:#f92672">import</span> org.junit.runner.RunWith<span style="color:#f92672">;</span>
 <span style="color:#f92672">import</span> org.springframework.boot.test.context.SpringBootTest<span style="color:#f92672">;</span>
 <span style="color:#f92672">import</span> org.springframework.test.context.junit4.SpringRunner<span style="color:#f92672">;</span>
@@ -321,12 +320,12 @@ spring.datasource.password=sa
 <p>We won&rsquo;t delve into evey detail of testing support but you can find <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/test-auto-configuration.html">an extensive list of test auto-configurations</a> for JDBC, JPA, Neo, Redis, REST, Web MVC, and WebFlux as well as a rich documentation of Spring Boot testing features <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html">here</a>.</p>
 <p>In <a href="/2018/11/test-driven-spring-jdbc/">one of my previous posts</a>, we can see that the annotation <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/jdbc/JdbcTest.html"><code>@JdbcTest</code></a> has simplified a lot of settings needed for loading up databases, testing CRUD app with automatic transactions. As such it truly helps me better focus on the actual testing logics.</p>
 <h3 id="troubleshooting">Troubleshooting</h3>
-<p>In order to dig deeper or to resolve bugs for our Spring apps, we may need more detailed information on logs and traces. Just start the Spring application under analysis with the command line option&quot;<code>--debug</code>&rdquo;, system property &ldquo;<code>-Ddebug</code>&rdquo;, or set &ldquo;<code>debug=true</code>&rdquo; in <code>application.properties</code>. Here is an example of enabling debugging using command line.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn spring-boot:run --debug
+<p>In order to dig deeper or to resolve bugs for our Spring apps, we may need more detailed information on logs and traces. Just start the Spring application under analysis with the command line option&rdquo;<code>--debug</code>&quot;, system property &ldquo;<code>-Ddebug</code>&rdquo;, or set &ldquo;<code>debug=true</code>&rdquo; in <code>application.properties</code>. Here is an example of enabling debugging using command line.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn spring-boot:run --debug
 </code></pre></div><p>The &ldquo;<code>--debug</code>&rdquo; option will enable the <code>DEBUG</code> logging level for <em>some selected core Spring components</em>. Likewise, we can also enable <code>TRACE</code> logging level with the &ldquo;<code>--trace&quot;</code> or &ldquo;<code>trace=true</code>&rdquo; in <code>application.properties</code>.</p>
 <h3 id="developer-tools">Developer Tools</h3>
 <p>Spring Boot equips us&mdash;Spring app developers&mdash;with a set of nice tools in hope that our life might become less miserable, or so they said ;)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependencies&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependencies&gt;</span>
   ...
   <span style="color:#f92672">&lt;dependency&gt;</span>
     <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
@@ -404,7 +403,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>

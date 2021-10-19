@@ -6,10 +6,60 @@
     <description>Recent content in Tags on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jul 2019 12:33:36 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Oct 2021 11:36:00 +1000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws</title>
+      <link>https://htr3n.github.io/tags/aws/</link>
+      <pubDate>Tue, 19 Oct 2021 11:36:00 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://htr3n.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>canvas</title>
+      <link>https://htr3n.github.io/tags/canvas/</link>
+      <pubDate>Tue, 19 Oct 2021 11:36:00 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/canvas/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>container</title>
+      <link>https://htr3n.github.io/tags/container/</link>
+      <pubDate>Tue, 19 Oct 2021 11:36:00 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://htr3n.github.io/tags/docker/</link>
+      <pubDate>Tue, 19 Oct 2021 11:36:00 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lambda</title>
+      <link>https://htr3n.github.io/tags/lambda/</link>
+      <pubDate>Tue, 19 Oct 2021 11:36:00 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node.js</title>
+      <link>https://htr3n.github.io/tags/node.js/</link>
+      <pubDate>Tue, 19 Oct 2021 11:36:00 +1000</pubDate>
+      
+      <guid>https://htr3n.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>api</title>
@@ -57,7 +107,7 @@
     </item>
     
     <item>
-      <title>macOS</title>
+      <title>macos</title>
       <link>https://htr3n.github.io/tags/macos/</link>
       <pubDate>Fri, 05 Jul 2019 12:33:36 +1000</pubDate>
       
@@ -701,15 +751,6 @@
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/tags/dependency-management/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>node.js</title>
-      <link>https://htr3n.github.io/tags/node.js/</link>
-      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://htr3n.github.io/tags/node.js/</guid>
       <description></description>
     </item>
     

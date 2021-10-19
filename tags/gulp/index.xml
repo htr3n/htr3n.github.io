@@ -6,11 +6,7 @@
     <description>Recent content in gulp on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Jul 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://htr3n.github.io/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 14 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A mininal Hugo blogging workflow</title>
       <link>https://htr3n.github.io/2018/07/minimal-hugo-workflow/</link>

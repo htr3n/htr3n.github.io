@@ -4,9 +4,8 @@
 <link href="https://gmpg.org/xfn/11" rel="profile">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.66.0"/>
+<meta name="generator" content="Hugo 0.88.1"/>
 <title>Getting started with Webpack • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -16,7 +15,7 @@
 <meta property="og:title" content="Getting started with Webpack"/>
 <meta property="og:description" content="Leveraging the power of Webpack to unify tools and libraries for Web based projects"/>
 <meta property="og:type" content="article"/>
-<meta property="og:url" content="https://htr3n.github.io/2018/02/getting-started-webpack/"/>
+<meta property="og:url" content="https://htr3n.github.io/2018/02/getting-started-webpack/"/><meta property="article:section" content="posts"/>
 <meta property="article:published_time" content="2018-02-16T00:00:00+00:00"/>
 <meta property="article:modified_time" content="2018-09-29T00:00:00+00:00"/>
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
@@ -81,7 +80,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2020 htr3n
+&copy; 2021 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -127,13 +126,13 @@ Figure 1. Webpack overview [<a href="https://webpack.github.io">source</a>]
 <li><a href="https://webpack.js.org/concepts/plugins">Plugins</a>: Plugins are important part of Webpack that will carry out different kinds of tasks such as checking, combining files, optimised outputs, and so on. Webpack provides a <a href="https://webpack.js.org/api/plugins">clear interface</a> for creating and/or extending plugins.</li>
 </ul>
 <h5 id="moduleshttpswebpackjsorgconceptsmodules"><a href="https://webpack.js.org/concepts/modules">Modules</a></h5>
-<p>Webpack considers almost each file of any kinds a <em>module</em>. The dependencies between modules can be described via various ways, for instance using ES2015&rsquo;s <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import"><code>import</code></a>, CommonJS&rsquo;s <a href="http://www.commonjs.org/specs/modules/1.0"><code>require()</code></a>, <a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md">AMD</a>&lsquo;s <code>define</code> and <code>require</code>, and CSS&rsquo;s <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>. Some built-in module types supported by Webpack are including CoffeeScript, TypeScript, Babel, Sass, Less, and Stylus.</p>
+<p>Webpack considers almost each file of any kinds a <em>module</em>. The dependencies between modules can be described via various ways, for instance using ES2015&rsquo;s <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import"><code>import</code></a>, CommonJS&rsquo;s <a href="http://www.commonjs.org/specs/modules/1.0"><code>require()</code></a>, <a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md">AMD</a>&rsquo;s <code>define</code> and <code>require</code>, and CSS&rsquo;s <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>. Some built-in module types supported by Webpack are including CoffeeScript, TypeScript, Babel, Sass, Less, and Stylus.</p>
 <h5 id="dependency-graphhttpswebpackjsorgconceptsdependency-graph"><a href="https://webpack.js.org/concepts/dependency-graph">Dependency Graph</a></h5>
 <p>When a file or module needs another, it is considered a <em>dependency</em>. Webpack analyses all possible dependencies and builds a <a href="https://en.wikipedia.org/wiki/Dependency_graph">graph</a> that includes all <em>needed modules</em> starting from the <em>entry points</em>. The <em>dependency graph</em> is then used to package these modules into the <em>output bundles</em>.</p>
 <h3 id="some-typical-usage-scenarios">Some Typical Usage Scenarios</h3>
 <h5 id="1-a-simple-greeting">1. A Simple Greeting</h5>
 <p>To demonstrate the simplest and, somewhat naive, usage of Webpack, we will create a small project as following.</p>
-<pre><code>simple-greeting
+<pre tabindex="0"><code>simple-greeting
  ├── package.json
  ├── public
  │   └── index.html
@@ -141,15 +140,15 @@ Figure 1. Webpack overview [<a href="https://webpack.github.io">source</a>]
  │   └── main.js
  └── webpack.config.js
 </code></pre><p>The <code>package.json</code> can be quickly instantiated using <a href="https://www.npmjs.com">npm</a> or <a href="https://yarnpkg.com">yarn</a>, as I prefer)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd simple-greeting
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd simple-greeting
 <span style="color:#75715e"># create a package.json with default options</span>
 $ yarn init -y
 <span style="color:#75715e"># now we use npm install webpack as a dependency of our project</span>
 $ yarn add --dev webpack
 </code></pre></div><p>Let&rsquo;s create a JavaScript <code>src/main.js</code> that contains our main business logic, i.e. writing out a heading 1 <code>Hello Webpack!</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;h1&gt;Hello Webpack!&lt;/h1&gt;&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;h1&gt;Hello Webpack!&lt;/h1&gt;&#39;</span>);
 </code></pre></div><p>And we edit <code>public/index.html</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
@@ -160,32 +159,32 @@ $ yarn add --dev webpack
 &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>You might have noticed that <code>index.html</code> uses <code>bundle.js</code> instead of <code>main.js</code> that we created above. You are right, <code>bundle.js</code> is generated by Webpack given the input <code>main.js</code>. Let&rsquo;s create a config file <code>webpack.config.js</code> to do that.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">webpack</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;webpack&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">webpack</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;webpack&#39;</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>);
 
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/main.js&#39;</span>,
   <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
+    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
     <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bundle.js&#39;</span>,
   }
 };
 </code></pre></div><p>After that, a simple invocation of <code>webpack</code> at the command line will work. Please note that <code>npm</code> installs the executable <code>webpack</code> inside <code>node_modules/.bin</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ node_modules/.bin/webpack
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ node_modules/.bin/webpack
 Hash: 9300b893968675cae1ef
 Version: webpack 3.11.0
 Time: 81ms
     Asset     Size  Chunks             Chunk Names
 bundle.js  2.52 kB       <span style="color:#ae81ff">0</span>  <span style="color:#f92672">[</span>emitted<span style="color:#f92672">]</span>  main
    <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> ./src/main.js <span style="color:#ae81ff">43</span> bytes <span style="color:#f92672">{</span>0<span style="color:#f92672">}</span> <span style="color:#f92672">[</span>built<span style="color:#f92672">]</span>
-</code></pre></div><p>The execution of <code>webpack</code> command should be successful. Now should you open <code>public/index.html</code> using a Web browser, you will see &ldquo;<strong>Hello Webpack</strong>&quot;.</p>
+</code></pre></div><p>The execution of <code>webpack</code> command should be successful. Now should you open <code>public/index.html</code> using a Web browser, you will see &ldquo;<strong>Hello Webpack</strong>&rdquo;.</p>
 <h4 id="2-using-loaders">2. Using Loaders</h4>
 <p>Several loaders have been developed for Webpack in order to handle various application resource types. An incompleted list of Webpack loaders can be found <a href="https://github.com/webpack-contrib/awesome-webpack#loaders">here</a>. We will exemplify <a href="https://github.com/webpack-contrib/eslint-loader"><code>eslint-loader</code></a> for analysing JavaScript sources and reporting errors, if any.</p>
 <p>Let&rsquo;s reuse the previous example <code>webpack.config.js</code> and add the <code>eslint-loader</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/main.js&#39;</span>,
     <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
+        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
 		<span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bundle.js&#39;</span>
     },    
     <span style="color:#a6e22e">module</span><span style="color:#f92672">:</span> {
@@ -199,14 +198,14 @@ bundle.js  2.52 kB       <span style="color:#ae81ff">0</span>  <span style="colo
     },
 };
 </code></pre></div><p>We also needs, at least, the following packages: <code>eslint</code> and <code>eslint-loader</code> which can be easily installed. In case you need further styles or rules, you can install more packages, for instance, <code>eslint-config-airbnb</code>, <code>eslint-config-google</code>, to name but a few.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ yarn add --dev eslint eslint-loader
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ yarn add --dev eslint eslint-loader
 </code></pre></div><p>For starting, we can initialise a simple configuration for <em>eslint</em> using the option <code>--init</code> and answer the corresponding questions. <code>eslint</code> will create a file <code>.eslintrc.xxx</code> where &ldquo;xxx&rdquo; is either &ldquo;js&rdquo;, &ldquo;json&rdquo;, or &ldquo;yaml&rdquo; depending on which file format you had chosen.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ eslint --init
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ eslint --init
 ...
 </code></pre></div><p>Then we can invoke <code>webpack</code> to trigger the loader. For example, we can add the following line in the <code>src/main.js</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;h1&gt;Hello Webpack!&lt;/h1&gt;&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;h1&gt;Hello Webpack!&lt;/h1&gt;&#39;</span>);
 document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// eslint will report an error here
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ webpack
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ webpack
 Hash: 9b7cb596310bf077e30b
 Version: webpack 3.11.0
 Time: 622ms
@@ -224,10 +223,10 @@ ERROR in ./src/main.js
 <h4 id="3-using-plugins">3. Using Plugins</h4>
 <p>As mentioned above, Webpack architecture enables the use of plugins for performing various kinds of tasks, for example, merging, minimising or uglifying source code. Many of Webpack plugins and guides can be found <a href="https://webpack.js.org/plugins">here</a> or <a href="https://github.com/webpack-contrib/awesome-webpack#webpack-plugins">here</a>. We take an example of <a href="https://webpack.js.org/plugins/uglifyjs-webpack-plugin"><code>UglifyjsWebpackPlugin</code></a> to illustrate how plugins actually work.</p>
 <p>Let&rsquo;s modify the file <code>webpack.config.js</code> taken from the previous scenarios and add the <code>plugins</code> part.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/main.js&#39;</span>,
     <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
+        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
 		<span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bundle.js&#39;</span>
     },
     ...
@@ -290,7 +289,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>

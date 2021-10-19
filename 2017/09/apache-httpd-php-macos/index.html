@@ -4,9 +4,8 @@
 <link href="https://gmpg.org/xfn/11" rel="profile">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.66.0"/>
+<meta name="generator" content="Hugo 0.88.1"/>
 <title>Apache httpd 2.4 and PHP 7 in macOS • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -16,7 +15,7 @@
 <meta property="og:title" content="Apache httpd 2.4 and PHP 7 in macOS"/>
 <meta property="og:description" content="A thorough guide to setting up server-side environments for local PHP-based Web development"/>
 <meta property="og:type" content="article"/>
-<meta property="og:url" content="https://htr3n.github.io/2017/09/apache-httpd-php-macos/"/>
+<meta property="og:url" content="https://htr3n.github.io/2017/09/apache-httpd-php-macos/"/><meta property="article:section" content="posts"/>
 <meta property="article:published_time" content="2017-09-25T00:00:00+00:00"/>
 <meta property="article:modified_time" content="2018-11-30T00:00:00+00:00"/>
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
@@ -81,7 +80,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2020 htr3n
+&copy; 2021 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -132,27 +131,27 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>Note: From now on, the sign <code>$</code> (if exists) will denote the user&rsquo;s command line prompt where you will execute the terminal commands, except that you must not type <code>$</code>.</p>
 </blockquote>
 <p>Homebrew requires Xcode&rsquo;s command line tooling so we must install it first.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Install Xcode command line tooling</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Install Xcode command line tooling</span>
 $ xcode-select --install
 </code></pre></div><p>Next we start installing Homebrew using a one-line command.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>By default, Homebrew will be installed into <code>/usr/local/Cellar</code> and use <code>/usr/local</code> and its sub-folders for the its installed binary and configuration files. For more advanced settings and manual configurations, please refer <a href="https://docs.brew.sh/Installation.html">here</a>. To ensure that Homebrew is properly installed, we can simply check.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew --version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew --version
 Homebrew 1.3.8
 Homebrew/homebrew-core <span style="color:#f92672">(</span>git revision 22ac3; last commit 2017-12-02<span style="color:#f92672">)</span>
 </code></pre></div><p>The command <code>brew config</code> shows more information about the installed Homebrew.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew config
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew config
 </code></pre></div><p>Now we should add some extra <em>taps</em> (i.e. package repositories in Homebrew&rsquo;s world) that contain packages we need, for instance, Apache HTTP server, PHP, and MySQL along with tools for running them as macOS services.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew tap homebrew/apache
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew tap homebrew/apache
 brew tap homebrew/php
 brew tap homebrew/services
 </code></pre></div><p>Last but not least, always make sure Homebrew is up-to-date.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew update
 brew doctor
 </code></pre></div><h3 id="apache-http-serverhttpshttpdapacheorg"><a href="https://httpd.apache.org">Apache HTTP server</a></h3>
 <h4 id="installing-apache-http-server-24">Installing Apache HTTP server 2.4</h4>
 <p>We can also use the pre-installed Apache HTTP server (from now on, Apache <code>httpd</code>, Apache, <code>httpd</code> will be used interchangeably) shipped with macOS. Nevertheless, I want to play around with the newer version. Apart from the Homebrew-based installation commands, the steps for setting up Apache are the same in either way.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install httpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install httpd
 </code></pre></div><blockquote>
 <p><strong>NOTE 1</strong>: Since Sep 30th, 2017 the Apache HTTP server package in Homebrew has been renamed from <code>httpd24</code> to <code>httpd</code> and the corresponding folders are also changed from <code>apache2</code> to <code>httpd</code>. This note has been updated with the newer versions. Apart from the aforementioned updates, the configuration steps remain the same though.</p>
 </blockquote>
@@ -160,31 +159,31 @@ brew doctor
 <p><strong>NOTE 2</strong>: When we use <code>brew install &lt;package_name</code> without any further options, Homebrew often accomplishes the installation faster by downloading a <em>bottled version</em> (i.e. a <em>pre-compiled package</em>) from <a href="https://homebrew.bintray.com">homebrew.bintray.com</a>. If there are any extra compling options, Homebrew can download the package&rsquo;s source code and compile the source. The compilation of a source package usually takes a a bit longer. For a simple and quick start, I mostly opt for the bottled versions of Apache server and PHP as the configured and compiled options are rather sufficient. After learning the fundamental aspects, I can turn to a more complex approach with lots of tweaks for further needs or experiments.</p>
 </blockquote>
 <p>By default, the Homebrew-based Apache server will use the ports <code>http/8080</code> and <code>https/8443</code> that do not need system administrator privileges. In my setup, I will go with this option as I simply want to run Apache with my user account. Nonetheless, you can tell Homebrew to install a version that use ports <code>80</code> and <code>443</code> by the option <code>--with-privileged-ports</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install httpd --with-privileged-ports
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install httpd --with-privileged-ports
 </code></pre></div><p>In case you want to experiment with the bleeding edge Apache server pulled from its development repository, use the option <code>--HEAD</code> along with other options. For example,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install httpd --HEAD --with-privileged-ports
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install httpd --HEAD --with-privileged-ports
 </code></pre></div><p>Let&rsquo;s assume the bottled <code>httpd</code> is installed. The Apache server will be installed in the following folder <code>/usr/local/Cellar/httpd/2.4.29</code> (which might be different in your computer). You can check the Homebrew&rsquo;s <em>Cellar</em>, i.e. where Homebrew puts installed packages, with <code>brew --cellar</code>. The precise location of <code>httpd</code> in a bit complex nerdy form is <code>$(brew --cellar)/httpd/$(brew list --versions httpd | cut -d ' ' -f 2)</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd <span style="color:#66d9ef">$(</span>brew --cellar<span style="color:#66d9ef">)</span>/httpd/<span style="color:#66d9ef">$(</span>brew list --versions httpd | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 2<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd <span style="color:#66d9ef">$(</span>brew --cellar<span style="color:#66d9ef">)</span>/httpd/<span style="color:#66d9ef">$(</span>brew list --versions httpd | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 2<span style="color:#66d9ef">)</span>
 </code></pre></div><h4 id="configuring-apache-server">Configuring Apache server</h4>
 <p>The main configuration file <code>httpd.conf</code> can be located at <code>/usr/local/etc/httpd</code>. There are some directives and options that you may want to notice or change ( <code>#</code> starts a comment).</p>
 <p>There is a default directive <code>Listen 8080</code> denoting the port where Apache server will be listening. You can change it to your favourite one or the one that suits your projects. Note that if you change to a port in the range from <code>1-1023</code> (so-called privileged ports), you need an administrator role to run the <code>httpd</code> process. Because I need to create virtual hosts for various projects, I have to configure <code>httpd</code> to listen at a particular address and port, which is <code>127.0.0.1:8080</code> in my setting.</p>
 <p>The directives <code>LoadModule</code> will enable some Apache HTTP modules we need for configuring PHP-FPM such as <code>mod_proxy</code>and <code>mod_proxy_fcgi</code> (disabled by default).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">Listen <span style="color:#ae81ff">127.0.0.1</span>:8080
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">Listen <span style="color:#ae81ff">127.0.0.1</span>:8080
 ...
 <span style="color:#75715e"># LoadModule proxy_module libexec/mod_proxy.so</span>
 ...
 <span style="color:#75715e"># LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so</span>
 ...
 </code></pre></div><p>Apache server can be started by using either <code>apachectl start</code> or <code>brew services start httpd</code>. Note that the latter also installs a snippet to run Apache <code>httpd</code> as a startup service.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew services start httpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew services start httpd
 brew services list
 </code></pre></div><h4 id="running-and-testing">Running and Testing</h4>
 <p>We use the following commands to start, stop, or restart <code>httpd</code>, respectively.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew services start httpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew services start httpd
 brew services stop httpd
 brew services restart httpd
 </code></pre></div><p>To see whether Apache <code>httpd</code> is up and running, you just start your Web browser and point to the URL <a href="http://localhost:8080"><code>http://localhost:8080</code></a> and should see a simple Web page saying <em>&ldquo;It works&rdquo;</em>. We can also check from the command line as well.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ launchctl list | grep httpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ launchctl list | grep httpd
 91962	0	homebrew.mxcl.httpd
 
 $ ps -ef | grep httpd
@@ -199,39 +198,39 @@ httpd     <span style="color:#ae81ff">91968</span> huytran    5u  IPv4 0xd51255a
 httpd     <span style="color:#ae81ff">91969</span> huytran    5u  IPv4 0xd51255ae3385c3d7      0t0  TCP *:* <span style="color:#f92672">(</span>CLOSED<span style="color:#f92672">)</span>
 httpd     <span style="color:#ae81ff">91970</span> huytran    5u  IPv4 0xd51255ae3385c3d7      0t0  TCP *:* <span style="color:#f92672">(</span>CLOSED<span style="color:#f92672">)</span>
 </code></pre></div><p>We can also examine whether Apache server configuration file is correct:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ apachectl configtest
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ apachectl configtest
 Syntax OK
 $ httpd -t
 Syntax OK
 </code></pre></div><h3 id="php-7httpphpnet"><a href="http://php.net">PHP 7</a></h3>
 <h4 id="install-php-and-php-fpm">Install PHP and PHP-FPM</h4>
 <p>Likewise, I just use Homebrew to install newer/older versions of PHP ranging from 5.x to 7.x. I opt for the stable release of PHP 7.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install php72
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install php72
 </code></pre></div><p>The default installation of PHP 7 almost covers several useful aspects including a PHP module <code>libphp7.so</code> that can be integrated with Apache HTTP server via the directive <code>LoadModule</code> and PHP-FPM that can be used as FastCGI.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ php -version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ php -version
 PHP 7.2.0 <span style="color:#f92672">(</span>cli<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>built: Dec  <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2017</span> 11:27:08<span style="color:#f92672">)</span> <span style="color:#f92672">(</span> NTS <span style="color:#f92672">)</span>
 Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 1997-2017 The PHP Group
 Zend Engine v3.2.0, Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 1998-2017 Zend Technologies
 </code></pre></div><h4 id="php-configurations">PHP configurations</h4>
 <p>The main configuration file of PHP is <code>php.ini</code> as shown below.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Configuration File <span style="color:#f92672">(</span>php.ini<span style="color:#f92672">)</span> Path: /usr/local/etc/php/7.2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Configuration File <span style="color:#f92672">(</span>php.ini<span style="color:#f92672">)</span> Path: /usr/local/etc/php/7.2
 Loaded Configuration File:         /usr/local/etc/php/7.2/php.ini
 Scan <span style="color:#66d9ef">for</span> additional .ini files in: /usr/local/etc/php/7.2/conf.d
 Additional .ini files parsed:      <span style="color:#f92672">(</span>none<span style="color:#f92672">)</span>
 </code></pre></div><p>The default setting in <code>/usr/local/etc/php/7.2/php.ini</code> is quite sufficient for simple development purposes. We may tweak later if necessary but can leave it for now.</p>
 <h4 id="starting-php-fpm">Starting PHP-FPM</h4>
 <p>The configuration for PHP-FPM is <code>/usr/local/etc/php/7.2/php-fpm.conf</code>. Note the last lines in this file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e">;include=/usr/local/etc/php/7.1/php-fpm.d/*.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e">;include=/usr/local/etc/php/7.1/php-fpm.d/*.conf</span>
 </code></pre></div><p>You can remove the semi-colon to enable the inclusion of other configurations and/or might also change the path to whether it fits your development environment. In the folder <code>/usr/local/etc/php/7.1/php-fpm.d/*</code>, there is a file <code>www.conf</code> that can be used as a starting point for setting up your own PHP-FPM.</p>
 <p>Now we can start PHP-FPM to see whether everything is fine before doing some extra configuration steps.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew services start php72
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew services start php72
 <span style="color:#f92672">==</span>&gt; Successfully started <span style="color:#e6db74">`</span>php72<span style="color:#e6db74">`</span> <span style="color:#f92672">(</span>label: homebrew.mxcl.php72<span style="color:#f92672">)</span>
 $ brew services stop php72
 Stopping <span style="color:#e6db74">`</span>php72<span style="color:#e6db74">`</span>... <span style="color:#f92672">(</span>might take a <span style="color:#66d9ef">while</span><span style="color:#f92672">)</span>
 <span style="color:#f92672">==</span>&gt; Successfully stopped <span style="color:#e6db74">`</span>php72<span style="color:#e6db74">`</span> <span style="color:#f92672">(</span>label: homebrew.mxcl.php72<span style="color:#f92672">)</span>
 $ brew services restart php72
 </code></pre></div><p>The command <code>brew services start php72</code> can create the file <code>homebrew.mxcl.php72.plist</code> in <code>~/Library/LaunchAgents</code> for starting up.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ launchctl list | grep php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ launchctl list | grep php
 47728	0	homebrew.mxcl.php72
 $ ps -ef | grep php-fpm
 ...
@@ -239,11 +238,11 @@ $ ps -ef | grep php-fpm
 <p>After basically finishing the installation of Apache, PHP 7 and PHP-FPM, we start putting these pieces together.</p>
 <h4 id="configurating-a-php-fpm-pool">Configurating a &lsquo;PHP-FPM&rsquo; pool</h4>
 <p>PHP-FPM supports multiple resource <em><strong>pools</strong></em>. Each pool defines how PHP-FPM will create and manage processes. Let&rsquo;s start with enabling the inclusion and handling of pools in <code>/usr/local/etc/php/7.2/php-fpm.conf</code> by changing the following line</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e">;include=/usr/local/etc/php/7.2/php-fpm.d/*.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e">;include=/usr/local/etc/php/7.2/php-fpm.d/*.conf</span>
 </code></pre></div><p>to (i.e. uncommenting it)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">include</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/etc/php/7.2/php-fpm.d/*.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">include</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/etc/php/7.2/php-fpm.d/*.conf</span>
 </code></pre></div><p>Then we can leverage the stock configuration in <code>/usr/local/etc/php/7.2/php-fpm.d/www.conf</code>. In my case, I have cleaned up <code>www.conf</code> and kept a simple configuration as following for the sake of readability. The configuration explains for itself.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[www]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[www]</span>
 <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">_www</span>
 <span style="color:#a6e22e">group</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">_www</span>
 <span style="color:#a6e22e">listen</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">127.0.0.1:9072</span>
@@ -257,7 +256,7 @@ $ ps -ef | grep php-fpm
 <p>Note that we can also configure PHP-FPM to serve at a <a href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix domain socket</a> (UDS) because PHP-FPM and <code>httpd</code> processes are running in the same host. To do that, the directive <code>listen</code> must be changed, for example, <code>listen = /usr/local/var/run/php72-fpm.sock</code>. This approach would need extra effort to configure Apache to use PHP-FPM via UDS that we will visit later near the end of this guide.</p>
 </blockquote>
 <p>Now as I want to check whether PHP-FPM will be up and running with the above changes, I restart PHP-FPM and check the open ports <code>9072</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew services restart php72
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew services restart php72
 $ ps -ef | grep php-fpm
 ...
 $ lsof -Pni4 | grep php-fpm
@@ -268,20 +267,20 @@ php-fpm   <span style="color:#ae81ff">53188</span> huytran    0u  IPv4 0xd51255a
 <p>I can define virtual hosts in Apache that suit my needs for separating different development projects. Instead of creating one large <code>httpd.conf</code>, I will create separate virtual host configurations. Again, I will start with the exemplary virtual host configuration provided in <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code>.</p>
 <p><strong>Enabling &lsquo;mod_proxy&rsquo; and &lsquo;mod_proxy_fcgi&rsquo;</strong></p>
 <p>Change the following lines in <code>/usr/local/etc/httpd/httpd.conf</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#75715e"># LoadModule proxy_module libexec/mod_proxy.so</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#75715e"># LoadModule proxy_module libexec/mod_proxy.so</span>
 ...
 <span style="color:#75715e"># LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so</span>
 </code></pre></div><p>to</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">LoadModule proxy_module libexec/mod_proxy.so
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">LoadModule proxy_module libexec/mod_proxy.so
 ...
 LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 </code></pre></div><p><strong>Defining Virtual Hosts</strong></p>
 <p>I want to define a PHP development project residing in <code>/Users/huytran/working/dev/dev-web/php</code>. Therefore, I change <code>/usr/local/etc/httpd/httpd.conf</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#75715e">#Include /usr/local/etc/httpd/extra/httpd-vhosts.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#75715e">#Include /usr/local/etc/httpd/extra/httpd-vhosts.conf</span>
 </code></pre></div><p>to</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">Include <span style="color:#e6db74">/usr/local/etc/httpd/extra/httpd-vhosts.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">Include <span style="color:#e6db74">/usr/local/etc/httpd/extra/httpd-vhosts.conf</span>
 </code></pre></div><p>and then create a file <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:8080</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:8080</span><span style="color:#f92672">&gt;</span>
     ServerName php7.test
     DocumentRoot <span style="color:#e6db74">&#34;/Users/huytran/working/dev/dev-web/php&#34;</span>
     ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9072/Users/huytran/working/dev/dev-web/php/$1
@@ -334,7 +333,7 @@ LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 <ul>
 <li>
 <p><a href="https://httpd.apache.org/docs/current/mod/mod_dir.html#directoryindex">DirectoryIndex</a> sets the list of resources for an indexing request. As I want to use PHP, I set <code>index.php</code> as index resource backed up by the default <code>index.html</code>. Note that <code>DirectoryIndex</code> can also be set globally in <code>httpd.conf</code> that affects the main server and can be inherited in all virtual hosts.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">dir_module</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">dir_module</span><span style="color:#f92672">&gt;</span>
     DirectoryIndex index.php index.html
 <span style="color:#f92672">&lt;/IfModule&gt;</span>
 </code></pre></div></li>
@@ -356,23 +355,23 @@ LoadModule proxy_fcgi_module libexec/mod_proxy_fcgi.so
 </ul>
 <h4 id="hostname-resolution">Hostname Resolution</h4>
 <p>As mentioned before, I will use the virtual host <code>php7.test</code> in my macOS to refer to my corresponding Web development projects. The hostname is not known by Apache. Thus, I must tell it how to resolve this hostname. In my setting, all virtual hosts are sharing in the same local computer with the address <code>127.0.0.1</code>. A simple solution is to change the file <code>/etc/hosts</code> where macOS will look for when resolving hostnames. This solution requires sufficient administration privilege.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo open -e /etc/hosts
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo open -e /etc/hosts
 Password: <span style="color:#f92672">(</span>enter your password here<span style="color:#f92672">)</span>
 </code></pre></div><p>After entering the administrator password, I will add two following lines to <code>/etc/hosts</code>.</p>
-<pre><code>127.0.0.1    php7.test
+<pre tabindex="0"><code>127.0.0.1    php7.test
 </code></pre><p>In case either you do not want to mess up system files like <code>/etc/hosts</code> or you have several development projects, you can leverage <code>dnsmasq</code> for automatically resolving hostnames with very simple configurations. Note that this is also the reason I chose the <code>.test</code> for all of my development projects such that I can use <code>dnsmasq</code> and only <strong>one line directive</strong> to resolve the TLD (Top-Level Domain) <code>test</code>. You can surely pick any TLD other than <code>test</code> .</p>
 <h4 id="testing-apache-and-php">Testing Apache and PHP</h4>
 <p>Apart from the aforementioned tests, we need to check whether the integration of Apache and PHP-FPM is working. Let&rsquo;s create a file <code>index.php</code> in <code>/Users/huytran/working/dev/dev-web/php</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
   <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;PHP Development Project&#39;</span>;
 </code></pre></div><p>Restart <code>httpd</code> and PHP-FPM to apply these changes.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew services restart httpd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew services restart httpd
 $ brew services restart php72
 </code></pre></div><p>Given no problems, the servers should be restarted smoothly. Then open your Web browser to the following URLs <a href="http://php7.test:8080"><code>http://php7.test:8080</code></a>. If you see the content created above, our configuration is working.</p>
 <h3 id="dnsmasqhttpwwwthekelleysorgukdnsmasqdochtml"><a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMasq</a></h3>
 <p>Instead of altering system hosts <code>/etc/hosts</code>, I can make use of <code>dnsmasq</code> to conveniently resolve many hostnames used in my virtual hosts.</p>
 <h4 id="installing-dnsmasq">Installing DNSMasq</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># update homebrew and install dnsmasq</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># update homebrew and install dnsmasq</span>
 $ brew update <span style="color:#f92672">&amp;&amp;</span> brew install dnsmasq
 <span style="color:#75715e"># Copy the dnsmasq daemon configuration file to be loaded at system startup time</span>
 $ sudo cp <span style="color:#66d9ef">$(</span>brew list dnsmasq | grep /homebrew.mxcl.dnsmasq.plist$<span style="color:#66d9ef">)</span> /Library/LaunchDaemons/
@@ -380,18 +379,18 @@ $ sudo cp <span style="color:#66d9ef">$(</span>brew list dnsmasq | grep /homebre
 $ sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 </code></pre></div><h4 id="configuring-dnsmasq">Configuring DNSMasq</h4>
 <p>After installing DNSMasq, let&rsquo;s open the configuration file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ open -e /usr/local/etc/dnsmasq.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ open -e /usr/local/etc/dnsmasq.conf
 </code></pre></div><p>and add the following line at the end.</p>
-<pre><code>address=/app/127.0.0.1
+<pre tabindex="0"><code>address=/app/127.0.0.1
 </code></pre><p>The above configuration line tells DNSMasq to resolve the TLD <code>dev</code> to the local IP address <code>127.0.0.1</code>. You can now use any hostnames like <code>this.is.a.development.project.test</code> in Apache virtual hosts.</p>
 <h4 id="configuring-macos-to-use-dnsmasq">Configuring macOS to use DNSMasq</h4>
 <p>We have to tell macOS that DNSMasq is now a nameserver running at the local host. The configuration file is <code>/etc/resolv.conf</code> specifies the nameservers for looking up hostnames. On the one hand, we should not mess up the system setting. Moreover, macOS might overwrite <code>/etc/resolv.conf</code> when there are changes in Network setting. An elegant solution is to create a file in the folder <code>/etc/resolver/</code>with the exact TLD managed by DNSMasq.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo mkdir -p /etc/resolver/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo mkdir -p /etc/resolver/
 $ sudo sh -c <span style="color:#e6db74">&#39;echo &#34;nameserver 127.0.0.1&#34; &gt; /etc/resolver/test&#39;</span>
 </code></pre></div><p>The aforementioned commands needs administrator privileges and will create a file <code>test</code> with the content <code>nameserver 127.0.0.1</code> in the folder <code>/etc/resolver/</code>.</p>
 <h4 id="testing-dnsmasq">Testing DNSMasq</h4>
 <p>Now we can delete the lines added before in <code>/etc/hosts</code> and start <code>dnsmasq</code> (as <code>root</code>) and test the resolving of hostnames.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># start dnsmasq</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># start dnsmasq</span>
 $ sudo brew services start dnsmasq
 
 <span style="color:#75715e"># ping the hostnames</span>
@@ -412,11 +411,11 @@ $ dig an.arbitrary.host.test @127.0.0.1
 <ol>
 <li>First comment out or delete the line <code>ProxyPassMatch ...</code> in the virtual host configuration <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code>.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#75715e"># ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9072/Users/huytran/working/dev/dev-web/php/$1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#75715e"># ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9072/Users/huytran/working/dev/dev-web/php/$1</span>
 </code></pre></div><ol start="2">
 <li>Then, add the following lines to either the end of <code>/usr/local/etc/httpd/httpd.conf</code> or the beginning of <code>/usr/local/etc/httpd/extra/httpd-vhosts.conf</code>.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#f92672">&lt;Proxy</span> <span style="color:#e6db74">&#34;fcgi://localhost:9072/&#34; enablereuse=on max=10</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#f92672">&lt;Proxy</span> <span style="color:#e6db74">&#34;fcgi://localhost:9072/&#34; enablereuse=on max=10</span><span style="color:#f92672">&gt;</span>
 <span style="color:#f92672">&lt;/Proxy&gt;</span>
 <span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.php$&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;If</span> <span style="color:#e6db74">&#34;-f %{REQUEST_FILENAME}&#34;</span><span style="color:#f92672">&gt;</span>
@@ -440,15 +439,15 @@ $ dig an.arbitrary.host.test @127.0.0.1
 </ol>
 <h3 id="handling-php-via-unix-domain-sockets">Handling PHP via Unix Domain Sockets</h3>
 <p>As mentioned before, PHP-FPM can serve on <em>Unix domain sockets (UDS)</em>, too. UDS is widely used in the Unix/Linux world for inter-process communication. To enable PHP-FPM listening on UDS, open file <code>/usr/local/etc/php/7.1/php-fpm.d/www.conf</code> and change the directive <code>listen</code> .</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[www]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[www]</span>
 <span style="color:#a6e22e">...</span>
 <span style="color:#a6e22e">listen</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/usr/local/var/run/php72-fpm.sock</span>
 <span style="color:#a6e22e">...</span>
 </code></pre></div><p>Now we must change the Apache configuration to adapt to UDS as well. In case we use <code>ProxyPassMatch</code> directive, change it like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/usr/local/var/run/php72-fpm.sock|fcgi://127.0.0.1:9072/Users/huytran/working/dev/dev-web/php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">ProxyPassMatch ^/(.*\.php(/.*)?)$ unix:/usr/local/var/run/php72-fpm.sock|fcgi://127.0.0.1:9072/Users/huytran/working/dev/dev-web/php
 </code></pre></div><p>The change is to add <code>unix:/usr/local/var/run/php72-fpm.sock|</code> before <code>fcgi://...</code> and remove the captured request URI <code>/$1</code> at the end.</p>
 <p>Similarly, if we switch to Apache handler as above, we update the Apache configuration accordingly.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#f92672">&lt;Proxy</span> <span style="color:#e6db74">&#34;unix:/usr/local/var/run/php72-fpm.sock|fcgi://localhost:9072/&#34; enablereuse=on max=10</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf"><span style="color:#f92672">&lt;Proxy</span> <span style="color:#e6db74">&#34;unix:/usr/local/var/run/php72-fpm.sock|fcgi://localhost:9072/&#34; enablereuse=on max=10</span><span style="color:#f92672">&gt;</span>
 <span style="color:#f92672">&lt;/Proxy&gt;</span>
 <span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.php$&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;If</span> <span style="color:#e6db74">&#34;-f %{REQUEST_FILENAME}&#34;</span><span style="color:#f92672">&gt;</span>
@@ -456,7 +455,7 @@ $ dig an.arbitrary.host.test @127.0.0.1
     <span style="color:#f92672">&lt;/If&gt;</span>
 <span style="color:#f92672">&lt;/FilesMatch&gt;</span>
 </code></pre></div><p>We should ensure the configurations are good and then restart the servers afterwards.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># check Apache config</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># check Apache config</span>
 $ apachectl -t
 Syntax OK
 <span style="color:#75715e"># check php-fpm config</span>
@@ -509,7 +508,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>

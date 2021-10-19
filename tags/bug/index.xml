@@ -6,18 +6,14 @@
     <description>Recent content in bug on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://htr3n.github.io/tags/bug/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 27 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/bug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring Boot properties issues with trailing whitespaces</title>
       <link>https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/</link>
       <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://htr3n.github.io/2018/11/spring-boot-trailing-whitespaces/</guid>
-      <description>__TL;DR:__Spring Boot does not trim off the trailing whitespaces in *.properties that in turn might lead to some unexpected errors. As the Spring development team decides to not fix this issue, we can configure code editors to avoid some similar problems.</description>
+      <description>TL;DR:Spring Boot does not trim off the trailing whitespaces in *.properties that in turn might lead to some unexpected errors. As the Spring development team decides to not fix this issue, we can configure code editors to avoid some similar problems.</description>
     </item>
     
   </channel>
