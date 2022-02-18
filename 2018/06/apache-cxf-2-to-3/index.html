@@ -281,7 +281,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -309,9 +309,13 @@ var loadDeferredStyles = function () {
   });
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script type="text/javascript">
-hljs.initHighlightingOnLoad();
+hljs.configure({languages: ["dockerfile"]});
+        
+        
+        hljs.highlightAll();
 </script>
 </body>
 </html>
