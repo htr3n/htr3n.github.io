@@ -360,12 +360,12 @@ spring.mvc.view.suffix=.jsp
 </blockquote>
 <h2 id="building-and-executing">Building and Executing</h2>
 <p>The <code>build.gradle</code> created previously is mainly based on the <a href="https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/">Spring Boot Gradle plugin</a> for dependency and task management.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./gradlew bootRun
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./gradlew bootRun
 </code></pre></div><p>When visiting <a href="http://localhost:8080/login">http://localhost:8080/login</a>, you can see the login page.</p>
 <p>To build a WAR package that is executable and deployable</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./gradlew bootWar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./gradlew bootWar
 </code></pre></div><p>The resulting WAR file is &ldquo;<code>./build/libs/spring-boot-jsp-demo-0.0.1-SNAPSHOT.war</code>&rdquo;. It&rsquo;s interesting that you can deploy the WAR file to a standalone Tomcat server as well as directly execute it with &ldquo;<code>java -jar</code>&rdquo; .</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">java -jar ./build/libs/spring-boot-jsp-demo-0.0.1-SNAPSHOT.war
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">java -jar ./build/libs/spring-boot-jsp-demo-0.0.1-SNAPSHOT.war
 </code></pre></div><p>In case you want to change the WAR file name, Spring Boot Gradle plugin inherits from, and therefore, offers similar options as, the <a href="https://docs.gradle.org/current/userguide/war_plugin.html">official Gradle War plugin</a>. For instance, I can get rid of the version and use the build project&rsquo;s name to form the WAR file name by customise the task <a href="https://docs.spring.io/spring-boot/docs/2.1.1.RELEASE/gradle-plugin/api/org/springframework/boot/gradle/tasks/bundling/BootWar.html"><code>BootWar</code></a> in <code>build.gradle</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">bootWar <span style="color:#f92672">{</span>
 	archiveName <span style="color:#e6db74">&#34;${project.name}.war&#34;</span>
@@ -480,10 +480,9 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/groovy.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile, groovy"]});
+hljs.configure({languages: ["groovy"]});
         
         
         hljs.highlightAll();

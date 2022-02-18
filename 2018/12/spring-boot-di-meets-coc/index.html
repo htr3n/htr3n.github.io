@@ -126,12 +126,12 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Just with this very minimal code, we can have a working Spring application. Assume that the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html">Spring Boot CLI</a> is available, start our application with the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">spring run HelloWorld.java
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spring run HelloWorld.java
 </code></pre></div><p>Spring Boot will launch an embedded Tomcat server and initialise a Web application to serve the endpoint at &ldquo;<a href="http://localhost:8080">http://localhost:8080</a>&rdquo;. Visiting this address will give us &ldquo;<em>Hello World!</em>&rdquo;. What could be cooler than that !?</p>
 <p>Now, let&rsquo;s start a quick tour on some more appealing features that Spring Boot 2.1.0 offers.</p>
 <h2 id="bootstrapping">Project Bootstrapping</h2>
 <p>Using <a href="https://start.spring.io/">Spring Initializr</a> directly or via IDE /CLI, we can quickly bootstrap a dead simple or full-blown Spring development project. For instance, this command will create a Spring application development project, namely, <code>hello-world</code>, with JPA and H2 database.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">spring init --dependencies<span style="color:#f92672">=</span>web,data-jpa,h2 hello-world
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">spring init --dependencies<span style="color:#f92672">=</span>web,data-jpa,h2 hello-world
 </code></pre></div><p>After asking some questions such as the project&rsquo;s and package&rsquo;s names, the command line will download the core package and create a new development project that is ready to be imported to any IDE. Other than that, Eclipse or IntelliJ IDEA can just walk you through simple wizards in which you can craft your own project and choose the necessary components for the new project.</p>
 <p><img src="spring-boot-in-ide.png" alt="Spring Boot project in Eclipse"></p>
 <h2 id="dependency-management">Build and Dependency Management</h2>
@@ -322,7 +322,7 @@ spring.datasource.password=sa
 <p>In <a href="/2018/11/test-driven-spring-jdbc/">one of my previous posts</a>, we can see that the annotation <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/jdbc/JdbcTest.html"><code>@JdbcTest</code></a> has simplified a lot of settings needed for loading up databases, testing CRUD app with automatic transactions. As such it truly helps me better focus on the actual testing logics.</p>
 <h3 id="troubleshooting">Troubleshooting</h3>
 <p>In order to dig deeper or to resolve bugs for our Spring apps, we may need more detailed information on logs and traces. Just start the Spring application under analysis with the command line option&rdquo;<code>--debug</code>&quot;, system property &ldquo;<code>-Ddebug</code>&rdquo;, or set &ldquo;<code>debug=true</code>&rdquo; in <code>application.properties</code>. Here is an example of enabling debugging using command line.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn spring-boot:run --debug
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mvn spring-boot:run --debug
 </code></pre></div><p>The &ldquo;<code>--debug</code>&rdquo; option will enable the <code>DEBUG</code> logging level for <em>some selected core Spring components</em>. Likewise, we can also enable <code>TRACE</code> logging level with the &ldquo;<code>--trace&quot;</code> or &ldquo;<code>trace=true</code>&rdquo; in <code>application.properties</code>.</p>
 <h3 id="developer-tools">Developer Tools</h3>
 <p>Spring Boot equips us&mdash;Spring app developers&mdash;with a set of nice tools in hope that our life might become less miserable, or so they said ;)</p>
@@ -433,12 +433,8 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile"]});
-        
-        
-        hljs.highlightAll();
+hljs.highlightAll();
 </script>
 </body>
 </html>

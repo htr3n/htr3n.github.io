@@ -118,7 +118,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>Even nicer, Apple provides <a href="https://developer.apple.com/documentation/quicklook">API</a> for QuickLook programming and enables the use of <a href="http://www.quicklookplugins.com/">plugins</a> that convert a certain document from its native format into QuickLook previewing format. Before, it was also possible to also <a href="http://www.mactricksandtips.com/2013/01/22-finder-hacks-tricks-and-changes.html">select and copy text from QuickLook previewing</a> but then Apple removed that feature since macOS 10.11 El Capitan.</p>
 <p>QuickLook is well supported in Spotlight search. In Finder, it can be conveniently activated by selecting a file or folder and then, for normal previewing, press Space or ⌘+Y. For full-screen previewing, you can press ⌥+Space (or using ⌘+⌥+Y in case you have ⌥+Space bound to some apps, for instance, <a href="https://www.alfredapp.com">Alfred</a> in my case).</p>
 <p>We might also use the command <code>qlmanage</code> but it works properly with built-in support and has issues with some external plugins.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># show the preview of file</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># show the preview of file</span>
 qlmanage -p &lt;path_to_file&gt;
 
 <span style="color:#75715e"># or only show the thumpnail</span>
@@ -126,7 +126,7 @@ qlmanage -t &lt;path_to_file&gt;
 </code></pre></div><h2 id="quicklook-settings">QuickLook Settings</h2>
 <p>QuickLook looks for and uses the plugins from both system-wide folders &lsquo;<em>/System/Library/QuickLook</em>&rsquo; and &lsquo;<em>/Library/QuickLook</em>&rsquo; and also the home folder of each user in &lsquo;<em>~/Library/QuickLook</em>&rsquo;.</p>
 <p>A QuickLook plugin is organised in a folder with an extension <code>.qlgenerator</code>. The main task of a plugin, as mentioned above, is to generate previewing contents for the corresponding file types. We can see an example of the built-in plugin <code>Image.qlgenerator</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ tree /System/Library/QuickLook/Image.qlgenerator
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ tree /System/Library/QuickLook/Image.qlgenerator
 /System/Library/QuickLook/Image.qlgenerator
 └── Contents
     ├── Info.plist
@@ -137,22 +137,22 @@ qlmanage -t &lt;path_to_file&gt;
     └── version.plist
 </code></pre></div><p>The command <code>qlmanage</code> is provided in macOS since the announcement of QuickLook in 2007. It&rsquo;s very helpful for manipulating QuickLook, for instance, reloading the generators, resetting cache, and many more. We will walk through some handy usage of <code>qlmanage</code>.</p>
 <h5 id="forcing-reloading-the-list-of-generators">Forcing reloading the list of generators</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">qlmanage -r
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qlmanage -r
 qlmanage: resetting quicklookd
 </code></pre></div><h5 id="showing-the-list-of-generators">Showing the list of generators</h5>
 <p>This command can be used to see the current QuickLook generators list and also check which generator handles what file types. You might then see a long list of generators in your macOS.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">qlmanage -m plugins
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qlmanage -m plugins
 </code></pre></div><h5 id="resetting-quicklook-caches">Resetting QuickLook caches</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">qlmanage -r cache
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qlmanage -r cache
 </code></pre></div><p>For more usage of <code>qlmanage</code>, we can look into its manual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">man qlmanage
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">man qlmanage
 </code></pre></div><h2 id="quicklook-plugins">QuickLook Plugins</h2>
 <p><a href="https://www.google.com/search?q=quicklook+plugins">Looking around</a>, we can easily find a lot of plugins to enhance the built-in support of macOS. Moreover, when we install some applications, there might be included QuickLook plugins too.</p>
 <p>Here is a list of plugins that I find very handy and use quite often in my macOS development box.</p>
 <h4 id="qlstephen">QLStephen</h4>
 <p><a href="https://whomwah.github.io/qlstephen">QLStephen</a> is sort of an awesome Swiss-army-knife that I ever used. It enables the preview of numerous plain text files not handled by the default support of macOS QuickLook, especially files having no extensions such as README, CHANGELOG, Makefile, Rakefile, etc.</p>
 <p>If you have already installed <a href="https://brew.sh">Homebrew</a>, it takes only a simple command to install QLStephen (in case you haven&rsquo;t, please feel free to head to <a href="https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/#homebrew">another post</a>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install qlstephen
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install qlstephen
 </code></pre></div>
 <figure>
 <img src="https://htr3n.github.io/2018/07/handy-quicklook/qlstephen.png" alt="QLStephen preview" width="80%" style="max-width: 100%;"/>
@@ -164,9 +164,9 @@ Figure 1. Using QLStephen to preview a Makefile (which has no extension and is n
 </figure>
 <h4 id="qlcolorcode">QLColorCode</h4>
 <p>I often quickly review my code using <a href="https://github.com/anthonygelibert/QLColorCode">this amazing plugin</a> forked/derived from the <a href="https://github.com/n8gray/QLColorCode">original one</a> developed by Nathan Gray (<a href="https://github.com/n8gray">n8gray</a>). The preview code will be nicely formatted and highlighted.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install qlcolorcode
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install qlcolorcode
 </code></pre></div><p>The default setting of QLColorCode is totall fine. Nonetheless, you might want to customise some of its settings to your tastes too. Here are some of my favourites.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">defaults write org.n8gray.QLColorCode textEncoding UTF-16
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write org.n8gray.QLColorCode textEncoding UTF-16
 defaults write org.n8gray.QLColorCode webkitTextEncoding UTF-16
 defaults write org.n8gray.QLColorCode font <span style="color:#e6db74">&#34;Source Code Pro&#34;</span>
 defaults write org.n8gray.QLColorCode fontSizePoints <span style="color:#ae81ff">10</span>
@@ -185,7 +185,7 @@ Figure 2. Code preview with syntax highlighting
 <h4 id="qlcommonmark">QLCommonMark</h4>
 <p>I have been working with Markdown a lot, especially writing this blog all using Markdown and Hugo generator. It was quite a while I have searched around for a stable QuickLook plugin for Markdown. Before, I used <a href="https://github.com/ttscoff/MMD-QuickLook">MDD-QuickLook</a>, an excellent fork of the well-known <a href="https://github.com/fletcher">Fletcher</a>&rsquo;s original <a href="https://github.com/fletcher/MMD-QuickLook">plugin</a>. MDD-QuickLook allows me to customise the look of the Markdown preview using a Github based CSS file <code>~/.mdqlstyle.css</code>.</p>
 <p>When I found <a href="https://github.com/digitalmoksha/QLCommonMark">QLCommonMark</a>, it replaces MDD-QuickLook with a broader coverage including <a href="http://commonmark.org/">CommonMark</a> and Markdown and can be configured in the same way, just different filename <code>~/.cmqlstyle.css</code>. You can find my Markdown preview style <a href="https://gist.github.com/htr3n/ffdcb6238f868dd1605af2bbd1e53546">here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install qlcommonmark
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install qlcommonmark
 </code></pre></div>
 <figure>
 <img src="https://htr3n.github.io/2018/07/handy-quicklook/qlcommonmark.png" alt="QLCommonMark preview" width="80%" style="max-width: 100%;"/>
@@ -197,10 +197,10 @@ Figure 3. Markdown preview with a Github based style
 </figure>
 <h4 id="quicklook-json">QuickLook JSON</h4>
 <p>Both front-end and back-end developers are somehow familiar with <a href="https://www.json.org/">JavaScript Object Notation</a> (JSON) format. As JavaScript and its ecosystem are rapidly growing, JSON and its variations become extremely popular. Hence, a QuickLook plugin for JSON should be ready in your macOS dev box.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install quicklook-json
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install quicklook-json
 </code></pre></div><h4 id="quicklook-csv">QuickLook CSV</h4>
 <p><a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> is a very popular format due to its simplicity and commonly used in statistics and data analytics. It contains values separated by comma, tabs, semi-colons, or pipes. MacOS provides built-in support for CSV previewing but I prefer a nicer-looking preview with <a href="https://github.com/p2/quicklook-csv">QuickLook CSV</a> developed by Pascal Pfiffner (<a href="https://github.com/p2">p2</a>) with alternate row shading.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install quicklook-csv
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install quicklook-csv
 </code></pre></div>
 <figure>
 <img src="https://htr3n.github.io/2018/07/handy-quicklook/csv.png" alt="CSV preview" width="80%" style="max-width: 100%;"/>
@@ -212,9 +212,9 @@ Figure 4. A CSV file preview
 </figure>
 <h4 id="hetimazip">HetimaZip</h4>
 <p>There are many formats and standards around for compressing and archiving files such as <a href="https://www.7-zip.org/">7z</a>, <a href="http://bzip.org">bzip2</a>, <a href="http://www.gzip.org">gzip</a>, <a href="https://www.rarlab.com/rar_file.htm">rar</a>, <a href="https://en.wikipedia.org/wiki/Zip_%28file_format%29">zip</a>, to name but a few. <a href="http://hetima.com/hetimazipql">HetimaZip</a> can help to <em>look through</em> a Zip archive without unzipping or opening it. Note that, this plugin also support well some file types based on Zip format such as <a href="https://en.wikipedia.org/wiki/JAR_%28file_format%29">Java ARchive</a> (<code>.jar</code>), iOS app (<a href="https://en.wikipedia.org/wiki/.ipa"><code>.ipa</code></a>), and many more.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install hetimazipql
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install hetimazipql
 </code></pre></div><p>Unfortunately, HetimaZip cannot handle <a href="https://en.wikipedia.org/wiki/Android_application_package">Android application package</a> (<code>.apk</code>). Thus we can combine with another nice plugin, <a href="https://github.com/hezi/QuickLookAPK">QuickLook APK</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install quicklookapk
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install quicklookapk
 </code></pre></div><p>There is an alternative to HetimaZip, namely, <a href="https://macitbetter.com">BetterZip</a>. I have tried both but could not make BetterZip&rsquo;s work in macOS High Sierra like HetimaZip&rsquo;s to show the content of a normal Zip file.</p>
 <figure>
 <img src="https://htr3n.github.io/2018/07/handy-quicklook/zip.png" alt="Zip file preview" width="80%" style="max-width: 100%;"/>
@@ -228,7 +228,7 @@ Figure 5. Looking through a Zip file content
 <p>MacOs applications are sometimes distributed as <a href="https://en.wikipedia.org/wiki/Installer_%28macOS%29">installer packages</a> (<code>.pkg</code>). An installer package may run some scripts and install many files in your systems. A curious and careful user would need to find out what exactly the installation scripts doing and what files are going to be installed.</p>
 <p>Advanced macOS users can use <span class="menu">Show Package Contents</span>
 to get inside the package, but it won&rsquo;t show much details. We can use the app <a href="https://www.mothersruin.com/software/SuspiciousPackage"><em>Suspicious Package</em></a> or its included QuickLook plugin to inspect any installer packages before approving for installation.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install suspicious-package
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install suspicious-package
 </code></pre></div><p>Note that it is a tad inconvenient that you <a href="https://www.mothersruin.com/software/SuspiciousPackage/faq.html#plugin-only">have to install the app</a> <em>Suspicious Package</em> only for its plugin. Copying the plugin alone won&rsquo;t work because it depends on the core libraries for previewing. I&rsquo;m not quite sure whether this is the developers' intention or there are actual technical difficulties behind the scene to solely deliver the QuickLook plugin.</p>
 <figure>
 <img src="https://htr3n.github.io/2018/07/handy-quicklook/package.png" alt="Installer package preview" width="80%" style="max-width: 100%;"/>
@@ -240,7 +240,7 @@ Figure 6. Looking through an installer package
 </figure>
 <h4 id="qlimagesize">qlImageSize</h4>
 <p>Normally macOS provides sufficient plugins for quick-looking images. <a href="https://github.com/Nyx0uf/qlImageSize">qlImageSize</a> can enhance further by displaying the dimensions and size of the previewed image. These information is only available either when opening the image with an application or selecting the image file and pressing ⌘+I in Finder. I like <em>qlImageSize</em> a lot as many times I just want to quickly see an image&rsquo;s dimensions and size this way.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew cask install qlimagesize
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew cask install qlimagesize
 </code></pre></div>
 </div>
 <div class="navigation navigation-single">
@@ -335,12 +335,8 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile"]});
-        
-        
-        hljs.highlightAll();
+hljs.highlightAll();
 </script>
 </body>
 </html>

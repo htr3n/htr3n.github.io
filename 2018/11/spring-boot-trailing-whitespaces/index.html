@@ -116,13 +116,13 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h2 id="problem">, the problem &hellip;</h2>
 <p>When tinkering with Spring Boot, I found a half-funny half-annoying issue that made one of my Spring apps failed to launch. As the project is rather clumpy and full of experimenting code, here I will replicate this issue in a smaller and simpler scale.</p>
 <p>Let&rsquo;s create a small Spring Boot project with JPA and H2. We can either use <a href="https://start.spring.io/">Spring Initialzr</a>, <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli-using-the-cli.html">Spring Boot CLI</a>, or IDE such as IntelliJ IDEA, Eclipse or NetBeans. To keep it simple, I use Spring Boot CLI that <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli">can be easily installed</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ spring version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ spring version
 Spring CLI v2.1.0.RELEASE
 $ spring init --dependencies<span style="color:#f92672">=</span>data-jpa,h2 spring-boot-trailing-spaces
 Using service at https://start.spring.io
 Project extracted to <span style="color:#e6db74">&#39;/dev/spring-framework/spring-boot-trailing-spaces&#39;</span>
 </code></pre></div><p>The newly created Spring application can be launched with Maven.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd spring-boot-trailing-spaces
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd spring-boot-trailing-spaces
 $ mvn spring-boot:run
 ...
 </code></pre></div><p>There should be no problem as we have not made any changes. Now, open &ldquo;<code>src/main/resources/application.properties</code>&rdquo; with an editor, then copy and paste the following code. Promise me that you don&rsquo;t change the pasted code ;)</p>
@@ -131,7 +131,7 @@ spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
 </code></pre><p>These lines are typical data source configuration of an embedded H2 database engine that you might have seen around or used many times. Unfortunately, this time they will crash the Spring application.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mvn spring-boot:run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mvn spring-boot:run
 ...
 2018-11-27 21:20:54.289 ERROR <span style="color:#ae81ff">92868</span> --- <span style="color:#f92672">[</span>           main<span style="color:#f92672">]</span> o.s.boot.SpringApplication               : Application run failed
 org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name <span style="color:#e6db74">&#39;org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration&#39;</span>: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name <span style="color:#e6db74">&#39;dataSource&#39;</span> defined in class path resource <span style="color:#f92672">[</span>org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class<span style="color:#f92672">]</span>: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate <span style="color:#f92672">[</span>com.zaxxer.hikari.HikariDataSource<span style="color:#f92672">]</span>: Factory method <span style="color:#e6db74">&#39;dataSource&#39;</span> threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: org.h2.Driver
@@ -139,7 +139,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 <p>Why is that?</p>
 <h2 id="root-causes">, the root causes? &hellip;</h2>
 <p>The very first thing came to my mind is to check whether H2 jar is included properly in the classpath.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mvn dependency:tree
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mvn dependency:tree
 ...
 <span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> +- com.h2database:h2:jar:1.4.197:runtime
 ...
@@ -248,12 +248,12 @@ or <code>settings.json</code> ▸ <code>&quot;files.trimTrailingWhitespace&quot;
 <ul>
 <li>For POSIX</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find . -type f -name <span style="color:#e6db74">&#39;*.properties&#39;</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -type f -name <span style="color:#e6db74">&#39;*.properties&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span> -exec sed --in-place <span style="color:#e6db74">&#39;s/[[:space:]]\+$//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\+</span>
 </code></pre></div><ul>
 <li>For macOS/BSD</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find . -iname <span style="color:#e6db74">&#39;*.properties&#39;</span> -type f <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -iname <span style="color:#e6db74">&#39;*.properties&#39;</span> -type f <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span> -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#e6db74">&#39;s/[[:space:]]\{1,\}$//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\+</span>
 </code></pre></div></li>
 </ul>
@@ -346,12 +346,8 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile"]});
-        
-        
-        hljs.highlightAll();
+hljs.highlightAll();
 </script>
 </body>
 </html>

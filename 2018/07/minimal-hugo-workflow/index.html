@@ -157,7 +157,7 @@ Figure 1. A simple Hugo project structure
 </code></pre></div><p>The fingerprint code is for <em>cache busting</em> and only changed when the source file is altered.</p>
 <p>The biggest advantage of <em>in-line pipeline</em> is that Hugo already provides a certain level of built-in support. Hugo&rsquo;s <em>live reload</em>, i.e. serving the resulting sites live and automatically refreshing whenever there are changes of contents or themes, also works superbly for this case.</p>
 <p>For many scenarios, we can use this approach instead of configuring complex tools like Gulp, Grunt, or Webpack. To be precise, I do need to install extra tools, which are <code>postcss-cli</code> and <code>autoprefixer</code>, for the aforementioned example to work and Hugo 0.43 extended version <a href="https://github.com/Homebrew/homebrew-core/issues/29898">partially depends on Cgo/libc++</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -g postcss-cli autoprefixer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm i -g postcss-cli autoprefixer
 </code></pre></div><p>Another downside to consider is that, in this way, external tools like <code>postcss</code> will slow down Hugo.</p>
 <blockquote>
 <p><strong>Note</strong></p>
@@ -173,7 +173,7 @@ Figure 1. A simple Hugo project structure
 <li><em>Autoprefixing</em>: it helps adding vendor-specific prefixes to CSS rules. We can use <a href="https://www.npmjs.com/package/gulp-autoprefixer"><em>gulp-autoprefixer</em></a> but be careful to combine with <em>gulp-sourcemaps</em> as it is <a href="https://github.com/gulp-sourcemaps/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support#css">currently broken</a>. I decide to use <a href="https://www.npmjs.org/package/gulp-postcss"><em>gulp-postcss</em></a> along with <a href="https://www.npmjs.com/package/autoprefixer"><em>postcss-autoprefixer</em></a> instead.</li>
 <li><em>Minification</em>: <a href="https://github.com/postcss/postcss">PostCSS</a> provides many plugins for CSS post-processing alongside <em>autoprefixer</em>. I choose <a href="http://cssnano.co"><em>cssnano</em></a> to minify the CSSs.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D gulp@next gulp-sass gulp-postcss autoprefixer gulp-sourcemaps cssnano
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm i -D gulp@next gulp-sass gulp-postcss autoprefixer gulp-sourcemaps cssnano
 </code></pre></div><p>In the same way, you can add more components to the list. Here I rather keep it short and simple for illustrative purpose. Now I start configuring Gulp to use them in my project.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">gulp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp&#39;</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gulp-sass&#39;</span>);
@@ -207,7 +207,7 @@ Figure 1. A simple Hugo project structure
 <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">series</span>(<span style="color:#e6db74">&#39;watch&#39;</span>, <span style="color:#66d9ef">function</span> () {}));
 </code></pre></div><p>Note that the syntax is Gulp v4.0.</p>
 <p>Now I just simply invoke Gulp to trigger its chaining pipeline.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gulp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gulp
 <span style="color:#f92672">[</span>10:23:40<span style="color:#f92672">]</span> Using gulpfile ~/working/dev/htr3n-blog/gulpfile.js
 <span style="color:#f92672">[</span>10:23:40<span style="color:#f92672">]</span> Starting <span style="color:#e6db74">&#39;default&#39;</span>...
 <span style="color:#f92672">[</span>10:23:40<span style="color:#f92672">]</span> Starting <span style="color:#e6db74">&#39;watch&#39;</span>...
@@ -217,7 +217,7 @@ Figure 1. A simple Hugo project structure
 </code></pre></div><p>Gulp will transform <code>hyde-hyde.scss</code> into <code>hyde-hyde.css</code> which is autoprefixed and saved in <code>static/css</code> along with its sourcemaps. In the Hugo templates, I refer to <code>hyde-hyde.css</code> normally.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Site.BaseURL }}/css/hyde-hyde.css&#34;</span>&gt;
 </code></pre></div><p>I can combine <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglobs-opts-fn">Gulp.watch()</a> with Hugo&rsquo;s <em>live reload</em> feature so that both will continuously monitors for changes and serve them instantly. This way, whenever I made any changes in a post in Typora, a SCSS/CSS file, or Go+HTML layout, I will instantly see the generated HTMLs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ hugo server -w --cleanDestinationDir
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server -w --cleanDestinationDir
                    | EN
 +------------------+-----+
   Pages            | <span style="color:#ae81ff">320</span>
@@ -258,7 +258,7 @@ Figure 2. Typora (left) and the generated HTML pages (right)
 <p>There are still two manual tasks for the <em>exogenous pipeline</em>, one for invoking Gulp and another one to start Hugo. Aiming to automate the workflow as much as possible, we can merge two tasks using one execution script, via NPM.</p>
 <p>There are a number of options for running tasks concurrently in NPM including <a href="https://www.npmjs.com/package/npm-run-all">npm-run-all</a>, <a href="https://www.npmjs.com/package/npm-run-parallel">npm-run-parallel</a>, <a href="https://www.npmjs.com/package/concurrently">concurrently</a>, or using <a href="https://en.wikipedia.org/wiki/Background_process">background process</a> if you are using Linux/macOS alike. Even Gulp also has some helper plugins like <a href="https://www.npmjs.com/package/gulp-exec">gulp-exec</a> to execute child processes, <a href="https://www.npmjs.com/package/gulp-nodemon">gulp-nodemon</a> to run in <a href="https://en.wikipedia.org/wiki/Daemon_%28computing%29">daemon mode</a>, and Gulp 4.0+ has <a href="https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#gulpparalleltasks">Gulp.parallel()</a>.</p>
 <p>Let&rsquo;s consider a simple example with <a href="https://www.npmjs.com/package/npm-run-all">npm-run-all</a>. Other tools can be used similarly.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D npm-run-all
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm i -D npm-run-all
 </code></pre></div><p>Then define some simple scripts in <code>package.json</code> for executing Gulp and Hugo.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;scripts&#34;</span>: {
@@ -282,7 +282,7 @@ Figure 2. Typora (left) and the generated HTML pages (right)
 <p>As you might have noticed, the Web resources (e.g. HTML, CSS) generated by Hugo may contain a lot of whitespace and/or line-breaks. You can easily see this when viewing the source code of the generated Web pages.</p>
 <p>During the developing phase in my local machines, I always keep the generated resources untouched so that I can read the code for debugging or analysing. When deploying to hosting servers, we don&rsquo;t often preserve the readability of the source code as the end-users mainly see and interact with the beautiful pages rendered by Web browsers.</p>
 <p>Therefore, I configure a simple Gulp task to optimise the generated Web resources before pushing them to the servers. What I need is <a href="https://www.npmjs.com/package/gulp-htmlmin"><code>gulp-htmlmin</code></a>&mdash;a Gulp front-end of <a href="https://github.com/kangax/html-minifier"><em>html-minifier</em></a>. Please refer to <em>html-minifier</em>&rsquo;s <a href="https://github.com/kangax/html-minifier">documentations</a> should you need to learn further about its options.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D gulp-htmlmin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm i -D gulp-htmlmin
 </code></pre></div><p>And I create a simple Gulp task for minifying Web resources that can be invoked at command line as <code>gulp minify-html</code>. This task should be performed after calling Hugo to generate the Web pages.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">htmlmin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;gulp-htmlmin&#34;</span>);
 <span style="color:#75715e">//...
@@ -419,12 +419,8 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile"]});
-        
-        
-        hljs.highlightAll();
+hljs.highlightAll();
 </script>
 </body>
 </html>

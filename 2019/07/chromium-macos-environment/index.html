@@ -113,11 +113,11 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </header>
 <div class="post">
 <p>Trying Chromium in macOS Mojave (10.14), I confronted with the popular issue regarding <a href="https://www.google.com/search?q=chromium+google+api+key+missing">Google API key missing</a>. After obtaining an API key along with client ID and secret, I put it on some shell startup scripts as following.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export GOOGLE_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_google_api_key&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GOOGLE_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_google_api_key&#34;</span>
 export GOOGLE_DEFAULT_CLIENT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_client_id&#34;</span>
 export GOOGLE_DEFAULT_CLIENT_SECRET<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_client_secret&#34;</span>
 </code></pre></div><p>Even more careful, I also use <code>launchctl setenv</code> to ensure these variables are available for macOS GUI applications (usually launched via Finder, Dock, Spotlight or so).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_API_KEY $GOOGLE_API_KEY
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_API_KEY $GOOGLE_API_KEY
 <span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_ID $GOOGLE_DEFAULT_CLIENT_ID
 <span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_SECRET $GOOGLE_DEFAULT_CLIENT_SECRET
 </code></pre></div><p>Sadly, it didn&rsquo;t work under Mojave. When launching Chrome from Finder or Dock, the warning is still there. It seems Apple has silently altered macOS a lot and many existing work-arounds stop working under Mojave.</p>
@@ -154,7 +154,7 @@ do shell script <span style="color:#e6db74">&#34;/bin/launchctl setenv GOOGLE_DE
 &lt;/dict&gt;
 &lt;/plist&gt;
 </code></pre><p><strong>Step 2</strong>: Enable it with <code>launchctl</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">launchctl load ~/Library/LaunchAgents/environments.plist
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">launchctl load ~/Library/LaunchAgents/environments.plist
 </code></pre></div><p><strong>Step 3</strong>: There is no step 3, just launch <code>Chromium</code> and see that it should work without warning ;)</p>
 <p>In this method, you don&rsquo;t even need to log out or reboot. The variables are made available to <code>launchctl</code> after Step 2.</p>
 <h2 id="conclusion">Conclusion</h2>
@@ -253,11 +253,10 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/sh.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/applescript.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile, sh, applescript"]});
+hljs.configure({languages: ["sh, applescript"]});
         
         
         hljs.highlightAll();

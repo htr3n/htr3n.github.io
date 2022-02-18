@@ -173,16 +173,16 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the CMD to your handler</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [ <span style="color:#e6db74">&#34;index.handler&#34;</span> ]<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>Now we can build the container</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker build -t node-canvas-lambda .
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t node-canvas-lambda .
 </code></pre></div><p>If the build is successful, we can see the new Docker image in our local environment</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker images | grep node-canvas
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker images | grep node-canvas
 node-canvas-lambda				latest			ae9f63e1981a   <span style="color:#ae81ff">11</span> seconds ago   1.72GB
 </code></pre></div><p>Start the container for testing (no need to deploy to AWS yet)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker run -p 3000:8080 node-canvas-lambda
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -p 3000:8080 node-canvas-lambda
 time<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2021-10-19T01:27:46.528&#34;</span> level<span style="color:#f92672">=</span>info msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exec &#39;/var/runtime/bootstrap&#39; (cwd=/var/task, handler=)&#34;</span>
 </code></pre></div><p>Per <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html">AWS documentation</a>, the container includes the AWS <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html#runtimes-api-client">runtime interface clients</a> needed to run. We can test the Lambda locally with <code>curl</code> or similar tools. Note that, the port has to be exact Docker port mapping <code>3000:8080</code>. The rest of the URL has to be <code>2015-03-31/functions/function/invocations</code>.</p>
 <p>Open another teminal (as we need to keep the Docker Node.js container running) and use the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ curl -X POST <span style="color:#e6db74">&#34;http://localhost:3000/2015-03-31/functions/function/invocations&#34;</span> <span style="color:#ae81ff">\ </span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -X POST <span style="color:#e6db74">&#34;http://localhost:3000/2015-03-31/functions/function/invocations&#34;</span> <span style="color:#ae81ff">\ </span>
 	--data <span style="color:#e6db74">&#39;{}&#39;</span>
 
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;body&#34;</span>:null,<span style="color:#e6db74">&#34;isBase64Encoded&#34;</span>:false,<span style="color:#e6db74">&#34;statusCode&#34;</span>:200<span style="color:#f92672">}</span>
@@ -270,11 +270,11 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/sh.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/bash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile, sh, javascript"]});
+hljs.configure({languages: ["bash, javascript, dockerfile"]});
         
         
         hljs.highlightAll();

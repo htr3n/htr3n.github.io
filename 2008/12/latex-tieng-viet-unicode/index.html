@@ -168,11 +168,11 @@ Một vài đoạn văn bản
 <span style="color:#66d9ef">\end</span>{document}
 </code></pre></div><h4 id="42-biên-dịch-và-tạo-tài-liệu-ps-hoặc-pdf">4.2 Biên dịch và tạo tài liệu PS hoặc PDF</h4>
 <p>Dùng các trình biên dịch như <code>latex</code> hoặc <code>pdflatex</code> để biên dịch tài liệu <code>tv.tex</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">latex tv.tex
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">latex tv.tex
 dvips tv.dvi
 ps2pdf tv.ps
 </code></pre></div><p>hoặc</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pdflatex tv.tex
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pdflatex tv.tex
 </code></pre></div><p>Kết quả tài liệu tiếng Việt sau khi biên dịch.</p>
 <p><img src="latex-tv.jpg" alt="Kết quả văn bản tiếng Việt"></p>
 </div>
@@ -251,10 +251,9 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/tex.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile, tex"]});
+hljs.configure({languages: ["tex"]});
         
         
         hljs.highlightAll();

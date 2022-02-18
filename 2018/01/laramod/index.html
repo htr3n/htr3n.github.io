@@ -126,7 +126,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 ├──View
 └──routes.php
 </code></pre><p>Such a structure can be very useful for different teams/people working independently. In LaraMod, there is an <code>artisan</code> command <code>gen:module</code> provided in <a href="https://github.com/htr3n/laramod/blob/master/app/Console/Commands/GenModuleCommand.php"><code>App\Console\Commands\GenModuleCommand</code></a> that can quickly create a submodule following that structure.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ php artisan gen:module Authentication
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ php artisan gen:module Authentication
 </code></pre></div><h3 id="how-to-proceed">How to Proceed</h3>
 <p>An easy approach is to rely on Laravel&rsquo;s <a href="https://laravel.com/docs/providers"><code>ServiceProvider</code></a> to load the submodules and register the necessary components of the submodules.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
@@ -326,12 +326,8 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/dockerfile.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["dockerfile"]});
-        
-        
-        hljs.highlightAll();
+hljs.highlightAll();
 </script>
 </body>
 </html>
