@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 <link href="https://gmpg.org/xfn/11" rel="profile">
+<link rel="canonical" href="https://htr3n.github.io/2018/07/faster-zsh/">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.88.1"/>
+<meta name="generator" content="Hugo 0.92.2"/>
 <title>Faster and enjoyable ZSH (maybe) • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -80,7 +81,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2021 htr3n
+&copy; 2022 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -167,8 +168,8 @@ Figure 1. Bash, sh, and zsh shells startup order [<a href="https://blog.flowblok
 <p>Grokking Zsh startup order will help us putting relevant configurations in right files as well as optimising the loading process. My local Zsh setting is orgranised as follow:</p>
 <ul>
 <li><code>.zshenv</code>: invoked by all invocations of Zsh, so we should keep it small and merely initialise necessary variables.</li>
-<li><code>.zlogin</code>: will be loaded in login shells after <em>.zshrc_. My </em>.zlogin_<a href="https://github.com/htr3n/zsh-config/blob/master/zlogin"></a> will compile <code>zcompdump</code> in background as this is time-consuming and done only once per log-in session.</li>
-<li><code>.zprofile</code> : similar to _.zlogin_ but will be sourced before _.zshrc_. Note that, both _.zprofile_ and _.zshrc_ are skipped in non-login non-interactive shells, as shown in Figure 1. So I learned a trick from <a href="https://github.com/sorin-ionescu/prezto/tree/master/runcoms">Prezto</a> that declares environment variables in _.zprofile_ and uses <em>.zshenv_ to source <em>.zprofile_ (e.g. </em>.zprofile</em><a href="https://github.com/htr3n/zsh-config/blob/master/zprofile"></a> and <a href="https://github.com/htr3n/zsh-config/blob/master/zshenv"><em>.zshenv</em></a>). This way, non-login non-interactive shells will receive proper variable initialisations.</li>
+<li><code>.zlogin</code>: will be loaded in login shells after <em>.zshrc</em>. My <a href="https://github.com/htr3n/zsh-config/blob/master/zlogin"><em>.zlogin</em></a> will compile <code>zcompdump</code> in background as this is time-consuming and done only once per log-in session.</li>
+<li><code>.zprofile</code> : similar to <em>.zlogin</em> but will be sourced before <em>.zshrc</em>. Note that, both <em>.zprofile</em> and <em>.zshrc</em> are skipped in non-login non-interactive shells, as shown in Figure 1. So I learned a trick from <a href="https://github.com/sorin-ionescu/prezto/tree/master/runcoms">Prezto</a> that declares environment variables in <em>.zprofile</em> and uses <em>.zshenv</em> to source <em>.zprofile</em> (e.g. <a href="https://github.com/htr3n/zsh-config/blob/master/zprofile"><em>.zprofile</em></a> and <a href="https://github.com/htr3n/zsh-config/blob/master/zshenv"><em>.zshenv</em></a>). This way, non-login non-interactive shells will receive proper variable initialisations.</li>
 <li><code>.zshrc</code>: will be sourced in interactive shells. This contains the main part of Zsh configuration (e.g. my <a href="https://github.com/htr3n/zsh-config/blob/master/zshrc"><em>.zshrc</em></a>).</li>
 </ul>
 <h3 id="avoiding-creating-subprocesses">Avoiding creating subprocesses</h3>

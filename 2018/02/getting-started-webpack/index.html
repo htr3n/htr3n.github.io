@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 <link href="https://gmpg.org/xfn/11" rel="profile">
+<link rel="canonical" href="https://htr3n.github.io/2018/02/getting-started-webpack/">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.88.1"/>
+<meta name="generator" content="Hugo 0.92.2"/>
 <title>Getting started with Webpack • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -80,7 +81,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2021 htr3n
+&copy; 2022 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -165,7 +166,7 @@ $ yarn add --dev webpack
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/main.js&#39;</span>,
   <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
+    <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
     <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bundle.js&#39;</span>,
   }
 };
@@ -184,7 +185,7 @@ bundle.js  2.52 kB       <span style="color:#ae81ff">0</span>  <span style="colo
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/main.js&#39;</span>,
     <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
+        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
 		<span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bundle.js&#39;</span>
     },    
     <span style="color:#a6e22e">module</span><span style="color:#f92672">:</span> {
@@ -226,7 +227,7 @@ ERROR in ./src/main.js
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/main.js&#39;</span>,
     <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
+        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;public&#39;</span>),
 		<span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bundle.js&#39;</span>
     },
     ...
