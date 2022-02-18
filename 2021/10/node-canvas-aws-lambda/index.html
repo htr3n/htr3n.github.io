@@ -157,8 +157,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">##</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> yum -y update <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> yum -y groupinstall <span style="color:#e6db74">&#34;Development Tools&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> yum install -y nodejs gcc-c++ cairo-devel libjpeg-turbo-devel <span style="color:#ae81ff">\ </span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>	pango-devel giflib-devel zlib-devel librsvg2-devel<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> yum install -y nodejs gcc-c++ cairo-devel <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	libjpeg-turbo-devel pango-devel giflib-devel <span style="color:#ae81ff">\ </span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>	zlib-devel librsvg2-devel<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> *.js package* ./<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
@@ -169,7 +170,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> yum remove -y cairo-devel libjpeg-turbo-devel <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>		pango-devel giflib-devel zlib-devel librsvg2-devel<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the CMD to your handler</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [ <span style="color:#e6db74">&#34;index.handler&#34;</span> ]<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>Now we can build the container</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker build -t node-canvas-lambda .
