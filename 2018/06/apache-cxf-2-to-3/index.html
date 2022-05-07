@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>A journey from Apache CXF 2.2 to 3.2 • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -113,125 +113,125 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>I eventually decided to get along with CXF due to its simplicity, quite clear documentation, good support for document-style Web services (+) and many standards, especially JAX-WS and JAX-RS.</p>
 <p>Moreover, Apache CXF also embraces smooth integration with Spring Framework (big plus for me as I was using Spring Web MVC 3 to develop the Web front-end). Everything went well for me on modelling and developing Web services based on JAX-WS for both directions: WSDL-first and Java-first.</p>
 <p>In my projects, I designed the WSDLs and used <a href="http://cxf.apache.org/docs/wsdl-to-java.html">WSDL2Java</a> Maven plugin or command line to generate skeleton Java code of the Web services. The Java service implementations were kept separately in a package/folder to avoid any code overwriting. CXF services are so easy to configure with Spring Framework 3.0. The implementations of the services were loaded as Spring managed beans. The expose of a service is done via a CXF directive <code>&lt;jaxws:endpoint&gt;</code> of which the <code>implementor</code> attribute refers to the corresponding bean.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
-       <span style="color:#a6e22e">xmlns:jaxws=</span><span style="color:#e6db74">&#34;http://cxf.apache.org/jaxws&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf-extension-soap.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf-extension-jaxws.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf-servlet.xml&#34;</span> <span style="color:#f92672">/&gt;</span>    
-  <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;CreditWorthinessImpl&#34;</span>
-        <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;westbank.ws.impl.CreditWorthinessImpl&#34;</span>
-        <span style="color:#a6e22e">p:dataAccessObject-ref=</span><span style="color:#e6db74">&#34;dataAccessObject&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;/bean&gt;</span>
-  <span style="color:#f92672">&lt;jaxws:endpoint</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;CreditWorthiness&#34;</span>
-                  <span style="color:#a6e22e">implementor=</span><span style="color:#e6db74">&#34;#CreditWorthinessImpl&#34;</span> 
-                  <span style="color:#a6e22e">address=</span><span style="color:#e6db74">&#34;/CreditWorthiness&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;/jaxws:endpoint&gt;</span>
-<span style="color:#f92672">&lt;/beans&gt;</span>
-</code></pre></div><p>In the Web app configuration <code>web.xml</code>, CXF Servlet must be loaded by the container.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;servlet&gt;</span>
-  <span style="color:#f92672">&lt;servlet-name&gt;</span>cxf<span style="color:#f92672">&lt;/servlet-name&gt;</span>
-  <span style="color:#f92672">&lt;servlet-class&gt;</span>org.apache.cxf.transport.servlet.CXFServlet<span style="color:#f92672">&lt;/servlet-class&gt;</span>
-  <span style="color:#f92672">&lt;load-on-startup&gt;</span>2<span style="color:#f92672">&lt;/load-on-startup&gt;</span>
-<span style="color:#f92672">&lt;/servlet&gt;</span>
-<span style="color:#f92672">&lt;servlet-mapping&gt;</span>
-  <span style="color:#f92672">&lt;servlet-name&gt;</span>cxf<span style="color:#f92672">&lt;/servlet-name&gt;</span>
-  <span style="color:#f92672">&lt;url-pattern&gt;</span>/services/*<span style="color:#f92672">&lt;/url-pattern&gt;</span>
-<span style="color:#f92672">&lt;/servlet-mapping&gt;</span>
-</code></pre></div><h2 id="upgrading-apache-cxf">Upgrading Apache CXF</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">xmlns:jaxws=</span><span style="color:#e6db74">&#34;http://cxf.apache.org/jaxws&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf-extension-soap.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf-extension-jaxws.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf-servlet.xml&#34;</span> <span style="color:#f92672">/&gt;</span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;CreditWorthinessImpl&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;westbank.ws.impl.CreditWorthinessImpl&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">p:dataAccessObject-ref=</span><span style="color:#e6db74">&#34;dataAccessObject&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;jaxws:endpoint</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;CreditWorthiness&#34;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">implementor=</span><span style="color:#e6db74">&#34;#CreditWorthinessImpl&#34;</span> 
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">address=</span><span style="color:#e6db74">&#34;/CreditWorthiness&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/jaxws:endpoint&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/beans&gt;</span>
+</span></span></code></pre></div><p>In the Web app configuration <code>web.xml</code>, CXF Servlet must be loaded by the container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;servlet&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;servlet-name&gt;</span>cxf<span style="color:#f92672">&lt;/servlet-name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;servlet-class&gt;</span>org.apache.cxf.transport.servlet.CXFServlet<span style="color:#f92672">&lt;/servlet-class&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;load-on-startup&gt;</span>2<span style="color:#f92672">&lt;/load-on-startup&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/servlet&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;servlet-mapping&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;servlet-name&gt;</span>cxf<span style="color:#f92672">&lt;/servlet-name&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;url-pattern&gt;</span>/services/*<span style="color:#f92672">&lt;/url-pattern&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/servlet-mapping&gt;</span>
+</span></span></code></pre></div><h2 id="upgrading-apache-cxf">Upgrading Apache CXF</h2>
 <p>For a while I haven&rsquo;t taken part in further WS development, i.e. not using Apache CXF a lot. One day I thought I could use the WS project to showcase and review my relevant knowledge. The codebase still works well after some mysterious library missing that I have not seen before. It is possible due to the built-in libraries for XML parsing that were implicitly used but now changed in the newer JRE. Apart from that, most of the libraries are also outdated. So I dedice to spend some time to exercise upgrading the project and refactor a bit its source code. Here I jot down some major points on upgrading Apache CXF.</p>
-<p>The upgrading was not as easy and smooth as just changing the dependencies' versions. A lot of conflicts or major refactoring happened. I had to read thoroughly the <a href="http://cxf.apache.org/docs/migration-guides.html">documentation on CXF site for migration</a> and decided to go gradually over each major version of Apache CXF.</p>
+<p>The upgrading was not as easy and smooth as just changing the dependencies&rsquo; versions. A lot of conflicts or major refactoring happened. I had to read thoroughly the <a href="http://cxf.apache.org/docs/migration-guides.html">documentation on CXF site for migration</a> and decided to go gradually over each major version of Apache CXF.</p>
 <h2 id="-from-version-22-to-27-">&hellip; from version 2.2 to 2.7 &hellip;</h2>
 <p>From Apache CXF 2.2 to 2.6, not so many changes are relevant for the project as I mainly used <code>cxf-rt-frontend-jaxws</code>. Another <a href="http://cxf.apache.org/docs/embedding-cxf-inside-spring.html">significant change since 2.4</a> causes errors for Spring / Jetty server regarding importing CXF&rsquo;s XML resources. Recall the aforementioned Spring bean configuration where CXF service implementations were loaded and published? There are a number of <code>&lt;import&gt;</code> directives. These directives advise Spring to load the corresponding CXF resources. Now we only need &ldquo;<em>one to rule them all</em>&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
-</code></pre></div><p>To upgrade to version 2.6, I have to revise the project with respect to the merging of <code>cxf-common-utilites</code> into <code>cxf-api</code>, the removal of <code>cxf-rt-binding-http</code>, and the refactoring that impact <code>cxf-rt-core</code>. Most of the other changes from 2.2 to 2.7 are for JAX-RS, which were used very little or none in my project.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;classpath:META-INF/cxf/cxf.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span></code></pre></div><p>To upgrade to version 2.6, I have to revise the project with respect to the merging of <code>cxf-common-utilites</code> into <code>cxf-api</code>, the removal of <code>cxf-rt-binding-http</code>, and the refactoring that impact <code>cxf-rt-core</code>. Most of the other changes from 2.2 to 2.7 are for JAX-RS, which were used very little or none in my project.</p>
 <h2 id="-and-to-version-30">&hellip; and to version 3.0+</h2>
 <p>Apache CXF 3.0 requires a rather disruptive change, from Spring Framework 3.0 to 3.2+. Again, I used standard Spring bean configurations which are still valid for Spring 3.2. Hence, the project works well with Spring 3.2.18-RELEASE. I only need to remove all version numbers in the Spring XML schemas. The major change I must deal with is to remove the dependency of <code>cxf-api</code> as it was merged with <code>cxf-core</code>.</p>
 <p>Then there comes the most dramatic issue with CXF 3.0.16 (sic!). <code>cxf-codegen-plugin</code> used to generate Java code from WSDLs refused to work (which was no problem in earlier verions) and spit out errors like this.</p>
-<pre tabindex="0"><code>[ERROR] Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java failed: org.apache.cxf.wsdl11.WSDLRuntimeException: Fail to create wsdl definition file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e: WSDLException: faultCode=PARSER_ERROR: Problem parsing 'file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e'.: java.io.FileNotFoundException: &lt; (No such file or directory) -&gt; [Help 1]
-org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java failed: org.apache.cxf.wsdl11.WSDLRuntimeException: Fail to create wsdl definition file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e: WSDLException: faultCode=PARSER_ERROR: Problem parsing 'file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e'.: java.io.FileNotFoundException: &lt; (No such file or directory)
+<pre tabindex="0"><code>[ERROR] Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java failed: org.apache.cxf.wsdl11.WSDLRuntimeException: Fail to create wsdl definition file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e: WSDLException: faultCode=PARSER_ERROR: Problem parsing &#39;file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e&#39;.: java.io.FileNotFoundException: &lt; (No such file or directory) -&gt; [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.0.16:wsdl2java failed: org.apache.cxf.wsdl11.WSDLRuntimeException: Fail to create wsdl definition file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e: WSDLException: faultCode=PARSER_ERROR: Problem parsing &#39;file:%3c?xml%20version=%221.0%22%20encoding=%22UTF-8%22?%3e&#39;.: java.io.FileNotFoundException: &lt; (No such file or directory)
 </code></pre><p>What puzzles me is that I have tried the command tool <code>wsdl2java</code> of Apache CXF 3.0.16 with each WSDL and, strangely, found no errors at all. After some extra trial-and-error effort, I eventually figured out that an extra option for <code>cxf-codegen-plugin</code> causes the error. The old/original plugin configuration in <code>pom.xml</code> is as following.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;plugin&gt;</span>
-  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.cxf<span style="color:#f92672">&lt;/groupId&gt;</span>
-  <span style="color:#f92672">&lt;artifactId&gt;</span>cxf-codegen-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
-  <span style="color:#f92672">&lt;version&gt;</span>${cxf.version}<span style="color:#f92672">&lt;/version&gt;</span>
-  <span style="color:#f92672">&lt;executions&gt;</span>
-    <span style="color:#f92672">&lt;execution&gt;</span>
-      <span style="color:#f92672">&lt;id&gt;</span>generate-sources<span style="color:#f92672">&lt;/id&gt;</span>
-      <span style="color:#f92672">&lt;phase&gt;</span>generate-sources<span style="color:#f92672">&lt;/phase&gt;</span>
-      <span style="color:#f92672">&lt;configuration&gt;</span>
-        <span style="color:#f92672">&lt;sourceRoot&gt;</span>${basedir}/src/main/java<span style="color:#f92672">&lt;/sourceRoot&gt;</span>
-        <span style="color:#f92672">&lt;wsdlRoot&gt;</span>${basedir}/src/main/webapp/WEB-INF/wsdl/<span style="color:#f92672">&lt;/wsdlRoot&gt;</span>
-        <span style="color:#f92672">&lt;defaultOptions&gt;</span>
-          <span style="color:#f92672">&lt;validateWsdl&gt;</span>true<span style="color:#f92672">&lt;/validateWsdl&gt;</span>
-          <span style="color:#f92672">&lt;wsdlList&gt;</span>true<span style="color:#f92672">&lt;/wsdlList&gt;</span>
-          <span style="color:#f92672">&lt;defaultExcludesNamespace&gt;</span>true<span style="color:#f92672">&lt;/defaultExcludesNamespace&gt;</span>
-          <span style="color:#f92672">&lt;extraargs&gt;</span>
-            <span style="color:#f92672">&lt;extraarg&gt;</span>-defaultValues<span style="color:#f92672">&lt;/extraarg&gt;</span>
-            <span style="color:#f92672">&lt;extraarg&gt;</span>-quiet<span style="color:#f92672">&lt;/extraarg&gt;</span>
-            <span style="color:#f92672">&lt;extraarg&gt;</span>-wsdlLocation<span style="color:#f92672">&lt;/extraarg&gt;</span>
-            <span style="color:#f92672">&lt;extraarg&gt;&lt;/extraarg&gt;</span>
-          <span style="color:#f92672">&lt;/extraargs&gt;</span>
-        <span style="color:#f92672">&lt;/defaultOptions&gt;</span>
-      <span style="color:#f92672">&lt;/configuration&gt;</span>
-      <span style="color:#f92672">&lt;goals&gt;</span>
-        <span style="color:#f92672">&lt;goal&gt;</span>wsdl2java<span style="color:#f92672">&lt;/goal&gt;</span>
-      <span style="color:#f92672">&lt;/goals&gt;</span>
-    <span style="color:#f92672">&lt;/execution&gt;</span>
-  <span style="color:#f92672">&lt;/executions&gt;</span>
-<span style="color:#f92672">&lt;/plugin&gt;</span>
-</code></pre></div><p>The option <code>&lt;wsdlList&gt;</code> is the culprit. It was declared <code>boolean</code> since CXF 2.2 to 2.7.0 as I found <a href="https://cxf.apache.org/javadoc/latest-2.7.x/org/apache/cxf/maven_plugin/wsdl2java/Option.html">here</a>. However, in <a href="http://cxf.apache.org/docs/wsdl-to-java.html">the most recent documentation</a> of CXF 3, <code>wsdlList</code> is still listed as an option for <code>wsdl2java</code> but no longer of type <code>boolean</code> (<code>-wsdlList &lt;wsdlurl&gt;</code>). To make it worse, the option is totally hidden/undocumented. So all I have to do is to disable the line <code>&lt;wsdlList&gt;true&lt;/wsdlList&gt;</code> and <code>cxf-codegen-plugin</code> works again in CXF 3.0+.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;plugin&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.cxf<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>cxf-codegen-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>${cxf.version}<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;executions&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;execution&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;id&gt;</span>generate-sources<span style="color:#f92672">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;phase&gt;</span>generate-sources<span style="color:#f92672">&lt;/phase&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;sourceRoot&gt;</span>${basedir}/src/main/java<span style="color:#f92672">&lt;/sourceRoot&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;wsdlRoot&gt;</span>${basedir}/src/main/webapp/WEB-INF/wsdl/<span style="color:#f92672">&lt;/wsdlRoot&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;defaultOptions&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;validateWsdl&gt;</span>true<span style="color:#f92672">&lt;/validateWsdl&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;wsdlList&gt;</span>true<span style="color:#f92672">&lt;/wsdlList&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;defaultExcludesNamespace&gt;</span>true<span style="color:#f92672">&lt;/defaultExcludesNamespace&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;extraargs&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;extraarg&gt;</span>-defaultValues<span style="color:#f92672">&lt;/extraarg&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;extraarg&gt;</span>-quiet<span style="color:#f92672">&lt;/extraarg&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;extraarg&gt;</span>-wsdlLocation<span style="color:#f92672">&lt;/extraarg&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;extraarg&gt;&lt;/extraarg&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/extraargs&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/defaultOptions&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;goals&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;goal&gt;</span>wsdl2java<span style="color:#f92672">&lt;/goal&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/goals&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/execution&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/executions&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/plugin&gt;</span>
+</span></span></code></pre></div><p>The option <code>&lt;wsdlList&gt;</code> is the culprit. It was declared <code>boolean</code> since CXF 2.2 to 2.7.0 as I found <a href="https://cxf.apache.org/javadoc/latest-2.7.x/org/apache/cxf/maven_plugin/wsdl2java/Option.html">here</a>. However, in <a href="http://cxf.apache.org/docs/wsdl-to-java.html">the most recent documentation</a> of CXF 3, <code>wsdlList</code> is still listed as an option for <code>wsdl2java</code> but no longer of type <code>boolean</code> (<code>-wsdlList &lt;wsdlurl&gt;</code>). To make it worse, the option is totally hidden/undocumented. So all I have to do is to disable the line <code>&lt;wsdlList&gt;true&lt;/wsdlList&gt;</code> and <code>cxf-codegen-plugin</code> works again in CXF 3.0+.</p>
 <p>The problems with <code>cxf-codegen-plugin</code> keep raising when upgrading CXF to 3.2.4. This time, it threw another exception though.</p>
-<pre tabindex="0"><code>[ERROR] Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java failed: org.xml.sax.SAXNotRecognizedException: Property 'http://javax.xml.XMLConstants/property/accessExternalSchema' is not recognized. -&gt; [Help 1]
-org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java failed: org.xml.sax.SAXNotRecognizedException: Property 'http://javax.xml.XMLConstants/property/accessExternalSchema' is not recognized.
+<pre tabindex="0"><code>[ERROR] Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java failed: org.xml.sax.SAXNotRecognizedException: Property &#39;http://javax.xml.XMLConstants/property/accessExternalSchema&#39; is not recognized. -&gt; [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java (generate-sources) on project loan-approval-portal: Execution generate-sources of goal org.apache.cxf:cxf-codegen-plugin:3.2.4:wsdl2java failed: org.xml.sax.SAXNotRecognizedException: Property &#39;http://javax.xml.XMLConstants/property/accessExternalSchema&#39; is not recognized.
 </code></pre><p>We can see that the error is due to schema validation. Before, I wanted to make sure that the WSDLs were valid before generating Java code. Thus, I chose to enable validation by <code>&lt;validateWsdl&gt;true&lt;/validateWsdl&gt;</code>. This option is actually the root cause of the aforementioned exception during validation. The problem seems to stem from <a href="http://docs.oracle.com/javase/tutorial/jaxp/properties/properties.html">new XML security properties in JAXB 1.5</a> introduced in Java 8. When I disable that option, the plugin works fine again (voila!). But that means I must live in a maybe-not-error-free world (D&rsquo;oh!). But we are all, aren&rsquo;t we?</p>
 <p>After all of the above, I can get my project to work with Apache CXF 3.2.4 while keeping the business logic of services intact.</p>
 <h2 id="update-2018-06-25-xml-less-spring-configuration">Update 2018-06-25: XML-less Spring Configuration</h2>
 <p>As deciding to switch to XML-less Spring configuration to learn more about Spring Java annotations, I also tried to migrate CXF settings, too. Here are some last updates.</p>
 <h3 id="loading-cxfservlet">Loading CXFServlet</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyWebApplicationInitializer</span> <span style="color:#66d9ef">implements</span> org<span style="color:#f92672">.</span><span style="color:#a6e22e">springframework</span><span style="color:#f92672">.</span><span style="color:#a6e22e">web</span><span style="color:#f92672">.</span><span style="color:#a6e22e">WebApplicationInitializer</span> <span style="color:#f92672">{</span>
-  <span style="color:#a6e22e">@Override</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onStartup</span><span style="color:#f92672">(</span>ServletContext container<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ServletException <span style="color:#f92672">{</span>
-    AnnotationConfigWebApplicationContext root <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AnnotationConfigWebApplicationContext<span style="color:#f92672">();</span>
-    root<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span>ServiceConfiguration<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-    root<span style="color:#f92672">.</span><span style="color:#a6e22e">refresh</span><span style="color:#f92672">();</span>
-
-    <span style="color:#75715e">// Register and map the CXF servlet
-</span><span style="color:#75715e"></span>    CXFServlet cxfServlet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CXFServlet<span style="color:#f92672">();</span>
-    ServletRegistration<span style="color:#f92672">.</span><span style="color:#a6e22e">Dynamic</span> reg <span style="color:#f92672">=</span> container<span style="color:#f92672">.</span><span style="color:#a6e22e">addServlet</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;cxf&#34;</span><span style="color:#f92672">,</span> cxfServlet<span style="color:#f92672">);</span>
-    reg<span style="color:#f92672">.</span><span style="color:#a6e22e">setLoadOnStartup</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
-    reg<span style="color:#f92672">.</span><span style="color:#a6e22e">addMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/services/*&#34;</span><span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h3 id="publishing-services">Publishing Services</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyWebApplicationInitializer</span> <span style="color:#66d9ef">implements</span> org<span style="color:#f92672">.</span><span style="color:#a6e22e">springframework</span><span style="color:#f92672">.</span><span style="color:#a6e22e">web</span><span style="color:#f92672">.</span><span style="color:#a6e22e">WebApplicationInitializer</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onStartup</span><span style="color:#f92672">(</span>ServletContext container<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ServletException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    AnnotationConfigWebApplicationContext root <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AnnotationConfigWebApplicationContext<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    root<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span>ServiceConfiguration<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    root<span style="color:#f92672">.</span><span style="color:#a6e22e">refresh</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Register and map the CXF servlet
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CXFServlet cxfServlet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CXFServlet<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    ServletRegistration<span style="color:#f92672">.</span><span style="color:#a6e22e">Dynamic</span> reg <span style="color:#f92672">=</span> container<span style="color:#f92672">.</span><span style="color:#a6e22e">addServlet</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;cxf&#34;</span><span style="color:#f92672">,</span> cxfServlet<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    reg<span style="color:#f92672">.</span><span style="color:#a6e22e">setLoadOnStartup</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    reg<span style="color:#f92672">.</span><span style="color:#a6e22e">addMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/services/*&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="publishing-services">Publishing Services</h3>
 <p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing existing CXF&rsquo;s XML resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<em>cxf</em>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> com.example.HelloWorldImpl<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> org.apache.cxf.Bus<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.apache.cxf.bus.spring.SpringBus<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.apache.cxf.jaxws.EndpointImpl<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.springframework.context.annotation.Bean<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.springframework.context.annotation.Configuration<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> javax.xml.ws.Endpoint<span style="color:#f92672">;</span>
-
-<span style="color:#a6e22e">@Configuration</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceConfiguration</span> <span style="color:#f92672">{</span>
-
-  <span style="color:#a6e22e">@Bean</span><span style="color:#f92672">(</span>name<span style="color:#f92672">=</span>Bus<span style="color:#f92672">.</span><span style="color:#a6e22e">DEFAULT_BUS_ID</span><span style="color:#f92672">)</span>
-  <span style="color:#66d9ef">public</span> SpringBus <span style="color:#a6e22e">cxf</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> SpringBus<span style="color:#f92672">();</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Bean</span>
-  <span style="color:#66d9ef">public</span> Endpoint <span style="color:#a6e22e">helloWorld</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    HelloWorldImpl implementor <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HelloWorldImpl<span style="color:#f92672">();</span>
-    EndpointImpl endpoint <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> EndpointImpl<span style="color:#f92672">(</span>cxf<span style="color:#f92672">(),</span> implementor<span style="color:#f92672">);</span>
-    endpoint<span style="color:#f92672">.</span><span style="color:#a6e22e">publish</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/HelloWorld&#34;</span><span style="color:#f92672">);</span>
-    <span style="color:#66d9ef">return</span> endpoint<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.HelloWorldImpl<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.Bus<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.bus.spring.SpringBus<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.jaxws.EndpointImpl<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.context.annotation.Bean<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.context.annotation.Configuration<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.xml.ws.Endpoint<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceConfiguration</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Bean</span><span style="color:#f92672">(</span>name<span style="color:#f92672">=</span>Bus<span style="color:#f92672">.</span><span style="color:#a6e22e">DEFAULT_BUS_ID</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> SpringBus <span style="color:#a6e22e">cxf</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> SpringBus<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Endpoint <span style="color:#a6e22e">helloWorld</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    HelloWorldImpl implementor <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HelloWorldImpl<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    EndpointImpl endpoint <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> EndpointImpl<span style="color:#f92672">(</span>cxf<span style="color:#f92672">(),</span> implementor<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    endpoint<span style="color:#f92672">.</span><span style="color:#a6e22e">publish</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/HelloWorld&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> endpoint<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><blockquote>
 <p><strong>IMPORTANT</strong> <code>Endpoint.publish()</code> must be called to expose the service endpoint instead of <code>Endpoint.setAddress()</code> as above.</p>
 </blockquote>
 </div>
@@ -281,7 +281,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -311,7 +311,7 @@ var loadDeferredStyles = function () {
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 <script type="text/javascript">
-hljs.highlightAll();
+hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

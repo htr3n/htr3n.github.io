@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>Faster and enjoyable ZSH (maybe) • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -126,21 +126,21 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h2 id="performance-analysis">Performance Analysis</h2>
 <h3 id="overall-execution-time">Overall execution time</h3>
 <p>Crunching some numbers on Zsh loading time would be definitely useful for further in depth analysis of its performance. A simple timing of Zsh startup time can be measured approximately using the <code>time</code> command that is available in most Unix/Linux/Mac systems.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ /usr/bin/time /bin/zsh -i -c exit
-        0.67 real         0.41 user         0.26 sys
-</code></pre></div><p>The output of the command shows the execution time of Zsh breaking down to user-land and system. In order to get a better approximation, we can make a loop that invokes <code>time</code> for 10 or greater, if possible.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> 10<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> /usr/bin/time /bin/zsh -i -c exit; <span style="color:#66d9ef">done</span>;
-</code></pre></div><p>This timing method is very fast and handy in case you want to quickly see how your Zsh performs, especially to test some changes you have just made.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ /usr/bin/time /bin/zsh -i -c exit
+</span></span><span style="display:flex;"><span>        0.67 real         0.41 user         0.26 sys
+</span></span></code></pre></div><p>The output of the command shows the execution time of Zsh breaking down to user-land and system. In order to get a better approximation, we can make a loop that invokes <code>time</code> for 10 or greater, if possible.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> 10<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> /usr/bin/time /bin/zsh -i -c exit; <span style="color:#66d9ef">done</span>;
+</span></span></code></pre></div><p>This timing method is very fast and handy in case you want to quickly see how your Zsh performs, especially to test some changes you have just made.</p>
 <h3 id="profiling">Profiling</h3>
 <p>Zsh provides a built-in module <a href="http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fzprof-Module"><code>zsh/zprof</code></a> that can be used to profile Zsh functions. At the beginning of <code>~/.zshrc</code>, we add <code>zmodload zsh/zprof</code>. After restart the shell, we can use the command <code>zprof</code> to show a very rich output on Zsh startup loading. An illustrative output of <code>zprof</code> is shown below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ zprof
-num  calls                time                       self            name
-------------------------------------------------------------------------------
- 1<span style="color:#f92672">)</span>    <span style="color:#ae81ff">1</span>          51.31    51.31   22.68%     49.68    49.68   21.96%  zle-line-init
- 2<span style="color:#f92672">)</span>    <span style="color:#ae81ff">2</span>          45.72    22.86   20.21%     45.72    22.86   20.21%  compaudit
- 3<span style="color:#f92672">)</span>  <span style="color:#ae81ff">195</span>          34.71     0.18   15.34%     25.52     0.13   11.28%  _zsh_autosuggest_bind_widget
- ...
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ zprof
+</span></span><span style="display:flex;"><span>num  calls                time                       self            name
+</span></span><span style="display:flex;"><span>------------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span> 1<span style="color:#f92672">)</span>    <span style="color:#ae81ff">1</span>          51.31    51.31   22.68%     49.68    49.68   21.96%  zle-line-init
+</span></span><span style="display:flex;"><span> 2<span style="color:#f92672">)</span>    <span style="color:#ae81ff">2</span>          45.72    22.86   20.21%     45.72    22.86   20.21%  compaudit
+</span></span><span style="display:flex;"><span> 3<span style="color:#f92672">)</span>  <span style="color:#ae81ff">195</span>          34.71     0.18   15.34%     25.52     0.13   11.28%  _zsh_autosuggest_bind_widget
+</span></span><span style="display:flex;"><span> ...
+</span></span></code></pre></div><blockquote>
 <p><strong>Note</strong></p>
 <p>Two aforementioned approaches can give us a rough analysis on what aspects are invoked during Zsh startup so that we might figure out the bottleneck. In case you need to dig deeper, Arnout wrote <a href="http://blog.xebia.com/profiling-zsh-shell-scripts">a nice article</a> in which he suggested a in-depth analysis and visualisation of Zsh loading using <code>xtrace</code> and <code>kcachegrind</code>. Benjamin developed <a href="https://esham.io/2018/02/zsh-profiling">a similar approach</a> to more thorough tracing and analysis Zsh execution.</p>
 </blockquote>
@@ -177,46 +177,46 @@ Figure 1. Bash, sh, and zsh shells startup order [<a href="https://blog.flowblok
 <p><strong>Command Substitutions</strong></p>
 <p>In Zsh, a command enclosed in <code>$(command)</code> or quoted with backticks <code>`command`</code> will be replaced with its standard output. Thus, it is very popular in Unix/Linux world when one wants to execute a command and get the output to process further on. The bad thing is that <em>command substitution</em> will launch a new process (i.e. a <a href="http://tldp.org/LDP/abs/html/subshells.html#SUBSHELLSREF">subshell</a>).</p>
 <p><strong><code>eval</code> command</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eval <span style="color:#f92672">[</span>arg...<span style="color:#f92672">]</span>
-</code></pre></div><p>The command <code>eval</code> (sounds with <em>evil</em>, ^_O) is part of POSIX standard and is available in most shells. It&rsquo;s often used together with <em>command substitution</em>. Essentially, <code>eval</code> concats its arguments separated with spaces along with evaluating any variables or expressions to form a command with or without arguments. Then it executes the resulting command in the current shell. As such, <code>eval</code> will cause side-effects as it must evaluate the inputs and perform expansions, if any.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print &#39;Hello World&#39;&#34;</span>
-$ command			   <span style="color:#75715e"># nothing happen</span>
-$ eval $command
-Hello World
-</code></pre></div><p>This feature makes <code>eval</code> powerful as it can dynamically evaluate and execute code. But dynamic evaluation also makes <code>eval</code> risky and time-consuming.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eval <span style="color:#f92672">[</span>arg...<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>The command <code>eval</code> (sounds with <em>evil</em>, ^_O) is part of POSIX standard and is available in most shells. It&rsquo;s often used together with <em>command substitution</em>. Essentially, <code>eval</code> concats its arguments separated with spaces along with evaluating any variables or expressions to form a command with or without arguments. Then it executes the resulting command in the current shell. As such, <code>eval</code> will cause side-effects as it must evaluate the inputs and perform expansions, if any.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print &#39;Hello World&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>$ command			   <span style="color:#75715e"># nothing happen</span>
+</span></span><span style="display:flex;"><span>$ eval $command
+</span></span><span style="display:flex;"><span>Hello World
+</span></span></code></pre></div><p>This feature makes <code>eval</code> powerful as it can dynamically evaluate and execute code. But dynamic evaluation also makes <code>eval</code> risky and time-consuming.</p>
 <p>In some cases, for instance, simple string manipulation, we can consider to replace command substitutions and <code>eval</code> commands that invoke <code>sed</code>, <code>awk</code>, etc., with Zsh built-in constructs or hard-coded constants. Zsh provides numerous powerful built-in mechanisms for substring matchings, string explosion/splitting, and <a href="http://zsh.sourceforge.net/Doc/Release/Expansion.html">expansions</a>.</p>
 <p>For instance, when using <a href="https://brew.sh">Homebrew</a>, it is very convenient to get the path to an installed package using <code>$(brew --prefix &lt;package&gt;)</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PATH<span style="color:#f92672">=</span>$PATH:<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix httpd<span style="color:#66d9ef">)</span><span style="color:#e6db74">/bin&#34;</span>
-</code></pre></div><p>It turns out many calls to <code>$(brew --prefix ...)</code> would launch many subprocesses and thus <a href="https://kev.inburke.com/kevin/profiling-zsh-startup-time">slow down Zsh notably</a>. When replacing that <code>$()</code> command with its actual output, I could gain certain improvement. The caveat is that some upgraded versions might break these hard-coded values.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$PATH:<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix httpd<span style="color:#66d9ef">)</span><span style="color:#e6db74">/bin&#34;</span>
+</span></span></code></pre></div><p>It turns out many calls to <code>$(brew --prefix ...)</code> would launch many subprocesses and thus <a href="https://kev.inburke.com/kevin/profiling-zsh-startup-time">slow down Zsh notably</a>. When replacing that <code>$()</code> command with its actual output, I could gain certain improvement. The caveat is that some upgraded versions might break these hard-coded values.</p>
 <h3 id="lazy-loading"><em>Lazy-loading</em> instead of <em>eager-loading</em></h3>
 <h4 id="function-autoloading">Function autoloading</h4>
 <p>We can define and source new functions in Zsh. In this way, a function is <em>eagerly loaded</em> and always available for use. Note that most of these functions might be not really needed until being invoked.</p>
 <p>Zsh can help postponing their loading time and allow to <em>load-on-demand</em> via <a href="http://zsh.sourceforge.net/Doc/Release/Functions.html#Autoloading-Functions">function autoloading</a>. This technique is often called <em>lazy loading</em>. Performance-wise, <em>lazy loading</em> will put less pressure to the underlying system and reduce memory footprint. The same techniques are also preferred in many other fields such as databases, dynamic runtime libraries, etc.</p>
 <p>In my codebase, I create a folder, namely, <code>autoloaded</code>, to store functions that will be, er&hellip;, autoloaded by Zsh. For each function, for instance, <code>function hello(){...}</code>, I will create a corresponding file named <code>hello</code> inside <code>autoloaded</code>. The content of that file is the function body (i.e. without <code>function</code> and <code>(){}</code>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir autoloaded
-$ echo <span style="color:#e6db74">&#34;print &#39;Hello World&#39;&#34;</span> &gt;&gt; autoloaded/hello
-$ tree
-.
-└── autoloaded
-    └── hello
-</code></pre></div><p>The folder <code>autoloaded</code> must be added to ZSH variable <code>fpath</code> where ZSH will look for function definitions.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#75715e"># add &#39;autoload&#39; to fpath</span>
-$ fpath<span style="color:#f92672">=(</span>$fpath autoloaded<span style="color:#f92672">)</span>
-<span style="color:#75715e"># try to invoke &#39;hello&#39;</span>
-$ hello
-zsh: command not found: hello
-<span style="color:#75715e"># now mark `hello` for autoloading.</span>
-$ autoload hello
-<span style="color:#75715e"># quickly check how `hello` will be loaded.</span>
-$ which hello
-hello <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e"># undefined</span>
-	builtin autoload -X
-<span style="color:#f92672">}</span>
-<span style="color:#75715e"># now it works fine</span>
-$ hello
-Hello World
-</code></pre></div><p>The body of <code>hello</code> was marked with <code>#undefined</code> along with <code>builtin autoload -X</code> meaning it will be loaded on-demand. The first time <code>hello</code> is called, Zsh will automatically load and execute it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir autoloaded
+</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;print &#39;Hello World&#39;&#34;</span> &gt;&gt; autoloaded/hello
+</span></span><span style="display:flex;"><span>$ tree
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>└── autoloaded
+</span></span><span style="display:flex;"><span>    └── hello
+</span></span></code></pre></div><p>The folder <code>autoloaded</code> must be added to ZSH variable <code>fpath</code> where ZSH will look for function definitions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># add &#39;autoload&#39; to fpath</span>
+</span></span><span style="display:flex;"><span>$ fpath<span style="color:#f92672">=(</span>$fpath autoloaded<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># try to invoke &#39;hello&#39;</span>
+</span></span><span style="display:flex;"><span>$ hello
+</span></span><span style="display:flex;"><span>zsh: command not found: hello
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># now mark `hello` for autoloading.</span>
+</span></span><span style="display:flex;"><span>$ autoload hello
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># quickly check how `hello` will be loaded.</span>
+</span></span><span style="display:flex;"><span>$ which hello
+</span></span><span style="display:flex;"><span>hello <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># undefined</span>
+</span></span><span style="display:flex;"><span>	builtin autoload -X
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># now it works fine</span>
+</span></span><span style="display:flex;"><span>$ hello
+</span></span><span style="display:flex;"><span>Hello World
+</span></span></code></pre></div><p>The body of <code>hello</code> was marked with <code>#undefined</code> along with <code>builtin autoload -X</code> meaning it will be loaded on-demand. The first time <code>hello</code> is called, Zsh will automatically load and execute it.</p>
 <p>In the same way, I configured Zsh to load all of my functions on-demand to reduce memory and loading time.</p>
 <blockquote>
 <p><strong>Note</strong>:In <a href="https://github.com/htr3n/zsh-config">my scripts</a>, <code>autoload -Uz function_name</code> was used. The option <code>-U</code> prevents alias from being expanded. That is, whenever you define an alias and a function having the same name, the alias will be considered first instead, so <code>-U</code> just skips alias expansion. And the option <code>-z</code> indicates that the function will be auto-loaded using <code>zsh</code> or <code>ksh</code> style.</p>
@@ -231,55 +231,55 @@ Hello World
 <p>Zsh completion system must be activated by calling function <a href="http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Use-of-compinit"><code>compinit</code></a>. Most of the framework like oh-my-zsh or Prezto will take care of initialising completion system. In my case, after getting rid of big frameworks, I have to manually activate it with <code>autoload -Uz compinit &amp;&amp; compinit</code>.</p>
 <p>Every time <code>compinit</code> is invoked, it often checks its configurations and re-generates in case of changes. Some have investigated this matter and suggested improvements such as <a href="https://gist.github.com/ctechols/ca1035271ad134841284">checking <em>compinit</em>&rsquo;s cache only once a day</a>. A similar approach has also been implemented in <a href="https://github.com/sorin-ionescu/prezto/blob/e149367445d2bcb9faa6ada365dfd56efec39de8/modules/completion/init.zsh#L34">Prezto</a>.</p>
 <p>Here is a simple excerpt based on <a href="https://carlosbecker.com/posts/speeding-up-zsh">Carlos&rsquo;s solution</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">autoload -Uz compinit
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#39;%j&#39;</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>/usr/bin/stat -f <span style="color:#e6db74">&#39;%Sm&#39;</span> -t <span style="color:#e6db74">&#39;%j&#39;</span> <span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span>/.zcompdump<span style="color:#66d9ef">)</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  compinit
-<span style="color:#66d9ef">else</span>
-  compinit -C
-<span style="color:#66d9ef">fi</span>
-</code></pre></div><h4 id="lessening-compinit-invocations">Lessening <code>compinit</code> invocations</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>autoload -Uz compinit
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#39;%j&#39;</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>/usr/bin/stat -f <span style="color:#e6db74">&#39;%Sm&#39;</span> -t <span style="color:#e6db74">&#39;%j&#39;</span> <span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span>/.zcompdump<span style="color:#66d9ef">)</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  compinit
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  compinit -C
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h4 id="lessening-compinit-invocations">Lessening <code>compinit</code> invocations</h4>
 <p>When running <code>zprof</code> to profile Zsh execution, as many others also found out, I noticed a lot of invocations to <code>compinit</code>. It was because I used some smart plugins like <a href="https://github.com/zsh-users/zsh-completions">zsh-users/zsh-completions</a> and <a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-users/zsh-autosuggestions</a> and scattered <code>compinit</code> in many places. Using <a href="https://beyondgrep.com"><em>ack</em></a>, I could quickly spot and remove all <code>compinit</code>, then only call once at the end of my <a href="https://github.com/htr3n/zsh-config/blob/master/zshrc">.zshrc</a>.</p>
 <h4 id="compiling-completion-dumped-files">Compiling completion dumped files</h4>
 <p>Note that by default <code>compinit</code> will produce a dumped configuration for accelerating future access. The default dumped file is <code>.zcompdump</code> (which can be changed with <code>compinit -d new_dump_file</code> or totally disabled with <code>compinit -D</code>).</p>
 <p>We can go further by compiling the dumped file with the built-in command <a href="http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-compilation"><code>zcompile</code> </a>for faster autoloading of completion functions. As completion is only needed for interactive shell sessions, I put the <code>zcompile</code> code inside <a href="https://github.com/htr3n/zsh-config/blob/master/zlogin">.zlogin</a> and force it to run in background mode.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#75715e"># Execute code in the background to not affect the current session</span>
-<span style="color:#f92672">{</span>
-  <span style="color:#75715e"># Compile zcompdump, if modified, to increase startup speed.</span>
-  zcompdump<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/.zcompdump&#34;</span>
-  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -s <span style="color:#e6db74">&#34;</span>$zcompdump<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">(</span>! -s <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>zcompdump<span style="color:#e6db74">}</span><span style="color:#e6db74">.zwc&#34;</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;</span>$zcompdump<span style="color:#e6db74">&#34;</span> -nt <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>zcompdump<span style="color:#e6db74">}</span><span style="color:#e6db74">.zwc&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-    zcompile <span style="color:#e6db74">&#34;</span>$zcompdump<span style="color:#e6db74">&#34;</span>
-  <span style="color:#66d9ef">fi</span>
-<span style="color:#f92672">}</span> &amp;!
-</code></pre></div><h3 id="optimising-shell-prompts">Optimising shell prompts</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># Execute code in the background to not affect the current session</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Compile zcompdump, if modified, to increase startup speed.</span>
+</span></span><span style="display:flex;"><span>  zcompdump<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/.zcompdump&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -s <span style="color:#e6db74">&#34;</span>$zcompdump<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">(</span>! -s <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>zcompdump<span style="color:#e6db74">}</span><span style="color:#e6db74">.zwc&#34;</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;</span>$zcompdump<span style="color:#e6db74">&#34;</span> -nt <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>zcompdump<span style="color:#e6db74">}</span><span style="color:#e6db74">.zwc&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    zcompile <span style="color:#e6db74">&#34;</span>$zcompdump<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> &amp;!
+</span></span></code></pre></div><h3 id="optimising-shell-prompts">Optimising shell prompts</h3>
 <p>You can find a lot of frameworks or plugins offer super duper cool command line prompts like <a href="http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt">this</a>, <a href="https://denysdovhan.com/spaceship-prompt/">this</a>, or <a href="https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config">these</a> that show rich information regarding your current working folder such as versioning status, virtual environments, and many more.</p>
 <p>Obviously getting these information will induce extra execution time, especially for checking large versioned repositories or virtual runtime libraries. That leads to many <a href="https://github.com/robbyrussell/oh-my-zsh/pull/1570">workarounds</a>, <a href="http://marc-abramowitz.com/archives/2012/04/10/fix-for-oh-my-zsh-git-svn-prompt-slowness">tweaks</a>, <a href="https://github.com/robbyrussell/oh-my-zsh/pull/1570">hacks</a>, <a href="https://github.com/creationix/nvm/issues/539">other hacks</a>, and more <a href="https://github.com/denysdovhan/spaceship-prompt/issues/161">hacks</a>.</p>
 <p>You might want to consider some recent approaches on speeding up shell prompts such as Anish&rsquo;s <a href="https://www.anishathalye.com/2015/02/07/an-asynchronous-shell-prompt">non-blocking prompt</a> or Sindre Sorhus&rsquo;s <a href="https://github.com/sindresorhus/pure"><em>pure</em></a> based on Mathias Fredriksson&rsquo;s <a href="https://github.com/mafredri/zsh-async">zsh-async</a>. I have tried <em>pure</em> and found out its timing is very close to <a href="https://github.com/htr3n/zsh-config/blob/master/lib/prompts-htr3n.sh">my own prompts</a> based on vanilla Zsh scripts and built-in function <a href="http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Version-Control-Information"><code>vcs_info</code></a>. Therefore, I mostly switch back and forth between these prompts in my dev box and totally satisfy with their performance thus far.</p>
 <h3 id="macos-optimisations">MacOS-specific optimisations</h3>
 <h4 id="path-helper">Optimising <code>path_helper</code></h4>
 <p>In the chain of Zsh startup order, <code>/etc/zprofile</code> will be sourced before <code>~/.zprofile</code>. So, macOS uses <code>/etc/profile</code> to establish paths to executable files via <a href="https://opensource.apple.com/source/shell_cmds/shell_cmds-162/path_helper/path_helper.c.auto.html"><em>path_helper</em></a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /etc/zprofile
-<span style="color:#75715e"># system-wide environment settings for zsh(1)</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -x /usr/libexec/path_helper <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-	eval <span style="color:#e6db74">`</span>/usr/libexec/path_helper -s<span style="color:#e6db74">`</span>
-<span style="color:#66d9ef">fi</span>
-</code></pre></div><p>To do that, <em>path_helper</em> will read <code>/etc/paths</code> and <code>/etc/manpaths</code>, then read all files inside <code>/etc/paths.d</code> and <code>/etc/manpaths.d</code> and append their contents to <code>$PATH</code> and <code>$MANPATH</code>, respectively. New paths can be conveniently added by adding a plaintext file in <code>/etc/paths.d</code> instead of messing common shared configuration files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat /etc/zprofile
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># system-wide environment settings for zsh(1)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -x /usr/libexec/path_helper <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>	eval <span style="color:#e6db74">`</span>/usr/libexec/path_helper -s<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>To do that, <em>path_helper</em> will read <code>/etc/paths</code> and <code>/etc/manpaths</code>, then read all files inside <code>/etc/paths.d</code> and <code>/etc/manpaths.d</code> and append their contents to <code>$PATH</code> and <code>$MANPATH</code>, respectively. New paths can be conveniently added by adding a plaintext file in <code>/etc/paths.d</code> instead of messing common shared configuration files.</p>
 <p>Previously in some cases, <em>path_helper</em> might be very slow as mentioned by Michael Tsai <a href="https://mjtsai.com/blog/2009/04/01/slow-opening-terminal-windows">here</a> and even deserved a <a href="https://gist.github.com/mkhl/123525">patch</a> and a <a href="https://github.com/mgprot/path_helper">Perl based alternative</a>. I reckoned that <em>path_helper</em> is getting notably slow when the number of paths are growing but its recent version is no longer a script but 64-bit binary executable and seems to work faster.</p>
 <p>If you notice that <em>path_helper</em> makes Zsh slow, you can just put the contents of <code>/etc/paths</code> and of all files in <code>/etc/paths.d</code> directly in <code>.zprofile</code> . After that, just comment out the corresponding code in <code>/etc/profile</code>.</p>
 <h4 id="optimising-login-process">Optimising the login process</h4>
 <p>The default <a href="https://opensource.apple.com/source/system_cmds/system_cmds-541/login.tproj"><em>login process</em></a> of macOS could be the culprit too. Opening a terminal window or tab will trigger <code>login -pf username</code> which, in turn, reads from and writes into the logs file in <code>/var/log/asl</code> (note <code>syslog()</code> invocations in <a href="https://opensource.apple.com/source/system_cmds/system_cmds-541/login.tproj/login.c.auto.html"><code>login.c</code></a>).</p>
 <p>We can check this out in any terminal app. The command <code>ps -ef | grep login</code> will show details about the <code>login</code> process.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ps -ef | grep login
-...
-  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">25142</span> <span style="color:#ae81ff">25141</span>   <span style="color:#ae81ff">0</span>  6:40AM ttys000    0:00.13 login -fp htr3n
-</code></pre></div><p>In case you want to dig deeper, execute the following command in a terminal tab/window,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo opensnoop | grep <span style="color:#e6db74">&#34;/var/log/asl&#34;</span>
-</code></pre></div><p>then open another tab or window to see a lot of accessing to ASLs (standing for <strong>A</strong>pple <strong>S</strong>ystem <strong>L</strong>og, deprecated since macOS 10.12 but still in use somewhere).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -ef | grep login
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">25142</span> <span style="color:#ae81ff">25141</span>   <span style="color:#ae81ff">0</span>  6:40AM ttys000    0:00.13 login -fp htr3n
+</span></span></code></pre></div><p>In case you want to dig deeper, execute the following command in a terminal tab/window,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo opensnoop | grep <span style="color:#e6db74">&#34;/var/log/asl&#34;</span>
+</span></span></code></pre></div><p>then open another tab or window to see a lot of accessing to ASLs (standing for <strong>A</strong>pple <strong>S</strong>ystem <strong>L</strong>og, deprecated since macOS 10.12 but still in use somewhere).</p>
 <p>Thus, some have reported a <em>magic</em> that somehow speeds up shell startup by <a href="http://osxdaily.com/2010/05/06/speed-up-a-slow-terminal-by-clearing-log-files">deleting macOS ASLs</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># remove all Apple system logs -- more destructive way</span>
-$ sudo rm -rf /private/var/log/asl/*.asl
-</code></pre></div><p>Nevertheless, these logs will continuously grow day after day. We might configure <code>/etc/asl.conf</code> to permanently reduce the amount of ASLs. Using <a href="https://en.wikipedia.org/wiki/sudo"><code>sudo</code></a> to open that file in Text Editor (or your editor of choice),</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo open -e /etc/asl.conf
-</code></pre></div><p>then looking for the following lines and changing them accordingly and leaving the rest intact.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># remove all Apple system logs -- more destructive way</span>
+</span></span><span style="display:flex;"><span>$ sudo rm -rf /private/var/log/asl/*.asl
+</span></span></code></pre></div><p>Nevertheless, these logs will continuously grow day after day. We might configure <code>/etc/asl.conf</code> to permanently reduce the amount of ASLs. Using <a href="https://en.wikipedia.org/wiki/sudo"><code>sudo</code></a> to open that file in Text Editor (or your editor of choice),</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo open -e /etc/asl.conf
+</span></span></code></pre></div><p>then looking for the following lines and changing them accordingly and leaving the rest intact.</p>
 <pre tabindex="0"><code>...
 # save everything from emergency to notice
 # ? [&lt;= Level notice] store
@@ -308,13 +308,13 @@ Figure 3. Built-in Terminal login setting
 </figure>
 <h2 id="conclusion">Conclusion</h2>
 <p>We have walked through some major aspects that might affect Zsh in particular, and other shells, loading time. I hope these discussions can help you to pinpoint and address your shell startup issues and have better experience working with shells and command line. This is what I got after all these effort.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">❯ <span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> 5<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> /usr/bin/time /bin/zsh -i -c exit; <span style="color:#66d9ef">done</span>
-        0.31 real         0.16 user         0.13 sys
-        0.28 real         0.15 user         0.12 sys
-        0.28 real         0.15 user         0.12 sys
-        0.28 real         0.15 user         0.12 sys
-        0.28 real         0.15 user         0.12 sys
-</code></pre></div><p>If you have any suggestions for improvement or successful tweaks, please drop a comment below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ <span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> 5<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> /usr/bin/time /bin/zsh -i -c exit; <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>        0.31 real         0.16 user         0.13 sys
+</span></span><span style="display:flex;"><span>        0.28 real         0.15 user         0.12 sys
+</span></span><span style="display:flex;"><span>        0.28 real         0.15 user         0.12 sys
+</span></span><span style="display:flex;"><span>        0.28 real         0.15 user         0.12 sys
+</span></span><span style="display:flex;"><span>        0.28 real         0.15 user         0.12 sys
+</span></span></code></pre></div><p>If you have any suggestions for improvement or successful tweaks, please drop a comment below.</p>
 <h2 id="reading-list">Reading List</h2>
 <ol>
 <li><a href="https://kev.inburke.com/kevin/profiling-zsh-startup-time">https://kev.inburke.com/kevin/profiling-zsh-startup-time</a></li>
@@ -385,7 +385,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -415,7 +415,7 @@ var loadDeferredStyles = function () {
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 <script type="text/javascript">
-hljs.highlightAll();
+hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

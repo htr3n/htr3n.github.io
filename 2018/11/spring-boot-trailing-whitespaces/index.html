@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>Spring Boot properties issues with trailing whitespaces • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -116,34 +116,34 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h2 id="problem">, the problem &hellip;</h2>
 <p>When tinkering with Spring Boot, I found a half-funny half-annoying issue that made one of my Spring apps failed to launch. As the project is rather clumpy and full of experimenting code, here I will replicate this issue in a smaller and simpler scale.</p>
 <p>Let&rsquo;s create a small Spring Boot project with JPA and H2. We can either use <a href="https://start.spring.io/">Spring Initialzr</a>, <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli-using-the-cli.html">Spring Boot CLI</a>, or IDE such as IntelliJ IDEA, Eclipse or NetBeans. To keep it simple, I use Spring Boot CLI that <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli">can be easily installed</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ spring version
-Spring CLI v2.1.0.RELEASE
-$ spring init --dependencies<span style="color:#f92672">=</span>data-jpa,h2 spring-boot-trailing-spaces
-Using service at https://start.spring.io
-Project extracted to <span style="color:#e6db74">&#39;/dev/spring-framework/spring-boot-trailing-spaces&#39;</span>
-</code></pre></div><p>The newly created Spring application can be launched with Maven.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd spring-boot-trailing-spaces
-$ mvn spring-boot:run
-...
-</code></pre></div><p>There should be no problem as we have not made any changes. Now, open &ldquo;<code>src/main/resources/application.properties</code>&rdquo; with an editor, then copy and paste the following code. Promise me that you don&rsquo;t change the pasted code ;)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ spring version
+</span></span><span style="display:flex;"><span>Spring CLI v2.1.0.RELEASE
+</span></span><span style="display:flex;"><span>$ spring init --dependencies<span style="color:#f92672">=</span>data-jpa,h2 spring-boot-trailing-spaces
+</span></span><span style="display:flex;"><span>Using service at https://start.spring.io
+</span></span><span style="display:flex;"><span>Project extracted to <span style="color:#e6db74">&#39;/dev/spring-framework/spring-boot-trailing-spaces&#39;</span>
+</span></span></code></pre></div><p>The newly created Spring application can be launched with Maven.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd spring-boot-trailing-spaces
+</span></span><span style="display:flex;"><span>$ mvn spring-boot:run
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>There should be no problem as we have not made any changes. Now, open &ldquo;<code>src/main/resources/application.properties</code>&rdquo; with an editor, then copy and paste the following code. Promise me that you don&rsquo;t change the pasted code ;)</p>
 <pre tabindex="0"><code class="language-properties" data-lang="properties">spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver 
 spring.datasource.username=sa
 spring.datasource.password=
 </code></pre><p>These lines are typical data source configuration of an embedded H2 database engine that you might have seen around or used many times. Unfortunately, this time they will crash the Spring application.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mvn spring-boot:run
-...
-2018-11-27 21:20:54.289 ERROR <span style="color:#ae81ff">92868</span> --- <span style="color:#f92672">[</span>           main<span style="color:#f92672">]</span> o.s.boot.SpringApplication               : Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name <span style="color:#e6db74">&#39;org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration&#39;</span>: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name <span style="color:#e6db74">&#39;dataSource&#39;</span> defined in class path resource <span style="color:#f92672">[</span>org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class<span style="color:#f92672">]</span>: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate <span style="color:#f92672">[</span>com.zaxxer.hikari.HikariDataSource<span style="color:#f92672">]</span>: Factory method <span style="color:#e6db74">&#39;dataSource&#39;</span> threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: org.h2.Driver
-</code></pre></div><p>Walking across the lengthy exception stack and error messages, the main culprit seems to be &ldquo;<em>Cannot load driver class: org.h2.Driver</em>&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mvn spring-boot:run
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>2018-11-27 21:20:54.289 ERROR <span style="color:#ae81ff">92868</span> --- <span style="color:#f92672">[</span>           main<span style="color:#f92672">]</span> o.s.boot.SpringApplication               : Application run failed
+</span></span><span style="display:flex;"><span>org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name <span style="color:#e6db74">&#39;org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration&#39;</span>: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name <span style="color:#e6db74">&#39;dataSource&#39;</span> defined in class path resource <span style="color:#f92672">[</span>org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class<span style="color:#f92672">]</span>: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate <span style="color:#f92672">[</span>com.zaxxer.hikari.HikariDataSource<span style="color:#f92672">]</span>: Factory method <span style="color:#e6db74">&#39;dataSource&#39;</span> threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: org.h2.Driver
+</span></span></code></pre></div><p>Walking across the lengthy exception stack and error messages, the main culprit seems to be &ldquo;<em>Cannot load driver class: org.h2.Driver</em>&rdquo;.</p>
 <p>Why is that?</p>
 <h2 id="root-causes">, the root causes? &hellip;</h2>
 <p>The very first thing came to my mind is to check whether H2 jar is included properly in the classpath.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mvn dependency:tree
-...
-<span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> +- com.h2database:h2:jar:1.4.197:runtime
-...
-</code></pre></div><p>Yup, it&rsquo;s there!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mvn dependency:tree
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> +- com.h2database:h2:jar:1.4.197:runtime
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Yup, it&rsquo;s there!</p>
 <p>You can try further on, like I did, to remove <code>$HOME/.m2</code> and re-run Maven or even restart the machine (but the app still doesn&rsquo;t work!!!).</p>
 <p>I have searched around for this specific issue and found some similar or the same exception, for instance, <a href="https://stackoverflow.com/a/51193609">here</a>, <a href="https://stackoverflow.com/q/40137347">here</a>, <a href="https://stackoverflow.com/q/4008011">here</a> or <a href="https://stackoverflow.com/q/43616563">here</a>. None of the solutions there can fix it.</p>
 <p>It took me nearly half an hour to figure out the root cause. That is the single <em>trailing space</em> at the end of <code>org.h2.Driver</code>. Here I intentionally added in order to replicate exactly the original problem in my experimenting project. And the fault was mine who just lazily copied and pasted these few lines of Spring Boot configurations. After I removed all trailing spaces, the error disappeared.</p>
@@ -176,11 +176,11 @@ Whitespaces can also become <a href="https://blog.codinghorror.com/whitespace-th
 <li>
 <p>Either <span class="menu">Preferences ▸ Show Invisibles</span>
 or <code>config.cson</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;*&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>
-  <span style="color:#960050;background-color:#1e0010">editor:</span>
-    <span style="color:#960050;background-color:#1e0010">...</span>
-    <span style="color:#960050;background-color:#1e0010">showInvisibles:</span> <span style="color:#66d9ef">true</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;*&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">editor:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">showInvisibles:</span> <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -248,14 +248,14 @@ or <code>settings.json</code> ▸ <code>&quot;files.trimTrailingWhitespace&quot;
 <ul>
 <li>For POSIX</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -type f -name <span style="color:#e6db74">&#39;*.properties&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> -exec sed --in-place <span style="color:#e6db74">&#39;s/[[:space:]]\+$//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\+</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -type f -name <span style="color:#e6db74">&#39;*.properties&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> -exec sed --in-place <span style="color:#e6db74">&#39;s/[[:space:]]\+$//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\+</span>
+</span></span></code></pre></div><ul>
 <li>For macOS/BSD</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -iname <span style="color:#e6db74">&#39;*.properties&#39;</span> -type f <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#e6db74">&#39;s/[[:space:]]\{1,\}$//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\+</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -iname <span style="color:#e6db74">&#39;*.properties&#39;</span> -type f <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> -exec sed -i <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#e6db74">&#39;s/[[:space:]]\{1,\}$//&#39;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\+</span>
+</span></span></code></pre></div></li>
 </ul>
 <p>Wow, quite a long post for such a trivial issue, eh?! Thanks for reading to the end and I hope that my wasted time and effort here would save some of yours in future.</p>
 <p>Cheers!</p>
@@ -317,7 +317,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -347,7 +347,7 @@ var loadDeferredStyles = function () {
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 <script type="text/javascript">
-hljs.highlightAll();
+hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

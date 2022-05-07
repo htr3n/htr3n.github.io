@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>Soạn tài liệu TeX tiếng Việt (Unicode) • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -137,43 +137,43 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h3 id="4-tạo-tài-liệu-latex-tiếng-việt">4. Tạo tài liệu LaTeX tiếng Việt</h3>
 <h4 id="41-soạn-tài-liệu">4.1 Soạn tài liệu</h4>
 <p>Dùng bất kì một trình soạn thảo nào ở trên, soạn một file <code>tv.tex</code> như sau.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\documentclass</span>{article}
-<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc}
-<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}
-<span style="color:#66d9ef">\title</span>{Dùng tiếng Việt (UTF-8) trong LaTeX}
-
-<span style="color:#66d9ef">\begin</span>{document} <span style="color:#66d9ef">\selectlanguage</span>{vietnam}
-<span style="color:#66d9ef">\maketitle</span> <span style="color:#66d9ef">\section</span>{Tiêu đề}
-
-<span style="color:#66d9ef">\subsection</span>{Tiểu tiêu đề}
-Một vài đoạn văn bản
-<span style="color:#66d9ef">\end</span>{document}
-</code></pre></div><p>Nội dung này có thể xem như là khung sườn cho các tài liệu LaTeX tiếng Việt của bạn, chú ý những phần sau:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc} 
-<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}
-</code></pre></div><p>và</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\selectlanguage</span>{vietnam}
-</code></pre></div><p>Như vậy, một tài liệu LaTeX tiếng Việt có sườn (template) đơn giản như sau:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\documentclass</span>{...}
-<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc}
-<span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}
-<span style="color:#66d9ef">\title</span>{...}
-
-<span style="color:#66d9ef">\begin</span>{document}
-<span style="color:#66d9ef">\selectlanguage</span>{vietnam}
-<span style="color:#66d9ef">\maketitle</span>
-
-...
-
-<span style="color:#66d9ef">\end</span>{document}
-</code></pre></div><h4 id="42-biên-dịch-và-tạo-tài-liệu-ps-hoặc-pdf">4.2 Biên dịch và tạo tài liệu PS hoặc PDF</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span><span style="color:#66d9ef">\documentclass</span>{article}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\title</span>{Dùng tiếng Việt (UTF-8) trong LaTeX}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\begin</span>{document} <span style="color:#66d9ef">\selectlanguage</span>{vietnam}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\maketitle</span> <span style="color:#66d9ef">\section</span>{Tiêu đề}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\subsection</span>{Tiểu tiêu đề}
+</span></span><span style="display:flex;"><span>Một vài đoạn văn bản
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\end</span>{document}
+</span></span></code></pre></div><p>Nội dung này có thể xem như là khung sườn cho các tài liệu LaTeX tiếng Việt của bạn, chú ý những phần sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc} 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}
+</span></span></code></pre></div><p>và</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span><span style="color:#66d9ef">\selectlanguage</span>{vietnam}
+</span></span></code></pre></div><p>Như vậy, một tài liệu LaTeX tiếng Việt có sườn (template) đơn giản như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span><span style="color:#66d9ef">\documentclass</span>{...}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[utf8]</span>{inputenc}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\usepackage</span><span style="color:#a6e22e">[vietnam,english]</span>{babel}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\title</span>{...}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\begin</span>{document}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\selectlanguage</span>{vietnam}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\maketitle</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\end</span>{document}
+</span></span></code></pre></div><h4 id="42-biên-dịch-và-tạo-tài-liệu-ps-hoặc-pdf">4.2 Biên dịch và tạo tài liệu PS hoặc PDF</h4>
 <p>Dùng các trình biên dịch như <code>latex</code> hoặc <code>pdflatex</code> để biên dịch tài liệu <code>tv.tex</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">latex tv.tex
-dvips tv.dvi
-ps2pdf tv.ps
-</code></pre></div><p>hoặc</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pdflatex tv.tex
-</code></pre></div><p>Kết quả tài liệu tiếng Việt sau khi biên dịch.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>latex tv.tex
+</span></span><span style="display:flex;"><span>dvips tv.dvi
+</span></span><span style="display:flex;"><span>ps2pdf tv.ps
+</span></span></code></pre></div><p>hoặc</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pdflatex tv.tex
+</span></span></code></pre></div><p>Kết quả tài liệu tiếng Việt sau khi biên dịch.</p>
 <p><img src="latex-tv.jpg" alt="Kết quả văn bản tiếng Việt"></p>
 </div>
 <div class="navigation navigation-single">
@@ -222,7 +222,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -255,8 +255,7 @@ var loadDeferredStyles = function () {
 <script type="text/javascript">
 hljs.configure({languages: ["tex"]});
         
-        
-        hljs.highlightAll();
+        hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

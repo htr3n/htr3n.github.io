@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>Integration Laravel 5 and Gentelella admin theme • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -115,63 +115,63 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>Laravel can act as backend for any Web application. At the moment of this writing, Laravel includes several <a href="https://laravel.com/docs/frontend">good supports</a> for popular front-ends such as Bootstrap, <a href="https://vuejs.org">Vue.js</a>, and <a href="https://reactjs.org">React</a>. The included tool <a href="https://github.com/JeffreyWay/laravel-mix">Laravel Mix</a>, which runs on top of <a href="https://webpack.js.org/">Webpack</a>, can significantly lessen development effort on compiling and mixing Web resources. Thus, I have just leveraged Laravel Mix for this integration task. Further details on Laravel Mix can be found <a href="https://laravel.com/docs/mix">here</a>.</p>
 <h2 id="installation">Installation</h2>
 <p>Laravel provides built-in support for some front-end frameworks but they might cause some conflicts and incompability with Gentelella&rsquo;s own libraries. Therefore, I have decided to start from scratch, i.e. using basic Laravel without any front-end scaffolding</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># remove all scaffolding</span>
-php artisan preset none
-</code></pre></div><p>This command will remove all relevant scaffolding components including Bootstrap, Vue or React. Note that Laravel configuration for Bootstrap and Vue might still exist. For instance, check <code>resource/assets/js/app.js</code> for the following line and make sure it is commented out.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// require(&#39;./bootstrap&#39;);
-</span></code></pre></div><p>Now we just add Gentelella&rsquo;s dependencies.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># adding Gentelella</span>
-yarn add --save gentelella 		<span style="color:#75715e"># or npm install gentelella --save</span>
-<span style="color:#75715e"># update dependencies</span>
-yarn install					<span style="color:#75715e"># or  npm install</span>
-</code></pre></div><p>After this step, Gentelella should be available in the local <code>node_modules</code> folder.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># remove all scaffolding</span>
+</span></span><span style="display:flex;"><span>php artisan preset none
+</span></span></code></pre></div><p>This command will remove all relevant scaffolding components including Bootstrap, Vue or React. Note that Laravel configuration for Bootstrap and Vue might still exist. For instance, check <code>resource/assets/js/app.js</code> for the following line and make sure it is commented out.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// require(&#39;./bootstrap&#39;);
+</span></span></span></code></pre></div><p>Now we just add Gentelella&rsquo;s dependencies.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># adding Gentelella</span>
+</span></span><span style="display:flex;"><span>yarn add --save gentelella 		<span style="color:#75715e"># or npm install gentelella --save</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># update dependencies</span>
+</span></span><span style="display:flex;"><span>yarn install					<span style="color:#75715e"># or  npm install</span>
+</span></span></code></pre></div><p>After this step, Gentelella should be available in the local <code>node_modules</code> folder.</p>
 <h2 id="compiling-and-mixing-resources">Compiling and Mixing Resources</h2>
 <p>The main configuration file of Laravel Mix is <code>webpack.mix.js</code>. The fundamental tasks are defined as following.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mix</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;laravel-mix&#39;</span>);
-...
-<span style="color:#a6e22e">mix</span>.<span style="color:#a6e22e">js</span>(<span style="color:#e6db74">&#39;resources/assets/js/app.js&#39;</span>, <span style="color:#e6db74">&#39;public/js&#39;</span>)
-   .<span style="color:#a6e22e">sass</span>(<span style="color:#e6db74">&#39;resources/assets/sass/app.scss&#39;</span>, <span style="color:#e6db74">&#39;public/css&#39;</span>);
-</code></pre></div><p>That is, Mix will compile JavaScript and SASS resources in <code>resources/assets/js/app.js</code> and <code>resources/assets/sass/app.scss</code> to <code>public/js</code> and <code>public/css</code>, respectively.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mix</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;laravel-mix&#39;</span>);
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mix</span>.<span style="color:#a6e22e">js</span>(<span style="color:#e6db74">&#39;resources/assets/js/app.js&#39;</span>, <span style="color:#e6db74">&#39;public/js&#39;</span>)
+</span></span><span style="display:flex;"><span>   .<span style="color:#a6e22e">sass</span>(<span style="color:#e6db74">&#39;resources/assets/sass/app.scss&#39;</span>, <span style="color:#e6db74">&#39;public/css&#39;</span>);
+</span></span></code></pre></div><p>That is, Mix will compile JavaScript and SASS resources in <code>resources/assets/js/app.js</code> and <code>resources/assets/sass/app.scss</code> to <code>public/js</code> and <code>public/css</code>, respectively.</p>
 <p>We shall use the same way to compile necessary Gentelella resources. The full configuration can be found in the LaraMod project <a href="https://github.com/htr3n/laramod/blob/master/webpack.mix.js"><code>webpack.mix.js</code></a>.</p>
 <p>Some common variables are defined to reduce duplicates.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// general resources
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">public_js</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;public/js/&#39;</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">public_css</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;public/css/&#39;</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;resources/assets/sass/&#39;</span>;
-<span style="color:#75715e">// Gentelella resources
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gentelella_home</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;node_modules/gentelella/&#39;</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gentelella_vendor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gentelella_home</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/vendors/&#39;</span>;
-</code></pre></div><p>As using separate styles for different pages, e.g. Login, Dashboard, etc., I configure Mix to compile them accordingly.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">mix</span>.<span style="color:#a6e22e">js</span>(<span style="color:#e6db74">&#39;resources/assets/js/app.js&#39;</span>, <span style="color:#a6e22e">public_js</span>).
-    <span style="color:#a6e22e">sass</span>(<span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;app.scss&#39;</span>, <span style="color:#a6e22e">public_css</span>).
-    <span style="color:#a6e22e">sass</span>(<span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;home.scss&#39;</span>, <span style="color:#a6e22e">public_css</span>).
-    <span style="color:#a6e22e">options</span>({<span style="color:#a6e22e">processCssUrls</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>}).
-    <span style="color:#a6e22e">sass</span>(<span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;login.scss&#39;</span>, <span style="color:#a6e22e">public_css</span>).
-    <span style="color:#a6e22e">options</span>({<span style="color:#a6e22e">processCssUrls</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>}).
-    <span style="color:#a6e22e">sass</span>(<span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;dashboard.scss&#39;</span>, <span style="color:#a6e22e">public_css</span>).
-    <span style="color:#a6e22e">options</span>({<span style="color:#a6e22e">processCssUrls</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>});
-</code></pre></div><p>For each component of Gentelella that we need for our project or certain pages, we can copy them into Laravel public folders.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">/*
-</span><span style="color:#75715e"> *  Copy dependent JavaScripts and CSSs
-</span><span style="color:#75715e"> */</span>
-<span style="color:#a6e22e">mix</span>.
-    <span style="color:#75715e">// gentelella
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">gentelella_home</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;build/css/custom.css&#39;</span>,
-        <span style="color:#a6e22e">public_css</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;gentelella-custom.css&#39;</span>).
-    <span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">gentelella_home</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;build/js/custom.js&#39;</span>,
-        <span style="color:#a6e22e">public_js</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;gentelella-custom.js&#39;</span>).
-...
-</code></pre></div><p>We can definitely use Mix/Webpack tools for optimising/minimising/transforming Gentelella resources. I will leave it as extra deployment exercises. For now, I will mainly concentrate on development aspects. When I need to use a Gentelella&rsquo;s component for a certain page, I will include the following directives in the corresponding Laravel Blade templates for that page.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// general resources
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">public_js</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;public/js/&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">public_css</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;public/css/&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;resources/assets/sass/&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Gentelella resources
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gentelella_home</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;node_modules/gentelella/&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gentelella_vendor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gentelella_home</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/vendors/&#39;</span>;
+</span></span></code></pre></div><p>As using separate styles for different pages, e.g. Login, Dashboard, etc., I configure Mix to compile them accordingly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">mix</span>.<span style="color:#a6e22e">js</span>(<span style="color:#e6db74">&#39;resources/assets/js/app.js&#39;</span>, <span style="color:#a6e22e">public_js</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sass</span>(<span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;app.scss&#39;</span>, <span style="color:#a6e22e">public_css</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sass</span>(<span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;home.scss&#39;</span>, <span style="color:#a6e22e">public_css</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">options</span>({<span style="color:#a6e22e">processCssUrls</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>}).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sass</span>(<span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;login.scss&#39;</span>, <span style="color:#a6e22e">public_css</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">options</span>({<span style="color:#a6e22e">processCssUrls</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>}).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sass</span>(<span style="color:#a6e22e">resource_sass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;dashboard.scss&#39;</span>, <span style="color:#a6e22e">public_css</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">options</span>({<span style="color:#a6e22e">processCssUrls</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>});
+</span></span></code></pre></div><p>For each component of Gentelella that we need for our project or certain pages, we can copy them into Laravel public folders.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  Copy dependent JavaScripts and CSSs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mix</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// gentelella
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">gentelella_home</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;build/css/custom.css&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">public_css</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;gentelella-custom.css&#39;</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">gentelella_home</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;build/js/custom.js&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">public_js</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;gentelella-custom.js&#39;</span>).
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>We can definitely use Mix/Webpack tools for optimising/minimising/transforming Gentelella resources. I will leave it as extra deployment exercises. For now, I will mainly concentrate on development aspects. When I need to use a Gentelella&rsquo;s component for a certain page, I will include the following directives in the corresponding Laravel Blade templates for that page.</p>
 <pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">&lt;!-- Styles --&gt;
-&lt;link href=&quot;{{ asset('css/font-awesome.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
-&lt;link href=&quot;{{ asset('css/bootstrap.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
-&lt;link href=&quot;{{ asset('css/gentelella-custom.css') }}&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&#34;{{ asset(&#39;css/font-awesome.css&#39;) }}&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;link href=&#34;{{ asset(&#39;css/bootstrap.css&#39;) }}&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;link href=&#34;{{ asset(&#39;css/gentelella-custom.css&#39;) }}&#34; rel=&#34;stylesheet&#34;&gt;
 ...
 &lt;!-- Scripts --&gt;
-&lt;script src=&quot;{{ asset('js/jquery.min.js') }}&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;{{ asset('js/bootstrap.js') }}&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;{{ asset('js/gentelella-custom.js') }}&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;{{ asset('js/app.js') }}&quot;&gt;&lt;/script&gt;
+&lt;script src=&#34;{{ asset(&#39;js/jquery.min.js&#39;) }}&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;{{ asset(&#39;js/bootstrap.js&#39;) }}&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;{{ asset(&#39;js/gentelella-custom.js&#39;) }}&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;{{ asset(&#39;js/app.js&#39;) }}&#34;&gt;&lt;/script&gt;
 </code></pre><p>Note that the specific Laravel Blade directive <code>{{ }}</code> and <code>asset(...)</code> are used to refer to the resources inside Laravel <code>public/</code> folder accordingly. A working example of Laravel and Gentelella integration is illustrated via the <a href="https://github.com/htr3n/laramod">LaraMod</a> project that you can check out and have a deeper look.</p>
 <p><img src="login.png" alt="Login"></p>
 <p><img src="dashboard.png" alt="Dashboard"></p>
@@ -253,7 +253,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -283,7 +283,7 @@ var loadDeferredStyles = function () {
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 <script type="text/javascript">
-hljs.highlightAll();
+hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

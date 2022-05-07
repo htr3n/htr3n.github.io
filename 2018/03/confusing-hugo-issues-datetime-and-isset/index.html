@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>Confusing Hugo issues: datetime and &#39;isset&#39; • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -124,12 +124,12 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </ul>
 </blockquote>
 <p>After changing the format string, the aforementioned issue surely disappears. Even better, <code>hyde-hyde</code> date/time formatting can also now adopt a default option to prevent such potential issues.</p>
-<pre tabindex="0"><code>{{ .Date.Format (.Site.Params.dateformat | default &quot;Jan 02, 2006&quot;) }}
+<pre tabindex="0"><code>{{ .Date.Format (.Site.Params.dateformat | default &#34;Jan 02, 2006&#34;) }}
 </code></pre><p><a href="https://github.com/htr3n/hyde-hyde/issues/1">The other issue</a> reported by <a href="https://github.com/paskal">paskal</a> (Dmitry Verkhoturov) is an error Dmitry spotted when compiling and testing his blog against several Hugo themes including mine, <code>hyde-hyde</code>.</p>
-<pre tabindex="0"><code>Building sites … ERROR 2018/03/20 20:35:56 Error while rendering &quot;page&quot; in &quot;&quot;: template: /srv/hugo/themes/hyde-hyde/layouts/_default/single.html:6:7: executing &quot;content&quot; at &lt;partial &quot;post_conten...&gt;: error calling partial: template: theme/partials/post_content.html:22:21: executing &quot;theme/partials/post_content.html&quot; at &lt;len .Params.tags&gt;: error calling len: len of untyped nil
-ERROR 2018/03/20 20:35:56 Error while rendering &quot;page&quot; in &quot;post/&quot;: template: /srv/hugo/themes/hyde-hyde/layouts/_default/single.html:6:7: executing &quot;content&quot; at &lt;partial &quot;post_conten...&gt;: error calling partial: template: theme/partials/post_content.html:22:21: executing &quot;theme/partials/post_content.html&quot; at &lt;len .Params.tags&gt;: error calling len: len of untyped nil
+<pre tabindex="0"><code>Building sites … ERROR 2018/03/20 20:35:56 Error while rendering &#34;page&#34; in &#34;&#34;: template: /srv/hugo/themes/hyde-hyde/layouts/_default/single.html:6:7: executing &#34;content&#34; at &lt;partial &#34;post_conten...&gt;: error calling partial: template: theme/partials/post_content.html:22:21: executing &#34;theme/partials/post_content.html&#34; at &lt;len .Params.tags&gt;: error calling len: len of untyped nil
+ERROR 2018/03/20 20:35:56 Error while rendering &#34;page&#34; in &#34;post/&#34;: template: /srv/hugo/themes/hyde-hyde/layouts/_default/single.html:6:7: executing &#34;content&#34; at &lt;partial &#34;post_conten...&gt;: error calling partial: template: theme/partials/post_content.html:22:21: executing &#34;theme/partials/post_content.html&#34; at &lt;len .Params.tags&gt;: error calling len: len of untyped nil
 </code></pre><p>The problem related to accessing <a href="https://gohugo.io/variables/page/#page-level-params">the tags</a> of each post via <code>.Params.tags</code>. The function <code>len .Params.tags</code> receives an untyped <code>nil</code> value. Strangely, there is a conditional check using the function <a href="https://github.com/gohugoio/hugo/blob/1823c053c8900cb6ee53b8e5c02939c7398e34dd/tpl/collections/collections.go#L315">isset</a> right before that.</p>
-<pre tabindex="0"><code>{{ if isset .Params &quot;tags&quot; }}
+<pre tabindex="0"><code>{{ if isset .Params &#34;tags&#34; }}
    {{ $total := len .Params.tags }}
    ...
 {{ end }}
@@ -207,7 +207,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -237,7 +237,7 @@ var loadDeferredStyles = function () {
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 <script type="text/javascript">
-hljs.highlightAll();
+hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

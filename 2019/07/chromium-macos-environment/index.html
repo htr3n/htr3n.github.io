@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>Chromium and macOS Environment Variables • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -113,29 +113,29 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </header>
 <div class="post">
 <p>Trying Chromium in macOS Mojave (10.14), I confronted with the popular issue regarding <a href="https://www.google.com/search?q=chromium+google+api+key+missing">Google API key missing</a>. After obtaining an API key along with client ID and secret, I put it on some shell startup scripts as following.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GOOGLE_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_google_api_key&#34;</span>
-export GOOGLE_DEFAULT_CLIENT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_client_id&#34;</span>
-export GOOGLE_DEFAULT_CLIENT_SECRET<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_client_secret&#34;</span>
-</code></pre></div><p>Even more careful, I also use <code>launchctl setenv</code> to ensure these variables are available for macOS GUI applications (usually launched via Finder, Dock, Spotlight or so).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_API_KEY $GOOGLE_API_KEY
-<span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_ID $GOOGLE_DEFAULT_CLIENT_ID
-<span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_SECRET $GOOGLE_DEFAULT_CLIENT_SECRET
-</code></pre></div><p>Sadly, it didn&rsquo;t work under Mojave. When launching Chrome from Finder or Dock, the warning is still there. It seems Apple has silently altered macOS a lot and many existing work-arounds stop working under Mojave.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export GOOGLE_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_google_api_key&#34;</span>
+</span></span><span style="display:flex;"><span>export GOOGLE_DEFAULT_CLIENT_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_client_id&#34;</span>
+</span></span><span style="display:flex;"><span>export GOOGLE_DEFAULT_CLIENT_SECRET<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your_client_secret&#34;</span>
+</span></span></code></pre></div><p>Even more careful, I also use <code>launchctl setenv</code> to ensure these variables are available for macOS GUI applications (usually launched via Finder, Dock, Spotlight or so).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_API_KEY $GOOGLE_API_KEY
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_ID $GOOGLE_DEFAULT_CLIENT_ID
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[[</span> -x /bin/launchctl <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> /bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_SECRET $GOOGLE_DEFAULT_CLIENT_SECRET
+</span></span></code></pre></div><p>Sadly, it didn&rsquo;t work under Mojave. When launching Chrome from Finder or Dock, the warning is still there. It seems Apple has silently altered macOS a lot and many existing work-arounds stop working under Mojave.</p>
 <p>There are also some working methods involving renaming the original executable binary <code>/Applications/Chromium.app/Contents/MacOS/Chromium</code>, creating a new script to launch Chrome in which the aforementioned variables are set properly (even leading to automated scripts like <a href="https://github.com/ezeeyahoo/ChromiumSyncEnabler">this</a>). Personally, I don&rsquo;t like these ways as they are rather intrusive and therefore less upgrade-proof (I guess future updates of Chromium will override these launching scripts and you must circumvent that) and only consider them last resort.</p>
 <p>Fortunately, I have found an <a href="https://stackoverflow.com/q/25385934">old StackOverflow&rsquo;s topic</a> with two methods that work perfectly fine for macOS Mojave and systems before that as you can see in that SO&rsquo;s topic. Better then, they are much less intrusive and upgrade-friendly.</p>
 <h2 id="method-1-using-login-items">Method 1: Using Login Items</h2>
 <p><strong>Step 1</strong>: Open the built-in app &ldquo;Script Editor&rdquo; in <code>/Applications/Utilities/</code>, enter the following content</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-applescript" data-lang="applescript">do shell script <span style="color:#e6db74">&#34;/bin/launchctl setenv GOOGLE_API_KEY your_google_api_key&#34;</span>
-do shell script <span style="color:#e6db74">&#34;/bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_ID your_client_id&#34;</span>
-do shell script <span style="color:#e6db74">&#34;/bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_SECRET your_client_secret&#34;</span>
-</code></pre></div><p>and then save (⌘ + s) under the format &ldquo;<strong>Application</strong>&rdquo;. Behind the scene, it will create a new macOS application and wraps the script content inside.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-applescript" data-lang="applescript"><span style="display:flex;"><span>do shell script <span style="color:#e6db74">&#34;/bin/launchctl setenv GOOGLE_API_KEY your_google_api_key&#34;</span>
+</span></span><span style="display:flex;"><span>do shell script <span style="color:#e6db74">&#34;/bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_ID your_client_id&#34;</span>
+</span></span><span style="display:flex;"><span>do shell script <span style="color:#e6db74">&#34;/bin/launchctl setenv GOOGLE_DEFAULT_CLIENT_SECRET your_client_secret&#34;</span>
+</span></span></code></pre></div><p>and then save (⌘ + s) under the format &ldquo;<strong>Application</strong>&rdquo;. Behind the scene, it will create a new macOS application and wraps the script content inside.</p>
 <p><strong>Step 2</strong>: Go to &ldquo;Settings&rdquo; &ndash;&gt; &ldquo;Users and Groups&rdquo; &ndash;&gt; choose the tab &ldquo;Login Items&rdquo;, click + and either point to the newly created application or simply drag and drop it to the box above.</p>
 <p><strong>Step 3</strong>: Log out and log in again. Chromium should see the variables and shows no warning.</p>
 <h2 id="method-2-via-launchagents">Method 2: Via LaunchAgents</h2>
 <p><strong>Step 1</strong>: Create a file <code>environments.plist</code> inside the folder <code>~/Library/LaunchAgents</code> with the following content:</p>
-<pre tabindex="0"><code class="language-plist" data-lang="plist">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
-&lt;plist version=&quot;1.0&quot;&gt;
+<pre tabindex="0"><code class="language-plist" data-lang="plist">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;
+&lt;plist version=&#34;1.0&#34;&gt;
 &lt;dict&gt;
   &lt;key&gt;Label&lt;/key&gt;
   &lt;string&gt;gui-environments&lt;/string&gt;
@@ -154,8 +154,8 @@ do shell script <span style="color:#e6db74">&#34;/bin/launchctl setenv GOOGLE_DE
 &lt;/dict&gt;
 &lt;/plist&gt;
 </code></pre><p><strong>Step 2</strong>: Enable it with <code>launchctl</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">launchctl load ~/Library/LaunchAgents/environments.plist
-</code></pre></div><p><strong>Step 3</strong>: There is no step 3, just launch <code>Chromium</code> and see that it should work without warning ;)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>launchctl load ~/Library/LaunchAgents/environments.plist
+</span></span></code></pre></div><p><strong>Step 3</strong>: There is no step 3, just launch <code>Chromium</code> and see that it should work without warning ;)</p>
 <p>In this method, you don&rsquo;t even need to log out or reboot. The variables are made available to <code>launchctl</code> after Step 2.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>The aforementioned methods work flawlessly under macOS Mojave (10.14) and less intrusive with respect to the target applications. As a result, we can upgrade or change the applications without concerning about re-creating, updating or changing the launching scripts. The only caveat is that, the environment variables will be exposed to all applications, and hence, could lead to some security concerns (e.g. regarding Google keys and secrets).</p>
@@ -224,7 +224,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -253,13 +253,12 @@ var loadDeferredStyles = function () {
 </script>
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/sh.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/bash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/languages/applescript.min.js"></script>
 <script type="text/javascript">
-hljs.configure({languages: ["sh, applescript"]});
+hljs.configure({languages: ["bash, applescript"]});
         
-        
-        hljs.highlightAll();
+        hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

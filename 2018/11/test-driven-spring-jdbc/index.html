@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>Back to basics: Test-driven Spring JDBC • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -123,21 +123,21 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>Close the statement and release all resources (connection is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html">AutoCloseable</a>)</li>
 </ol>
 <p>Along these steps, we should also handle any <a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/sqlexception.html">database exceptions</a> as well. You can find more details on JDBC programming <a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html">here</a>. Here is a simple example of accessing databases using JDBC and <a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html"><em>try-with-resources</em></a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">DataSource ds <span style="color:#f92672">=</span> <span style="color:#f92672">...;</span> <span style="color:#75715e">// obtain a DataSource object
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">try</span> <span style="color:#f92672">(</span>
-  Connection conn <span style="color:#f92672">=</span> ds<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">();</span>
-  Statement stmt <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">try</span> <span style="color:#f92672">(</span>ResultSet rs <span style="color:#f92672">=</span> smmt<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SELECT * FROM customer&#34;</span><span style="color:#f92672">)){</span>
-    <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">()){</span>
-      <span style="color:#75715e">// process the ResultSet
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    e2<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  e1<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Fortunately, Spring, via <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html">JdbcTemplate</a>, ofters a higher level of abstraction on top of Java JDBC that would save us a lot of boiler plate code and enable smooth integration with the rest of Spring framework&rsquo;s ecosystem. As such, we can leverage other parts of Spring farmework, for instance, the awesome <a href="https://spring.io/projects/spring-boot">Spring Boot</a>, to automate lots of configuration effort.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>DataSource ds <span style="color:#f92672">=</span> <span style="color:#f92672">...;</span> <span style="color:#75715e">// obtain a DataSource object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">try</span> <span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>  Connection conn <span style="color:#f92672">=</span> ds<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  Statement stmt <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> <span style="color:#f92672">(</span>ResultSet rs <span style="color:#f92672">=</span> smmt<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SELECT * FROM customer&#34;</span><span style="color:#f92672">)){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// process the ResultSet
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    e2<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  e1<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Fortunately, Spring, via <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html">JdbcTemplate</a>, ofters a higher level of abstraction on top of Java JDBC that would save us a lot of boiler plate code and enable smooth integration with the rest of Spring framework&rsquo;s ecosystem. As such, we can leverage other parts of Spring farmework, for instance, the awesome <a href="https://spring.io/projects/spring-boot">Spring Boot</a>, to automate lots of configuration effort.</p>
 <h2 id="a-simple-crud-project-with-spring-jdbc">A simple CRUD project with Spring JDBC</h2>
 <p>Nothing is better than a hand-on development project that demonstrate how Spring JDBC works. We can start with <a href="https://start.spring.io/">Spring Initialzr</a> and <a href="https://spring.io/projects/spring-boot">Spring Boot</a> to jump start and better concentrate on the main code instead of numerous dependencies and configurations.</p>
 <p>There are a few ways to bootstrap a project with Spring Initialzr. Most of the popular Java IDE such as Eclipse or Intellij IDEA with Spring extensions can create a new project via Spring Initialzr. You can also achieve the same result from the web site <a href="https://start.spring.io">https://start.spring.io</a> or even using <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli">Spring Boot CLI</a>.</p>
@@ -159,69 +159,69 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p><img src="ide-main.png" alt=""></p>
 <h3 id="defining-domain-entities">Defining Domain Entities</h3>
 <p>We might not need a complex domain model but rather a simple entity mapped to a database table. For example, a <code>Customer</code> entity as shown in Java code and a corresponding <code>customer</code> table.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> io.github.htr3n.springjdbcsimple.entity<span style="color:#f92672">;</span>
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> <span style="color:#f92672">{</span>
-  <span style="color:#66d9ef">private</span> Integer id<span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
-
-  <span style="color:#66d9ef">public</span> Integer <span style="color:#a6e22e">getId</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> id<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> email<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>String email<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h3 id="configuring-database-connection">Configuring Database Connection</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n.springjdbcsimple.entity<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Integer id<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Integer <span style="color:#a6e22e">getId</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> id<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>String email<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="configuring-database-connection">Configuring Database Connection</h3>
 <p>Normally, we have to provide sufficient information to establish database connections, for instance, JDBC url, authentication, and maybe some extra parameters. <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-data-access.html#howto-configure-a-datasource">Per convention</a>, Spring Boot can scan for data sources configurations as <code>@Bean</code> or in <code>application.properties</code>.</p>
 <p>For better concentraton on test-driven JDBC CRUD, we can leverage <code>@JdbcTest</code> explained in the subsequent section to set up an in-memory embedded database and skip the details on data source configuration for now.</p>
 <p>However, we must still initialise the database (otherwise Spring will complain that the table <code>customer</code> <em>does not exist</em> when our application or a test starts). By convention documented <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-spring-jdbc">here</a>, we simply add a file <code>schema.sql</code> in the folder <code>src/main/resources</code> which contains a simple SQL DDL script for creating a table <code>customer</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> customer;
-<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> customer(
-  id integer <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> auto_increment,
-  name varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
-  email varchar (<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
-  <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> (id)
-);
-</code></pre></div><h3 id="test-driven-crud">Test-Driven CRUD</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> customer;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> customer(
+</span></span><span style="display:flex;"><span>  id integer <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> auto_increment,
+</span></span><span style="display:flex;"><span>  name varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>  email varchar (<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> (id)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="test-driven-crud">Test-Driven CRUD</h3>
 <p>At the heart of our JDBC project is a <code>CustomerDao.java</code> with basic <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD methods</a>. The class <code>CustomerDao</code> is annotated with <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Repository.html">@Repository</a> to indicate this is a data access component that is autodetected through normal Spring&rsquo;s classpath scanning.</p>
 <p>As <code>JdbcTemplate</code> will be used to work with H2 database, we just declared an <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html">@Autowired</a> field, the rest will be taken care by Spring.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> io.github.htr3n.springjdbcsimple.dao<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.springframework.jdbc.core.JdbcTemplate<span style="color:#f92672">;</span>
-
-<span style="color:#a6e22e">@Repository</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomerDao</span> <span style="color:#f92672">{</span>
-  <span style="color:#a6e22e">@Autowired</span>
-  <span style="color:#66d9ef">private</span> JdbcTemplate jdbcTemplate<span style="color:#f92672">;</span>
-
-  <span style="color:#75715e">// Create
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> Customer <span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>Customer customer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-  <span style="color:#75715e">// Retrieve
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{...}</span>
-  <span style="color:#75715e">// Retrieve
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-  <span style="color:#75715e">// Update
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>Customer customer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-  <span style="color:#75715e">// Delete
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h4 id="crud-tests">CRUD Tests</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n.springjdbcsimple.dao<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.jdbc.core.JdbcTemplate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Repository</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomerDao</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> JdbcTemplate jdbcTemplate<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Create
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> Customer <span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>Customer customer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Retrieve
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{...}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Retrieve
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>Customer customer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Delete
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h4 id="crud-tests">CRUD Tests</h4>
 <p>Before starting implementing the CRUD methods, we create some unit tests in <code>CustomerDaoTest</code>. Again, Spring Boot will help us a lot here with setting up and shutting down properly the testing environment via annotations such as <code>@RunWith</code> and <code>@SpringBootTest</code>. We only need to declare an <em>autowired</em> object <code>CustomerDao</code>.</p>
 <p>Spring offers powerful means for database testing, for instance, <code>@Transational</code> and <code>@Rollback</code>. With these annotations, Spring will take care of database transactions as well as rollling back the testing databases to its initial state.</p>
 <p>Unfortunately, it would be too tedious to annotate each test method. Spring Boot comes to handy with <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/jdbc/JdbcTest.html"><code>@JdbcTest</code></a> that enables several useful features for JDBC tests including an in-memory embedded database as well as transactional and roll back at the end of each test.</p>
@@ -229,204 +229,204 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p><strong>IMPORTANT</strong>By default, <code>@JdbcTest</code> <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-jdbc-test">won&rsquo;t load regular <code>Component</code></a>, and as a result, <code>CustomerDao</code> won&rsquo;t be loaded because it is a <code>@Repository</code>, i.e. a sub-type of <code>@Component</code>. Spring will inform us that it fails to find the required autowire <code>CustomerDao</code> for <code>CustomerDaoTest</code>. To fix this, simply annotation <code>CustomerDaoTest</code> with <code>@ComponentScan</code>.</p>
 </blockquote>
 <p>This is the whole test case for our tentative CRUD methods.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> io.github.htr3n.springjdbcsimple.dao<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> io.github.htr3n.springjdbcsimple.entity.Customer<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.junit.Before<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.junit.runner.RunWith<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.springframework.boot.test.autoconfigure.jdbc.JdbcTest<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.springframework.context.annotation.ComponentScan<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.springframework.test.context.junit4.SpringRunner<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.Optional<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.util.Random<span style="color:#f92672">;</span>
-
-<span style="color:#f92672">import static</span> org.assertj.core.api.Assertions.assertThat<span style="color:#f92672">;</span>
-
-<span style="color:#a6e22e">@RunWith</span><span style="color:#f92672">(</span>SpringRunner<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
-<span style="color:#a6e22e">@JdbcTest</span>
-<span style="color:#a6e22e">@ComponentScan</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomerDaoTest</span> <span style="color:#f92672">{</span>
-
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String ALICE_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Alice&#34;</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String ALICE_EMAIL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;alice@test.com&#34;</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String BOB_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bob&#34;</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String BOB_EMAIL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bob@test.com&#34;</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> ONE_CUSTOMER <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> TWO_CUSTOMERS <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span>
-
-  <span style="color:#a6e22e">@Autowired</span>
-  <span style="color:#66d9ef">private</span> CustomerDao customerDao<span style="color:#f92672">;</span>
-
-  <span style="color:#66d9ef">private</span> Customer alice<span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">private</span> Customer bob<span style="color:#f92672">;</span>
-
-  <span style="color:#a6e22e">@Before</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUp</span><span style="color:#f92672">(){</span>
-    alice <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Customer<span style="color:#f92672">();</span>
-    alice<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>ALICE_NAME<span style="color:#f92672">);</span>
-    alice<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>ALICE_EMAIL<span style="color:#f92672">);</span>
-
-    bob <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Customer<span style="color:#f92672">();</span>
-    bob<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>BOB_NAME<span style="color:#f92672">);</span>
-    bob<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>BOB_EMAIL<span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">create_shouldReturnValidCustomer_whenAddingNewCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
-    assertThat<span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isNotNull</span><span style="color:#f92672">();</span>
-
-    Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">());</span>
-    assertThat<span style="color:#f92672">(</span>result<span style="color:#f92672">).</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>alice<span style="color:#f92672">).</span><span style="color:#a6e22e">hasFieldOrPropertyWithValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">,</span> ALICE_NAME<span style="color:#f92672">);</span>
-    assertThat<span style="color:#f92672">(</span>alice<span style="color:#f92672">).</span><span style="color:#a6e22e">hasFieldOrPropertyWithValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">,</span> ALICE_EMAIL<span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">findById_shouldReturnInvalidCustomer_forEmptyDatabase</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> invalidCustomer <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Random<span style="color:#f92672">().</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">());</span>
-    assertThat<span style="color:#f92672">(</span>invalidCustomer<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isFalse</span><span style="color:#f92672">();</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">findById_shouldReturnValidCustomer_forExistingCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
-    Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> validCustomer <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">());</span>
-    assertThat<span style="color:#f92672">(</span>validCustomer<span style="color:#f92672">).</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>validCustomer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEqualTo</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
-    assertThat<span style="color:#f92672">(</span>validCustomer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEqualTo</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">findAll_shouldYieldEmptyList_forEmptyDatabase</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    List<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> noCustomers <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>noCustomers<span style="color:#f92672">).</span><span style="color:#a6e22e">isNullOrEmpty</span><span style="color:#f92672">();</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">findAll_shouldYieldListOfCustomers_forNonemptyDatabase</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
-    List<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> customers <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>customers<span style="color:#f92672">).</span><span style="color:#a6e22e">isNotNull</span><span style="color:#f92672">().</span><span style="color:#a6e22e">hasSize</span><span style="color:#f92672">(</span>ONE_CUSTOMER<span style="color:#f92672">);</span>
-
-    Customer result <span style="color:#f92672">=</span> customers<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
-    assertThat<span style="color:#f92672">(</span>result<span style="color:#f92672">).</span><span style="color:#a6e22e">hasFieldOrPropertyWithValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">,</span> ALICE_NAME<span style="color:#f92672">);</span>
-    assertThat<span style="color:#f92672">(</span>result<span style="color:#f92672">).</span><span style="color:#a6e22e">hasFieldOrPropertyWithValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">,</span> ALICE_EMAIL<span style="color:#f92672">);</span>
-
-    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>bob<span style="color:#f92672">);</span>
-    customers <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>customers<span style="color:#f92672">).</span><span style="color:#a6e22e">isNotNull</span><span style="color:#f92672">().</span><span style="color:#a6e22e">hasSize</span><span style="color:#f92672">(</span>TWO_CUSTOMERS<span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update_shouldYieldFalse_forEmptyDatabase</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    Customer notFound <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Customer<span style="color:#f92672">();</span>
-    notFound<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Random<span style="color:#f92672">().</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">());</span>
-    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>notFound<span style="color:#f92672">)).</span><span style="color:#a6e22e">isFalse</span><span style="color:#f92672">();</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update_shouldYieldTrue_forExistingCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
-    assertThat<span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isNotNull</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">)).</span><span style="color:#a6e22e">isTrue</span><span style="color:#f92672">();</span>
-
-    alice<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>BOB_NAME<span style="color:#f92672">);</span>
-    alice<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>BOB_EMAIL<span style="color:#f92672">);</span>
-    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">)).</span><span style="color:#a6e22e">isTrue</span><span style="color:#f92672">();</span>
-
-    Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> found <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">());</span>
-    assertThat<span style="color:#f92672">(</span>found<span style="color:#f92672">).</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>found<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEqualTo</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
-    assertThat<span style="color:#f92672">(</span>found<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEqualTo</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete_shouldYieldFalse_forEmptyDatabaseOrNonexistingCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Random<span style="color:#f92672">().</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">())).</span><span style="color:#a6e22e">isFalse</span><span style="color:#f92672">();</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#a6e22e">@Test</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete_shouldYieldTrue_forExistingCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
-    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">hasSize</span><span style="color:#f92672">(</span>ONE_CUSTOMER<span style="color:#f92672">);</span>
-    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">())).</span><span style="color:#a6e22e">isTrue</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isFalse</span><span style="color:#f92672">();</span>
-    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">();</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h4 id="crud-implementation">CRUD Implementation</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n.springjdbcsimple.dao<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> io.github.htr3n.springjdbcsimple.entity.Customer<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Before<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.runner.RunWith<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.test.autoconfigure.jdbc.JdbcTest<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.context.annotation.ComponentScan<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.test.context.junit4.SpringRunner<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Optional<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Random<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.assertj.core.api.Assertions.assertThat<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RunWith</span><span style="color:#f92672">(</span>SpringRunner<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@JdbcTest</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ComponentScan</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomerDaoTest</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String ALICE_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Alice&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String ALICE_EMAIL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;alice@test.com&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String BOB_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bob&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String BOB_EMAIL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bob@test.com&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> ONE_CUSTOMER <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> TWO_CUSTOMERS <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> CustomerDao customerDao<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Customer alice<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Customer bob<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Before</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUp</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    alice <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Customer<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    alice<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>ALICE_NAME<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    alice<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>ALICE_EMAIL<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    bob <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Customer<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    bob<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>BOB_NAME<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    bob<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>BOB_EMAIL<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">create_shouldReturnValidCustomer_whenAddingNewCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isNotNull</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>result<span style="color:#f92672">).</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>alice<span style="color:#f92672">).</span><span style="color:#a6e22e">hasFieldOrPropertyWithValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">,</span> ALICE_NAME<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>alice<span style="color:#f92672">).</span><span style="color:#a6e22e">hasFieldOrPropertyWithValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">,</span> ALICE_EMAIL<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">findById_shouldReturnInvalidCustomer_forEmptyDatabase</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> invalidCustomer <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Random<span style="color:#f92672">().</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>invalidCustomer<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isFalse</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">findById_shouldReturnValidCustomer_forExistingCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> validCustomer <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>validCustomer<span style="color:#f92672">).</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>validCustomer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEqualTo</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>validCustomer<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEqualTo</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">findAll_shouldYieldEmptyList_forEmptyDatabase</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    List<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> noCustomers <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>noCustomers<span style="color:#f92672">).</span><span style="color:#a6e22e">isNullOrEmpty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">findAll_shouldYieldListOfCustomers_forNonemptyDatabase</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    List<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> customers <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customers<span style="color:#f92672">).</span><span style="color:#a6e22e">isNotNull</span><span style="color:#f92672">().</span><span style="color:#a6e22e">hasSize</span><span style="color:#f92672">(</span>ONE_CUSTOMER<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Customer result <span style="color:#f92672">=</span> customers<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>result<span style="color:#f92672">).</span><span style="color:#a6e22e">hasFieldOrPropertyWithValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">,</span> ALICE_NAME<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>result<span style="color:#f92672">).</span><span style="color:#a6e22e">hasFieldOrPropertyWithValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">,</span> ALICE_EMAIL<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>bob<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    customers <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customers<span style="color:#f92672">).</span><span style="color:#a6e22e">isNotNull</span><span style="color:#f92672">().</span><span style="color:#a6e22e">hasSize</span><span style="color:#f92672">(</span>TWO_CUSTOMERS<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update_shouldYieldFalse_forEmptyDatabase</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Customer notFound <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Customer<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    notFound<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Random<span style="color:#f92672">().</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>notFound<span style="color:#f92672">)).</span><span style="color:#a6e22e">isFalse</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update_shouldYieldTrue_forExistingCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isNotNull</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">)).</span><span style="color:#a6e22e">isTrue</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    alice<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>BOB_NAME<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    alice<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>BOB_EMAIL<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">)).</span><span style="color:#a6e22e">isTrue</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> found <span style="color:#f92672">=</span> customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>found<span style="color:#f92672">).</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>found<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEqualTo</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>found<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEqualTo</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete_shouldYieldFalse_forEmptyDatabaseOrNonexistingCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Random<span style="color:#f92672">().</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">())).</span><span style="color:#a6e22e">isFalse</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete_shouldYieldTrue_forExistingCustomer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">hasSize</span><span style="color:#f92672">(</span>ONE_CUSTOMER<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">())).</span><span style="color:#a6e22e">isTrue</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>alice<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isFalse</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    assertThat<span style="color:#f92672">(</span>customerDao<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h4 id="crud-implementation">CRUD Implementation</h4>
 <p>With the tests defined, we can start implementing the CRUD using Spring <code>JdbcTemplate</code>.</p>
 <p><strong>C</strong>reate</p>
 <p>To satisfy the test described in <code>create_shouldReturnValidCustomer_whenAddingNewCustomer()</code>, our <code>Customer.create()</code> must successfully save the input <code>Customer</code> and return with an auto-generated primary key (e.g. customer ID). In order to obtain the key, we can use Spring&rsquo;s helper class <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/support/KeyHolder.html"><code>KeyHolder</code></a> along with the standard <a href="https://docs.oracle.com/javase/8/docs/api/java/sql/PreparedStatement.html"><code>PreparedStatement</code></a>. Note that the code was simplified with <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html">Java 8 Lambda notation</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Create
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> Customer <span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>Customer customer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;INSERT INTO customer (name, email) VALUES (?, ?)&#34;</span><span style="color:#f92672">;</span>
-  KeyHolder keyHolder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> GeneratedKeyHolder<span style="color:#f92672">();</span>
-  
-  <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>connection <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-    PreparedStatement statement <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareStatement</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> Statement<span style="color:#f92672">.</span><span style="color:#a6e22e">RETURN_GENERATED_KEYS</span><span style="color:#f92672">);</span>
-    statement<span style="color:#f92672">.</span><span style="color:#a6e22e">setString</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
-    statement<span style="color:#f92672">.</span><span style="color:#a6e22e">setString</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
-    <span style="color:#66d9ef">return</span> statement<span style="color:#f92672">;</span>
-  <span style="color:#f92672">},</span> keyHolder<span style="color:#f92672">);</span>
-  
-  Integer newCustomerId <span style="color:#f92672">=</span> keyHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">getKey</span><span style="color:#f92672">().</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">();</span>
-  customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span>newCustomerId<span style="color:#f92672">);</span>
-  <span style="color:#66d9ef">return</span> customer<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Please note that, Spring also provides another helper, namely, <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/simple/SimpleJdbcInsert.html"><code>SimpleJdbcInsert</code></a> with methods <code>executeAndReturnKey()</code>. Per the class&rsquo;s documentation, <code>SimpleJdbcInsert</code> is indeed a higher level wrapper of <code>JdbcTemplate</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Create
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> Customer <span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>Customer customer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;INSERT INTO customer (name, email) VALUES (?, ?)&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  KeyHolder keyHolder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> GeneratedKeyHolder<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>connection <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    PreparedStatement statement <span style="color:#f92672">=</span> connection<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareStatement</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> Statement<span style="color:#f92672">.</span><span style="color:#a6e22e">RETURN_GENERATED_KEYS</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    statement<span style="color:#f92672">.</span><span style="color:#a6e22e">setString</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    statement<span style="color:#f92672">.</span><span style="color:#a6e22e">setString</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> statement<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">},</span> keyHolder<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  Integer newCustomerId <span style="color:#f92672">=</span> keyHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">getKey</span><span style="color:#f92672">().</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span>newCustomerId<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> customer<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Please note that, Spring also provides another helper, namely, <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/simple/SimpleJdbcInsert.html"><code>SimpleJdbcInsert</code></a> with methods <code>executeAndReturnKey()</code>. Per the class&rsquo;s documentation, <code>SimpleJdbcInsert</code> is indeed a higher level wrapper of <code>JdbcTemplate</code>.</p>
 <p><strong>R</strong>etrieve</p>
 <p>In this project, we develop two retrieval methods: <code>findAll()</code> will return a list of all customers whilst <code>findById()</code> will look for a certain customer using the input ID.</p>
 <p>The method <code>findAll()</code> is rather a piece of cake but <code>findById()</code> is quite tricky. Most of the tutorials or guides on Spring <code>JdbcTemplate</code> I have found on the Internet blindly use the method <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html#queryForObject-java.lang.String-java.lang.Class-">JdbcTemplate.queryForObject()</a> to look up a database row. Trust me, I made the same mistake, too, along the line of this.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT id, name, email FROM customer WHERE id = ?&#34;</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">return</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>jdbcTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">queryForObject</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[]</span> <span style="color:#f92672">{</span> id <span style="color:#f92672">},</span> <span style="color:#66d9ef">new</span> CustomerMapper<span style="color:#f92672">()));</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Neater and cleaner, eh!? Unfortunately, the aforementioned <code>findById()</code> based on the problematic methods <code>JdbcTemplate.queryForXXX()</code> which is recommended to use in case the query shall return a single row and fails miserably in other cases.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT id, name, email FROM customer WHERE id = ?&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>jdbcTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">queryForObject</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[]</span> <span style="color:#f92672">{</span> id <span style="color:#f92672">},</span> <span style="color:#66d9ef">new</span> CustomerMapper<span style="color:#f92672">()));</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Neater and cleaner, eh!? Unfortunately, the aforementioned <code>findById()</code> based on the problematic methods <code>JdbcTemplate.queryForXXX()</code> which is recommended to use in case the query shall return a single row and fails miserably in other cases.</p>
 <p>This issue has been exposed by the test <code>findById_shouldReturnInvalidCustomer_forEmptyDatabase()</code> and I was able to come up with a slightly better version that uses <code>JdbcTemplate.query()</code> and checks for the returning <code>ResultSet</code>, in case of non-exiting customer yielding correctly <code>null</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Retrieve
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT * FROM customer&#34;</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> CustomerMapper<span style="color:#f92672">());</span>
-<span style="color:#f92672">}</span>
-<span style="color:#75715e">// Retrieve
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findCustomerById</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT id, name, email FROM customer WHERE id = ?&#34;</span><span style="color:#f92672">;</span>
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span>
-    rs <span style="color:#f92672">-&gt;</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">()</span> <span style="color:#f92672">?</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> CustomerMapper<span style="color:#f92672">().</span><span style="color:#a6e22e">mapRow</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">,</span> 1<span style="color:#f92672">)):</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">(),</span>
-    id<span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>When working with pure JDBC, we must map the database query result onto the domain entity on our own. This can be quickly done by implementing the interface <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/RowMapper.html"><code>RowMapper&lt;T&gt;</code></a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomerMapper</span> <span style="color:#66d9ef">implements</span> RowMapper<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
-  <span style="color:#a6e22e">@Override</span>
-  <span style="color:#66d9ef">public</span> Customer <span style="color:#a6e22e">mapRow</span><span style="color:#f92672">(</span>ResultSet rs<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> rowNum<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> SQLException <span style="color:#f92672">{</span>
-    Customer customer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Customer<span style="color:#f92672">();</span>
-    customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getInt</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">));</span>
-    customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">));</span>
-    customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">));</span>
-    <span style="color:#66d9ef">return</span> customer<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p><strong>U</strong>pdate / <strong>D</strong>elete</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Retrieve
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAll</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT * FROM customer&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> CustomerMapper<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Retrieve
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findCustomerById</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT id, name, email FROM customer WHERE id = ?&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    rs <span style="color:#f92672">-&gt;</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">()</span> <span style="color:#f92672">?</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> CustomerMapper<span style="color:#f92672">().</span><span style="color:#a6e22e">mapRow</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">,</span> 1<span style="color:#f92672">)):</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">(),</span>
+</span></span><span style="display:flex;"><span>    id<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>When working with pure JDBC, we must map the database query result onto the domain entity on our own. This can be quickly done by implementing the interface <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/RowMapper.html"><code>RowMapper&lt;T&gt;</code></a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomerMapper</span> <span style="color:#66d9ef">implements</span> RowMapper<span style="color:#f92672">&lt;</span>Customer<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Customer <span style="color:#a6e22e">mapRow</span><span style="color:#f92672">(</span>ResultSet rs<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> rowNum<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> SQLException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Customer customer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Customer<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getInt</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>    customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>    customer<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> customer<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><strong>U</strong>pdate / <strong>D</strong>elete</p>
 <p>The implementation of updating and deletion is rather straightforward.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Update
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>Customer customer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UPDATE customer SET name=?, email=? WHERE id=?&#34;</span><span style="color:#f92672">;</span>
-  Object<span style="color:#f92672">[]</span> params <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[]{</span>customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">(),</span> customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">(),</span> customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()};</span>
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> params<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Delete
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DELETE FROM customer WHERE id = ?&#34;</span><span style="color:#f92672">;</span>
-  Object<span style="color:#f92672">[]</span> params <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[]{</span>id<span style="color:#f92672">};</span>
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> params<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Finally, we finish implementing all necessary CRUD methods and hopefully pass all the aforementioned tests.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>Customer customer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UPDATE customer SET name=?, email=? WHERE id=?&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  Object<span style="color:#f92672">[]</span> params <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[]{</span>customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">(),</span> customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">(),</span> customer<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()};</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> params<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Delete
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DELETE FROM customer WHERE id = ?&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  Object<span style="color:#f92672">[]</span> params <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[]{</span>id<span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jdbcTemplate</span><span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">,</span> params<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Finally, we finish implementing all necessary CRUD methods and hopefully pass all the aforementioned tests.</p>
 <p><img src="passed-tests.png" alt="Passed tests"></p>
 <p>You can check out the <a href="https://github.com/htr3n/spring-jdbc-simple">project source code</a> available on Github.</p>
 </div>
@@ -476,7 +476,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -506,7 +506,7 @@ var loadDeferredStyles = function () {
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 <script type="text/javascript">
-hljs.highlightAll();
+hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

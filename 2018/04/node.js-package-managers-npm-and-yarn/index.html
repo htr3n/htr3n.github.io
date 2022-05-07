@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.92.2"/>
+<meta name="generator" content="Hugo 0.97.0"/>
 <title>Node.js package managers: NPM and Yarn • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
@@ -120,103 +120,103 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h3 id="0-installing-and-upgrading">0. Installing and Upgrading</h3>
 <h5 id="npm">NPM</h5>
 <p>As mentioned above, <code>npm</code> is available wherever Node.js is installed. So, the only thing to do is to upgrade <code>npm</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install npm@latest -g
-<span style="color:#75715e"># you can also use the alias &#39;i&#39;</span>
-npm i npm@latest -g
-</code></pre></div><h5 id="yarn">Yarn</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install npm@latest -g
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># you can also use the alias &#39;i&#39;</span>
+</span></span><span style="display:flex;"><span>npm i npm@latest -g
+</span></span></code></pre></div><h5 id="yarn">Yarn</h5>
 <p>Yarn can be installed via <code>npm</code> but this method is <a href="https://yarnpkg.com/en/docs/install#install-via-npm">not recommended due to security reason</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install --g yarn
-</code></pre></div><p>macOS users can install Yarn using <a href="https://brew.sh">Homebrew</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># installing</span>
-brew update <span style="color:#f92672">&amp;&amp;</span> brew install yarn
-<span style="color:#75715e"># upgrading</span>
-brew upgrade yarn
-</code></pre></div><p>There are also <a href="https://yarnpkg.com/en/docs/install">concrete instructions</a> for Linux and Windows users, too.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install --g yarn
+</span></span></code></pre></div><p>macOS users can install Yarn using <a href="https://brew.sh">Homebrew</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># installing</span>
+</span></span><span style="display:flex;"><span>brew update <span style="color:#f92672">&amp;&amp;</span> brew install yarn
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># upgrading</span>
+</span></span><span style="display:flex;"><span>brew upgrade yarn
+</span></span></code></pre></div><p>There are also <a href="https://yarnpkg.com/en/docs/install">concrete instructions</a> for Linux and Windows users, too.</p>
 <h3 id="1-starting-new-projects">1. Starting New Projects</h3>
 <h5 id="npm-1">NPM</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm init <span style="color:#f92672">[</span>-f|--force<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-y|--yes<span style="color:#f92672">]</span>
-</code></pre></div><p><code>npm init</code> will ask you a number of questions and create an initial configuration file <code>package.json</code>. In case you do not want to answer the questions one by one, you can use any option <code>-f</code>, <code>--force</code>, <code>-y</code> or <code>--yes</code> to skip all questions and get a default <code>package.json</code> in the current directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm init <span style="color:#f92672">[</span>-f|--force<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-y|--yes<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p><code>npm init</code> will ask you a number of questions and create an initial configuration file <code>package.json</code>. In case you do not want to answer the questions one by one, you can use any option <code>-f</code>, <code>--force</code>, <code>-y</code> or <code>--yes</code> to skip all questions and get a default <code>package.json</code> in the current directory.</p>
 <h5 id="yarn-1">Yarn</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn init <span style="color:#f92672">[</span>-y | --yes<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p | --private<span style="color:#f92672">]</span>
-</code></pre></div><p>This command is totally similar to <code>npm init</code> and the outcome will be <code>package.json</code>. The only difference is <code>-p</code> or <code>--private</code> to set <code>&quot;private&quot;: true</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn init <span style="color:#f92672">[</span>-y | --yes<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p | --private<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>This command is totally similar to <code>npm init</code> and the outcome will be <code>package.json</code>. The only difference is <code>-p</code> or <code>--private</code> to set <code>&quot;private&quot;: true</code>.</p>
 <h3 id="2-getting-information">2. Getting Information</h3>
 <h5 id="npm-2">NPM</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># display a particular package&#39;s information</span>
-npm view eslint
-npm info eslint
-<span style="color:#75715e"># search for a package/name</span>
-npm search eslint
-<span style="color:#75715e"># list installed packages</span>
-npm ls
-</code></pre></div><h5 id="yarn-2">Yarn</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># display a particular package&#39;s information</span>
+</span></span><span style="display:flex;"><span>npm view eslint
+</span></span><span style="display:flex;"><span>npm info eslint
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># search for a package/name</span>
+</span></span><span style="display:flex;"><span>npm search eslint
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># list installed packages</span>
+</span></span><span style="display:flex;"><span>npm ls
+</span></span></code></pre></div><h5 id="yarn-2">Yarn</h5>
 <p>Yarn developers deliberately do not add support for searching packages like <code>npm</code> as <a href="https://github.com/yarnpkg/yarn/issues/778#issuecomment-253146299">explained here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># display a particular package&#39;s information</span>
-yarn info eslint
-<span style="color:#75715e"># list installed packages</span>
-yarn list
-</code></pre></div><p>Yarn provodes a nice command for showing why a certain package was installed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn why eslint
-</code></pre></div><h3 id="3-installing-dependencies">3. Installing Dependencies</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># display a particular package&#39;s information</span>
+</span></span><span style="display:flex;"><span>yarn info eslint
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># list installed packages</span>
+</span></span><span style="display:flex;"><span>yarn list
+</span></span></code></pre></div><p>Yarn provodes a nice command for showing why a certain package was installed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn why eslint
+</span></span></code></pre></div><h3 id="3-installing-dependencies">3. Installing Dependencies</h3>
 <p>Both <code>npm</code> and <code>yarn</code> provide several options to add dependencies ranging from registered packages, tarballs, to git repositories. Please note that, <code>npm</code> and <code>yarn</code> also support manipulating global package repositories, i.e. installed packages that are available to the whole working system instead of local projects. In most of the case, we can use the option <code>-g</code> for <code>npm</code> and the command <code>global</code> for <code>yarn</code>. Thus, in the following steps, we mainly concentrate on local repositories.</p>
 <h5 id="npm-3">NPM</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># install all dependencies defined in package.json</span>
-npm install
-<span style="color:#75715e"># add a registered package and record it in &#39;dependencies&#39; </span>
-npm install eslint
-<span style="color:#75715e"># add an exact version</span>
-npm install eslint@3.0.0
-<span style="color:#75715e"># add and record in &#39;devDependencies&#39;</span>
-npm install --save-dev eslint
-<span style="color:#75715e"># add a git repos</span>
-npm install git@github.com:eslint/eslint.git
-</code></pre></div><h5 id="yarn-3">Yarn</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># install all dependencies defined in package.json</span>
-yarn install
-<span style="color:#75715e"># add a registered package</span>
-yarn add eslint
-<span style="color:#75715e"># add an exact version</span>
-yarn add eslint@3.0.0
-<span style="color:#75715e"># add to dev dependencies</span>
-yarn add --dev eslint
-<span style="color:#75715e"># add a git repos</span>
-yarn add git@github.com:eslint/eslint.git
-</code></pre></div><h3 id="4-upgrading-packages">4. Upgrading Packages</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># install all dependencies defined in package.json</span>
+</span></span><span style="display:flex;"><span>npm install
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add a registered package and record it in &#39;dependencies&#39; </span>
+</span></span><span style="display:flex;"><span>npm install eslint
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add an exact version</span>
+</span></span><span style="display:flex;"><span>npm install eslint@3.0.0
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add and record in &#39;devDependencies&#39;</span>
+</span></span><span style="display:flex;"><span>npm install --save-dev eslint
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add a git repos</span>
+</span></span><span style="display:flex;"><span>npm install git@github.com:eslint/eslint.git
+</span></span></code></pre></div><h5 id="yarn-3">Yarn</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># install all dependencies defined in package.json</span>
+</span></span><span style="display:flex;"><span>yarn install
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add a registered package</span>
+</span></span><span style="display:flex;"><span>yarn add eslint
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add an exact version</span>
+</span></span><span style="display:flex;"><span>yarn add eslint@3.0.0
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add to dev dependencies</span>
+</span></span><span style="display:flex;"><span>yarn add --dev eslint
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># add a git repos</span>
+</span></span><span style="display:flex;"><span>yarn add git@github.com:eslint/eslint.git
+</span></span></code></pre></div><h3 id="4-upgrading-packages">4. Upgrading Packages</h3>
 <h5 id="npm-4">NPM</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># check outdated packages</span>
-npm outdated
-<span style="color:#75715e"># upgrade all to the latest versions w.r.t version ranges in &#39;package.json&#39; (since 2.6.1 default to top level packages)</span>
-npm update
-<span style="color:#75715e"># upgrade a specific package</span>
-npm update eslint
-</code></pre></div><h5 id="yarn-4">Yarn</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># check outdated packages</span>
-yarn outdated
-<span style="color:#75715e"># upgrade all</span>
-yarn upgrade
-<span style="color:#75715e"># upgrade all and ignore version ranges in &#39;package.json&#39;</span>
-yarn upgrade --latest
-<span style="color:#75715e"># upgrade a specific package</span>
-yarn upgrade eslint
-<span style="color:#75715e"># upgrade packages match a pattern</span>
-yarn upgrade --pattern eslint
-</code></pre></div><h3 id="5-removing-packages">5. Removing Packages</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># check outdated packages</span>
+</span></span><span style="display:flex;"><span>npm outdated
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># upgrade all to the latest versions w.r.t version ranges in &#39;package.json&#39; (since 2.6.1 default to top level packages)</span>
+</span></span><span style="display:flex;"><span>npm update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># upgrade a specific package</span>
+</span></span><span style="display:flex;"><span>npm update eslint
+</span></span></code></pre></div><h5 id="yarn-4">Yarn</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># check outdated packages</span>
+</span></span><span style="display:flex;"><span>yarn outdated
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># upgrade all</span>
+</span></span><span style="display:flex;"><span>yarn upgrade
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># upgrade all and ignore version ranges in &#39;package.json&#39;</span>
+</span></span><span style="display:flex;"><span>yarn upgrade --latest
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># upgrade a specific package</span>
+</span></span><span style="display:flex;"><span>yarn upgrade eslint
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># upgrade packages match a pattern</span>
+</span></span><span style="display:flex;"><span>yarn upgrade --pattern eslint
+</span></span></code></pre></div><h3 id="5-removing-packages">5. Removing Packages</h3>
 <h5 id="npm-5">NPM</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm uninstall eslint
-</code></pre></div><h5 id="yarn-5">Yarn</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn remove eslint
-</code></pre></div><h3 id="6-running-commands">6. Running Commands</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm uninstall eslint
+</span></span></code></pre></div><h5 id="yarn-5">Yarn</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn remove eslint
+</span></span></code></pre></div><h3 id="6-running-commands">6. Running Commands</h3>
 <h5 id="npm-6">NPM</h5>
 <p><code>npm</code> allows users to define executable scripts in <code>package.json</code> under the section</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;scripts&#34;</span> <span style="color:#960050;background-color:#1e0010">:</span> { <span style="color:#f92672">&#34;test&#34;</span> : <span style="color:#e6db74">&#34;...&#34;</span> }
-</code></pre></div><p>then use <code>npm run script-name</code> to execute the predefined scripts.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm run test
-</code></pre></div><p>Nevertheless, <code>npm</code> provides a short form for executing testing scripts as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;scripts&#34;</span> <span style="color:#960050;background-color:#1e0010">:</span> { <span style="color:#f92672">&#34;test&#34;</span> : <span style="color:#e6db74">&#34;...&#34;</span> }
+</span></span></code></pre></div><p>then use <code>npm run script-name</code> to execute the predefined scripts.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm run test
+</span></span></code></pre></div><p>Nevertheless, <code>npm</code> provides a short form for executing testing scripts as well.</p>
 <pre tabindex="0"><code>npm test
 </code></pre><h5 id="yarn-6">Yarn</h5>
 <p>Similar to <code>npm</code>, <code>yarn</code> users can execute scripts with <code>yarn run script-name</code> and <code>yarn test</code> for testing.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn run start
-yarn test
-</code></pre></div><p>So far, we have walked through some basic steps of a typical development workflow, ranging from initialisation to inquiring and manipulating packages. Apart from that, both <code>npm</code> and <code>yarn</code> also go extra length with many more different functionality. Backing by very strong and active communities, your development projects will surely in safe hands when choosing either of them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn run start
+</span></span><span style="display:flex;"><span>yarn test
+</span></span></code></pre></div><p>So far, we have walked through some basic steps of a typical development workflow, ranging from initialisation to inquiring and manipulating packages. Apart from that, both <code>npm</code> and <code>yarn</code> also go extra length with many more different functionality. Backing by very strong and active communities, your development projects will surely in safe hands when choosing either of them.</p>
 </div>
 <div class="navigation navigation-single">
 <a href="/2018/03/confusing-hugo-issues-datetime-and-isset/" class="navigation-prev">
@@ -275,7 +275,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<script defer="defer" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 <noscript id="deferred-styles">
 <link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
@@ -305,7 +305,7 @@ var loadDeferredStyles = function () {
 <script defer="defer" src="/js/codecopy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 <script type="text/javascript">
-hljs.highlightAll();
+hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>
