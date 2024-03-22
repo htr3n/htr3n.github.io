@@ -6,13 +6,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.97.0"/>
+<meta name="generator" content="Hugo 0.124.0">
 <title>Making JSP work with Spring Boot 2 • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Making JSP work with Spring Boot 2"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Making JSP work with Spring Boot 2"/>
 <meta name="twitter:description" content="One of my past projects relied heavily on XML based configurations and JSP technologies dated back to Spring Framework 3.x. It is still working fine after upgrading to Spring 5 and corresponding dependent libraries such as Hibernate 5, HikariCP 3 and Apache CXF 3."/>
+<meta name="twitter:site" content="@htr3n"/>
 <meta property="og:title" content="Making JSP work with Spring Boot 2"/>
 <meta property="og:description" content="One of my past projects relied heavily on XML based configurations and JSP technologies dated back to Spring Framework 3.x. It is still working fine after upgrading to Spring 5 and corresponding dependent libraries such as Hibernate 5, HikariCP 3 and Apache CXF 3."/>
 <meta property="og:type" content="article"/>
@@ -81,7 +81,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2022 htr3n
+&copy; 2024 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -168,42 +168,42 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </ul>
 <p>It&rsquo;s convenient but not mandatory to use <code>@SpringBootApplication</code>. For advanced configuring or fine-tuning, one can surely pick apart individual annotations and add/customise them to particular needs.</p>
 <p>In order to create <em>a deployable WAR</em> file, Spring Boot team <a href="https://docs.spring.io/spring-boot/docs/2.1.1.RELEASE/reference/html/howto-traditional-deployment.html">recommends to subclass <code>SpringBootServletInitializer</code> and override its <code>configure()</code> method</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.SpringApplication<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.autoconfigure.SpringBootApplication<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.builder.SpringApplicationBuilder<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.web.servlet.support.SpringBootServletInitializer<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.SpringApplication;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.builder.SpringApplicationBuilder;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@SpringBootApplication</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoApplication</span> <span style="color:#66d9ef">extends</span> SpringBootServletInitializer <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoApplication</span> <span style="color:#66d9ef">extends</span> SpringBootServletInitializer {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>DemoApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>    SpringApplication.<span style="color:#a6e22e">run</span>(DemoApplication.<span style="color:#a6e22e">class</span>, args);
+</span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">protected</span> SpringApplicationBuilder <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>SpringApplicationBuilder application<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> application<span style="color:#f92672">.</span><span style="color:#a6e22e">sources</span><span style="color:#f92672">(</span>DemoApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">protected</span> SpringApplicationBuilder <span style="color:#a6e22e">configure</span>(SpringApplicationBuilder application) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> application.<span style="color:#a6e22e">sources</span>(DemoApplication.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="view-resolvers">View Resolvers</h3>
 <p>In Spring Web MVC, the return value of a <code>@Controller</code>, if not a valid <code>View</code> object, should be resolved by a <a href="https://docs.spring.io/spring-framework/docs/5.1.2.RELEASE/javadoc-api/org/springframework/web/servlet/ViewResolver.html"><code>ViewResolver</code></a> . Spring Boot 2, by default, will load <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/web/servlet/view/InternalResourceViewResolver.html"><code>InternalResourceViewResolver</code></a> that combines with <a href="https://docs.spring.io/spring/docs/5.1.3.RELEASE/javadoc-api/org/springframework/web/servlet/view/InternalResourceView.html"><code>InternalResourceView</code></a> for handling JSP based views. As such, a controller&rsquo;s return values will be mapped to a JSP resource.</p>
 <p><code>InternalResourceViewResolver</code>, which is based on <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/web/servlet/view/UrlBasedViewResolver.html"><code>UrlBasedViewResolver</code></a>, will use the following rule &ldquo;<code>prefix + view_name + suffix</code>&rdquo; for view resolution. For instance, if a view&rsquo;s logical name is &ldquo;<code>index</code>&rdquo;, prefix = &ldquo;<code>/WEB-INF/jsp/</code>&rdquo; and suffix = &ldquo;<code>.jsp</code>&rdquo; then the resulting view will be &ldquo;<code>/WEB-INF/jsp/index.jsp</code>&rdquo;.</p>
 <p>Therefore, we need to configure the <code>prefix</code> and <code>suffix</code>. This can be done quite easily in Spring Boot , either using <code>application.properties</code></p>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">spring.mvc.view.prefix=/WEB-INF/jsp/
-spring.mvc.view.suffix=.jsp
-</code></pre><p>or an equivalent but longer Java based configuration</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">spring.mvc.view.prefix</span><span style="color:#f92672">=</span><span style="color:#e6db74">/WEB-INF/jsp/</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.mvc.view.suffix</span><span style="color:#f92672">=</span><span style="color:#e6db74">.jsp</span>
+</span></span></code></pre></div><p>or an equivalent but longer Java based configuration</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WebConfig</span> <span style="color:#66d9ef">implements</span> WebMvcConfigurer <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WebConfig</span> <span style="color:#66d9ef">implements</span> WebMvcConfigurer {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Bean</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> ViewResolver <span style="color:#a6e22e">jspViewResolver</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    InternalResourceViewResolver viewResolver <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InternalResourceViewResolver<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    viewResolver<span style="color:#f92672">.</span><span style="color:#a6e22e">setPrefix</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/WEB-INF/jsp/&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    viewResolver<span style="color:#f92672">.</span><span style="color:#a6e22e">setSuffix</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;.jsp&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> viewResolver<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> ViewResolver <span style="color:#a6e22e">jspViewResolver</span>() {
+</span></span><span style="display:flex;"><span>    InternalResourceViewResolver viewResolver <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InternalResourceViewResolver();
+</span></span><span style="display:flex;"><span>    viewResolver.<span style="color:#a6e22e">setPrefix</span>(<span style="color:#e6db74">&#34;/WEB-INF/jsp/&#34;</span>);
+</span></span><span style="display:flex;"><span>    viewResolver.<span style="color:#a6e22e">setSuffix</span>(<span style="color:#e6db74">&#34;.jsp&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> viewResolver;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Note that Spring Boot will map a logical view onto a JSP file inside the folder &ldquo;<code>src/main/webapp/WEB-INF/jsp/</code>&rdquo;.</p>
 <blockquote>
 <p><strong>IMPORTANT</strong>Many developers, especially who have a lot of experience with Spring Web MVC, tend to annotate the <code>@Configuration</code> class with <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html"><code>@EnableWebMvc</code></a>. It&rsquo;s crucial to notice that <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html"><code>@EnableWebMvc</code></a> will <a href="https://docs.spring.io/spring-boot/docs/2.1.1.RELEASE/reference/htmlsingle/#howto-switch-off-default-mvc-configuration">switch off all default Spring Boot auto-configuration</a> for Spring Web MVC. That means, JSP files and other resources might not be served correctly without extra configurations.</p>
@@ -272,56 +272,56 @@ spring.mvc.view.suffix=.jsp
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;webjars/bootstrap/4.1.3/js/bootstrap.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div><h3 id="login-controller">Login Controller</h3>
 <p>First of all, we will need a data object to transfer the login input data in the JSP view (e.g. email and password) with the controllers and models. Here comes the <code>LoginForm</code> class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String password<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String email;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String password;
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">LoginForm</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getEmail</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> email<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>String email<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getPassword</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> password<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setPassword</span><span style="color:#f92672">(</span>String password<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">LoginForm</span>() {}
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getEmail</span>() { <span style="color:#66d9ef">return</span> email; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEmail</span>(String email) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getPassword</span>() { <span style="color:#66d9ef">return</span> password; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setPassword</span>(String password) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> password; }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>No worries about the annotations <code>@NotBlank</code>, <code>@Email</code> for now as they are part of <a href="#data-validation">data validation</a>. Apart from those, <code>LoginForm</code> is just a normal bean with a no-arg constructor and the getters / setters.</p>
 <p>Now, we create a <code>LoginHandler</code> class to coordinate and handle the whole login process.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/login&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginHandler</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String LOGIN_VIEW <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;login&#34;</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String LOGOUT_VIEW <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;logout&#34;</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// controller body  
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/login&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginHandler</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String LOGIN_VIEW <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;login&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String LOGOUT_VIEW <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;logout&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// controller body  </span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>LoginHandler</code> class is annotated with <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/stereotype/Controller.html"><code>@Controller</code></a> to indicate it is a web controller that will be automatically detected by Spring Boot. In the <code>LoginHandler</code> class, let&rsquo;s define some handler methods.</p>
 <h4 id="handling-get-requests">Handling GET Requests</h4>
 <p>We create a <code>showLoginView()</code> method annotated with <code>@GetMapping</code> for handling GET requests, i.e. when a client opens the corresponding URL &ldquo;<a href="http://localhost:8080/login">http://localhost:8080/login</a>&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/login&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">showLoginView</span><span style="color:#f92672">(</span>Model model<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  model<span style="color:#f92672">.</span><span style="color:#a6e22e">addAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;loginForm&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> LoginForm<span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> LOGIN_VIEW<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@GetMapping</span>(<span style="color:#e6db74">&#34;/login&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">showLoginView</span>(Model model) {
+</span></span><span style="display:flex;"><span>  model.<span style="color:#a6e22e">addAttribute</span>(<span style="color:#e6db74">&#34;loginForm&#34;</span>, <span style="color:#66d9ef">new</span> LoginForm());
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> LOGIN_VIEW;
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>This method simply adds a new model attribute <code>loginForm</code> (explained later in <a href="#data-binding">Data Binding</a>) and returns a logical login view name &ldquo;<code>login</code>&rdquo; (which will be resolved to &ldquo;<code>login.jsp</code>&rdquo;).</p>
 <h4 id="handling-post-requests">Handling POST Requests</h4>
 <p>For processing POST requests (i.e. when the client enters some input data and submits the form), we define a <code>login()</code> method annotated with <code>@PostMapping</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/login&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">login</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@Valid</span> <span style="color:#a6e22e">@ModelAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;loginForm&#34;</span><span style="color:#f92672">)</span> LoginForm form<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>                    BindingResult bindingResult<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>                    HttpSession session<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>bindingResult<span style="color:#f92672">.</span><span style="color:#a6e22e">hasErrors</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">boolean</span> authenticated <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc@test.com&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>form<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String loginStatus <span style="color:#f92672">=</span> authenticated <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;OK&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;FAILED&#34;</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    session<span style="color:#f92672">.</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;loginStatus&#34;</span><span style="color:#f92672">,</span> loginStatus<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> LOGIN_VIEW<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@PostMapping</span>(<span style="color:#e6db74">&#34;/login&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">login</span>(<span style="color:#a6e22e">@Valid</span> <span style="color:#a6e22e">@ModelAttribute</span>(<span style="color:#e6db74">&#34;loginForm&#34;</span>) LoginForm form,
+</span></span><span style="display:flex;"><span>                    BindingResult bindingResult,
+</span></span><span style="display:flex;"><span>                    HttpSession session) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>bindingResult.<span style="color:#a6e22e">hasErrors</span>()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">boolean</span> authenticated <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc@test.com&#34;</span>.<span style="color:#a6e22e">equals</span>(form.<span style="color:#a6e22e">getEmail</span>());
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String loginStatus <span style="color:#f92672">=</span> authenticated <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;OK&#34;</span> : <span style="color:#e6db74">&#34;FAILED&#34;</span>;
+</span></span><span style="display:flex;"><span>    session.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;loginStatus&#34;</span>, loginStatus);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> LOGIN_VIEW;
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The input data of the submitted form will be explicitly mapped to the method parameter <code>form</code> via the annotation <code>@ModelAttribute</code>. The <code>@Valid</code> annotation and the parameter <code>bindingResult</code> are for <a href="#data-validation">data validation</a>, and the <code>session</code> is for storing session data indicating a valid authentication.</p>
 <p>The actual authentication business logic has been simplified so that an input email &ldquo;<code>abc@test.com</code>&rdquo; will pass. Of course, it should be revised with proper data and authentication process in real apps.</p>
 <h4 id="handling-log-out">Handling Log-Out</h4>
 <p>For the sake of completeness, we should also add a handler method for logging out in which we remove the session attribute <code>loginStatus</code> added in the POST method <code>login()</code> and redirect to a &ldquo;<code>logout.jsp</code>&rdquo; page.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/logout&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">logout</span><span style="color:#f92672">(</span>HttpSession session<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  session<span style="color:#f92672">.</span><span style="color:#a6e22e">removeAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;loginStatus&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> LOGOUT_VIEW<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/logout&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">logout</span>(HttpSession session) {
+</span></span><span style="display:flex;"><span>  session.<span style="color:#a6e22e">removeAttribute</span>(<span style="color:#e6db74">&#34;loginStatus&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> LOGOUT_VIEW;
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="data-binding-a-namedata-bindinga">Data Binding</h4>
 <p>We need to connect the HTML login form to a data transfer object (also known as <em>command object</em>, <em>form object</em>, <em>form-backing object</em>) of type <code>LoginForm</code>. Otherwise, Spring MVC will raise the infamous error &ldquo;<em>Caused by: java.lang.IllegalStateException: Neither BindingResult nor plain target object for bean name &rsquo;loginForm&rsquo; available as request attribute</em>&rdquo;.</p>
 <p>There are more than one way to do that:</p>
@@ -336,24 +336,24 @@ spring.mvc.view.suffix=.jsp
 <p>In my previous Spring 3 projects, I used to create validators that implement the <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/validation/Validator.html"><code>Validator</code></a> interface and utilise <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/validation/ValidationUtils.html">ValidationUtils</a> helper methods to check the input data. These validator beans will be injected into Spring controllers to validate the input before handing over to the actual business logics.</p>
 <p>Nevertheless, we can also leverage <a href="https://beanvalidation.org/1.0/">Bean Validation 1.0</a> (JSR-303) and <a href="https://beanvalidation.org/1.1/">1.1</a> (JSR-349) supported since Spring 4 and <a href="https://beanvalidation.org/2.0/">Bean Validation 2.0</a> (JSR-380) supported since Spring 5 via <a href="http://hibernate.org/validator/">Hibernate Validator</a>. These modules are already included with <code>spring-boot-starter-web</code>.</p>
 <p>First, we annotate <code>LoginForm</code>&rsquo;s fields with some Bean Validation constraints and corresponding messages.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginForm</span> {
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@NotBlank</span><span style="color:#f92672">(</span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E-Mail must not be empty.&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Email</span><span style="color:#f92672">(</span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Please enter a valid e-mail address.&#34;</span><span style="color:#f92672">)</span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@NotBlank</span>(message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E-Mail must not be empty.&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Email</span>(message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Please enter a valid e-mail address.&#34;</span>)  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String email;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@NotBlank</span><span style="color:#f92672">(</span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Password must not be empty.&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String password<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">...</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@NotBlank</span>(message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Password must not be empty.&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> String password;
+</span></span><span style="display:flex;"><span>	...
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Then we need to update <code>LoginHandler</code> with respect to validation logics but mostly with the POST handler <code>login()</code>. The simplest way is to add a <code>@Valid</code> annotation to the parameter <code>form</code>. It indicates that Spring should pass <code>form</code> to a <code>Validator</code> beforehand. To get access to validation errors, we have to declare a parameter <code>bindingResult</code> of type <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/validation/BindingResult.html"><code>BindingResult</code></a> and place it immediately next to <code>form</code>. Inside <code>login()</code>, we can invoke the method <code>BindingResult#hasErrors()</code> to see whether there are some validation errors and act accordingly. In this case, the login process won&rsquo;t proceed until no validation error occurs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">login</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@Valid</span> <span style="color:#a6e22e">@ModelAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;loginForm&#34;</span><span style="color:#f92672">)</span> LoginForm form<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>                    BindingResult bindingResult<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span>                    HttpSession session<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>bindingResult<span style="color:#f92672">.</span><span style="color:#a6e22e">hasErrors</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">login</span>(<span style="color:#a6e22e">@Valid</span> <span style="color:#a6e22e">@ModelAttribute</span>(<span style="color:#e6db74">&#34;loginForm&#34;</span>) LoginForm form,
+</span></span><span style="display:flex;"><span>                    BindingResult bindingResult,
+</span></span><span style="display:flex;"><span>                    HttpSession session) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>bindingResult.<span style="color:#a6e22e">hasErrors</span>()) {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Thanks to Spring tag &ldquo;<code>&lt;form:errors .../&gt;</code>&rdquo;, any validation errors will be displayed on the JSP login view. For instance, when I left both email and password empty, I got the following messages.</p>
 <blockquote>
 <p>If the <code>BindingResult</code> parameter <em>is not placed immediately next to</em> the corresponding model attribute <code>loginForm</code>, Spring Boot will throw a <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/BindException.html"><code>BindException</code></a> that will be resolved via <a href="https://docs.spring.io/spring-framework/docs/5.1.3.RELEASE/javadoc-api/org/springframework/web/servlet/mvc/support/DefaultHandlerExceptionResolver.html"><code>DefaultHandlerExceptionResolver</code></a> as an error HTTP 404 - Bad Request.</p>
@@ -441,7 +441,7 @@ Please enable JavaScript to view the
 </a>
 </article>
 </div>
-<script type="application/javascript">
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

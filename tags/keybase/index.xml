@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>keybase on htr3n&#39;s</title>
+    <title>Keybase on htr3n&#39;s</title>
     <link>https://htr3n.github.io/tags/keybase/</link>
-    <description>Recent content in keybase on htr3n&#39;s</description>
+    <description>Recent content in Keybase on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 27 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/keybase/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://htr3n.github.io/tags/keybase/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bootstrapping macOS workspace</title>
       <link>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://htr3n.github.io/2018/06/bootstrapping-macos-workspace/</guid>
       <description>I have experienced a number of different Mac systems, ranging from the old white MacBook 2006 to iMac and MacMini 2010 and lately MacBook Pro 13&amp;quot; and 15&amp;quot;. From time to time, Time Machine has become extremely handy for transferring my data from the old to the new machine.</description>
     </item>
-    
   </channel>
 </rss>

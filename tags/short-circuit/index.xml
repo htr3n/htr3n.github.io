@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>short-circuit on htr3n&#39;s</title>
+    <title>Short-Circuit on htr3n&#39;s</title>
     <link>https://htr3n.github.io/tags/short-circuit/</link>
-    <description>Recent content in short-circuit on htr3n&#39;s</description>
+    <description>Recent content in Short-Circuit on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Jun 2019 10:50:24 +1000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/short-circuit/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jun 2019 10:50:24 +1000</lastBuildDate>
+    <atom:link href="https://htr3n.github.io/tags/short-circuit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lenovo Thinkpad T430s Supervisor Password Removal</title>
       <link>https://htr3n.github.io/2019/06/t430s-supervisor-password-removal/</link>
       <pubDate>Mon, 24 Jun 2019 10:50:24 +1000</pubDate>
-      
       <guid>https://htr3n.github.io/2019/06/t430s-supervisor-password-removal/</guid>
       <description>After a while merely working with macOS and Linux, I have recently decided to have an additional Windows box for some Windows-specific tools and development. I could be able to secure a second-hand Lenovo Thinkpad T430s on eBay for around 130 AUD, which is quite a decent price with CPU i5-3320M (2.</description>
     </item>
-    
   </channel>
 </rss>

@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://htr3n.github.io/</loc>
+    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://htr3n.github.io/posts/</loc>
+    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://htr3n.github.io/tags/aws/</loc>
     <lastmod>2021-10-19T11:36:00+10:00</lastmod>
   </url><url>
@@ -23,9 +29,6 @@
     <loc>https://htr3n.github.io/tags/docker/</loc>
     <lastmod>2021-10-19T11:36:00+10:00</lastmod>
   </url><url>
-    <loc>https://htr3n.github.io/</loc>
-    <lastmod>2021-10-19T11:36:00+10:00</lastmod>
-  </url><url>
     <loc>https://htr3n.github.io/tags/lambda/</loc>
     <lastmod>2021-10-19T11:36:00+10:00</lastmod>
   </url><url>
@@ -33,9 +36,6 @@
     <lastmod>2021-10-19T11:36:00+10:00</lastmod>
   </url><url>
     <loc>https://htr3n.github.io/categories/nodejs/</loc>
-    <lastmod>2021-10-19T11:36:00+10:00</lastmod>
-  </url><url>
-    <loc>https://htr3n.github.io/posts/</loc>
     <lastmod>2021-10-19T11:36:00+10:00</lastmod>
   </url><url>
     <loc>https://htr3n.github.io/tags/</loc>
@@ -59,10 +59,10 @@
     <loc>https://htr3n.github.io/tags/gui/</loc>
     <lastmod>2019-07-05T12:33:36+10:00</lastmod>
   </url><url>
-    <loc>https://htr3n.github.io/tags/macos/</loc>
+    <loc>https://htr3n.github.io/categories/macos/</loc>
     <lastmod>2019-07-05T12:33:36+10:00</lastmod>
   </url><url>
-    <loc>https://htr3n.github.io/categories/macos/</loc>
+    <loc>https://htr3n.github.io/tags/macos/</loc>
     <lastmod>2019-07-05T12:33:36+10:00</lastmod>
   </url><url>
     <loc>https://htr3n.github.io/tags/shell/</loc>
@@ -97,6 +97,9 @@
   </url><url>
     <loc>https://htr3n.github.io/tags/uefi/</loc>
     <lastmod>2019-06-24T10:50:24+10:00</lastmod>
+  </url><url>
+    <loc>https://htr3n.github.io/vn/</loc>
+    <lastmod>2019-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://htr3n.github.io/categories/dev/</loc>
     <lastmod>2018-12-24T00:00:00+00:00</lastmod>
@@ -338,6 +341,9 @@
     <loc>https://htr3n.github.io/2018/03/confusing-hugo-issues-datetime-and-isset/</loc>
     <lastmod>2018-09-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://htr3n.github.io/tags/date/time/</loc>
+    <lastmod>2018-09-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://htr3n.github.io/tags/golang/</loc>
     <lastmod>2018-09-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -382,9 +388,6 @@
   </url><url>
     <loc>https://htr3n.github.io/tags/refactor/</loc>
     <lastmod>2018-11-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://htr3n.github.io/vn/</loc>
-    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://htr3n.github.io/tags/fallacy/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
@@ -591,7 +594,5 @@
     <lastmod>2017-01-19T10:25:00+07:00</lastmod>
   </url><url>
     <loc>https://htr3n.github.io/about/</loc>
-  </url><url>
-    <loc>https://htr3n.github.io/tags/date/time/</loc>
   </url>
 </urlset>

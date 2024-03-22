@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>unicode on htr3n&#39;s</title>
+    <title>Unicode on htr3n&#39;s</title>
     <link>https://htr3n.github.io/tags/unicode/</link>
-    <description>Recent content in unicode on htr3n&#39;s</description>
+    <description>Recent content in Unicode on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Dec 2008 00:00:00 +0000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://htr3n.github.io/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Soạn tài liệu TeX tiếng Việt (Unicode)</title>
       <link>https://htr3n.github.io/2008/12/latex-tieng-viet-unicode/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
-      
       <guid>https://htr3n.github.io/2008/12/latex-tieng-viet-unicode/</guid>
       <description>LaTeX được ưa chuộng không chỉ trong giới nghiên cứu (nhất là Khoa học Máy tính và Toán, Vật lý) mà còn được sử dụng nhiều trong cộng đồng *NIX và Mac OS (non-MS).</description>
     </item>
-    
   </channel>
 </rss>

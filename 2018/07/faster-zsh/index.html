@@ -6,13 +6,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.97.0"/>
+<meta name="generator" content="Hugo 0.124.0">
 <title>Faster and enjoyable ZSH (maybe) • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Faster and enjoyable ZSH (maybe)"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Faster and enjoyable ZSH (maybe)"/>
 <meta name="twitter:description" content="Some handy and well-aimed investigations and optimisations could enhance the performance of your favourite ZSH."/>
+<meta name="twitter:site" content="@htr3n"/>
 <meta property="og:title" content="Faster and enjoyable ZSH (maybe)"/>
 <meta property="og:description" content="Some handy and well-aimed investigations and optimisations could enhance the performance of your favourite ZSH."/>
 <meta property="og:type" content="article"/>
@@ -81,7 +81,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2022 htr3n
+&copy; 2024 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -200,7 +200,7 @@ Figure 1. Bash, sh, and zsh shells startup order [<a href="https://blog.flowblok
 </span></span><span style="display:flex;"><span>└── autoloaded
 </span></span><span style="display:flex;"><span>    └── hello
 </span></span></code></pre></div><p>The folder <code>autoloaded</code> must be added to ZSH variable <code>fpath</code> where ZSH will look for function definitions.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># add &#39;autoload&#39; to fpath</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># add &#39;autoload&#39; to fpath</span>
 </span></span><span style="display:flex;"><span>$ fpath<span style="color:#f92672">=(</span>$fpath autoloaded<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># try to invoke &#39;hello&#39;</span>
 </span></span><span style="display:flex;"><span>$ hello
@@ -231,7 +231,7 @@ Figure 1. Bash, sh, and zsh shells startup order [<a href="https://blog.flowblok
 <p>Zsh completion system must be activated by calling function <a href="http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Use-of-compinit"><code>compinit</code></a>. Most of the framework like oh-my-zsh or Prezto will take care of initialising completion system. In my case, after getting rid of big frameworks, I have to manually activate it with <code>autoload -Uz compinit &amp;&amp; compinit</code>.</p>
 <p>Every time <code>compinit</code> is invoked, it often checks its configurations and re-generates in case of changes. Some have investigated this matter and suggested improvements such as <a href="https://gist.github.com/ctechols/ca1035271ad134841284">checking <em>compinit</em>&rsquo;s cache only once a day</a>. A similar approach has also been implemented in <a href="https://github.com/sorin-ionescu/prezto/blob/e149367445d2bcb9faa6ada365dfd56efec39de8/modules/completion/init.zsh#L34">Prezto</a>.</p>
 <p>Here is a simple excerpt based on <a href="https://carlosbecker.com/posts/speeding-up-zsh">Carlos&rsquo;s solution</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>autoload -Uz compinit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>autoload -Uz compinit
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#39;%j&#39;</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>/usr/bin/stat -f <span style="color:#e6db74">&#39;%Sm&#39;</span> -t <span style="color:#e6db74">&#39;%j&#39;</span> <span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span>/.zcompdump<span style="color:#66d9ef">)</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  compinit
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
@@ -242,7 +242,7 @@ Figure 1. Bash, sh, and zsh shells startup order [<a href="https://blog.flowblok
 <h4 id="compiling-completion-dumped-files">Compiling completion dumped files</h4>
 <p>Note that by default <code>compinit</code> will produce a dumped configuration for accelerating future access. The default dumped file is <code>.zcompdump</code> (which can be changed with <code>compinit -d new_dump_file</code> or totally disabled with <code>compinit -D</code>).</p>
 <p>We can go further by compiling the dumped file with the built-in command <a href="http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-compilation"><code>zcompile</code> </a>for faster autoloading of completion functions. As completion is only needed for interactive shell sessions, I put the <code>zcompile</code> code inside <a href="https://github.com/htr3n/zsh-config/blob/master/zlogin">.zlogin</a> and force it to run in background mode.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># Execute code in the background to not affect the current session</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Execute code in the background to not affect the current session</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Compile zcompdump, if modified, to increase startup speed.</span>
 </span></span><span style="display:flex;"><span>  zcompdump<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/.zcompdump&#34;</span>
@@ -375,7 +375,7 @@ Please enable JavaScript to view the
 </a>
 </article>
 </div>
-<script type="application/javascript">
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

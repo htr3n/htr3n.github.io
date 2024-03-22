@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rss on htr3n&#39;s</title>
+    <title>Rss on htr3n&#39;s</title>
     <link>https://htr3n.github.io/tags/rss/</link>
-    <description>Recent content in rss on htr3n&#39;s</description>
+    <description>Recent content in Rss on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Dec 2008 00:00:00 +0000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Jan 2017 10:18:00 +0700</lastBuildDate>
+    <atom:link href="https://htr3n.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Một cách &#34;đào mỏ&#34;</title>
       <link>https://htr3n.github.io/2008/12/mot-cach-dao-mo/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0000</pubDate>
-      
       <guid>https://htr3n.github.io/2008/12/mot-cach-dao-mo/</guid>
       <description>Đa số chúng ta đều biết rằng Internet cung cấp một kho thông tin khổng lồ quí giá, tốc độ chuyển thông tin nhanh, v.v&amp;hellip; Điều quan trọng là cách thức khai thác thông tin từ đó.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,13 +6,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.97.0"/>
+<meta name="generator" content="Hugo 0.124.0">
 <title>Tour de Spring Boot: DI meets CoC • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tour de Spring Boot: DI meets CoC"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Tour de Spring Boot: DI meets CoC"/>
 <meta name="twitter:description" content="I started using Spring framework few years back in 2009 to develop demo systems for some EU projects. These projects featured a number of Web services some of which share back-end databases and some other talk to external services or WS-BPEL business processes."/>
+<meta name="twitter:site" content="@htr3n"/>
 <meta property="og:title" content="Tour de Spring Boot: DI meets CoC"/>
 <meta property="og:description" content="I started using Spring framework few years back in 2009 to develop demo systems for some EU projects. These projects featured a number of Web services some of which share back-end databases and some other talk to external services or WS-BPEL business processes."/>
 <meta property="og:type" content="article"/>
@@ -81,7 +81,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2022 htr3n
+&copy; 2024 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -118,13 +118,13 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h2 id="quickstart">A Quick Start</h2>
 <p>Let&rsquo;s consider the following Java code defining a REST controller for an endpoint &ldquo;<code>/</code>&rdquo; that shall display a greeting.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> {
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">hello</span><span style="color:#f92672">(){</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">hello</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Just with this very minimal code, we can have a working Spring application. Assume that the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html">Spring Boot CLI</a> is available, start our application with the following command.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>spring run HelloWorld.java
 </span></span></code></pre></div><p>Spring Boot will launch an embedded Tomcat server and initialise a Web application to serve the endpoint at &ldquo;<a href="http://localhost:8080">http://localhost:8080</a>&rdquo;. Visiting this address will give us &ldquo;<em>Hello World!</em>&rdquo;. What could be cooler than that !?</p>
@@ -196,18 +196,18 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>In the <code>hello-world</code> project, we have chosen three components <code>spring-boot-starter-data-jpa</code> (JPA), <code>spring-boot-starter-web</code> (Web), <code>spring-boot-starter-test</code> (for testing) along with <code>mysql-connector-java</code> (MySQL).</p>
 <h2 id="autoconfiguration">Autoconfiguration</h2>
 <p>Intelligent autoconfiguration is perhaps one of the most prominent and important parts of Spring Boot. There are different levels of configuring a Spring based application. The simplest form of autoconfiguration is the &ldquo;<em>Hello World</em>&rdquo; example mentioned above. The new Maven based project created via the wizard or command line consists of <code>pom.xml</code> along with <code>application.properties</code>, <code>HelloWorldApplication.java</code> and <code>HelloWorldApplicationTest.java</code> as shown in Figure 1.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.SpringApplication<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.autoconfigure.SpringBootApplication<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.SpringApplication;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@SpringBootApplication</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorldApplication</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorldApplication</span> {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>HelloWorldApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>    SpringApplication.<span style="color:#a6e22e">run</span>(HelloWorldApplication.<span style="color:#a6e22e">class</span>, args);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>HelloWorldApplication</code> class is annotated with <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/SpringBootApplication.html"><code>@SpringBootApplication</code></a> which is actually an umbrella for three annotations:</p>
 <ul>
 <li><a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/EnableAutoConfiguration.html"><code>@EnableAutoConfiguration</code></a> that triggers auto-configuration of Spring application context.</li>
@@ -220,11 +220,11 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h3 id="app-launcher-configuration">App Launcher Configuration</h3>
 <p>The <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/SpringApplication.html"><code>SpringApplication</code></a> class is the main launcher of a Spring application. Prior to Spring Boot, in order to start a Spring app we have to manually initialise an <a href="https://docs.spring.io/spring-framework/docs/5.1.2.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html?is-external=true"><code>ApplicationContext</code></a>, parse system- and application-specific properties and input arguments (if needed), load all necessary beans and/or launch an embedded Web server like <a href="https://tomcat.apache.org/">Tomcat</a> or <a href="https://www.eclipse.org/jetty/">Jetty</a>. Now, all of these tasks will be automatically done using <code>SpringApplication</code> with <code>@SpringBootApplication</code> (or a combination of its sub-annotations).</p>
 <p>Apart from <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-application-property-files"><code>application.properties</code></a> (or <code>.yml</code>), we can configure and customise a Spring app using a <code>SpringApplication</code> or <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-spring-application.html#boot-features-fluent-builder-api"><code>SpringApplicationBuilder</code></a> instance. For instance, the following code will turn off the banner when launching our Spring app</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  SpringApplication app <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SpringApplication<span style="color:#f92672">(</span>HelloWorldApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  app<span style="color:#f92672">.</span><span style="color:#a6e22e">setBannerMode</span><span style="color:#f92672">(</span>Banner<span style="color:#f92672">.</span><span style="color:#a6e22e">Mode</span><span style="color:#f92672">.</span><span style="color:#a6e22e">OFF</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  app<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>args<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>  SpringApplication app <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SpringApplication(HelloWorldApplication.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>  app.<span style="color:#a6e22e">setBannerMode</span>(Banner.<span style="color:#a6e22e">Mode</span>.<span style="color:#a6e22e">OFF</span>);
+</span></span><span style="display:flex;"><span>  app.<span style="color:#a6e22e">run</span>(args);
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>which is equivalent to <code>spring.main.banner-mode=off</code> in <code>application.properties</code>. Spring Boot comes with numerous predefined properties. Indeed, almost every autoconfigured component offers some default property settings. These predefined settings will be overriden with our own settings, if exist.</p>
 <h3 id="properties-loading">Properties Loading</h3>
 <p>By default, Spring Boot will bind external properties from <code>application.properties</code> (or <code>.yml</code>) at runtime. That is called <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html">externalized configuration</a>. More details on application properties can be found <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">here</a>.</p>
@@ -257,20 +257,20 @@ Please beware of the trailing whitespaces in Spring <code>.properties</code> as 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><p>Many of the embedded server&rsquo;s settings can be defined in <code>application.properties</code> such as the network address, port, sessions, and so on. These settings can also be done programmatically by defining bean implementing <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/server/WebServerFactoryCustomizer.html"><code>WebServerFactoryCustomizer</code></a> that enables access to customise the underlying <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/server/WebServerFactory.html"><code>WebServerFactory</code></a>. For instance, you can refer to more fine-tuned customisations for <a href="https://github.com/spring-projects/spring-boot/blob/v2.1.0.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/embedded/JettyWebServerFactoryCustomizer.java">Jetty</a>, <a href="https://github.com/spring-projects/spring-boot/blobv2.1.0.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/embedded/TomcatWebServerFactoryCustomizer.java">Tomcat</a>, or <a href="https://github.com/spring-projects/spring-boot/blob/v2.1.0.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/embedded/UndertowWebServerFactoryCustomizer.java">Undertow</a>.</p>
 <p>Following up our example on excluding Tomcat and adding Jetty, we can create a simple bean to change the Jetty server from the default port <code>8080</code> to <code>9999</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> io.github.htr3n;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.web.server.ConfigurableWebServerFactory<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.web.server.WebServerFactoryCustomizer<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Component<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.web.server.ConfigurableWebServerFactory;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.web.server.WebServerFactoryCustomizer;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Component;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JettyServerCustomizer</span> <span style="color:#66d9ef">implements</span> WebServerFactoryCustomizer<span style="color:#f92672">&lt;</span>ConfigurableWebServerFactory<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JettyServerCustomizer</span> <span style="color:#66d9ef">implements</span> WebServerFactoryCustomizer<span style="color:#f92672">&lt;</span>ConfigurableWebServerFactory<span style="color:#f92672">&gt;</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">customize</span><span style="color:#f92672">(</span>ConfigurableWebServerFactory factory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    factory<span style="color:#f92672">.</span><span style="color:#a6e22e">setPort</span><span style="color:#f92672">(</span>9999<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">customize</span>(ConfigurableWebServerFactory factory) {
+</span></span><span style="display:flex;"><span>    factory.<span style="color:#a6e22e">setPort</span>(9999);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="data-access-configuration">Data Access Configuration</h3>
 <p>Going through various versions, Spring framework always provides considerable support and different abstraction levels for <a href="http://spring.io/projects/spring-data">database access</a>. In general, it often requires some configurations for data sources and sometimes the intermediate layers such as pooling or caching.</p>
 <p>Spring Boot has taken further steps forward by auto-configuring in some popular circumstances, for instance, embedded databases, database pooling, to name but a few. What we need to do is to add appropriate dependencies. In the <code>hello-world</code> project, <a href="https://www.h2database.com/html/main.html">H2 database engine</a> will be auto-configured by Spring Boot.</p>
@@ -285,11 +285,11 @@ Please beware of the trailing whitespaces in Spring <code>.properties</code> as 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependencies&gt;</span>
 </span></span></code></pre></div><p>Note that, including database dependencies alone won&rsquo;t trigger any auto-configuration. It&rsquo;s only when Spring Boot found some sort of data access components such as <code>spring-boot-starter-jdbc</code>, <code>spring-boot-starter-data-jpa</code> (which transitively embraces <code>spring-jdbc</code>) on the classpath.</p>
 <p>Atop the data connection layer, Spring Boot takes the liberty of <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html#boot-features-connect-to-production-database">choosing other data access components</a>. Note that the design decisions taken by Spring Boot are often based on some popular and widely-used conventions in Spring based application developments. The decisions for data access, like other components, can be overriden with our own information. For example, I can define my own H2 data source in <code>application.properties</code>.</p>
-<pre tabindex="0"><code class="language-properties" data-lang="properties">spring.datasource.url=jdbc:h2:mem:helloword_db;DB_CLOSE_ON_EXIT=FALSE
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=sa
-</code></pre><p>Next, Spring Boot will try to initialise the database. High level data access components such as <a href="https://spring.io/projects/spring-data-jpa">Spring Data JPA</a>, <a href="http://hibernate.org/orm/">Hibernate</a> can be customised via <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-database-initialization">specific properties</a>. Nonetheless, Spring Boot can look into the classpath for a <a href="https://en.wikipedia.org/wiki/Data_definition_language">schema definition script</a>, namely, <code>schema.sql</code>, and a <a href="https://en.wikipedia.org/wiki/Data_manipulation_language">data manipulation script</a>, namely, <code>data.sql</code> and execute them if found. Here is an example of these scripts for a simple database <code>customer</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.url</span><span style="color:#f92672">=</span><span style="color:#e6db74">jdbc:h2:mem:helloword_db;DB_CLOSE_ON_EXIT=FALSE</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.driverClassName</span><span style="color:#f92672">=</span><span style="color:#e6db74">org.h2.Driver</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">sa</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.password</span><span style="color:#f92672">=</span><span style="color:#e6db74">sa</span>
+</span></span></code></pre></div><p>Next, Spring Boot will try to initialise the database. High level data access components such as <a href="https://spring.io/projects/spring-data-jpa">Spring Data JPA</a>, <a href="http://hibernate.org/orm/">Hibernate</a> can be customised via <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-database-initialization">specific properties</a>. Nonetheless, Spring Boot can look into the classpath for a <a href="https://en.wikipedia.org/wiki/Data_definition_language">schema definition script</a>, namely, <code>schema.sql</code>, and a <a href="https://en.wikipedia.org/wiki/Data_manipulation_language">data manipulation script</a>, namely, <code>data.sql</code> and execute them if found. Here is an example of these scripts for a simple database <code>customer</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- schema.sql
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> customer;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> customer(
@@ -305,18 +305,18 @@ spring.datasource.password=sa
 <h2 id="development-support">Development Support</h2>
 <h3 id="testing">Testing</h3>
 <p>Testing is always a crucial part of any development process and Spring apps are no exception. That&rsquo;s why Spring Boot provides <code>spring-boot-starter-test</code> that comprises several handy components such as <a href="https://junit.org/junit4/">JUnit</a>, <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html">Spring Tests</a>, <a href="https://site.mockito.org/">Mockito</a>, to name but a few.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.runner.RunWith<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.test.context.SpringBootTest<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.test.context.junit4.SpringRunner<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Test;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.runner.RunWith;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.boot.test.context.SpringBootTest;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.test.context.junit4.SpringRunner;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RunWith</span><span style="color:#f92672">(</span>SpringRunner<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RunWith</span>(SpringRunner.<span style="color:#a6e22e">class</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@SpringBootTest</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">` {  </span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">contextLoads</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">{</span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">Test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">contextLoads</span>() {
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Consider inside the project <code>hello-world</code>, we have a simple class <code>HelloWorldApplicationTests</code> annotated with <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/context/SpringBootTest.html"><code>@SpringBootTest</code></a> that detects and initialises Spring Boot&rsquo;s application context and testing environment. We can fine tune the testing environment in a similar manner as production&rsquo;s (i.e. with <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html"><code>@Configuration</code></a>, <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/ContextConfiguration.html"><code>@ContextConfiguration</code></a> along with <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/context/TestConfiguration.html"><code>@TestConfiguration</code></a>).</p>
 <p>We won&rsquo;t delve into evey detail of testing support but you can find <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/test-auto-configuration.html">an extensive list of test auto-configurations</a> for JDBC, JPA, Neo, Redis, REST, Web MVC, and WebFlux as well as a rich documentation of Spring Boot testing features <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html">here</a>.</p>
 <p>In <a href="/2018/11/test-driven-spring-jdbc/">one of my previous posts</a>, we can see that the annotation <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/jdbc/JdbcTest.html"><code>@JdbcTest</code></a> has simplified a lot of settings needed for loading up databases, testing CRUD app with automatic transactions. As such it truly helps me better focus on the actual testing logics.</p>
@@ -394,7 +394,7 @@ Please enable JavaScript to view the
 </a>
 </article>
 </div>
-<script type="application/javascript">
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

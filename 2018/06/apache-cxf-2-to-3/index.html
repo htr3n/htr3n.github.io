@@ -6,13 +6,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="generator" content="Hugo 0.97.0"/>
+<meta name="generator" content="Hugo 0.124.0">
 <title>A journey from Apache CXF 2.2 to 3.2 • htr3n&#39;s</title>
 <meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
 <meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A journey from Apache CXF 2.2 to 3.2"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="A journey from Apache CXF 2.2 to 3.2"/>
 <meta name="twitter:description" content="Apache CXF is very powerful and flexible for developing services but it&#39;s not pain-free to upgrade the legacy code"/>
+<meta name="twitter:site" content="@htr3n"/>
 <meta property="og:title" content="A journey from Apache CXF 2.2 to 3.2"/>
 <meta property="og:description" content="Apache CXF is very powerful and flexible for developing services but it&#39;s not pain-free to upgrade the legacy code"/>
 <meta property="og:type" content="article"/>
@@ -81,7 +81,7 @@
 </div>
 </div>
 <div class="copyright">
-&copy; 2022 htr3n
+&copy; 2024 htr3n
 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
 </div>
 <div class="builtwith">
@@ -189,48 +189,48 @@ org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal o
 <h2 id="update-2018-06-25-xml-less-spring-configuration">Update 2018-06-25: XML-less Spring Configuration</h2>
 <p>As deciding to switch to XML-less Spring configuration to learn more about Spring Java annotations, I also tried to migrate CXF settings, too. Here are some last updates.</p>
 <h3 id="loading-cxfservlet">Loading CXFServlet</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyWebApplicationInitializer</span> <span style="color:#66d9ef">implements</span> org<span style="color:#f92672">.</span><span style="color:#a6e22e">springframework</span><span style="color:#f92672">.</span><span style="color:#a6e22e">web</span><span style="color:#f92672">.</span><span style="color:#a6e22e">WebApplicationInitializer</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyWebApplicationInitializer</span> <span style="color:#66d9ef">implements</span> org.<span style="color:#a6e22e">springframework</span>.<span style="color:#a6e22e">web</span>.<span style="color:#a6e22e">WebApplicationInitializer</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onStartup</span><span style="color:#f92672">(</span>ServletContext container<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ServletException <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    AnnotationConfigWebApplicationContext root <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AnnotationConfigWebApplicationContext<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    root<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span>ServiceConfiguration<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    root<span style="color:#f92672">.</span><span style="color:#a6e22e">refresh</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onStartup</span>(ServletContext container) <span style="color:#66d9ef">throws</span> ServletException {
+</span></span><span style="display:flex;"><span>    AnnotationConfigWebApplicationContext root <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AnnotationConfigWebApplicationContext();
+</span></span><span style="display:flex;"><span>    root.<span style="color:#a6e22e">register</span>(ServiceConfiguration.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>    root.<span style="color:#a6e22e">refresh</span>();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Register and map the CXF servlet
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CXFServlet cxfServlet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CXFServlet<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    ServletRegistration<span style="color:#f92672">.</span><span style="color:#a6e22e">Dynamic</span> reg <span style="color:#f92672">=</span> container<span style="color:#f92672">.</span><span style="color:#a6e22e">addServlet</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;cxf&#34;</span><span style="color:#f92672">,</span> cxfServlet<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    reg<span style="color:#f92672">.</span><span style="color:#a6e22e">setLoadOnStartup</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    reg<span style="color:#f92672">.</span><span style="color:#a6e22e">addMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/services/*&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Register and map the CXF servlet</span>
+</span></span><span style="display:flex;"><span>    CXFServlet cxfServlet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CXFServlet();
+</span></span><span style="display:flex;"><span>    ServletRegistration.<span style="color:#a6e22e">Dynamic</span> reg <span style="color:#f92672">=</span> container.<span style="color:#a6e22e">addServlet</span>(<span style="color:#e6db74">&#34;cxf&#34;</span>, cxfServlet);
+</span></span><span style="display:flex;"><span>    reg.<span style="color:#a6e22e">setLoadOnStartup</span>(1);
+</span></span><span style="display:flex;"><span>    reg.<span style="color:#a6e22e">addMapping</span>(<span style="color:#e6db74">&#34;/services/*&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="publishing-services">Publishing Services</h3>
 <p>I configured the CXF bus used for publishing web services and defining JAX-WS service endpoints. Instead of importing existing CXF&rsquo;s XML resources as many developers have chosen, I opted for a pure Java approach. What we have to do is to create a bean named &lsquo;<em>cxf</em>&rsquo; (defined as <code>org.apache.cxf.Bus.DEFAULT_BUS_ID</code>) and use that bean for defining service endpoints.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.HelloWorldImpl<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.HelloWorldImpl;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.Bus<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.bus.spring.SpringBus<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.jaxws.EndpointImpl<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.context.annotation.Bean<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.context.annotation.Configuration<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.Bus;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.bus.spring.SpringBus;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.cxf.jaxws.EndpointImpl;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.context.annotation.Bean;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.context.annotation.Configuration;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.xml.ws.Endpoint<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.xml.ws.Endpoint;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceConfiguration</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceConfiguration</span> {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Bean</span><span style="color:#f92672">(</span>name<span style="color:#f92672">=</span>Bus<span style="color:#f92672">.</span><span style="color:#a6e22e">DEFAULT_BUS_ID</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> SpringBus <span style="color:#a6e22e">cxf</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> SpringBus<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Bean</span>(name<span style="color:#f92672">=</span>Bus.<span style="color:#a6e22e">DEFAULT_BUS_ID</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> SpringBus <span style="color:#a6e22e">cxf</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> SpringBus();
+</span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Bean</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Endpoint <span style="color:#a6e22e">helloWorld</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    HelloWorldImpl implementor <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HelloWorldImpl<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    EndpointImpl endpoint <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> EndpointImpl<span style="color:#f92672">(</span>cxf<span style="color:#f92672">(),</span> implementor<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    endpoint<span style="color:#f92672">.</span><span style="color:#a6e22e">publish</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/HelloWorld&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> endpoint<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Endpoint <span style="color:#a6e22e">helloWorld</span>() {
+</span></span><span style="display:flex;"><span>    HelloWorldImpl implementor <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HelloWorldImpl();
+</span></span><span style="display:flex;"><span>    EndpointImpl endpoint <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> EndpointImpl(cxf(), implementor);
+</span></span><span style="display:flex;"><span>    endpoint.<span style="color:#a6e22e">publish</span>(<span style="color:#e6db74">&#34;/HelloWorld&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> endpoint;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><blockquote>
 <p><strong>IMPORTANT</strong> <code>Endpoint.publish()</code> must be called to expose the service endpoint instead of <code>Endpoint.setAddress()</code> as above.</p>
 </blockquote>
@@ -271,7 +271,7 @@ Please enable JavaScript to view the
 </a>
 </article>
 </div>
-<script type="application/javascript">
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

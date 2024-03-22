@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spring boot on htr3n&#39;s</title>
+    <title>Spring Boot on htr3n&#39;s</title>
     <link>https://htr3n.github.io/tags/spring-boot/</link>
-    <description>Recent content in spring boot on htr3n&#39;s</description>
+    <description>Recent content in Spring Boot on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://htr3n.github.io/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://htr3n.github.io/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Making JSP work with Spring Boot 2</title>
       <link>https://htr3n.github.io/2018/12/jsp-spring-boot/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://htr3n.github.io/2018/12/jsp-spring-boot/</guid>
       <description>One of my past projects relied heavily on XML based configurations and JSP technologies dated back to Spring Framework 3.x. It is still working fine after upgrading to Spring 5 and corresponding dependent libraries such as Hibernate 5, HikariCP 3 and Apache CXF 3.</description>
     </item>
-    
     <item>
       <title>Tour de Spring Boot: DI meets CoC</title>
       <link>https://htr3n.github.io/2018/12/spring-boot-di-meets-coc/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://htr3n.github.io/2018/12/spring-boot-di-meets-coc/</guid>
       <description>I started using Spring framework few years back in 2009 to develop demo systems for some EU projects. These projects featured a number of Web services some of which share back-end databases and some other talk to external services or WS-BPEL business processes.</description>
     </item>
-    
     <item>
       <title>Back to basics: Test-driven Spring JDBC</title>
       <link>https://htr3n.github.io/2018/11/test-driven-spring-jdbc/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://htr3n.github.io/2018/11/test-driven-spring-jdbc/</guid>
       <description>Spring is a popular heavy-weight framework for developing Java/Groovy based applications. Its rich libraries and software stack can cover from front-end to back-end development. In 2009 I used Spring Framework 3 to develop web services and MVC + Hibernate portal for a fictious loan approval process.</description>
     </item>
-    
   </channel>
 </rss>
