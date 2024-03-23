@@ -6,8 +6,15 @@
     <description>Recent content in Dev on htr3n&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://htr3n.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maven and AWS CodeArtifact</title>
+      <link>https://htr3n.github.io/2024/03/maven-aws-code-artifact/</link>
+      <pubDate>Fri, 22 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://htr3n.github.io/2024/03/maven-aws-code-artifact/</guid>
+      <description>Bringing Maven and AWS CodeArtifact Together As a part of migrating our infrastructure fo AWS, we use CodeArtifact for hosting and caching Maven dependencies as well as mirroring the external repositories.</description>
+    </item>
     <item>
       <title>Making JSP work with Spring Boot 2</title>
       <link>https://htr3n.github.io/2018/12/jsp-spring-boot/</link>

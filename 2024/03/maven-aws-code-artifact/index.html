@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://gmpg.org/xfn/11" rel="profile">
+<link rel="canonical" href="https://htr3n.github.io/2024/03/maven-aws-code-artifact/">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="generator" content="Hugo 0.124.0">
+<title>Maven and AWS CodeArtifact • htr3n&#39;s</title>
+<meta name="description" content="htr3n&#39;s blog :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog,java,php,python,golang,javascript,shell,thoughts,macos,apple,tiếng việt,parental,family,apache,httpd,laravel,politics,critical thinking,chính trị,luật,hiến pháp,xã hội,gia đình">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Maven and AWS CodeArtifact"/>
+<meta name="twitter:description" content="Bringing Maven and AWS CodeArtifact Together As a part of migrating our infrastructure fo AWS, we use CodeArtifact for hosting and caching Maven dependencies as well as mirroring the external repositories."/>
+<meta name="twitter:site" content="@htr3n"/>
+<meta property="og:title" content="Maven and AWS CodeArtifact"/>
+<meta property="og:description" content="Bringing Maven and AWS CodeArtifact Together As a part of migrating our infrastructure fo AWS, we use CodeArtifact for hosting and caching Maven dependencies as well as mirroring the external repositories."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://htr3n.github.io/2024/03/maven-aws-code-artifact/"/><meta property="article:section" content="posts"/>
+<meta property="article:published_time" content="2024-03-22T00:00:00+00:00"/>
+<meta property="article:modified_time" content="2024-03-22T00:00:00+00:00"/>
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/hyde-hyde.css">
+<link rel="stylesheet" href="https://htr3n.github.io/scss/print.css" media="print">
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.png">
+</head>
+<body class="">
+<div class="sidebar">
+<div class="">
+<div class="sidebar-about">
+<span class="site__title">
+<a href="https://htr3n.github.io/">htr3n&#39;s</a>
+</span>
+<div class="author-image">
+<img src="https://htr3n.github.io//img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+</div>
+<p class="site__description">
+</p>
+</div>
+<div class="collapsible-menu">
+<input type="checkbox" id="menuToggle">
+<label for="menuToggle">htr3n&#39;s</label>
+<div class="menu-content">
+<div>
+<ul class="sidebar-nav">
+<li>
+<a href="/posts/">
+<span>Posts</span>
+</a>
+</li>
+<li>
+<a href="/portfolio/">
+<span>Portfolio</span>
+</a>
+</li>
+<li>
+<a href="/vn/">
+<span>Tiếng Việt</span>
+</a>
+</li>
+<li>
+<a href="/about/">
+<span>About</span>
+</a>
+</li>
+</ul>
+</div>
+<section class="social">
+<a href="https://twitter.com/htr3n" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+<a href="https://github.com/htr3n" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+<a href="https://linkedin.com/in/htr3n" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+<a href="https://stackoverflow.com/users/339302" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+<a href="https://keybase.io/htr3n" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+<a href="mailto:hoang.huy.tran&#43;blog@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+</section>
+</div>
+</div>
+<div class="copyright">
+&copy; 2024 htr3n
+<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+</div>
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+</div>
+</div>
+<div class="content container">
+<article>
+<header>
+<h1>Maven and AWS CodeArtifact</h1>
+<div class="post__meta">
+<i class="fas fa-calendar-alt"></i> Mar 22, 2024 in
+<a class="badge badge-category" href="/categories/dev">DEV</a>
+<br/>
+<i class="fas fa-tags"></i>
+<a class="badge badge-tag" href="/tags/software">software</a>
+<a class="badge badge-tag" href="/tags/maven">maven</a>
+<a class="badge badge-tag" href="/tags/aws">aws</a>
+<a class="badge badge-tag" href="/tags/codeartifact">codeartifact</a>
+<br/>
+<i class="fas fa-clock"></i> 10 min read
+</div>
+</header>
+<div class="post">
+<h1 id="bringing-maven-and-aws-codeartifact-together">Bringing Maven and AWS CodeArtifact Together</h1>
+<p>As a part of migrating our infrastructure fo AWS, we use CodeArtifact for hosting and caching Maven dependencies as well as mirroring the external repositories. Setting up CodeArtifact repositories is not too difficult, but making it work with Maven in a local environemnt is very chalengging due to a lot of AWS security constrains. In this post, I would like to share some experience and ideas on harmonising Maven and CodeArtifact when setting up my working environment.</p>
+<p>Let&rsquo;s assume that <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI v2</a> has been installed</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ aws --version
+</span></span><span style="display:flex;"><span>aws-cli/2.15.30 Python/3.11.8 Linux/6.5.0-26-generic exe/x86_64.ubuntu.23 prompt/off
+</span></span></code></pre></div><p>and there is an AWS profile <code>dev</code> configured properly in <code>~/.aws/config</code>. This is an example AWS profile using the new AWS SSO:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[profile dev]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sso_session</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">dev-sso</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sso_account_id</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">0123456789</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sso_role_name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Developer</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">ap-southeast-2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[sso-session dev-sso]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sso_region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">ap-southeast-2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sso_start_url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">https://d-9876543210.awsapps.com/start</span>
+</span></span></code></pre></div><p>That is, if we test the account with <code>aws sts get-caller-identity</code>, it returns a good response</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ aws sts get-caller-identity --profile dev
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;UserId&#34;</span>: <span style="color:#e6db74">&#34;.....&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Account&#34;</span>: <span style="color:#e6db74">&#34;....&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Arn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:sts::...&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Then we need <a href="https://maven.apache.org">Apache Maven</a> version 3.6 or later.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ mvn --version
+</span></span><span style="display:flex;"><span>Apache Maven 3.8.8 <span style="color:#f92672">(</span>4c87b05d9aedce574290d1acc98575ed5eb6cd39<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="aws-codeartifact-repositories">AWS CodeArtifact Repositories</h2>
+<p>Let&rsquo;s also assume that, we set up a CodeArtifact repository with details can be found via AWS Web console, then a repository of the owner <code>0123456789</code> as summarized below:</p>
+<ul>
+<li>Region: <code>ap-southeast-2</code></li>
+<li>Owner: <code>0123456789</code></li>
+<li>Domain: <code>company-repositories</code></li>
+</ul>
+<p>So the repository URL would be <code>https://company-repositories-0123456789.d.codeartifact.ap-southeast-2.amazonaws.com/maven/dev/</code>.</p>
+<h2 id="apache-maven-settings">Apache Maven Settings</h2>
+<p>By default, Maven will look for a file <code>settings.xml</code> in its installation directory <code>${maven.home}/conf/</code> or the current&rsquo;s user home directory <code>~/.m2</code>. You can also explicitly specify a settings file using <code>mvn -s path/to/settings.xml</code> but that&rsquo;s another story. It&rsquo;s safe to assume we use the <code>~/.m2/settings.xml</code> file with the content as below (the XML namespaces are removed for readability)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;settings&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;profiles&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;profile&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;id&gt;</span>default<span style="color:#f92672">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;repositories&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;repository&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;id&gt;</span>dev-repo<span style="color:#f92672">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;url&gt;</span>https://company-repositories-0123456789.d.codeartifact.ap-southeast-2.amazonaws.com/maven/dev/<span style="color:#f92672">&lt;/url&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;layout&gt;</span>default<span style="color:#f92672">&lt;/layout&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/repository&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/repositories&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/profile&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/profiles&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">&lt;!-- Authentication part --&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;servers&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;server&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;id&gt;</span>dev-repo<span style="color:#f92672">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;username&gt;</span>aws<span style="color:#f92672">&lt;/username&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;password&gt;</span>${env.CODEARTIFACT_AUTH_TOKEN}<span style="color:#f92672">&lt;/password&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/server&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/servers&gt;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;activeProfiles&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;activeProfile&gt;</span>default<span style="color:#f92672">&lt;/activeProfile&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/activeProfiles&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/settings&gt;</span>
+</span></span></code></pre></div><p>These settings can also be taken from CodeArtifact instructions. Just open AWS Web console, go to CodeArtifact, choose the corresponding repository then &ldquo;View connection instructions&rdquo;. In the pop-up dialog, choose &ldquo;Maven mvn&rdquo; as package manager client, then copy Step 4, 5, and 6 (optional for mirroring) to the corresponding section of <code>~/.m2/settings.xml</code> as above.</p>
+<h3 id="codeartifact-authentication">CodeArtifact Authentication</h3>
+<p>In order to fetch Maven resources from CodeArtifact, we must set up the <code>&lt;server&gt;</code> section, in which the <code>&lt;username&gt;</code>, by CodeArtifact convention, must be <code>aws</code>. The <code>&lt;password&gt;</code> element must contain a Base64 encoded authentication token generated by the following AWS CLI command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>aws codeartifact get-authorization-token <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --domain &lt;repo_domain&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --domain-owner &lt;domain_owner_id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --region &lt;region&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --query authorizationToken <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --output text
+</span></span></code></pre></div><p>Using shell script syntax, we can create an environment variable <code>CODEARTIFACT_AUTH_TOKEN</code>, assign it with the token, and expose it to be used by Maven. Please note that, we need to specify the AWS profile <code>dev</code>, too.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export CODEARTIFACT_AUTH_TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws codeartifact --profile dev get-authorization-token <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --domain company-repositories <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --domain-owner <span style="color:#ae81ff">0123456789</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --region ap-southeast-2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --query authorizationToken <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --output text<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>After that, we can run any Maven commands and Maven will use the generated <code>CODEARTIFACT_AUTH_TOKEN</code> variable, respectively. Otherwise, you will see an error message with the code <code>Unauthorized (401)</code>.</p>
+<pre tabindex="0"><code>[WARNING] Could not transfer metadata ... from/to dev-repo (https://company-repositories-0123456789.d.codeartifact.ap-southeast-2.amazonaws.com/maven/dev/): status code: 401, reason phrase: Unauthorized (401)
+</code></pre><h2 id="problems--solutions">Problems &amp; Solutions</h2>
+<p>In summary, after completing the configuration, there are few steps to enable Maven access to CodeArtifact repository.</p>
+<ol>
+<li>AWS authentication: This step is required when using AWS SSO (recommended). In case you use the legacy credentials-based configuration, this step can be skipped.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ aws sso login --sso-session dev-session
+</span></span><span style="display:flex;"><span>Attempting to automatically open the SSO authorization page in your default browser.
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Successfully logged into Start URL: https://d-9876543210.awsapps.com/start
+</span></span></code></pre></div><ol start="2">
+<li>Generate the token and assign to the environment variable <code>CODEARTIFACT_AUTH_TOKEN</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export CODEARTIFACT_AUTH_TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>...<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><ol start="3">
+<li>Now we can run Maven commands, e.g. <code>mvn install</code></li>
+</ol>
+<p>There would be no problem at all if the CodeArtifact authentication token does not have an expiry time. A token is only valid, by default, for 12 hours (perhaps enough for a working day 😅). You would need a new token after that. It would not be a big issue if you work solely with the command line all the time. You just have to ensure AWS session is not expired and repeat Step 2 to get a new token.</p>
+<p>However, it&rsquo;s very common that we devs are often using some Java IDEs, such as Eclipse, IntelliJ IDEA for development and testing. The IDEs often bundle their own version of Apache Maven but still use the settings file <code>~/.m2/settings.xml</code> if not specified otherwise.</p>
+<p><img src="idea-maven.png" alt=""></p>
+<p>Here comes the tricky part. How can an IDE pick up a valid environment variable <code>CODEARTIFACT_AUTH_TOKEN</code> to ensure their built-in Maven work with CodeArtifact? We can be creative and write a wrapper script that generates the token before launching our favourite IDE. The IDE will pick up the token at startup time. Unfortunately, there are no easy ways to feed a running process with a new value of that variable when it expires. That means we might have to close the IDE app and open it again 😢.</p>
+<p>There might be some third-party add-ons, for instance, <a href="https://plugins.jetbrains.com/plugin/16777-aws-codeartifact--maven">AWS CodeArtifact + Maven</a> for IntelliJ IDEA, that can update <code>~/.m2/settings.xml</code> with the token as shown below:</p>
+<p><img src="idea-plugin.png" alt=""></p>
+<p>Using the plugin is very convenient when we are working a lot or solely with the IDE and do not have to leave or restart it to pick up a new token. It can be combined with the <a href="https://plugins.jetbrains.com/plugin/11349-aws-toolkit">AWS Toolkit</a> plugin to manage AWS SSO profiles so that you don&rsquo;t have to leave the IDE for (re)authentication.</p>
+<p>In case of a mixed working environment of IDE and Maven CLI, it becomes less convenient as you would have to turn to the IDE plugin to update the token. For instance, I don&rsquo;t build with the IDE built-in Maven often as they are struggling with large Java projects. Most of my Java builds are done via Maven CLI. The IDE is merely for code editing and debugging.</p>
+<p>Even worse in case the IDE Maven and Maven CLI share the same <code>settings.xml</code>, it won&rsquo;t work well because the plugin will replace the part <code>${env.CODEARTIFACT_AUTH_TOKEN}</code> in <code>settings.xml</code> with the actual token whilst Maven CLI expects <code>&lt;password&gt;${env.CODEARTIFACT_AUTH_TOKEN}&lt;/password&gt;</code> to be intact.</p>
+<p>There are two potential solutions for a mixed environment like that.</p>
+<ol>
+<li>Create a wrapper that takes care of obtaining the token before actually executing Maven CLI. Then we can use it for both IDE and CLI. For instance, IntelliJ IDEA lets us choose our own Maven.</li>
+<li>Create a script to obtain the token and replace the content of the element <code>&lt;password&gt;...&lt;/password&gt;</code> in <code>settings.xml</code>.</li>
+</ol>
+<p>The biggest advantage of these solutions is that you don&rsquo;t have to rely on IDE plugins and they work well for both IDE&rsquo;s Maven and CLI.</p>
+<h3 id="maven-cli-wrapper">Maven CLI Wrapper</h3>
+<p>We can create a simple wrapper, namely, <code>mvn-wrapper</code> for Maven CLI as following.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ! command -v aws &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;The command &#39;aws&#39; not found, you must install AWS CLI v2.&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! env | grep -i <span style="color:#e6db74">&#39;^AWS_ACCESS_KEY_ID&#39;</span> &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> ! env | grep -i <span style="color:#e6db74">&#39;^AWS_PROFILE&#39;</span> &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;AWS credentials are not available and AWS_PROFILE is not set.&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;You must either login using &#39;aws sso login --profile &lt;profile_name&gt;&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;or use &#39;AWS_PROFILE=&lt;profile_name&gt; </span><span style="color:#66d9ef">$(</span>basename -- $0<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#39;.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Generating CODEARTIFACT_AUTH_TOKEN ...&#34;</span>
+</span></span><span style="display:flex;"><span>export CODEARTIFACT_AUTH_TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws codeartifact <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  get-authorization-token <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   --output text <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --query authorizationToken <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --domain <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --domain-owner <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>OWNER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n <span style="color:#e6db74">&#34;</span>$CODEARTIFACT_AUTH_TOKEN<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  mvn <span style="color:#e6db74">&#34;</span>$*<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Failed to generate CodeArtifact authentication token&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>The wrapper checks for the AWS CLI <code>aws</code>, then verifies whether the AWS access key or profile is provided. If everything is okay, it will generate the token and call the actuall Maven CLI with the arguments <code>mvn &quot;$*&quot;</code>. Just to make sure it&rsquo;s executable</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod +x mvn-wrapper
+</span></span></code></pre></div><p>Then, you can use it in place of <code>mvn</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ DOMAIN<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;company-repositories&#39;</span> OWNER<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;0123456789&#39;</span> AWS_PROFILE<span style="color:#f92672">=</span>dev ./mvn-wrapper compile
+</span></span><span style="display:flex;"><span>Generating CODEARTIFACT_AUTH_TOKEN ...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Scanning <span style="color:#66d9ef">for</span> projects...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> -------------------&lt; com.example:hello &gt;--------------------
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Building hello 0.0.1
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span>   from pom.xml
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> --------------------------------<span style="color:#f92672">[</span> war <span style="color:#f92672">]</span>---------------------------------
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> --- resources:3.3.1:resources <span style="color:#f92672">(</span>default-resources<span style="color:#f92672">)</span> @ hello ---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Copying <span style="color:#ae81ff">1</span> resource from src/main/resources to target/classes
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> --- compiler:3.8.1:compile <span style="color:#f92672">(</span>default-compile<span style="color:#f92672">)</span> @ hello ---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Nothing to compile - all classes are up to date
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> ------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> BUILD SUCCESS
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> ------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Total time:  0.413 s
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Finished at: 2024-03-23T10:44:21+11:00
+</span></span></code></pre></div><p>If you use Maven mostly with the aforementioned CodeArtifact repository, you can hard code the value of <code>AWS_PROFILE</code>, <code>DOMAIN</code>, and <code>OWNER</code> within <code>mvn-wrapper</code> in this way so that you don&rsquo;t have to type a long command, just simply use <code>mvn-wrapper install</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export AWS_PROFILE<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>AWS_PROFILE<span style="color:#66d9ef">:-</span><span style="color:#e6db74">&#39;dev&#39;</span><span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>export DOMAIN<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>DOMAIN<span style="color:#66d9ef">:-</span><span style="color:#e6db74">&#39;company-repositories&#39;</span><span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>export OWNER<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>OWNER<span style="color:#66d9ef">:-</span><span style="color:#e6db74">&#39;0123456789&#39;</span><span style="color:#e6db74">}</span>
+</span></span></code></pre></div><p>We then configure both IDE and Maven CLI to use the wrapper.</p>
+<h3 id="updating-maven-settings">Updating Maven Settings</h3>
+<p>In this approach, we don&rsquo;t create any wrapper for Maven CLI but update directly <code>~/.m2/settings.xml</code>. This solution is inspired by the idea of the IntelliJ plugin mentioned above without any IDE. Let&rsquo;s create a simple script <code>update-maven-settings</code> with the content as following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> ! command -v xmlstarlet &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;The command &#39;xmlstarlet&#39; not found, you must install it beforehand.&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! command -v aws &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;The command &#39;aws&#39; not found, you must install AWS CLI v2.&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! env | grep -i <span style="color:#e6db74">&#39;^AWS_ACCESS_KEY_ID&#39;</span> &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> ! env | grep -i <span style="color:#e6db74">&#39;^AWS_PROFILE&#39;</span> &gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;AWS credentials are not available and AWS_PROFILE is not set.&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;You must either login using &#39;aws sso login --profile &lt;profile_name&gt;&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;or use &#39;AWS_PROFILE=&lt;profile_name&gt; </span><span style="color:#66d9ef">$(</span>basename -- $0<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#39;.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Generating CODEARTIFACT_AUTH_TOKEN ...&#34;</span>
+</span></span><span style="display:flex;"><span>export CODEARTIFACT_AUTH_TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws codeartifact <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  get-authorization-token <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   --output text <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --query authorizationToken <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --domain <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DOMAIN<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --domain-owner <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>OWNER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n <span style="color:#e6db74">&#34;</span>$CODEARTIFACT_AUTH_TOKEN<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  settings<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/.m2/settings.xml&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;CODEARTIFACT_AUTH_TOKEN is set, start updating &#39;</span><span style="color:#e6db74">${</span>settings<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>  xmlstarlet edit --inplace -u <span style="color:#e6db74">&#34;_:settings/_:servers/_:server/_:password&#34;</span> -v <span style="color:#e6db74">&#34;</span>$CODEARTIFACT_AUTH_TOKEN<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>settings<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Maven settings &#39;</span><span style="color:#e6db74">${</span>settings<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;, the element &#39;&lt;password&gt;&#39; has been updated.&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Failed to generate CodeArtifact authentication token.&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>After ensuring the script is executable with <code>chmod +x update-maven-settings</code>, we can just run it</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ DOMAIN<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;company-repositories&#39;</span> OWNER<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;0123456789&#39;</span> AWS_PROFILE<span style="color:#f92672">=</span>dev ./update-maven-settings
+</span></span><span style="display:flex;"><span>Generating CODEARTIFACT_AUTH_TOKEN ...
+</span></span><span style="display:flex;"><span>CODEARTIFACT_AUTH_TOKEN is set, start updating <span style="color:#e6db74">&#39;/home/alext/.m2/settings.xml&#39;</span>
+</span></span><span style="display:flex;"><span>Maven settings <span style="color:#e6db74">&#39;/home/alext/.m2/settings.xml&#39;</span>, the element <span style="color:#e6db74">&#39;&lt;password&gt;&#39;</span> has been updated.
+</span></span></code></pre></div><p>If you check <code>~/.m2/settings.xml</code>, you will see the updated token</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;password&gt;</span>eyJ2ZXIiOjE....<span style="color:#f92672">&lt;/password&gt;</span>
+</span></span></code></pre></div><p>Again, if only working with the same repository, we can hard code the variables as with <code>mvn-wrapper</code>.</p>
+<p>After updating <code>settings.xml</code> with the token, you can freely use Maven CLI or IDE until the token expires. Then you just need to re-run <code>update-maven-settings</code>. You can even go hard-core with setting up a cron-job that automatically runs the script <code>update-maven-settings</code> to update the token before it expires. Just ensure that the corresponding AWS profile is authenticated, though.</p>
+<p>In this approach, we need an extra tool <a href="https://xmlstar.sourceforge.net/">xmlstarlet</a> to update XML files. The tool is often packaged by most of the common Linux distros but not readily installed. On a Debian/Ubuntu alike system, use</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install -y xmlstarlet
+</span></span></code></pre></div><p>On a CentOS / RHEL / Amazon Linux system</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Use YUM</span>
+</span></span><span style="display:flex;"><span>sudo yum -y install xmlstarlet
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or DNF</span>
+</span></span><span style="display:flex;"><span>sudo dnf -y install xmlstarlet
+</span></span></code></pre></div><p>On Mac OS, we might need <a href="https://brew.sh/">Homebrew</a> to install <code>xmlstarlet</code></p>
+<pre tabindex="0"><code>brew install xmlstarlet
+</code></pre><p>On Windows, you can download the binary package and install it or use a package manager such as <a href="https://chocolatey.org/">Chocolatey</a>.</p>
+<p>The second solution is my favourite and I have been using it for my daily development with Java and Maven. You can opt for either that fits well with your own working style and environment.</p>
+<h4 id="happy-coding-">Happy Coding 💪</h4>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://docs.aws.amazon.com/codeartifact/latest/ug/maven-mvn.html">https://docs.aws.amazon.com/codeartifact/latest/ug/maven-mvn.html</a></li>
+<li><a href="https://maven.apache.org/">https://maven.apache.org/</a></li>
+</ul>
+</div>
+<div class="navigation navigation-single">
+<a href="/2021/10/node-canvas-aws-lambda/" class="navigation-prev">
+<i aria-hidden="true" class="fa fa-chevron-left"></i>
+<span class="navigation-tittle">Building Node Canvas Container for AWS Lambda</span>
+</a>
+</div>
+<div class="post__related">
+<h2>Related Articles</h2>
+<ul class="related-posts">
+<li>
+<span class="list__title--small">
+<a href="/2021/10/node-canvas-aws-lambda/">Building Node Canvas Container for AWS Lambda</a>
+<time class="pull-right hidden-tablet">Oct 19, 2021</time>
+</span>
+</li>
+</ul>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+(function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'https-htr3n-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</article>
+</div>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-112764962-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script defer="defer" src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<noscript id="deferred-styles">
+<link rel="stylesheet" type="text/css" href="/css/ocean.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/codecopy.min.css"/>
+</noscript>
+<script>
+var loadDeferredStyles = function () {
+    var addStylesNode = document.getElementById("deferred-styles");
+    if (addStylesNode) {
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement);
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    }
+  };
+  var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  if (raf) raf(function () {
+    window.setTimeout(loadDeferredStyles, 0);
+  });
+  else
+    window.addEventListener('load', loadDeferredStyles);
+  
+  document.addEventListener('DOMContentLoaded', function (event) {
+    codecopy('pre');
+  });
+</script>
+<script defer="defer" src="/js/codecopy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
