@@ -9,11 +9,11 @@
     <lastBuildDate>Fri, 22 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://htr3n.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Maven and AWS CodeArtifact</title>
+      <title>Bringing Maven and AWS CodeArtifact Together</title>
       <link>https://htr3n.github.io/2024/03/maven-aws-code-artifact/</link>
       <pubDate>Fri, 22 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://htr3n.github.io/2024/03/maven-aws-code-artifact/</guid>
-      <description>Bringing Maven and AWS CodeArtifact Together As a part of migrating our infrastructure fo AWS, we use CodeArtifact for hosting and caching Maven dependencies as well as mirroring the external repositories.</description>
+      <description>As a part of migrating our infrastructure fo AWS, we use CodeArtifact for hosting and caching Maven dependencies as well as mirroring the external repositories. Setting up CodeArtifact repositories is not too difficult, but making it work with Maven in a local environemnt is very chalengging due to a lot of AWS security constrains.</description>
     </item>
     <item>
       <title>Building Node Canvas Container for AWS Lambda</title>

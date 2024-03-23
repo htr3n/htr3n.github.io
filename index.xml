@@ -22,13 +22,12 @@
     
     
       <item>
-        <title>Maven and AWS CodeArtifact</title>
+        <title>Bringing Maven and AWS CodeArtifact Together</title>
         <link>https://htr3n.github.io/2024/03/maven-aws-code-artifact/</link>
         <pubDate>Fri, 22 Mar 2024 00:00:00 +0000</pubDate>
         
-        <guid>46d3c101c1d4833f5826874972cb5225</guid>
-        <description>&lt;h1 id=&#34;bringing-maven-and-aws-codeartifact-together&#34;&gt;Bringing Maven and AWS CodeArtifact Together&lt;/h1&gt;
-&lt;p&gt;As a part of migrating our infrastructure fo AWS, we use CodeArtifact for hosting and caching Maven dependencies as well as mirroring the external repositories. Setting up CodeArtifact repositories is not too difficult, but making it work with Maven in a local environemnt is very chalengging due to a lot of AWS security constrains. In this post, I would like to share some experience and ideas on harmonising Maven and CodeArtifact when setting up my working environment.&lt;/p&gt;
+        <guid>35f6d6cea94fe7c83a44c9f05ea6b1d7</guid>
+        <description>&lt;p&gt;As a part of migrating our infrastructure fo AWS, we use CodeArtifact for hosting and caching Maven dependencies as well as mirroring the external repositories. Setting up CodeArtifact repositories is not too difficult, but making it work with Maven in a local environemnt is very chalengging due to a lot of AWS security constrains. In this post, I would like to share some experience and ideas on harmonising Maven and CodeArtifact when setting up my working environment.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s assume that &lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html&#34;&gt;AWS CLI v2&lt;/a&gt; has been installed&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ aws --version
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aws-cli/2.15.30 Python/3.11.8 Linux/6.5.0-26-generic exe/x86_64.ubuntu.23 prompt/off
