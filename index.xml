@@ -490,7 +490,7 @@
         <link>https://htr3n.github.io/2018/12/jsp-spring-boot/</link>
         <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
         
-        <guid>1ae2dec4db9e3bdffd6befc82f8a56a5</guid>
+        <guid>44c8f2ad7da3b592464d0afad5a598dc</guid>
         <description>&lt;p&gt;One of my past projects relied heavily on XML based configurations and JSP technologies dated back to Spring Framework 3.x. It is still working fine after upgrading to Spring 5 and corresponding dependent libraries such as &lt;a href=&#34;https://hibernate.org/orm/&#34;&gt;Hibernate&lt;/a&gt; 5, &lt;a href=&#34;https://brettwooldridge.github.io/HikariCP/&#34;&gt;HikariCP&lt;/a&gt; 3 and &lt;a href=&#34;https://cxf.apache.org/&#34;&gt;Apache CXF&lt;/a&gt; 3.3.&lt;/p&gt;
 &lt;p&gt;Exploring further into Spring ecosystem, I decided to give a shot on migrating to Spring Boot 2 whilst keeping most of the existing MVC (e.g. controllers, validations, JSP views) working. Most of the significant information are scattered throughout the Internet and most of the useful tutorials are sort of &amp;ldquo;&lt;em&gt;just-follow-these-steps-and-it-will-guarantee-to-work-but-nothing-will-be-explained&lt;/em&gt;&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;It took me much unexpected effort and trial-and-error to get things right not to mention numerous do&amp;rsquo;s and don&amp;rsquo;ts got undocumented or lost among a bunch of documentations. This post merely focuses some  on major aspects on bringing Spring Boot 2 and &lt;a href=&#34;https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html&#34;&gt;Spring Web&lt;/a&gt; with JSP together. The versions that I consider here are &lt;a href=&#34;https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.1-Release-Notes&#34;&gt;Spring Boot 2.1&lt;/a&gt; and respectively &lt;a href=&#34;https://github.com/spring-projects/spring-framework/wiki/What%27s-New-in-Spring-Framework-5.x#What&#39;s-New-in-Version-5.1&#34;&gt;Spring 5.1&lt;/a&gt;.&lt;/p&gt;
@@ -760,7 +760,12 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;war &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	enabled &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;updates&#34;&gt;Updates&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The original Git repository with Spring Boot v2 is here: &lt;a href=&#34;https://github.com/htr3n/spring-boot-jsp-demo&#34;&gt;https://github.com/htr3n/spring-boot-jsp-demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2024-03-23: I created a demo with Spring Boot v3 and JSP/JSTL at &lt;a href=&#34;https://github.com/htr3n/springboot3-web-war&#34;&gt;https://github.com/htr3n/springboot3-web-war&lt;/a&gt;. There are few changes, especially with &lt;code&gt;jakarta.servlet&lt;/code&gt; instead of &lt;code&gt;javax.servlet&lt;/code&gt; and upgrading WebJars Bootstrap v5.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://spring.io/guides/gs/serving-web-content/&#34;&gt;https://spring.io/guides/gs/serving-web-content/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/46391915/how-to-render-jsp-using-spring-boot-application/46399638#46399638&#34;&gt;https://stackoverflow.com/questions/46391915/how-to-render-jsp-using-spring-boot-application/46399638#46399638&lt;/a&gt;&lt;/li&gt;
